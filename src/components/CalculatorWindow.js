@@ -1,8 +1,10 @@
 export const CalculatorWindow = ({selected}) => {
     return (
       <div>
-        <h2>Calculator Window Component</h2>
+        <p></p>
         {selected}
       </div>
     );
   };
+
+// what's up with line breaks?? <p> workaround...

@@ -1,14 +1,25 @@
-export const CalcLTReadout = ({numerator, denominator}) => {
+import { GetGenerator } from "./GetGenerator";
 
+export const CalcLTReadout = ({numerator, denominator, setCalculatedNumerator, setCalculatedDenominator}) => {
+
+        setCalculatedNumerator("")
+        setCalculatedDenominator("")
+    
     if ((numerator === "") && (denominator === "")) {
+        setCalculatedNumerator("")
+        setCalculatedDenominator("")
         return <div>Numerator and Denominator Fields are Invalid</div>
     }
 
     if (numerator === "") {
+        setCalculatedNumerator("")
+        setCalculatedDenominator("")
         return <div>Numerator Field is Invalid</div>
     }
 
     if (denominator === "") {
+        setCalculatedNumerator("")
+        setCalculatedDenominator("")
         return <div>Denominator Field is Invalid</div>
     }
 
@@ -17,14 +28,20 @@ export const CalcLTReadout = ({numerator, denominator}) => {
     denominator = parseInt(denominator)
 
     if ((numerator < 2) && (denominator < 1)) {
+        setCalculatedNumerator("")
+        setCalculatedDenominator("")
         return <div>Numerator Field is Less than 3 and Denominator Field is Less than 1</div>
     }
 
     if (numerator < 2) {
+        setCalculatedNumerator("")
+        setCalculatedDenominator("")
         return <div>Numerator Field is Less than 3</div>
     }
 
     if (denominator < 1) {
+        setCalculatedNumerator("")
+        setCalculatedDenominator("")
         return <div>Denominator Field is Less than 1</div>
     }
 
@@ -69,7 +86,17 @@ export const CalcLTReadout = ({numerator, denominator}) => {
             } else break
         }
         
+        setCalculatedNumerator(numerator)
+        setCalculatedDenominator(denominator)
     }
 
-    return <div>The simplest reduction of your fraction is {numerator} / {denominator}</div>
+    return (
+    <div>
+    <div>Your fraction is equivalent to {numerator} / {denominator}</div>
+    <div>Generator: <GetGenerator 
+    numerator = {numerator} 
+    denominator = {denominator} /> cents
+    </div>
+    </div>
+    )
 }

@@ -14,11 +14,10 @@ export const CalcLT = ({}) => {
       <h2>Linear Temperament</h2>
       <p>Numerator: <input onChange={handleNumeratorChange} type="number" name="numeratorEntered" defaultValue="3"></input></p>
       <p>Denominator: <input onChange={handleDenominatorChange} type="number" name="denominatorEntered" defaultValue="2"></input></p>
-      <p>Note Amount: <input onChange={handleNoteAmountChange} type="number" name="noteAmountEntered" defaultValue="7"></input></p>
       <CalcLTReadout 
       numerator = {selectedNumerator}
-      denominator = {selectedDenominator}
-      noteAmount = {selectedNoteAmount} />
+      denominator = {selectedDenominator} />
+      <p>Note Amount: <input onChange={handleNoteAmountChange} type="number" name="noteAmountEntered" defaultValue="7"></input></p>
       </div>
     )
   }

@@ -1,4 +1,22 @@
 export const CalcEDOReadout = ({edo}) => {
+    
+    if (edo === "") {
+        return <p>Enter an EDO</p>
+    }
+
+    if (edo === "0") {
+        return ( 
+        <div>
+        <h3>0 EDO</h3>
+        <p>John Cage? Is that you?</p>
+        </div>
+        )
+    }
+
+    if (edo < 0) {
+        return <p>EDO Value Must Be Greater than 0</p>
+    }
+    
     const stepSize = 1200 / edo;
     let stepValuesList = [];
     for (let i = 0; i <= edo; i++) {

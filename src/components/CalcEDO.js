@@ -7,6 +7,7 @@ export const CalcEDO = ({}) => {
   const handleChange = (userInput => setSelectedEDO(userInput.target.value))
     return (
       <div>
+      <h2>Equal Division of the Octave</h2>
       <input onChange={handleChange} type="number" name="edoEntered" defaultValue="12"></input>
       <CalcEDOReadout edo = {selectedEDO} />
       </div>

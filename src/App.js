@@ -9,7 +9,7 @@ function App() {
   const [selected, setSelected] = useState(<CalcEDO/>)
   return (
     <div>
-    <h1>Microtonal Calculators - App Component</h1>
+    <h1>Microtonal Calculators</h1>
     <Selector
     setSelected={setSelected}/>
     <CalculatorWindow

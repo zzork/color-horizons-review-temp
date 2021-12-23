@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { CalcEDOReadout } from "./CalcEDOReadout";
 
 export const CalcEDO = ({stateData, setStateData}) => {
-  // const [selectedEDO, setSelectedEDO] = useState("12")
   // unclear on how target.value works
   const handleChange = (userInput) => {
     let newState = stateData.map(scaleType => {

@@ -7,19 +7,28 @@ export const CalcIPReadout = ({pattern}) => {
         edo += parseInt(patternArray[i])
     }
     let stepSize = 1200 / edo
+    let stepValuesList = [0]
 
-    console.log(patternArray)
+    // this calculates out the unique sizes
+    // for (let i = 0; i < patternArray.length; i++) {
+    //     stepValuesList.push((patternArray[i] * stepSize).toFixed(5))
+    // }
 
-    let stepValuesList = []
     for (let i = 0; i < patternArray.length; i++) {
-        stepValuesList.push((patternArray[i] * stepSize).toFixed(5))
+        let thisStep = (patternArray[i] * stepSize + stepValuesList[i])
+        stepValuesList.push(thisStep)
     }
-    let stepValuesDisplay = stepValuesList.map((value, index) => <tr><td>Step {index}</td> <td align="right">{value}</td></tr>)
+    let stepValuesDisplay = stepValuesList.map((value, index) => <tr><td>Step {index}</td> <td align="right">{value.toFixed(5)}</td></tr>)
+    
     return (
         <div>
         <h3>{edo} EDO</h3>
-        <h4>Step Size = {stepSize} cents (*fix this to calculate each unique interval*)</h4>
+        <h4>EDO Step Size = {stepSize} cents</h4> 
+        <h4>(*needs to calculate each unique interval in scale instead*)</h4>
         <table>{stepValuesDisplay}</table>
         </div>
     )
 }
+
+// IMPORTANT
+// putting the .toFixed(5) in the DISPLAY TABLE like here is the correct place for it for calc purposes

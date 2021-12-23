@@ -3,15 +3,21 @@ import React, { useState } from "react";
 import { Selector } from './components/Selector';
 import { CalculatorWindow } from './components/CalculatorWindow';
 import { CalcEDO } from './components/CalcEDO';
+import { stateTable } from './stateTable';
 
 
 function App() {
-  const [selected, setSelected] = useState(<CalcEDO/>)
+  const [stateData, setStateData] = useState(stateTable)
+
+  const [selected, setSelected] = useState("")
   return (
     <div>
     <h1>Microtonal Calculators</h1>
     <Selector
-    setSelected={setSelected}/>
+    setSelected = {setSelected}
+    stateData = {stateData} 
+    setStateData = {setStateData}
+    />
     <CalculatorWindow
     selected={selected}/>
     </div>

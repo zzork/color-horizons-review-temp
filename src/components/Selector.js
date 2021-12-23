@@ -1,8 +1,9 @@
+import React, { useEffect, useState } from "react";
 import { CalcEDO } from './CalcEDO';
 import { CalcLT } from './CalcLT';
 
-export const Selector = ({setSelected}) => {
-    const handleEDOClick = ({}) => setSelected(<CalcEDO/>)
+export const Selector = ({setSelected, stateData, setStateData}) => {
+    const handleEDOClick = ({}) => setSelected(<CalcEDO stateData = {stateData} setStateData = {setStateData}/>)
     const handleLTClick = ({}) => setSelected(<CalcLT/>)
     return (
       <div>

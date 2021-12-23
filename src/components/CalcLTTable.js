@@ -2,8 +2,6 @@ export const CalcLTTable = ({numerator, denominator, noteAmount}) => {
     
     let stepsValuesList = []
 
-    console.log(noteAmount)
-
     for (let i = 0; i < noteAmount; i++) {
         let centsValue = i * (1200 * Math.log(numerator / denominator) / Math.log(2))
         while (centsValue > 1200) {

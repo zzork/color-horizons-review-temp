@@ -4,7 +4,7 @@ import { CalcEDOReadout } from "./CalcEDOReadout";
 export const CalcEDO = ({stateData, setStateData}) => {
   // const [selectedEDO, setSelectedEDO] = useState("12")
   // unclear on how target.value works
-  const handleChange = userInput => {
+  const handleChange = (userInput) => {
     let newState = stateData.map(scaleType => {
       if (scaleType.id = "a")  {
         return {
@@ -14,9 +14,9 @@ export const CalcEDO = ({stateData, setStateData}) => {
       }
       return scaleType
     })
-    console.log(newState[0])
+    console.log("newState:", newState[0])
     setStateData(newState)
-    console.log(stateData[0])
+    console.log("stateData:", stateData[0])
   }
  
     return (

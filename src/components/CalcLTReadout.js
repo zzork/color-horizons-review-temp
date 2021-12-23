@@ -92,7 +92,7 @@ export const CalcLTReadout = ({numerator, denominator, setCalculatedNumerator, s
 
     return (
     <div>
-    <div>Your fraction is equivalent to {numerator} / {denominator}</div>
+    <div>Your entry is equivalent to {numerator} / {denominator}</div>
     <div>Generator: <GetGenerator 
     numerator = {numerator} 
     denominator = {denominator} /> cents

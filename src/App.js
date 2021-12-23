@@ -8,7 +8,7 @@ import { stateTable } from './stateTable';
 
 function App() {
   const [stateData, setStateData] = useState(stateTable)
-  const [selected, setSelected] = useState("Select a Scale Generation Tool")
+  const [selected, setSelected] = useState("")
   return (
     <div>
     <h1>Microtonal Calculators</h1>

@@ -5,7 +5,7 @@ import { CalcLTTable } from "./CalcLTTable";
 export const CalcLT = ({}) => {
   const [selectedNumerator, setSelectedNumerator] = useState("3")
   const [selectedDenominator, setSelectedDenominator] = useState("2")
-  const [selectedNoteAmount, setSelectedNoteAmount] = useState("7")
+  const [selectedNoteAmount, setSelectedNoteAmount] = useState("12")
   
   const [calculatedNumerator, setCalculatedNumerator] = useState("3")
   const [calculatedDenominator, setCalculatedDenominator] = useState("2")
@@ -27,7 +27,7 @@ export const CalcLT = ({}) => {
       setCalculatedNumerator = {setCalculatedNumerator}
       setCalculatedDenominator = {setCalculatedDenominator}/>
 
-      <p>Note Amount: <input onChange={handleNoteAmountChange} type="number" name="noteAmountEntered" defaultValue="7"></input></p>
+      <p>Note Amount: <input onChange={handleNoteAmountChange} type="number" name="noteAmountEntered" defaultValue="12"></input></p>
 
       <CalcLTTable
       numerator = {calculatedNumerator}

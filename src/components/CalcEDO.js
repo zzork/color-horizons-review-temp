@@ -22,7 +22,7 @@ export const CalcEDO = ({stateData, setStateData}) => {
     return (
       <div>
       <h2>Equal Division of the Octave</h2>
-      <input onChange={handleChange} type="number" name="edoEntered"></input>
+      <input onChange={handleChange} type="number" name="edoEntered" defaultValue={stateData[0].value}></input>
       <CalcEDOReadout edo = {stateData[0].value} />
       </div>
     )

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import getEdoFromIntervalPattern from "../util/getEdoFromIntervalPattern";
+import getIPStepValuesList from "../util/getIPStepValuesList";
 
 export const CalcIPReadout = ({ pattern }) => {
   const isValidState = () => {
@@ -9,22 +10,15 @@ export const CalcIPReadout = ({ pattern }) => {
     return <InvalidState value={pattern} />;
   }
 
-  const patternArray = pattern.split("");
   const edo = getEdoFromIntervalPattern(pattern);
   const stepSize = 1200 / edo;
-  //   const stepValuesList = getIPStepValuesList(patternArray);
-
-  let stepValuesList = [0];
+  const stepValuesList = getIPStepValuesList(pattern, stepSize);
 
   // this calculates out the unique sizes
   // for (let i = 0; i < patternArray.length; i++) {
   //     stepValuesList.push((patternArray[i] * stepSize).toFixed(5))
   // }
 
-  for (let i = 0; i < patternArray.length; i++) {
-    let thisStep = patternArray[i] * stepSize + stepValuesList[i];
-    stepValuesList.push(thisStep);
-  }
   let stepValuesDisplay = stepValuesList.map((value, index) => (
     <tr key={index}>
       <td>Step {index}</td>

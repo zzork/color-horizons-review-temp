@@ -1,19 +1,36 @@
 import React, { useState } from "react";
 import { CalcIPReadout } from "./CalcIPReadout";
 
+export const CalcIP = ({ stateData, setStateData }) => {
+  const handleChange = (event) => {
+    const newPattern = event.target.value;
+    let newState = stateData.map((scaleType) => {
+      if ((scaleType.id = "c")) {
+        return {
+          ...scaleType,
+          pattern: newPattern,
+        };
+      }
+      return scaleType;
+    });
+    setStateData(newState);
+  };
 
-export const CalcIP = ({}) => {
-    const [selectedIntervalPattern, setSelectedIntervalPattern] = useState("2212221")
-    const handleIntervalPatternChange = (userInput => setSelectedIntervalPattern(userInput.target.value))
-    return (
-        <div>
-        <div>
+  return (
+    <div>
+      <div>
         <h2>Interval Pattern</h2>
-        <input onChange={handleIntervalPatternChange} type="number" name="intervalPatternEntered" defaultValue="2212221"></input></div>
-        <div>
+        <input
+          onChange={handleChange}
+          type="number"
+          name="intervalPatternEntered"
+          value={stateData[2].pattern}
+        ></input>
+      </div>
+      <div>
         <p></p>
-        <CalcIPReadout pattern = {selectedIntervalPattern}/>
-        </div>
-        </div>
-    )
-}
+        <CalcIPReadout pattern={stateData[2].pattern} />
+      </div>
+    </div>
+  );
+};

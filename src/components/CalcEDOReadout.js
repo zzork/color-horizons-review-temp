@@ -1,14 +1,15 @@
-import getDisplayStepValues from "../util/getDisplayStepValues";
+import getDisplayEdoStepValues from "../util/getDisplayEdoStepValues";
 
 export const CalcEDOReadout = ({ edo }) => {
   const isValidState = () => {
     return edo > 0;
   };
-  const stepSize = 1200 / edo;
   if (!isValidState()) {
     return <InvalidState value={edo} />;
   }
-  const displaySteps = getDisplayStepValues(edo, stepSize);
+
+  const stepSize = 1200 / edo;
+  const displaySteps = getDisplayEdoStepValues(edo, stepSize);
   return (
     <div>
       <h3>{edo} EDO</h3>
@@ -28,8 +29,6 @@ export const CalcEDOReadout = ({ edo }) => {
     </div>
   );
 };
-
-// how get display not have extra space between lines on readout?
 
 const InvalidState = ({ value }) => {
   return (

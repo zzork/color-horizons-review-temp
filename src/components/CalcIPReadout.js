@@ -1,34 +1,58 @@
 import React, { useState } from "react";
+import getEdoFromIntervalPattern from "../util/getEdoFromIntervalPattern";
 
-export const CalcIPReadout = ({pattern}) => {
-    let patternArray = pattern.split("")
-    let edo = 0
-    for (let i = 0; i < patternArray.length; i++) {
-        edo += parseInt(patternArray[i])
-    }
-    let stepSize = 1200 / edo
-    let stepValuesList = [0]
+export const CalcIPReadout = ({ pattern }) => {
+  const isValidState = () => {
+    return pattern > 0;
+  };
+  if (!isValidState()) {
+    return <InvalidState value={pattern} />;
+  }
 
-    // this calculates out the unique sizes
-    // for (let i = 0; i < patternArray.length; i++) {
-    //     stepValuesList.push((patternArray[i] * stepSize).toFixed(5))
-    // }
+  const patternArray = pattern.split("");
+  const edo = getEdoFromIntervalPattern(pattern);
+  const stepSize = 1200 / edo;
+  //   const stepValuesList = getIPStepValuesList(patternArray);
 
-    for (let i = 0; i < patternArray.length; i++) {
-        let thisStep = (patternArray[i] * stepSize + stepValuesList[i])
-        stepValuesList.push(thisStep)
-    }
-    let stepValuesDisplay = stepValuesList.map((value, index) => <tr><td>Step {index}</td> <td align="right">{value.toFixed(5)}</td></tr>)
-    
-    return (
-        <div>
-        <h3>{edo} EDO</h3>
-        <h4>EDO Step Size = {stepSize} cents</h4> 
-        <h4>(*needs to calculate each unique interval in scale instead*)</h4>
-        <table>{stepValuesDisplay}</table>
-        </div>
-    )
-}
+  let stepValuesList = [0];
+
+  // this calculates out the unique sizes
+  // for (let i = 0; i < patternArray.length; i++) {
+  //     stepValuesList.push((patternArray[i] * stepSize).toFixed(5))
+  // }
+
+  for (let i = 0; i < patternArray.length; i++) {
+    let thisStep = patternArray[i] * stepSize + stepValuesList[i];
+    stepValuesList.push(thisStep);
+  }
+  let stepValuesDisplay = stepValuesList.map((value, index) => (
+    <tr key={index}>
+      <td>Step {index}</td>
+      <td align="right">{value.toFixed(5)}</td>
+    </tr>
+  ));
+
+  return (
+    <div>
+      <h3>{edo} EDO</h3>
+      <h4>EDO Step Size = {stepSize} cents</h4>
+      <h4>(*needs to calculate each unique interval in scale instead*)</h4>
+      <table>
+        <tbody>{stepValuesDisplay}</tbody>
+      </table>
+    </div>
+  );
+};
 
 // IMPORTANT
 // putting the .toFixed(5) in the DISPLAY TABLE like here is the correct place for it for calc purposes
+
+const InvalidState = ({ value }) => {
+  return (
+    <div>
+      {value === "" && <p>Enter a Pattern</p>}
+      {value === "0" && <p>0 is not a Pattern</p>}
+      {value < 0 && <p>Pattern Cannot Be Negative</p>}
+    </div>
+  );
+};

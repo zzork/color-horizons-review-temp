@@ -8,17 +8,21 @@ import { stateTable } from './stateTable';
 
 function App() {
   const [stateData, setStateData] = useState(stateTable)
-  const [selected, setSelected] = useState("... and it will appear here.")
+  const [selectedView, setSelectedView] = useState ("edo")
+  const onSelect = (viewId) => {
+    console.log("select" + viewId)
+    setSelectedView(viewId)
+  }
   return (
     <div>
     <h1>Microtonal Calculators</h1>
     <Selector
-    setSelected = {setSelected}
-    stateData = {stateData} 
-    setStateData = {setStateData}
+    onSelect={onSelect}
     />
     <CalculatorWindow
-    selected={selected}/>
+    viewId = {selectedView}
+    stateData = {stateData} 
+    setStateData = {setStateData}/>
     </div>
   );
 }

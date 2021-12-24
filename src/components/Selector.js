@@ -3,16 +3,13 @@ import { CalcEDO } from './CalcEDO';
 import { CalcIP } from "./CalcIP";
 import { CalcLT } from './CalcLT';
 
-export const Selector = ({setSelected, stateData, setStateData}) => {
-    const handleEDOClick = ({}) => setSelected(<CalcEDO stateData = {stateData} setStateData = {setStateData}/>)
-    const handleLTClick = ({}) => setSelected(<CalcLT/>)
-    const handleIPClick = ({}) => setSelected(<CalcIP/>)
+export const Selector = ({onSelect}) => {
     return (
       <div>
         <h2>Select Scale Generation Method</h2>
-        <button onClick={handleEDOClick}>Equal Division of the Octave</button>
-        <button onClick={handleLTClick}>Linear Temperament</button>
-        <button onClick={handleIPClick}>Interval Pattern</button>
+        <button onClick={() => onSelect("edo")}>Equal Division of the Octave</button>
+        <button onClick={() => onSelect("lt")}>Linear Temperament</button>
+        <button onClick={() => onSelect("ip")}>Interval Pattern</button>
       </div>
     );
   };

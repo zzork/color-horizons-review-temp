@@ -10,6 +10,7 @@ export const CalcEDOReadout = ({ edo }) => {
 
   const stepSize = 1200 / edo;
   const displaySteps = getDisplayEdoStepValues(edo, stepSize);
+
   return (
     <div>
       <h3>{edo} EDO</h3>
@@ -20,7 +21,7 @@ export const CalcEDOReadout = ({ edo }) => {
             return (
               <tr key={index}>
                 <td>Step {index}</td>
-                <td align="right">{displayStep}</td>
+                <td align="right">{displayStep.toFixed(5)}</td>
               </tr>
             );
           })}

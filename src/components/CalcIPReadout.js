@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import getEdoFromIntervalPattern from "../util/getEdoFromIntervalPattern";
 import getIPStepValuesList from "../util/getIPStepValuesList";
+import getIPUniqueSizes from "../util/getIPUniqueSizes";
+import getReadoutTable from "../util/getReadoutTable";
 
 export const CalcIPReadout = ({ pattern }) => {
   const isValidState = () => {
@@ -12,34 +14,23 @@ export const CalcIPReadout = ({ pattern }) => {
 
   const edo = getEdoFromIntervalPattern(pattern);
   const stepSize = 1200 / edo;
+  const uniqueSizes = getIPUniqueSizes(pattern, stepSize);
   const stepValuesList = getIPStepValuesList(pattern, stepSize);
-
-  // this calculates out the unique sizes
-  // for (let i = 0; i < patternArray.length; i++) {
-  //     stepValuesList.push((patternArray[i] * stepSize).toFixed(5))
-  // }
-
-  let stepValuesDisplay = stepValuesList.map((value, index) => (
-    <tr key={index}>
-      <td>Step {index}</td>
-      <td align="right">{value.toFixed(5)}</td>
-    </tr>
-  ));
+  const readoutTable = getReadoutTable(stepValuesList);
 
   return (
     <div>
       <h3>{edo} EDO</h3>
-      <h4>EDO Step Size = {stepSize} cents</h4>
-      <h4>(*needs to calculate each unique interval in scale instead*)</h4>
-      <table>
-        <tbody>{stepValuesDisplay}</tbody>
-      </table>
+      <h4>EDO Step Size = {stepSize.toFixed(5)} cents</h4>
+      <h4>{uniqueSizes}</h4>
+      {readoutTable}
     </div>
   );
 };
 
 // IMPORTANT
 // putting the .toFixed(5) in the DISPLAY TABLE like here is the correct place for it for calc purposes
+// now is correct in edo, need to fix LT
 
 const InvalidState = ({ value }) => {
   return (

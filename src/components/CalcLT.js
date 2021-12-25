@@ -2,38 +2,95 @@ import React, { useState } from "react";
 import { CalcLTReadout } from "./CalcLTReadout";
 import { CalcLTTable } from "./CalcLTTable";
 
-export const CalcLT = ({}) => {
-  const [selectedNumerator, setSelectedNumerator] = useState("3")
-  const [selectedDenominator, setSelectedDenominator] = useState("2")
-  const [selectedNoteAmount, setSelectedNoteAmount] = useState("12")
-  
-  const [calculatedNumerator, setCalculatedNumerator] = useState("3")
-  const [calculatedDenominator, setCalculatedDenominator] = useState("2")
-  
-  // unclear on how target.value works
-  const handleNumeratorChange = (userInput => setSelectedNumerator(userInput.target.value))
-  const handleDenominatorChange = (userInput => setSelectedDenominator(userInput.target.value))
-  const handleNoteAmountChange = (userInput => setSelectedNoteAmount(userInput.target.value))
-    return (
-      <div>
+export const CalcLT = ({ stateData, setStateData }) => {
+  // there must be a better way to handle this giant, repetitive block
+  const handleChange = (event) => {
+    let fieldReader = event.target.name;
+    let newValue = event.target.value;
+
+    if (fieldReader === "ltNumerator") {
+      let newState = stateData.map((scaleType) => {
+        if (scaleType.id === "b") {
+          return {
+            ...scaleType,
+            numerator: newValue,
+          };
+        }
+        return scaleType;
+      });
+      setStateData(newState);
+    }
+
+    if (fieldReader === "ltDenominator") {
+      let newState = stateData.map((scaleType) => {
+        if (scaleType.id === "b") {
+          return {
+            ...scaleType,
+            denominator: newValue,
+          };
+        }
+        return scaleType;
+      });
+      setStateData(newState);
+    }
+
+    if (fieldReader === "ltNoteTotal") {
+      let newState = stateData.map((scaleType) => {
+        if (scaleType.id === "b") {
+          return {
+            ...scaleType,
+            noteTotal: newValue,
+          };
+        }
+        return scaleType;
+      });
+      setStateData(newState);
+    }
+  };
+
+  return (
+    <div>
       <h2>Linear Temperament</h2>
-      
-      <p>Numerator: <input onChange={handleNumeratorChange} type="number" name="numeratorEntered" defaultValue="3"></input></p>
-      <p>Denominator: <input onChange={handleDenominatorChange} type="number" name="denominatorEntered" defaultValue="2"></input></p>
-      
-      <CalcLTReadout 
-      numerator = {selectedNumerator}
-      denominator = {selectedDenominator}
-      setCalculatedNumerator = {setCalculatedNumerator}
-      setCalculatedDenominator = {setCalculatedDenominator}/>
+      <p>
+        Numerator:
+        <input
+          onChange={handleChange}
+          type="number"
+          name="ltNumerator"
+          value={stateData[1].numerator}
+        ></input>
+      </p>
+      <p>
+        Denominator:{" "}
+        <input
+          onChange={handleChange}
+          type="number"
+          name="ltDenominator"
+          value={stateData[1].denominator}
+        ></input>
+      </p>
+      <p>CalcLTReadout goes here</p>
+      <p>
+        Note Amount:{" "}
+        <input
+          onChange={handleChange}
+          type="number"
+          name="ltNoteTotal"
+          defaultValue={stateData[1].noteTotal}
+        ></input>
+      </p>
+    </div>
+  );
 
-      <p>Note Amount: <input onChange={handleNoteAmountChange} type="number" name="noteAmountEntered" defaultValue="12"></input></p>
+  //     <CalcLTReadout
+  //     numerator = {selectedNumerator}
+  //     denominator = {selectedDenominator}
+  //     setCalculatedNumerator = {setCalculatedNumerator}
+  //     setCalculatedDenominator = {setCalculatedDenominator}/>
 
-      <CalcLTTable
-      numerator = {calculatedNumerator}
-      denominator = {calculatedDenominator}
-      noteAmount = {selectedNoteAmount}
-      />
-      </div>
-    )
-  }
+  //     <CalcLTTable
+  //     numerator = {calculatedNumerator}
+  //     denominator = {calculatedDenominator}
+  //     noteAmount = {selectedNoteAmount}
+  //     />
+};

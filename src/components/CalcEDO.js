@@ -5,7 +5,7 @@ export const CalcEDO = ({ stateData, setStateData }) => {
   const handleChange = (event) => {
     const newValue = event.target.value;
     let newState = stateData.map((scaleType) => {
-      if ((scaleType.id = "a")) {
+      if (scaleType.id === "a") {
         return {
           ...scaleType,
           value: newValue,

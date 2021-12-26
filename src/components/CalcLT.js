@@ -77,7 +77,6 @@ export const CalcLT = ({ stateData, setStateData }) => {
       />
       <br />
       <p>Myhill Values Display</p>
-      <p>Step Sizes</p>
       <br />
       <p>
         Note Amount:{" "}
@@ -88,11 +87,14 @@ export const CalcLT = ({ stateData, setStateData }) => {
           defaultValue={stateData[1].noteTotal}
         ></input>
       </p>
+      <p>Step Sizes</p>
       <CalcLTTable
         numerator={stateData[1].calculatedNumerator}
         denominator={stateData[1].calculatedDenominator}
         noteAmount={stateData[1].noteTotal}
       />
+      <br />
+      This table should show ratios as well
     </div>
   );
 };

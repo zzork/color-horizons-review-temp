@@ -1,4 +1,4 @@
-import setLTEquivalentFraction from "../util/setLTEquivalentFraction";
+import getSimplestFraction from "../util/getSimplestFraction";
 import { GetGenerator } from "./GetGenerator";
 
 export const CalcLTReadout = ({
@@ -15,16 +15,32 @@ export const CalcLTReadout = ({
     return <InvalidState numerator={numerator} denominator={denominator} />;
   }
 
-  setLTEquivalentFraction(numerator, denominator, setStateData);
+  const equivalentFraction = getSimplestFraction(numerator, denominator);
+  const inverseFraction = getSimplestFraction(
+    equivalentFraction[1] * 2,
+    equivalentFraction[0]
+  );
 
   return (
     <div>
       <div>
-        Your entry is equivalent to {numerator} / {denominator}
-      </div>
-      <div>
+        Your entry is equivalent to {equivalentFraction[0]} /{" "}
+        {equivalentFraction[1]}
+        <br />
         Generator:{" "}
-        <GetGenerator numerator={numerator} denominator={denominator} /> cents
+        <GetGenerator
+          numerator={equivalentFraction[0]}
+          denominator={equivalentFraction[1]}
+        />
+        <br />
+        <br />
+        The inverse fraction is {inverseFraction[0]} / {inverseFraction[1]}
+        <br />
+        Inverse Generator:{" "}
+        <GetGenerator
+          numerator={inverseFraction[0]}
+          denominator={inverseFraction[1]}
+        />
       </div>
     </div>
   );

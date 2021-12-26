@@ -1,102 +1,51 @@
+import setLTEquivalentFraction from "../util/setLTEquivalentFraction";
 import { GetGenerator } from "./GetGenerator";
 
-export const CalcLTReadout = ({numerator, denominator, setCalculatedNumerator, setCalculatedDenominator}) => {
+export const CalcLTReadout = ({
+  numerator,
+  denominator,
+  stateData,
+  setStateData,
+}) => {
+  const isValidState = () => {
+    return numerator > 0 && denominator > 0;
+  };
+  if (!isValidState()) {
+    // add nullify calculatedNumerator/calculatedDenominator state change
+    return <InvalidState numerator={numerator} denominator={denominator} />;
+  }
 
-        setCalculatedNumerator("")
-        setCalculatedDenominator("")
-    
-    if ((numerator === "") && (denominator === "")) {
-        setCalculatedNumerator("")
-        setCalculatedDenominator("")
-        return <div>Numerator and Denominator Fields are Invalid</div>
-    }
+  setLTEquivalentFraction(numerator, denominator, setStateData);
 
-    if (numerator === "") {
-        setCalculatedNumerator("")
-        setCalculatedDenominator("")
-        return <div>Numerator Field is Invalid</div>
-    }
-
-    if (denominator === "") {
-        setCalculatedNumerator("")
-        setCalculatedDenominator("")
-        return <div>Denominator Field is Invalid</div>
-    }
-
-    // without these two steps, was only evaluating first character in while loop (?)
-    numerator = parseInt(numerator)
-    denominator = parseInt(denominator)
-
-    if ((numerator < 2) && (denominator < 1)) {
-        setCalculatedNumerator("")
-        setCalculatedDenominator("")
-        return <div>Numerator Field is Less than 3 and Denominator Field is Less than 1</div>
-    }
-
-    if (numerator < 2) {
-        setCalculatedNumerator("")
-        setCalculatedDenominator("")
-        return <div>Numerator Field is Less than 3</div>
-    }
-
-    if (denominator < 1) {
-        setCalculatedNumerator("")
-        setCalculatedDenominator("")
-        return <div>Denominator Field is Less than 1</div>
-    }
-
-    while (numerator <= denominator) {
-        numerator *= 2
-    }
-
-    let keepReducing = true
-    if ((numerator % denominator === 0) || (denominator % numerator === 0)) {
-        numerator = 2
-        denominator = 1
-        keepReducing = false
-    }
-
-    if (keepReducing = true) {
-
-        let numeratorGCFList = []
-        for (let i = 2; i < ((numerator / 2) + 1); i++) {
-            if (numerator % i === 0) {
-                numeratorGCFList.push(i)
-            }
-        }
-
-        let denominatorGCFList = []
-        for (let i = 2; i < ((denominator / 2) + 1); i++) {
-            if (denominator % i === 0) {
-                denominatorGCFList.push(i)
-            }
-        }
-
-        let gcfList = numeratorGCFList.filter(factor => denominatorGCFList.includes(factor))
-        let gcf = Math.max(...gcfList)
-
-        if (gcf >= 2) {
-        numerator /= gcf
-        denominator /= gcf
-        }
-
-        while ((denominator * 2) < numerator) {
-            if (numerator % 2 === 0) {
-            numerator /= 2
-            } else break
-        }
-        
-        setCalculatedNumerator(numerator)
-        setCalculatedDenominator(denominator)
-    }
-
-    return (
+  return (
     <div>
-    <div>Your entry is equivalent to {numerator} / {denominator}</div>
-    <div>Generator: <GetGenerator 
-    numerator = {numerator} 
-    denominator = {denominator} /> cents
+      <div>
+        Your entry is equivalent to {numerator} / {denominator}
+      </div>
+      <div>
+        Generator:{" "}
+        <GetGenerator numerator={numerator} denominator={denominator} /> cents
+      </div>
     </div>
+  );
+};
+
+// change GetGenerator to a util since it just does a calc and could be used elsewhere
+
+const InvalidState = ({ numerator, denominator }) => {
+  return (
+    <div>
+      {numerator == "" && denominator === "" && (
+        <p>Enter a Numerator and Denominator</p>
+      )}
+      {numerator === "" && denominator !== "" && <p>Enter a Numerator</p>}
+      {numerator < 1 && numerator !== "" && (
+        <p>Numerator Cannot Be Less than 1</p>
+      )}
+      {denominator === "" && numerator !== "" && <p>Enter a Denominator</p>}
+      {denominator < 1 && denominator !== "" && (
+        <p>Denominator Cannot Be Less than 1</p>
+      )}
     </div>
-    )
-}
+  );
+};

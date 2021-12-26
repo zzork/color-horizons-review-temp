@@ -69,7 +69,16 @@ export const CalcLT = ({ stateData, setStateData }) => {
           value={stateData[1].denominator}
         ></input>
       </p>
-      <p>CalcLTReadout goes here</p>
+      <CalcLTReadout
+        numerator={stateData[1].numerator}
+        denominator={stateData[1].denominator}
+        stateData={stateData}
+        setStateData={setStateData}
+      />
+      <br />
+      <p>Myhill Values Display</p>
+      <p>Step Sizes</p>
+      <br />
       <p>
         Note Amount:{" "}
         <input
@@ -79,18 +88,11 @@ export const CalcLT = ({ stateData, setStateData }) => {
           defaultValue={stateData[1].noteTotal}
         ></input>
       </p>
+      <CalcLTTable
+        numerator={stateData[1].calculatedNumerator}
+        denominator={stateData[1].calculatedDenominator}
+        noteAmount={stateData[1].noteTotal}
+      />
     </div>
   );
-
-  //     <CalcLTReadout
-  //     numerator = {selectedNumerator}
-  //     denominator = {selectedDenominator}
-  //     setCalculatedNumerator = {setCalculatedNumerator}
-  //     setCalculatedDenominator = {setCalculatedDenominator}/>
-
-  //     <CalcLTTable
-  //     numerator = {calculatedNumerator}
-  //     denominator = {calculatedDenominator}
-  //     noteAmount = {selectedNoteAmount}
-  //     />
 };

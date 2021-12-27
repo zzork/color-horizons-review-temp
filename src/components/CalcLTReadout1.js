@@ -1,7 +1,7 @@
 import getSimplestFraction from "../util/getSimplestFraction";
-import { GetGenerator } from "./GetGenerator";
+import getGenerator from "../util/getGenerator";
 
-export const CalcLTReadout = ({
+export const CalcLTReadout1 = ({
   numerator,
   denominator,
   stateData,
@@ -16,10 +16,12 @@ export const CalcLTReadout = ({
   }
 
   const equivalentFraction = getSimplestFraction(numerator, denominator);
+  const mainGenerator = getGenerator(numerator, denominator);
   const inverseFraction = getSimplestFraction(
     equivalentFraction[1] * 2,
     equivalentFraction[0]
   );
+  const inverseGenerator = getGenerator(inverseFraction[0], inverseFraction[1]);
 
   return (
     <div>
@@ -27,20 +29,15 @@ export const CalcLTReadout = ({
         Your entry is equivalent to {equivalentFraction[0]} /{" "}
         {equivalentFraction[1]}
         <br />
-        Generator:{" "}
-        <GetGenerator
-          numerator={equivalentFraction[0]}
-          denominator={equivalentFraction[1]}
-        />
+        Generator: {mainGenerator.toFixed(5)}
         <br />
         <br />
         The inverse fraction is {inverseFraction[0]} / {inverseFraction[1]}
         <br />
-        Inverse Generator:{" "}
-        <GetGenerator
-          numerator={inverseFraction[0]}
-          denominator={inverseFraction[1]}
-        />
+        Inverse Generator: {inverseGenerator.toFixed(5)}
+        <br />
+        <p>Implement a Flip Button Here</p>
+        <p>Myhill Values Display???</p>
       </div>
     </div>
   );

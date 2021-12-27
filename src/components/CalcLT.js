@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CalcLTReadout } from "./CalcLTReadout";
+import { CalcLTReadout1 } from "./CalcLTReadout1";
 import { CalcLTTable } from "./CalcLTTable";
 
 export const CalcLT = ({ stateData, setStateData }) => {
@@ -69,15 +69,12 @@ export const CalcLT = ({ stateData, setStateData }) => {
           value={stateData[1].denominator}
         ></input>
       </p>
-      <CalcLTReadout
+      <CalcLTReadout1
         numerator={stateData[1].numerator}
         denominator={stateData[1].denominator}
         stateData={stateData}
         setStateData={setStateData}
       />
-      <br />
-      <p>Myhill Values Display</p>
-      <br />
       <p>
         Note Amount:{" "}
         <input

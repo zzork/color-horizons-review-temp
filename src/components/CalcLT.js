@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { CalcLTReadout1 } from "./CalcLTReadout1";
-import { CalcLTTable } from "./CalcLTTable";
+import { CalcLTReadout } from "./CalcLTReadout";
+import { CalcLTReadout2 } from "./CalcLTReadout2";
 
 export const CalcLT = ({ stateData, setStateData }) => {
   // there must be a better way to handle this giant, repetitive block
@@ -48,6 +48,10 @@ export const CalcLT = ({ stateData, setStateData }) => {
     }
   };
 
+  // state data change in readout 1 calculations need to go here
+  // this is the only place where state changes should occur
+  // calculations in deeper sections should occur here and be passed in!
+
   return (
     <div>
       <h2>Linear Temperament</h2>
@@ -69,12 +73,6 @@ export const CalcLT = ({ stateData, setStateData }) => {
           value={stateData[1].denominator}
         ></input>
       </p>
-      <CalcLTReadout1
-        numerator={stateData[1].numerator}
-        denominator={stateData[1].denominator}
-        stateData={stateData}
-        setStateData={setStateData}
-      />
       <p>
         Note Amount:{" "}
         <input
@@ -84,8 +82,14 @@ export const CalcLT = ({ stateData, setStateData }) => {
           defaultValue={stateData[1].noteTotal}
         ></input>
       </p>
+      <CalcLTReadout
+        numerator={stateData[1].numerator}
+        denominator={stateData[1].denominator}
+        stateData={stateData}
+        setStateData={setStateData}
+      />
       <p>Step Sizes</p>
-      <CalcLTTable
+      <CalcLTReadout2
         numerator={stateData[1].calculatedNumerator}
         denominator={stateData[1].calculatedDenominator}
         noteAmount={stateData[1].noteTotal}

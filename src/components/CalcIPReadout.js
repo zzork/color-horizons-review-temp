@@ -28,10 +28,6 @@ export const CalcIPReadout = ({ pattern }) => {
   );
 };
 
-// IMPORTANT
-// putting the .toFixed(5) in the DISPLAY TABLE like here is the correct place for it for calc purposes
-// now is correct in edo, need to fix LT
-
 const InvalidState = ({ value }) => {
   return (
     <div>

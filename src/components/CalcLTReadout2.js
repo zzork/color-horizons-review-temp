@@ -1,4 +1,4 @@
-export const CalcLTTable = ({ numerator, denominator, noteAmount }) => {
+export const CalcLTReadout2 = ({ numerator, denominator, noteAmount }) => {
   let stepsValuesList = [];
 
   for (let i = 0; i < noteAmount; i++) {

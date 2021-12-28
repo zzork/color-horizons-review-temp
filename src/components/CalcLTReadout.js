@@ -1,7 +1,8 @@
 import getSimplestFraction from "../util/getSimplestFraction";
 import getGenerator from "../util/getGenerator";
+import getMos from "../util/getMos";
 
-export const CalcLTReadout1 = ({
+export const CalcLTReadout = ({
   numerator,
   denominator,
   stateData,
@@ -16,12 +17,31 @@ export const CalcLTReadout1 = ({
   }
 
   const equivalentFraction = getSimplestFraction(numerator, denominator);
+
+  // let newState = stateData.map((scaleType) => {
+  //   if (scaleType.id === "b") {
+  //     return {
+  //       ...scaleType,
+  //       calculatedNumerator: equivalentFraction[0],
+  //       calculatedDenominator: equivalentFraction[1],
+  //     };
+  //   }
+  //   return scaleType;
+  // });
+  // setStateData(newState);
+  // SETSTATEDATA is causing an infinite loop
+  // problem is what J was saying before, this needs to just display info, not calculate and display it at once
+
   const mainGenerator = getGenerator(numerator, denominator);
   const inverseFraction = getSimplestFraction(
     equivalentFraction[1] * 2,
     equivalentFraction[0]
   );
   const inverseGenerator = getGenerator(inverseFraction[0], inverseFraction[1]);
+  const momentsOfSymmetry = getMos(
+    equivalentFraction[0],
+    equivalentFraction[1]
+  );
 
   return (
     <div>
@@ -37,13 +57,14 @@ export const CalcLTReadout1 = ({
         Inverse Generator: {inverseGenerator.toFixed(5)}
         <br />
         <p>Implement a Flip Button Here</p>
-        <p>Myhill Values Display???</p>
+        <p>
+          Moments of Symmetry <br />
+          {momentsOfSymmetry}
+        </p>
       </div>
     </div>
   );
 };
-
-// change GetGenerator to a util since it just does a calc and could be used elsewhere
 
 const InvalidState = ({ numerator, denominator }) => {
   return (

@@ -1,4 +1,7 @@
 const getMos = (numerator, denominator) => {
+  if (numerator % denominator === 0) {
+    return "no";
+  }
   const log2 = Math.log(numerator / denominator) / Math.log(2);
   const intergerList = [];
   let outcome = 1 / log2;
@@ -18,14 +21,39 @@ const getMos = (numerator, denominator) => {
   for (let i = 0; i <= intergerList[0]; i++) {
     mos += 1;
     freshmanSums.push(mos);
-    if (mos === intergerList[0] - 1) {
+    if (i === intergerList[0] - 1) {
       nextFreshmanSummer = mos;
     }
   }
 
-  console.log(freshmanSums);
+  let freshmanSummer = nextFreshmanSummer;
 
-  return 3;
+  for (let i = 0; i < intergerList[1]; i++) {
+    mos += freshmanSummer;
+    freshmanSums.push(mos);
+    if (i === intergerList[1] - 2) {
+      nextFreshmanSummer = mos;
+    }
+  }
+
+  freshmanSummer = nextFreshmanSummer;
+
+  for (let i = 0; i < intergerList[2]; i++) {
+    mos += freshmanSummer;
+    freshmanSums.push(mos);
+    if (i === intergerList[2] - 2) {
+      nextFreshmanSummer = mos;
+    }
+  }
+
+  // OK so why does first iteration need to look different than second+?
+  // implement a proper loop for rest
+  // fix the "no" display, just don't display flip or MOS when nonsense
+  // display needs improvement, currently 1234591322314049586776859410
+  // also should truncate at some point...
+  // BUT OVERALL IS WORKING!!
+
+  return freshmanSums;
 };
 
 export default getMos;

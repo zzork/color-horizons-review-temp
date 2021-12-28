@@ -49,11 +49,12 @@ const getMos = (numerator, denominator) => {
   // OK so why does first iteration need to look different than second+?
   // implement a proper loop for rest
   // fix the "no" display, just don't display flip or MOS when nonsense
-  // display needs improvement, currently 1234591322314049586776859410
   // also should truncate at some point...
   // BUT OVERALL IS WORKING!!
 
-  return freshmanSums;
+  // should this be here, or should it live elsewhere?
+  let readout = freshmanSums.join(", ");
+  return readout;
 };
 
 export default getMos;

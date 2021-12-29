@@ -47,6 +47,19 @@ export const CalcLT = ({ stateData, setStateData }) => {
       setStateData(newState);
     }
   };
+  const handleInvertClick = (inverseFraction) => {
+    let newState = stateData.map((scaleType) => {
+      if (scaleType.id === "b") {
+        return {
+          ...scaleType,
+          numerator: inverseFraction[0],
+          denominator: inverseFraction[1],
+        };
+      }
+      return scaleType;
+    });
+    setStateData(newState);
+  };
 
   // state data change in readout 1 calculations need to go here
   // this is the only place where state changes should occur
@@ -78,6 +91,7 @@ export const CalcLT = ({ stateData, setStateData }) => {
         denominator={stateData[1].denominator}
         stateData={stateData}
         setStateData={setStateData}
+        handleInvertClick={handleInvertClick}
       />
       <p>
         Note Amount:{" "}

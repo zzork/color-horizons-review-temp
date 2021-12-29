@@ -7,12 +7,12 @@ export const CalcLTReadout1 = ({
   denominator,
   stateData,
   setStateData,
+  handleInvertClick,
 }) => {
   const isValidState = () => {
     return numerator > 0 && denominator > 0;
   };
   if (!isValidState()) {
-    // add nullify calculatedNumerator/calculatedDenominator state change
     return <InvalidState numerator={numerator} denominator={denominator} />;
   }
 
@@ -46,7 +46,9 @@ export const CalcLTReadout1 = ({
         Inverse Generator: {inverseGenerator.toFixed(5)}
         <br />
         <br />
-        <button>Invert Generator</button>
+        <button onClick={() => handleInvertClick(inverseFraction)}>
+          Invert Generator
+        </button>
         <p>
           Moments of Symmetry <br />
           {momentsOfSymmetry.join(", ")}

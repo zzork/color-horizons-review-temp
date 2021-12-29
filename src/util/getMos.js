@@ -12,35 +12,18 @@ const getMos = (numerator, denominator) => {
     outcome = 1 / outcome; // run the 1/x again, then loop... working!
   }
 
-  // 3, 9, 2, 2, 4, 6
+  let freshmanSums = [1];
 
-  let mos = 0;
-  let freshmanSums = [];
-  let nextFreshmanSummer = 0;
+  let mos = 1;
+  let addValue = 1;
 
-  for (let i = 0; i <= intergerList[0]; i++) {
-    mos += 1;
-    freshmanSums.push(mos);
-    if (i === intergerList[0] - 1) {
-      nextFreshmanSummer = mos;
-    }
-  }
-
-  for (let j = 1; j <= intergerList.length; j++) {
-    let freshmanSummer = nextFreshmanSummer;
-
-    for (let i = 0; i < intergerList[j]; i++) {
-      mos += freshmanSummer;
+  for (let h = 0; h < intergerList.length; h++) {
+    for (let i = 0; i < intergerList[h]; i++) {
+      mos += addValue;
       freshmanSums.push(mos);
-      if (i === intergerList[j] - 2) {
-        nextFreshmanSummer = mos;
-      }
     }
+    addValue = freshmanSums[freshmanSums.length - 2];
   }
-
-  // OK so why does first iteration need to look different than second+?
-  // also should truncate at some point...
-  // BUT OVERALL IS WORKING!!
 
   freshmanSums.shift();
 

@@ -6,6 +6,7 @@ export const CalcLTReadout1 = ({
   numerator,
   denominator,
   handleInvertClick,
+  handleMOSClick,
 }) => {
   const isValidState = () => {
     return numerator > 0 && denominator > 0;
@@ -26,7 +27,9 @@ export const CalcLTReadout1 = ({
     equivalentFraction[1]
   );
 
-  const mosButtons = momentsOfSymmetry.map((value) => <button>{value}</button>);
+  const mosButtons = momentsOfSymmetry.map((value) => (
+    <button onClick={() => handleMOSClick(value)}>{value}</button>
+  ));
 
   // this should be caught by invalid state
   if (equivalentFraction[0] === 2 && equivalentFraction[1] === 1) {
@@ -52,10 +55,7 @@ export const CalcLTReadout1 = ({
         </button>
         <p>
           Moments of Symmetry <br />
-          Almost works, FIX IT
-          <br />
           {mosButtons}
-          {/* {momentsOfSymmetry.join(", ")} */}
         </p>
       </div>
     </div>

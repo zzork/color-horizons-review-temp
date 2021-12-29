@@ -61,11 +61,24 @@ export const CalcLT = ({ stateData, setStateData }) => {
     setStateData(newState);
   };
 
+  const handleMOSClick = (value) => {
+    let newState = stateData.map((scaleType) => {
+      if (scaleType.id === "b") {
+        return {
+          ...scaleType,
+          noteTotal: value,
+        };
+      }
+      return scaleType;
+    });
+    setStateData(newState);
+  };
+
   // BIG PROBLEM
   // 3/2 and 4/3 return DIFFERENT MOS
   // 3/2 is INCORRECT
   // all others tested seem to be correct
-  // ...12/11 gets wrong at MOS23
+  // nope... 12/11 gets wrong at MOS23
 
   return (
     <div>
@@ -92,6 +105,7 @@ export const CalcLT = ({ stateData, setStateData }) => {
         numerator={stateData[1].numerator}
         denominator={stateData[1].denominator}
         handleInvertClick={handleInvertClick}
+        handleMOSClick={handleMOSClick}
       />
       <p>
         Note Amount:{" "}
@@ -99,7 +113,7 @@ export const CalcLT = ({ stateData, setStateData }) => {
           onChange={handleChange}
           type="number"
           name="ltNoteTotal"
-          defaultValue={stateData[1].noteTotal}
+          value={stateData[1].noteTotal}
         ></input>
       </p>
       <CalcLTReadout2

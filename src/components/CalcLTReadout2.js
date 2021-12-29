@@ -60,7 +60,6 @@ export const CalcLTReadout2 = ({ numerator, denominator, noteAmount }) => {
     ]);
   }
   stepsValuesAndDifferences[0][1] = "";
-  console.log(stepsValuesAndDifferences[0][1]);
 
   // uniques display logic
   let uniquesDisplay = null;

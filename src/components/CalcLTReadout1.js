@@ -26,6 +26,9 @@ export const CalcLTReadout1 = ({
     equivalentFraction[1]
   );
 
+  const mosButtons = momentsOfSymmetry.map((value) => <button>{value}</button>);
+
+  // this should be caught by invalid state
   if (equivalentFraction[0] === 2 && equivalentFraction[1] === 1) {
     return "Your entry is equivalent to 2/1";
   }
@@ -51,7 +54,8 @@ export const CalcLTReadout1 = ({
           Moments of Symmetry <br />
           Almost works, FIX IT
           <br />
-          {momentsOfSymmetry.join(", ")}
+          {mosButtons}
+          {/* {momentsOfSymmetry.join(", ")} */}
         </p>
       </div>
     </div>

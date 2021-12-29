@@ -38,7 +38,7 @@ export const CalcLTReadout2 = ({ numerator, denominator, noteAmount }) => {
       return "L";
     }
     if (value === mSize) {
-      return "m";
+      return "𝚖";
     }
     if (value === sSize) {
       return "s";
@@ -55,10 +55,12 @@ export const CalcLTReadout2 = ({ numerator, denominator, noteAmount }) => {
   for (let i = 0; i < stepsValuesList.length; i++) {
     stepsValuesAndDifferences.push([
       stepsValuesList[i],
-      stepDifferences[i],
+      stepDifferences[i].toFixed(5),
       lmsList[i],
     ]);
   }
+  stepsValuesAndDifferences[0][1] = "";
+  console.log(stepsValuesAndDifferences[0][1]);
 
   // uniques display logic
   let uniquesDisplay = null;
@@ -83,13 +85,11 @@ export const CalcLTReadout2 = ({ numerator, denominator, noteAmount }) => {
     );
   }
 
-  // then how do I turn stepDifferences into e.g. LLsLLss readout?
-
   let stepValuesDisplay = stepsValuesAndDifferences.map((value, index) => (
     <tr key={index}>
       <td>Step {index}</td>
       <td align="center">{value[0].toFixed(5)}</td>
-      <td align="center">{value[1].toFixed(5)}</td>
+      <td align="center">{value[1]}</td>
       <td align="center">{value[2]}</td>
     </tr>
   ));
@@ -102,7 +102,7 @@ export const CalcLTReadout2 = ({ numerator, denominator, noteAmount }) => {
 
   return (
     <div>
-      {lmsList}
+      <h3>{lmsList}</h3>
       <p>Step Sizes</p>
       {uniquesDisplay} <br />
       {finalTable}

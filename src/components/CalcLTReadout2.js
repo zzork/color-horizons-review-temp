@@ -8,8 +8,14 @@ export const CalcLTReadout2 = ({ numerator, denominator, noteAmount }) => {
   for (let i = 1; i < stepsValuesList.length; i++) {
     stepDifferences.push(stepsValuesList[i] - stepsValuesList[i - 1]);
   }
-  // zip stepDifferences and stepsValuesList together and you've got the proper table readout
 
+  // zip them together for the readout
+  let stepsValuesAndDifferences = [];
+  for (let i = 0; i < stepsValuesList.length; i++) {
+    stepsValuesAndDifferences.push([stepsValuesList[i], stepDifferences[i]]);
+  }
+
+  // get unique values for step sizes display
   let fixedStepsList = stepDifferences.map((step) => step.toFixed(5));
   const uniqueSteps = [...new Set(fixedStepsList)];
   uniqueSteps.shift();
@@ -40,20 +46,13 @@ export const CalcLTReadout2 = ({ numerator, denominator, noteAmount }) => {
     );
   }
 
-  {
-    /* let uniquesDisplay = sortedUnique.map((value, index) => (
-    <div>
-      Size {index + 1} - {value}
-    </div>
-  )); */
-  }
-
   // then how do I turn stepDifferences into e.g. LLsLLss readout?
 
-  let stepValuesDisplay = stepsValuesList.map((value, index) => (
+  let stepValuesDisplay = stepsValuesAndDifferences.map((value, index) => (
     <tr key={index}>
       <td>Step {index}</td>
-      <td align="right">{value.toFixed(5)}</td>
+      <td align="center">{value[0].toFixed(5)}</td>
+      <td align="right">{value[1].toFixed(5)}</td>
     </tr>
   ));
 

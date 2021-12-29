@@ -89,8 +89,6 @@ export const CalcLT = ({ stateData, setStateData }) => {
       <CalcLTReadout1
         numerator={stateData[1].numerator}
         denominator={stateData[1].denominator}
-        stateData={stateData}
-        setStateData={setStateData}
         handleInvertClick={handleInvertClick}
       />
       <p>
@@ -103,11 +101,11 @@ export const CalcLT = ({ stateData, setStateData }) => {
         ></input>
       </p>
       <p>Step Sizes</p>
-      {/* <CalcLTReadout2
-        numerator={stateData[1].calculatedNumerator}
-        denominator={stateData[1].calculatedDenominator}
+      <CalcLTReadout2
+        numerator={stateData[1].numerator}
+        denominator={stateData[1].denominator}
         noteAmount={stateData[1].noteTotal}
-      /> */}
+      />
       <br />
       This table should show ratios as well
     </div>

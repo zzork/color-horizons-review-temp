@@ -5,8 +5,6 @@ import getMos from "../util/getMos";
 export const CalcLTReadout1 = ({
   numerator,
   denominator,
-  stateData,
-  setStateData,
   handleInvertClick,
 }) => {
   const isValidState = () => {

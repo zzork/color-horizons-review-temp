@@ -1,12 +1,12 @@
 const getMos = (numerator, denominator) => {
   if (numerator % denominator === 0) {
-    return "no";
+    return ["Not Applicable"];
   }
   const log2 = Math.log(numerator / denominator) / Math.log(2);
   const intergerList = [];
   let outcome = 1 / log2;
 
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 10; i++) {
     intergerList.push(Math.floor(outcome)); // add the interger to the list
     outcome -= Math.floor(outcome); // remove the interger and keep the decimal outcome
     outcome = 1 / outcome; // run the 1/x again, then loop... working!
@@ -26,35 +26,27 @@ const getMos = (numerator, denominator) => {
     }
   }
 
-  let freshmanSummer = nextFreshmanSummer;
+  for (let j = 1; j <= intergerList.length; j++) {
+    let freshmanSummer = nextFreshmanSummer;
 
-  for (let i = 0; i < intergerList[1]; i++) {
-    mos += freshmanSummer;
-    freshmanSums.push(mos);
-    if (i === intergerList[1] - 2) {
-      nextFreshmanSummer = mos;
-    }
-  }
-
-  freshmanSummer = nextFreshmanSummer;
-
-  for (let i = 0; i < intergerList[2]; i++) {
-    mos += freshmanSummer;
-    freshmanSums.push(mos);
-    if (i === intergerList[2] - 2) {
-      nextFreshmanSummer = mos;
+    for (let i = 0; i < intergerList[j]; i++) {
+      mos += freshmanSummer;
+      freshmanSums.push(mos);
+      if (i === intergerList[j] - 2) {
+        nextFreshmanSummer = mos;
+      }
     }
   }
 
   // OK so why does first iteration need to look different than second+?
-  // implement a proper loop for rest
-  // fix the "no" display, just don't display flip or MOS when nonsense
   // also should truncate at some point...
   // BUT OVERALL IS WORKING!!
 
-  // should this be here, or should it live elsewhere?
-  let readout = freshmanSums.join(", ");
-  return readout;
+  freshmanSums.shift();
+
+  const lessThan200 = freshmanSums.filter((value) => value < 201);
+
+  return lessThan200;
 };
 
 export default getMos;

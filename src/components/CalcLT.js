@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CalcLTReadout } from "./CalcLTReadout";
+import { CalcLTReadout1 } from "./CalcLTReadout1";
 import { CalcLTReadout2 } from "./CalcLTReadout2";
 
 export const CalcLT = ({ stateData, setStateData }) => {
@@ -73,7 +73,7 @@ export const CalcLT = ({ stateData, setStateData }) => {
           value={stateData[1].denominator}
         ></input>
       </p>
-      <CalcLTReadout
+      <CalcLTReadout1
         numerator={stateData[1].numerator}
         denominator={stateData[1].denominator}
         stateData={stateData}

@@ -2,7 +2,7 @@ import getSimplestFraction from "../util/getSimplestFraction";
 import getGenerator from "../util/getGenerator";
 import getMos from "../util/getMos";
 
-export const CalcLTReadout = ({
+export const CalcLTReadout1 = ({
   numerator,
   denominator,
   stateData,
@@ -17,21 +17,6 @@ export const CalcLTReadout = ({
   }
 
   const equivalentFraction = getSimplestFraction(numerator, denominator);
-
-  // let newState = stateData.map((scaleType) => {
-  //   if (scaleType.id === "b") {
-  //     return {
-  //       ...scaleType,
-  //       calculatedNumerator: equivalentFraction[0],
-  //       calculatedDenominator: equivalentFraction[1],
-  //     };
-  //   }
-  //   return scaleType;
-  // });
-  // setStateData(newState);
-  // SETSTATEDATA is causing an infinite loop
-  // problem is what J was saying before, this needs to just display info, not calculate and display it at once
-
   const mainGenerator = getGenerator(numerator, denominator);
   const inverseFraction = getSimplestFraction(
     equivalentFraction[1] * 2,
@@ -42,6 +27,10 @@ export const CalcLTReadout = ({
     equivalentFraction[0],
     equivalentFraction[1]
   );
+
+  if (equivalentFraction[0] === 2 && equivalentFraction[1] === 1) {
+    return "Your entry is equivalent to 2/1";
+  }
 
   return (
     <div>
@@ -56,10 +45,11 @@ export const CalcLTReadout = ({
         <br />
         Inverse Generator: {inverseGenerator.toFixed(5)}
         <br />
-        <p>Implement a Flip Button Here</p>
+        <br />
+        <button>Invert Generator</button>
         <p>
           Moments of Symmetry <br />
-          {momentsOfSymmetry}
+          {momentsOfSymmetry.join(", ")}
         </p>
       </div>
     </div>
@@ -69,7 +59,7 @@ export const CalcLTReadout = ({
 const InvalidState = ({ numerator, denominator }) => {
   return (
     <div>
-      {numerator == "" && denominator === "" && (
+      {numerator === "" && denominator === "" && (
         <p>Enter a Numerator and Denominator</p>
       )}
       {numerator === "" && denominator !== "" && <p>Enter a Numerator</p>}

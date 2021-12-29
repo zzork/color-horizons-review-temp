@@ -1,4 +1,4 @@
-const getSimplestFraction = (numerator, denominator, getStateData) => {
+const getSimplestFraction = (numerator, denominator) => {
   // without these two steps, was only evaluating first character in while loop (?)
   numerator = parseInt(numerator);
   denominator = parseInt(denominator);
@@ -7,13 +7,6 @@ const getSimplestFraction = (numerator, denominator, getStateData) => {
   while (numerator <= denominator) {
     numerator *= 2;
   }
-
-  // let keepReducing = true;
-  // if (numerator % denominator === 0 || denominator % numerator === 0) {
-  //   numerator = 2;
-  //   denominator = 1;
-  //   keepReducing = false;
-  // }
 
   // get all factors of num
   let numeratorGCFList = [];
@@ -30,6 +23,7 @@ const getSimplestFraction = (numerator, denominator, getStateData) => {
       denominatorGCFList.push(i);
     }
   }
+  denominatorGCFList.push(denominator);
 
   // create a list of what factors are in both
   let gcfList = numeratorGCFList.filter((factor) =>

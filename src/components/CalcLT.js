@@ -107,8 +107,11 @@ export const CalcLT = ({ stateData, setStateData }) => {
         denominator={stateData[1].denominator}
         noteAmount={stateData[1].noteTotal}
       />
-      <br />
-      This table should show ratios as well
+      <p>This table should show ratios as well</p>
+      <p>
+        Crashing at less than zero because values getting calc'd in
+        calcltreadout2 as well
+      </p>
     </div>
   );
 };

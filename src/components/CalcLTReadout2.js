@@ -16,11 +16,37 @@ export const CalcLTReadout2 = ({ numerator, denominator, noteAmount }) => {
   let sortedUnique = [...uniqueSteps];
   sortedUnique.sort((a, b) => a - b);
   sortedUnique.reverse();
-  let uniquesDisplay = sortedUnique.map((value, index) => (
+
+  // uniques display logic
+  let uniquesDisplay = null;
+  if (sortedUnique.length < 2) {
+    uniquesDisplay = <div>Not enough notes</div>;
+  }
+  if (sortedUnique.length === 2) {
+    uniquesDisplay = (
+      <div>
+        L - {sortedUnique[0]}
+        <br />s - {sortedUnique[1]}
+      </div>
+    );
+  }
+  if (sortedUnique.length === 3) {
+    uniquesDisplay = (
+      <div>
+        L - {sortedUnique[0]}
+        <br />m - {sortedUnique[1]}
+        <br />s - {sortedUnique[2]}
+      </div>
+    );
+  }
+
+  {
+    /* let uniquesDisplay = sortedUnique.map((value, index) => (
     <div>
       Size {index + 1} - {value}
     </div>
-  ));
+  )); */
+  }
 
   // then how do I turn stepDifferences into e.g. LLsLLss readout?
 

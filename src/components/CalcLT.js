@@ -61,9 +61,11 @@ export const CalcLT = ({ stateData, setStateData }) => {
     setStateData(newState);
   };
 
-  // state data change in readout 1 calculations need to go here
-  // this is the only place where state changes should occur
-  // calculations in deeper sections should occur here and be passed in!
+  // BIG PROBLEM
+  // 3/2 and 4/3 return DIFFERENT MOS
+  // 3/2 is INCORRECT
+  // all others tested seem to be correct
+  // ...12/11 gets wrong at MOS23
 
   return (
     <div>
@@ -100,7 +102,6 @@ export const CalcLT = ({ stateData, setStateData }) => {
           defaultValue={stateData[1].noteTotal}
         ></input>
       </p>
-      <p>Step Sizes</p>
       <CalcLTReadout2
         numerator={stateData[1].numerator}
         denominator={stateData[1].denominator}

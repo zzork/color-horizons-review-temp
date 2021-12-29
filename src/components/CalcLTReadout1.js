@@ -49,7 +49,8 @@ export const CalcLTReadout1 = ({
         </button>
         <p>
           Moments of Symmetry <br />
-          {momentsOfSymmetry.join(", ")}
+          Almost works, disabled for now
+          {/* {momentsOfSymmetry.join(", ")} */}
         </p>
       </div>
     </div>

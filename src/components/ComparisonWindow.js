@@ -1,7 +1,9 @@
 import { ratioTable } from "../ratioTable";
 
 export const ComparisonWindow = ({ scale }) => {
-  let justFraction = ratioTable[0].cents;
+  let ratioTableEntry = ratioTable[0];
+
+  let justFraction = ratioTableEntry.cents;
 
   let closestValue = null;
   let leastDifference = 1201;
@@ -27,5 +29,16 @@ export const ComparisonWindow = ({ scale }) => {
 };
 
 // THIS SHOULD BE A FUNCTION
-// TAKING INPUT OF SCALE AND JUST FRACTION
-// THEN RETURNING A LIST OF THE RELEVANT INFO IN THE RETURN SECTION
+
+// TAKING INPUT OF
+// ---SCALE---
+// ---JUST FRACTION---
+
+// THEN RETURNING...
+// ---THE JUST FRACTION---
+// ---THE JUST FRACTION IN CENTS---
+// ---WHICH STEP OF THE SCALE IS CLOSEST---
+// ---WHAT THE VALUE OF THAT STEP IS---
+// ---HOW MANT CENTS OFF IT IS
+
+// AS A BASIC LIST

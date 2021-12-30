@@ -16,7 +16,10 @@ export const CalcLTReadout1 = ({
   }
 
   const equivalentFraction = getSimplestFraction(numerator, denominator);
-  const mainGenerator = getGenerator(numerator, denominator);
+  const mainGenerator = getGenerator(
+    equivalentFraction[0],
+    equivalentFraction[1]
+  );
   const inverseFraction = getSimplestFraction(
     equivalentFraction[1] * 2,
     equivalentFraction[0]
@@ -32,6 +35,9 @@ export const CalcLTReadout1 = ({
   ));
 
   // this should be caught by invalid state
+  if (numerator === denominator) {
+    return "Numerator and Denominator are Identical";
+  }
   if (equivalentFraction[0] === 2 && equivalentFraction[1] === 1) {
     return "Your entry is equivalent to 2/1";
   }

@@ -74,12 +74,6 @@ export const CalcLT = ({ stateData, setStateData }) => {
     setStateData(newState);
   };
 
-  // BIG PROBLEM
-  // 3/2 and 4/3 return DIFFERENT MOS
-  // 3/2 is INCORRECT
-  // all others tested seem to be correct
-  // nope... 12/11 gets wrong at MOS23
-
   return (
     <div>
       <h2>Linear Temperament</h2>

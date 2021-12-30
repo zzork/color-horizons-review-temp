@@ -24,3 +24,9 @@ function App() {
 }
 
 export default App;
+
+// TO ADD
+
+// refactor calcLTReadout2
+
+// LT table should show fraction values as well as cents, and reduced fraction values

@@ -3,6 +3,10 @@ const getSimplestFraction = (numerator, denominator) => {
   numerator = parseInt(numerator);
   denominator = parseInt(denominator);
 
+  if (numerator < 1 || denominator < 1) {
+    return [1, 1];
+  }
+
   // ensure numerator larger than denominator
   while (numerator <= denominator) {
     numerator *= 2;

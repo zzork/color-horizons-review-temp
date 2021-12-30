@@ -1,6 +1,18 @@
 import getLTStepValuesList from "../util/getLTStepValuesList";
+import getSimplestFraction from "../util/getSimplestFraction";
 
 export const CalcLTReadout2 = ({ numerator, denominator, noteAmount }) => {
+  const simplestFraction = getSimplestFraction(numerator, denominator);
+  const numDomGreaterZero = numerator > 0 && denominator > 0;
+  const fraction2over1 = simplestFraction[0] === 2 && simplestFraction[1] === 1;
+
+  const isValidState = () => {
+    return numDomGreaterZero && !fraction2over1;
+  };
+  if (!isValidState()) {
+    return <InvalidState numerator={numerator} denominator={denominator} />;
+  }
+
   let stepsValuesList = getLTStepValuesList(numerator, denominator, noteAmount);
 
   // gives us a list of sizes between each step, complete
@@ -107,4 +119,8 @@ export const CalcLTReadout2 = ({ numerator, denominator, noteAmount }) => {
       {finalTable}
     </div>
   );
+};
+
+const InvalidState = ({ numerator, denominator }) => {
+  return <div></div>;
 };

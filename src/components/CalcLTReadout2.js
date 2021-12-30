@@ -6,6 +6,7 @@ import getStepDifferences from "../util/getStepDifferences";
 import getStepsValuesAndDifferences from "../util/getStepsValuesAndDifferences";
 import getUniquesDisplay from "../util/getUniquesDisplay";
 import getUniqueSteps from "../util/getUniqueSteps";
+import { ComparisonWindow } from "./ComparisonWindow";
 
 export const CalcLTReadout2 = ({ numerator, denominator, noteAmount }) => {
   const simplestFraction = getSimplestFraction(numerator, denominator);
@@ -43,6 +44,11 @@ export const CalcLTReadout2 = ({ numerator, denominator, noteAmount }) => {
       <table>
         <tbody>{stepValuesDisplay}</tbody>
       </table>
+      <br />
+      <ComparisonWindow scale={stepsValuesList} />
+      <br />
+      <br />
+      <br />
       <br />
     </div>
   );

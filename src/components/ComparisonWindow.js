@@ -10,6 +10,24 @@ export const ComparisonWindow = ({ scale, selectedComparison }) => {
   if (selectedComparison === "harmonics") {
     comparisonTable = ratioTable.filter((entry) => entry.harmonics === true);
   }
+  if (selectedComparison === "3") {
+    comparisonTable = ratioTable.filter((entry) => entry.primeLimit === 3);
+  }
+  if (selectedComparison === "5") {
+    comparisonTable = ratioTable.filter((entry) => entry.primeLimit <= 5);
+  }
+  if (selectedComparison === "7") {
+    comparisonTable = ratioTable.filter((entry) => entry.primeLimit <= 7);
+  }
+  if (selectedComparison === "11") {
+    comparisonTable = ratioTable.filter((entry) => entry.primeLimit <= 11);
+  }
+  if (selectedComparison === "13") {
+    comparisonTable = ratioTable.filter((entry) => entry.primeLimit <= 13);
+  }
+  if (selectedComparison === "17") {
+    comparisonTable = ratioTable.filter((entry) => entry.primeLimit <= 17);
+  }
 
   let rows = [];
   for (let i = 0; i < comparisonTable.length; i++) {

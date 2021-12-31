@@ -1,6 +1,7 @@
 import getDisplayEdoStepValues from "../util/getDisplayEdoStepValues";
+import { ComparisonWindow } from "./ComparisonWindow";
 
-export const CalcEDOReadout = ({ edo }) => {
+export const CalcEDOReadout = ({ edo, selectedComparison }) => {
   const isValidState = () => {
     return edo > 0;
   };
@@ -27,6 +28,11 @@ export const CalcEDOReadout = ({ edo }) => {
           })}
         </tbody>
       </table>
+      <br />
+      <ComparisonWindow
+        scale={displaySteps}
+        selectedComparison={selectedComparison}
+      />
     </div>
   );
 };

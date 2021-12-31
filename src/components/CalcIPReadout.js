@@ -3,8 +3,9 @@ import getEdoFromIntervalPattern from "../util/getEdoFromIntervalPattern";
 import getIPStepValuesList from "../util/getIPStepValuesList";
 import getIPUniqueSizes from "../util/getIPUniqueSizes";
 import getReadoutTable from "../util/getReadoutTable";
+import { ComparisonWindow } from "./ComparisonWindow";
 
-export const CalcIPReadout = ({ pattern }) => {
+export const CalcIPReadout = ({ pattern, selectedComparison }) => {
   const isValidState = () => {
     return pattern > 0;
   };
@@ -24,6 +25,11 @@ export const CalcIPReadout = ({ pattern }) => {
       <h4>EDO Step Size = {stepSize.toFixed(5)} cents</h4>
       <h4>{uniqueSizes}</h4>
       {readoutTable}
+      <br />
+      <ComparisonWindow
+        scale={stepValuesList}
+        selectedComparison={selectedComparison}
+      />
     </div>
   );
 };

@@ -3,10 +3,11 @@ import React, { useState } from "react";
 import { Selector } from "./components/Selector";
 import { CalculatorWindow } from "./components/CalculatorWindow";
 import { stateTable } from "./stateData";
+import { ComparisonOptions } from "./components/ComparisonOptions";
 
 function App() {
   const [stateData, setStateData] = useState(stateTable);
-  const [selectedView, setSelectedView] = useState("edo");
+  const [selectedView, setSelectedView] = useState("lt");
   const onSelect = (viewId) => {
     setSelectedView(viewId);
   };
@@ -14,6 +15,7 @@ function App() {
     <div>
       <h1>Microtonal Calculators</h1>
       <Selector onSelect={onSelect} />
+      <ComparisonOptions />
       <CalculatorWindow
         viewId={selectedView}
         stateData={stateData}

@@ -1,45 +1,80 @@
 import { ratioTable } from "../ratioTable";
+import getComparisonEntryValues from "../util/getComparisonEntryValues";
 
 export const ComparisonWindow = ({ scale, selectedComparison }) => {
-  console.log(selectedComparison);
+  let comparisonTable = [];
 
-  let ratioTableEntry = ratioTable[0];
-
-  let justFraction = ratioTableEntry.cents;
-  let closestValue = null;
-  let leastDifference = 1201;
-  let leastDifferenceAbsolute = 1201;
-  let closestScaleStep = null;
-  for (let i = 0; i < scale.length; i++) {
-    let differenceOnIterationAbsolute = Math.abs(scale[i] - justFraction);
-    let differenceOnIteration = scale[i] - justFraction;
-    if (differenceOnIterationAbsolute < leastDifferenceAbsolute) {
-      closestValue = scale[i];
-      leastDifference = differenceOnIteration;
-      leastDifferenceAbsolute = Math.abs(differenceOnIteration);
-      closestScaleStep = i;
-    }
+  if (selectedComparison === "primes") {
+    comparisonTable = ratioTable.filter((entry) => entry.prime === true);
   }
+  if (selectedComparison === "harmonics") {
+    comparisonTable = ratioTable.filter((entry) => entry.harmonics === true);
+  }
+
+  let rows = [];
+  for (let i = 0; i < comparisonTable.length; i++) {
+    let rowComparer = getComparisonEntryValues(scale, comparisonTable[i].cents);
+    let rowComparerInverse = getComparisonEntryValues(
+      scale,
+      comparisonTable[i].invertedCents
+    );
+    let row = [
+      comparisonTable[i].ratio,
+      comparisonTable[i].cents,
+      rowComparer[0],
+      rowComparer[1],
+      rowComparer[2],
+      comparisonTable[i].invertedRatio,
+      comparisonTable[i].invertedCents,
+      rowComparerInverse[0],
+      rowComparerInverse[1],
+      rowComparerInverse[2],
+    ];
+    rows.push(row);
+  }
+
+  console.log(rows);
+
+  let endTable = rows.map((row) => (
+    <tr key={row.id}>
+      <td>{row[0]}</td>
+      <td>{row[1].toFixed(5)}</td>
+      <td>{row[2]}</td>
+      <td>{row[3].toFixed(5)}</td>
+      <td>{row[4].toFixed(5)}</td>
+      <td>{row[5]}</td>
+      <td>{row[6].toFixed(5)}</td>
+      <td>{row[7]}</td>
+      <td>{row[8].toFixed(5)}</td>
+      <td>{row[9].toFixed(5)}</td>
+    </tr>
+  ));
 
   return (
     <div>
-      3/2 // {justFraction.toFixed(5)} -- step {closestScaleStep} //{" "}
-      {closestValue.toFixed(5)} // {leastDifference.toFixed(5)}
+      <table>
+        <tbody>
+          <tr>
+            <td>Ratio</td>
+            <td>Cents</td>
+            <td>
+              Closest
+              <br /> Step
+            </td>
+            <td>Value</td>
+            <td>Difference</td>
+            <td>Inverted Ratio</td>
+            <td>Cents</td>
+            <td>
+              Closest
+              <br /> Step
+            </td>
+            <td>Value</td>
+            <td>Difference</td>
+          </tr>
+          {endTable}
+        </tbody>
+      </table>
     </div>
   );
 };
-
-// THIS SHOULD BE A FUNCTION
-
-// TAKING INPUT OF
-// ---SCALE---
-// ---JUST FRACTION---
-
-// THEN RETURNING...
-// ---THE JUST FRACTION---
-// ---THE JUST FRACTION IN CENTS---
-// ---WHICH STEP OF THE SCALE IS CLOSEST---
-// ---WHAT THE VALUE OF THAT STEP IS---
-// ---HOW MANT CENTS OFF IT IS
-
-// AS A BASIC LIST

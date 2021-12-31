@@ -1,10 +1,11 @@
 import { ratioTable } from "../ratioTable";
 
-export const ComparisonWindow = ({ scale }) => {
+export const ComparisonWindow = ({ scale, selectedComparison }) => {
+  console.log(selectedComparison);
+
   let ratioTableEntry = ratioTable[0];
 
   let justFraction = ratioTableEntry.cents;
-
   let closestValue = null;
   let leastDifference = 1201;
   let leastDifferenceAbsolute = 1201;

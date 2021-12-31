@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { CalcIPReadout } from "./CalcIPReadout";
 
-export const CalcIP = ({ stateData, setStateData }) => {
+export const CalcIP = ({ stateData, setStateData, selectedComparison }) => {
   const handleChange = (event) => {
     const newPattern = event.target.value;
     let newState = stateData.map((scaleType) => {
@@ -29,7 +29,10 @@ export const CalcIP = ({ stateData, setStateData }) => {
       </div>
       <div>
         <p></p>
-        <CalcIPReadout pattern={stateData[2].pattern} />
+        <CalcIPReadout
+          pattern={stateData[2].pattern}
+          selectedComparison={selectedComparison}
+        />
       </div>
     </div>
   );

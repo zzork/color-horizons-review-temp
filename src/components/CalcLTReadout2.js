@@ -8,7 +8,12 @@ import getUniquesDisplay from "../util/getUniquesDisplay";
 import getUniqueSteps from "../util/getUniqueSteps";
 import { ComparisonWindow } from "./ComparisonWindow";
 
-export const CalcLTReadout2 = ({ numerator, denominator, noteAmount }) => {
+export const CalcLTReadout2 = ({
+  numerator,
+  denominator,
+  noteAmount,
+  selectedComparison,
+}) => {
   const simplestFraction = getSimplestFraction(numerator, denominator);
   const numDomGreaterZero = numerator > 0 && denominator > 0;
   const fraction2over1 = simplestFraction[0] === 2 && simplestFraction[1] === 1;
@@ -45,7 +50,10 @@ export const CalcLTReadout2 = ({ numerator, denominator, noteAmount }) => {
         <tbody>{stepValuesDisplay}</tbody>
       </table>
       <br />
-      <ComparisonWindow scale={stepsValuesList} />
+      <ComparisonWindow
+        scale={stepsValuesList}
+        selectedComparison={selectedComparison}
+      />
       <br />
       <br />
       <br />

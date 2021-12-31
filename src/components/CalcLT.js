@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { CalcLTReadout1 } from "./CalcLTReadout1";
 import { CalcLTReadout2 } from "./CalcLTReadout2";
 
-export const CalcLT = ({ stateData, setStateData }) => {
+export const CalcLT = ({ stateData, setStateData, selectedComparison }) => {
   // there must be a better way to handle this giant, repetitive block
   const handleChange = (event) => {
     let fieldReader = event.target.name;
@@ -114,6 +114,7 @@ export const CalcLT = ({ stateData, setStateData }) => {
         numerator={stateData[1].numerator}
         denominator={stateData[1].denominator}
         noteAmount={stateData[1].noteTotal}
+        selectedComparison={selectedComparison}
       />
     </div>
   );

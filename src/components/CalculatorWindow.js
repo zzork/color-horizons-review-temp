@@ -8,20 +8,29 @@ export const CalculatorWindow = ({
   setStateData,
   selectedComparison,
 }) => {
-  console.log(selectedComparison);
   return (
     <div>
       {viewId === "edo" && (
-        <CalcEDO stateData={stateData} setStateData={setStateData} />
+        <CalcEDO
+          stateData={stateData}
+          setStateData={setStateData}
+          selectedComparison={selectedComparison}
+        />
       )}
       {viewId === "lt" && (
-        <CalcLT stateData={stateData} setStateData={setStateData} />
+        <CalcLT
+          stateData={stateData}
+          setStateData={setStateData}
+          selectedComparison={selectedComparison}
+        />
       )}
       {viewId === "ip" && (
-        <CalcIP stateData={stateData} setStateData={setStateData} />
+        <CalcIP
+          stateData={stateData}
+          setStateData={setStateData}
+          selectedComparison={selectedComparison}
+        />
       )}
     </div>
   );
 };
-
-// what's up with line breaks?? <p> workaround...

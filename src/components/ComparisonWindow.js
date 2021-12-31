@@ -51,8 +51,6 @@ export const ComparisonWindow = ({ scale, selectedComparison }) => {
     rows.push(row);
   }
 
-  console.log(rows);
-
   let endTable = rows.map((row) => (
     <tr key={row.id}>
       <td>{row[0]}</td>

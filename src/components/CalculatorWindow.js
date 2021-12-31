@@ -2,7 +2,13 @@ import { CalcEDO } from "./CalcEDO";
 import { CalcIP } from "./CalcIP";
 import { CalcLT } from "./CalcLT";
 
-export const CalculatorWindow = ({ viewId, stateData, setStateData }) => {
+export const CalculatorWindow = ({
+  viewId,
+  stateData,
+  setStateData,
+  selectedComparison,
+}) => {
+  console.log(selectedComparison);
   return (
     <div>
       {viewId === "edo" && (

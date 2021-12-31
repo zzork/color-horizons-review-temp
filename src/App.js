@@ -11,15 +11,21 @@ function App() {
   const onSelect = (viewId) => {
     setSelectedView(viewId);
   };
+  const [selectedComparison, setSelectedComparison] = useState("primes");
+  const onComparisonChoice = (comparisonId) => {
+    setSelectedComparison(comparisonId);
+  };
+
   return (
     <div>
       <h1>Microtonal Calculators</h1>
       <Selector onSelect={onSelect} />
-      <ComparisonOptions />
+      <ComparisonOptions onComparisonChoice={onComparisonChoice} />
       <CalculatorWindow
         viewId={selectedView}
         stateData={stateData}
         setStateData={setStateData}
+        selectedComparison={selectedComparison}
       />
     </div>
   );

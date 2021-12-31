@@ -6,8 +6,8 @@ const getIPUniqueSizes = (pattern, stepSize) => {
         <tbody>
           {uniqueIntervals.map((value, index) => (
             <tr key={index}>
-              <td>{value} Steps: </td>
-              <td>{(value * stepSize).toFixed(5)} cents</td>
+              <td>{value} Steps </td>
+              <td>{(value * stepSize).toFixed(5)}</td>
             </tr>
           ))}
         </tbody>

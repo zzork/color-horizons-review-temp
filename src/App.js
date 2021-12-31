@@ -7,7 +7,7 @@ import { ComparisonOptions } from "./components/ComparisonOptions";
 
 function App() {
   const [stateData, setStateData] = useState(stateTable);
-  const [selectedView, setSelectedView] = useState("lt");
+  const [selectedView, setSelectedView] = useState("ip");
   const onSelect = (viewId) => {
     setSelectedView(viewId);
   };
@@ -19,8 +19,18 @@ function App() {
   return (
     <div>
       <h1>Microtonal Calculators</h1>
-      <Selector onSelect={onSelect} />
-      <ComparisonOptions onComparisonChoice={onComparisonChoice} />
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <Selector onSelect={onSelect} />
+            </td>
+            <td>
+              <ComparisonOptions onComparisonChoice={onComparisonChoice} />
+            </td>
+          </tr>
+        </tbody>
+      </table>
       <CalculatorWindow
         viewId={selectedView}
         stateData={stateData}

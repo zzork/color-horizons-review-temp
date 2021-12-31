@@ -3,6 +3,7 @@ import getEdoFromIntervalPattern from "../util/getEdoFromIntervalPattern";
 import getIPStepValuesList from "../util/getIPStepValuesList";
 import getIPUniqueSizes from "../util/getIPUniqueSizes";
 import getReadoutTable from "../util/getReadoutTable";
+import { AllModes } from "./AllModes";
 import { ComparisonWindow } from "./ComparisonWindow";
 
 export const CalcIPReadout = ({ pattern, selectedComparison }) => {
@@ -17,6 +18,7 @@ export const CalcIPReadout = ({ pattern, selectedComparison }) => {
   const stepSize = 1200 / edo;
   const uniqueSizes = getIPUniqueSizes(pattern, stepSize);
   const stepValuesList = getIPStepValuesList(pattern, stepSize);
+
   const readoutTable = getReadoutTable(stepValuesList);
 
   return (
@@ -24,12 +26,19 @@ export const CalcIPReadout = ({ pattern, selectedComparison }) => {
       <h3>{edo} EDO</h3>
       <h4>EDO Step Size = {stepSize.toFixed(5)} cents</h4>
       <h4>{uniqueSizes}</h4>
-      {readoutTable}
+
+      <AllModes
+        pattern={pattern}
+        scale={stepValuesList}
+        selectedComparison={selectedComparison}
+      />
+
+      {/* {readoutTable}
       <br />
       <ComparisonWindow
         scale={stepValuesList}
         selectedComparison={selectedComparison}
-      />
+      /> */}
     </div>
   );
 };

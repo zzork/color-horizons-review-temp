@@ -9,19 +9,19 @@ export const AllModes = ({
 }) => {
   let patternAndScale = [];
   // add zeroth mode, input pattern, input scale to list
-  patternAndScale.push([0, pattern, scale, stepDifferences]);
 
-  let forLoopPattern = pattern;
+  let patternListed = pattern.split("");
+  patternAndScale.push([0, patternListed, scale, stepDifferences]);
+
+  let forLoopPattern = [...patternListed];
   let forLoopScale = [...scale];
   let forLoopDifferences = [...stepDifferences];
 
   for (let i = 1; i < pattern.length; i++) {
     // pattern values
-    let splitPattern = forLoopPattern.split("");
-    let firstPatternValue = splitPattern[0];
-    splitPattern.shift();
-    splitPattern.push(firstPatternValue);
-    forLoopPattern = splitPattern.join("");
+    let firstPatternValue = forLoopPattern[0];
+    forLoopPattern.push(firstPatternValue);
+    forLoopPattern.shift();
 
     // differences between steps
     forLoopDifferences.push(forLoopDifferences[1]);
@@ -36,7 +36,7 @@ export const AllModes = ({
 
     patternAndScale.push([
       i,
-      forLoopPattern,
+      [...forLoopPattern],
       forLoopScale,
       [...forLoopDifferences],
     ]);
@@ -44,6 +44,7 @@ export const AllModes = ({
   // BIG QUESTION
   // BEHAVIOR VERY STRANGE
   // forLoopDifferences must be spread, others don't need to be
+  // well, pattern does actually if it needs to not be a string
   // if not, then it takes the final value and overwrites every location on the array
   // why?!
 
@@ -53,6 +54,7 @@ export const AllModes = ({
 
   // need to zip scale, difference, and pattern into rows of a list
   // then map that
+
   const getNewReadoutTable = (scale, pattern) => {
     return (
       <table>
@@ -75,6 +77,9 @@ export const AllModes = ({
 
   return (
     <div>
+      UGH
+      <br />
+      <br />
       {pattern}
       {newReadoutTable}
       <ComparisonWindow scale={scale} selectedComparison={selectedComparison} />

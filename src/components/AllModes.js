@@ -48,12 +48,11 @@ export const AllModes = ({
   // if not, then it takes the final value and overwrites every location on the array
   // why?!
 
-  //   console.log(patternAndScale);
+  console.log(patternAndScale);
 
   // ---
 
   const ReadoutTable = ({ patternAndScale }) => {
-    console.log(patternAndScale);
     return (
       <div>
         <h2>

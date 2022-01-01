@@ -4,11 +4,23 @@ import getComparisonEntryValues from "../util/getComparisonEntryValues";
 export const ComparisonWindow = ({ scale, selectedComparison }) => {
   let comparisonTable = [];
 
+  if (selectedComparison === "off") {
+    return <div></div>;
+  }
+
   if (selectedComparison === "primes") {
     comparisonTable = ratioTable.filter((entry) => entry.prime === true);
   }
-  if (selectedComparison === "harmonics") {
+  if (selectedComparison === "majorDiatonic") {
+    comparisonTable = ratioTable.filter(
+      (entry) => entry.majorDiatonic === true
+    );
+  }
+  if (selectedComparison === "harmonics17") {
     comparisonTable = ratioTable.filter((entry) => entry.harmonics === true);
+  }
+  if (selectedComparison === "harmonics6") {
+    comparisonTable = ratioTable.filter((entry) => entry.harmonicSix === true);
   }
   if (selectedComparison === "3") {
     comparisonTable = ratioTable.filter((entry) => entry.primeLimit === 3);

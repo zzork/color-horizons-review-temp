@@ -10,6 +10,8 @@ export const ratioTable = [
     prime: true,
     primeLimit: 3,
     harmonics: true,
+    majorDiatonic: true,
+    harmonicSix: true,
   },
   {
     id: 1,
@@ -22,6 +24,8 @@ export const ratioTable = [
     prime: true,
     primeLimit: 5,
     harmonics: true,
+    majorDiatonic: true,
+    harmonicSix: true,
   },
   {
     id: 2,
@@ -34,6 +38,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 5,
     harmonics: true,
+    majorDiatonic: true,
+    harmonicSix: true,
   },
   {
     id: 3,
@@ -46,6 +52,8 @@ export const ratioTable = [
     prime: true,
     primeLimit: 7,
     harmonics: true,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 4,
@@ -58,6 +66,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 7,
     harmonics: false,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 5,
@@ -70,6 +80,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 7,
     harmonics: true,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 6,
@@ -82,6 +94,9 @@ export const ratioTable = [
     prime: false,
     primeLimit: 3,
     harmonics: true,
+    majorDiatonic: true,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 7,
@@ -94,6 +109,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 7,
     harmonics: false,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 8,
@@ -106,6 +123,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 5,
     harmonics: true,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 9,
@@ -118,6 +137,8 @@ export const ratioTable = [
     prime: true,
     primeLimit: 11,
     harmonics: true,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 10,
@@ -130,6 +151,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 11,
     harmonics: false,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 11,
@@ -142,6 +165,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 11,
     harmonics: false,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 12,
@@ -154,6 +179,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 11,
     harmonics: false,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 13,
@@ -166,6 +193,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 11,
     harmonics: true,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 14,
@@ -178,6 +207,8 @@ export const ratioTable = [
     prime: true,
     primeLimit: 13,
     harmonics: true,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 15,
@@ -190,6 +221,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 13,
     harmonics: false,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 16,
@@ -202,6 +235,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 13,
     harmonics: false,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 17,
@@ -214,6 +249,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 13,
     harmonics: false,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 18,
@@ -226,6 +263,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 13,
     harmonics: false,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 19,
@@ -238,6 +277,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 13,
     harmonics: true,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 20,
@@ -250,6 +291,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 7,
     harmonics: true,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 21,
@@ -262,6 +305,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 13,
     harmonics: false,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 22,
@@ -274,6 +319,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 11,
     harmonics: false,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 23,
@@ -286,6 +333,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 5,
     harmonics: true,
+    majorDiatonic: true,
+    harmonicSix: false,
   },
   {
     id: 24,
@@ -298,6 +347,8 @@ export const ratioTable = [
     prime: true,
     primeLimit: 17,
     harmonics: true,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 25,
@@ -310,6 +361,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 17,
     harmonics: false,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 26,
@@ -322,6 +375,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 17,
     harmonics: false,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 27,
@@ -334,30 +389,36 @@ export const ratioTable = [
     prime: false,
     primeLimit: 17,
     harmonics: false,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 28,
     ratio: "17/12",
-    cents: 0,
-    intervalName: "",
-    invertedRatio: "24/17",
-    invertedCents: 0,
-    invertedName: "",
-    prime: false,
-    primeLimit: 17,
-    harmonics: false,
-  },
-  {
-    id: 29,
-    ratio: "17/11",
-    cents: 603.0004,
+    cents: 603.000409,
     intervalName: "Second Septendecimal Tritone",
-    invertedRatio: "22/17",
-    invertedCents: 596.99959,
+    invertedRatio: "24/17",
+    invertedCents: 596.999591,
     invertedName: "First Septendecimal Tritone",
     prime: false,
     primeLimit: 17,
     harmonics: false,
+    majorDiatonic: false,
+    harmonicSix: false,
+  },
+  {
+    id: 29,
+    ratio: "17/11",
+    cents: 753.637467,
+    intervalName: "17/11",
+    invertedRatio: "22/17",
+    invertedCents: 446.362533,
+    invertedName: "22/17",
+    prime: false,
+    primeLimit: 17,
+    harmonics: false,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 30,
@@ -370,6 +431,8 @@ export const ratioTable = [
     prime: false,
     primeLimit: 17,
     harmonics: false,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
   {
     id: 31,
@@ -382,5 +445,7 @@ export const ratioTable = [
     prime: false,
     primeLimit: 17,
     harmonics: true,
+    majorDiatonic: false,
+    harmonicSix: false,
   },
 ];

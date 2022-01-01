@@ -2,10 +2,17 @@ export const ComparisonOptions = ({ onComparisonChoice }) => {
   return (
     <div>
       <h2>Comparison Window Options</h2>
+      <button onClick={() => onComparisonChoice("majorDiatonic")}>
+        Major Diatonic
+      </button>
       <button onClick={() => onComparisonChoice("primes")}>
         Prime Harmonics
       </button>
-      <button onClick={() => onComparisonChoice("harmonics")}>
+      <br />
+      <button onClick={() => onComparisonChoice("harmonics6")}>
+        Harmonic Series to 6
+      </button>
+      <button onClick={() => onComparisonChoice("harmonics17")}>
         Harmonic Series to 17
       </button>
       <br />
@@ -16,6 +23,8 @@ export const ComparisonOptions = ({ onComparisonChoice }) => {
       <button onClick={() => onComparisonChoice("11")}>11 Limit</button>
       <button onClick={() => onComparisonChoice("13")}>13 Limit</button>
       <button onClick={() => onComparisonChoice("17")}>17 Limit</button>
+      <br />
+      <button onClick={() => onComparisonChoice("off")}>Disable</button>
     </div>
   );
 };

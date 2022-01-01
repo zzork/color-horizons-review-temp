@@ -75,6 +75,9 @@ export const AllModes = ({
     );
   };
 
+  // either index value needs to get passed into readout table
+  // OR more likely patternAndScale={patternAndScale[index]} needs to be patternAndScale={value[index]}
+
   const getFinalModesReadout = (patternAndScale) => {
     return patternAndScale.map((value, index) => (
       <div>

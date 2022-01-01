@@ -48,41 +48,62 @@ export const AllModes = ({
   // if not, then it takes the final value and overwrites every location on the array
   // why?!
 
-  console.log(patternAndScale);
+  //   console.log(patternAndScale);
 
   // ---
 
-  // need to zip scale, difference, and pattern into rows of a list
-  // then map that
-
-  const getNewReadoutTable = (scale, pattern) => {
+  const getReadoutTable = (patternAndScale) => {
     return (
-      <table>
-        <tbody>
-          {scale.map((value, index) => (
-            <tr key={index}>
-              <td>Step {index}</td>
-              <td>{value.toFixed(5)}</td>
-              <td>Difference</td>
-              <td>Ls</td>
-              <td></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <div>
+        <h2>
+          Mode {patternAndScale[0]} - {patternAndScale[1].join("")}
+          <br />
+        </h2>
+        <table>
+          <tbody>
+            {patternAndScale[2].map((value, index) => (
+              <tr key={index}>
+                <td>[0] Step {index}</td>
+                <td>[2] {value.toFixed(5)}</td>
+                <td>[3] Difference</td>
+                <td>[1] Ls</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     );
   };
 
-  let newReadoutTable = getNewReadoutTable(scale);
+  console.log(scale);
+  console.log(patternAndScale);
+
+  let readoutTable = getReadoutTable(patternAndScale[0]);
+
+  // HOW DO I ACHIEVE:
+
+  // getReadoutTable(patternAndScale[0])
+  // <ComparisonWindow scale={patternAndScale[0][2]}
+  // getReadoutTable(patternAndScale[1])
+  // <ComparisonWindow scale={patternAndScale[1][2]}
+  // ...
+  // getReadoutTable(patternAndScale[n])
+  // <ComparisonWindow scale={patternAndScale[n][2]}
+
+  // I think getReadoutTable needs to be a Component, not a function
+
+  let hork = (
+    <div>
+      {readoutTable}
+      <ComparisonWindow scale={scale} selectedComparison={selectedComparison} />
+    </div>
+  );
 
   return (
     <div>
-      UGH
       <br />
       <br />
-      {pattern}
-      {newReadoutTable}
-      <ComparisonWindow scale={scale} selectedComparison={selectedComparison} />
+      {hork}
     </div>
   );
 };

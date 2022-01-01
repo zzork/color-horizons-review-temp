@@ -1,11 +1,11 @@
-const getReadoutTable = (stepValuesList) => {
+const getReadoutTable = (scale, pattern) => {
   return (
     <table>
       <tbody>
-        {stepValuesList.map((value, index) => (
+        {scale.map((value, index) => (
           <tr key={index}>
             <td>Step {index}</td>
-            <td align="right">{value.toFixed(5)}</td>
+            <td>{value.toFixed(5)}</td>
           </tr>
         ))}
       </tbody>

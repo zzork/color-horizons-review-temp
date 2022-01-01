@@ -52,21 +52,22 @@ export const AllModes = ({
 
   // ---
 
-  const getReadoutTable = (patternAndScale) => {
+  const ReadoutTable = ({ patternAndScale }) => {
+    console.log(patternAndScale);
     return (
       <div>
         <h2>
-          Mode {patternAndScale[0]} - {patternAndScale[1].join("")}
+          Mode {patternAndScale[0] + 1} - {patternAndScale[1].join("")}
           <br />
         </h2>
         <table>
           <tbody>
             {patternAndScale[2].map((value, index) => (
               <tr key={index}>
-                <td>[0] Step {index}</td>
-                <td>[2] {value.toFixed(5)}</td>
-                <td>[3] Difference</td>
-                <td>[1] Ls</td>
+                <td>[i][0] Step {index}</td>
+                <td>[i][2] {value.toFixed(5)}</td>
+                <td>[i][3] Difference</td>
+                <td>[i][1] Ls</td>
               </tr>
             ))}
           </tbody>
@@ -75,35 +76,19 @@ export const AllModes = ({
     );
   };
 
-  console.log(scale);
-  console.log(patternAndScale);
+  const getFinalModesReadout = (patternAndScale) => {
+    return patternAndScale.map((value, index) => (
+      <div>
+        <ReadoutTable patternAndScale={patternAndScale[index]} />
+        <ComparisonWindow
+          scale={patternAndScale[index][2]}
+          selectedComparison={selectedComparison}
+        />
+      </div>
+    ));
+  };
 
-  let readoutTable = getReadoutTable(patternAndScale[0]);
+  const finalModesReadout = getFinalModesReadout(patternAndScale);
 
-  // HOW DO I ACHIEVE:
-
-  // getReadoutTable(patternAndScale[0])
-  // <ComparisonWindow scale={patternAndScale[0][2]}
-  // getReadoutTable(patternAndScale[1])
-  // <ComparisonWindow scale={patternAndScale[1][2]}
-  // ...
-  // getReadoutTable(patternAndScale[n])
-  // <ComparisonWindow scale={patternAndScale[n][2]}
-
-  // I think getReadoutTable needs to be a Component, not a function
-
-  let hork = (
-    <div>
-      {readoutTable}
-      <ComparisonWindow scale={scale} selectedComparison={selectedComparison} />
-    </div>
-  );
-
-  return (
-    <div>
-      <br />
-      <br />
-      {hork}
-    </div>
-  );
+  return <div>{finalModesReadout}</div>;
 };

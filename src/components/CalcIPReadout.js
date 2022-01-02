@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import AllModes from "../apps/AllModes";
 import getEdoFromIntervalPattern from "../util/getEdoFromIntervalPattern";
 import getIPStepValuesList from "../util/getIPStepValuesList";
 import getIPUniqueSizes from "../util/getIPUniqueSizes";
 import getReadoutTable from "../util/getReadoutTable";
 import getStepDifferences from "../util/getStepDifferences";
-import { AllModes } from "./AllModes";
 import { ComparisonWindow } from "./ComparisonWindow";
 
 export const CalcIPReadout = ({ pattern, selectedComparison }) => {

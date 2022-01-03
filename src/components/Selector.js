@@ -6,7 +6,10 @@ export const Selector = ({ onSelect }) => {
         Equal Division of the Octave
       </button>
       <button onClick={() => onSelect("ip")}>Interval Pattern</button>
-      <button onClick={() => onSelect("lt")}>Linear Temperament</button>
+      <br />
+      <button onClick={() => onSelect("lt")}>
+        Linear Temperament by Ratio
+      </button>
     </div>
   );
 };

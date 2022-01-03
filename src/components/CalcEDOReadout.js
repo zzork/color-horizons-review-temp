@@ -22,7 +22,7 @@ export const CalcEDOReadout = ({ edo, selectedComparison }) => {
             return (
               <tr key={index}>
                 <td>Step {index}</td>
-                <td align="right">{displayStep.toFixed(5)}</td>
+                <td>{displayStep.toFixed(5)}</td>
               </tr>
             );
           })}

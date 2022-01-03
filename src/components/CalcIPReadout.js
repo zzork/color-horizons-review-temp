@@ -35,13 +35,6 @@ export const CalcIPReadout = ({ pattern, selectedComparison }) => {
         selectedComparison={selectedComparison}
         stepDifferences={stepDifferences}
       />
-
-      {/* {readoutTable}
-      <br />
-      <ComparisonWindow
-        scale={stepValuesList}
-        selectedComparison={selectedComparison}
-      /> */}
     </div>
   );
 };

@@ -41,8 +41,6 @@ const convertPatternToModes = (pattern) => {
 //   stepDifference: [20]
 // }
 
-//   console.log({ scalePatterns, patternModes, scale });
-
 //   let patternAndScale = [];
 
 //   let patternListed = pattern.split("");

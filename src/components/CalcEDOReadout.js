@@ -18,6 +18,10 @@ export const CalcEDOReadout = ({ edo, selectedComparison }) => {
       <h4>Step Size: {stepSize.toFixed(5)} Cents</h4>
       <table>
         <tbody>
+          <tr>
+            <td>Step</td>
+            <td>Value</td>
+          </tr>
           {displaySteps.map((displayStep, index) => {
             return (
               <tr key={index}>

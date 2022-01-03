@@ -7,6 +7,8 @@ export const CalcLTReadout1 = ({
   denominator,
   handleInvertClick,
   handleMOSClick,
+  handleChange,
+  noteTotal,
 }) => {
   const isValidState = () => {
     return numerator > 0 && denominator > 0;
@@ -62,6 +64,15 @@ export const CalcLTReadout1 = ({
         <p>
           Moments of Symmetry <br />
           {mosButtons}
+          <p>
+            Note Amount:{" "}
+            <input
+              onChange={handleChange}
+              type="number"
+              name="ltNoteTotal"
+              value={noteTotal}
+            ></input>
+          </p>
         </p>
       </div>
     </div>

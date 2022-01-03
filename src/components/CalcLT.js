@@ -100,16 +100,9 @@ export const CalcLT = ({ stateData, setStateData, selectedComparison }) => {
         denominator={stateData[1].denominator}
         handleInvertClick={handleInvertClick}
         handleMOSClick={handleMOSClick}
+        handleChange={handleChange}
+        noteTotal={stateData[1].noteTotal}
       />
-      <p>
-        Note Amount:{" "}
-        <input
-          onChange={handleChange}
-          type="number"
-          name="ltNoteTotal"
-          value={stateData[1].noteTotal}
-        ></input>
-      </p>
       <CalcLTReadout2
         numerator={stateData[1].numerator}
         denominator={stateData[1].denominator}

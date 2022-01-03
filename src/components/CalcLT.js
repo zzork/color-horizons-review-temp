@@ -78,7 +78,7 @@ export const CalcLT = ({ stateData, setStateData, selectedComparison }) => {
     <div>
       <h2>Linear Temperament</h2>
       <p>
-        Numerator:
+        Numerator:{" "}
         <input
           onChange={handleChange}
           type="number"
@@ -99,16 +99,16 @@ export const CalcLT = ({ stateData, setStateData, selectedComparison }) => {
         numerator={stateData[1].numerator}
         denominator={stateData[1].denominator}
         noteTotal={stateData[1].noteTotal}
+        selectedComparison={selectedComparison}
         handleInvertClick={handleInvertClick}
         handleMOSClick={handleMOSClick}
         handleChange={handleChange}
       />
-      <CalcLTReadout2
+      {/* <CalcLTReadout2
         numerator={stateData[1].numerator}
         denominator={stateData[1].denominator}
         noteAmount={stateData[1].noteTotal}
-        selectedComparison={selectedComparison}
-      />
+      /> */}
     </div>
   );
 };

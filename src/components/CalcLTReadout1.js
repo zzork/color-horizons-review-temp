@@ -1,11 +1,20 @@
 import getSimplestFraction from "../util/getSimplestFraction";
 import getGenerator from "../util/getGenerator";
 import getMos from "../util/getMos";
+import getLTStepValuesList from "../util/getLTStepValuesList";
+import getStepDifferences from "../util/getStepDifferences";
+import getUniqueSteps from "../util/getUniqueSteps";
+import getLMSList from "../util/getLMSList";
+import getStepsValuesAndDifferences from "../util/getStepsValuesAndDifferences";
+import getUniquesDisplay from "../util/getUniquesDisplay";
+import getLTStepValuesDisplay from "../util/getLTStepValuesDisplay";
+import { ComparisonWindow } from "./ComparisonWindow";
 
 export const CalcLTReadout1 = ({
   numerator,
   denominator,
   noteTotal,
+  selectedComparison,
   handleInvertClick,
   handleMOSClick,
   handleChange,
@@ -35,6 +44,22 @@ export const CalcLTReadout1 = ({
   const mosButtons = momentsOfSymmetry.map((value) => (
     <button onClick={() => handleMOSClick(value)}>{value}</button>
   ));
+
+  const stepsValuesList = getLTStepValuesList(
+    equivalentFraction[0],
+    equivalentFraction[1],
+    noteTotal
+  );
+  const stepDifferences = getStepDifferences(stepsValuesList);
+  const sortedUnique = getUniqueSteps(stepDifferences);
+  const lmsList = getLMSList(stepDifferences, sortedUnique);
+  const stepsValuesAndDifferences = getStepsValuesAndDifferences(
+    stepsValuesList,
+    stepDifferences,
+    lmsList
+  );
+  const uniquesDisplay = getUniquesDisplay(sortedUnique);
+  const stepValuesDisplay = getLTStepValuesDisplay(stepsValuesAndDifferences);
 
   // this should be caught by invalid state
   if (numerator === denominator) {
@@ -74,6 +99,18 @@ export const CalcLTReadout1 = ({
             ></input>
           </p>
         </p>
+        <h3>{lmsList}</h3>
+        <p>Step Sizes</p>
+        {uniquesDisplay} <br />
+        <table>
+          <tbody>{stepValuesDisplay}</tbody>
+        </table>
+        <br />
+        <ComparisonWindow
+          scale={stepsValuesList}
+          selectedComparison={selectedComparison}
+        />
+        <br />
       </div>
     </div>
   );

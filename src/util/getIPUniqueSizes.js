@@ -1,5 +1,5 @@
 const getIPUniqueSizes = (pattern, stepSize) => {
-  const uniqueIntervals = [...new Set(pattern)].sort((a, b) => a - b);
+  const uniqueIntervals = [...new Set(pattern)].sort((a, b) => a - b).reverse();
   const intervalsTable = (
     <div>
       <table>

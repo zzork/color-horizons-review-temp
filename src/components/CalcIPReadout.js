@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import AllModes from "../apps/AllModes";
 import getEdoFromIntervalPattern from "../util/getEdoFromIntervalPattern";
-import getIPStepValuesList from "../util/getIPStepValuesList";
 import getIPUniqueSizes from "../util/getIPUniqueSizes";
-import getReadoutTable from "../util/getReadoutTable";
-import getStepDifferences from "../util/getStepDifferences";
-import { ComparisonWindow } from "./ComparisonWindow";
 
 export const CalcIPReadout = ({ pattern, selectedComparison }) => {
   const isValidState = () => {
@@ -17,11 +13,7 @@ export const CalcIPReadout = ({ pattern, selectedComparison }) => {
 
   const edo = getEdoFromIntervalPattern(pattern);
   const stepSize = 1200 / edo;
-  const uniqueSizes = getIPUniqueSizes(pattern, stepSize);
-  const stepValuesList = getIPStepValuesList(pattern, stepSize);
-  const stepDifferences = getStepDifferences(stepValuesList);
-
-  // const readoutTable = getReadoutTable(stepValuesList);
+  const uniqueSizes = getIPUniqueSizes(pattern, stepSize); // should be a component
 
   return (
     <div>
@@ -29,12 +21,7 @@ export const CalcIPReadout = ({ pattern, selectedComparison }) => {
       <h4>EDO Step Size = {stepSize.toFixed(5)} cents</h4>
       <h4>{uniqueSizes}</h4>
 
-      <AllModes
-        pattern={pattern}
-        scale={stepValuesList}
-        selectedComparison={selectedComparison}
-        stepDifferences={stepDifferences}
-      />
+      <AllModes pattern={pattern} selectedComparison={selectedComparison} />
     </div>
   );
 };

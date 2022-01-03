@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { CalcLTReadout1 } from "./CalcLTReadout1";
-import { CalcLTReadout2 } from "./CalcLTReadout2";
+import { CalcLTReadout } from "./CalcLTReadout";
 
 export const CalcLT = ({ stateData, setStateData, selectedComparison }) => {
   // there must be a better way to handle this giant, repetitive block
@@ -95,7 +94,7 @@ export const CalcLT = ({ stateData, setStateData, selectedComparison }) => {
           value={stateData[1].denominator}
         ></input>
       </p>
-      <CalcLTReadout1
+      <CalcLTReadout
         numerator={stateData[1].numerator}
         denominator={stateData[1].denominator}
         noteTotal={stateData[1].noteTotal}
@@ -104,11 +103,6 @@ export const CalcLT = ({ stateData, setStateData, selectedComparison }) => {
         handleMOSClick={handleMOSClick}
         handleChange={handleChange}
       />
-      {/* <CalcLTReadout2
-        numerator={stateData[1].numerator}
-        denominator={stateData[1].denominator}
-        noteAmount={stateData[1].noteTotal}
-      /> */}
     </div>
   );
 };

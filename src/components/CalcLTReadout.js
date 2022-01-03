@@ -10,7 +10,7 @@ import getUniquesDisplay from "../util/getUniquesDisplay";
 import getLTStepValuesDisplay from "../util/getLTStepValuesDisplay";
 import { ComparisonWindow } from "./ComparisonWindow";
 
-export const CalcLTReadout1 = ({
+export const CalcLTReadout = ({
   numerator,
   denominator,
   noteTotal,

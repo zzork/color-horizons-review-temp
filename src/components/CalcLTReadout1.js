@@ -5,10 +5,10 @@ import getMos from "../util/getMos";
 export const CalcLTReadout1 = ({
   numerator,
   denominator,
+  noteTotal,
   handleInvertClick,
   handleMOSClick,
   handleChange,
-  noteTotal,
 }) => {
   const isValidState = () => {
     return numerator > 0 && denominator > 0;

@@ -98,10 +98,10 @@ export const CalcLT = ({ stateData, setStateData, selectedComparison }) => {
       <CalcLTReadout1
         numerator={stateData[1].numerator}
         denominator={stateData[1].denominator}
+        noteTotal={stateData[1].noteTotal}
         handleInvertClick={handleInvertClick}
         handleMOSClick={handleMOSClick}
         handleChange={handleChange}
-        noteTotal={stateData[1].noteTotal}
       />
       <CalcLTReadout2
         numerator={stateData[1].numerator}

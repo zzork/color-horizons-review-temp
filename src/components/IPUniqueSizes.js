@@ -1,4 +1,4 @@
-const getIPUniqueSizes = (pattern, stepSize) => {
+const IPUniqueSizes = ({ pattern, stepSize }) => {
   const uniqueIntervals = [...new Set(pattern)].sort((a, b) => a - b).reverse();
   const intervalsTable = (
     <div>
@@ -17,4 +17,4 @@ const getIPUniqueSizes = (pattern, stepSize) => {
   return intervalsTable;
 };
 
-export default getIPUniqueSizes;
+export default IPUniqueSizes;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AllModes from "../apps/AllModes";
 import getEdoFromIntervalPattern from "../util/getEdoFromIntervalPattern";
-import getIPUniqueSizes from "../util/getIPUniqueSizes";
+import IPUniqueSizes from "./IPUniqueSizes";
 
 export const CalcIPReadout = ({ pattern, selectedComparison }) => {
   const isValidState = () => {
@@ -13,14 +13,12 @@ export const CalcIPReadout = ({ pattern, selectedComparison }) => {
 
   const edo = getEdoFromIntervalPattern(pattern);
   const stepSize = 1200 / edo;
-  const uniqueSizes = getIPUniqueSizes(pattern, stepSize); // should be a component
 
   return (
     <div>
       <h3>{edo} EDO</h3>
       <h4>EDO Step Size = {stepSize.toFixed(5)} cents</h4>
-      <h4>{uniqueSizes}</h4>
-
+      <IPUniqueSizes pattern={pattern} stepSize={stepSize} />
       <AllModes pattern={pattern} selectedComparison={selectedComparison} />
     </div>
   );

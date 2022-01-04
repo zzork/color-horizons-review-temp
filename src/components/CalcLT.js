@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { CalcLTReadout } from "./CalcLTReadout";
 
 export const CalcLT = ({ stateData, setStateData, selectedComparison }) => {
@@ -8,67 +7,67 @@ export const CalcLT = ({ stateData, setStateData, selectedComparison }) => {
     let newValue = event.target.value;
 
     if (fieldReader === "ltNumerator") {
-      let newState = stateData.map((scaleType) => {
-        if (scaleType.id === "b") {
+      let newState = stateData.map((stateTableRow) => {
+        if (stateTableRow.id === "b") {
           return {
-            ...scaleType,
+            ...stateTableRow,
             numerator: newValue,
           };
         }
-        return scaleType;
+        return stateTableRow;
       });
       setStateData(newState);
     }
 
     if (fieldReader === "ltDenominator") {
-      let newState = stateData.map((scaleType) => {
-        if (scaleType.id === "b") {
+      let newState = stateData.map((stateTableRow) => {
+        if (stateTableRow.id === "b") {
           return {
-            ...scaleType,
+            ...stateTableRow,
             denominator: newValue,
           };
         }
-        return scaleType;
+        return stateTableRow;
       });
       setStateData(newState);
     }
 
     if (fieldReader === "ltNoteTotal") {
-      let newState = stateData.map((scaleType) => {
-        if (scaleType.id === "b") {
+      let newState = stateData.map((stateTableRow) => {
+        if (stateTableRow.id === "b") {
           return {
-            ...scaleType,
+            ...stateTableRow,
             noteTotal: newValue,
           };
         }
-        return scaleType;
+        return stateTableRow;
       });
       setStateData(newState);
     }
   };
   const handleInvertClick = (inverseFraction) => {
-    let newState = stateData.map((scaleType) => {
-      if (scaleType.id === "b") {
+    let newState = stateData.map((stateTableRow) => {
+      if (stateTableRow.id === "b") {
         return {
-          ...scaleType,
+          ...stateTableRow,
           numerator: inverseFraction[0],
           denominator: inverseFraction[1],
         };
       }
-      return scaleType;
+      return stateTableRow;
     });
     setStateData(newState);
   };
 
   const handleMOSClick = (value) => {
-    let newState = stateData.map((scaleType) => {
-      if (scaleType.id === "b") {
+    let newState = stateData.map((stateTableRow) => {
+      if (stateTableRow.id === "b") {
         return {
-          ...scaleType,
+          ...stateTableRow,
           noteTotal: value,
         };
       }
-      return scaleType;
+      return stateTableRow;
     });
     setStateData(newState);
   };
@@ -81,7 +80,7 @@ export const CalcLT = ({ stateData, setStateData, selectedComparison }) => {
         <input
           onChange={handleChange}
           type="number"
-          name="ltNumerator"
+          name="ltNumeratorEntryField"
           value={stateData[1].numerator}
         ></input>
       </p>
@@ -90,7 +89,7 @@ export const CalcLT = ({ stateData, setStateData, selectedComparison }) => {
         <input
           onChange={handleChange}
           type="number"
-          name="ltDenominator"
+          name="ltDenominatorEntryField"
           value={stateData[1].denominator}
         ></input>
       </p>

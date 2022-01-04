@@ -24,3 +24,5 @@ const getUniquesDisplay = (sortedUnique) => {
 };
 
 export default getUniquesDisplay;
+
+// SHOULD BE COMPONENT

@@ -9,6 +9,7 @@ const AllModes = ({ pattern, selectedComparison }) => {
       {patternAndScales.map((patternAndScale, index) => (
         <div key={index}>
           <ReadoutTable patternAndScale={patternAndScale} index={index} />
+          <br />
           <ComparisonWindow
             scale={patternAndScale.values}
             selectedComparison={selectedComparison}

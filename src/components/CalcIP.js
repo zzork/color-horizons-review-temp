@@ -1,17 +1,16 @@
-import React, { useState } from "react";
 import { CalcIPReadout } from "./CalcIPReadout";
 
 export const CalcIP = ({ stateData, setStateData, selectedComparison }) => {
   const handleChange = (event) => {
     const newPattern = event.target.value;
-    let newState = stateData.map((scaleType) => {
-      if ((scaleType.id = "c")) {
+    let newState = stateData.map((stateTableRow) => {
+      if ((stateTableRow.id = "c")) {
         return {
-          ...scaleType,
+          ...stateTableRow,
           pattern: newPattern,
         };
       }
-      return scaleType;
+      return stateTableRow;
     });
     setStateData(newState);
   };
@@ -23,7 +22,7 @@ export const CalcIP = ({ stateData, setStateData, selectedComparison }) => {
         <input
           onChange={handleChange}
           type="number"
-          name="intervalPatternEntered"
+          name="intervalPatternEntryField"
           value={stateData[2].pattern}
         ></input>
       </div>

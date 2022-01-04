@@ -1,7 +1,7 @@
-import getDisplayEdoStepValues from "../util/getDisplayEdoStepValues";
-import { ComparisonWindow } from "./ComparisonWindow";
+import getDisplayEdoStepValues from "../../../../util/getDisplayEdoStepValues";
+import { ComparisonWindow } from "../../../../components/ComparisonWindow";
 
-export const CalcEDOReadout = ({ edo, selectedComparison }) => {
+export const EDOReadout = ({ edo, selectedComparison }) => {
   const isValidState = () => {
     return edo > 0;
   };

@@ -1,4 +1,4 @@
-import { CalcEDO } from "./CalcEDO";
+import { EDO } from "../apps/Calculators/EDO/Index";
 import { CalcIP } from "./CalcIP";
 import { CalcLT } from "./CalcLT";
 
@@ -11,7 +11,7 @@ export const CalculatorWindow = ({
   return (
     <div>
       {viewId === "edo" && (
-        <CalcEDO
+        <EDO
           stateData={stateData}
           setStateData={setStateData}
           selectedComparison={selectedComparison}

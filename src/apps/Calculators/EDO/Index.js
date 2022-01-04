@@ -1,6 +1,6 @@
-import { CalcEDOReadout } from "./CalcEDOReadout";
+import { EDOReadout } from "./components/EDOReadout";
 
-export const CalcEDO = ({ stateData, setStateData, selectedComparison }) => {
+export const EDO = ({ stateData, setStateData, selectedComparison }) => {
   const handleChange = (event) => {
     const newEDO = event.target.value;
     let newState = stateData.map((stateTableRow) => {
@@ -24,7 +24,7 @@ export const CalcEDO = ({ stateData, setStateData, selectedComparison }) => {
         name="edoEntryField"
         value={stateData[0].value}
       ></input>
-      <CalcEDOReadout
+      <EDOReadout
         edo={stateData[0].value}
         selectedComparison={selectedComparison}
       />

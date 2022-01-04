@@ -1,6 +1,6 @@
-import { CalcLTReadout } from "./CalcLTReadout";
+import { LTReadout } from "./components/LTReadout";
 
-export const CalcLT = ({ stateData, setStateData, selectedComparison }) => {
+export const LTByRatio = ({ stateData, setStateData, selectedComparison }) => {
   // there must be a better way to handle this giant, repetitive block
   const handleChange = (event) => {
     let fieldReader = event.target.name;
@@ -93,7 +93,7 @@ export const CalcLT = ({ stateData, setStateData, selectedComparison }) => {
           value={stateData[1].denominator}
         ></input>
       </p>
-      <CalcLTReadout
+      <LTReadout
         numerator={stateData[1].numerator}
         denominator={stateData[1].denominator}
         noteTotal={stateData[1].noteTotal}

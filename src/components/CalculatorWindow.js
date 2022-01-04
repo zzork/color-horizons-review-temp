@@ -1,6 +1,6 @@
 import { EDO } from "../apps/Calculators/EDO/Index";
+import { LTByRatio } from "../apps/Calculators/LTByRatio/Index";
 import { CalcIP } from "./CalcIP";
-import { CalcLT } from "./CalcLT";
 
 export const CalculatorWindow = ({
   viewId,
@@ -18,7 +18,7 @@ export const CalculatorWindow = ({
         />
       )}
       {viewId === "lt" && (
-        <CalcLT
+        <LTByRatio
           stateData={stateData}
           setStateData={setStateData}
           selectedComparison={selectedComparison}

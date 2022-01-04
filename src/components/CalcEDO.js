@@ -1,17 +1,16 @@
-import React, { useState } from "react";
 import { CalcEDOReadout } from "./CalcEDOReadout";
 
 export const CalcEDO = ({ stateData, setStateData, selectedComparison }) => {
   const handleChange = (event) => {
-    const newValue = event.target.value;
-    let newState = stateData.map((scaleType) => {
-      if (scaleType.id === "a") {
+    const newEDO = event.target.value;
+    let newState = stateData.map((stateTableRow) => {
+      if (stateTableRow.id === "a") {
         return {
-          ...scaleType,
-          value: newValue,
+          ...stateTableRow,
+          value: newEDO,
         };
       }
-      return scaleType;
+      return stateTableRow;
     });
     setStateData(newState);
   };
@@ -22,7 +21,7 @@ export const CalcEDO = ({ stateData, setStateData, selectedComparison }) => {
       <input
         onChange={handleChange}
         type="number"
-        name="edoEntered"
+        name="edoEntryField"
         value={stateData[0].value}
       ></input>
       <CalcEDOReadout

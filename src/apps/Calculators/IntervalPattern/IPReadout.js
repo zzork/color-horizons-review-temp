@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import IPUniqueSizesTable from "./IPUniqueSizesTable";
 import AllModes from "../../AllModes";
-import getEdoFromIntervalPattern from "../../../util/getEdoFromIntervalPattern";
+import getEdoFromIntervalPattern from "./util/getEdoFromIntervalPattern";
 
 export const IPReadout = ({ pattern, selectedComparison }) => {
   const isValidState = () => {

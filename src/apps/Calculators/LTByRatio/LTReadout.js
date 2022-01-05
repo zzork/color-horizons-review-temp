@@ -5,10 +5,10 @@ import getMos from "../../../util/getMos";
 import getSimplestFraction from "../../../util/getSimplestFraction";
 import getStepDifferences from "../../../util/getStepDifferences";
 import getStepsValuesAndDifferences from "../../../util/getStepsValuesAndDifferences";
-import getUniquesDisplay from "../../../util/getUniquesDisplay";
 import getUniqueSteps from "../../../util/getUniqueSteps";
 import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
 import LTStepValuesDisplay from "./LTStepValuesDisplay";
+import UniquesDisplay from "./LTUniquesDisplay";
 
 export const LTReadout = ({
   numerator,
@@ -58,7 +58,6 @@ export const LTReadout = ({
     stepDifferences,
     lmsList
   );
-  const uniquesDisplay = getUniquesDisplay(sortedUnique);
 
   // this should be caught by invalid state
   if (numerator === denominator) {
@@ -100,7 +99,7 @@ export const LTReadout = ({
         </p>
         <h3>{lmsList}</h3>
         <p>Step Sizes</p>
-        {uniquesDisplay} <br />
+        <UniquesDisplay sortedUnique={sortedUnique} />
         <LTStepValuesDisplay
           stepsValuesAndDifferences={stepsValuesAndDifferences}
         />

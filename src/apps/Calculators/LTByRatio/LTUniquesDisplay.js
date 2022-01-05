@@ -1,4 +1,4 @@
-const getUniquesDisplay = (sortedUnique) => {
+const UniquesDisplay = ({ sortedUnique }) => {
   let uniquesDisplay = null;
   if (sortedUnique.length < 2) {
     uniquesDisplay = <div>Not enough notes</div>;
@@ -23,6 +23,4 @@ const getUniquesDisplay = (sortedUnique) => {
   return uniquesDisplay;
 };
 
-export default getUniquesDisplay;
-
-// SHOULD BE COMPONENT
+export default UniquesDisplay;

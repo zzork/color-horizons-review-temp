@@ -1,4 +1,3 @@
-import getGenerator from "../../../util/getGenerator";
 import getLMSList from "../../../util/getLMSList";
 import getLTStepValuesList from "../../../util/getLTStepValuesList";
 import getMos from "../../../util/getMos";
@@ -9,6 +8,7 @@ import getUniqueSteps from "../../../util/getUniqueSteps";
 import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
 import LTStepValuesDisplay from "./LTStepValuesDisplay";
 import UniquesDisplay from "./LTUniquesDisplay";
+import getGenerator from "./util/getGenerator";
 
 export const LTReadout = ({
   numerator,

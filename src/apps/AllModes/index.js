@@ -1,4 +1,4 @@
-import { ComparisonWindow } from "../../components/ComparisonWindow";
+import { ComparisonWindow } from "../RatioComparer/ComparisonWindow";
 import ReadoutTable from "./components/ReadoutTable";
 import convertPatternToModes from "./util/convertPatternToModes";
 

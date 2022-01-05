@@ -1,5 +1,5 @@
-import { ComparisonWindow } from "../../../components/ComparisonWindow";
 import getDisplayEdoStepValues from "../../../util/getDisplayEdoStepValues";
+import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
 
 export const EDOReadout = ({ edo, selectedComparison }) => {
   const isValidState = () => {

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Selector } from "./components/Selector";
 import { CalculatorWindow } from "./components/CalculatorWindow";
 import { stateTable } from "./stateData";
-import { ComparisonOptions } from "./components/ComparisonOptions";
+import { ComparisonOptions } from "./apps/RatioComparer/ComparisonOptions";
 
 function App() {
   const [stateData, setStateData] = useState(stateTable);

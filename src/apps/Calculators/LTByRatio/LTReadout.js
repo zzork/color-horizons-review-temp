@@ -1,14 +1,14 @@
-import { ComparisonWindow } from "../../../../components/ComparisonWindow";
-import getGenerator from "../../../../util/getGenerator";
-import getLMSList from "../../../../util/getLMSList";
-import getLTStepValuesDisplay from "../../../../util/getLTStepValuesDisplay";
-import getLTStepValuesList from "../../../../util/getLTStepValuesList";
-import getMos from "../../../../util/getMos";
-import getSimplestFraction from "../../../../util/getSimplestFraction";
-import getStepDifferences from "../../../../util/getStepDifferences";
-import getStepsValuesAndDifferences from "../../../../util/getStepsValuesAndDifferences";
-import getUniquesDisplay from "../../../../util/getUniquesDisplay";
-import getUniqueSteps from "../../../../util/getUniqueSteps";
+import { ComparisonWindow } from "../../../components/ComparisonWindow";
+import getGenerator from "../../../util/getGenerator";
+import getLMSList from "../../../util/getLMSList";
+import getLTStepValuesDisplay from "../../../util/getLTStepValuesDisplay";
+import getLTStepValuesList from "../../../util/getLTStepValuesList";
+import getMos from "../../../util/getMos";
+import getSimplestFraction from "../../../util/getSimplestFraction";
+import getStepDifferences from "../../../util/getStepDifferences";
+import getStepsValuesAndDifferences from "../../../util/getStepsValuesAndDifferences";
+import getUniquesDisplay from "../../../util/getUniquesDisplay";
+import getUniqueSteps from "../../../util/getUniqueSteps";
 
 export const LTReadout = ({
   numerator,

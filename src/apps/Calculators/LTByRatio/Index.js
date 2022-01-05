@@ -1,4 +1,4 @@
-import { LTReadout } from "./components/LTReadout";
+import { LTReadout } from "./LTReadout";
 
 export const LTByRatio = ({ stateData, setStateData, selectedComparison }) => {
   // there must be a better way to handle this giant, repetitive block

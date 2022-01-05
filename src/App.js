@@ -58,3 +58,6 @@ export default App;
 // - harmonic series (overtones, undertones)
 // - tonality diamonds (up, down, up and down)
 // - edo mos
+// - ax + by = 1200
+
+// set decimal accuracy of readouts

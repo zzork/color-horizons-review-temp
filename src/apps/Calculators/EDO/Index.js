@@ -1,4 +1,4 @@
-import { EDOReadout } from "./components/EDOReadout";
+import { EDOReadout } from "./EDOReadout";
 
 export const EDO = ({ stateData, setStateData, selectedComparison }) => {
   const handleChange = (event) => {

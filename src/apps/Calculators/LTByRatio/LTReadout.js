@@ -1,5 +1,5 @@
-import getMos from "../../../util/getMos";
-import getSimplestFraction from "../../../util/getSimplestFraction";
+import getMos from "./util/getMos";
+import getReducedFraction from "../../../util/getReducedFraction";
 import getStepDifferences from "../../../util/getStepDifferences";
 import getStepsValuesAndDifferences from "../../../util/getStepsValuesAndDifferences";
 import getUniqueSteps from "../../../util/getUniqueSteps";
@@ -26,12 +26,12 @@ export const LTReadout = ({
     return <InvalidState numerator={numerator} denominator={denominator} />;
   }
 
-  const equivalentFraction = getSimplestFraction(numerator, denominator);
+  const equivalentFraction = getReducedFraction(numerator, denominator);
   const mainGenerator = getGenerator(
     equivalentFraction[0],
     equivalentFraction[1]
   );
-  const inverseFraction = getSimplestFraction(
+  const inverseFraction = getReducedFraction(
     equivalentFraction[1] * 2,
     equivalentFraction[0]
   );

@@ -1,4 +1,4 @@
-const getSimplestFraction = (numerator, denominator) => {
+const getReducedFraction = (numerator, denominator) => {
   // without these two steps, was only evaluating first character in while loop (?)
   numerator = parseInt(numerator);
   denominator = parseInt(denominator);
@@ -65,4 +65,4 @@ const getSimplestFraction = (numerator, denominator) => {
   return returnList;
 };
 
-export default getSimplestFraction;
+export default getReducedFraction;

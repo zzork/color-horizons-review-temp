@@ -1,6 +1,10 @@
-import { CalcIPReadout } from "./CalcIPReadout";
+import { IPReadout } from "./IPReadout";
 
-export const CalcIP = ({ stateData, setStateData, selectedComparison }) => {
+export const IntervalPattern = ({
+  stateData,
+  setStateData,
+  selectedComparison,
+}) => {
   const handleChange = (event) => {
     const newPattern = event.target.value;
     let newState = stateData.map((stateTableRow) => {
@@ -28,7 +32,7 @@ export const CalcIP = ({ stateData, setStateData, selectedComparison }) => {
       </div>
       <div>
         <p></p>
-        <CalcIPReadout
+        <IPReadout
           pattern={stateData[2].pattern}
           selectedComparison={selectedComparison}
         />

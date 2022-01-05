@@ -1,6 +1,6 @@
 import { EDO } from "../apps/Calculators/EDO/Index";
+import { IntervalPattern } from "../apps/Calculators/IntervalPattern/Index";
 import { LTByRatio } from "../apps/Calculators/LTByRatio/Index";
-import { CalcIP } from "./CalcIP";
 
 export const CalculatorWindow = ({
   viewId,
@@ -25,7 +25,7 @@ export const CalculatorWindow = ({
         />
       )}
       {viewId === "ip" && (
-        <CalcIP
+        <IntervalPattern
           stateData={stateData}
           setStateData={setStateData}
           selectedComparison={selectedComparison}

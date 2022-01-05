@@ -6,7 +6,7 @@ import getUniqueSteps from "../../../util/getUniqueSteps";
 import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
 import LTStepValuesDisplay from "./LTStepValuesDisplay";
 import UniquesDisplay from "./LTUniquesDisplay";
-import getGenerator from "./util/getGenerator";
+import getCentsFromRatio from "../../../util/getCentsFromRatio";
 import getLMSList from "./util/getLMSList";
 import getLTStepValuesList from "./util/getLTStepValuesList";
 
@@ -27,7 +27,7 @@ export const LTReadout = ({
   }
 
   const equivalentFraction = getReducedFraction(numerator, denominator);
-  const mainGenerator = getGenerator(
+  const mainGenerator = getCentsFromRatio(
     equivalentFraction[0],
     equivalentFraction[1]
   );
@@ -35,7 +35,10 @@ export const LTReadout = ({
     equivalentFraction[1] * 2,
     equivalentFraction[0]
   );
-  const inverseGenerator = getGenerator(inverseFraction[0], inverseFraction[1]);
+  const inverseGenerator = getCentsFromRatio(
+    inverseFraction[0],
+    inverseFraction[1]
+  );
   const momentsOfSymmetry = getMos(
     equivalentFraction[0],
     equivalentFraction[1]

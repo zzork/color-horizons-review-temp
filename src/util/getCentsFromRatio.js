@@ -1,4 +1,4 @@
-const getGenerator = (numerator, denominator) => {
+const getCentsFromRatio = (numerator, denominator) => {
   let generator = (1200 * Math.log(numerator / denominator)) / Math.log(2);
   while (generator > 1200) {
     generator -= 1200;
@@ -6,4 +6,4 @@ const getGenerator = (numerator, denominator) => {
   return generator;
 };
 
-export default getGenerator;
+export default getCentsFromRatio;

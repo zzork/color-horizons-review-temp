@@ -6,7 +6,7 @@ export const LTByRatio = ({ stateData, setStateData, selectedComparison }) => {
     let fieldReader = event.target.name;
     let newValue = event.target.value;
 
-    if (fieldReader === "ltNumerator") {
+    if (fieldReader === "ltNumeratorEntryField") {
       let newState = stateData.map((stateTableRow) => {
         if (stateTableRow.id === "b") {
           return {
@@ -19,7 +19,7 @@ export const LTByRatio = ({ stateData, setStateData, selectedComparison }) => {
       setStateData(newState);
     }
 
-    if (fieldReader === "ltDenominator") {
+    if (fieldReader === "ltDenominatorEntryField") {
       let newState = stateData.map((stateTableRow) => {
         if (stateTableRow.id === "b") {
           return {
@@ -32,7 +32,7 @@ export const LTByRatio = ({ stateData, setStateData, selectedComparison }) => {
       setStateData(newState);
     }
 
-    if (fieldReader === "ltNoteTotal") {
+    if (fieldReader === "ltNoteTotalEntryField") {
       let newState = stateData.map((stateTableRow) => {
         if (stateTableRow.id === "b") {
           return {

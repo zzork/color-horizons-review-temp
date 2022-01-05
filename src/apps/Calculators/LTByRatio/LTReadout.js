@@ -1,6 +1,5 @@
 import getGenerator from "../../../util/getGenerator";
 import getLMSList from "../../../util/getLMSList";
-import getLTStepValuesDisplay from "../../../util/getLTStepValuesDisplay";
 import getLTStepValuesList from "../../../util/getLTStepValuesList";
 import getMos from "../../../util/getMos";
 import getSimplestFraction from "../../../util/getSimplestFraction";
@@ -9,6 +8,7 @@ import getStepsValuesAndDifferences from "../../../util/getStepsValuesAndDiffere
 import getUniquesDisplay from "../../../util/getUniquesDisplay";
 import getUniqueSteps from "../../../util/getUniqueSteps";
 import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
+import LTStepValuesDisplay from "./LTStepValuesDisplay";
 
 export const LTReadout = ({
   numerator,
@@ -59,7 +59,6 @@ export const LTReadout = ({
     lmsList
   );
   const uniquesDisplay = getUniquesDisplay(sortedUnique);
-  const stepValuesDisplay = getLTStepValuesDisplay(stepsValuesAndDifferences);
 
   // this should be caught by invalid state
   if (numerator === denominator) {
@@ -94,7 +93,7 @@ export const LTReadout = ({
             <input
               onChange={handleChange}
               type="number"
-              name="ltNoteTotal"
+              name="ltNoteTotalEntryField"
               value={noteTotal}
             ></input>
           </p>
@@ -102,9 +101,9 @@ export const LTReadout = ({
         <h3>{lmsList}</h3>
         <p>Step Sizes</p>
         {uniquesDisplay} <br />
-        <table>
-          <tbody>{stepValuesDisplay}</tbody>
-        </table>
+        <LTStepValuesDisplay
+          stepsValuesAndDifferences={stepsValuesAndDifferences}
+        />
         <br />
         <ComparisonWindow
           scale={stepsValuesList}

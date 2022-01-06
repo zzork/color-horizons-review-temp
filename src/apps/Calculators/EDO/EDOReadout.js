@@ -10,7 +10,7 @@ export const EDOReadout = ({ edo, selectedComparison }) => {
   }
 
   const stepSize = 1200 / edo;
-  const scale = getEdoScale(edo, stepSize);
+  const scale = getEdoScale(edo);
 
   return (
     <div>

@@ -62,7 +62,7 @@ getAllPossiblePatterns
 CALCULATORS - EDO
 
 -getEdoScale
---Input: EDO & Step Size / 5, 240
+--Input: EDO / 5
 --Output: Scale List / [0, 240, 480, 720, 960, 1200]
 
 ---

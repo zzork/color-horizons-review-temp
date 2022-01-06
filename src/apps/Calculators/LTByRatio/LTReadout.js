@@ -7,7 +7,7 @@ import LTStepValuesDisplay from "./LTStepValuesDisplay";
 import UniquesDisplay from "./LTUniquesDisplay";
 import getCentsFromRatio from "../../../util/getCentsFromRatio";
 import getLMSList from "./util/getLMSList";
-import getLTStepValuesList from "./util/getLTStepValuesList";
+import getLTScale from "./util/getLTScale";
 import getStepsValuesAndDifferences from "./util/getStepsValuesAndDifferences";
 
 export const LTReadout = ({
@@ -26,38 +26,31 @@ export const LTReadout = ({
     return <InvalidState numerator={numerator} denominator={denominator} />;
   }
 
-  const equivalentFraction = getReducedFraction(numerator, denominator);
+  const reducedFraction = getReducedFraction(numerator, denominator);
   const mainGenerator = getCentsFromRatio(
-    equivalentFraction[0],
-    equivalentFraction[1]
+    reducedFraction[0],
+    reducedFraction[1]
   );
   const inverseFraction = getReducedFraction(
-    equivalentFraction[1] * 2,
-    equivalentFraction[0]
+    reducedFraction[1] * 2,
+    reducedFraction[0]
   );
   const inverseGenerator = getCentsFromRatio(
     inverseFraction[0],
     inverseFraction[1]
   );
-  const momentsOfSymmetry = getMos(
-    equivalentFraction[0],
-    equivalentFraction[1]
-  );
+  const momentsOfSymmetry = getMos(reducedFraction[0], reducedFraction[1]);
 
   const mosButtons = momentsOfSymmetry.map((value) => (
     <button onClick={() => handleMOSClick(value)}>{value}</button>
   ));
 
-  const stepsValuesList = getLTStepValuesList(
-    equivalentFraction[0],
-    equivalentFraction[1],
-    noteTotal
-  );
-  const stepDifferences = getStepDifferences(stepsValuesList);
+  const scale = getLTScale(reducedFraction[0], reducedFraction[1], noteTotal);
+  const stepDifferences = getStepDifferences(scale);
   const sortedUnique = getUniqueSteps(stepDifferences);
   const lmsList = getLMSList(stepDifferences, sortedUnique);
   const stepsValuesAndDifferences = getStepsValuesAndDifferences(
-    stepsValuesList,
+    scale,
     stepDifferences,
     lmsList
   );
@@ -66,15 +59,14 @@ export const LTReadout = ({
   if (numerator === denominator) {
     return "Numerator and Denominator are Identical";
   }
-  if (equivalentFraction[0] === 2 && equivalentFraction[1] === 1) {
+  if (reducedFraction[0] === 2 && reducedFraction[1] === 1) {
     return "Your entry is equivalent to 2/1";
   }
 
   return (
     <div>
       <div>
-        Your entry is equivalent to {equivalentFraction[0]} /{" "}
-        {equivalentFraction[1]}
+        Your entry is equivalent to {reducedFraction[0]} / {reducedFraction[1]}
         <br />
         Generator: {mainGenerator.toFixed(5)}
         <br />
@@ -108,7 +100,7 @@ export const LTReadout = ({
         />
         <br />
         <ComparisonWindow
-          scale={stepsValuesList}
+          scale={scale}
           selectedComparison={selectedComparison}
         />
         <br />

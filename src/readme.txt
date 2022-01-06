@@ -85,7 +85,7 @@ CALCULATORS - LTBYRATIO
 --Input: 
 --Output: 
 
--getLTStepValuesList
+-getLTScale
 --Input: 
 --Output: 
 

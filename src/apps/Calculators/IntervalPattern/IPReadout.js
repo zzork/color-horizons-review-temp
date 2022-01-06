@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import IPUniqueSizesTable from "./IPUniqueSizesTable";
 import AllModes from "../../AllModes";
 import getEdoFromIntervalPattern from "./util/getEdoFromIntervalPattern";

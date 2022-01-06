@@ -19,14 +19,30 @@ export const LTReadout = ({
   handleMOSClick,
   handleChange,
 }) => {
+  const reducedFraction = getReducedFraction(numerator, denominator);
+
+  const reducedFractionIsDuple =
+    reducedFraction[0] === 2 &&
+    reducedFraction[1] === 1 &&
+    numerator !== denominator;
   const isValidState = () => {
-    return numerator > 0 && denominator > 0;
+    return (
+      numerator > 0 &&
+      denominator > 0 &&
+      numerator !== denominator &&
+      !reducedFractionIsDuple
+    );
   };
   if (!isValidState()) {
-    return <InvalidState numerator={numerator} denominator={denominator} />;
+    return (
+      <InvalidState
+        numerator={numerator}
+        denominator={denominator}
+        reducedFractionIsDuple={reducedFractionIsDuple}
+      />
+    );
   }
 
-  const reducedFraction = getReducedFraction(numerator, denominator);
   const mainGenerator = getCentsFromRatio(
     reducedFraction[0],
     reducedFraction[1]
@@ -54,14 +70,6 @@ export const LTReadout = ({
     stepDifferences,
     lmsList
   );
-
-  // this should be caught by invalid state
-  if (numerator === denominator) {
-    return "Numerator and Denominator are Identical";
-  }
-  if (reducedFraction[0] === 2 && reducedFraction[1] === 1) {
-    return "Your entry is equivalent to 2/1";
-  }
 
   return (
     <div>
@@ -109,9 +117,13 @@ export const LTReadout = ({
   );
 };
 
-const InvalidState = ({ numerator, denominator }) => {
+const InvalidState = ({ numerator, denominator, reducedFractionIsDuple }) => {
   return (
     <div>
+      {numerator === denominator && (
+        <p>Numerator and Denominator are Identical</p>
+      )}
+      {reducedFractionIsDuple && <p>Your entry is equivalent to 2/1</p>}
       {numerator === "" && denominator === "" && (
         <p>Enter a Numerator and Denominator</p>
       )}

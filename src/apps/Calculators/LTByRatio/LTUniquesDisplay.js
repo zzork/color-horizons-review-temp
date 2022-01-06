@@ -20,11 +20,11 @@ const LTUniquesDisplay = ({ reducedFraction, noteTotal }) => {
         <tbody>
           <tr>
             <td>L</td>
-            <td>{sortedUnique[0]}</td>
+            <td>{sortedUnique[0].toFixed(5)}</td>
           </tr>
           <tr>
             <td>s</td>
-            <td>{sortedUnique[1]}</td>
+            <td>{sortedUnique[1].toFixed(5)}</td>
           </tr>
         </tbody>
       </table>
@@ -37,15 +37,15 @@ const LTUniquesDisplay = ({ reducedFraction, noteTotal }) => {
         <tbody>
           <tr>
             <td>L</td>
-            <td>{sortedUnique[0]}</td>
+            <td>{sortedUnique[0].toFixed(5)}</td>
           </tr>
           <tr>
             <td>m</td>
-            <td>{sortedUnique[1]}</td>
+            <td>{sortedUnique[1].toFixed(5)}</td>
           </tr>
           <tr>
             <td>s</td>
-            <td>{sortedUnique[2]}</td>
+            <td>{sortedUnique[2].toFixed(5)}</td>
           </tr>
         </tbody>
       </table>

@@ -90,16 +90,15 @@ export const LTReadout = ({
         </button>
         <p>
           Moments of Symmetry <br />
-          {mosButtons}
-          <p>
-            Note Amount:{" "}
-            <input
-              onChange={handleChange}
-              type="number"
-              name="ltNoteTotalEntryField"
-              value={noteTotal}
-            ></input>
-          </p>
+          {mosButtons} <br />
+          <br />
+          Note Amount:{" "}
+          <input
+            onChange={handleChange}
+            type="number"
+            name="ltNoteTotalEntryField"
+            value={noteTotal}
+          ></input>
         </p>
         <h3>{lmsList}</h3>
         <p>Step Sizes</p>
@@ -108,14 +107,14 @@ export const LTReadout = ({
           noteTotal={noteTotal}
         />
         <br />
-        {/* <LTStepValuesDisplay
+        <LTStepValuesDisplay
           stepsValuesAndDifferences={stepsValuesAndDifferences}
         />
         <br />
         <ComparisonWindow
           scale={scale}
           selectedComparison={selectedComparison}
-        /> */}
+        />
         <br />
       </div>
     </div>

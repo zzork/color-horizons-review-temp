@@ -63,6 +63,7 @@ export const ComparisonWindow = ({ scale, selectedComparison }) => {
     rows.push(row);
   }
 
+  // this is table where the "each child should have a key" error is coming from
   let endTable = rows.map((row) => (
     <tr key={row.id}>
       <td>{row[0]}</td>

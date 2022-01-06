@@ -1,5 +1,5 @@
 const getLMSList = (stepDifferences, sortedUnique) => {
-  console.log(stepDifferences, sortedUnique);
+  console.log("sortedUnique:", sortedUnique);
   let lSize = 0;
   let mSize = 0;
   let sSize = 0;
@@ -14,19 +14,19 @@ const getLMSList = (stepDifferences, sortedUnique) => {
   }
 
   const valueToLms = (value) => {
-    if (value === lSize) {
+    if (value.toFixed(5) === lSize) {
       return "L";
     }
-    if (value === mSize) {
+    if (value.toFixed(5) === mSize) {
       return "𝚖";
     }
-    if (value === sSize) {
+    if (value.toFixed(5) === sSize) {
       return "s";
     }
   };
 
   // take mapped LMS and create new list from previous values
-  let lmsList = stepDifferences.map((value) => valueToLms(value.toFixed(5)));
+  let lmsList = stepDifferences.map((value) => valueToLms(value));
 
   return lmsList;
 };

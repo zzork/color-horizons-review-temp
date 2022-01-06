@@ -100,8 +100,6 @@ export const LTReadout = ({
             value={noteTotal}
           ></input>
         </p>
-        <h3>{lmsList}</h3>
-        <p>Step Sizes</p>
         <LTUniquesDisplay
           reducedFraction={reducedFraction}
           noteTotal={noteTotal}

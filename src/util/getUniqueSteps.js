@@ -1,6 +1,6 @@
 const getUniqueSteps = (stepDifferences) => {
   let fixedStepsList = stepDifferences.map((step) =>
-    parseFloat(step.toFixed(12))
+    parseFloat(step.toFixed(9))
   );
   const uniqueSteps = [...new Set(fixedStepsList)];
   uniqueSteps.shift();

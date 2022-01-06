@@ -29,6 +29,7 @@ function App() {
               <ComparisonOptions onComparisonChoice={onComparisonChoice} />
             </td>
           </tr>
+          <br />
         </tbody>
       </table>
       <CalculatorWindow

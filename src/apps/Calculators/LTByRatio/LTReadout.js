@@ -4,7 +4,7 @@ import getStepDifferences from "../../../util/getStepDifferences";
 import getUniqueSteps from "../../../util/getUniqueSteps";
 import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
 import LTStepValuesDisplay from "./LTStepValuesDisplay";
-import UniquesDisplay from "./LTUniquesDisplay";
+import LTUniquesDisplay from "./LTUniquesDisplay";
 import getCentsFromRatio from "../../../util/getCentsFromRatio";
 import getLMSList from "./util/getLMSList";
 import getLTScale from "./util/getLTScale";
@@ -61,6 +61,7 @@ export const LTReadout = ({
     <button onClick={() => handleMOSClick(value)}>{value}</button>
   ));
 
+  // none of this should be here, it should be in the all modes of this
   const scale = getLTScale(reducedFraction[0], reducedFraction[1], noteTotal);
   const stepDifferences = getStepDifferences(scale);
   const sortedUnique = getUniqueSteps(stepDifferences);
@@ -102,15 +103,19 @@ export const LTReadout = ({
         </p>
         <h3>{lmsList}</h3>
         <p>Step Sizes</p>
-        <UniquesDisplay sortedUnique={sortedUnique} />
-        <LTStepValuesDisplay
+        <LTUniquesDisplay
+          reducedFraction={reducedFraction}
+          noteTotal={noteTotal}
+        />
+        <br />
+        {/* <LTStepValuesDisplay
           stepsValuesAndDifferences={stepsValuesAndDifferences}
         />
         <br />
         <ComparisonWindow
           scale={scale}
           selectedComparison={selectedComparison}
-        />
+        /> */}
         <br />
       </div>
     </div>

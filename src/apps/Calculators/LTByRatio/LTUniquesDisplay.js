@@ -1,26 +1,57 @@
-const UniquesDisplay = ({ sortedUnique }) => {
+import getStepDifferences from "../../../util/getStepDifferences";
+import getUniqueSteps from "../../../util/getUniqueSteps";
+import getLTScale from "./util/getLTScale";
+
+const LTUniquesDisplay = ({ reducedFraction, noteTotal }) => {
+  const scale = getLTScale(reducedFraction[0], reducedFraction[1], noteTotal);
+  const stepDifferences = getStepDifferences(scale);
+
+  const sortedUnique = getUniqueSteps(stepDifferences);
+
   let uniquesDisplay = null;
+
   if (sortedUnique.length < 2) {
     uniquesDisplay = <div>Not enough notes</div>;
   }
+
   if (sortedUnique.length === 2) {
     uniquesDisplay = (
-      <div>
-        L - {sortedUnique[0]}
-        <br />s - {sortedUnique[1]}
-      </div>
+      <table>
+        <tbody>
+          <tr>
+            <td>L</td>
+            <td>{sortedUnique[0]}</td>
+          </tr>
+          <tr>
+            <td>s</td>
+            <td>{sortedUnique[1]}</td>
+          </tr>
+        </tbody>
+      </table>
     );
   }
+
   if (sortedUnique.length === 3) {
     uniquesDisplay = (
-      <div>
-        L - {sortedUnique[0]}
-        <br />m - {sortedUnique[1]}
-        <br />s - {sortedUnique[2]}
-      </div>
+      <table>
+        <tbody>
+          <tr>
+            <td>L</td>
+            <td>{sortedUnique[0]}</td>
+          </tr>
+          <tr>
+            <td>m</td>
+            <td>{sortedUnique[1]}</td>
+          </tr>
+          <tr>
+            <td>s</td>
+            <td>{sortedUnique[2]}</td>
+          </tr>
+        </tbody>
+      </table>
     );
   }
   return uniquesDisplay;
 };
 
-export default UniquesDisplay;
+export default LTUniquesDisplay;

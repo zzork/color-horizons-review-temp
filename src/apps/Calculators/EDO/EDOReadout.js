@@ -1,5 +1,5 @@
 import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
-import getDisplayEdoStepValues from "./util/getDisplayEdoStepValues";
+import getEdoScale from "./util/getEdoScale";
 
 export const EDOReadout = ({ edo, selectedComparison }) => {
   const isValidState = () => {
@@ -10,7 +10,7 @@ export const EDOReadout = ({ edo, selectedComparison }) => {
   }
 
   const stepSize = 1200 / edo;
-  const displaySteps = getDisplayEdoStepValues(edo, stepSize);
+  const scale = getEdoScale(edo, stepSize);
 
   return (
     <div>
@@ -22,7 +22,7 @@ export const EDOReadout = ({ edo, selectedComparison }) => {
             <td>Step</td>
             <td>Value</td>
           </tr>
-          {displaySteps.map((displayStep, index) => {
+          {scale.map((displayStep, index) => {
             return (
               <tr key={index}>
                 <td>Step {index}</td>
@@ -33,10 +33,7 @@ export const EDOReadout = ({ edo, selectedComparison }) => {
         </tbody>
       </table>
       <br />
-      <ComparisonWindow
-        scale={displaySteps}
-        selectedComparison={selectedComparison}
-      />
+      <ComparisonWindow scale={scale} selectedComparison={selectedComparison} />
     </div>
   );
 };

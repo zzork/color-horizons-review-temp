@@ -1,9 +1,10 @@
 const getCentsFromRatio = (numerator, denominator) => {
-  let generator = (1200 * Math.log(numerator / denominator)) / Math.log(2);
-  while (generator > 1200) {
-    generator -= 1200;
+  let centsConversion =
+    (1200 * Math.log(numerator / denominator)) / Math.log(2);
+  while (centsConversion > 1200) {
+    centsConversion -= 1200;
   }
-  return generator;
+  return centsConversion;
 };
 
 export default getCentsFromRatio;

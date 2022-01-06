@@ -1,7 +1,6 @@
 import getMos from "./util/getMos";
 import getReducedFraction from "../../../util/getReducedFraction";
 import getStepDifferences from "../../../util/getStepDifferences";
-import getStepsValuesAndDifferences from "../../../util/getStepsValuesAndDifferences";
 import getUniqueSteps from "../../../util/getUniqueSteps";
 import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
 import LTStepValuesDisplay from "./LTStepValuesDisplay";
@@ -9,6 +8,7 @@ import UniquesDisplay from "./LTUniquesDisplay";
 import getCentsFromRatio from "../../../util/getCentsFromRatio";
 import getLMSList from "./util/getLMSList";
 import getLTStepValuesList from "./util/getLTStepValuesList";
+import getStepsValuesAndDifferences from "./util/getStepsValuesAndDifferences";
 
 export const LTReadout = ({
   numerator,

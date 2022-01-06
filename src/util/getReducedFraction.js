@@ -60,7 +60,6 @@ const getReducedFraction = (numerator, denominator) => {
     numerator /= 2;
     denominator /= 2;
   }
-
   const returnList = [numerator, denominator];
   return returnList;
 };

@@ -1,7 +1,7 @@
-const getStepDifferences = (stepsValuesList) => {
+const getStepDifferences = (scale) => {
   let stepDifferences = [0];
-  for (let i = 1; i < stepsValuesList.length; i++) {
-    stepDifferences.push(stepsValuesList[i] - stepsValuesList[i - 1]);
+  for (let i = 1; i < scale.length; i++) {
+    stepDifferences.push(scale[i] - scale[i - 1]);
   }
   return stepDifferences;
 };

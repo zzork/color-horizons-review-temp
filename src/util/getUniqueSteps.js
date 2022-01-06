@@ -7,7 +7,6 @@ const getUniqueSteps = (stepDifferences) => {
   let sortedUnique = [...uniqueSteps];
   sortedUnique.sort((a, b) => a - b);
   sortedUnique.reverse();
-  console.log(sortedUnique);
   return sortedUnique;
 };
 

@@ -1,15 +1,16 @@
 const getLMSList = (stepDifferences, sortedUnique) => {
+  console.log(stepDifferences, sortedUnique);
   let lSize = 0;
   let mSize = 0;
   let sSize = 0;
   if (sortedUnique.length === 2) {
-    lSize = sortedUnique[0];
-    sSize = sortedUnique[1];
+    lSize = sortedUnique[0].toFixed(5);
+    sSize = sortedUnique[1].toFixed(5);
   }
   if (sortedUnique.length === 3) {
-    lSize = sortedUnique[0];
-    mSize = sortedUnique[1];
-    sSize = sortedUnique[2];
+    lSize = sortedUnique[0].toFixed(5);
+    mSize = sortedUnique[1].toFixed(5);
+    sSize = sortedUnique[2].toFixed(5);
   }
 
   const valueToLms = (value) => {

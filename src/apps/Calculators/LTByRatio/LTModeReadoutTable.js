@@ -9,7 +9,7 @@ const LTModeReadoutTable = ({ index, ltObject }) => {
         <tbody>
           <tr>
             <td>Step</td>
-            <td>Fraction</td>
+            <td>Ratio</td>
             <td>Value</td>
             <td>Difference</td>
             <td>Interval</td>

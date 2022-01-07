@@ -62,17 +62,6 @@ export const LTReadout = ({
     <button onClick={() => handleMOSClick(value)}>{value}</button>
   ));
 
-  // none of this should be here, it should be in the all modes of this
-  // const scale = getLTScale(reducedFraction[0], reducedFraction[1], noteTotal);
-  // const stepDifferences = getStepDifferences(scale);
-  // const sortedUnique = getUniqueSteps(stepDifferences);
-  // const lmsList = getLMSList(stepDifferences, sortedUnique);
-  // const stepsValuesAndDifferences = getStepsValuesAndDifferences(
-  //   scale,
-  //   stepDifferences,
-  //   lmsList
-  // );
-
   return (
     <div>
       <div>

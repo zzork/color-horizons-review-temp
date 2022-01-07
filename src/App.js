@@ -7,7 +7,9 @@ import { ComparisonOptions } from "./apps/RatioComparer/ComparisonOptions";
 
 function App() {
   const [stateData, setStateData] = useState(stateTable);
-  const [selectedView, setSelectedView] = useState("lt");
+
+  // these could be lifted up to stateTable
+  const [selectedView, setSelectedView] = useState("edo");
   const onSelect = (viewId) => {
     setSelectedView(viewId);
   };
@@ -62,3 +64,5 @@ export default App;
 // - ax + by = 1200
 
 // set decimal accuracy of readouts
+
+// to do - lift other states in app.js to stateData table

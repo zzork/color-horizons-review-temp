@@ -17,7 +17,7 @@ export const CalculatorWindow = ({
           selectedComparison={selectedComparison}
         />
       )}
-      {viewId === "lt" && (
+      {viewId === "ltbr" && (
         <LTByRatio
           stateData={stateData}
           setStateData={setStateData}

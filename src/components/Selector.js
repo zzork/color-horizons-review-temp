@@ -10,7 +10,7 @@ export const Selector = ({ onSelect }) => {
       </button>
       <button onClick={() => onSelect("ip")}>Interval Pattern</button>
       <br />
-      <button onClick={() => onSelect("lt")}>
+      <button onClick={() => onSelect("ltbr")}>
         Linear Temperament by Ratio
       </button>
       <button>

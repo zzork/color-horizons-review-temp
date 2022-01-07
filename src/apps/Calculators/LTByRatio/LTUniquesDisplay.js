@@ -18,10 +18,8 @@ const LTUniquesDisplay = ({ reducedFraction, noteTotal }) => {
   if (sortedUnique.length === 2) {
     uniquesDisplay = (
       <div>
-        <h3>{lmsList}</h3>
         <br />
-        Step Sizes
-        <br />
+        <h4>Step Sizes</h4>
         <table>
           <tbody>
             <tr>
@@ -41,9 +39,8 @@ const LTUniquesDisplay = ({ reducedFraction, noteTotal }) => {
   if (sortedUnique.length === 3) {
     uniquesDisplay = (
       <div>
-        <h3>{lmsList}</h3>
         <br />
-        Step Sizes <br />
+        <h4>Step Sizes</h4>
         <table>
           <tbody>
             <tr>

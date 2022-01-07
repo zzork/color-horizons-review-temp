@@ -9,14 +9,6 @@ const LTUniquesDisplay = ({ reducedFraction, noteTotal }) => {
   const sortedUnique = getUniqueSteps(stepDifferences);
   const lmsList = getLMSList(stepDifferences, sortedUnique);
 
-  const lmsDisplay = (
-    <div>
-      Step Sizes
-      <br />
-      <h3>{lmsList}</h3>
-    </div>
-  );
-
   let uniquesDisplay = null;
 
   if (sortedUnique.length < 2) {
@@ -26,7 +18,9 @@ const LTUniquesDisplay = ({ reducedFraction, noteTotal }) => {
   if (sortedUnique.length === 2) {
     uniquesDisplay = (
       <div>
-        {lmsDisplay}
+        <h3>{lmsList}</h3>
+        <br />
+        Step Sizes
         <br />
         <table>
           <tbody>
@@ -47,8 +41,9 @@ const LTUniquesDisplay = ({ reducedFraction, noteTotal }) => {
   if (sortedUnique.length === 3) {
     uniquesDisplay = (
       <div>
-        {lmsDisplay}
+        <h3>{lmsList}</h3>
         <br />
+        Step Sizes <br />
         <table>
           <tbody>
             <tr>

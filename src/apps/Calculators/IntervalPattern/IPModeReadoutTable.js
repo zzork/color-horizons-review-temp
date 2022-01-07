@@ -13,7 +13,7 @@ const IPModeReadoutTable = ({ index, patternAndScale }) => {
             <td>Difference</td>
             <td>Interval</td>
           </tr>
-          {patternAndScale.values.map((value, valueIndex) => (
+          {patternAndScale.mode.map((value, valueIndex) => (
             <tr key={valueIndex}>
               <td>Step {valueIndex}</td>
               <td>{value.toFixed(5)}</td>

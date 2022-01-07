@@ -11,7 +11,7 @@ const IPAllModes = ({ pattern, selectedComparison }) => {
           <IPModeReadoutTable patternAndScale={patternAndScale} index={index} />
           <br />
           <ComparisonWindow
-            scale={patternAndScale.values}
+            scale={patternAndScale.mode}
             selectedComparison={selectedComparison}
           />
         </div>

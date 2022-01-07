@@ -27,7 +27,7 @@ const convertPatternToModes = (pattern) => {
     return {
       pattern: scalePattern,
       stepDifferences,
-      values: getValuesFromStepDifferences(stepDifferences),
+      mode: getValuesFromStepDifferences(stepDifferences),
     };
   });
   return patternModes;

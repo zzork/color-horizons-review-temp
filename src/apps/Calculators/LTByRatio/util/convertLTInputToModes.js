@@ -3,10 +3,8 @@ import getStepDifferences from "../../../../util/getStepDifferences";
 import getUniqueSteps from "../../../../util/getUniqueSteps";
 import getAllLTModesAsFractions from "./getAllLTModesAsFractions";
 import getLMSList from "./getLMSList";
-import getLTScale from "./getLTScale";
-import getStepsValuesAndDifferences from "./getStepsValuesAndDifferences";
 
-const convertFractionModeToCents = (mode) => {
+const convertFractionModeToCentsScale = (mode) => {
   let scale = [];
   for (let i = 0; i < mode.length; i++) {
     scale.push(getCentsFromRatio(mode[i][0], mode[i][1]));
@@ -20,14 +18,21 @@ const convertLTInputToModes = (reducedFraction, noteTotal) => {
     noteTotal
   );
 
-  //   for (let i = 0; i < allLTModesAsFractions; i++) {
+  let ltObjectsList = [];
+  for (let i = 0; i < allLTModesAsFractions.length; i++) {
+    let scale = convertFractionModeToCentsScale(allLTModesAsFractions[i]);
+    let stepDifferences = getStepDifferences(scale);
+    let sortedUnique = getUniqueSteps(stepDifferences);
+    let lmsList = getLMSList(stepDifferences, sortedUnique);
+    ltObjectsList.push({
+      fractionScale: allLTModesAsFractions[i],
+      scale,
+      stepDifferences,
+      lmsList,
+    });
+  }
 
-  const scale = convertFractionModeToCents(allLTModesAsFractions[1]);
-  const stepDifferences = getStepDifferences(scale);
-  const sortedUnique = getUniqueSteps(stepDifferences);
-  const lmsList = getLMSList(stepDifferences, sortedUnique);
-
-  console.log(scale, stepDifferences, sortedUnique, lmsList);
+  console.log({ ltObjectsList });
 
   // now take each fraction value and create an object applying
   // stepDifferencesValue, LMS Value, Fraction, and Cents Value

@@ -7,7 +7,7 @@ import { ComparisonOptions } from "./apps/RatioComparer/ComparisonOptions";
 
 function App() {
   const [stateData, setStateData] = useState(stateTable);
-  const [selectedView, setSelectedView] = useState("ip");
+  const [selectedView, setSelectedView] = useState("lt");
   const onSelect = (viewId) => {
     setSelectedView(viewId);
   };

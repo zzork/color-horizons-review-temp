@@ -1,5 +1,4 @@
 const getLMSList = (stepDifferences, sortedUnique) => {
-  console.log("sortedUnique:", sortedUnique);
   let lSize = 0;
   let mSize = 0;
   let sSize = 0;

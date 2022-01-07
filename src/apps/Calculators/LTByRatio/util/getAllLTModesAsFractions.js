@@ -1,13 +1,5 @@
 import getReducedFraction from "../../../../util/getReducedFraction";
-
-// This needs to be extracted
-
-const divideTwoFractions = (fraction1, fraction2) => {
-  let newNumerator = fraction1[0] * fraction2[1];
-  let newDenominator = fraction1[1] * fraction2[0];
-  let newFractionReduced = getReducedFraction(newNumerator, newDenominator);
-  return newFractionReduced;
-};
+import divideTwoFractions from "./divideTwoFractions";
 
 const getAllLTModesAsFractions = (reducedFraction, noteTotal) => {
   let listOfAllModes = [];
@@ -19,13 +11,11 @@ const getAllLTModesAsFractions = (reducedFraction, noteTotal) => {
       reducedFraction[0] ** i,
       reducedFraction[1] ** i,
     ];
-    /////// BOTTLENECK IS HERE //////// WTF
-
+    /////// BOTTLENECK IS HERE ////////
     let currentFractionValueReduced = getReducedFraction(
       currentFractionValue[0],
       currentFractionValue[1]
     );
-
     ////////////////////////////////////
 
     let thisCentsValue =
@@ -36,8 +26,10 @@ const getAllLTModesAsFractions = (reducedFraction, noteTotal) => {
       Math.log(2);
     originalScale.push([thisCentsValue, currentFractionValueReduced]);
   }
+
   // sort by cents values
   originalScale.sort((a, b) => a[0] - b[0]);
+
   // remove cents values
   let originalScaleNoCents = originalScale.map((row) => row[1]);
 

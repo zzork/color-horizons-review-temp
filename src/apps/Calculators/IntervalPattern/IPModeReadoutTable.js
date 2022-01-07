@@ -1,4 +1,4 @@
-const IPModeReadoutTable = ({ index, patternAndScale: ipObject }) => {
+const IPModeReadoutTable = ({ index, ipObject }) => {
   return (
     <div>
       <h2>

@@ -20,9 +20,8 @@ const getValuesFromStepDifferences = (stepDifferences) => {
 };
 
 const convertPatternToModes = (pattern) => {
-  // take pattern and make all possible patterns
-  const scalePatterns = getAllPossiblePatterns(pattern);
-  const patternModes = scalePatterns.map((scalePattern) => {
+  const allModesAsPatterns = getAllPossiblePatterns(pattern);
+  const allIPObjects = allModesAsPatterns.map((scalePattern) => {
     const stepDifferences = applyEdo(scalePattern);
     return {
       pattern: scalePattern,
@@ -30,51 +29,7 @@ const convertPatternToModes = (pattern) => {
       mode: getValuesFromStepDifferences(stepDifferences),
     };
   });
-  return patternModes;
+  return allIPObjects;
 };
-
-// [1, 2, 3]
-// to
-// {
-//   pattern: [1, 2, 3],
-//   values: [0, 1200],
-//   stepDifference: [20]
-// }
-
-//   let patternAndScale = [];
-
-//   let patternListed = pattern.split("");
-//   patternAndScale.push([0, patternListed, scale, stepDifferences]);
-
-//   let forLoopPattern = [...patternListed];
-//   let forLoopScale = [...scale];
-//   let forLoopDifferences = [...stepDifferences];
-
-//   for (let i = 1; i < pattern.length; i++) {
-//     // pattern values
-//     let firstPatternValue = forLoopPattern[0];
-//     forLoopPattern.push(firstPatternValue);
-//     forLoopPattern.shift();
-
-//     // differences between steps
-//     forLoopDifferences.push(forLoopDifferences[1]);
-//     forLoopDifferences.shift();
-//     forLoopDifferences[0] = 0;
-//     // console.log(i, forLoopDifferences);
-
-//     // scale itself
-//     forLoopScale = forLoopScale.map((value) => value - forLoopScale[1]);
-//     forLoopScale.shift();
-//     forLoopScale.push(1200);
-
-//     patternAndScale.push([
-//       i,
-//       [...forLoopPattern],
-//       forLoopScale,
-//       [...forLoopDifferences],
-//     ]);
-//   }
-//   return patternAndScale;
-// };
 
 export default convertPatternToModes;

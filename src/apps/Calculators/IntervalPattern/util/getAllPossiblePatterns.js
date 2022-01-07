@@ -1,9 +1,8 @@
 const getAllPossiblePatterns = (pattern) => {
+  const patternsCount = pattern.length;
   let nextPattern = pattern.split("");
-  // patterns are always same number as number in original pattern
-  const possiblePatternsCount = nextPattern.length;
   const allPossiblePatterns = [];
-  for (let i = 0; i < possiblePatternsCount; i++) {
+  for (let i = 0; i < patternsCount; i++) {
     allPossiblePatterns.push(nextPattern);
     nextPattern = [...nextPattern.slice(1), nextPattern[0]];
   }

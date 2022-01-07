@@ -1,5 +1,7 @@
 import getReducedFraction from "../../../../util/getReducedFraction";
 
+// This needs to be extracted
+
 const divideTwoFractions = (fraction1, fraction2) => {
   let newNumerator = fraction1[0] * fraction2[1];
   let newDenominator = fraction1[1] * fraction2[0];
@@ -44,23 +46,20 @@ const getAllLTModesAsFractions = (reducedFraction, noteTotal) => {
 
   let currentMode = originalScaleNoCents;
 
-  let secondMode = [];
-  for (let i = 0; i < currentMode.length; i++) {
-    let newFraction = divideTwoFractions(currentMode[i], currentMode[1]);
-    secondMode.push(newFraction);
+  for (let j = 1; j < noteTotal; j++) {
+    let thisMode = [];
+    for (let i = 0; i <= noteTotal; i++) {
+      let newFraction = divideTwoFractions(currentMode[i], currentMode[1]);
+      thisMode.push(newFraction);
+    }
+    let removeFirstTwo = thisMode.slice(2);
+    removeFirstTwo.unshift([1, 1]);
+    removeFirstTwo.push([2, 1]);
+    listOfAllModes.push(removeFirstTwo);
+    currentMode = removeFirstTwo;
   }
-  let removeFirstTwo = secondMode.slice(2);
-  removeFirstTwo.unshift([1, 1]);
-  removeFirstTwo.push([2, 1]);
 
-  ///////////// up to here was working
-
-  // NOW CONVERT SECONDMODE PART INTO A LOOP
-
-  // add each final new mode to the main list
-  // repeat
-
-  return "not yet 2";
+  return listOfAllModes;
 };
 
 export default getAllLTModesAsFractions;

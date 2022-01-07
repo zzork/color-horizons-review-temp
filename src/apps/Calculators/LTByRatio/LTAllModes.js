@@ -1,13 +1,13 @@
 import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
 import LTModeReadoutTable from "./LTModeReadoutTable";
-import convertLTInputToModes from "./util/convertLTInputToModes";
+import convertLTInputToModesObjects from "./util/convertLTInputToModesObjects";
 
 export const LTAllModes = ({
   reducedFraction,
   noteTotal,
   selectedComparison,
 }) => {
-  const allLTObjects = convertLTInputToModes(reducedFraction, noteTotal);
+  const allLTObjects = convertLTInputToModesObjects(reducedFraction, noteTotal);
 
   return (
     <div>

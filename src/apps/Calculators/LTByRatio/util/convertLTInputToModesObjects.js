@@ -12,7 +12,7 @@ const convertFractionModeToCentsScale = (mode) => {
   return scale;
 };
 
-const convertLTInputToModes = (reducedFraction, noteTotal) => {
+const convertLTInputToModesObjects = (reducedFraction, noteTotal) => {
   const allLTModesAsFractions = getAllLTModesAsFractions(
     reducedFraction,
     noteTotal
@@ -35,4 +35,4 @@ const convertLTInputToModes = (reducedFraction, noteTotal) => {
   return ltObjectsList;
 };
 
-export default convertLTInputToModes;
+export default convertLTInputToModesObjects;

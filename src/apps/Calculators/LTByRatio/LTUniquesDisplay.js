@@ -1,13 +1,11 @@
 import getStepDifferences from "../../../util/getStepDifferences";
 import getUniqueSteps from "../../../util/getUniqueSteps";
-import getLMSList from "./util/getLMSList";
 import getLTScale from "./util/getLTScale";
 
 const LTUniquesDisplay = ({ reducedFraction, noteTotal }) => {
   const scale = getLTScale(reducedFraction[0], reducedFraction[1], noteTotal);
   const stepDifferences = getStepDifferences(scale);
   const sortedUnique = getUniqueSteps(stepDifferences);
-  const lmsList = getLMSList(stepDifferences, sortedUnique);
 
   let uniquesDisplay = null;
 

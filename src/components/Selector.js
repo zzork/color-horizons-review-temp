@@ -1,16 +1,16 @@
-export const Selector = ({ onSelect }) => {
+export const Selector = ({ onViewSelect }) => {
   return (
     <div>
       <h2>Scale Generation Method</h2>
-      <button onClick={() => onSelect("edo")}>
+      <button onClick={() => onViewSelect("edo")}>
         Equal Division of the Octave
       </button>
       <button>
         <i>EDO MOS*</i>
       </button>
-      <button onClick={() => onSelect("ip")}>Interval Pattern</button>
+      <button onClick={() => onViewSelect("ip")}>Interval Pattern</button>
       <br />
-      <button onClick={() => onSelect("ltbr")}>
+      <button onClick={() => onViewSelect("ltbr")}>
         Linear Temperament by Ratio
       </button>
       <button>

@@ -10,7 +10,7 @@ function App() {
 
   // these could be lifted up to stateTable
   const [selectedView, setSelectedView] = useState("edo");
-  const onSelect = (viewId) => {
+  const onViewSelect = (viewId) => {
     setSelectedView(viewId);
   };
   const [selectedComparison, setSelectedComparison] = useState("harmonics6");
@@ -25,7 +25,7 @@ function App() {
         <tbody>
           <tr>
             <td>
-              <Selector onSelect={onSelect} />
+              <Selector onViewSelect={onViewSelect} />
             </td>
             <td>
               <ComparisonOptions onComparisonChoice={onComparisonChoice} />

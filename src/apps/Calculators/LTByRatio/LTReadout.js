@@ -9,6 +9,7 @@ import getCentsFromRatio from "../../../util/getCentsFromRatio";
 import getLMSList from "./util/getLMSList";
 import getLTScale from "./util/getLTScale";
 import getStepsValuesAndDifferences from "./util/getStepsValuesAndDifferences";
+import { LTAllModes } from "./LTAllModes";
 
 export const LTReadout = ({
   numerator,
@@ -105,14 +106,19 @@ export const LTReadout = ({
           noteTotal={noteTotal}
         />
         <br />
-        <LTStepValuesDisplay
+        <LTAllModes
+          reducedFraction={reducedFraction}
+          noteTotal={noteTotal}
+          selectedComparison={selectedComparison}
+        />
+        {/* <LTStepValuesDisplay
           stepsValuesAndDifferences={stepsValuesAndDifferences}
         />
         <br />
         <ComparisonWindow
           scale={scale}
           selectedComparison={selectedComparison}
-        />
+        /> */}
         <br />
       </div>
     </div>

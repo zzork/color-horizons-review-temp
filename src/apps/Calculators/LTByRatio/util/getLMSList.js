@@ -27,6 +27,8 @@ const getLMSList = (stepDifferences, sortedUnique) => {
   // take mapped LMS and create new list from previous values
   let lmsList = stepDifferences.map((value) => valueToLms(value));
 
+  lmsList.shift();
+
   return lmsList;
 };
 

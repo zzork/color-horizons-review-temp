@@ -25,7 +25,7 @@ const LTModeReadoutTable = ({ index, ltObject }) => {
               <td>
                 {valueIndex === 0
                   ? "-"
-                  : ltObject.stepDifferences[valueIndex - 1].toFixed(5)}
+                  : ltObject.stepDifferences[valueIndex].toFixed(5)}
               </td>
               <td>
                 {valueIndex === 0 ? "-" : ltObject.lmsList[valueIndex - 1]}

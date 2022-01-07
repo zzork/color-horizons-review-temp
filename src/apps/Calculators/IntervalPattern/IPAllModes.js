@@ -3,15 +3,15 @@ import IPModeReadoutTable from "./IPModeReadoutTable";
 import convertPatternToModes from "./util/convertPatternToModes";
 
 const IPAllModes = ({ pattern, selectedComparison }) => {
-  const patternAndScales = convertPatternToModes(pattern);
+  const allIPObjects = convertPatternToModes(pattern);
   return (
     <div>
-      {patternAndScales.map((patternAndScale, index) => (
+      {allIPObjects.map((ipObject, index) => (
         <div key={index}>
-          <IPModeReadoutTable patternAndScale={patternAndScale} index={index} />
+          <IPModeReadoutTable ipObject={ipObject} index={index} />
           <br />
           <ComparisonWindow
-            scale={patternAndScale.mode}
+            scale={ipObject.mode}
             selectedComparison={selectedComparison}
           />
         </div>

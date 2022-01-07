@@ -66,3 +66,5 @@ export default App;
 // set decimal accuracy of readouts
 
 // to do - lift other states in app.js to stateData table
+
+// re-figure out how comparison window works, refactor if needed

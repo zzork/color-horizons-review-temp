@@ -1,8 +1,8 @@
-const IPModeReadoutTable = ({ index, patternAndScale }) => {
+const IPModeReadoutTable = ({ index, patternAndScale: ipObject }) => {
   return (
     <div>
       <h2>
-        Mode {index + 1} - {patternAndScale.pattern.join("")}
+        Mode {index + 1} - {ipObject.pattern.join("")}
         <br />
       </h2>
       <table>
@@ -13,19 +13,17 @@ const IPModeReadoutTable = ({ index, patternAndScale }) => {
             <td>Difference</td>
             <td>Interval</td>
           </tr>
-          {patternAndScale.mode.map((value, valueIndex) => (
+          {ipObject.mode.map((value, valueIndex) => (
             <tr key={valueIndex}>
               <td>Step {valueIndex}</td>
               <td>{value.toFixed(5)}</td>
               <td>
                 {valueIndex === 0
                   ? "-"
-                  : patternAndScale.stepDifferences[valueIndex - 1].toFixed(5)}
+                  : ipObject.stepDifferences[valueIndex - 1].toFixed(5)}
               </td>
               <td>
-                {valueIndex === 0
-                  ? "-"
-                  : patternAndScale.pattern[valueIndex - 1]}
+                {valueIndex === 0 ? "-" : ipObject.pattern[valueIndex - 1]}
               </td>
             </tr>
           ))}

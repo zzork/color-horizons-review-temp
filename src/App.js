@@ -14,7 +14,7 @@ function App() {
     setSelectedView(viewId);
   };
   const [selectedComparison, setSelectedComparison] = useState("harmonics6");
-  const onComparisonChoice = (comparisonId) => {
+  const onComparisonSelect = (comparisonId) => {
     setSelectedComparison(comparisonId);
   };
 
@@ -28,7 +28,7 @@ function App() {
               <Selector onViewSelect={onViewSelect} />
             </td>
             <td>
-              <ComparisonOptions onComparisonChoice={onComparisonChoice} />
+              <ComparisonOptions onComparisonSelect={onComparisonSelect} />
             </td>
           </tr>
           <br />

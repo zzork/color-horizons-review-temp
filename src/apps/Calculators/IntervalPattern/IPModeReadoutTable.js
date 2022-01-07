@@ -1,4 +1,4 @@
-const ReadoutTable = ({ index, patternAndScale }) => {
+const IPModeReadoutTable = ({ index, patternAndScale }) => {
   return (
     <div>
       <h2>
@@ -35,4 +35,4 @@ const ReadoutTable = ({ index, patternAndScale }) => {
   );
 };
 
-export default ReadoutTable;
+export default IPModeReadoutTable;

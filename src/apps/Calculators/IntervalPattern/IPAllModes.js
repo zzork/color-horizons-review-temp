@@ -1,14 +1,14 @@
-import { ComparisonWindow } from "../RatioComparer/ComparisonWindow";
-import ReadoutTable from "./components/ReadoutTable";
+import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
+import IPModeReadoutTable from "./IPModeReadoutTable";
 import convertPatternToModes from "./util/convertPatternToModes";
 
-const AllModes = ({ pattern, selectedComparison }) => {
+const IPAllModes = ({ pattern, selectedComparison }) => {
   const patternAndScales = convertPatternToModes(pattern);
   return (
     <div>
       {patternAndScales.map((patternAndScale, index) => (
         <div key={index}>
-          <ReadoutTable patternAndScale={patternAndScale} index={index} />
+          <IPModeReadoutTable patternAndScale={patternAndScale} index={index} />
           <br />
           <ComparisonWindow
             scale={patternAndScale.values}
@@ -20,4 +20,4 @@ const AllModes = ({ pattern, selectedComparison }) => {
   );
 };
 
-export default AllModes;
+export default IPAllModes;

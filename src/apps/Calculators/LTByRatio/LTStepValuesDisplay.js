@@ -14,7 +14,6 @@ const LTStepValuesDisplay = ({ stepsValuesAndDifferences }) => {
       </tbody>
     </table>
   );
-  //   let stepValuesDisplay = <div></div>;
   return stepValuesDisplay;
 };
 

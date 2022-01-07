@@ -4,14 +4,18 @@ import divideTwoFractions from "./divideTwoFractions";
 const getAllLTModesAsFractions = (reducedFraction, noteTotal) => {
   let listOfAllModes = [];
 
-  // generate mode 1 as fractions
+  // generate mode 1 as cents and fractions
   let originalScale = [[0, [1, 1]]];
+
+  /////// BOTTLENECK IS HERE ////////
+
+  // doesn't like doing exponents after a few repetitions
   for (let i = 0; i < noteTotal; i++) {
     let currentFractionValue = [
       reducedFraction[0] ** i,
       reducedFraction[1] ** i,
     ];
-    /////// BOTTLENECK IS HERE ////////
+    // this portion slows it down a little but not too much compared to ^^
     let currentFractionValueReduced = getReducedFraction(
       currentFractionValue[0],
       currentFractionValue[1]

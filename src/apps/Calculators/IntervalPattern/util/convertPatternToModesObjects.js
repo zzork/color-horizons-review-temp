@@ -19,7 +19,7 @@ const getValuesFromStepDifferences = (stepDifferences) => {
   return values;
 };
 
-const convertPatternToModes = (pattern) => {
+const convertPatternToModesObjects = (pattern) => {
   const allModesAsPatterns = getAllPossiblePatterns(pattern);
   const allIPObjects = allModesAsPatterns.map((scalePattern) => {
     const stepDifferences = applyEdo(scalePattern);
@@ -32,4 +32,4 @@ const convertPatternToModes = (pattern) => {
   return allIPObjects;
 };
 
-export default convertPatternToModes;
+export default convertPatternToModesObjects;

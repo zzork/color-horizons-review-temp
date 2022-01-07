@@ -1,9 +1,9 @@
 import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
 import IPModeReadoutTable from "./IPModeReadoutTable";
-import convertPatternToModes from "./util/convertPatternToModes";
+import convertPatternToModesObjects from "./util/convertPatternToModesObjects";
 
 const IPAllModes = ({ pattern, selectedComparison }) => {
-  const allIPObjects = convertPatternToModes(pattern);
+  const allIPObjects = convertPatternToModesObjects(pattern);
   return (
     <div>
       {allIPObjects.map((ipObject, index) => (

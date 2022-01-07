@@ -8,7 +8,6 @@ export const LTAllModes = ({
   selectedComparison,
 }) => {
   const allLTObjects = convertLTInputToModesObjects(reducedFraction, noteTotal);
-
   return (
     <div>
       {allLTObjects.map((ltObject, index) => (

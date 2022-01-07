@@ -9,7 +9,6 @@ const LTModeReadoutTable = ({ index, ltObject }) => {
         <tbody>
           <tr>
             <td>Step</td>
-            <td>Ratio</td>
             <td>Value</td>
             <td>Difference</td>
             <td>Interval</td>
@@ -17,10 +16,6 @@ const LTModeReadoutTable = ({ index, ltObject }) => {
           {ltObject.mode.map((value, valueIndex) => (
             <tr key={valueIndex}>
               <td>Step {valueIndex}</td>
-              <td>
-                {ltObject.fractionScale[valueIndex][0]}/
-                {ltObject.fractionScale[valueIndex][1]}
-              </td>
               <td>{value.toFixed(5)}</td>
               <td>
                 {valueIndex === 0

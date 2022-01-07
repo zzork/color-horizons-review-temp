@@ -9,7 +9,7 @@ const getAllLTModesAsFractions = (reducedFraction, noteTotal) => {
 
   /////// BOTTLENECK IS HERE ////////
 
-  // doesn't like doing exponents after a few repetitions
+  // doesn't like doing exponents after a few repetitions, much worse is fraction has larger num/den
   for (let i = 0; i < noteTotal; i++) {
     let currentFractionValue = [
       reducedFraction[0] ** i,
@@ -31,13 +31,13 @@ const getAllLTModesAsFractions = (reducedFraction, noteTotal) => {
     originalScale.push([thisCentsValue, currentFractionValueReduced]);
   }
 
-  // sort by cents values
+  // sort by cents
   originalScale.sort((a, b) => a[0] - b[0]);
 
-  // remove cents values
+  // remove cents values entirely
   let originalScaleNoCents = originalScale.map((row) => row[1]);
 
-  // add original scale to array
+  // add original scale to list of modes
   listOfAllModes.push(originalScaleNoCents);
 
   let currentMode = originalScaleNoCents;

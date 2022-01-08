@@ -66,9 +66,22 @@ export const LTByCents = ({ stateData, setStateData, selectedComparison }) => {
         <input
           onChange={handleChange}
           type="number"
+          step="0.1"
           name="ltGeneratorEntryField"
           value={stateData[3].generator}
         ></input>
+        <p>
+          Granularity
+          <br />
+          <button>1</button>
+          <button>0.1</button>
+          <button>0.01</button>
+          <button>0.0001</button>
+          <button>0.00001</button>
+          <button>0.000001</button>
+          <button>0.0000001</button>
+          <button>0.00000001</button>
+        </p>
       </p>
       <LTBCReadout
         generator={stateData[3].generator}

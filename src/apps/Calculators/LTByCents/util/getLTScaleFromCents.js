@@ -3,7 +3,6 @@ const getLTScaleFromCents = (generator, noteAmount) => {
 
   for (let i = 0; i < noteAmount; i++) {
     let centsValue = i * generator;
-    console.log(centsValue);
     while (centsValue > 1200) {
       centsValue -= 1200;
     }

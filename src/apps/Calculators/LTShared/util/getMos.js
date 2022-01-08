@@ -4,12 +4,12 @@ const getMos = (generator) => {
   let outcome = 1 / log2;
 
   for (let i = 0; i < 10; i++) {
-    if (outcome > 10000) {
+    if (outcome > 100000) {
       break;
     } // don't know why this was crashing without this, was sometimes adding MASSIVE intergers to this list 705 would cause it
-    intergerList.push(Math.floor(outcome)); // add the interger to the list
-    outcome -= Math.floor(outcome); // remove the interger and keep the decimal outcome
-    outcome = 1 / outcome; // run the 1/x again, then loop... working!
+    intergerList.push(Math.floor(outcome));
+    outcome -= Math.floor(outcome);
+    outcome = 1 / outcome;
   }
 
   let freshmanSums = [1];
@@ -26,6 +26,8 @@ const getMos = (generator) => {
   }
 
   freshmanSums.shift();
+  freshmanSums.pop();
+  // necessary to remove last value because EDO generators were going one extra
 
   const lessThan100 = freshmanSums.filter((value) => value < 101);
 

@@ -6,6 +6,10 @@ const getLMSList = (stepDifferences) => {
   let lSize = 0;
   let mSize = 0;
   let sSize = 0;
+
+  if (sortedUnique.length === 1) {
+    lSize = sortedUnique[0].toFixed(5);
+  }
   if (sortedUnique.length === 2) {
     lSize = sortedUnique[0].toFixed(5);
     sSize = sortedUnique[1].toFixed(5);

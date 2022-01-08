@@ -29,22 +29,15 @@ export const LTBCReadout = ({
 
   return (
     <div>
-      The inverse generator is {invertedGenerator}
-      <br />
-      <i>What is up with this behavior?</i>
+      The inverse generator is {invertedGenerator.toFixed(2)}
       <br />
       <br />
-      <button onClick={() => handleInvertClick(invertedGenerator)}>
+      <button onClick={() => handleInvertClick(invertedGenerator.toFixed(2))}>
         Invert Generator
       </button>
       <p>
         Moments of Symmetry <br />
         {mosButtons} <br />
-        <i>
-          Had to implement 10000 limit, is that breaking it?
-          <br />
-          And does 13 make sense as a mos option for 700? no? wtf
-        </i>
       </p>
       <p>
         Note Amount:{" "}

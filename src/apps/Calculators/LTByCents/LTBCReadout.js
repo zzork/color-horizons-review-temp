@@ -1,5 +1,5 @@
-import { LTAllModes } from "../LTByRatio/LTAllModes";
-import LTUniquesDisplay from "../LTByRatio/LTUniquesDisplay";
+import { LTAllModes } from "../LTShared/LTAllModes";
+import LTUniquesDisplay from "../LTShared/LTUniquesDisplay";
 import getMos from "../LTShared/util/getMos";
 import getLTScaleFromCents from "./util/getLTScaleFromCents";
 

@@ -1,9 +1,9 @@
 import getMos from "../LTShared/util/getMos";
 import getReducedFraction from "../../../util/getReducedFraction";
-import LTUniquesDisplay from "./LTUniquesDisplay";
 import getCentsFromRatio from "../../../util/getCentsFromRatio";
-import { LTAllModes } from "./LTAllModes";
 import getLTScaleByRatio from "./util/getLTScaleFromRatio";
+import LTUniquesDisplay from "../LTShared/LTUniquesDisplay";
+import { LTAllModes } from "../LTShared/LTAllModes";
 
 export const LTBRReadout = ({
   numerator,

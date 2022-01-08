@@ -2,8 +2,8 @@ import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
 import LTModeReadoutTable from "./LTModeReadoutTable";
 import convertLTInputToModesObjects from "./util/convertLTInputToModesObjects";
 
-export const LTAllModes = ({ scale, noteTotal, selectedComparison }) => {
-  const allLTObjects = convertLTInputToModesObjects(scale, noteTotal);
+export const LTAllModes = ({ scale, selectedComparison }) => {
+  const allLTObjects = convertLTInputToModesObjects(scale);
   return (
     <div>
       {allLTObjects.map((ltObject, index) => (

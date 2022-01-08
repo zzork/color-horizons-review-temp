@@ -1,8 +1,7 @@
 import getStepDifferences from "../../../util/getStepDifferences";
 import getUniqueSteps from "../../../util/getUniqueSteps";
-import getLTScale from "./util/getLTScale";
 
-const LTUniquesDisplay = ({ scale, noteTotal }) => {
+const LTUniquesDisplay = ({ scale }) => {
   const stepDifferences = getStepDifferences(scale);
   const sortedUnique = getUniqueSteps(stepDifferences);
 

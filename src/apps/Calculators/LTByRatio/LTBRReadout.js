@@ -86,13 +86,9 @@ export const LTBRReadout = ({
             value={noteTotal}
           ></input>
         </p>
-        <LTUniquesDisplay scale={scale} noteTotal={noteTotal} />
+        <LTUniquesDisplay scale={scale} />
         <br />
-        <LTAllModes
-          scale={scale}
-          noteTotal={noteTotal}
-          selectedComparison={selectedComparison}
-        />
+        <LTAllModes scale={scale} selectedComparison={selectedComparison} />
         <br />
       </div>
     </div>

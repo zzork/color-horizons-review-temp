@@ -27,6 +27,9 @@ export const Selector = ({ onViewSelect }) => {
       <button>
         <i>Tonality Diamond*</i>
       </button>
+      <button>
+        <i>ab + xy = p*</i>
+      </button>
     </div>
   );
 };

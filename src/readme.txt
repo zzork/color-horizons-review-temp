@@ -1,31 +1,9 @@
-Temporary Notes
-----////----
-some of this stuff could be modified so that if it comes in as 2 values it gets treated as a Ratio
-and if it comes in as 1 value it gets traeted as a cents value
-----////----
-
-----------//INDEX//----------
-
-- TERMINOLOGY
-- COMPONENTS
-- UTILS
-
-----------//TERMINOLOGY//----------
-
-- Scale:
-List of cents values showing the pitches at which that scale falls
-
-- Step Differences:
-Distances between each step of the scale, i.e. scale[2] - scale[1], scale[3] - scale[2], etc.
-
------------------------------------
-
 
 ----------//UTILS//----------------
 
 UTIL (Shared)
 
-- getCentsFromRatios
+- getCentsFromRatio
 -- Input:  Numerator & Denominator / 3, 2
 -- Output: Cents Value / 701.9550008653874
 
@@ -38,24 +16,8 @@ UTIL (Shared)
 --Output: Step Differences List / [0, 203.91000173077487, 203.91000173077487, 294.1349974038377, 203.91000173077498, 294.1349974038376]
 
 - getUniqueSteps
---Input:  Step Differences List / [0, 345.2548554593393, 41.05885840549553, 386.3137138648348, 386.31371386483477, 41.058858405495585]
---Output: Unique Steps List / ['386.31371', '345.25486', '41.05886']
-
-**** (NOTE - this one is a string because the values are being fixed before entering them in the list)
-**** (will need to be set to pass the fix value in eventually)
-**** (or perhaps fix at one less length, then convert back to number if needed, fix again later)
-
----
-
-ALLMODES
-
-- convertPatternToModes
---Input: 
---Output: 
-
-getAllPossiblePatterns
---Input: 
---Output: 
+--Input:  Step Differences List / [0, 498.04499913461257, 203.91000173077487, 498.04499913461257]
+--Output: Unique Steps List / [498.044999135, 203.910001731]
 
 ---
 
@@ -69,17 +31,37 @@ CALCULATORS - EDO
 
 CALCULATORS - INTERVAL PATTERN
 
+-convertPatternToModesObjects
+--Input: Interval Pattern / 2212221
+--Output: All Modes of Original Scale as Objects / For Each Mode: Cents Values, Pattern, Step Differences
+
+-getAllPossiblePatterns
+--Input:
+--Output: 
+
 -getEDOFromIntervalPattern
+--Input: Interval Pattern / 2212221
+--Output: EDO Interger / 12
+
+-getStepDifferencesFromPattern
 --Input: 
 --Output: 
 
--getIPStepValuesList
---Input: 
+getValuesFromStepDifferences
+--Input:
 --Output: 
 
 ---
 
 CALCULATORS - LTBYRATIO
+
+--convertLTInputToModesObjects
+--Input: Reduced Fraction, Note Total / [3, 2], 7
+--Output: All Modes of Original Scale as Objects / For Each Mode: Cents Values, LMS Readout, Step Differences
+
+--getAllLTModesAsCents
+--Input: 
+--Output: 
 
 -getLMSList
 --Input: 
@@ -93,13 +75,9 @@ CALCULATORS - LTBYRATIO
 --Input: 
 --Output: 
 
--getStepsValuesAndDifferences
---Input: 
---Output: 
-
 ---
 
 RATIO COMPARER
 -getComparisonEntryValues
---Input: 
---Output: 
+--Input: Scale, Fraction / [0, 120, 240, 360, 480, 600, 720, 840, 960, 1080, 1200] 701.955
+--Output: Closest Scale Step, Closest Value, Difference / [6, 720, 18.04499999999996]

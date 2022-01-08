@@ -1,4 +1,3 @@
-import getReducedFraction from "../../../../util/getReducedFraction";
 import getLTScale from "./getLTScale";
 
 const getAllLTModesAsCents = (reducedFraction, noteTotal) => {

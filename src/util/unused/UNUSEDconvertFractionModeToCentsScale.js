@@ -1,4 +1,4 @@
-import getCentsFromRatio from "../../../../util/getCentsFromRatio";
+import getCentsFromRatio from "../getCentsFromRatio";
 
 const convertFractionModeToCentsScale = (mode) => {
   let scale = [];

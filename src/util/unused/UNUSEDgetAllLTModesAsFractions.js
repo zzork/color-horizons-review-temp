@@ -1,5 +1,5 @@
-import getReducedFraction from "../../../../util/getReducedFraction";
-import divideTwoFractions from "./divideTwoFractions";
+import getReducedFraction from "../getReducedFraction";
+import divideTwoFractions from "./UNUSEDdivideTwoFractions";
 
 const getAllLTModesAsFractions = (reducedFraction, noteTotal) => {
   let listOfAllModes = [];

@@ -7,6 +7,7 @@ export const LTBCReadout = ({
   generator,
   noteTotal,
   selectedComparison,
+  handleGranularityClick,
   handleInvertClick,
   handleMOSClick,
   handleChange,
@@ -31,6 +32,26 @@ export const LTBCReadout = ({
     <div>
       The inverse generator is {invertedGenerator.toFixed(2)}
       <br />
+      <p>
+        Granularity
+        <br />
+        <button onClick={() => handleGranularityClick("100")}>100</button>
+        <button onClick={() => handleGranularityClick("10")}>10</button>
+        <button onClick={() => handleGranularityClick("1")}>1</button>
+        <button onClick={() => handleGranularityClick("0.1")}>0.1</button>
+        <button onClick={() => handleGranularityClick("00.1")}>00.1</button>
+        <button onClick={() => handleGranularityClick("000.1")}>000.1</button>
+        <button onClick={() => handleGranularityClick("0000.1")}>0000.1</button>
+        <button onClick={() => handleGranularityClick("00000.1")}>
+          00000.1
+        </button>
+        <button onClick={() => handleGranularityClick("000000.1")}>
+          000000.1
+        </button>
+        <button onClick={() => handleGranularityClick("0000000.1")}>
+          0000000.1
+        </button>
+      </p>
       <br />
       <button onClick={() => handleInvertClick(invertedGenerator.toFixed(2))}>
         Invert Generator
@@ -48,7 +69,6 @@ export const LTBCReadout = ({
           value={noteTotal}
         ></input>
       </p>
-      MOVE THESE TO COMMON SPACE
       <LTUniquesDisplay scale={scale} />
       <br />
       <LTAllModes scale={scale} selectedComparison={selectedComparison} />

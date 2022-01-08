@@ -32,6 +32,19 @@ export const LTByCents = ({ stateData, setStateData, selectedComparison }) => {
     }
   };
 
+  const handleGranularityClick = (newGranularity) => {
+    let newState = stateData.map((stateTableRow) => {
+      if (stateTableRow.id === "d") {
+        return {
+          ...stateTableRow,
+          granularity: newGranularity,
+        };
+      }
+      return stateTableRow;
+    });
+    setStateData(newState);
+  };
+
   const handleInvertClick = (invertedGenerator) => {
     let newState = stateData.map((stateTableRow) => {
       if (stateTableRow.id === "d") {
@@ -58,6 +71,8 @@ export const LTByCents = ({ stateData, setStateData, selectedComparison }) => {
     setStateData(newState);
   };
 
+  console.log(stateData[3].granularity);
+
   return (
     <div>
       <h2>Linear Temperament by Cents</h2>
@@ -70,23 +85,12 @@ export const LTByCents = ({ stateData, setStateData, selectedComparison }) => {
           name="ltGeneratorEntryField"
           value={stateData[3].generator}
         ></input>
-        <p>
-          Granularity
-          <br />
-          <button>1</button>
-          <button>0.1</button>
-          <button>0.01</button>
-          <button>0.0001</button>
-          <button>0.00001</button>
-          <button>0.000001</button>
-          <button>0.0000001</button>
-          <button>0.00000001</button>
-        </p>
       </p>
       <LTBCReadout
         generator={stateData[3].generator}
         noteTotal={stateData[3].noteTotal}
         selectedComparison={selectedComparison}
+        handleGranularityClick={handleGranularityClick}
         handleInvertClick={handleInvertClick}
         handleMOSClick={handleMOSClick}
         handleChange={handleChange}

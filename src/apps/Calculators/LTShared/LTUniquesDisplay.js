@@ -8,7 +8,7 @@ const LTUniquesDisplay = ({ scale }) => {
   let uniquesDisplay = null;
 
   if (sortedUnique.length < 2) {
-    uniquesDisplay = <div>Not enough notes</div>;
+    uniquesDisplay = <div>It's an EDO!</div>;
   }
 
   if (sortedUnique.length === 2) {

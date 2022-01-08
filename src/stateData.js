@@ -13,6 +13,6 @@ export const stateTable = [
     name: "linearTemperamentByCents",
     generator: "701.95",
     noteTotal: "7",
-    invertedGenerator: "498.05",
+    granularity: "0.01",
   },
 ];

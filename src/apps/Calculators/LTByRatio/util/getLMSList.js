@@ -1,4 +1,8 @@
-const getLMSList = (stepDifferences, sortedUnique) => {
+import getUniqueSteps from "../../../../util/getUniqueSteps";
+
+const getLMSList = (stepDifferences) => {
+  let sortedUnique = getUniqueSteps(stepDifferences);
+
   let lSize = 0;
   let mSize = 0;
   let sSize = 0;

@@ -74,7 +74,7 @@ export const LTByRatio = ({ stateData, setStateData, selectedComparison }) => {
 
   return (
     <div>
-      <h2>Linear Temperament</h2>
+      <h2>Linear Temperament by Ratio</h2>
       <p>
         Numerator:{" "}
         <input

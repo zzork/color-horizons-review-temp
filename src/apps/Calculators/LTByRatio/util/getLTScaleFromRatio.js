@@ -1,4 +1,4 @@
-const getLTScale = (numerator, denominator, noteAmount) => {
+const getLTScaleFromRatio = (numerator, denominator, noteAmount) => {
   let scale = [];
 
   for (let i = 0; i < noteAmount; i++) {
@@ -17,4 +17,4 @@ const getLTScale = (numerator, denominator, noteAmount) => {
   return scale;
 };
 
-export default getLTScale;
+export default getLTScaleFromRatio;

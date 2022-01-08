@@ -13,8 +13,8 @@ export const Selector = ({ onViewSelect }) => {
       <button onClick={() => onViewSelect("ltbr")}>
         Linear Temperament by Ratio
       </button>
-      <button>
-        <i>Linear Temperament by Cents*</i>
+      <button onClick={() => onViewSelect("ltbc")}>
+        Linear Temperament by Cents
       </button>
       <br />
       <button>

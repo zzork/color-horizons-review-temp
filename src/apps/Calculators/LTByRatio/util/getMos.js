@@ -1,8 +1,5 @@
-const getMos = (numerator, denominator) => {
-  if (numerator % denominator === 0) {
-    return ["Not Applicable"];
-  }
-  const log2 = Math.log(numerator / denominator) / Math.log(2);
+const getMos = (generator) => {
+  const log2 = generator / 1200;
   const intergerList = [];
   let outcome = 1 / log2;
 
@@ -27,9 +24,9 @@ const getMos = (numerator, denominator) => {
 
   freshmanSums.shift();
 
-  const lessThan200 = freshmanSums.filter((value) => value < 201);
+  const lessThan100 = freshmanSums.filter((value) => value < 101);
 
-  return lessThan200;
+  return lessThan100;
 };
 
 export default getMos;

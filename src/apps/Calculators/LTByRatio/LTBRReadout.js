@@ -50,7 +50,8 @@ export const LTBRReadout = ({
     inverseFraction[0],
     inverseFraction[1]
   );
-  const momentsOfSymmetry = getMos(reducedFraction[0], reducedFraction[1]);
+
+  const momentsOfSymmetry = getMos(mainGenerator);
 
   const mosButtons = momentsOfSymmetry.map((value) => (
     <button onClick={() => handleMOSClick(value)}>{value}</button>

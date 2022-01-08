@@ -86,6 +86,7 @@ export const LTBRReadout = ({
           <input
             onChange={handleChange}
             type="number"
+            step="0.1"
             name="ltNoteTotalEntryField"
             value={noteTotal}
           ></input>

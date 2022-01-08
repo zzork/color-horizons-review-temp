@@ -11,7 +11,20 @@ export const LTBCReadout = ({
   if (!isValidState()) {
     return <InvalidState generator={generator} />;
   }
-  return "hello";
+  let invertedGenerator = 1200 - generator;
+
+  return (
+    <div>
+      The inverse generator is {invertedGenerator}
+      <br />
+      <i>What is up with this behavior?</i>
+      <br />
+      <br />
+      <button onClick={() => handleInvertClick(invertedGenerator)}>
+        Invert Generator
+      </button>
+    </div>
+  );
 };
 
 const InvalidState = ({ generator }) => {

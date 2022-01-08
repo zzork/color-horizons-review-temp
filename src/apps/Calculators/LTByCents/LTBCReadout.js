@@ -1,5 +1,8 @@
+import getMos from "../LTShared/util/getMos";
+
 export const LTBCReadout = ({
   generator,
+  noteTotal,
   selectedComparison,
   handleInvertClick,
   handleMOSClick,
@@ -11,7 +14,15 @@ export const LTBCReadout = ({
   if (!isValidState()) {
     return <InvalidState generator={generator} />;
   }
-  let invertedGenerator = 1200 - generator;
+  const invertedGenerator = 1200 - generator;
+
+  const momentsOfSymmetry = getMos(generator);
+
+  console.log(momentsOfSymmetry);
+
+  const mosButtons = momentsOfSymmetry.map((value) => (
+    <button onClick={() => handleMOSClick(value)}>{value}</button>
+  ));
 
   return (
     <div>
@@ -23,6 +34,19 @@ export const LTBCReadout = ({
       <button onClick={() => handleInvertClick(invertedGenerator)}>
         Invert Generator
       </button>
+      <p>
+        Moments of Symmetry <br />
+        {mosButtons} <br />
+      </p>
+      <p>
+        Note Amount:{" "}
+        <input
+          onChange={handleChange}
+          type="number"
+          name="ltbcNoteTotalEntryField"
+          value={noteTotal}
+        ></input>
+      </p>
     </div>
   );
 };

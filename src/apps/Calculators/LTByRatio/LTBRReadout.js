@@ -1,4 +1,4 @@
-import getMos from "./util/getMos";
+import getMos from "../LTShared/util/getMos";
 import getReducedFraction from "../../../util/getReducedFraction";
 import LTUniquesDisplay from "./LTUniquesDisplay";
 import getCentsFromRatio from "../../../util/getCentsFromRatio";
@@ -87,7 +87,6 @@ export const LTBRReadout = ({
           <input
             onChange={handleChange}
             type="number"
-            step="0.1"
             name="ltNoteTotalEntryField"
             value={noteTotal}
           ></input>

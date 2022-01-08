@@ -2,17 +2,34 @@ import { LTBCReadout } from "./LTBCReadout";
 
 export const LTByCents = ({ stateData, setStateData, selectedComparison }) => {
   const handleChange = (event) => {
-    let newGenerator = event.target.value;
-    let newState = stateData.map((stateTableRow) => {
-      if (stateTableRow.id === "d") {
-        return {
-          ...stateTableRow,
-          generator: newGenerator,
-        };
-      }
-      return stateTableRow;
-    });
-    setStateData(newState);
+    let fieldReader = event.target.name;
+    let newValue = event.target.value;
+
+    if (fieldReader === "ltGeneratorEntryField") {
+      let newState = stateData.map((stateTableRow) => {
+        if (stateTableRow.id === "d") {
+          return {
+            ...stateTableRow,
+            generator: newValue,
+          };
+        }
+        return stateTableRow;
+      });
+      setStateData(newState);
+    }
+
+    if (fieldReader === "ltbcNoteTotalEntryField") {
+      let newState = stateData.map((stateTableRow) => {
+        if (stateTableRow.id === "d") {
+          return {
+            ...stateTableRow,
+            noteTotal: newValue,
+          };
+        }
+        return stateTableRow;
+      });
+      setStateData(newState);
+    }
   };
 
   const handleInvertClick = (invertedGenerator) => {
@@ -55,6 +72,7 @@ export const LTByCents = ({ stateData, setStateData, selectedComparison }) => {
       </p>
       <LTBCReadout
         generator={stateData[3].generator}
+        noteTotal={stateData[3].noteTotal}
         selectedComparison={selectedComparison}
         handleInvertClick={handleInvertClick}
         handleMOSClick={handleMOSClick}

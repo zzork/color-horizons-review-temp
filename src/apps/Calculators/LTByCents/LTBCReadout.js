@@ -1,4 +1,8 @@
+import { LTAllModes } from "../LTByRatio/LTAllModes";
+import LTUniquesDisplay from "../LTByRatio/LTUniquesDisplay";
+import getLTScaleFromRatio from "../LTByRatio/util/getLTScaleFromRatio";
 import getMos from "../LTShared/util/getMos";
+import getLTScaleFromCents from "./util/getLTScaleFromCents";
 
 export const LTBCReadout = ({
   generator,
@@ -18,11 +22,11 @@ export const LTBCReadout = ({
 
   const momentsOfSymmetry = getMos(generator);
 
-  console.log(momentsOfSymmetry);
-
   const mosButtons = momentsOfSymmetry.map((value) => (
     <button onClick={() => handleMOSClick(value)}>{value}</button>
   ));
+
+  const scale = getLTScaleFromCents(generator, noteTotal);
 
   return (
     <div>
@@ -37,6 +41,11 @@ export const LTBCReadout = ({
       <p>
         Moments of Symmetry <br />
         {mosButtons} <br />
+        <i>
+          Had to implement 10000 limit, is that breaking it?
+          <br />
+          And does 13 make sense as a mos option for 700? no? wtf
+        </i>
       </p>
       <p>
         Note Amount:{" "}
@@ -47,6 +56,11 @@ export const LTBCReadout = ({
           value={noteTotal}
         ></input>
       </p>
+      MOVE THESE TO COMMON SPACE
+      <LTUniquesDisplay scale={scale} />
+      <br />
+      <LTAllModes scale={scale} selectedComparison={selectedComparison} />
+      <br />
     </div>
   );
 };

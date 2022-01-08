@@ -12,8 +12,6 @@ const getMos = (generator) => {
     outcome = 1 / outcome; // run the 1/x again, then loop... working!
   }
 
-  console.log("intList", intergerList);
-
   let freshmanSums = [1];
 
   let mos = 1;

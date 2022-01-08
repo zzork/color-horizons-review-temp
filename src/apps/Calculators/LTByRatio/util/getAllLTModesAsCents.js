@@ -1,17 +1,11 @@
 import getLTScale from "./getLTScale";
 
-const getAllLTModesAsCents = (reducedFraction, noteTotal) => {
+const getAllLTModesAsCents = (scale, noteTotal) => {
   let listOfAllModesAsCents = [];
 
-  const originalScale = getLTScale(
-    reducedFraction[0],
-    reducedFraction[1],
-    noteTotal
-  );
+  listOfAllModesAsCents.push(scale);
 
-  listOfAllModesAsCents.push(originalScale);
-
-  let currentMode = [...originalScale];
+  let currentMode = [...scale];
 
   for (let i = 1; i < noteTotal; i++) {
     currentMode.shift();

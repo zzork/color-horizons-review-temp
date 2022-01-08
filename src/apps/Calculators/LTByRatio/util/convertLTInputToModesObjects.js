@@ -3,8 +3,8 @@ import getUniqueSteps from "../../../../util/getUniqueSteps";
 import getAllLTModesAsCents from "./getAllLTModesAsCents";
 import getLMSList from "./getLMSList";
 
-const convertLTInputToModesObjects = (reducedFraction, noteTotal) => {
-  const allLTModesAsCents = getAllLTModesAsCents(reducedFraction, noteTotal);
+const convertLTInputToModesObjects = (scale, noteTotal) => {
+  const allLTModesAsCents = getAllLTModesAsCents(scale, noteTotal);
 
   let allLTObjects = [];
 

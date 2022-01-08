@@ -3,8 +3,9 @@ import getReducedFraction from "../../../util/getReducedFraction";
 import LTUniquesDisplay from "./LTUniquesDisplay";
 import getCentsFromRatio from "../../../util/getCentsFromRatio";
 import { LTAllModes } from "./LTAllModes";
+import getLTScale from "./util/getLTScale";
 
-export const LTReadout = ({
+export const LTBRReadout = ({
   numerator,
   denominator,
   noteTotal,
@@ -55,6 +56,8 @@ export const LTReadout = ({
     <button onClick={() => handleMOSClick(value)}>{value}</button>
   ));
 
+  const scale = getLTScale(reducedFraction[0], reducedFraction[1], noteTotal);
+
   return (
     <div>
       <div>
@@ -83,13 +86,10 @@ export const LTReadout = ({
             value={noteTotal}
           ></input>
         </p>
-        <LTUniquesDisplay
-          reducedFraction={reducedFraction}
-          noteTotal={noteTotal}
-        />
+        <LTUniquesDisplay scale={scale} noteTotal={noteTotal} />
         <br />
         <LTAllModes
-          reducedFraction={reducedFraction}
+          scale={scale}
           noteTotal={noteTotal}
           selectedComparison={selectedComparison}
         />

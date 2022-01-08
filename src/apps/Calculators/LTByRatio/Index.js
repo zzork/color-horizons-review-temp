@@ -1,4 +1,4 @@
-import { LTReadout } from "./LTReadout";
+import { LTBRReadout } from "./LTBRReadout";
 
 export const LTByRatio = ({ stateData, setStateData, selectedComparison }) => {
   // there must be a better way to handle this giant, repetitive block
@@ -93,7 +93,7 @@ export const LTByRatio = ({ stateData, setStateData, selectedComparison }) => {
           value={stateData[1].denominator}
         ></input>
       </p>
-      <LTReadout
+      <LTBRReadout
         numerator={stateData[1].numerator}
         denominator={stateData[1].denominator}
         noteTotal={stateData[1].noteTotal}

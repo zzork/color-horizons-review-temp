@@ -49,21 +49,13 @@ export default App;
 
 // TO ADD
 // ------
-// - LT table should show fraction values as well as cents, and reduced fraction values
 
 // playback method, with ability to play single notes, chords, or split keyboard of both too!
 // - with that, ability to choose size of chords, or maybe also just approximations like in scala
 
 // ability to generate .scl files from each scale
 
-// more scale generation methods
-// - linear temp from cents generator
-// - harmonic series (overtones, undertones)
-// - tonality diamonds (up, down, up and down)
-// - edo mos
-// - ax + by = 1200
-
-// set decimal accuracy of readouts
+// set decimal accuracy of readouts? at least set to 6 instead of 5
 
 // to do - lift other states in app.js to stateData table
 

@@ -7,7 +7,7 @@ const convertLTInputToModesObjects = (scale) => {
 
   let allLTObjects = [];
 
-  for (let i = 0; i < scale.length; i++) {
+  for (let i = 0; i < scale.length - 1; i++) {
     let mode = allLTModesAsCents[i];
     let stepDifferences = getStepDifferences(mode);
     let lmsList = getLMSList(stepDifferences);

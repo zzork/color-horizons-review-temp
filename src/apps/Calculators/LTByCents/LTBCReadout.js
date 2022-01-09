@@ -69,9 +69,12 @@ export const LTBCReadout = ({
           value={noteTotal}
         ></input>
       </p>
-      <LTUniquesDisplay scale={scale} />
+      {noteTotal <= 1 && <div>Note Total Must Be Greater Than One</div>}
+      {noteTotal > 1 && <LTUniquesDisplay scale={scale} />}
       <br />
-      <LTAllModes scale={scale} selectedComparison={selectedComparison} />
+      {noteTotal > 1 && (
+        <LTAllModes scale={scale} selectedComparison={selectedComparison} />
+      )}
       <br />
     </div>
   );

@@ -94,7 +94,7 @@ export const LTByCents = ({ stateData, setStateData, selectedComparison }) => {
         generator={stateData[3].generator}
         noteTotal={stateData[3].noteTotal}
         selectedComparison={selectedComparison}
-        granularityFixValue={granularitySettings[0]} // <----------- HERE
+        granularityFixValue={granularitySettings[0]}
         handleGranularityClick={handleGranularityClick}
         handleInvertClick={handleInvertClick}
         handleMOSClick={handleMOSClick}

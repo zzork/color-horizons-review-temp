@@ -15,4 +15,11 @@ export const stateTable = [
     noteTotal: "7",
     granularity: "0.01",
   },
+  {
+    id: "e",
+    name: "edoMos",
+    edo: "12",
+    step: "7",
+    noteTotal: "7",
+  },
 ];

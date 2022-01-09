@@ -5,9 +5,7 @@ export const Selector = ({ onViewSelect }) => {
       <button onClick={() => onViewSelect("edo")}>
         Equal Division of the Octave
       </button>
-      <button>
-        <i>EDO MOS*</i>
-      </button>
+      <button onClick={() => onViewSelect("edomos")}>EDO MOS</button>
       <button onClick={() => onViewSelect("ip")}>Interval Pattern</button>
       <br />
       <button onClick={() => onViewSelect("ltbr")}>

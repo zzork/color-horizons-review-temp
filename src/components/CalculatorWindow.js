@@ -1,4 +1,5 @@
 import { EDO } from "../apps/Calculators/EDO/Index";
+import { EDOMOS } from "../apps/Calculators/EDOMOS/Index";
 import { IntervalPattern } from "../apps/Calculators/IntervalPattern/Index";
 import { LTByCents } from "../apps/Calculators/LTByCents/Index";
 import { LTByRatio } from "../apps/Calculators/LTByRatio/Index";
@@ -13,6 +14,13 @@ export const CalculatorWindow = ({
     <div>
       {viewId === "edo" && (
         <EDO
+          stateData={stateData}
+          setStateData={setStateData}
+          selectedComparison={selectedComparison}
+        />
+      )}
+      {viewId === "edomos" && (
+        <EDOMOS
           stateData={stateData}
           setStateData={setStateData}
           selectedComparison={selectedComparison}

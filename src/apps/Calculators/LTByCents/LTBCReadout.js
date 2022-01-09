@@ -7,6 +7,7 @@ export const LTBCReadout = ({
   generator,
   noteTotal,
   selectedComparison,
+  granularityFixValue,
   handleGranularityClick,
   handleInvertClick,
   handleMOSClick,
@@ -18,10 +19,9 @@ export const LTBCReadout = ({
   if (!isValidState()) {
     return <InvalidState generator={generator} />;
   }
+
   const invertedGenerator = 1200 - generator;
-
   const momentsOfSymmetry = getMos(generator);
-
   const mosButtons = momentsOfSymmetry.map((value) => (
     <button onClick={() => handleMOSClick(value)}>{value}</button>
   ));
@@ -30,7 +30,7 @@ export const LTBCReadout = ({
 
   return (
     <div>
-      The inverse generator is {invertedGenerator.toFixed(2)}
+      The inverse generator is {invertedGenerator.toFixed(granularityFixValue)}
       <br />
       <p>
         Granularity
@@ -39,17 +39,17 @@ export const LTBCReadout = ({
         <button onClick={() => handleGranularityClick("10")}>10</button>
         <button onClick={() => handleGranularityClick("1")}>1</button>
         <button onClick={() => handleGranularityClick("0.1")}>0.1</button>
-        <button onClick={() => handleGranularityClick("00.1")}>00.1</button>
-        <button onClick={() => handleGranularityClick("000.1")}>000.1</button>
-        <button onClick={() => handleGranularityClick("0000.1")}>0000.1</button>
-        <button onClick={() => handleGranularityClick("00000.1")}>
-          00000.1
+        <button onClick={() => handleGranularityClick("0.01")}>0.01</button>
+        <button onClick={() => handleGranularityClick("0.001")}>0.001</button>
+        <button onClick={() => handleGranularityClick("0.0001")}>0.0001</button>
+        <button onClick={() => handleGranularityClick("0.00001")}>
+          0.00001
         </button>
-        <button onClick={() => handleGranularityClick("000000.1")}>
-          000000.1
+        <button onClick={() => handleGranularityClick("0.000001")}>
+          0.000001
         </button>
-        <button onClick={() => handleGranularityClick("0000000.1")}>
-          0000000.1
+        <button onClick={() => handleGranularityClick("0.0000001")}>
+          0.0000001
         </button>
       </p>
       <br />

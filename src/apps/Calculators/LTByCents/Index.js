@@ -1,4 +1,5 @@
 import { LTBCReadout } from "./LTBCReadout";
+import getGranularitySettings from "./util/getGranularitySettings";
 
 export const LTByCents = ({ stateData, setStateData, selectedComparison }) => {
   const handleChange = (event) => {
@@ -71,7 +72,7 @@ export const LTByCents = ({ stateData, setStateData, selectedComparison }) => {
     setStateData(newState);
   };
 
-  console.log(stateData[3].granularity);
+  const granularitySettings = getGranularitySettings(stateData[3].granularity);
 
   return (
     <div>
@@ -81,7 +82,7 @@ export const LTByCents = ({ stateData, setStateData, selectedComparison }) => {
         <input
           onChange={handleChange}
           type="number"
-          step="0.1"
+          step={granularitySettings[1]}
           name="ltGeneratorEntryField"
           value={stateData[3].generator}
         ></input>
@@ -90,6 +91,7 @@ export const LTByCents = ({ stateData, setStateData, selectedComparison }) => {
         generator={stateData[3].generator}
         noteTotal={stateData[3].noteTotal}
         selectedComparison={selectedComparison}
+        granularityFixValue={granularitySettings[0]} // <----------- HERE
         handleGranularityClick={handleGranularityClick}
         handleInvertClick={handleInvertClick}
         handleMOSClick={handleMOSClick}

@@ -34,11 +34,14 @@ export const LTByCents = ({ stateData, setStateData, selectedComparison }) => {
   };
 
   const handleGranularityClick = (newGranularity) => {
+    let fixValue = getGranularitySettings(newGranularity)[0];
+    let newGenerator = Number(stateData[3].generator).toFixed(fixValue);
     let newState = stateData.map((stateTableRow) => {
       if (stateTableRow.id === "d") {
         return {
           ...stateTableRow,
           granularity: newGranularity,
+          generator: newGenerator,
         };
       }
       return stateTableRow;

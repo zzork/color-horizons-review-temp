@@ -47,7 +47,7 @@ export const EDOMOS = ({ stateData, setStateData, selectedComparison }) => {
 
   const handleMOSClick = (value) => {
     let newState = stateData.map((stateTableRow) => {
-      if (stateTableRow.id === "d") {
+      if (stateTableRow.id === "e") {
         return {
           ...stateTableRow,
           noteTotal: value,
@@ -80,8 +80,8 @@ export const EDOMOS = ({ stateData, setStateData, selectedComparison }) => {
         ></input>
       </p>
       <EDOMOSReadout
-        edo={stateData[4].edo}
-        step={stateData[4].step}
+        edo={parseInt(stateData[4].edo)}
+        step={parseInt(stateData[4].step)}
         noteTotal={stateData[4].noteTotal}
         handleMOSClick={handleMOSClick}
         handleChange={handleChange}

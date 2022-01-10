@@ -1,5 +1,6 @@
 import getLTScaleFromCents from "../LTByCents/util/getLTScaleFromCents";
 import getMos from "../LTShared/util/getMos";
+import EDOMOSUniquesDisplay from "./EDOMOSUniquesDisplay";
 import getEDOMOSGenerator from "./util/getEDOMOSGenerator";
 
 const EDOMOSReadout = ({
@@ -39,7 +40,7 @@ const EDOMOSReadout = ({
       ></input>
       <br />
       {noteTotal <= 1 && <div>Note Total Must Be Greater Than One</div>}
-      {noteTotal > 1 && <div>EDOMOSUniquesDisplay</div>}
+      {noteTotal > 1 && <EDOMOSUniquesDisplay scale={scale} />}
       <br />
       {noteTotal > 1 && <div>EDOMOSAllModes</div>}
     </div>

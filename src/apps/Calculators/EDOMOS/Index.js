@@ -1,3 +1,5 @@
+import EDOMOSReadout from "./EDOMOSReadout";
+
 export const EDOMOS = ({ stateData, setStateData, selectedComparison }) => {
   const handleChange = (event) => {
     let fieldReader = event.target.name;
@@ -29,19 +31,33 @@ export const EDOMOS = ({ stateData, setStateData, selectedComparison }) => {
       setStateData(newState);
     }
 
-    const handleMOSClick = (value) => {
+    if (fieldReader === "edomosNoteTotalField") {
       let newState = stateData.map((stateTableRow) => {
         if (stateTableRow.id === "e") {
           return {
             ...stateTableRow,
-            noteTotal: value,
+            noteTotal: newValue,
           };
         }
         return stateTableRow;
       });
       setStateData(newState);
-    };
+    }
   };
+
+  const handleMOSClick = (value) => {
+    let newState = stateData.map((stateTableRow) => {
+      if (stateTableRow.id === "d") {
+        return {
+          ...stateTableRow,
+          noteTotal: value,
+        };
+      }
+      return stateTableRow;
+    });
+    setStateData(newState);
+  };
+
   return (
     <div>
       <h2>Equal Division of the Octave Moments of Symmetry</h2>
@@ -63,7 +79,13 @@ export const EDOMOS = ({ stateData, setStateData, selectedComparison }) => {
           value={stateData[4].step}
         ></input>
       </p>
-      {/* <EDOMOSReadout/> <----- ADD NEXT */}
+      <EDOMOSReadout
+        edo={stateData[4].edo}
+        step={stateData[4].step}
+        noteTotal={stateData[4].noteTotal}
+        handleMOSClick={handleMOSClick}
+        handleChange={handleChange}
+      />
     </div>
   );
 };

@@ -8,8 +8,22 @@ const EDOMOSUniquesDisplay = ({ scale }) => {
   let uniquesDisplay = null;
 
   if (sortedUnique.length < 2) {
-    uniquesDisplay = <div>It's an EDO!</div>;
-  }
+    uniquesDisplay = (
+      <div>
+        <br />
+        <h4>Step Sizes</h4>
+        <table>
+          <tbody>
+            <tr>
+              <td>L</td>
+              <td>{sortedUnique[0].toFixed(5)}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    );
+  } // CHANGE OTHERS TO BEHAVE LIKE THIS, AND IMPLEMENT NOTE AMOUNT CANNOT BE GREATER THAN FINAL MOS?
+  // CAN THIS BE FURTHER EXTRACTED? PASS LMS VALUE INTO HERE, DEFINE IT EARLIER...
 
   if (sortedUnique.length === 2) {
     uniquesDisplay = (

@@ -26,6 +26,7 @@ const EDOMOSReadout = ({
 
   return (
     <div>
+      <p>Generator: {generator.toFixed(5)}</p>
       <p>
         Moments of Symmetry
         <br />
@@ -46,6 +47,12 @@ const EDOMOSReadout = ({
     </div>
   );
 };
+
+// YEAH EDOMOSUNIQUESDISPLAY AND LTUNIQUESDISPLAY SHOULD BE THE SAME
+// SAME WITH ALL MODES
+// LT ONES JUST PASS "LMS" IN AND DISPLAY THOSE
+// IN HERE DEFINE THE STEP VALUE IN PLACE OF LMS AND PASS THOSE
+// PROBABLY CAN DO THE SAME FOR IP AS WELL, DRY!
 
 const InvalidState = ({ step, edo }) => {
   return (

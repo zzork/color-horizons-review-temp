@@ -1,3 +1,4 @@
+import getLTScaleFromCents from "../LTByCents/util/getLTScaleFromCents";
 import getMos from "../LTShared/util/getMos";
 import getEDOMOSGenerator from "./util/getEDOMOSGenerator";
 
@@ -20,6 +21,7 @@ const EDOMOSReadout = ({
   const mosButtons = momentsOfSymmetry.map((value) => (
     <button onClick={() => handleMOSClick(value)}>{value}</button>
   ));
+  const scale = getLTScaleFromCents(generator, noteTotal);
 
   return (
     <div>
@@ -35,6 +37,11 @@ const EDOMOSReadout = ({
         name="edomosNoteTotalField"
         value={noteTotal}
       ></input>
+      <br />
+      {noteTotal <= 1 && <div>Note Total Must Be Greater Than One</div>}
+      {noteTotal > 1 && <div>EDOMOSUniquesDisplay</div>}
+      <br />
+      {noteTotal > 1 && <div>EDOMOSAllModes</div>}
     </div>
   );
 };

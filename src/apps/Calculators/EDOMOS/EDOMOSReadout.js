@@ -9,6 +9,7 @@ const EDOMOSReadout = ({
   edo,
   step,
   noteTotal,
+  selectedComparison,
   handleMOSClick,
   handleChange,
 }) => {
@@ -47,7 +48,9 @@ const EDOMOSReadout = ({
       {noteTotal <= 1 && <p>Note Total Must Be Greater Than One</p>}
       {noteTotal > 1 && <LTUniquesDisplay scale={scale} lmsIn={lmsIn} />}
       <br />
-      {noteTotal > 1 && <LTAllModes scale={scale} />}
+      {noteTotal > 1 && (
+        <LTAllModes scale={scale} selectedComparison={selectedComparison} />
+      )}
     </div>
   );
 };

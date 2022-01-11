@@ -1,7 +1,9 @@
 import getLTScaleFromCents from "../LTByCents/util/getLTScaleFromCents";
+import LTUniquesDisplay from "../LTShared/LTUniquesDisplay";
 import getMos from "../LTShared/util/getMos";
-import EDOMOSUniquesDisplay from "./EDOMOSUniquesDisplay";
+import getEDOMOSLmsList from "./util/getEDOMOSLmsList";
 import getEDOMOSGenerator from "./util/getEDOMOSGenerator";
+import { LTAllModes } from "../LTShared/LTAllModes";
 
 const EDOMOSReadout = ({
   edo,
@@ -23,6 +25,7 @@ const EDOMOSReadout = ({
     <button onClick={() => handleMOSClick(value)}>{value}</button>
   ));
   const scale = getLTScaleFromCents(generator, noteTotal);
+  const lmsIn = getEDOMOSLmsList(scale, edo);
 
   return (
     <div>
@@ -40,19 +43,14 @@ const EDOMOSReadout = ({
         value={noteTotal}
       ></input>
       <br />
-      {noteTotal <= 1 && <div>Note Total Must Be Greater Than One</div>}
-      {noteTotal > 1 && <EDOMOSUniquesDisplay scale={scale} />}
+      EDO Step Size: {(1200 / edo).toFixed(5)}
+      {noteTotal <= 1 && <p>Note Total Must Be Greater Than One</p>}
+      {noteTotal > 1 && <LTUniquesDisplay scale={scale} lmsIn={lmsIn} />}
       <br />
-      {noteTotal > 1 && <div>EDOMOSAllModes</div>}
+      {noteTotal > 1 && <LTAllModes scale={scale} />}
     </div>
   );
 };
-
-// YEAH EDOMOSUNIQUESDISPLAY AND LTUNIQUESDISPLAY SHOULD BE THE SAME
-// SAME WITH ALL MODES
-// LT ONES JUST PASS "LMS" IN AND DISPLAY THOSE
-// IN HERE DEFINE THE STEP VALUE IN PLACE OF LMS AND PASS THOSE
-// PROBABLY CAN DO THE SAME FOR IP AS WELL, DRY!
 
 const InvalidState = ({ step, edo }) => {
   return (

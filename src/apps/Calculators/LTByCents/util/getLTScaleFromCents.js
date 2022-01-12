@@ -1,15 +1,17 @@
 const getLTScaleFromCents = (generator, noteAmount) => {
   let scale = [];
 
+  scale.push(1200);
+
   for (let i = 0; i < noteAmount; i++) {
     let centsValue = i * generator;
     while (centsValue > 1200) {
       centsValue -= 1200;
     }
-    scale.push(centsValue);
+    if (!scale.includes(centsValue)) {
+      scale.push(centsValue);
+    }
   }
-
-  scale.push(1200);
 
   scale.sort((a, b) => a - b);
 

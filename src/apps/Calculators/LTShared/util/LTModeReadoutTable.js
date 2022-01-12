@@ -5,6 +5,10 @@ const LTModeReadoutTable = ({ index, ltObject }) => {
         Mode {index + 1} - {ltObject.lmsList.join("")}
         <br />
       </h2>
+      <p>
+        <i>LTModeReadoutTable - Make this Conditional, 2c = add dash</i>
+      </p>
+      <br />
       <table>
         <tbody>
           <tr>

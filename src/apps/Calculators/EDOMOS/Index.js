@@ -82,7 +82,7 @@ export const EDOMOS = ({ stateData, setStateData, selectedComparison }) => {
       <EDOMOSReadout
         edo={parseInt(stateData[4].edo)}
         step={parseInt(stateData[4].step)}
-        noteTotal={stateData[4].noteTotal}
+        noteTotal={parseInt(stateData[4].noteTotal)}
         selectedComparison={selectedComparison}
         handleMOSClick={handleMOSClick}
         handleChange={handleChange}

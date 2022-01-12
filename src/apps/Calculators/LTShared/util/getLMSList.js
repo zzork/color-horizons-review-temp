@@ -1,6 +1,6 @@
 import getUniqueSteps from "../../../../util/getUniqueSteps";
 
-const getLMSList = (stepDifferences) => {
+const getLMSList = (stepDifferences, lmsList) => {
   let sortedUnique = getUniqueSteps(stepDifferences);
 
   let lSize = 0;
@@ -22,22 +22,22 @@ const getLMSList = (stepDifferences) => {
 
   const valueToLms = (value) => {
     if (value.toFixed(5) === lSize) {
-      return "L";
+      return lmsList[0];
     }
     if (value.toFixed(5) === mSize) {
-      return "𝚖";
+      return lmsList[1];
     }
     if (value.toFixed(5) === sSize) {
-      return "s";
+      return lmsList[2];
     }
   };
 
   // take mapped LMS and create new list from previous values
-  let lmsList = stepDifferences.map((value) => valueToLms(value));
+  let lmsListReturn = stepDifferences.map((value) => valueToLms(value));
 
-  lmsList.shift();
+  lmsListReturn.shift();
 
-  return lmsList;
+  return lmsListReturn;
 };
 
 export default getLMSList;

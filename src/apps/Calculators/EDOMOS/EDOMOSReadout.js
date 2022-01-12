@@ -49,7 +49,11 @@ const EDOMOSReadout = ({
       {noteTotal > 1 && <LTUniquesDisplay scale={scale} lmsIn={lmsIn} />}
       <br />
       {noteTotal > 1 && (
-        <LTAllModes scale={scale} selectedComparison={selectedComparison} />
+        <LTAllModes
+          scale={scale}
+          selectedComparison={selectedComparison}
+          lmsIn={lmsIn}
+        />
       )}
     </div>
   );

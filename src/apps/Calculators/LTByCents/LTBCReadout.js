@@ -73,7 +73,11 @@ export const LTBCReadout = ({
       {noteTotal > 1 && <LTUniquesDisplay scale={scale} lmsIn={"Lms"} />}
       <br />
       {noteTotal > 1 && (
-        <LTAllModes scale={scale} selectedComparison={selectedComparison} />
+        <LTAllModes
+          scale={scale}
+          selectedComparison={selectedComparison}
+          lmsIn={"Lms"}
+        />
       )}
       <br />
     </div>

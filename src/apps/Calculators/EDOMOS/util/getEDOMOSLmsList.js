@@ -7,7 +7,7 @@ const getEDOMOSLmsList = (scale, edo) => {
   const edoStep = 1200 / edo;
   const uniqueStepValues = getUniqueSteps(getStepDifferences(scale));
   const uniqueSteps = uniqueStepValues.map((value) =>
-    Math.round(value / edoStep)
+    String(Math.round(value / edoStep))
   );
   if (uniqueSteps.length === 3) {
     returnList = uniqueSteps;
@@ -17,6 +17,12 @@ const getEDOMOSLmsList = (scale, edo) => {
   }
   if (uniqueSteps.length === 1) {
     returnList = [uniqueSteps[0], "m", "s"];
+  }
+
+  for (let i = 0; i < returnList.length; i++) {
+    if (returnList[i].length === 2) {
+      returnList[i] = `(${returnList[i]})`;
+    }
   }
 
   return returnList;

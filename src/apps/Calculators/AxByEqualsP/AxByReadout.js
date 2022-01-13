@@ -11,12 +11,7 @@ export const AxByReadout = ({
   handleChange,
 }) => {
   const isValidState = () => {
-    return (
-      firstSteps > 0 &&
-      firstCents > 0 &&
-      secondSteps > 0 &&
-      firstSteps * firstCents < 1200
-    );
+    return firstSteps > 0 && firstCents > 0 && firstSteps * firstCents < 1200;
   };
   if (!isValidState()) {
     return <InvalidState firstSteps={firstSteps} firstCents={firstCents} />;
@@ -36,13 +31,20 @@ export const AxByReadout = ({
           value={secondSteps}
         ></input>
       </p>
-      <p>Second Interval Cents: {secondCents.toFixed(5)}</p>
-      <LTUniquesDisplay scale={scale} lmsIn={"Lms"} />
-      <LTAllModes
-        scale={scale}
-        selectedComparison={selectedComparison}
-        lmsIn={"Lms"}
-      />
+      {secondSteps < 1 && (
+        <p>Second Interval Steps Must Be Greater Than Zero</p>
+      )}
+      {secondSteps >= 1 && (
+        <div>
+          <p>Second Interval Cents: {secondCents.toFixed(5)}</p>
+          <LTUniquesDisplay scale={scale} lmsIn={"Lms"} />
+          <LTAllModes
+            scale={scale}
+            selectedComparison={selectedComparison}
+            lmsIn={"Lms"}
+          />
+        </div>
+      )}
     </div>
   );
 };
@@ -52,12 +54,12 @@ const InvalidState = ({ firstSteps, firstCents }) => {
     <div>
       {firstCents * firstSteps > 1200 && (
         <p>
-          First Interval Stack Adds To More Than One Octave (
+          First Interval Set Adds To More Than One Octave (
           {(firstCents * firstSteps).toFixed(5)} Cents)
         </p>
       )}
       {firstCents * firstSteps === 1200 && (
-        <p>First Interval Stack Adds To One Octave</p>
+        <p>First Interval Set Adds To One Octave</p>
       )}
       {firstSteps <= 0 && <p>First Interval Steps Must Be Greater Than Zero</p>}
       {firstCents <= 0 && <p>First Interval Cents Must Be Greater Than Zero</p>}

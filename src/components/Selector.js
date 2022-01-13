@@ -25,9 +25,7 @@ export const Selector = ({ onViewSelect }) => {
       <button>
         <i>Tonality Diamond*</i>
       </button>
-      <button>
-        <i>ab + xy = p*</i>
-      </button>
+      <button onClick={() => onViewSelect("axby")}>ax + by = p</button>
     </div>
   );
 };

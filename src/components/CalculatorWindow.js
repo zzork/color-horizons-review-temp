@@ -1,3 +1,4 @@
+import { AxByEqualsP } from "../apps/Calculators/AxByEqualsP/Index";
 import { EDO } from "../apps/Calculators/EDO/Index";
 import { EDOMOS } from "../apps/Calculators/EDOMOS/Index";
 import { IntervalPattern } from "../apps/Calculators/IntervalPattern/Index";
@@ -12,6 +13,13 @@ export const CalculatorWindow = ({
 }) => {
   return (
     <div>
+      {viewId === "axby" && (
+        <AxByEqualsP
+          stateData={stateData}
+          setStateData={setStateData}
+          selectedComparison={selectedComparison}
+        />
+      )}
       {viewId === "edo" && (
         <EDO
           stateData={stateData}
@@ -26,6 +34,13 @@ export const CalculatorWindow = ({
           selectedComparison={selectedComparison}
         />
       )}
+      {viewId === "ip" && (
+        <IntervalPattern
+          stateData={stateData}
+          setStateData={setStateData}
+          selectedComparison={selectedComparison}
+        />
+      )}
       {viewId === "ltbc" && (
         <LTByCents
           stateData={stateData}
@@ -35,13 +50,6 @@ export const CalculatorWindow = ({
       )}
       {viewId === "ltbr" && (
         <LTByRatio
-          stateData={stateData}
-          setStateData={setStateData}
-          selectedComparison={selectedComparison}
-        />
-      )}
-      {viewId === "ip" && (
-        <IntervalPattern
           stateData={stateData}
           setStateData={setStateData}
           selectedComparison={selectedComparison}

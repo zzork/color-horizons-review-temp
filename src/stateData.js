@@ -22,4 +22,11 @@ export const stateTable = [
     step: "7",
     noteTotal: "7",
   },
+  {
+    id: "f",
+    name: "axByEqualsP",
+    firstInterval: "200",
+    firstSteps: "5",
+    secondInterval: "100",
+  },
 ];

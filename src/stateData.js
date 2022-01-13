@@ -25,8 +25,8 @@ export const stateTable = [
   {
     id: "f",
     name: "axByEqualsP",
-    firstInterval: "200",
+    firstCents: "200",
     firstSteps: "5",
-    secondInterval: "100",
+    secondSteps: "2",
   },
 ];

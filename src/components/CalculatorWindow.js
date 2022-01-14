@@ -4,6 +4,7 @@ import { EDOMOS } from "../apps/Calculators/EDOMOS/Index";
 import { IntervalPattern } from "../apps/Calculators/IntervalPattern/Index";
 import { LTByCents } from "../apps/Calculators/LTByCents/Index";
 import { LTByRatio } from "../apps/Calculators/LTByRatio/Index";
+import { TonalityDiamond } from "../apps/Calculators/TonalityDiamond/Index";
 
 export const CalculatorWindow = ({
   viewId,
@@ -50,6 +51,13 @@ export const CalculatorWindow = ({
       )}
       {viewId === "ltbr" && (
         <LTByRatio
+          stateData={stateData}
+          setStateData={setStateData}
+          selectedComparison={selectedComparison}
+        />
+      )}
+      {viewId === "td" && (
+        <TonalityDiamond
           stateData={stateData}
           setStateData={setStateData}
           selectedComparison={selectedComparison}

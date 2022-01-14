@@ -29,4 +29,11 @@ export const stateTable = [
     firstSteps: "5",
     secondSteps: "2",
   },
+  {
+    id: "g",
+    name: "tonalityDiamond",
+    numbers: [1, 3, 5],
+    allOtUt: "all",
+    showEquivalent: false,
+  },
 ];

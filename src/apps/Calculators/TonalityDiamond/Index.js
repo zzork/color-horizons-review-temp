@@ -54,6 +54,19 @@ export const TonalityDiamond = ({
     }
   };
 
+  const handleRefreshClick = () => {
+    let newState = stateData.map((stateTableRow) => {
+      if (stateTableRow.id === "g") {
+        return {
+          ...stateTableRow,
+          numbers: [],
+        };
+      }
+      return stateTableRow;
+    });
+    setStateData(newState);
+  };
+
   const handleRawEquivalentClick = () => {
     let newState = stateData.map((stateTableRow) => {
       if (stateTableRow.id === "g") {
@@ -79,7 +92,11 @@ export const TonalityDiamond = ({
   return (
     <div>
       <h2>Tonality Diamond</h2>
-      <p>{numbersClickButtons}</p>
+      <p>
+        {numbersClickButtons}
+        <br />
+        <button onClick={() => handleRefreshClick()}>Clear</button>
+      </p>
       <TDReadout
         checked={checked}
         allOtUt={allOtUt}

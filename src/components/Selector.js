@@ -15,6 +15,9 @@ export const Selector = ({ onViewSelect }) => {
         Linear Temperament by Cents
       </button>
       <br />
+      <button onClick={() => onViewSelect("axby")}>ax + by = p</button>
+      <button onClick={() => onViewSelect("td")}>Tonality Diamond</button>
+      <br />
       <button>
         <i>Overtone Series*</i>
       </button>
@@ -22,8 +25,6 @@ export const Selector = ({ onViewSelect }) => {
         <i>Undertone Series*</i>
       </button>
       <br />
-      <button onClick={() => onViewSelect("td")}>Tonality Diamond</button>
-      <button onClick={() => onViewSelect("axby")}>ax + by = p</button>
     </div>
   );
 };

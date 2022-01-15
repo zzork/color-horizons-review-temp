@@ -1,4 +1,5 @@
 import { OTAllModes } from "../OTShared/OTAllModes";
+import TDReadout from "./TDReadout";
 import TDTable from "./TDTable";
 import getTDRatios from "./util/getTDRatios";
 import getTDScale from "./util/getTDScale";
@@ -74,14 +75,9 @@ export const TonalityDiamond = ({
     setStateData(newState);
   };
 
-  // returns list of 3 arrays, whole td/overtones only/undertones only
-  const tonalityDiamondRatios = getTDRatios(checked);
-  const scale = getTDScale(tonalityDiamondRatios, allOtUt);
-  const scaleDisplay = scale.map((value) => (
-    <td>
-      {value[0]}/{value[1]}
-    </td>
-  ));
+  // // returns list of 3 arrays, whole td/overtones only/undertones only
+  // const tonalityDiamondRatios = getTDRatios(checked);
+  // const scale = getTDScale(tonalityDiamondRatios, allOtUt);
 
   const numbersButtons = [];
   for (let i = 1; i < 26; i += 2) {
@@ -96,30 +92,14 @@ export const TonalityDiamond = ({
     <div>
       <h2>Tonality Diamond</h2>
       <p>{numbersClickButtons}</p>
-      {/* <TDReadout handleAllOtUtClick={handleAllOtUtClick} handleRawEquivalentClick={handleRawEquivalentClick}/> */}
-      <p>
-        <button onClick={() => handleAllOtUtClick("all")}>All</button>
-        <button onClick={() => handleAllOtUtClick("ot")}>Overtones</button>
-        <button onClick={() => handleAllOtUtClick("ut")}>Undertones</button>
-      </p>
-      <p>
-        <button onClick={() => handleRawEquivalentClick()}>
-          Raw / Equivalent Values
-        </button>
-      </p>
-      <TDTable
+      <TDReadout
         checked={checked}
         allOtUt={allOtUt}
         showEquivalent={showEquivalent}
+        selectedComparison={selectedComparison}
+        handleAllOtUtClick={handleAllOtUtClick}
+        handleRawEquivalentClick={handleRawEquivalentClick}
       />
-      <h4>
-        <table>
-          <tbody>
-            <tr>{scaleDisplay}</tr>
-          </tbody>
-        </table>
-      </h4>
-      <OTAllModes scale={scale} selectedComparison={selectedComparison} />
     </div>
   );
 };

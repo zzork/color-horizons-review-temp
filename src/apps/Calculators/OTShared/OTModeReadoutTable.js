@@ -1,5 +1,4 @@
 const OTModeReadoutTable = ({ index, otObject }) => {
-  console.log(otObject.ratios);
   return (
     <div>
       <h2>

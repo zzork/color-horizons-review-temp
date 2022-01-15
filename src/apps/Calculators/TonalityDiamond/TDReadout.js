@@ -11,6 +11,13 @@ const TDReadout = ({
   handleAllOtUtClick,
   handleRawEquivalentClick,
 }) => {
+  const isValidState = () => {
+    return checked.length > 1;
+  };
+  if (!isValidState()) {
+    return <InvalidState checked={checked} />;
+  }
+
   // returns list of 3 arrays, whole td/overtones only/undertones only
   const tonalityDiamondRatios = getTDRatios(checked);
   const scale = getTDScale(tonalityDiamondRatios, allOtUt);
@@ -51,3 +58,16 @@ const TDReadout = ({
 };
 
 export default TDReadout;
+
+const InvalidState = ({ checked }) => {
+  let checkedDisplay = [...checked]; // WHY DOES THIS NEED TO BE SPREAD?
+  if (checkedDisplay.length === 0) {
+    checkedDisplay = "None";
+  }
+  return (
+    <div>
+      <p>At Least Two Parameters Must Be Selected</p>
+      <p>Currently Selected: {checkedDisplay}</p>
+    </div>
+  );
+};

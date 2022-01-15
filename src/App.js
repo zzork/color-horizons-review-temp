@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Selector } from "./components/Selector";
 import { CalculatorWindow } from "./components/CalculatorWindow";
 import { stateTable } from "./stateData";
@@ -9,7 +9,12 @@ function App() {
   const [stateData, setStateData] = useState(stateTable);
 
   // these could be lifted up to stateTable
-  const [selectedView, setSelectedView] = useState("edo");
+  const [selectedView, setSelectedView] = useState("td");
+
+  useEffect(() => {
+    console.log(stateData);
+  }, [stateData]);
+
   const onViewSelect = (viewId) => {
     setSelectedView(viewId);
   };

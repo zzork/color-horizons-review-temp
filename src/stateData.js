@@ -1,3 +1,16 @@
+// export const stateTable = {
+//   edo: {value: 12, test: "abc"}
+// }
+// {
+//   ...stateTable,
+//   edo: {
+//     ...stateTable.edo,
+//     value: 13
+//   }
+// }
+//
+// to make iterable since can't do w/ object
+// Object.keys(stateTable).map(key => stateTable[key])
 export const stateTable = [
   { id: "a", name: "edo", value: "12" },
   {

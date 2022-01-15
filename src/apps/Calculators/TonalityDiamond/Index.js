@@ -53,6 +53,19 @@ export const TonalityDiamond = ({
     }
   };
 
+  const handleRawEquivalentClick = () => {
+    let newState = stateData.map((stateTableRow) => {
+      if (stateTableRow.id === "g") {
+        return {
+          ...stateTableRow,
+          showEquivalent: !stateData[6].showEquivalent,
+        };
+      }
+      return stateTableRow;
+    });
+    setStateData(newState);
+  };
+
   // returns list of 3 arrays, whole td/overtones only/undertones only
   const tonalityDiamondRatios = getTDRatios(checked);
 
@@ -69,10 +82,14 @@ export const TonalityDiamond = ({
     <div>
       <h2>Tonality Diamond</h2>
       <p>{numbersClickButtons}</p>
-      <button onClick={() => handleAllOtUtClick("all")}>All</button>
-      <button onClick={() => handleAllOtUtClick("ot")}>Overtones</button>
-      <button onClick={() => handleAllOtUtClick("ut")}>Undertones</button>
-      <p>Show Equivalent Values []</p>
+      <p>
+        <button onClick={() => handleAllOtUtClick("all")}>All</button>
+        <button onClick={() => handleAllOtUtClick("ot")}>Overtones</button>
+        <button onClick={() => handleAllOtUtClick("ut")}>Undertones</button>
+      </p>
+      <button onClick={() => handleRawEquivalentClick()}>
+        Raw / Equivalent Values
+      </button>
       <TDTable checked={checked} />
     </div>
   );

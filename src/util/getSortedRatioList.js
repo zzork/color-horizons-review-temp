@@ -3,13 +3,20 @@ import getReducedFraction from "./getReducedFraction";
 
 const getSortedRatioList = (ratioList) => {
   let originalScale = [];
+  // centsList used to filter duplicate reduced values
+  let centsList = [];
 
   for (let i = 0; i < ratioList.length; i++) {
     let reducedFraction = getReducedFraction(ratioList[i][0], ratioList[i][1]);
-    originalScale.push([
-      getCentsFromRatio(reducedFraction[0], reducedFraction[1]),
-      reducedFraction,
-    ]);
+    let centsVersion = getCentsFromRatio(
+      reducedFraction[0],
+      reducedFraction[1]
+    );
+
+    if (!centsList.includes(centsVersion))
+      originalScale.push([centsVersion, reducedFraction]);
+
+    centsList.push(centsVersion);
   }
 
   originalScale.sort((a, b) => a[0] - b[0]);

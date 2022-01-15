@@ -16,8 +16,6 @@ const getTDScale = (tonalityDiamondRatios, allOtUt) => {
 
   const sortedRatioList = getSortedRatioList(ratioList);
 
-  console.log(sortedRatioList);
-
   return sortedRatioList;
 };
 

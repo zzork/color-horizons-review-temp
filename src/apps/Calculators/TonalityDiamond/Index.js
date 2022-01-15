@@ -12,6 +12,10 @@ export const TonalityDiamond = ({
   const allOtUt = stateData[6].allOtUt;
   const showEquivalent = stateData[6].showEquivalent;
 
+  if (checked.length < 2) {
+    return <div>At Least Two Parameters Must Be Selected</div>;
+  }
+
   const handleAllOtUtClick = (allOtUt) => {
     let newState = stateData.map((stateTableRow) => {
       if (stateTableRow.id === "g") {
@@ -92,6 +96,7 @@ export const TonalityDiamond = ({
     <div>
       <h2>Tonality Diamond</h2>
       <p>{numbersClickButtons}</p>
+      {/* <TDReadout handleAllOtUtClick={handleAllOtUtClick} handleRawEquivalentClick={handleRawEquivalentClick}/> */}
       <p>
         <button onClick={() => handleAllOtUtClick("all")}>All</button>
         <button onClick={() => handleAllOtUtClick("ot")}>Overtones</button>

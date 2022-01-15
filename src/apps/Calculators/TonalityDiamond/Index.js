@@ -1,3 +1,4 @@
+import { OTAllModes } from "../OTShared/OTAllModes";
 import TDTable from "./TDTable";
 import getTDRatios from "./util/getTDRatios";
 import getTDScale from "./util/getTDScale";
@@ -113,6 +114,7 @@ export const TonalityDiamond = ({
           </tbody>
         </table>
       </h4>
+      <OTAllModes scale={scale} selectedComparison={selectedComparison} />
     </div>
   );
 };

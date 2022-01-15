@@ -1,5 +1,3 @@
-import getCentsFromRatio from "../../../../util/getCentsFromRatio";
-import getReducedFraction from "../../../../util/getReducedFraction";
 import getSortedRatioList from "../../../../util/getSortedRatioList";
 
 const getTDScale = (tonalityDiamondRatios, allOtUt) => {

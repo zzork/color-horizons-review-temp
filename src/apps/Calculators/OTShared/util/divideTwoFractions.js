@@ -1,4 +1,4 @@
-import getReducedFraction from "../getReducedFraction";
+import getReducedFraction from "../../../../util/getReducedFraction";
 
 const divideTwoFractions = (fraction1, fraction2) => {
   let newNumerator = fraction1[0] * fraction2[1];

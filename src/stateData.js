@@ -49,4 +49,12 @@ export const stateTable = [
     allOtUt: "all",
     showEquivalent: false,
   },
+  {
+    id: "h",
+    name: "otones",
+    denominator: "1",
+    start: "1",
+    stop: "7",
+    progression: "1",
+  },
 ];

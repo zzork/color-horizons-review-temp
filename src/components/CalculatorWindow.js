@@ -4,9 +4,9 @@ import { EDOMOS } from "../apps/Calculators/EDOMOS/Index";
 import { IntervalPattern } from "../apps/Calculators/IntervalPattern/Index";
 import { LTByCents } from "../apps/Calculators/LTByCents/Index";
 import { LTByRatio } from "../apps/Calculators/LTByRatio/Index";
-import { Overtones } from "../apps/Calculators/Overtones/Index";
+import { Otones } from "../apps/Calculators/Otones/Index";
 import { TonalityDiamond } from "../apps/Calculators/TonalityDiamond/Index";
-import { Undertones } from "../apps/Calculators/Undertones/Index";
+import { Utones } from "../apps/Calculators/Utones/Index";
 
 export const CalculatorWindow = ({
   viewId,
@@ -59,7 +59,7 @@ export const CalculatorWindow = ({
         />
       )}
       {viewId === "ot" && (
-        <Overtones
+        <Otones
           stateData={stateData}
           setStateData={setStateData}
           selectedComparison={selectedComparison}
@@ -73,7 +73,7 @@ export const CalculatorWindow = ({
         />
       )}
       {viewId === "ut" && (
-        <Undertones
+        <Utones
           stateData={stateData}
           setStateData={setStateData}
           selectedComparison={selectedComparison}

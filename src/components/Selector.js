@@ -18,8 +18,8 @@ export const Selector = ({ onViewSelect }) => {
       <button onClick={() => onViewSelect("axby")}>ax + by = p</button>
       <button onClick={() => onViewSelect("td")}>Tonality Diamond</button>
       <br />
-      <button onClick={() => onViewSelect("ot")}>Overtone Series</button>
-      <button onClick={() => onViewSelect("ut")}>Undertone Series</button>
+      <button onClick={() => onViewSelect("ot")}>Otones</button>
+      <button onClick={() => onViewSelect("ut")}>Utones</button>
       <br />
     </div>
   );

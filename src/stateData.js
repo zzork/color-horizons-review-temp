@@ -57,4 +57,12 @@ export const stateTable = [
     stop: "7",
     progression: "1",
   },
+  {
+    id: "i",
+    name: "utones",
+    numerator: "1",
+    start: "1",
+    stop: "7",
+    progression: "1",
+  },
 ];

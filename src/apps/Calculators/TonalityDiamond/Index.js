@@ -7,6 +7,8 @@ export const TonalityDiamond = ({
   selectedComparison,
 }) => {
   const checked = stateData[6].numbers;
+  const allOtUt = stateData[6].allOtUt;
+  const showEquivalent = stateData[6].showEquivalent;
 
   const handleAllOtUtClick = (allOtUt) => {
     let newState = stateData.map((stateTableRow) => {
@@ -90,7 +92,11 @@ export const TonalityDiamond = ({
       <button onClick={() => handleRawEquivalentClick()}>
         Raw / Equivalent Values
       </button>
-      <TDTable checked={checked} />
+      <TDTable
+        checked={checked}
+        allOtUt={allOtUt}
+        showEquivalent={showEquivalent}
+      />
     </div>
   );
 };

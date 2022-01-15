@@ -1,12 +1,48 @@
 import getReducedFraction from "../../../util/getReducedFraction";
 
-const TDTable = ({ checked }) => {
-  const getReducedRatiosTableDisplay = (numerator, denominator) => {
-    if (numerator === denominator) {
-      return "*";
+const TDTable = ({ checked, allOtUt, showEquivalent }) => {
+  const cellEquivalentConverter = (innerLoopNumber, outerLoopNumber) => {
+    if (showEquivalent === false) {
+      return `${innerLoopNumber} / ${outerLoopNumber}`;
     }
-    const reducedFraction = getReducedFraction(numerator, denominator);
-    return `${reducedFraction[0]} / ${reducedFraction[1]}`;
+    if (showEquivalent === true) {
+      let reducedFraction = getReducedFraction(
+        innerLoopNumber,
+        outerLoopNumber
+      );
+      return `${reducedFraction[0]} / ${reducedFraction[1]}`;
+    }
+  };
+
+  const getCellDisplay = (innerLoopNumber, outerLoopNumber) => {
+    if (allOtUt === "all") {
+      if (innerLoopNumber === outerLoopNumber) {
+        return "unison";
+      }
+      return cellEquivalentConverter(innerLoopNumber, outerLoopNumber);
+    }
+    if (allOtUt === "ot") {
+      if (innerLoopNumber === outerLoopNumber) {
+        return "unison";
+      }
+      if (innerLoopNumber < outerLoopNumber) {
+        return "*";
+      }
+      if (innerLoopNumber > outerLoopNumber) {
+        return cellEquivalentConverter(innerLoopNumber, outerLoopNumber);
+      }
+    }
+    if (allOtUt === "ut") {
+      if (innerLoopNumber === outerLoopNumber) {
+        return "unison";
+      }
+      if (innerLoopNumber > outerLoopNumber) {
+        return "*";
+      }
+      if (innerLoopNumber < outerLoopNumber) {
+        return cellEquivalentConverter(innerLoopNumber, outerLoopNumber);
+      }
+    }
   };
 
   const topRow = checked.map((number) => (
@@ -20,21 +56,10 @@ const TDTable = ({ checked }) => {
         <b>{outerLoopNumber}</b>
       </td>
       {checked.map((innerLoopNumber) => (
-        // REDUCED DISPLAY, SWITCH BETWEEN THESE TWO, OR FIND A BETTER METHOD
-
         // <td>
         //   {getReducedRatiosTableDisplay(innerLoopNumber, outerLoopNumber)}
         // </td>
-
-        <td>
-          {innerLoopNumber === outerLoopNumber ? (
-            "unison"
-          ) : (
-            <div>
-              {innerLoopNumber} / {outerLoopNumber}
-            </div>
-          )}
-        </td>
+        <td>{getCellDisplay(innerLoopNumber, outerLoopNumber)}</td>
       ))}
     </tr>
   ));

@@ -1,5 +1,6 @@
 import TDTable from "./TDTable";
 import getTDRatios from "./util/getTDRatios";
+import getTDScale from "./util/getTDScale";
 
 export const TonalityDiamond = ({
   stateData,
@@ -70,6 +71,12 @@ export const TonalityDiamond = ({
 
   // returns list of 3 arrays, whole td/overtones only/undertones only
   const tonalityDiamondRatios = getTDRatios(checked);
+  const scale = getTDScale(tonalityDiamondRatios, allOtUt);
+  const scaleDisplay = scale.map((value) => (
+    <td>
+      {value[0]}/{value[1]}
+    </td>
+  ));
 
   const numbersButtons = [];
   for (let i = 1; i < 26; i += 2) {
@@ -89,14 +96,23 @@ export const TonalityDiamond = ({
         <button onClick={() => handleAllOtUtClick("ot")}>Overtones</button>
         <button onClick={() => handleAllOtUtClick("ut")}>Undertones</button>
       </p>
-      <button onClick={() => handleRawEquivalentClick()}>
-        Raw / Equivalent Values
-      </button>
+      <p>
+        <button onClick={() => handleRawEquivalentClick()}>
+          Raw / Equivalent Values
+        </button>
+      </p>
       <TDTable
         checked={checked}
         allOtUt={allOtUt}
         showEquivalent={showEquivalent}
       />
+      <h4>
+        <table>
+          <tbody>
+            <tr>{scaleDisplay}</tr>
+          </tbody>
+        </table>
+      </h4>
     </div>
   );
 };

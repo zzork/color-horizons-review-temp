@@ -11,9 +11,9 @@ function App() {
   // these could be lifted up to stateTable
   const [selectedView, setSelectedView] = useState("td");
 
-  useEffect(() => {
-    console.log(stateData);
-  }, [stateData]);
+  // useEffect(() => {
+  //   console.log(stateData);
+  // }, [stateData]);
 
   const onViewSelect = (viewId) => {
     setSelectedView(viewId);

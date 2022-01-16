@@ -1,3 +1,5 @@
+import { OTReadout } from "./OTReadout";
+
 export const Otones = ({ stateData, setStateData, selectedComparison }) => {
   const handleChange = (event) => {
     let fieldReader = event.target.name;
@@ -55,6 +57,19 @@ export const Otones = ({ stateData, setStateData, selectedComparison }) => {
       setStateData(newState);
     }
   };
+  const handleShowEquivalent = () => {
+    let newState = stateData.map((stateTableRow) => {
+      let newEquivalent = !stateData[7].showEquivalent;
+      if (stateTableRow.id === "h") {
+        return {
+          ...stateTableRow,
+          showEquivalent: newEquivalent,
+        };
+      }
+      return stateTableRow;
+    });
+    setStateData(newState);
+  };
 
   return (
     <div>
@@ -92,6 +107,14 @@ export const Otones = ({ stateData, setStateData, selectedComparison }) => {
           value={stateData[7].progression}
         ></input>
       </p>
+      <OTReadout
+        denominator={parseInt(stateData[7].denominator)}
+        start={parseInt(stateData[7].start)}
+        stop={parseInt(stateData[7].stop)}
+        progression={parseInt(stateData[7].progression)}
+        showEquivalent={stateData[7].showEquivalent}
+        handleShowEquivalent={handleShowEquivalent}
+      />
     </div>
   );
 };

@@ -56,6 +56,7 @@ export const stateTable = [
     start: "1",
     stop: "7",
     progression: "1",
+    showEquivalent: false,
   },
   {
     id: "i",

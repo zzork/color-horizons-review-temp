@@ -9,7 +9,7 @@ function App() {
   const [stateData, setStateData] = useState(stateTable);
 
   // these could be lifted up to stateTable
-  const [selectedView, setSelectedView] = useState("td");
+  const [selectedView, setSelectedView] = useState("ot");
 
   // useEffect(() => {
   //   console.log(stateData);

@@ -1,6 +1,13 @@
 import getReducedFraction from "../../../util/getReducedFraction";
 
 const OTScaleDisplay = ({ rawScale, showEquivalent, handleShowEquivalent }) => {
+  let rawEquivalentTitle = "";
+  if (showEquivalent === false) {
+    rawEquivalentTitle = "Raw Values";
+  }
+  if (showEquivalent === true) {
+    rawEquivalentTitle = "Equivalent Values";
+  }
   const getSingleRatioForScaleDisplay = (numerator, denominator) => {
     if (showEquivalent === false) {
       return `${numerator}/${denominator}`;
@@ -22,6 +29,7 @@ const OTScaleDisplay = ({ rawScale, showEquivalent, handleShowEquivalent }) => {
           Raw/Equivalent Values
         </button>
       </p>
+      <h4>{rawEquivalentTitle}</h4>
       <table>
         <tbody>
           <tr>{scaleDisplay}</tr>

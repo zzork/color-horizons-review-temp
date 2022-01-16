@@ -13,7 +13,7 @@ export const OTReadout = ({
   selectedComparison,
 }) => {
   const isValidState = () => {
-    return true;
+    return denominator > 0 && start > 0 && stop > start && progression > 0;
   };
   if (!isValidState()) {
     return (
@@ -47,7 +47,13 @@ export const OTReadout = ({
 const InvalidState = ({ denominator, start, stop, progression }) => {
   return (
     <div>
-      {denominator < 1 && <p>Numerator and Denominator are Identical</p>}
+      {denominator < 1 && <p>Denominator Must Be Greater Than Zero</p>}
+      {start < 1 && <p>Start Must Be Greater Than Zero</p>}
+      {stop <= start && <p>Stop Must Be Greater Than Start</p>}
+      {stop < 0 && <p>Stop Must Be Greater </p>}
+      {progression < 1 && <p>Progression Must Be Greater Than Zero</p>}
     </div>
   );
 };
+
+// denominator > 0 && start > 0 && stop > start && progression > 0;

@@ -3,7 +3,7 @@ const getReducedFraction = (numerator, denominator) => {
   numerator = parseInt(numerator);
   denominator = parseInt(denominator);
 
-  if (numerator === 1 && denominator === 1) {
+  if (numerator === denominator) {
     return [1, 1];
   }
 

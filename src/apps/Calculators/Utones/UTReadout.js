@@ -1,10 +1,10 @@
 import getSortedRatioList from "../../../util/getSortedRatioList";
+import OTScaleDisplay from "../Otones/OTScaleDisplay";
+import getUTRawScale from "./util/getUTRawScale";
 import { OTAllModes } from "../OTShared/OTAllModes";
-import OTScaleDisplay from "./OTScaleDisplay";
-import getOTRawScale from "./util/getOTRawScale";
 
-export const OTReadout = ({
-  denominator,
+export const UTReadout = ({
+  numerator,
   start,
   stop,
   progression,
@@ -13,12 +13,12 @@ export const OTReadout = ({
   selectedComparison,
 }) => {
   const isValidState = () => {
-    return denominator > 0 && start > 0 && stop > start && progression > 0;
+    return numerator > 0 && start > 0 && stop > start && progression > 0;
   };
   if (!isValidState()) {
     return (
       <InvalidState
-        denominator={denominator}
+        numerator={numerator}
         start={start}
         stop={stop}
         progression={progression}
@@ -26,7 +26,7 @@ export const OTReadout = ({
     );
   }
 
-  const rawScale = getOTRawScale(denominator, start, stop, progression);
+  const rawScale = getUTRawScale(numerator, start, stop, progression);
   const scale = getSortedRatioList(rawScale);
 
   return (
@@ -44,10 +44,10 @@ export const OTReadout = ({
   );
 };
 
-const InvalidState = ({ denominator, start, stop, progression }) => {
+const InvalidState = ({ numerator, start, stop, progression }) => {
   return (
     <div>
-      {denominator < 1 && <p>Denominator Must Be Greater Than Zero</p>}
+      {numerator < 1 && <p>Numerator Must Be Greater Than Zero</p>}
       {start < 1 && <p>Start Must Be Greater Than Zero</p>}
       {stop <= start && <p>Stop Must Be Greater Than Start</p>}
       {stop < 0 && <p>Stop Must Be Greater </p>}

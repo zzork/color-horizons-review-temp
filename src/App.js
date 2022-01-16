@@ -58,7 +58,9 @@ export default App;
 // playback method, with ability to play single notes, chords, or split keyboard of both too!
 // - with that, ability to choose size of chords, or maybe also just approximations like in scala
 
-// ability to generate .scl files from each scale
+// ability to generate and export .scl files from each scale
+
+// create permalink for sharing scale via url
 
 // set decimal accuracy of readouts? at least set to 6 instead of 5
 

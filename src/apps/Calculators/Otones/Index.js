@@ -114,6 +114,7 @@ export const Otones = ({ stateData, setStateData, selectedComparison }) => {
         progression={parseInt(stateData[7].progression)}
         showEquivalent={stateData[7].showEquivalent}
         handleShowEquivalent={handleShowEquivalent}
+        selectedComparison={selectedComparison}
       />
     </div>
   );

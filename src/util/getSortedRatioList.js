@@ -13,7 +13,11 @@ const getSortedRatioList = (ratioList) => {
       reducedFraction[1]
     );
 
-    if (!centsList.includes(centsVersion))
+    if (
+      !centsList.includes(centsVersion) &&
+      centsVersion !== 0 &&
+      centsVersion !== 1200
+    )
       originalScale.push([centsVersion, reducedFraction]);
 
     centsList.push(centsVersion);

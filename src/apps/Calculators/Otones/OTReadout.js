@@ -1,3 +1,5 @@
+import getSortedRatioList from "../../../util/getSortedRatioList";
+import { OTAllModes } from "../OTShared/OTAllModes";
 import OTScaleDisplay from "./OTScaleDisplay";
 import getOTRawScale from "./util/getOTRawScale";
 
@@ -8,6 +10,7 @@ export const OTReadout = ({
   progression,
   showEquivalent,
   handleShowEquivalent,
+  selectedComparison,
 }) => {
   const isValidState = () => {
     return true;
@@ -24,6 +27,7 @@ export const OTReadout = ({
   }
 
   const rawScale = getOTRawScale(denominator, start, stop, progression);
+  const scale = getSortedRatioList(rawScale);
 
   return (
     <div>
@@ -34,6 +38,7 @@ export const OTReadout = ({
           handleShowEquivalent={handleShowEquivalent}
         />
       </p>
+      <OTAllModes scale={scale} selectedComparison={selectedComparison} />
       <p></p>
     </div>
   );

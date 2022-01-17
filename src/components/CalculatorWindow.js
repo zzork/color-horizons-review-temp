@@ -13,6 +13,7 @@ export const CalculatorWindow = ({
   stateData,
   setStateData,
   selectedComparison,
+  handleSetPlayerClick,
 }) => {
   return (
     <div>
@@ -21,6 +22,7 @@ export const CalculatorWindow = ({
           stateData={stateData}
           setStateData={setStateData}
           selectedComparison={selectedComparison}
+          handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
       {viewId === "edo" && (
@@ -28,6 +30,7 @@ export const CalculatorWindow = ({
           stateData={stateData}
           setStateData={setStateData}
           selectedComparison={selectedComparison}
+          handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
       {viewId === "edomos" && (
@@ -35,6 +38,7 @@ export const CalculatorWindow = ({
           stateData={stateData}
           setStateData={setStateData}
           selectedComparison={selectedComparison}
+          handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
       {viewId === "ip" && (
@@ -42,6 +46,7 @@ export const CalculatorWindow = ({
           stateData={stateData}
           setStateData={setStateData}
           selectedComparison={selectedComparison}
+          handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
       {viewId === "ltbc" && (
@@ -49,6 +54,7 @@ export const CalculatorWindow = ({
           stateData={stateData}
           setStateData={setStateData}
           selectedComparison={selectedComparison}
+          handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
       {viewId === "ltbr" && (
@@ -56,6 +62,7 @@ export const CalculatorWindow = ({
           stateData={stateData}
           setStateData={setStateData}
           selectedComparison={selectedComparison}
+          handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
       {viewId === "ot" && (
@@ -63,6 +70,7 @@ export const CalculatorWindow = ({
           stateData={stateData}
           setStateData={setStateData}
           selectedComparison={selectedComparison}
+          handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
       {viewId === "td" && (
@@ -70,6 +78,7 @@ export const CalculatorWindow = ({
           stateData={stateData}
           setStateData={setStateData}
           selectedComparison={selectedComparison}
+          handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
       {viewId === "ut" && (
@@ -77,6 +86,7 @@ export const CalculatorWindow = ({
           stateData={stateData}
           setStateData={setStateData}
           selectedComparison={selectedComparison}
+          handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
     </div>

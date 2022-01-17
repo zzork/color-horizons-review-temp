@@ -14,6 +14,7 @@ export const LTBRReadout = ({
   handleInvertClick,
   handleMOSClick,
   handleChange,
+  handleSetPlayerClick,
 }) => {
   const reducedFraction = getReducedFraction(numerator, denominator);
 
@@ -103,6 +104,7 @@ export const LTBRReadout = ({
             selectedComparison={selectedComparison}
             lmsIn={"Lms"}
             sclData={sclData}
+            handleSetPlayerClick={handleSetPlayerClick}
           />
         )}
       </div>

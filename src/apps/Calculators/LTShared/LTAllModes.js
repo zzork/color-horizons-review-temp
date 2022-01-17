@@ -2,7 +2,13 @@ import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
 import convertLTInputToModesObjects from "./util/convertLTInputToModesObjects";
 import LTModeReadoutTable from "./util/LTModeReadoutTable";
 
-export const LTAllModes = ({ scale, selectedComparison, lmsIn, sclData }) => {
+export const LTAllModes = ({
+  scale,
+  selectedComparison,
+  lmsIn,
+  sclData,
+  handleSetPlayerClick,
+}) => {
   const allLTObjects = convertLTInputToModesObjects(scale, lmsIn);
   return (
     <div>
@@ -12,6 +18,7 @@ export const LTAllModes = ({ scale, selectedComparison, lmsIn, sclData }) => {
             ltObject={ltObject}
             index={index}
             sclData={sclData}
+            handleSetPlayerClick={handleSetPlayerClick}
           />
           <br />
           <ComparisonWindow

@@ -4,6 +4,7 @@ import { Selector } from "./components/Selector";
 import { CalculatorWindow } from "./components/CalculatorWindow";
 import { stateTable } from "./stateData";
 import { ComparisonOptions } from "./apps/RatioComparer/ComparisonOptions";
+import Player from "./apps/Player/Index";
 
 function App() {
   const [stateData, setStateData] = useState(stateTable);
@@ -23,9 +24,42 @@ function App() {
     setSelectedComparison(comparisonId);
   };
 
+  const handleShowPlayerClick = () => {
+    let newState = stateData.map((stateTableRow) => {
+      let showPlayer = !stateData[9].showPlayer;
+      if (stateTableRow.id === "j") {
+        return {
+          ...stateTableRow,
+          showPlayer: showPlayer,
+        };
+      }
+      return stateTableRow;
+    });
+    setStateData(newState);
+  };
+
+  const handleSetPlayerClick = (playerData) => {
+    let newState = stateData.map((stateTableRow) => {
+      if (stateTableRow.id === "j") {
+        return {
+          ...stateTableRow,
+          playerData: playerData,
+        };
+      }
+      return stateTableRow;
+    });
+    setStateData(newState);
+  };
+
   return (
     <div>
       <h1>MICROTONAL EXPLORER</h1>
+      <button onClick={() => handleShowPlayerClick()}>Show/Hide Player</button>
+      <Player
+        showPlayer={stateData[9].showPlayer}
+        playerData={stateData[9].playerData}
+      />
+      <br />
       <table>
         <tbody>
           <tr>
@@ -44,6 +78,7 @@ function App() {
         stateData={stateData}
         setStateData={setStateData}
         selectedComparison={selectedComparison}
+        handleSetPlayerClick={handleSetPlayerClick}
       />
       <br />
     </div>

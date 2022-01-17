@@ -19,8 +19,6 @@ microtonalexplorer.com - Linear Temperament By Ratio - Numerator ${numerator} - 
 ${modifiedScale[i]}`;
   }
 
-  console.log(outputString);
-
   let outputBlob = new Blob([outputString], { type: "text/plain" });
   let url = window.URL.createObjectURL(outputBlob);
   let anchor = document.createElement("a");

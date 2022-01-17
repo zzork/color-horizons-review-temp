@@ -4,6 +4,7 @@ import getCentsFromRatio from "../../../util/getCentsFromRatio";
 import getLTScaleByRatio from "./util/getLTScaleFromRatio";
 import LTUniquesDisplay from "../LTShared/LTUniquesDisplay";
 import { LTAllModes } from "../LTShared/LTAllModes";
+import generateLTBRScl from "./util/generateLTBRScl";
 
 export const LTBRReadout = ({
   numerator,
@@ -63,6 +64,8 @@ export const LTBRReadout = ({
     noteTotal
   );
 
+  const sclData = [numerator, denominator, noteTotal];
+
   return (
     <div>
       <div>
@@ -99,6 +102,7 @@ export const LTBRReadout = ({
             scale={scale}
             selectedComparison={selectedComparison}
             lmsIn={"Lms"}
+            sclData={sclData}
           />
         )}
       </div>

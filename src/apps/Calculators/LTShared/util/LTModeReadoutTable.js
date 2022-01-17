@@ -1,9 +1,16 @@
-const LTModeReadoutTable = ({ index, ltObject }) => {
+import generateLTBRScl from "../../LTByRatio/util/generateLTBRScl";
+
+const LTModeReadoutTable = ({ index, ltObject, sclData }) => {
   return (
     <div>
       <h2>
         Mode {index + 1} - {ltObject.lmsList.join("")}
         <br />
+        <button
+          onClick={() => generateLTBRScl(ltObject.mode, sclData, index + 1)}
+        >
+          create .scl
+        </button>
       </h2>
       <br />
       <table>

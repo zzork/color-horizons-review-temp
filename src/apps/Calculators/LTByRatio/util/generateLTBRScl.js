@@ -2,11 +2,13 @@ const generateLTBRScl = (scale, sclData, mode) => {
   const numerator = sclData[0];
   const denominator = sclData[1];
   const noteTotal = sclData[2];
+
   let modifiedScale = [...scale];
   modifiedScale.shift();
   modifiedScale.pop();
   modifiedScale = modifiedScale.map((value) => value.toFixed(5));
   modifiedScale.push("2/1");
+
   let outputString = `! LTBR-${numerator}over${denominator}-${noteTotal}-mode${mode}
 !
 microtonalexplorer.com - Linear Temperament By Ratio - Numerator ${numerator} - Denominator ${denominator} - Note Total ${noteTotal} - Mode ${mode}

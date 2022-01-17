@@ -3,13 +3,17 @@ import generateLTBRScl from "../../LTByRatio/util/generateLTBRScl";
 const LTModeReadoutTable = ({ index, ltObject, sclData }) => {
   return (
     <div>
+      <br />
       <h2>
         Mode {index + 1} - {ltObject.lmsList.join("")}
         <br />
+        <button>
+          <i>Use In Player</i>
+        </button>
         <button
           onClick={() => generateLTBRScl(ltObject.mode, sclData, index + 1)}
         >
-          create .scl
+          Export .scl
         </button>
       </h2>
       <br />

@@ -1,5 +1,5 @@
-import { LTBRAllModes } from "../LTByRatio/LTBRAllModes";
 import LTUniquesDisplay from "../LTShared/LTUniquesDisplay";
+import { AxByAllModes } from "./AxByAllModes";
 import getAxByScale from "./util/getAxByScale";
 import getSecondCents from "./util/getSecondCents";
 
@@ -9,6 +9,7 @@ export const AxByReadout = ({
   secondSteps,
   selectedComparison,
   handleChange,
+  handleSetPlayerClick,
 }) => {
   const isValidState = () => {
     return firstSteps > 0 && firstCents > 0 && firstSteps * firstCents < 1200;
@@ -19,6 +20,7 @@ export const AxByReadout = ({
 
   const secondCents = getSecondCents(firstSteps, firstCents, secondSteps);
   const scale = getAxByScale(firstSteps, firstCents, secondSteps, secondCents);
+  const sclData = [firstSteps, firstCents, secondSteps, secondCents];
 
   return (
     <div>
@@ -38,10 +40,12 @@ export const AxByReadout = ({
         <div>
           <p>Second Interval Cents: {secondCents.toFixed(5)}</p>
           <LTUniquesDisplay scale={scale} lmsIn={"Lms"} />
-          <LTBRAllModes
+          <AxByAllModes
             scale={scale}
             selectedComparison={selectedComparison}
             lmsIn={"Lms"}
+            sclData={sclData}
+            handleSetPlayerClick={handleSetPlayerClick}
           />
         </div>
       )}

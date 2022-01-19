@@ -1,3 +1,4 @@
+import generateAxByScl from "../Calculators/AxByEqualsP/util/generateAxByScl";
 import generateLTBCScl from "../Calculators/LTByCents/util/generateLTBCScl";
 import generateLTBRScl from "../Calculators/LTByRatio/util/generateLTBRScl";
 
@@ -7,6 +8,30 @@ const Player = ({ showPlayer, playerData }) => {
   let readout = "";
   let scaleReadout = "";
   let sclButton = null;
+
+  if (playerData.tool === "axby") {
+    sclButton = (
+      <button
+        onClick={() =>
+          generateAxByScl(playerData.scale, playerData.sclData, playerData.mode)
+        }
+      >
+        Export .scl
+      </button>
+    );
+    title = "ax+by=p";
+    readout = `${playerData.sclData[0]} Steps of ${
+      playerData.sclData[1]
+    } Cents and ${
+      playerData.sclData[2]
+    } Steps of ${playerData.sclData[3].toFixed(5)} Cents, Mode ${
+      playerData.mode
+    }`;
+    scaleReadout = playerData.scale.map((note, index) => (
+      <div key={index}>{note.toFixed(5)}</div>
+    ));
+  }
+
   if (playerData.tool === "ltbc") {
     sclButton = (
       <button
@@ -23,6 +48,7 @@ const Player = ({ showPlayer, playerData }) => {
       <div key={index}>{note.toFixed(5)}</div>
     ));
   }
+
   if (playerData.tool === "ltbr") {
     sclButton = (
       <button
@@ -39,6 +65,7 @@ const Player = ({ showPlayer, playerData }) => {
       <div key={index}>{note.toFixed(5)}</div>
     ));
   }
+
   if (showPlayer === false) {
     return <div></div>;
   } else {

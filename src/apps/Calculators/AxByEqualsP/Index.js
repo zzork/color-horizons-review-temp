@@ -4,6 +4,7 @@ export const AxByEqualsP = ({
   stateData,
   setStateData,
   selectedComparison,
+  handleSetPlayerClick,
 }) => {
   const handleChange = (event) => {
     let fieldReader = event.target.name;
@@ -76,6 +77,7 @@ export const AxByEqualsP = ({
         secondSteps={stateData[5].secondSteps}
         selectedComparison={selectedComparison}
         handleChange={handleChange}
+        handleSetPlayerClick={handleSetPlayerClick}
       />
     </div>
   );

@@ -1,3 +1,4 @@
+import generateLTBCScl from "../Calculators/LTByCents/util/generateLTBCScl";
 import generateLTBRScl from "../Calculators/LTByRatio/util/generateLTBRScl";
 
 const Player = ({ showPlayer, playerData }) => {
@@ -6,6 +7,22 @@ const Player = ({ showPlayer, playerData }) => {
   let readout = "";
   let scaleReadout = "";
   let sclButton = null;
+  if (playerData.tool === "ltbc") {
+    sclButton = (
+      <button
+        onClick={() =>
+          generateLTBCScl(playerData.scale, playerData.sclData, playerData.mode)
+        }
+      >
+        Export .scl
+      </button>
+    );
+    title = "Linear Temperament By Cents";
+    readout = `${playerData.sclData[1]} Notes of ${playerData.sclData[0]}, Mode ${playerData.mode}`;
+    scaleReadout = playerData.scale.map((note, index) => (
+      <div key={index}>{note.toFixed(5)}</div>
+    ));
+  }
   if (playerData.tool === "ltbr") {
     sclButton = (
       <button

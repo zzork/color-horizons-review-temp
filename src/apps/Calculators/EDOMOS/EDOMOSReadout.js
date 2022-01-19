@@ -3,7 +3,7 @@ import LTUniquesDisplay from "../LTShared/LTUniquesDisplay";
 import getMos from "../LTShared/util/getMos";
 import getEDOMOSLmsList from "./util/getEDOMOSLmsList";
 import getEDOMOSGenerator from "./util/getEDOMOSGenerator";
-import { LTAllModes } from "../LTShared/LTAllModes";
+import { LTBRAllModes } from "../LTByRatio/LTBRAllModes";
 
 const EDOMOSReadout = ({
   edo,
@@ -49,7 +49,7 @@ const EDOMOSReadout = ({
       {noteTotal > 1 && <LTUniquesDisplay scale={scale} lmsIn={lmsIn} />}
       <br />
       {noteTotal > 1 && (
-        <LTAllModes
+        <LTBRAllModes
           scale={scale}
           selectedComparison={selectedComparison}
           lmsIn={lmsIn}

@@ -1,6 +1,6 @@
-import { LTAllModes } from "../LTShared/LTAllModes";
 import LTUniquesDisplay from "../LTShared/LTUniquesDisplay";
 import getMos from "../LTShared/util/getMos";
+import { LTBCAllModes } from "./LTBCAllModes";
 import getLTScaleFromCents from "./util/getLTScaleFromCents";
 
 export const LTBCReadout = ({
@@ -8,6 +8,7 @@ export const LTBCReadout = ({
   noteTotal,
   selectedComparison,
   granularityFixValue,
+  handleSetPlayerClick,
   handleGranularityClick,
   handleInvertClick,
   handleMOSClick,
@@ -27,6 +28,8 @@ export const LTBCReadout = ({
   ));
 
   const scale = getLTScaleFromCents(generator, noteTotal);
+
+  const sclData = [generator, noteTotal];
 
   return (
     <div>
@@ -73,10 +76,12 @@ export const LTBCReadout = ({
       {noteTotal > 1 && <LTUniquesDisplay scale={scale} lmsIn={"Lms"} />}
       <br />
       {noteTotal > 1 && (
-        <LTAllModes
+        <LTBCAllModes
           scale={scale}
           selectedComparison={selectedComparison}
           lmsIn={"Lms"}
+          sclData={sclData}
+          handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
       <br />

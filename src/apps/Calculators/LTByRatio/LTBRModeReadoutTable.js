@@ -1,6 +1,6 @@
-import generateLTBRScl from "../../LTByRatio/util/generateLTBRScl";
+import generateLTBRScl from "./util/generateLTBRScl";
 
-const LTModeReadoutTable = ({
+const LTBRModeReadoutTable = ({
   index,
   ltObject,
   sclData,
@@ -56,4 +56,4 @@ const LTModeReadoutTable = ({
   );
 };
 
-export default LTModeReadoutTable;
+export default LTBRModeReadoutTable;

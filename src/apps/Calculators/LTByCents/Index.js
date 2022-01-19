@@ -1,7 +1,12 @@
 import { LTBCReadout } from "./LTBCReadout";
 import getGranularitySettings from "./util/getGranularitySettings";
 
-export const LTByCents = ({ stateData, setStateData, selectedComparison }) => {
+export const LTByCents = ({
+  stateData,
+  setStateData,
+  selectedComparison,
+  handleSetPlayerClick,
+}) => {
   const handleChange = (event) => {
     let fieldReader = event.target.name;
     let newValue = event.target.value;
@@ -95,6 +100,7 @@ export const LTByCents = ({ stateData, setStateData, selectedComparison }) => {
         noteTotal={stateData[3].noteTotal}
         selectedComparison={selectedComparison}
         granularityFixValue={granularitySettings[0]}
+        handleSetPlayerClick={handleSetPlayerClick}
         handleGranularityClick={handleGranularityClick}
         handleInvertClick={handleInvertClick}
         handleMOSClick={handleMOSClick}

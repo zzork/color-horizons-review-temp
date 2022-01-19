@@ -1,4 +1,4 @@
-import { LTAllModes } from "../LTShared/LTAllModes";
+import { LTBRAllModes } from "../LTByRatio/LTBRAllModes";
 import LTUniquesDisplay from "../LTShared/LTUniquesDisplay";
 import getAxByScale from "./util/getAxByScale";
 import getSecondCents from "./util/getSecondCents";
@@ -38,7 +38,7 @@ export const AxByReadout = ({
         <div>
           <p>Second Interval Cents: {secondCents.toFixed(5)}</p>
           <LTUniquesDisplay scale={scale} lmsIn={"Lms"} />
-          <LTAllModes
+          <LTBRAllModes
             scale={scale}
             selectedComparison={selectedComparison}
             lmsIn={"Lms"}

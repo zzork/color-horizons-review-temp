@@ -3,8 +3,7 @@ import getReducedFraction from "../../../util/getReducedFraction";
 import getCentsFromRatio from "../../../util/getCentsFromRatio";
 import getLTScaleByRatio from "./util/getLTScaleFromRatio";
 import LTUniquesDisplay from "../LTShared/LTUniquesDisplay";
-import { LTAllModes } from "../LTShared/LTAllModes";
-import generateLTBRScl from "./util/generateLTBRScl";
+import { LTBRAllModes } from "./LTBRAllModes";
 
 export const LTBRReadout = ({
   numerator,
@@ -99,7 +98,7 @@ export const LTBRReadout = ({
         {noteTotal > 1 && <LTUniquesDisplay scale={scale} lmsIn={"Lms"} />}
         <br />
         {noteTotal > 1 && (
-          <LTAllModes
+          <LTBRAllModes
             scale={scale}
             selectedComparison={selectedComparison}
             lmsIn={"Lms"}

@@ -1,6 +1,11 @@
 import { UTReadout } from "./UTReadout";
 
-export const Utones = ({ stateData, setStateData, selectedComparison }) => {
+export const Utones = ({
+  stateData,
+  setStateData,
+  selectedComparison,
+  handleSetPlayerClick,
+}) => {
   const handleChange = (event) => {
     let fieldReader = event.target.name;
     let newValue = event.target.value;
@@ -71,6 +76,13 @@ export const Utones = ({ stateData, setStateData, selectedComparison }) => {
     setStateData(newState);
   };
 
+  const sclData = [
+    parseInt(stateData[8].numerator),
+    parseInt(stateData[8].start),
+    parseInt(stateData[8].stop),
+    parseInt(stateData[8].progression),
+  ];
+
   return (
     <div>
       <h2>Utonal Scale</h2>
@@ -113,6 +125,8 @@ export const Utones = ({ stateData, setStateData, selectedComparison }) => {
         stop={parseInt(stateData[8].stop)}
         progression={parseInt(stateData[8].progression)}
         showEquivalent={stateData[8].showEquivalent}
+        sclData={sclData}
+        handleSetPlayerClick={handleSetPlayerClick}
         handleShowEquivalent={handleShowEquivalent}
         selectedComparison={selectedComparison}
       />

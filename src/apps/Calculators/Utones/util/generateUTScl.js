@@ -1,5 +1,7 @@
-const generateOTScl = (scale, sclData, mode) => {
-  const denominator = sclData[0];
+const generateUTScl = (scale, sclData, mode) => {
+  console.log(scale, sclData, mode);
+
+  const numerator = sclData[0];
   const start = sclData[1];
   const stop = sclData[2];
   const progression = sclData[3];
@@ -10,9 +12,9 @@ const generateOTScl = (scale, sclData, mode) => {
   modifiedScale = modifiedScale.map((value) => value.toFixed(5));
   modifiedScale.push("2/1");
 
-  let outputString = `! OT-denominator${denominator}-start${start}-stop${stop}-progression${progression}.scl
+  let outputString = `! UT-numerator${numerator}-start${start}-stop${stop}-progression${progression}.scl
 !
-microtonalexplorer.com - Otones - Denominator ${denominator} - Start ${start} - Stop ${stop} - Progression ${progression} - Mode ${mode}
+microtonalexplorer.com - Utones - Numerator ${numerator} - Start ${start} - Stop ${stop} - Progression ${progression} - Mode ${mode}
  ${modifiedScale.length}
 !`;
   for (let i = 0; i < modifiedScale.length; i++) {
@@ -24,7 +26,7 @@ ${modifiedScale[i]}`;
   let url = window.URL.createObjectURL(outputBlob);
   let anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = `OT-denominator${denominator}-start${start}-stop${stop}-progression${progression}.scl`;
+  anchor.download = `UT-numerator${numerator}-start${start}-stop${stop}-progression${progression}.scl`;
 
   anchor.click();
   window.URL.revokeObjectURL(url);
@@ -32,4 +34,4 @@ ${modifiedScale[i]}`;
   //   document.removeChild(anchor); UNNECESSARY?
 };
 
-export default generateOTScl;
+export default generateUTScl;

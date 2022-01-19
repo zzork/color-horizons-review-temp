@@ -4,6 +4,7 @@ import generateLTBCScl from "../Calculators/LTByCents/util/generateLTBCScl";
 import generateLTBRScl from "../Calculators/LTByRatio/util/generateLTBRScl";
 import generateOTScl from "../Calculators/Otones/util/generateOTScl";
 import generateTDScl from "../Calculators/TonalityDiamond/util/generateTDScl";
+import generateUTScl from "../Calculators/Utones/util/generateUTScl";
 import { ComparisonWindow } from "../RatioComparer/ComparisonWindow";
 
 const Player = ({ showPlayer, playerData, selectedComparison }) => {
@@ -103,6 +104,23 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
     );
     title = "Otones";
     readout = `Denominator ${playerData.sclData[0]} - Start ${playerData.sclData[1]} - Stop ${playerData.sclData[2]} - Progression ${playerData.sclData[3]} - Mode ${playerData.mode}`;
+    scaleReadout = playerData.scale.map((note, index) => (
+      <div key={index}>{note.toFixed(5)}</div>
+    ));
+  }
+
+  if (playerData.tool === "ut") {
+    sclButton = (
+      <button
+        onClick={() =>
+          generateUTScl(playerData.scale, playerData.sclData, playerData.mode)
+        }
+      >
+        Export .scl
+      </button>
+    );
+    title = "Utones";
+    readout = `Numerator ${playerData.sclData[0]} - Start ${playerData.sclData[1]} - Stop ${playerData.sclData[2]} - Progression ${playerData.sclData[3]} - Mode ${playerData.mode}`;
     scaleReadout = playerData.scale.map((note, index) => (
       <div key={index}>{note.toFixed(5)}</div>
     ));

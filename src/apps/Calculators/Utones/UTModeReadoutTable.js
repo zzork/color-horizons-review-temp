@@ -1,9 +1,32 @@
-const OldOTModeReadoutTable = ({ index, otObject }) => {
+import generateUTScl from "./util/generateUTScl";
+
+const UTModeReadoutTable = ({
+  index,
+  otObject,
+  sclData,
+  handleSetPlayerClick,
+}) => {
+  const setPlayerObject = {
+    tool: "ut",
+    scale: otObject.centsValues,
+    sclData: sclData,
+    mode: index + 1,
+  };
   return (
     <div>
       <h2>
         Mode {index + 1}
         <br />
+        <button onClick={() => handleSetPlayerClick(setPlayerObject)}>
+          Use In Player
+        </button>
+        <button
+          onClick={() =>
+            generateUTScl(otObject.centsValues, sclData, index + 1)
+          }
+        >
+          Export .scl
+        </button>
       </h2>
       <br />
       <table>
@@ -35,4 +58,4 @@ const OldOTModeReadoutTable = ({ index, otObject }) => {
   );
 };
 
-export default OldOTModeReadoutTable;
+export default UTModeReadoutTable;

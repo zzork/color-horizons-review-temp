@@ -1,6 +1,6 @@
 import getSortedRatioList from "../../../util/getSortedRatioList";
 import OTScaleDisplay from "../Otones/OTScaleDisplay";
-import { OldOTAllModes } from "../OTShared/OldOTAllModes";
+import { UTAllModes } from "./UTAllModes";
 import getUTRawScale from "./util/getUTRawScale";
 
 export const UTReadout = ({
@@ -8,7 +8,9 @@ export const UTReadout = ({
   start,
   stop,
   progression,
+  sclData,
   showEquivalent,
+  handleSetPlayerClick,
   handleShowEquivalent,
   selectedComparison,
 }) => {
@@ -38,7 +40,12 @@ export const UTReadout = ({
           handleShowEquivalent={handleShowEquivalent}
         />
       </p>
-      <OldOTAllModes scale={scale} selectedComparison={selectedComparison} />
+      <UTAllModes
+        scale={scale}
+        sclData={sclData}
+        selectedComparison={selectedComparison}
+        handleSetPlayerClick={handleSetPlayerClick}
+      />
       <p></p>
     </div>
   );

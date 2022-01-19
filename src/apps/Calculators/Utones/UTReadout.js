@@ -1,7 +1,7 @@
 import getSortedRatioList from "../../../util/getSortedRatioList";
 import OTScaleDisplay from "../Otones/OTScaleDisplay";
+import { OldOTAllModes } from "../OTShared/OldOTAllModes";
 import getUTRawScale from "./util/getUTRawScale";
-import { OTAllModes } from "../OTShared/OTAllModes";
 
 export const UTReadout = ({
   numerator,
@@ -38,7 +38,7 @@ export const UTReadout = ({
           handleShowEquivalent={handleShowEquivalent}
         />
       </p>
-      <OTAllModes scale={scale} selectedComparison={selectedComparison} />
+      <OldOTAllModes scale={scale} selectedComparison={selectedComparison} />
       <p></p>
     </div>
   );

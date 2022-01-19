@@ -1,5 +1,5 @@
 import getSortedRatioList from "../../../util/getSortedRatioList";
-import { OTAllModes } from "../OTShared/OTAllModes";
+import { OldOTAllModes } from "../OTShared/OldOTAllModes";
 import OTScaleDisplay from "./OTScaleDisplay";
 import getOTRawScale from "./util/getOTRawScale";
 
@@ -38,7 +38,7 @@ export const OTReadout = ({
           handleShowEquivalent={handleShowEquivalent}
         />
       </p>
-      <OTAllModes scale={scale} selectedComparison={selectedComparison} />
+      <OldOTAllModes scale={scale} selectedComparison={selectedComparison} />
       <p></p>
     </div>
   );

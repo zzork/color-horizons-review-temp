@@ -1,8 +1,8 @@
 import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
 import convertOTInputToModesObjects from "../OTShared/util/convertOTInputToModesObjects";
-import TDModeReadoutTable from "./TDModeReadoutTable";
+import OTModeReadoutTable from "./OTModeReadoutTable";
 
-export const TDAllModes = ({
+export const OTAllModes = ({
   scale,
   sclData,
   selectedComparison,
@@ -13,7 +13,7 @@ export const TDAllModes = ({
     <div>
       {allOTObjects.map((otObject, index) => (
         <div key={index}>
-          <TDModeReadoutTable
+          <OTModeReadoutTable
             otObject={otObject}
             sclData={sclData}
             index={index}

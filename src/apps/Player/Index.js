@@ -2,9 +2,11 @@ import generateAxByScl from "../Calculators/AxByEqualsP/util/generateAxByScl";
 import generateEDOMOSScl from "../Calculators/EDOMOS/util/generateEDOMOSScl";
 import generateLTBCScl from "../Calculators/LTByCents/util/generateLTBCScl";
 import generateLTBRScl from "../Calculators/LTByRatio/util/generateLTBRScl";
+import generateOTScl from "../Calculators/Otones/util/generateOTScl";
 import generateTDScl from "../Calculators/TonalityDiamond/util/generateTDScl";
+import { ComparisonWindow } from "../RatioComparer/ComparisonWindow";
 
-const Player = ({ showPlayer, playerData }) => {
+const Player = ({ showPlayer, playerData, selectedComparison }) => {
   console.log("player current settings:", playerData);
   let title = "";
   let readout = "";
@@ -89,6 +91,23 @@ const Player = ({ showPlayer, playerData }) => {
     ));
   }
 
+  if (playerData.tool === "ot") {
+    sclButton = (
+      <button
+        onClick={() =>
+          generateOTScl(playerData.scale, playerData.sclData, playerData.mode)
+        }
+      >
+        Export .scl
+      </button>
+    );
+    title = "Otones";
+    readout = `Denominator ${playerData.sclData[0]} - Start ${playerData.sclData[1]} - Stop ${playerData.sclData[2]} - Progression ${playerData.sclData[3]} - Mode ${playerData.mode}`;
+    scaleReadout = playerData.scale.map((note, index) => (
+      <div key={index}>{note.toFixed(5)}</div>
+    ));
+  }
+
   if (playerData.tool === "td") {
     sclButton = (
       <button
@@ -111,7 +130,7 @@ const Player = ({ showPlayer, playerData }) => {
   } else {
     return (
       <div>
-        <h3>Currently Playing</h3>
+        <h3>Currently Loaded Scale</h3>
         <h4>
           {title}
           <br />
@@ -126,6 +145,11 @@ const Player = ({ showPlayer, playerData }) => {
             </tr>
           </tbody>
         </table>
+        <br />
+        <ComparisonWindow
+          scale={playerData.scale}
+          selectedComparison={selectedComparison}
+        />
       </div>
     );
   }

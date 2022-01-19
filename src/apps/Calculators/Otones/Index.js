@@ -1,6 +1,11 @@
 import { OTReadout } from "./OTReadout";
 
-export const Otones = ({ stateData, setStateData, selectedComparison }) => {
+export const Otones = ({
+  stateData,
+  setStateData,
+  selectedComparison,
+  handleSetPlayerClick,
+}) => {
   const handleChange = (event) => {
     let fieldReader = event.target.name;
     let newValue = event.target.value;
@@ -71,6 +76,13 @@ export const Otones = ({ stateData, setStateData, selectedComparison }) => {
     setStateData(newState);
   };
 
+  const sclData = [
+    parseInt(stateData[7].denominator),
+    parseInt(stateData[7].start),
+    parseInt(stateData[7].stop),
+    parseInt(stateData[7].progression),
+  ];
+
   return (
     <div>
       <h2>Otonal Scale</h2>
@@ -113,6 +125,8 @@ export const Otones = ({ stateData, setStateData, selectedComparison }) => {
         stop={parseInt(stateData[7].stop)}
         progression={parseInt(stateData[7].progression)}
         showEquivalent={stateData[7].showEquivalent}
+        sclData={sclData}
+        handleSetPlayerClick={handleSetPlayerClick}
         handleShowEquivalent={handleShowEquivalent}
         selectedComparison={selectedComparison}
       />

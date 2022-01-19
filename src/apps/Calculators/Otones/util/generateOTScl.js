@@ -1,8 +1,10 @@
-const generateAxByScl = (scale, sclData, mode) => {
-  const firstSteps = sclData[0];
-  const firstCents = sclData[1];
-  const secondSteps = sclData[2];
-  const secondCents = sclData[3];
+const generateOTScl = (scale, sclData, mode) => {
+  console.log(scale, sclData, mode);
+
+  const denominator = sclData[0];
+  const start = sclData[1];
+  const stop = sclData[2];
+  const progression = sclData[3];
 
   let modifiedScale = [...scale];
   modifiedScale.shift();
@@ -10,9 +12,9 @@ const generateAxByScl = (scale, sclData, mode) => {
   modifiedScale = modifiedScale.map((value) => value.toFixed(5));
   modifiedScale.push("2/1");
 
-  let outputString = `! AXBY-${firstSteps}of${firstCents}-${secondSteps}of${secondCents}-mode${mode}.scl
+  let outputString = `! OT-denominator${denominator}-start${start}-stop${stop}-progression${progression}.scl
 !
-microtonalexplorer.com - ax+by=p - ${firstSteps} of ${firstCents} Cents - ${secondSteps} of ${secondCents} Cents - Mode ${mode}
+microtonalexplorer.com - Otones - Denominator ${denominator} - Start ${start} - Stop ${stop} - Progression ${progression} - Mode ${mode}
  ${modifiedScale.length}
 !`;
   for (let i = 0; i < modifiedScale.length; i++) {
@@ -24,7 +26,7 @@ ${modifiedScale[i]}`;
   let url = window.URL.createObjectURL(outputBlob);
   let anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = `AXBY-${firstSteps}of${firstCents}-${secondSteps}of${secondCents}-mode${mode}.scl`;
+  anchor.download = `OT-denominator${denominator}-start${start}-stop${stop}-progression${progression}.scl`;
 
   anchor.click();
   window.URL.revokeObjectURL(url);
@@ -32,4 +34,4 @@ ${modifiedScale[i]}`;
   //   document.removeChild(anchor); UNNECESSARY?
 };
 
-export default generateAxByScl;
+export default generateOTScl;

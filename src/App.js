@@ -58,8 +58,10 @@ function App() {
       <Player
         showPlayer={stateData[9].showPlayer}
         playerData={stateData[9].playerData}
+        selectedComparison={selectedComparison}
       />
       <br />
+
       <table>
         <tbody>
           <tr>
@@ -94,6 +96,8 @@ export default App;
 // - with that, ability to choose size of chords, or maybe also just approximations like in scala
 
 // ability to generate and export .scl files from each scale
+
+// comparison window
 
 // create permalink for sharing scale via url
 

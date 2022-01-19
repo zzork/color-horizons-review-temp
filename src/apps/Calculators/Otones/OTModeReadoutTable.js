@@ -1,13 +1,13 @@
-import generateTDScl from "./util/generateTDScl";
+import generateOTScl from "./util/generateOTScl";
 
-const TDModeReadoutTable = ({
+const OTModeReadoutTable = ({
   index,
   otObject,
   sclData,
   handleSetPlayerClick,
 }) => {
   const setPlayerObject = {
-    tool: "td",
+    tool: "ot",
     scale: otObject.centsValues,
     sclData: sclData,
     mode: index + 1,
@@ -22,7 +22,7 @@ const TDModeReadoutTable = ({
         </button>
         <button
           onClick={() =>
-            generateTDScl(otObject.centsValues, sclData, index + 1)
+            generateOTScl(otObject.centsValues, sclData, index + 1)
           }
         >
           Export .scl
@@ -58,4 +58,4 @@ const TDModeReadoutTable = ({
   );
 };
 
-export default TDModeReadoutTable;
+export default OTModeReadoutTable;

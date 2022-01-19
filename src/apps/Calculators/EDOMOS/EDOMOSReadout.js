@@ -4,6 +4,7 @@ import getMos from "../LTShared/util/getMos";
 import getEDOMOSLmsList from "./util/getEDOMOSLmsList";
 import getEDOMOSGenerator from "./util/getEDOMOSGenerator";
 import { LTBRAllModes } from "../LTByRatio/LTBRAllModes";
+import { EDOMOSAllModes } from "./EDOMOSAllModes";
 
 const EDOMOSReadout = ({
   edo,
@@ -12,6 +13,7 @@ const EDOMOSReadout = ({
   selectedComparison,
   handleMOSClick,
   handleChange,
+  handleSetPlayerClick,
 }) => {
   const isValidState = () => {
     return edo > 1 && step > 0 && step < edo;
@@ -27,6 +29,8 @@ const EDOMOSReadout = ({
   ));
   const scale = getLTScaleFromCents(generator, noteTotal);
   const lmsIn = getEDOMOSLmsList(scale, edo);
+
+  const sclData = [edo, step, noteTotal];
 
   return (
     <div>
@@ -49,10 +53,12 @@ const EDOMOSReadout = ({
       {noteTotal > 1 && <LTUniquesDisplay scale={scale} lmsIn={lmsIn} />}
       <br />
       {noteTotal > 1 && (
-        <LTBRAllModes
+        <EDOMOSAllModes
           scale={scale}
           selectedComparison={selectedComparison}
           lmsIn={lmsIn}
+          sclData={sclData}
+          handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
     </div>

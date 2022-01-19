@@ -1,4 +1,5 @@
 import generateAxByScl from "../Calculators/AxByEqualsP/util/generateAxByScl";
+import generateEDOMOSScl from "../Calculators/EDOMOS/util/generateEDOMOSScl";
 import generateLTBCScl from "../Calculators/LTByCents/util/generateLTBCScl";
 import generateLTBRScl from "../Calculators/LTByRatio/util/generateLTBRScl";
 
@@ -27,6 +28,27 @@ const Player = ({ showPlayer, playerData }) => {
     } Steps of ${playerData.sclData[3].toFixed(5)} Cents, Mode ${
       playerData.mode
     }`;
+    scaleReadout = playerData.scale.map((note, index) => (
+      <div key={index}>{note.toFixed(5)}</div>
+    ));
+  }
+
+  if (playerData.tool === "edomos") {
+    sclButton = (
+      <button
+        onClick={() =>
+          generateEDOMOSScl(
+            playerData.scale,
+            playerData.sclData,
+            playerData.mode
+          )
+        }
+      >
+        Export .scl
+      </button>
+    );
+    title = "Equal Division of the Octave Moments of Symmetry";
+    readout = `${playerData.sclData[1]} Steps of ${playerData.sclData[0]} EDO - ${playerData.sclData[2]} Notes - Mode ${playerData.mode}`;
     scaleReadout = playerData.scale.map((note, index) => (
       <div key={index}>{note.toFixed(5)}</div>
     ));
@@ -71,8 +93,12 @@ const Player = ({ showPlayer, playerData }) => {
   } else {
     return (
       <div>
-        <h3>{title}</h3>
-        <p>{readout}</p>
+        <h3>Currently Playing</h3>
+        <h4>
+          {title}
+          <br />
+          {readout}
+        </h4>
         <p>{sclButton}</p>
         <table>
           <tbody>

@@ -1,6 +1,11 @@
 import EDOMOSReadout from "./EDOMOSReadout";
 
-export const EDOMOS = ({ stateData, setStateData, selectedComparison }) => {
+export const EDOMOS = ({
+  stateData,
+  setStateData,
+  selectedComparison,
+  handleSetPlayerClick,
+}) => {
   const handleChange = (event) => {
     let fieldReader = event.target.name;
     let newValue = event.target.value;
@@ -86,6 +91,7 @@ export const EDOMOS = ({ stateData, setStateData, selectedComparison }) => {
         selectedComparison={selectedComparison}
         handleMOSClick={handleMOSClick}
         handleChange={handleChange}
+        handleSetPlayerClick={handleSetPlayerClick}
       />
     </div>
   );

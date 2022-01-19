@@ -2,6 +2,7 @@ import generateAxByScl from "../Calculators/AxByEqualsP/util/generateAxByScl";
 import generateEDOMOSScl from "../Calculators/EDOMOS/util/generateEDOMOSScl";
 import generateLTBCScl from "../Calculators/LTByCents/util/generateLTBCScl";
 import generateLTBRScl from "../Calculators/LTByRatio/util/generateLTBRScl";
+import generateTDScl from "../Calculators/TonalityDiamond/util/generateTDScl";
 
 const Player = ({ showPlayer, playerData }) => {
   console.log("player current settings:", playerData);
@@ -83,6 +84,23 @@ const Player = ({ showPlayer, playerData }) => {
     );
     title = "Linear Temperament By Ratio";
     readout = `${playerData.sclData[2]} Notes of ${playerData.sclData[0]}/${playerData.sclData[1]}, Mode ${playerData.mode}`;
+    scaleReadout = playerData.scale.map((note, index) => (
+      <div key={index}>{note.toFixed(5)}</div>
+    ));
+  }
+
+  if (playerData.tool === "td") {
+    sclButton = (
+      <button
+        onClick={() =>
+          generateTDScl(playerData.scale, playerData.sclData, playerData.mode)
+        }
+      >
+        Export .scl
+      </button>
+    );
+    title = "Tonality Diamond";
+    readout = `Tonality Diamond - ${playerData.sclData[0]} - ${playerData.sclData[1]} - Mode ${playerData.mode}`;
     scaleReadout = playerData.scale.map((note, index) => (
       <div key={index}>{note.toFixed(5)}</div>
     ));

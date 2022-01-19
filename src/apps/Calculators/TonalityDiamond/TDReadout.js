@@ -1,4 +1,4 @@
-import { OTAllModes } from "../OTShared/OTAllModes";
+import { TDAllModes } from "./TDAllModes";
 import TDTable from "./TDTable";
 import getTDRatios from "./util/getTDRatios";
 import getTDScale from "./util/getTDScale";
@@ -6,8 +6,10 @@ import getTDScale from "./util/getTDScale";
 const TDReadout = ({
   checked,
   allOtUt,
+  sclData,
   showEquivalent,
   selectedComparison,
+  handleSetPlayerClick,
   handleAllOtUtClick,
   handleRawEquivalentClick,
 }) => {
@@ -52,7 +54,12 @@ const TDReadout = ({
           </tbody>
         </table>
       </h4>
-      <OTAllModes scale={scale} selectedComparison={selectedComparison} />
+      <TDAllModes
+        scale={scale}
+        sclData={sclData}
+        selectedComparison={selectedComparison}
+        handleSetPlayerClick={handleSetPlayerClick}
+      />
     </div>
   );
 };

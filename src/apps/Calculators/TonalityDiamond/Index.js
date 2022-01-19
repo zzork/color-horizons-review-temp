@@ -4,6 +4,7 @@ export const TonalityDiamond = ({
   stateData,
   setStateData,
   selectedComparison,
+  handleSetPlayerClick,
 }) => {
   const checked = stateData[6].numbers;
   const allOtUt = stateData[6].allOtUt;
@@ -89,6 +90,20 @@ export const TonalityDiamond = ({
     <button onClick={() => handleNumbersClick(number)}>{number}</button>
   ));
 
+  let allOtUtReadout = null;
+  if (allOtUt === "all") {
+    allOtUtReadout = "All";
+  }
+  if (allOtUt === "ot") {
+    allOtUtReadout = "Overtones";
+  }
+  if (allOtUt === "ut") {
+    allOtUtReadout = "Undertones";
+  }
+  const checkedReadout = checked.join("-");
+
+  const sclData = [allOtUtReadout, checkedReadout];
+
   return (
     <div>
       <h2>Tonality Diamond</h2>
@@ -100,8 +115,10 @@ export const TonalityDiamond = ({
       <TDReadout
         checked={checked}
         allOtUt={allOtUt}
+        sclData={sclData}
         showEquivalent={showEquivalent}
         selectedComparison={selectedComparison}
+        handleSetPlayerClick={handleSetPlayerClick}
         handleAllOtUtClick={handleAllOtUtClick}
         handleRawEquivalentClick={handleRawEquivalentClick}
       />

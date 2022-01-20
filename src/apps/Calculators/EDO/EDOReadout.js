@@ -1,7 +1,12 @@
 import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
+import generateEDOScl from "./util/generateEDOScl";
 import getEdoScale from "./util/getEdoScale";
 
-export const EDOReadout = ({ edo, selectedComparison }) => {
+export const EDOReadout = ({
+  edo,
+  selectedComparison,
+  handleSetPlayerClick,
+}) => {
   const isValidState = () => {
     return edo > 0;
   };
@@ -12,10 +17,22 @@ export const EDOReadout = ({ edo, selectedComparison }) => {
   const stepSize = 1200 / edo;
   const scale = getEdoScale(edo);
 
+  const setPlayerObject = {
+    tool: "edo",
+    scale: scale,
+    edo: edo,
+  };
+
   return (
     <div>
       <h3>{edo} EDO</h3>
       <h4>Step Size: {stepSize.toFixed(5)} Cents</h4>
+      <button onClick={() => handleSetPlayerClick(setPlayerObject)}>
+        Use In Player
+      </button>
+      <button onClick={() => generateEDOScl(scale, edo)}>Export .scl</button>
+      <br />
+      <br />
       <table>
         <tbody>
           <tr>

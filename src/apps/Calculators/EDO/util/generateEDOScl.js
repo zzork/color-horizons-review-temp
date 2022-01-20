@@ -1,18 +1,13 @@
-const generateUTScl = (scale, sclData, mode) => {
-  const numerator = sclData[0];
-  const start = sclData[1];
-  const stop = sclData[2];
-  const progression = sclData[3];
-
+const generateEDOScl = (scale, edo) => {
   let modifiedScale = [...scale];
   modifiedScale.shift();
   modifiedScale.pop();
   modifiedScale = modifiedScale.map((value) => value.toFixed(5));
   modifiedScale.push("2/1");
 
-  let outputString = `! UT-numerator${numerator}-start${start}-stop${stop}-progression${progression}.scl
+  let outputString = `! EDO-${edo}.scl
 !
-microtonalexplorer.com - Utones - Numerator ${numerator} - Start ${start} - Stop ${stop} - Progression ${progression} - Mode ${mode}
+microtonalexplorer.com - Equal Division of the Octave - ${edo}
  ${modifiedScale.length}
 !`;
   for (let i = 0; i < modifiedScale.length; i++) {
@@ -24,7 +19,7 @@ ${modifiedScale[i]}`;
   let url = window.URL.createObjectURL(outputBlob);
   let anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = `UT-numerator${numerator}-start${start}-stop${stop}-progression${progression}.scl`;
+  anchor.download = `EDO-${edo}.scl`;
 
   anchor.click();
   window.URL.revokeObjectURL(url);
@@ -32,4 +27,4 @@ ${modifiedScale[i]}`;
   //   document.removeChild(anchor); UNNECESSARY?
 };
 
-export default generateUTScl;
+export default generateEDOScl;

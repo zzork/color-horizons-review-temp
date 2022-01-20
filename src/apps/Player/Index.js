@@ -1,4 +1,5 @@
 import generateAxByScl from "../Calculators/AxByEqualsP/util/generateAxByScl";
+import generateEDOScl from "../Calculators/EDO/util/generateEDOScl";
 import generateEDOMOSScl from "../Calculators/EDOMOS/util/generateEDOMOSScl";
 import generateIPScl from "../Calculators/IntervalPattern/util/generateIPScale";
 import generateLTBCScl from "../Calculators/LTByCents/util/generateLTBCScl";
@@ -9,7 +10,6 @@ import generateUTScl from "../Calculators/Utones/util/generateUTScl";
 import { ComparisonWindow } from "../RatioComparer/ComparisonWindow";
 
 const Player = ({ showPlayer, playerData, selectedComparison }) => {
-  console.log("player current settings:", playerData);
   let title = "";
   let readout = "";
   let scaleReadout = "";
@@ -33,6 +33,19 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
     } Steps of ${playerData.sclData[3].toFixed(5)} Cents, Mode ${
       playerData.mode
     }`;
+    scaleReadout = playerData.scale.map((note, index) => (
+      <div key={index}>{note.toFixed(5)}</div>
+    ));
+  }
+
+  if (playerData.tool === "edo") {
+    sclButton = (
+      <button onClick={() => generateEDOScl(playerData.scale, playerData.edo)}>
+        Export .scl
+      </button>
+    );
+    title = "Equal Division of the Octave Moments of Symmetry";
+    readout = `${playerData.edo} EDO`;
     scaleReadout = playerData.scale.map((note, index) => (
       <div key={index}>{note.toFixed(5)}</div>
     ));

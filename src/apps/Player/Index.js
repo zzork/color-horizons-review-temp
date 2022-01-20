@@ -1,5 +1,6 @@
 import generateAxByScl from "../Calculators/AxByEqualsP/util/generateAxByScl";
 import generateEDOMOSScl from "../Calculators/EDOMOS/util/generateEDOMOSScl";
+import generateIPScl from "../Calculators/IntervalPattern/util/generateIPScale";
 import generateLTBCScl from "../Calculators/LTByCents/util/generateLTBCScl";
 import generateLTBRScl from "../Calculators/LTByRatio/util/generateLTBRScl";
 import generateOTScl from "../Calculators/Otones/util/generateOTScl";
@@ -53,6 +54,21 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
     );
     title = "Equal Division of the Octave Moments of Symmetry";
     readout = `${playerData.sclData[1]} Steps of ${playerData.sclData[0]} EDO - ${playerData.sclData[2]} Notes - Mode ${playerData.mode}`;
+    scaleReadout = playerData.scale.map((note, index) => (
+      <div key={index}>{note.toFixed(5)}</div>
+    ));
+  }
+
+  if (playerData.tool === "ip") {
+    sclButton = (
+      <button
+        onClick={() => generateIPScl(playerData.scale, playerData.sclData)}
+      >
+        Export .scl
+      </button>
+    );
+    title = "Interval Pattern";
+    readout = `${playerData.sclData}`;
     scaleReadout = playerData.scale.map((note, index) => (
       <div key={index}>{note.toFixed(5)}</div>
     ));

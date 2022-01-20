@@ -2,7 +2,11 @@ import IPUniqueSizesTable from "./IPUniqueSizesTable";
 import getEdoFromIntervalPattern from "./util/getEdoFromIntervalPattern";
 import IPAllModes from "./IPAllModes";
 
-export const IPReadout = ({ pattern, selectedComparison }) => {
+export const IPReadout = ({
+  pattern,
+  selectedComparison,
+  handleSetPlayerClick,
+}) => {
   const isValidState = () => {
     return pattern > 0;
   };
@@ -18,7 +22,11 @@ export const IPReadout = ({ pattern, selectedComparison }) => {
       <h3>{edo} EDO</h3>
       <h4>EDO Step Size = {stepSize.toFixed(5)} cents</h4>
       <IPUniqueSizesTable pattern={pattern} stepSize={stepSize} />
-      <IPAllModes pattern={pattern} selectedComparison={selectedComparison} />
+      <IPAllModes
+        pattern={pattern}
+        selectedComparison={selectedComparison}
+        handleSetPlayerClick={handleSetPlayerClick}
+      />
     </div>
   );
 };

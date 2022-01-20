@@ -1,9 +1,27 @@
-const IPModeReadoutTable = ({ index, ipObject }) => {
+import generateIPScl from "./util/generateIPScale";
+
+const IPModeReadoutTable = ({ index, ipObject, handleSetPlayerClick }) => {
+  const sclData = ipObject.pattern.join("");
+  const setPlayerObject = {
+    tool: "ip",
+    scale: ipObject.mode,
+    sclData: sclData,
+    mode: index + 1,
+  };
+
   return (
     <div>
       <h2>
         Mode {index + 1} - {ipObject.pattern.join("")}
         <br />
+        <button onClick={() => handleSetPlayerClick(setPlayerObject)}>
+          Use In Player
+        </button>
+        <button
+          onClick={() => generateIPScl(ipObject.mode, sclData, index + 1)}
+        >
+          Export .scl
+        </button>
       </h2>
       <table>
         <tbody>

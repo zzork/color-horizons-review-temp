@@ -54,6 +54,7 @@ function App() {
   return (
     <div>
       <h1>MICROTONAL EXPLORER</h1>
+      <h1>Scale Player</h1>
       <button onClick={() => handleShowPlayerClick()}>Show/Hide Player</button>
       <Player
         showPlayer={stateData[9].showPlayer}
@@ -61,7 +62,7 @@ function App() {
         selectedComparison={selectedComparison}
       />
       <br />
-
+      <h1>Scale Creation Tools</h1>
       <table>
         <tbody>
           <tr>

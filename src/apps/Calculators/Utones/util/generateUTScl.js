@@ -10,7 +10,7 @@ const generateUTScl = (scale, sclData, mode) => {
   modifiedScale = modifiedScale.map((value) => value.toFixed(5));
   modifiedScale.push("2/1");
 
-  let outputString = `! UT-numerator${numerator}-start${start}-stop${stop}-progression${progression}.scl
+  let outputString = `! UT-numerator${numerator}-start${start}-stop${stop}-progression${progression}-mode${mode}.scl
 !
 microtonalexplorer.com - Utones - Numerator ${numerator} - Start ${start} - Stop ${stop} - Progression ${progression} - Mode ${mode}
  ${modifiedScale.length}
@@ -24,7 +24,7 @@ ${modifiedScale[i]}`;
   let url = window.URL.createObjectURL(outputBlob);
   let anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = `UT-numerator${numerator}-start${start}-stop${stop}-progression${progression}.scl`;
+  anchor.download = `UT-numerator${numerator}-start${start}-stop${stop}-progression${progression}-mode${mode}.scl`;
 
   anchor.click();
   window.URL.revokeObjectURL(url);

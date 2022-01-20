@@ -34,7 +34,10 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
       playerData.mode
     }`;
     scaleReadout = playerData.scale.map((note, index) => (
-      <div key={index}>{note.toFixed(5)}</div>
+      <tr key={index}>
+        <td>Step {index}</td>
+        <td>{note.toFixed(5)}</td>
+      </tr>
     ));
   }
 
@@ -44,10 +47,13 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
         Export .scl
       </button>
     );
-    title = "Equal Division of the Octave Moments of Symmetry";
+    title = "Equal Division of the Octave";
     readout = `${playerData.edo} EDO`;
     scaleReadout = playerData.scale.map((note, index) => (
-      <div key={index}>{note.toFixed(5)}</div>
+      <tr key={index}>
+        <td>Step {index}</td>
+        <td>{note.toFixed(5)}</td>
+      </tr>
     ));
   }
 
@@ -68,7 +74,10 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
     title = "Equal Division of the Octave Moments of Symmetry";
     readout = `${playerData.sclData[1]} Steps of ${playerData.sclData[0]} EDO - ${playerData.sclData[2]} Notes - Mode ${playerData.mode}`;
     scaleReadout = playerData.scale.map((note, index) => (
-      <div key={index}>{note.toFixed(5)}</div>
+      <tr key={index}>
+        <td>Step {index}</td>
+        <td>{note.toFixed(5)}</td>
+      </tr>
     ));
   }
 
@@ -83,7 +92,10 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
     title = "Interval Pattern";
     readout = `${playerData.sclData}`;
     scaleReadout = playerData.scale.map((note, index) => (
-      <div key={index}>{note.toFixed(5)}</div>
+      <tr key={index}>
+        <td>Step {index}</td>
+        <td>{note.toFixed(5)}</td>
+      </tr>
     ));
   }
 
@@ -100,7 +112,10 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
     title = "Linear Temperament By Cents";
     readout = `${playerData.sclData[1]} Notes of ${playerData.sclData[0]}, Mode ${playerData.mode}`;
     scaleReadout = playerData.scale.map((note, index) => (
-      <div key={index}>{note.toFixed(5)}</div>
+      <tr key={index}>
+        <td>Step {index}</td>
+        <td>{note.toFixed(5)}</td>
+      </tr>
     ));
   }
 
@@ -117,7 +132,10 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
     title = "Linear Temperament By Ratio";
     readout = `${playerData.sclData[2]} Notes of ${playerData.sclData[0]}/${playerData.sclData[1]}, Mode ${playerData.mode}`;
     scaleReadout = playerData.scale.map((note, index) => (
-      <div key={index}>{note.toFixed(5)}</div>
+      <tr key={index}>
+        <td>Step {index}</td>
+        <td>{note.toFixed(5)}</td>
+      </tr>
     ));
   }
 
@@ -134,7 +152,10 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
     title = "Otones";
     readout = `Denominator ${playerData.sclData[0]} - Start ${playerData.sclData[1]} - Stop ${playerData.sclData[2]} - Progression ${playerData.sclData[3]} - Mode ${playerData.mode}`;
     scaleReadout = playerData.scale.map((note, index) => (
-      <div key={index}>{note.toFixed(5)}</div>
+      <tr key={index}>
+        <td>Step {index}</td>
+        <td>{note.toFixed(5)}</td>
+      </tr>
     ));
   }
 
@@ -151,7 +172,10 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
     title = "Utones";
     readout = `Numerator ${playerData.sclData[0]} - Start ${playerData.sclData[1]} - Stop ${playerData.sclData[2]} - Progression ${playerData.sclData[3]} - Mode ${playerData.mode}`;
     scaleReadout = playerData.scale.map((note, index) => (
-      <div key={index}>{note.toFixed(5)}</div>
+      <tr key={index}>
+        <td>Step {index}</td>
+        <td>{note.toFixed(5)}</td>
+      </tr>
     ));
   }
 
@@ -168,7 +192,10 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
     title = "Tonality Diamond";
     readout = `Tonality Diamond - ${playerData.sclData[0]} - ${playerData.sclData[1]} - Mode ${playerData.mode}`;
     scaleReadout = playerData.scale.map((note, index) => (
-      <div key={index}>{note.toFixed(5)}</div>
+      <tr key={index}>
+        <td>Step {index}</td>
+        <td>{note.toFixed(5)}</td>
+      </tr>
     ));
   }
 
@@ -178,6 +205,7 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
     return (
       <div>
         <h3>Currently Loaded Scale</h3>
+
         <h4>
           {title}
           <br />
@@ -187,7 +215,17 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
         <table>
           <tbody>
             <tr>
-              <td>{scaleReadout}</td>
+              <td>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>Step</td>
+                      <td>Value</td>
+                    </tr>
+                    {scaleReadout}
+                  </tbody>
+                </table>
+              </td>
               <td>ACTUAL PLAYER GOES HERE</td>
             </tr>
           </tbody>

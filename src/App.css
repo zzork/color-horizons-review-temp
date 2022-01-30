@@ -36,6 +36,11 @@ table {
   width: 80%;
 }
 
+/* table {
+  margin-left: auto;
+  margin-right: auto;
+} */
+
 body {
   text-align: center;
 }
@@ -51,4 +56,46 @@ td {
   to {
     transform: rotate(360deg);
   }
+}
+
+button {
+  background-color: #e6e4e3;
+}
+
+button:active {
+  background-color: #e0b3f5;
+}
+
+.activeButton {
+  background-color: #e0b3f5;
+}
+
+.rootButton {
+  background-color: #f5deb3;
+}
+
+.activeRootButton {
+  background-color: #c870f1;
+}
+
+.tableKeys {
+  font-size: large;
+  font-style: bold;
+}
+
+.chordNotes {
+  font-size: smaller;
+  font-style: italic;
+}
+
+canvas {
+  border: 1px solid #000000;
+}
+
+input {
+  text-align: center;
+}
+
+.bordered {
+  border: 1px solid black;
 }

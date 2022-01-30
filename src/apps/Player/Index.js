@@ -8,6 +8,7 @@ import generateOTScl from "../Calculators/Otones/util/generateOTScl";
 import generateTDScl from "../Calculators/TonalityDiamond/util/generateTDScl";
 import generateUTScl from "../Calculators/Utones/util/generateUTScl";
 import { ComparisonWindow } from "../RatioComparer/ComparisonWindow";
+import ActualPlayer from "./ActualPlayer";
 
 const Player = ({ showPlayer, playerData, selectedComparison }) => {
   let title = "";
@@ -211,30 +212,13 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
           <br />
           {readout}
         </h4>
-        <p>{sclButton}</p>
-        {/* <table>
-          <tbody>
-            <tr>
-              <td>
-                <table>
-                  <tbody>
-                    <tr>
-                      <td>Step</td>
-                      <td>Value</td>
-                    </tr>
-                    {scaleReadout}
-                  </tbody>
-                </table>
-              </td>
-              <td>ACTUAL PLAYER GOES HERE</td>
-            </tr>
-          </tbody>
-        </table> */}
-        <br />
         <ComparisonWindow
           scale={playerData.scale}
           selectedComparison={selectedComparison}
         />
+        <p>{sclButton}</p>
+        <ActualPlayer incomingScale={playerData.scale} />
+        <br />
       </div>
     );
   }

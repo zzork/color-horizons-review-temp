@@ -53,7 +53,7 @@ function App() {
 
   return (
     <div>
-      <h1>MICROTONAL EXPLORER</h1>
+      <h1>COLOR HORIZONS</h1>
       <h1>Scale Player</h1>
       <button onClick={() => handleShowPlayerClick()}>Show/Hide Player</button>
       <Player
@@ -93,11 +93,6 @@ export default App;
 // TO ADD
 // ------
 
-// playback method, with ability to play single notes, chords, or split keyboard of both too!
-// - with that, ability to choose size of chords, or maybe also just approximations like in scala
-
-// ability to generate and export .scl files from each scale
-
 // comparison window
 
 // create permalink for sharing scale via url
@@ -107,3 +102,17 @@ export default App;
 // to do - lift other states in app.js to stateData table
 
 // re-figure out how comparison window works, refactor if needed
+
+// - Extracting handler events, if possible - Click Start/Stop Need Fixing...
+
+// How the heck does focus work? <br />
+
+// - Custom Harmonics Based Waveform? <br />
+
+// - ADD TO MAIN APP HIGHLIGHT HARMONICS WITHIN RANGE <br />
+
+// - Data visualization per mode or all of scale <br />
+
+// STATE PROBLEM WITH PLAYER...
+
+// MAKE EVERYTHING LOOK REALLY NICE

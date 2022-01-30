@@ -249,13 +249,6 @@ const ActualPlayer = ({ incomingScale }) => {
     >
       <br />
       <br />
-      - Extracting handler events, if possible - Click Start/Stop Need Fixing...
-      How the heck does focus work? <br />
-      - Custom Harmonics Based Waveform? <br />
-      <br />
-      - ADD TO MAIN APP HIGHLIGHT HARMONICS WITHIN RANGE <br />
-      - Data visualization per mode or all of scale <br />
-      <br />
       <Oscilloscope referencePitch={generalReferencePitch} />
       <br />
       <ChordsPlayTable

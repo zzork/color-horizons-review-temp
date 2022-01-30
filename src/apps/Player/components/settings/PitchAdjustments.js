@@ -17,6 +17,7 @@ const PitchAdjustments = ({
         onChange={handleChange}
         name="referencePitch"
       ></input>
+      <br />
       <input
         type="number"
         min="20"

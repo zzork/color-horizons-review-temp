@@ -212,7 +212,7 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
           {readout}
         </h4>
         <p>{sclButton}</p>
-        <table>
+        {/* <table>
           <tbody>
             <tr>
               <td>
@@ -229,7 +229,7 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
               <td>ACTUAL PLAYER GOES HERE</td>
             </tr>
           </tbody>
-        </table>
+        </table> */}
         <br />
         <ComparisonWindow
           scale={playerData.scale}

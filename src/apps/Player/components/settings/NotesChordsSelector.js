@@ -9,6 +9,8 @@ const NotesChordsSelector = ({
       <input
         type="number"
         name="note2"
+        min="0"
+        max="100"
         value={playerState.note2}
         onChange={handleChange}
       ></input>
@@ -18,6 +20,8 @@ const NotesChordsSelector = ({
       <input
         type="number"
         name="note3"
+        min="0"
+        max="100"
         value={playerState.note3}
         onChange={handleChange}
       ></input>

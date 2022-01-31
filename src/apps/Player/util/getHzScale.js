@@ -18,8 +18,12 @@ const getHzScale = (incomingScale, referencePitch) => {
       let iterationValue = baseHzScale[i] * multiplesList[j];
       if (iterationValue < 24000) {
         hzScale.push(baseHzScale[i] * multiplesList[j]);
-      } else hzScale.push(23999);
+      } else hzScale.push(23999); // makes all keys playable, over 24000 it throws errors
     }
+  }
+  // same with this step, whites out if there is not a value present
+  for (let i = 0; i < 100; i++) {
+    hzScale.push(23999);
   }
 
   return hzScale;

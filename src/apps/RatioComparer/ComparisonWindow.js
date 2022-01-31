@@ -48,6 +48,18 @@ export const ComparisonWindow = ({ scale, selectedComparison }) => {
       scale,
       comparisonTable[i].invertedCents
     );
+    let highlight = "redHighlight";
+    if (Math.abs(rowComparer.leastDifference) <= 5) {
+      highlight = "greenHighlight";
+    } else if (Math.abs(rowComparer.leastDifference) <= 25) {
+      highlight = "yellowHighlight";
+    }
+    let inverseHighlight = "redHighlight";
+    if (Math.abs(rowComparerInverse.leastDifference) <= 5) {
+      inverseHighlight = "greenHighlight";
+    } else if (Math.abs(rowComparerInverse.leastDifference) <= 25) {
+      inverseHighlight = "yellowHighlight";
+    }
     let row = [
       comparisonTable[i].ratio,
       comparisonTable[i].cents,
@@ -59,6 +71,8 @@ export const ComparisonWindow = ({ scale, selectedComparison }) => {
       rowComparerInverse.closestScaleStep,
       rowComparerInverse.closestValue,
       rowComparerInverse.leastDifference,
+      highlight,
+      inverseHighlight,
     ];
     rows.push(row);
   }
@@ -66,16 +80,16 @@ export const ComparisonWindow = ({ scale, selectedComparison }) => {
   // this is table where the "each child should have a key" error is coming from
   let endTable = rows.map((row) => (
     <tr key={row.id}>
-      <td>{row[0]}</td>
-      <td>{row[1].toFixed(5)}</td>
-      <td>{row[2]}</td>
-      <td>{row[3].toFixed(5)}</td>
-      <td>{row[4].toFixed(5)}</td>
-      <td>{row[5]}</td>
-      <td>{row[6].toFixed(5)}</td>
-      <td>{row[7]}</td>
-      <td>{row[8].toFixed(5)}</td>
-      <td>{row[9].toFixed(5)}</td>
+      <td class={row[10]}>{row[0]}</td>
+      <td class={row[10]}>{row[1].toFixed(5)}</td>
+      <td class={row[10]}>{row[2]}</td>
+      <td class={row[10]}>{row[3].toFixed(5)}</td>
+      <td class={row[10]}>{row[4].toFixed(5)}</td>
+      <td class={row[11]}>{row[5]}</td>
+      <td class={row[11]}>{row[6].toFixed(5)}</td>
+      <td class={row[11]}>{row[7]}</td>
+      <td class={row[11]}>{row[8].toFixed(5)}</td>
+      <td class={row[11]}>{row[9].toFixed(5)}</td>
     </tr>
   ));
 

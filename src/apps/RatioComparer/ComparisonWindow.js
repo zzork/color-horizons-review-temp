@@ -51,14 +51,14 @@ export const ComparisonWindow = ({ scale, selectedComparison }) => {
     let row = [
       comparisonTable[i].ratio,
       comparisonTable[i].cents,
-      rowComparer[0],
-      rowComparer[1],
-      rowComparer[2],
+      rowComparer.closestScaleStep,
+      rowComparer.closestValue,
+      rowComparer.leastDifference,
       comparisonTable[i].invertedRatio,
       comparisonTable[i].invertedCents,
-      rowComparerInverse[0],
-      rowComparerInverse[1],
-      rowComparerInverse[2],
+      rowComparerInverse.closestScaleStep,
+      rowComparerInverse.closestValue,
+      rowComparerInverse.leastDifference,
     ];
     rows.push(row);
   }

@@ -14,7 +14,7 @@ const getComparisonEntryValues = (scale, fraction) => {
       closestScaleStep = i;
     }
   }
-  let finalReturn = [closestScaleStep, closestValue, leastDifference];
+  let finalReturn = { closestScaleStep, closestValue, leastDifference };
 
   return finalReturn;
 };

@@ -249,6 +249,7 @@ const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
       <br />
       <Oscilloscope referencePitch={generalReferencePitch} />
       <br />
+      <br />
       <ChordsPlayTable
         chordsOrSingles={chordsOrSingles}
         centsScaleRepeating={centsScaleRepeating}

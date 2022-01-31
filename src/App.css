@@ -102,13 +102,13 @@ input {
 }
 
 .redHighlight {
-  background-color: red;
+  background-color: #ffe6e6;
 }
 
 .yellowHighlight {
-  background-color: yellow;
+  background-color: #ffffb3;
 }
 
 .greenHighlight {
-  background-color: green;
+  background-color: #b5e3b5;
 }

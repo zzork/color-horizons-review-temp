@@ -78,4 +78,10 @@ export const stateTable = [
       mode: 1,
     },
   },
+  {
+    id: "k",
+    name: "comparisonWindow",
+    closeApproximation: 7,
+    moderateApproximation: 25,
+  },
 ];

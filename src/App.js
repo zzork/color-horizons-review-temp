@@ -70,7 +70,11 @@ function App() {
               <Selector onViewSelect={onViewSelect} />
             </td>
             <td>
-              <ComparisonOptions onComparisonSelect={onComparisonSelect} />
+              <ComparisonOptions
+                onComparisonSelect={onComparisonSelect}
+                stateData={stateData}
+                setStateData={setStateData}
+              />
             </td>
           </tr>
           <br />
@@ -116,3 +120,10 @@ export default App;
 // MAKE EVERYTHING LOOK REALLY NICE
 
 // "selection contains values above the range of human hearing"
+
+// comparison window... what should the ratio group options be??
+
+// state needs to be compacted and turned into an object... seems like a big project! but I can do it!
+
+// need to pass statedata down into each comparison window manually in each thing... oops!
+// OR I could pack it into selected comparison!!!!

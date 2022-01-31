@@ -48,6 +48,7 @@ export const ComparisonWindow = ({ scale, selectedComparison }) => {
       scale,
       comparisonTable[i].invertedCents
     );
+    //
     let highlight = "redHighlight";
     if (Math.abs(rowComparer.leastDifference) <= 5) {
       highlight = "greenHighlight";

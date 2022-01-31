@@ -1,3 +1,4 @@
+import { useState } from "react";
 import generateAxByScl from "../Calculators/AxByEqualsP/util/generateAxByScl";
 import generateEDOScl from "../Calculators/EDO/util/generateEDOScl";
 import generateEDOMOSScl from "../Calculators/EDOMOS/util/generateEDOMOSScl";
@@ -9,8 +10,10 @@ import generateTDScl from "../Calculators/TonalityDiamond/util/generateTDScl";
 import generateUTScl from "../Calculators/Utones/util/generateUTScl";
 import { ComparisonWindow } from "../RatioComparer/ComparisonWindow";
 import ActualPlayer from "./ActualPlayer";
+import { playerStateData } from "./playerStateData";
 
 const Player = ({ showPlayer, playerData, selectedComparison }) => {
+  const [playerState, setPlayerState] = useState(playerStateData);
   let title = "";
   let readout = "";
   let scaleReadout = "";
@@ -217,7 +220,11 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
           scale={playerData.scale}
           selectedComparison={selectedComparison}
         />
-        <ActualPlayer incomingScale={playerData.scale} />
+        <ActualPlayer
+          incomingScale={playerData.scale}
+          playerState={playerState}
+          setPlayerState={setPlayerState}
+        />
         <br />
       </div>
     );

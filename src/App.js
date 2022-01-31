@@ -113,6 +113,6 @@ export default App;
 
 // - Data visualization per mode or all of scale <br />
 
-// STATE PROBLEM WITH PLAYER...
-
 // MAKE EVERYTHING LOOK REALLY NICE
+
+// "selection contains values above the range of human hearing"

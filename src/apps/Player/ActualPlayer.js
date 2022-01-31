@@ -26,7 +26,7 @@ import Attack from "./components/settings/Attack";
 import PitchAdjustments from "./components/settings/PitchAdjustments";
 import Release from "./components/settings/Release";
 
-const ActualPlayer = ({ incomingScale }) => {
+const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
   //   const incomingScale = [
   //     0,
   //     138.57266,
@@ -38,8 +38,6 @@ const ActualPlayer = ({ incomingScale }) => {
   //     1049.36294,
   //     2 / 1,
   //   ];
-
-  const [playerState, setPlayerState] = useState(playerStateData);
 
   const generalReferencePitch = playerState.referencePitch;
   const soundReferencePitch = getReferencePitch(playerState);

@@ -40,6 +40,7 @@ function App() {
       return stateTableRow;
     });
     setStateData(newState);
+    document.getElementById("engage").focus({ preventScroll: true });
   };
 
   return (

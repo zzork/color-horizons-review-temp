@@ -1,25 +1,37 @@
-export const Selector = ({ onViewSelect }) => {
+export const Selector = ({ stateData, setStateData }) => {
+  const handleViewSelect = (viewId) => {
+    let newState = stateData.map((stateTableRow) => {
+      if (stateTableRow.id === "l") {
+        return {
+          ...stateTableRow,
+          tool: viewId,
+        };
+      }
+      return stateTableRow;
+    });
+    setStateData(newState);
+  };
   return (
     <div>
       <h2>Scale Generation Method</h2>
-      <button onClick={() => onViewSelect("edo")}>
+      <button onClick={() => handleViewSelect("edo")}>
         Equal Division of the Octave
       </button>
-      <button onClick={() => onViewSelect("edomos")}>EDO MOS</button>
-      <button onClick={() => onViewSelect("ip")}>Interval Pattern</button>
+      <button onClick={() => handleViewSelect("edomos")}>EDO MOS</button>
+      <button onClick={() => handleViewSelect("ip")}>Interval Pattern</button>
       <br />
-      <button onClick={() => onViewSelect("ltbr")}>
+      <button onClick={() => handleViewSelect("ltbr")}>
         Linear Temperament by Ratio
       </button>
-      <button onClick={() => onViewSelect("ltbc")}>
+      <button onClick={() => handleViewSelect("ltbc")}>
         Linear Temperament by Cents
       </button>
       <br />
-      <button onClick={() => onViewSelect("axby")}>ax + by = p</button>
-      <button onClick={() => onViewSelect("td")}>Tonality Diamond</button>
+      <button onClick={() => handleViewSelect("axby")}>ax + by = p</button>
+      <button onClick={() => handleViewSelect("td")}>Tonality Diamond</button>
       <br />
-      <button onClick={() => onViewSelect("ot")}>Otones</button>
-      <button onClick={() => onViewSelect("ut")}>Utones</button>
+      <button onClick={() => handleViewSelect("ot")}>Otones</button>
+      <button onClick={() => handleViewSelect("ut")}>Utones</button>
       <br />
     </div>
   );

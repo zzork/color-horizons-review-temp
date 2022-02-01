@@ -9,12 +9,12 @@ import { TonalityDiamond } from "../apps/Calculators/TonalityDiamond/Index";
 import { Utones } from "../apps/Calculators/Utones/Index";
 
 export const CalculatorWindow = ({
-  viewId,
   stateData,
   setStateData,
   selectedComparison,
   handleSetPlayerClick,
 }) => {
+  const viewId = stateData[11].tool;
   return (
     <div>
       {viewId === "axby" && (

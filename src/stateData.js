@@ -84,4 +84,9 @@ export const stateTable = [
     closeApproximation: 7,
     moderateApproximation: 25,
   },
+  {
+    id: "l",
+    name: "selectedTool",
+    tool: "ltbr",
+  },
 ];

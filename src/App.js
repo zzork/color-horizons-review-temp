@@ -9,16 +9,10 @@ import Player from "./apps/Player/Index";
 function App() {
   const [stateData, setStateData] = useState(stateTable);
 
-  // these could be lifted up to stateTable
-  const [selectedView, setSelectedView] = useState("ut");
-
   useEffect(() => {
     console.log(stateData);
   }, [stateData]);
 
-  const onViewSelect = (viewId) => {
-    setSelectedView(viewId);
-  };
   const [selectedComparison, setSelectedComparison] = useState("harmonics6");
   const onComparisonSelect = (comparisonId) => {
     setSelectedComparison(comparisonId);
@@ -67,7 +61,7 @@ function App() {
         <tbody>
           <tr>
             <td>
-              <Selector onViewSelect={onViewSelect} />
+              <Selector stateData={stateData} setStateData={setStateData} />
             </td>
             <td>
               <ComparisonOptions
@@ -81,7 +75,6 @@ function App() {
         </tbody>
       </table>
       <CalculatorWindow
-        viewId={selectedView}
         stateData={stateData}
         setStateData={setStateData}
         selectedComparison={selectedComparison}
@@ -122,6 +115,8 @@ export default App;
 // "selection contains values above the range of human hearing"
 
 // comparison window... what should the ratio group options be??
+
+// LIFT STATE ALL TO GLOBAL STATE OBJECT FIRST
 
 // state needs to be compacted and turned into an object... seems like a big project! but I can do it!
 

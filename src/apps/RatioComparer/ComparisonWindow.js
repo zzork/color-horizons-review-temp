@@ -51,15 +51,26 @@ export const ComparisonWindow = ({ scale, stateData }) => {
     );
     //
     let highlight = "redHighlight";
-    if (Math.abs(rowComparer.leastDifference) <= 5) {
+    if (
+      Math.abs(rowComparer.leastDifference) <= stateData[10].closeApproximation
+    ) {
       highlight = "greenHighlight";
-    } else if (Math.abs(rowComparer.leastDifference) <= 25) {
+    } else if (
+      Math.abs(rowComparer.leastDifference) <=
+      stateData[10].moderateApproximation
+    ) {
       highlight = "yellowHighlight";
     }
     let inverseHighlight = "redHighlight";
-    if (Math.abs(rowComparerInverse.leastDifference) <= 5) {
+    if (
+      Math.abs(rowComparerInverse.leastDifference) <=
+      stateData[10].closeApproximation
+    ) {
       inverseHighlight = "greenHighlight";
-    } else if (Math.abs(rowComparerInverse.leastDifference) <= 25) {
+    } else if (
+      Math.abs(rowComparerInverse.leastDifference) <=
+      stateData[10].moderateApproximation
+    ) {
       inverseHighlight = "yellowHighlight";
     }
     let row = [

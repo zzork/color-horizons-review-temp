@@ -3,7 +3,6 @@ import { AxByReadout } from "./AxByReadout";
 export const AxByEqualsP = ({
   stateData,
   setStateData,
-  selectedComparison,
   handleSetPlayerClick,
 }) => {
   const handleChange = (event) => {
@@ -75,7 +74,7 @@ export const AxByEqualsP = ({
         firstSteps={stateData[5].firstSteps}
         firstCents={stateData[5].firstCents}
         secondSteps={stateData[5].secondSteps}
-        selectedComparison={selectedComparison}
+        stateData={stateData}
         handleChange={handleChange}
         handleSetPlayerClick={handleSetPlayerClick}
       />

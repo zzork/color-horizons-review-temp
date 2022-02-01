@@ -128,7 +128,7 @@ export const Utones = ({
         sclData={sclData}
         handleSetPlayerClick={handleSetPlayerClick}
         handleShowEquivalent={handleShowEquivalent}
-        selectedComparison={selectedComparison}
+        stateData={stateData}
       />
     </div>
   );

@@ -7,7 +7,7 @@ export const AxByReadout = ({
   firstSteps,
   firstCents,
   secondSteps,
-  selectedComparison,
+  stateData,
   handleChange,
   handleSetPlayerClick,
 }) => {
@@ -42,7 +42,7 @@ export const AxByReadout = ({
           <LTUniquesDisplay scale={scale} lmsIn={"Lms"} />
           <AxByAllModes
             scale={scale}
-            selectedComparison={selectedComparison}
+            stateData={stateData}
             lmsIn={"Lms"}
             sclData={sclData}
             handleSetPlayerClick={handleSetPlayerClick}

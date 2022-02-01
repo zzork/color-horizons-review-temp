@@ -11,7 +11,6 @@ import { Utones } from "../apps/Calculators/Utones/Index";
 export const CalculatorWindow = ({
   stateData,
   setStateData,
-  selectedComparison,
   handleSetPlayerClick,
 }) => {
   const viewId = stateData[11].tool;
@@ -21,7 +20,6 @@ export const CalculatorWindow = ({
         <AxByEqualsP
           stateData={stateData}
           setStateData={setStateData}
-          selectedComparison={selectedComparison}
           handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
@@ -29,7 +27,6 @@ export const CalculatorWindow = ({
         <EDO
           stateData={stateData}
           setStateData={setStateData}
-          selectedComparison={selectedComparison}
           handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
@@ -37,7 +34,6 @@ export const CalculatorWindow = ({
         <EDOMOS
           stateData={stateData}
           setStateData={setStateData}
-          selectedComparison={selectedComparison}
           handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
@@ -45,7 +41,6 @@ export const CalculatorWindow = ({
         <IntervalPattern
           stateData={stateData}
           setStateData={setStateData}
-          selectedComparison={selectedComparison}
           handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
@@ -53,7 +48,6 @@ export const CalculatorWindow = ({
         <LTByCents
           stateData={stateData}
           setStateData={setStateData}
-          selectedComparison={selectedComparison}
           handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
@@ -61,7 +55,6 @@ export const CalculatorWindow = ({
         <LTByRatio
           stateData={stateData}
           setStateData={setStateData}
-          selectedComparison={selectedComparison}
           handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
@@ -69,7 +62,6 @@ export const CalculatorWindow = ({
         <Otones
           stateData={stateData}
           setStateData={setStateData}
-          selectedComparison={selectedComparison}
           handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
@@ -77,7 +69,6 @@ export const CalculatorWindow = ({
         <TonalityDiamond
           stateData={stateData}
           setStateData={setStateData}
-          selectedComparison={selectedComparison}
           handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
@@ -85,7 +76,6 @@ export const CalculatorWindow = ({
         <Utones
           stateData={stateData}
           setStateData={setStateData}
-          selectedComparison={selectedComparison}
           handleSetPlayerClick={handleSetPlayerClick}
         />
       )}

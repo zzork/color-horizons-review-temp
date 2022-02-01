@@ -12,16 +12,18 @@
 // to make iterable since can't do w/ object
 // Object.keys(stateTable).map(key => stateTable[key])
 export const stateTable = [
-  { id: "a", name: "edo", value: "12" },
+  { index: 0, id: "a", name: "edo", value: "12" },
   {
+    index: 1,
     id: "b",
     name: "linearTemperamentByRatio",
     numerator: "3",
     denominator: "2",
     noteTotal: "7",
   },
-  { id: "c", name: "intervalPattern", pattern: "2212221" },
+  { index: 2, id: "c", name: "intervalPattern", pattern: "2212221" },
   {
+    index: 3,
     id: "d",
     name: "linearTemperamentByCents",
     generator: "701.95",
@@ -29,6 +31,7 @@ export const stateTable = [
     granularity: "0.01",
   },
   {
+    index: 4,
     id: "e",
     name: "edoMos",
     edo: "12",
@@ -36,6 +39,7 @@ export const stateTable = [
     noteTotal: "7",
   },
   {
+    index: 5,
     id: "f",
     name: "axByEqualsP",
     firstCents: "200",
@@ -43,6 +47,7 @@ export const stateTable = [
     secondSteps: "2",
   },
   {
+    index: 6,
     id: "g",
     name: "tonalityDiamond",
     numbers: [1, 3, 5],
@@ -50,6 +55,7 @@ export const stateTable = [
     showEquivalent: false,
   },
   {
+    index: 7,
     id: "h",
     name: "otones",
     denominator: "1",
@@ -59,6 +65,7 @@ export const stateTable = [
     showEquivalent: false,
   },
   {
+    index: 8,
     id: "i",
     name: "utones",
     numerator: "1",
@@ -68,6 +75,7 @@ export const stateTable = [
     showEquivalent: false,
   },
   {
+    index: 9,
     id: "j",
     name: "player",
     showPlayer: true,
@@ -79,12 +87,16 @@ export const stateTable = [
     },
   },
   {
+    index: 10,
     id: "k",
     name: "comparisonWindow",
+    enable: true,
     closeApproximation: 7,
     moderateApproximation: 25,
+    comparison: "harmonics6",
   },
   {
+    index: 11,
     id: "l",
     name: "selectedTool",
     tool: "ltbr",

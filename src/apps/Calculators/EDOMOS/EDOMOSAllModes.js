@@ -4,10 +4,10 @@ import EDOMOSModeReadoutTable from "./EDOMOSModeReadoutTable";
 
 export const EDOMOSAllModes = ({
   scale,
-  selectedComparison,
   lmsIn,
   sclData,
   handleSetPlayerClick,
+  stateData,
 }) => {
   const allLTObjects = convertLTInputToModesObjects(scale, lmsIn);
   return (
@@ -21,10 +21,7 @@ export const EDOMOSAllModes = ({
             handleSetPlayerClick={handleSetPlayerClick}
           />
           <br />
-          <ComparisonWindow
-            scale={ltObject.mode}
-            selectedComparison={selectedComparison}
-          />
+          <ComparisonWindow scale={ltObject.mode} stateData={stateData} />
         </div>
       ))}
     </div>

@@ -2,11 +2,7 @@ import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
 import generateEDOScl from "./util/generateEDOScl";
 import getEdoScale from "./util/getEdoScale";
 
-export const EDOReadout = ({
-  edo,
-  selectedComparison,
-  handleSetPlayerClick,
-}) => {
+export const EDOReadout = ({ edo, handleSetPlayerClick, stateData }) => {
   const isValidState = () => {
     return edo > 0;
   };
@@ -50,7 +46,7 @@ export const EDOReadout = ({
         </tbody>
       </table>
       <br />
-      <ComparisonWindow scale={scale} selectedComparison={selectedComparison} />
+      <ComparisonWindow scale={scale} stateData={stateData} />
     </div>
   );
 };

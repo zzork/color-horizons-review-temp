@@ -7,6 +7,7 @@ export const UTAllModes = ({
   sclData,
   selectedComparison,
   handleSetPlayerClick,
+  stateData,
 }) => {
   const allOTObjects = convertOTInputToModesObjects(scale);
   return (
@@ -22,7 +23,7 @@ export const UTAllModes = ({
           <br />
           <ComparisonWindow
             scale={otObject.centsValues}
-            selectedComparison={selectedComparison}
+            stateData={stateData}
           />
         </div>
       ))}

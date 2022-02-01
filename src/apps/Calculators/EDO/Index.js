@@ -31,7 +31,7 @@ export const EDO = ({
       ></input>
       <EDOReadout
         edo={stateData[0].value}
-        selectedComparison={selectedComparison}
+        stateData={stateData}
         handleSetPlayerClick={handleSetPlayerClick}
       />
     </div>

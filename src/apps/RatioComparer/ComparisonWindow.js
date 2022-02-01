@@ -1,7 +1,8 @@
 import { ratioTable } from "../../ratioTable";
 import getComparisonEntryValues from "./util/getComparisonEntryValues";
 
-export const ComparisonWindow = ({ scale, selectedComparison }) => {
+export const ComparisonWindow = ({ scale, stateData }) => {
+  const selectedComparison = stateData[10].comparison;
   let comparisonTable = [];
 
   if (selectedComparison === "off") {

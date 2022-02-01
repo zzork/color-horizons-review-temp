@@ -12,7 +12,7 @@ import { ComparisonWindow } from "../RatioComparer/ComparisonWindow";
 import ActualPlayer from "./ActualPlayer";
 import { playerStateData } from "./playerStateData";
 
-const Player = ({ showPlayer, playerData, selectedComparison }) => {
+const Player = ({ stateData, showPlayer, playerData }) => {
   const [playerState, setPlayerState] = useState(playerStateData);
   let title = "";
   let readout = "";
@@ -216,10 +216,7 @@ const Player = ({ showPlayer, playerData, selectedComparison }) => {
           {readout}
         </h4>
         <p>{sclButton}</p>
-        <ComparisonWindow
-          scale={playerData.scale}
-          selectedComparison={selectedComparison}
-        />
+        <ComparisonWindow scale={playerData.scale} stateData={stateData} />
         <ActualPlayer
           incomingScale={playerData.scale}
           playerState={playerState}

@@ -8,6 +8,7 @@ export const LTBCAllModes = ({
   lmsIn,
   sclData,
   handleSetPlayerClick,
+  stateData,
 }) => {
   const allLTObjects = convertLTInputToModesObjects(scale, lmsIn);
   return (
@@ -21,10 +22,7 @@ export const LTBCAllModes = ({
             handleSetPlayerClick={handleSetPlayerClick}
           />
           <br />
-          <ComparisonWindow
-            scale={ltObject.mode}
-            selectedComparison={selectedComparison}
-          />
+          <ComparisonWindow scale={ltObject.mode} stateData={stateData} />
         </div>
       ))}
     </div>

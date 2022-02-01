@@ -2,7 +2,7 @@ import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
 import IPModeReadoutTable from "./IPModeReadoutTable";
 import convertPatternToModesObjects from "./util/convertPatternToModesObjects";
 
-const IPAllModes = ({ pattern, selectedComparison, handleSetPlayerClick }) => {
+const IPAllModes = ({ pattern, handleSetPlayerClick, stateData }) => {
   const allIPObjects = convertPatternToModesObjects(pattern);
   return (
     <div>
@@ -14,10 +14,7 @@ const IPAllModes = ({ pattern, selectedComparison, handleSetPlayerClick }) => {
             handleSetPlayerClick={handleSetPlayerClick}
           />
           <br />
-          <ComparisonWindow
-            scale={ipObject.mode}
-            selectedComparison={selectedComparison}
-          />
+          <ComparisonWindow scale={ipObject.mode} stateData={stateData} />
         </div>
       ))}
     </div>

@@ -14,6 +14,7 @@ export const LTBRReadout = ({
   handleMOSClick,
   handleChange,
   handleSetPlayerClick,
+  stateData,
 }) => {
   const reducedFraction = getReducedFraction(numerator, denominator);
 
@@ -100,7 +101,7 @@ export const LTBRReadout = ({
         {noteTotal > 1 && (
           <LTBRAllModes
             scale={scale}
-            selectedComparison={selectedComparison}
+            stateData={stateData}
             lmsIn={"Lms"}
             sclData={sclData}
             handleSetPlayerClick={handleSetPlayerClick}

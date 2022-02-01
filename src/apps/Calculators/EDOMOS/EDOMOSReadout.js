@@ -14,6 +14,7 @@ const EDOMOSReadout = ({
   handleMOSClick,
   handleChange,
   handleSetPlayerClick,
+  stateData,
 }) => {
   const isValidState = () => {
     return edo > 1 && step > 0 && step < edo;
@@ -55,7 +56,7 @@ const EDOMOSReadout = ({
       {noteTotal > 1 && (
         <EDOMOSAllModes
           scale={scale}
-          selectedComparison={selectedComparison}
+          stateData={stateData}
           lmsIn={lmsIn}
           sclData={sclData}
           handleSetPlayerClick={handleSetPlayerClick}

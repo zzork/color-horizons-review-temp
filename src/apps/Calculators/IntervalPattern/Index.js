@@ -3,7 +3,6 @@ import { IPReadout } from "./IPReadout";
 export const IntervalPattern = ({
   stateData,
   setStateData,
-  selectedComparison,
   handleSetPlayerClick,
 }) => {
   const handleChange = (event) => {
@@ -35,7 +34,7 @@ export const IntervalPattern = ({
         <p></p>
         <IPReadout
           pattern={stateData[2].pattern}
-          selectedComparison={selectedComparison}
+          stateData={stateData}
           handleSetPlayerClick={handleSetPlayerClick}
         />
       </div>

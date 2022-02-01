@@ -13,6 +13,7 @@ export const UTReadout = ({
   handleSetPlayerClick,
   handleShowEquivalent,
   selectedComparison,
+  stateData,
 }) => {
   const isValidState = () => {
     return numerator > 0 && start > 0 && stop > start && progression > 0;
@@ -43,7 +44,7 @@ export const UTReadout = ({
       <UTAllModes
         scale={scale}
         sclData={sclData}
-        selectedComparison={selectedComparison}
+        stateData={stateData}
         handleSetPlayerClick={handleSetPlayerClick}
       />
       <p></p>

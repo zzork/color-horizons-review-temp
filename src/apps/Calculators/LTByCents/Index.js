@@ -98,7 +98,7 @@ export const LTByCents = ({
       <LTBCReadout
         generator={stateData[3].generator}
         noteTotal={stateData[3].noteTotal}
-        selectedComparison={selectedComparison}
+        stateData={stateData}
         granularityFixValue={granularitySettings[0]}
         handleSetPlayerClick={handleSetPlayerClick}
         handleGranularityClick={handleGranularityClick}

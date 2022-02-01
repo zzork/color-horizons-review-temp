@@ -6,6 +6,7 @@ export const IPReadout = ({
   pattern,
   selectedComparison,
   handleSetPlayerClick,
+  stateData,
 }) => {
   const isValidState = () => {
     return pattern > 0;
@@ -24,7 +25,7 @@ export const IPReadout = ({
       <IPUniqueSizesTable pattern={pattern} stepSize={stepSize} />
       <IPAllModes
         pattern={pattern}
-        selectedComparison={selectedComparison}
+        stateData={stateData}
         handleSetPlayerClick={handleSetPlayerClick}
       />
     </div>

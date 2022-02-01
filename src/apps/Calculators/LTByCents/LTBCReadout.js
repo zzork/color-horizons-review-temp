@@ -13,6 +13,7 @@ export const LTBCReadout = ({
   handleInvertClick,
   handleMOSClick,
   handleChange,
+  stateData,
 }) => {
   const isValidState = () => {
     return generator > 0 && generator <= 1200;
@@ -78,7 +79,7 @@ export const LTBCReadout = ({
       {noteTotal > 1 && (
         <LTBCAllModes
           scale={scale}
-          selectedComparison={selectedComparison}
+          stateData={stateData}
           lmsIn={"Lms"}
           sclData={sclData}
           handleSetPlayerClick={handleSetPlayerClick}

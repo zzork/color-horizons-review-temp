@@ -13,10 +13,7 @@ function App() {
     console.log(stateData);
   }, [stateData]);
 
-  const [selectedComparison, setSelectedComparison] = useState("harmonics6");
-  const onComparisonSelect = (comparisonId) => {
-    setSelectedComparison(comparisonId);
-  };
+  // const [selectedComparison, setSelectedComparison] = useState("harmonics6");
 
   const handleShowPlayerClick = () => {
     let newState = stateData.map((stateTableRow) => {
@@ -51,9 +48,9 @@ function App() {
       <h1>Scale Player</h1>
       <button onClick={() => handleShowPlayerClick()}>Show/Hide Player</button>
       <Player
+        stateData={stateData}
         showPlayer={stateData[9].showPlayer}
         playerData={stateData[9].playerData}
-        selectedComparison={selectedComparison}
       />
       <br />
       <h1>Scale Creation Tools</h1>
@@ -65,7 +62,6 @@ function App() {
             </td>
             <td>
               <ComparisonOptions
-                onComparisonSelect={onComparisonSelect}
                 stateData={stateData}
                 setStateData={setStateData}
               />
@@ -77,7 +73,6 @@ function App() {
       <CalculatorWindow
         stateData={stateData}
         setStateData={setStateData}
-        selectedComparison={selectedComparison}
         handleSetPlayerClick={handleSetPlayerClick}
       />
       <br />

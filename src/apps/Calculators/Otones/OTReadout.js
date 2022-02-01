@@ -13,6 +13,7 @@ export const OTReadout = ({
   handleShowEquivalent,
   selectedComparison,
   handleSetPlayerClick,
+  stateData,
 }) => {
   const isValidState = () => {
     return denominator > 0 && start > 0 && stop > start && progression > 0;
@@ -43,7 +44,7 @@ export const OTReadout = ({
       <OTAllModes
         scale={scale}
         sclData={sclData}
-        selectedComparison={selectedComparison}
+        stateData={stateData}
         handleSetPlayerClick={handleSetPlayerClick}
       />
       <p></p>

@@ -1,8 +1,4 @@
-export const ComparisonOptions = ({
-  onComparisonSelect,
-  stateData,
-  setStateData,
-}) => {
+export const ComparisonOptions = ({ stateData, setStateData }) => {
   const handleApproximation = (event) => {
     if (event.target.name === "closeApproximation") {
       let newValue = event.target.value;
@@ -17,6 +13,7 @@ export const ComparisonOptions = ({
       });
       setStateData(newState);
     }
+
     if (event.target.name === "moderateApproximation") {
       let newValue = event.target.value;
       let newState = stateData.map((stateTableRow) => {
@@ -30,6 +27,19 @@ export const ComparisonOptions = ({
       });
       setStateData(newState);
     }
+  };
+
+  const handleComparisonSelect = (comparisonId) => {
+    let newState = stateData.map((stateTableRow) => {
+      if (stateTableRow.id === "k") {
+        return {
+          ...stateTableRow,
+          comparison: comparisonId,
+        };
+      }
+      return stateTableRow;
+    });
+    setStateData(newState);
   };
 
   return (
@@ -58,30 +68,30 @@ export const ComparisonOptions = ({
       Cents
       <br />
       <br />
-      <button onClick={() => onComparisonSelect("majorDiatonic")}>
+      <button onClick={() => handleComparisonSelect("majorDiatonic")}>
         Major Diatonic
       </button>
-      <button onClick={() => onComparisonSelect("primes")}>
+      <button onClick={() => handleComparisonSelect("primes")}>
         Prime Harmonics
       </button>
       <br />
-      <button onClick={() => onComparisonSelect("harmonics6")}>
+      <button onClick={() => handleComparisonSelect("harmonics6")}>
         Harmonic Series to 6
       </button>
-      <button onClick={() => onComparisonSelect("harmonics17")}>
+      <button onClick={() => handleComparisonSelect("harmonics17")}>
         Harmonic Series to 17
       </button>
       <br />
-      <button onClick={() => onComparisonSelect("3")}>3 Limit</button>
-      <button onClick={() => onComparisonSelect("5")}>5 Limit</button>
-      <button onClick={() => onComparisonSelect("7")}>7 Limit</button>
+      <button onClick={() => handleComparisonSelect("3")}>3 Limit</button>
+      <button onClick={() => handleComparisonSelect("5")}>5 Limit</button>
+      <button onClick={() => handleComparisonSelect("7")}>7 Limit</button>
       <br />
-      <button onClick={() => onComparisonSelect("11")}>11 Limit</button>
-      <button onClick={() => onComparisonSelect("13")}>13 Limit</button>
-      <button onClick={() => onComparisonSelect("17")}>17 Limit</button>
+      <button onClick={() => handleComparisonSelect("11")}>11 Limit</button>
+      <button onClick={() => handleComparisonSelect("13")}>13 Limit</button>
+      <button onClick={() => handleComparisonSelect("17")}>17 Limit</button>
       <br />
       <br />
-      <button onClick={() => onComparisonSelect("off")}>Disable</button>
+      <button onClick={() => handleComparisonSelect("off")}>Disable</button>
     </div>
   );
 };

@@ -4,11 +4,12 @@ import AxByModeReadoutTable from "./AxByModeReadoutTable";
 
 export const AxByAllModes = ({
   scale,
-  selectedComparison,
   lmsIn,
+  stateData,
   sclData,
   handleSetPlayerClick,
 }) => {
+  console.log(stateData);
   const allLTObjects = convertLTInputToModesObjects(scale, lmsIn);
   return (
     <div>
@@ -21,10 +22,7 @@ export const AxByAllModes = ({
             handleSetPlayerClick={handleSetPlayerClick}
           />
           <br />
-          <ComparisonWindow
-            scale={ltObject.mode}
-            selectedComparison={selectedComparison}
-          />
+          <ComparisonWindow scale={ltObject.mode} stateData={stateData} />
         </div>
       ))}
     </div>

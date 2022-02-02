@@ -5,7 +5,7 @@ import { CalculatorWindow } from "./components/CalculatorWindow";
 import { stateTable } from "./stateData";
 import { ComparisonOptions } from "./apps/RatioComparer/ComparisonOptions";
 import Player from "./apps/Player/Index";
-import { handleSetPlayerClick, handleShowPlayerClick } from "./eventHandlers";
+import { handleShowPlayerClick } from "./eventHandlers";
 
 function App() {
   const [stateData, setStateData] = useState(stateTable);
@@ -21,7 +21,7 @@ function App() {
       <button onClick={() => handleShowPlayerClick(stateData, setStateData)}>
         Show/Hide Player
       </button>
-      <Player stateData={stateData} />
+      <Player stateData={stateData} setStateData={setStateData} />
       <br />
       <h1>Scale Creation Tools</h1>
       <table>

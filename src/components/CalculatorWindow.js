@@ -7,7 +7,6 @@ import { LTByRatio } from "../apps/Calculators/LTByRatio/Index";
 import { Otones } from "../apps/Calculators/Otones/Index";
 import { TonalityDiamond } from "../apps/Calculators/TonalityDiamond/Index";
 import { Utones } from "../apps/Calculators/Utones/Index";
-import { handleSetPlayerClick } from "../eventHandlers";
 
 export const CalculatorWindow = ({ stateData, setStateData }) => {
   const viewId = stateData[11].tool;

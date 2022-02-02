@@ -32,11 +32,7 @@ export const CalculatorWindow = ({ stateData, setStateData }) => {
         <LTByRatio stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "ot" && (
-        <Otones
-          stateData={stateData}
-          setStateData={setStateData}
-          handleSetPlayerClick={handleSetPlayerClick}
-        />
+        <Otones stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "td" && (
         <TonalityDiamond

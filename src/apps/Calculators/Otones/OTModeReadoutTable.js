@@ -1,10 +1,12 @@
+import { handleSetPlayerClick } from "../../../eventHandlers";
 import generateOTScl from "./util/generateOTScl";
 
 const OTModeReadoutTable = ({
   index,
   otObject,
   sclData,
-  handleSetPlayerClick,
+  stateData,
+  setStateData,
 }) => {
   const setPlayerObject = {
     tool: "ot",
@@ -17,7 +19,11 @@ const OTModeReadoutTable = ({
       <h2>
         Mode {index + 1}
         <br />
-        <button onClick={() => handleSetPlayerClick(setPlayerObject)}>
+        <button
+          onClick={() =>
+            handleSetPlayerClick(stateData, setStateData, setPlayerObject)
+          }
+        >
           Use In Player
         </button>
         <button

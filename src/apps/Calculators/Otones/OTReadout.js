@@ -11,9 +11,8 @@ export const OTReadout = ({
   sclData,
   showEquivalent,
   handleShowEquivalent,
-  selectedComparison,
-  handleSetPlayerClick,
   stateData,
+  setStateData,
 }) => {
   const isValidState = () => {
     return denominator > 0 && start > 0 && stop > start && progression > 0;
@@ -45,7 +44,7 @@ export const OTReadout = ({
         scale={scale}
         sclData={sclData}
         stateData={stateData}
-        handleSetPlayerClick={handleSetPlayerClick}
+        setStateData={setStateData}
       />
       <p></p>
     </div>

@@ -1,11 +1,6 @@
 import { OTReadout } from "./OTReadout";
 
-export const Otones = ({
-  stateData,
-  setStateData,
-  selectedComparison,
-  handleSetPlayerClick,
-}) => {
+export const Otones = ({ stateData, setStateData }) => {
   const handleChange = (event) => {
     let fieldReader = event.target.name;
     let newValue = event.target.value;
@@ -126,9 +121,9 @@ export const Otones = ({
         progression={parseInt(stateData[7].progression)}
         showEquivalent={stateData[7].showEquivalent}
         sclData={sclData}
-        handleSetPlayerClick={handleSetPlayerClick}
         handleShowEquivalent={handleShowEquivalent}
         stateData={stateData}
+        setStateData={setStateData}
       />
     </div>
   );

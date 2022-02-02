@@ -12,7 +12,10 @@ import { ComparisonWindow } from "../RatioComparer/ComparisonWindow";
 import ActualPlayer from "./ActualPlayer";
 import { playerStateData } from "./playerStateData";
 
-const Player = ({ stateData, showPlayer, playerData }) => {
+const Player = ({ stateData }) => {
+  const showPlayer = stateData[9].showPlayer;
+  const playerData = stateData[9].playerData;
+
   const [playerState, setPlayerState] = useState(playerStateData);
   let title = "";
   let readout = "";

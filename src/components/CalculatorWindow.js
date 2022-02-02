@@ -35,11 +35,7 @@ export const CalculatorWindow = ({ stateData, setStateData }) => {
         <Otones stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "td" && (
-        <TonalityDiamond
-          stateData={stateData}
-          setStateData={setStateData}
-          handleSetPlayerClick={handleSetPlayerClick}
-        />
+        <TonalityDiamond stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "ut" && (
         <Utones

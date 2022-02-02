@@ -1,10 +1,12 @@
+import { handleSetPlayerClick } from "../../../eventHandlers";
 import generateTDScl from "./util/generateTDScl";
 
 const TDModeReadoutTable = ({
   index,
   otObject,
   sclData,
-  handleSetPlayerClick,
+  stateData,
+  setStateData,
 }) => {
   const setPlayerObject = {
     tool: "td",
@@ -17,7 +19,11 @@ const TDModeReadoutTable = ({
       <h2>
         Mode {index + 1}
         <br />
-        <button onClick={() => handleSetPlayerClick(setPlayerObject)}>
+        <button
+          onClick={() =>
+            handleSetPlayerClick(stateData, setStateData, setPlayerObject)
+          }
+        >
           Use In Player
         </button>
         <button

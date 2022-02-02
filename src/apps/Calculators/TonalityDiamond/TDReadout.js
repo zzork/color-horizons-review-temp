@@ -8,11 +8,10 @@ const TDReadout = ({
   allOtUt,
   sclData,
   showEquivalent,
-  selectedComparison,
-  handleSetPlayerClick,
   handleAllOtUtClick,
   handleRawEquivalentClick,
   stateData,
+  setStateData,
 }) => {
   const isValidState = () => {
     return checked.length > 1;
@@ -59,7 +58,7 @@ const TDReadout = ({
         scale={scale}
         sclData={sclData}
         stateData={stateData}
-        handleSetPlayerClick={handleSetPlayerClick}
+        setStateData={setStateData}
       />
     </div>
   );

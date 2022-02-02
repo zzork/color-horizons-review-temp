@@ -3,7 +3,6 @@ import TDReadout from "./TDReadout";
 export const TonalityDiamond = ({
   stateData,
   setStateData,
-  selectedComparison,
   handleSetPlayerClick,
 }) => {
   const checked = stateData[6].numbers;
@@ -118,7 +117,7 @@ export const TonalityDiamond = ({
         sclData={sclData}
         showEquivalent={showEquivalent}
         stateData={stateData}
-        handleSetPlayerClick={handleSetPlayerClick}
+        setStateData={setStateData}
         handleAllOtUtClick={handleAllOtUtClick}
         handleRawEquivalentClick={handleRawEquivalentClick}
       />

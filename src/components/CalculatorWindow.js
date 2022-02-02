@@ -23,11 +23,7 @@ export const CalculatorWindow = ({ stateData, setStateData }) => {
         <EDOMOS stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "ip" && (
-        <IntervalPattern
-          stateData={stateData}
-          setStateData={setStateData}
-          handleSetPlayerClick={handleSetPlayerClick}
-        />
+        <IntervalPattern stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "ltbc" && (
         <LTByCents

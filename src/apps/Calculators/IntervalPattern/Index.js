@@ -1,10 +1,6 @@
 import { IPReadout } from "./IPReadout";
 
-export const IntervalPattern = ({
-  stateData,
-  setStateData,
-  handleSetPlayerClick,
-}) => {
+export const IntervalPattern = ({ stateData, setStateData }) => {
   const handleChange = (event) => {
     const newPattern = event.target.value;
     let newState = stateData.map((stateTableRow) => {
@@ -35,7 +31,7 @@ export const IntervalPattern = ({
         <IPReadout
           pattern={stateData[2].pattern}
           stateData={stateData}
-          handleSetPlayerClick={handleSetPlayerClick}
+          setStateData={setStateData}
         />
       </div>
     </div>

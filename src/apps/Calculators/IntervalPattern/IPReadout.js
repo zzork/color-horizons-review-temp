@@ -2,12 +2,7 @@ import IPUniqueSizesTable from "./IPUniqueSizesTable";
 import getEdoFromIntervalPattern from "./util/getEdoFromIntervalPattern";
 import IPAllModes from "./IPAllModes";
 
-export const IPReadout = ({
-  pattern,
-  selectedComparison,
-  handleSetPlayerClick,
-  stateData,
-}) => {
+export const IPReadout = ({ pattern, stateData, setStateData }) => {
   const isValidState = () => {
     return pattern > 0;
   };
@@ -26,7 +21,7 @@ export const IPReadout = ({
       <IPAllModes
         pattern={pattern}
         stateData={stateData}
-        handleSetPlayerClick={handleSetPlayerClick}
+        setStateData={setStateData}
       />
     </div>
   );

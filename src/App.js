@@ -51,21 +51,15 @@ export default App;
 // TO ADD
 // ------
 
-// fix ratio table so it matches exactly with the calcs instead of being taken from scala so sometimes slightly off
-
 // create permalink for sharing scale via url
 
-// set decimal accuracy of readouts? at least set to 6 instead of 5
-
-// - Extracting handler events, if possible - Click Start/Stop Need Fixing...
+// - Extracting handler events where possible
 
 // - Optimal focus...
 
-// - Custom Harmonics Based Waveform? <br />
+// - Custom Harmonics Based Waveform?
 
-// - Data visualization per mode or all of scale <br />
-
-// MAKE EVERYTHING LOOK REALLY NICE
+// - Data visualization per mode or all of scale
 
 // "selection contains values above the range of human hearing"
 
@@ -73,8 +67,12 @@ export default App;
 
 /////////////
 
-// LIFT STATE ALL TO GLOBAL STATE OBJECT FIRST
+// LIFT STATE ALL TO GLOBAL STATE OBJECT
 
 // state needs to be compacted and turned into an object... seems like a big project! but I can do it!
 
 // pass state down differently, simpler
+
+/////////////
+
+// MAKE EVERYTHING LOOK REALLY NICE

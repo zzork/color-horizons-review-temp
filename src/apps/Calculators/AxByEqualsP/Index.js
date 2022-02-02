@@ -1,10 +1,6 @@
 import { AxByReadout } from "./AxByReadout";
 
-export const AxByEqualsP = ({
-  stateData,
-  setStateData,
-  handleSetPlayerClick,
-}) => {
+export const AxByEqualsP = ({ stateData, setStateData }) => {
   const handleChange = (event) => {
     let fieldReader = event.target.name;
     let newValue = event.target.value;
@@ -75,8 +71,8 @@ export const AxByEqualsP = ({
         firstCents={stateData[5].firstCents}
         secondSteps={stateData[5].secondSteps}
         stateData={stateData}
+        setStateData={setStateData}
         handleChange={handleChange}
-        handleSetPlayerClick={handleSetPlayerClick}
       />
     </div>
   );

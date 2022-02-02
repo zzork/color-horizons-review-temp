@@ -7,21 +7,14 @@ import { LTByRatio } from "../apps/Calculators/LTByRatio/Index";
 import { Otones } from "../apps/Calculators/Otones/Index";
 import { TonalityDiamond } from "../apps/Calculators/TonalityDiamond/Index";
 import { Utones } from "../apps/Calculators/Utones/Index";
+import { handleSetPlayerClick } from "../eventHandlers";
 
-export const CalculatorWindow = ({
-  stateData,
-  setStateData,
-  handleSetPlayerClick,
-}) => {
+export const CalculatorWindow = ({ stateData, setStateData }) => {
   const viewId = stateData[11].tool;
   return (
     <div>
       {viewId === "axby" && (
-        <AxByEqualsP
-          stateData={stateData}
-          setStateData={setStateData}
-          handleSetPlayerClick={handleSetPlayerClick}
-        />
+        <AxByEqualsP stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "edo" && (
         <EDO
@@ -52,11 +45,7 @@ export const CalculatorWindow = ({
         />
       )}
       {viewId === "ltbr" && (
-        <LTByRatio
-          stateData={stateData}
-          setStateData={setStateData}
-          handleSetPlayerClick={handleSetPlayerClick}
-        />
+        <LTByRatio stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "ot" && (
         <Otones

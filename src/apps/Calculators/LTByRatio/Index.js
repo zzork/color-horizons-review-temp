@@ -1,11 +1,6 @@
 import { LTBRReadout } from "./LTBRReadout";
 
-export const LTByRatio = ({
-  stateData,
-  setStateData,
-  selectedComparison,
-  handleSetPlayerClick,
-}) => {
+export const LTByRatio = ({ stateData, setStateData }) => {
   // there must be a better way to handle this giant, repetitive block
   const handleChange = (event) => {
     let fieldReader = event.target.name;
@@ -99,6 +94,8 @@ export const LTByRatio = ({
         ></input>
       </p>
       <LTBRReadout
+        stateData={stateData}
+        setStateData={setStateData}
         numerator={stateData[1].numerator}
         denominator={stateData[1].denominator}
         noteTotal={stateData[1].noteTotal}
@@ -106,7 +103,6 @@ export const LTByRatio = ({
         handleInvertClick={handleInvertClick}
         handleMOSClick={handleMOSClick}
         handleChange={handleChange}
-        handleSetPlayerClick={handleSetPlayerClick}
       />
     </div>
   );

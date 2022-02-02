@@ -8,8 +8,8 @@ export const AxByReadout = ({
   firstCents,
   secondSteps,
   stateData,
+  setStateData,
   handleChange,
-  handleSetPlayerClick,
 }) => {
   const isValidState = () => {
     return firstSteps > 0 && firstCents > 0 && firstSteps * firstCents < 1200;
@@ -43,9 +43,9 @@ export const AxByReadout = ({
           <AxByAllModes
             scale={scale}
             stateData={stateData}
+            setStateData={setStateData}
             lmsIn={"Lms"}
             sclData={sclData}
-            handleSetPlayerClick={handleSetPlayerClick}
           />
         </div>
       )}

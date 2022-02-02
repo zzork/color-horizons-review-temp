@@ -5,6 +5,7 @@ import { CalculatorWindow } from "./components/CalculatorWindow";
 import { stateTable } from "./stateData";
 import { ComparisonOptions } from "./apps/RatioComparer/ComparisonOptions";
 import Player from "./apps/Player/Index";
+import { handleSetPlayerClick, handleShowPlayerClick } from "./eventHandlers";
 
 function App() {
   const [stateData, setStateData] = useState(stateTable);
@@ -13,39 +14,13 @@ function App() {
     console.log(stateData);
   }, [stateData]);
 
-  const handleShowPlayerClick = () => {
-    let newState = stateData.map((stateTableRow) => {
-      let showPlayer = !stateData[9].showPlayer;
-      if (stateTableRow.id === "j") {
-        return {
-          ...stateTableRow,
-          showPlayer: showPlayer,
-        };
-      }
-      return stateTableRow;
-    });
-    setStateData(newState);
-  };
-
-  const handleSetPlayerClick = (playerData) => {
-    let newState = stateData.map((stateTableRow) => {
-      if (stateTableRow.id === "j") {
-        return {
-          ...stateTableRow,
-          playerData: playerData,
-        };
-      }
-      return stateTableRow;
-    });
-    setStateData(newState);
-    document.getElementById("engage").focus({ preventScroll: true });
-  };
-
   return (
     <div>
       <h1>COLOR HORIZONS</h1>
       <h1>Scale Player</h1>
-      <button onClick={() => handleShowPlayerClick()}>Show/Hide Player</button>
+      <button onClick={() => handleShowPlayerClick(stateData, setStateData)}>
+        Show/Hide Player
+      </button>
       <Player stateData={stateData} />
       <br />
       <h1>Scale Creation Tools</h1>
@@ -65,11 +40,7 @@ function App() {
           <br />
         </tbody>
       </table>
-      <CalculatorWindow
-        stateData={stateData}
-        setStateData={setStateData}
-        handleSetPlayerClick={handleSetPlayerClick}
-      />
+      <CalculatorWindow stateData={stateData} setStateData={setStateData} />
       <br />
     </div>
   );
@@ -79,6 +50,8 @@ export default App;
 
 // TO ADD
 // ------
+
+// fix ratio table so it matches exactly with the calcs instead of being taken from scala so sometimes slightly off
 
 // create permalink for sharing scale via url
 

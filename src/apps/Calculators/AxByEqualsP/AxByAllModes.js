@@ -6,6 +6,7 @@ export const AxByAllModes = ({
   scale,
   lmsIn,
   stateData,
+  setStateData,
   sclData,
   handleSetPlayerClick,
 }) => {
@@ -19,7 +20,8 @@ export const AxByAllModes = ({
             ltObject={ltObject}
             index={index}
             sclData={sclData}
-            handleSetPlayerClick={handleSetPlayerClick}
+            stateData={stateData}
+            setStateData={setStateData}
           />
           <br />
           <ComparisonWindow scale={ltObject.mode} stateData={stateData} />

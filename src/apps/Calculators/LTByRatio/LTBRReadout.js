@@ -9,12 +9,11 @@ export const LTBRReadout = ({
   numerator,
   denominator,
   noteTotal,
-  selectedComparison,
   handleInvertClick,
   handleMOSClick,
   handleChange,
-  handleSetPlayerClick,
   stateData,
+  setStateData,
 }) => {
   const reducedFraction = getReducedFraction(numerator, denominator);
 
@@ -104,7 +103,8 @@ export const LTBRReadout = ({
             stateData={stateData}
             lmsIn={"Lms"}
             sclData={sclData}
-            handleSetPlayerClick={handleSetPlayerClick}
+            stateData={stateData}
+            setStateData={setStateData}
           />
         )}
       </div>

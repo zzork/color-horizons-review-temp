@@ -1,10 +1,12 @@
+import { handleSetPlayerClick } from "../../../eventHandlers";
 import generateLTBRScl from "./util/generateLTBRScl";
 
 const LTBRModeReadoutTable = ({
   index,
   ltObject,
   sclData,
-  handleSetPlayerClick,
+  stateData,
+  setStateData,
 }) => {
   const setPlayerObject = {
     tool: "ltbr",
@@ -18,7 +20,11 @@ const LTBRModeReadoutTable = ({
       <h2>
         Mode {index + 1} - {ltObject.lmsList.join("")}
         <br />
-        <button onClick={() => handleSetPlayerClick(setPlayerObject)}>
+        <button
+          onClick={() =>
+            handleSetPlayerClick(stateData, setStateData, setPlayerObject)
+          }
+        >
           Use In Player
         </button>
         <button

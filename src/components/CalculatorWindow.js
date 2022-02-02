@@ -20,11 +20,7 @@ export const CalculatorWindow = ({ stateData, setStateData }) => {
         <EDO stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "edomos" && (
-        <EDOMOS
-          stateData={stateData}
-          setStateData={setStateData}
-          handleSetPlayerClick={handleSetPlayerClick}
-        />
+        <EDOMOS stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "ip" && (
         <IntervalPattern

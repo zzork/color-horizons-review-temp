@@ -1,11 +1,6 @@
 import EDOMOSReadout from "./EDOMOSReadout";
 
-export const EDOMOS = ({
-  stateData,
-  setStateData,
-  selectedComparison,
-  handleSetPlayerClick,
-}) => {
+export const EDOMOS = ({ stateData, setStateData }) => {
   const handleChange = (event) => {
     let fieldReader = event.target.name;
     let newValue = event.target.value;
@@ -89,9 +84,9 @@ export const EDOMOS = ({
         step={parseInt(stateData[4].step)}
         noteTotal={parseInt(stateData[4].noteTotal)}
         stateData={stateData}
+        setStateData={setStateData}
         handleMOSClick={handleMOSClick}
         handleChange={handleChange}
-        handleSetPlayerClick={handleSetPlayerClick}
       />
     </div>
   );

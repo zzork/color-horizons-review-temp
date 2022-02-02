@@ -102,20 +102,21 @@ input {
 }
 
 .noHighlight {
+  background-color: #e6e4e3;
 }
 
 .level4Highlight {
-  background-color: #bbdbbb;
+  background-color: #f5deb363;
 }
 
 .level3Highlight {
-  background-color: #a0cea0;
+  background-color: #f5deb39d;
 }
 
 .level2Highlight {
-  background-color: #6fb46f;
+  background-color: #f5deb3d3;
 }
 
 .level1Highlight {
-  background-color: #439b43;
+  background-color: #f5deb3;
 }

@@ -1,11 +1,6 @@
 import { EDOReadout } from "./EDOReadout";
 
-export const EDO = ({
-  stateData,
-  setStateData,
-  selectedComparison,
-  handleSetPlayerClick,
-}) => {
+export const EDO = ({ stateData, setStateData }) => {
   const handleChange = (event) => {
     const newEDO = event.target.value;
     let newState = stateData.map((stateTableRow) => {
@@ -32,7 +27,7 @@ export const EDO = ({
       <EDOReadout
         edo={stateData[0].value}
         stateData={stateData}
-        handleSetPlayerClick={handleSetPlayerClick}
+        setStateData={setStateData}
       />
     </div>
   );

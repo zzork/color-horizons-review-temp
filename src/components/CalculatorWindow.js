@@ -17,11 +17,7 @@ export const CalculatorWindow = ({ stateData, setStateData }) => {
         <AxByEqualsP stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "edo" && (
-        <EDO
-          stateData={stateData}
-          setStateData={setStateData}
-          handleSetPlayerClick={handleSetPlayerClick}
-        />
+        <EDO stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "edomos" && (
         <EDOMOS

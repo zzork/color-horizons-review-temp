@@ -1,8 +1,9 @@
+import { handleSetPlayerClick } from "../../../eventHandlers";
 import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
 import generateEDOScl from "./util/generateEDOScl";
 import getEdoScale from "./util/getEdoScale";
 
-export const EDOReadout = ({ edo, handleSetPlayerClick, stateData }) => {
+export const EDOReadout = ({ edo, stateData, setStateData }) => {
   const isValidState = () => {
     return edo > 0;
   };
@@ -23,7 +24,11 @@ export const EDOReadout = ({ edo, handleSetPlayerClick, stateData }) => {
     <div>
       <h3>{edo} EDO</h3>
       <h4>Step Size: {stepSize.toFixed(5)} Cents</h4>
-      <button onClick={() => handleSetPlayerClick(setPlayerObject)}>
+      <button
+        onClick={() =>
+          handleSetPlayerClick(stateData, setStateData, setPlayerObject)
+        }
+      >
         Use In Player
       </button>
       <button onClick={() => generateEDOScl(scale, edo)}>Export .scl</button>

@@ -42,6 +42,18 @@ export const ComparisonWindow = ({ scale, stateData }) => {
     comparisonTable = ratioTable.filter((entry) => entry.primeLimit <= 17);
   }
 
+  const highlightBoundaries = [
+    (stateData[10].approximationBoundary - stateData[10].closeApproximation) /
+      3 +
+      stateData[10].closeApproximation,
+    ((stateData[10].approximationBoundary - stateData[10].closeApproximation) /
+      3) *
+      2 +
+      stateData[10].closeApproximation,
+  ];
+
+  console.log(highlightBoundaries);
+
   let rows = [];
   for (let i = 0; i < comparisonTable.length; i++) {
     let rowComparer = getComparisonEntryValues(scale, comparisonTable[i].cents);
@@ -50,28 +62,45 @@ export const ComparisonWindow = ({ scale, stateData }) => {
       comparisonTable[i].invertedCents
     );
     //
-    let highlight = "redHighlight";
+    let highlight = "noHighlight";
     if (
       Math.abs(rowComparer.leastDifference) <= stateData[10].closeApproximation
     ) {
-      highlight = "greenHighlight";
+      highlight = "level1Highlight";
+    } else if (
+      Math.abs(rowComparer.leastDifference) <= highlightBoundaries[0]
+    ) {
+      highlight = "level2Highlight";
+    } else if (
+      Math.abs(rowComparer.leastDifference) <= highlightBoundaries[1]
+    ) {
+      highlight = "level3Highlight";
     } else if (
       Math.abs(rowComparer.leastDifference) <=
-      stateData[10].moderateApproximation
+      stateData[10].approximationBoundary
     ) {
-      highlight = "yellowHighlight";
+      highlight = "level4Highlight";
     }
-    let inverseHighlight = "redHighlight";
+
+    let inverseHighlight = "noHighlight";
     if (
       Math.abs(rowComparerInverse.leastDifference) <=
       stateData[10].closeApproximation
     ) {
-      inverseHighlight = "greenHighlight";
+      inverseHighlight = "level1Highlight";
+    } else if (
+      Math.abs(rowComparerInverse.leastDifference) <= highlightBoundaries[0]
+    ) {
+      inverseHighlight = "level2Highlight";
+    } else if (
+      Math.abs(rowComparerInverse.leastDifference) <= highlightBoundaries[1]
+    ) {
+      inverseHighlight = "level3Highlight";
     } else if (
       Math.abs(rowComparerInverse.leastDifference) <=
-      stateData[10].moderateApproximation
+      stateData[10].approximationBoundary
     ) {
-      inverseHighlight = "yellowHighlight";
+      inverseHighlight = "level4Highlight";
     }
     let row = [
       comparisonTable[i].ratio,

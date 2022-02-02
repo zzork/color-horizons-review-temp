@@ -50,19 +50,19 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
         type="number"
         name="closeApproximation"
         min="1"
-        max={stateData[10].moderateApproximation - 0.01}
+        max={stateData[10].moderateApproximation - 1}
         value={stateData[10].closeApproximation}
         onChange={handleApproximation}
       ></input>{" "}
       Cents
       <br />
-      Moderate Approximation:{" "}
+      Approximation Boundary:{" "}
       <input
         type="number"
         name="moderateApproximation"
         min={stateData[10].closeApproximation}
         max="1200"
-        value={stateData[10].moderateApproximation}
+        value={stateData[10].approximationBoundary}
         onChange={handleApproximation}
       ></input>{" "}
       Cents

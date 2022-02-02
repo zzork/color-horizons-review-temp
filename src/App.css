@@ -101,14 +101,21 @@ input {
   border: 1px solid black;
 }
 
-.redHighlight {
-  background-color: #ffe6e6;
+.noHighlight {
 }
 
-.yellowHighlight {
-  background-color: #ffffb3;
+.level4Highlight {
+  background-color: #bbdbbb;
 }
 
-.greenHighlight {
-  background-color: #b5e3b5;
+.level3Highlight {
+  background-color: #a0cea0;
+}
+
+.level2Highlight {
+  background-color: #6fb46f;
+}
+
+.level1Highlight {
+  background-color: #439b43;
 }

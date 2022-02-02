@@ -92,7 +92,7 @@ export const stateTable = [
     name: "comparisonWindow",
     enable: true,
     closeApproximation: 7,
-    moderateApproximation: 25,
+    approximationBoundary: 25,
     comparison: "harmonics6",
   },
   {

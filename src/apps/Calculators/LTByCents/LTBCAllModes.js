@@ -4,11 +4,10 @@ import LTBCModeReadoutTable from "./LTBCModeReadoutTable";
 
 export const LTBCAllModes = ({
   scale,
-  selectedComparison,
   lmsIn,
   sclData,
-  handleSetPlayerClick,
   stateData,
+  setStateData,
 }) => {
   const allLTObjects = convertLTInputToModesObjects(scale, lmsIn);
   return (
@@ -19,7 +18,8 @@ export const LTBCAllModes = ({
             ltObject={ltObject}
             index={index}
             sclData={sclData}
-            handleSetPlayerClick={handleSetPlayerClick}
+            stateData={stateData}
+            setStateData={setStateData}
           />
           <br />
           <ComparisonWindow scale={ltObject.mode} stateData={stateData} />

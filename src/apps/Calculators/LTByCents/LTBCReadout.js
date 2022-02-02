@@ -6,14 +6,13 @@ import getLTScaleFromCents from "./util/getLTScaleFromCents";
 export const LTBCReadout = ({
   generator,
   noteTotal,
-  selectedComparison,
   granularityFixValue,
-  handleSetPlayerClick,
   handleGranularityClick,
   handleInvertClick,
   handleMOSClick,
   handleChange,
   stateData,
+  setStateData,
 }) => {
   const isValidState = () => {
     return generator > 0 && generator <= 1200;
@@ -80,9 +79,9 @@ export const LTBCReadout = ({
         <LTBCAllModes
           scale={scale}
           stateData={stateData}
+          setStateData={setStateData}
           lmsIn={"Lms"}
           sclData={sclData}
-          handleSetPlayerClick={handleSetPlayerClick}
         />
       )}
       <br />

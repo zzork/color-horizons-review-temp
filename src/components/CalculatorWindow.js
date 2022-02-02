@@ -26,11 +26,7 @@ export const CalculatorWindow = ({ stateData, setStateData }) => {
         <IntervalPattern stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "ltbc" && (
-        <LTByCents
-          stateData={stateData}
-          setStateData={setStateData}
-          handleSetPlayerClick={handleSetPlayerClick}
-        />
+        <LTByCents stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "ltbr" && (
         <LTByRatio stateData={stateData} setStateData={setStateData} />

@@ -1,11 +1,6 @@
 import { UTReadout } from "./UTReadout";
 
-export const Utones = ({
-  stateData,
-  setStateData,
-  selectedComparison,
-  handleSetPlayerClick,
-}) => {
+export const Utones = ({ stateData, setStateData }) => {
   const handleChange = (event) => {
     let fieldReader = event.target.name;
     let newValue = event.target.value;
@@ -126,9 +121,9 @@ export const Utones = ({
         progression={parseInt(stateData[8].progression)}
         showEquivalent={stateData[8].showEquivalent}
         sclData={sclData}
-        handleSetPlayerClick={handleSetPlayerClick}
         handleShowEquivalent={handleShowEquivalent}
         stateData={stateData}
+        setStateData={setStateData}
       />
     </div>
   );

@@ -10,10 +10,9 @@ export const UTReadout = ({
   progression,
   sclData,
   showEquivalent,
-  handleSetPlayerClick,
   handleShowEquivalent,
-  selectedComparison,
   stateData,
+  setStateData,
 }) => {
   const isValidState = () => {
     return numerator > 0 && start > 0 && stop > start && progression > 0;
@@ -45,7 +44,7 @@ export const UTReadout = ({
         scale={scale}
         sclData={sclData}
         stateData={stateData}
-        handleSetPlayerClick={handleSetPlayerClick}
+        setStateData={setStateData}
       />
       <p></p>
     </div>

@@ -1,10 +1,12 @@
+import { handleSetPlayerClick } from "../../../eventHandlers";
 import generateUTScl from "./util/generateUTScl";
 
 const UTModeReadoutTable = ({
   index,
   otObject,
   sclData,
-  handleSetPlayerClick,
+  stateData,
+  setStateData,
 }) => {
   const setPlayerObject = {
     tool: "ut",
@@ -17,7 +19,11 @@ const UTModeReadoutTable = ({
       <h2>
         Mode {index + 1}
         <br />
-        <button onClick={() => handleSetPlayerClick(setPlayerObject)}>
+        <button
+          onClick={() =>
+            handleSetPlayerClick(stateData, setStateData, setPlayerObject)
+          }
+        >
           Use In Player
         </button>
         <button

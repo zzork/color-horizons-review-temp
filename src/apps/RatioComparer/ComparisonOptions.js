@@ -1,36 +1,9 @@
-import { handleComparisonSelect } from "../../eventHandlers";
+import {
+  handleApproximationEntry,
+  handleComparisonSelect,
+} from "../../eventHandlers";
 
 export const ComparisonOptions = ({ stateData, setStateData }) => {
-  const handleApproximationEntry = (event) => {
-    if (event.target.name === "closeApproximation") {
-      let newValue = Number(event.target.value);
-      let newState = stateData.map((stateTableRow) => {
-        if (stateTableRow.id === "k") {
-          return {
-            ...stateTableRow,
-            closeApproximation: newValue,
-          };
-        }
-        return stateTableRow;
-      });
-      setStateData(newState);
-    }
-
-    if (event.target.name === "approximationBoundary") {
-      let newValue = Number(event.target.value);
-      let newState = stateData.map((stateTableRow) => {
-        if (stateTableRow.id === "k") {
-          return {
-            ...stateTableRow,
-            approximationBoundary: newValue,
-          };
-        }
-        return stateTableRow;
-      });
-      setStateData(newState);
-    }
-  };
-
   return (
     <div>
       <h2>Comparison Window Options</h2>
@@ -41,7 +14,9 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
         min="1"
         max={stateData[10].approximationBoundary - 1}
         value={stateData[10].closeApproximation}
-        onChange={handleApproximationEntry}
+        onChange={(event) =>
+          handleApproximationEntry(event, stateData, setStateData)
+        }
       ></input>{" "}
       Cents
       <br />
@@ -52,7 +27,9 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
         min={stateData[10].closeApproximation}
         max="1200"
         value={stateData[10].approximationBoundary}
-        onChange={handleApproximationEntry}
+        onChange={(event) =>
+          handleApproximationEntry(event, stateData, setStateData)
+        }
       ></input>{" "}
       Cents
       <br />

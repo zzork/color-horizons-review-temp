@@ -53,6 +53,8 @@ export default App;
 
 // create permalink for sharing scale via url
 
+// IP being able to do double digit entries via () e.g. 4(12)4(12)
+
 // - Extracting handler events where possible
 
 // - Optimal focus...

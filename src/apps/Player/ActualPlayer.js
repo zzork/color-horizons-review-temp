@@ -1,12 +1,6 @@
 import { useEffect, useState } from "react";
 import ChordsPlayTable from "./components/ChordsPlayTable";
-import {
-  setMasterVolume,
-  play,
-  stop,
-  setMasterVolumeStep1,
-  stopAllSound,
-} from "./services/notePlayerService";
+import { play, stop, setMasterVolumeStep1 } from "./services/notePlayerService";
 import getCentsScaleRepeating from "./util/getCentsScaleRepeating";
 import getHzScale from "./util/getHzScale";
 import getKeyboardMapping from "./util/getKeyboardMapping";
@@ -25,6 +19,7 @@ import Tremolo from "./components/settings/Tremolo";
 import Attack from "./components/settings/Attack";
 import PitchAdjustments from "./components/settings/PitchAdjustments";
 import Release from "./components/settings/Release";
+import getAbove44kHz from "./util/getAbove44kHz";
 
 const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
   //   const incomingScale = [
@@ -47,6 +42,7 @@ const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
   const chordsOrSingles = playerState.chordsOrSingles;
   const rootButtonPositions = getRootButtonPositions(incomingScale);
   const hzScale = getHzScale(incomingScale, soundReferencePitch);
+  const above44kHz = getAbove44kHz(hzScale);
   const keyboardMapping = getKeyboardMapping(hzScale, note2, note3);
   const centsScaleRepeating = getCentsScaleRepeating(incomingScale);
   const possibleKeys = "zxcvbnm,./asdfghjkl;'qwertyuiop[]1234567890-=".split(
@@ -261,6 +257,13 @@ const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
         playerState={playerState}
       />
       <br />
+      {above44kHz && (
+        <div>
+          Selection Contains Values Above the Range of Human Hearing
+          <br />
+          <br />
+        </div>
+      )}
       <button id="engage">Engage</button>
       <br />
       <br />

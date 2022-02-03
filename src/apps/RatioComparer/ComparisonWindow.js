@@ -1,8 +1,12 @@
 import { ratioTable } from "../../ratioTable";
 import getComparisonEntryValues from "./util/getComparisonEntryValues";
+import getHighlightBoundaries from "./util/getHighlightBoundaries";
 
 export const ComparisonWindow = ({ scale, stateData }) => {
   const selectedComparison = stateData[10].comparison;
+
+  const highlightBoundaries = getHighlightBoundaries(stateData);
+
   let comparisonTable = [];
 
   if (selectedComparison === "off") {
@@ -41,22 +45,6 @@ export const ComparisonWindow = ({ scale, stateData }) => {
   if (selectedComparison === "17") {
     comparisonTable = ratioTable.filter((entry) => entry.primeLimit <= 17);
   }
-
-  const highlightBoundaries = [
-    (stateData[10].approximationBoundary - stateData[10].closeApproximation) /
-      3 +
-      stateData[10].closeApproximation,
-    ((stateData[10].approximationBoundary - stateData[10].closeApproximation) /
-      3) *
-      2 +
-      stateData[10].closeApproximation,
-  ];
-
-  console.log(
-    stateData[10].closeApproximation,
-    stateData[10].approximationBoundary
-  );
-  console.log(highlightBoundaries);
 
   let rows = [];
   for (let i = 0; i < comparisonTable.length; i++) {

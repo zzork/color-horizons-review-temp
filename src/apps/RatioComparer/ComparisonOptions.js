@@ -1,7 +1,7 @@
 export const ComparisonOptions = ({ stateData, setStateData }) => {
-  const handleApproximation = (event) => {
+  const handleApproximationEntry = (event) => {
     if (event.target.name === "closeApproximation") {
-      let newValue = event.target.value;
+      let newValue = Number(event.target.value);
       let newState = stateData.map((stateTableRow) => {
         if (stateTableRow.id === "k") {
           return {
@@ -14,13 +14,13 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
       setStateData(newState);
     }
 
-    if (event.target.name === "moderateApproximation") {
-      let newValue = event.target.value;
+    if (event.target.name === "approximationBoundary") {
+      let newValue = Number(event.target.value);
       let newState = stateData.map((stateTableRow) => {
         if (stateTableRow.id === "k") {
           return {
             ...stateTableRow,
-            moderateApproximation: newValue,
+            approximationBoundary: newValue,
           };
         }
         return stateTableRow;
@@ -50,20 +50,20 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
         type="number"
         name="closeApproximation"
         min="1"
-        max={stateData[10].moderateApproximation - 1}
+        max={stateData[10].approximationBoundary - 1}
         value={stateData[10].closeApproximation}
-        onChange={handleApproximation}
+        onChange={handleApproximationEntry}
       ></input>{" "}
       Cents
       <br />
       Approximation Boundary:{" "}
       <input
         type="number"
-        name="moderateApproximation"
+        name="approximationBoundary"
         min={stateData[10].closeApproximation}
         max="1200"
         value={stateData[10].approximationBoundary}
-        onChange={handleApproximation}
+        onChange={handleApproximationEntry}
       ></input>{" "}
       Cents
       <br />

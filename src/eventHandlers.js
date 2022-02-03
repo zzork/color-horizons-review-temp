@@ -1,3 +1,7 @@
+// app.js
+
+import focusPlayer from "./apps/Player/util/focusPlayer";
+
 export const handleShowPlayerClick = (stateData, setStateData) => {
   let newState = stateData.map((stateTableRow) => {
     let showPlayer = !stateData[9].showPlayer;
@@ -12,19 +16,7 @@ export const handleShowPlayerClick = (stateData, setStateData) => {
   setStateData(newState);
 };
 
-export const handleSetPlayerClick = (stateData, setStateData, playerData) => {
-  let newState = stateData.map((stateTableRow) => {
-    if (stateTableRow.id === "j") {
-      return {
-        ...stateTableRow,
-        playerData: playerData,
-      };
-    }
-    return stateTableRow;
-  });
-  setStateData(newState);
-  document.getElementById("engage").focus({ preventScroll: true });
-};
+// selector component
 
 export const handleScaleGenerationMethodClick = (
   viewId,
@@ -41,4 +33,20 @@ export const handleScaleGenerationMethodClick = (
     return stateTableRow;
   });
   setStateData(newState);
+};
+
+// all scale generation methods
+
+export const handleSetPlayerClick = (stateData, setStateData, playerData) => {
+  let newState = stateData.map((stateTableRow) => {
+    if (stateTableRow.id === "j") {
+      return {
+        ...stateTableRow,
+        playerData: playerData,
+      };
+    }
+    return stateTableRow;
+  });
+  setStateData(newState);
+  focusPlayer();
 };

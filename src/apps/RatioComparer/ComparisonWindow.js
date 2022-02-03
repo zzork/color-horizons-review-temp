@@ -52,6 +52,12 @@ export const ComparisonWindow = ({ scale, stateData }) => {
       stateData[10].closeApproximation,
   ];
 
+  console.log(
+    stateData[10].closeApproximation,
+    stateData[10].approximationBoundary
+  );
+  console.log(highlightBoundaries);
+
   let rows = [];
   for (let i = 0; i < comparisonTable.length; i++) {
     let rowComparer = getComparisonEntryValues(scale, comparisonTable[i].cents);

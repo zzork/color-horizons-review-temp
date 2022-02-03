@@ -25,3 +25,20 @@ export const handleSetPlayerClick = (stateData, setStateData, playerData) => {
   setStateData(newState);
   document.getElementById("engage").focus({ preventScroll: true });
 };
+
+export const handleScaleGenerationMethodClick = (
+  viewId,
+  stateData,
+  setStateData
+) => {
+  let newState = stateData.map((stateTableRow) => {
+    if (stateTableRow.id === "l") {
+      return {
+        ...stateTableRow,
+        tool: viewId,
+      };
+    }
+    return stateTableRow;
+  });
+  setStateData(newState);
+};

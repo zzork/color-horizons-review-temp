@@ -1,37 +1,75 @@
+import { handleScaleGenerationMethodClick } from "../eventHandlers";
+
 export const Selector = ({ stateData, setStateData }) => {
-  const handleViewSelect = (viewId) => {
-    let newState = stateData.map((stateTableRow) => {
-      if (stateTableRow.id === "l") {
-        return {
-          ...stateTableRow,
-          tool: viewId,
-        };
-      }
-      return stateTableRow;
-    });
-    setStateData(newState);
-  };
   return (
     <div>
       <h2>Scale Generation Method</h2>
-      <button onClick={() => handleViewSelect("edo")}>
+      <button
+        onClick={() =>
+          handleScaleGenerationMethodClick("edo", stateData, setStateData)
+        }
+      >
         Equal Division of the Octave
       </button>
-      <button onClick={() => handleViewSelect("edomos")}>EDO MOS</button>
-      <button onClick={() => handleViewSelect("ip")}>Interval Pattern</button>
+      <button
+        onClick={() =>
+          handleScaleGenerationMethodClick("edomos", stateData, setStateData)
+        }
+      >
+        EDO MOS
+      </button>
+      <button
+        onClick={() =>
+          handleScaleGenerationMethodClick("ip", stateData, setStateData)
+        }
+      >
+        Interval Pattern
+      </button>
       <br />
-      <button onClick={() => handleViewSelect("ltbr")}>
+      <button
+        onClick={() =>
+          handleScaleGenerationMethodClick("ltbr", stateData, setStateData)
+        }
+      >
         Linear Temperament by Ratio
       </button>
-      <button onClick={() => handleViewSelect("ltbc")}>
+      <button
+        onClick={() =>
+          handleScaleGenerationMethodClick("ltbc", stateData, setStateData)
+        }
+      >
         Linear Temperament by Cents
       </button>
       <br />
-      <button onClick={() => handleViewSelect("axby")}>ax + by = p</button>
-      <button onClick={() => handleViewSelect("td")}>Tonality Diamond</button>
+      <button
+        onClick={() =>
+          handleScaleGenerationMethodClick("axby", stateData, setStateData)
+        }
+      >
+        ax + by = p
+      </button>
+      <button
+        onClick={() =>
+          handleScaleGenerationMethodClick("td", stateData, setStateData)
+        }
+      >
+        Tonality Diamond
+      </button>
       <br />
-      <button onClick={() => handleViewSelect("ot")}>Otones</button>
-      <button onClick={() => handleViewSelect("ut")}>Utones</button>
+      <button
+        onClick={() =>
+          handleScaleGenerationMethodClick("ot", stateData, setStateData)
+        }
+      >
+        Otones
+      </button>
+      <button
+        onClick={() =>
+          handleScaleGenerationMethodClick("ut", stateData, setStateData)
+        }
+      >
+        Utones
+      </button>
       <br />
     </div>
   );

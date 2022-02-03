@@ -63,8 +63,6 @@ export default App;
 
 // - Data visualization per mode or all of scale
 
-// "selection contains values above the range of human hearing"
-
 // comparison window... what should the ratio group options be??
 
 /////////////

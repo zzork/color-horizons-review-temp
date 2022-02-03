@@ -35,6 +35,25 @@ export const handleScaleGenerationMethodClick = (
   setStateData(newState);
 };
 
+// comparison options component
+
+export const handleComparisonSelect = (
+  comparisonId,
+  stateData,
+  setStateData
+) => {
+  let newState = stateData.map((stateTableRow) => {
+    if (stateTableRow.id === "k") {
+      return {
+        ...stateTableRow,
+        comparison: comparisonId,
+      };
+    }
+    return stateTableRow;
+  });
+  setStateData(newState);
+};
+
 // all scale generation methods
 
 export const handleSetPlayerClick = (stateData, setStateData, playerData) => {

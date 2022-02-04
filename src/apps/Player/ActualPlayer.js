@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import ChordsPlayTable from "./components/ChordsPlayTable";
 import { play, stop, setMasterVolumeStep1 } from "./services/notePlayerService";
 import getCentsScaleRepeating from "./util/getCentsScaleRepeating";
@@ -20,6 +20,7 @@ import Attack from "./components/settings/Attack";
 import PitchAdjustments from "./components/settings/PitchAdjustments";
 import Release from "./components/settings/Release";
 import getAbove44kHz from "./util/getAbove44kHz";
+import useOnClickOutside from "./hooks/useOnClickOutside";
 
 const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
   //   const incomingScale = [
@@ -54,45 +55,65 @@ const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
 
   const [pressedKeys, setPressedKeys] = useState([]);
   const [playNotes] = useState({});
+  const [active, setActive] = useState(false);
 
   // key down and up
-
-  const handleKeyDown = (event) => {
-    const pressedKey = event.key.toLowerCase();
-
-    if (possibleKeys.includes(pressedKey)) {
-      if (!playNotes.hasOwnProperty(chordsOrSingles)) {
-        playNotes[chordsOrSingles] = {};
-      }
-      if (playNotes[chordsOrSingles][pressedKey]) return;
-      const engagedNoteDetails = play(
-        keyboardMapping[chordsOrSingles][pressedKey],
-        playerState
-      );
-      playNotes[chordsOrSingles][pressedKey] = engagedNoteDetails;
-
-      if (!pressedKeys.includes(pressedKey)) {
-        let noteAdder = [...pressedKeys];
-        noteAdder.push(pressedKey);
-        setPressedKeys(noteAdder);
-      }
+  const handleOutsideClick = useCallback(() => {
+    if (active) {
+      setActive(false);
     }
-  };
+    console.log("click");
+  }, [active]);
 
-  const handleKeyUp = (event) => {
-    const releasedKey = event.key.toLowerCase();
+  useOnClickOutside(handleOutsideClick);
 
-    if (possibleKeys.includes(releasedKey)) {
-      const engagedNoteDetails = playNotes[chordsOrSingles][releasedKey];
-      stop(engagedNoteDetails, playerState);
-      playNotes[chordsOrSingles][releasedKey] = null;
+  useEffect(() => {
+    if (!active) return;
+    const handleKeyDown = (event) => {
+      const pressedKey = event.key.toLowerCase();
 
-      let noteRemover = [...pressedKeys];
-      let index = noteRemover.indexOf(releasedKey);
-      noteRemover.splice(index, 1);
-      setPressedKeys(noteRemover);
-    }
-  };
+      if (possibleKeys.includes(pressedKey)) {
+        if (!playNotes.hasOwnProperty(chordsOrSingles)) {
+          playNotes[chordsOrSingles] = {};
+        }
+        if (playNotes[chordsOrSingles][pressedKey]) return;
+        const engagedNoteDetails = play(
+          keyboardMapping[chordsOrSingles][pressedKey],
+          playerState
+        );
+        playNotes[chordsOrSingles][pressedKey] = engagedNoteDetails;
+
+        if (!pressedKeys.includes(pressedKey)) {
+          let noteAdder = [...pressedKeys];
+          noteAdder.push(pressedKey);
+          setPressedKeys(noteAdder);
+        }
+      }
+    };
+    const handleKeyUp = (event) => {
+      const releasedKey = event.key.toLowerCase();
+
+      if (possibleKeys.includes(releasedKey)) {
+        const engagedNoteDetails = playNotes[chordsOrSingles][releasedKey];
+        stop(engagedNoteDetails, playerState);
+        playNotes[chordsOrSingles][releasedKey] = null;
+
+        let noteRemover = [...pressedKeys];
+        let index = noteRemover.indexOf(releasedKey);
+        noteRemover.splice(index, 1);
+        setPressedKeys(noteRemover);
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("keyup", handleKeyUp);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("keyup", handleKeyUp);
+    };
+  }, [active, pressedKeys]);
+
+  // had to put pressedKeys in there to get the keys to render on press,
+  // is that wrong?
 
   const handleChordsSinglesClick = (event) => {
     let newState = { ...playerState, chordsOrSingles: event.target.name };
@@ -209,16 +230,6 @@ const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
     }
   };
 
-  // this is almost cool... how do I make it ONLY the background?
-  const handleDivClick = (event) => {
-    // console.log(event.target);
-    // if (event.target !== event.currentTarget) console.log("child clicked");
-    // else console.log("parent clicked");
-    // if (event.currentTarget === null) {
-    //   document.getElementById("engage").focus({ preventScroll: true });
-    // }
-  };
-
   const tableBorder = {
     // border: "1px solid black",
     borderCollapse: "collapse",
@@ -235,12 +246,7 @@ const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
   };
 
   return (
-    <div
-      id="player"
-      onKeyDown={handleKeyDown}
-      onKeyUp={handleKeyUp}
-      onClick={handleDivClick}
-    >
+    <div id="player">
       <br />
       <br />
       <Oscilloscope referencePitch={generalReferencePitch} />
@@ -264,7 +270,9 @@ const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
           <br />
         </div>
       )}
-      <button id="engage">Engage</button>
+      <button id="engage" onClick={() => setActive(!active)}>
+        {active ? "Disengage" : "Engage"}
+      </button>
       <br />
       <br />
       <MasterVolume playerState={playerState} handleChange={handleChange} />

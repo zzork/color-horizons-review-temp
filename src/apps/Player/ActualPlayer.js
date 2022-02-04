@@ -21,8 +21,15 @@ import PitchAdjustments from "./components/settings/PitchAdjustments";
 import Release from "./components/settings/Release";
 import getAbove22kHz from "./util/getAbove22kHz";
 import useOnClickOutside from "./hooks/useOnClickOutside";
+import { disableQwerty, reverseQwerty } from "../../eventHandlers";
 
-const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
+const ActualPlayer = ({
+  incomingScale,
+  playerState,
+  setPlayerState,
+  stateData,
+  setStateData,
+}) => {
   //   const incomingScale = [
   //     0,
   //     138.57266,
@@ -35,6 +42,7 @@ const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
   //     2 / 1,
   //   ];
 
+  const playerActive = stateData[9].active;
   const generalReferencePitch = playerState.referencePitch;
   const soundReferencePitch = getReferencePitch(playerState);
   const octaveAdjust = playerState.octaveAdjust;
@@ -55,13 +63,12 @@ const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
 
   const [pressedKeys, setPressedKeys] = useState([]);
   const [playNotes] = useState({});
-  const [playerActive, setPlayerActive] = useState(false);
 
   // key down and up
   const handleInputClick = useCallback(
     (event) => {
       if (playerActive && event.target.type === "number") {
-        setPlayerActive(false);
+        disableQwerty(stateData, setStateData);
       }
     },
     [playerActive]
@@ -272,8 +279,8 @@ const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
           <br />
         </div>
       )}
-      <button id="engage" onClick={() => setPlayerActive(!playerActive)}>
-        {playerActive ? "Disengage QWERTY Playback" : "Engage QWERTY Playback"}
+      <button onClick={() => reverseQwerty(stateData, setStateData)}>
+        {playerActive ? "Disengage QWERTY Playback" : "Engage QWERTzY Playback"}
       </button>
       <br />
       <br />

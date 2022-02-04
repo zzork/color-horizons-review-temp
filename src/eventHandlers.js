@@ -86,6 +86,48 @@ export const handleApproximationEntry = (event, stateData, setStateData) => {
   }
 };
 
+// passed to player and all scale generation methods via handleSetPlayerClick below
+
+export const enableQwerty = (stateData, setStateData) => {
+  let newState = stateData.map((stateTableRow) => {
+    if (stateTableRow.id === "j") {
+      return {
+        ...stateTableRow,
+        active: true,
+      };
+    }
+    return stateTableRow;
+  });
+  setStateData(newState);
+};
+
+export const disableQwerty = (stateData, setStateData) => {
+  let newState = stateData.map((stateTableRow) => {
+    if (stateTableRow.id === "j") {
+      return {
+        ...stateTableRow,
+        active: false,
+      };
+    }
+    return stateTableRow;
+  });
+  setStateData(newState);
+};
+
+export const reverseQwerty = (stateData, setStateData) => {
+  let active = stateData[9].active;
+  let newState = stateData.map((stateTableRow) => {
+    if (stateTableRow.id === "j") {
+      return {
+        ...stateTableRow,
+        active: !active,
+      };
+    }
+    return stateTableRow;
+  });
+  setStateData(newState);
+};
+
 // all scale generation methods
 
 export const handleSetPlayerClick = (stateData, setStateData, playerData) => {
@@ -99,5 +141,5 @@ export const handleSetPlayerClick = (stateData, setStateData, playerData) => {
     return stateTableRow;
   });
   setStateData(newState);
-  focusPlayer();
+  enableQwerty(stateData, setStateData);
 };

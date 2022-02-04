@@ -29,6 +29,8 @@ const Player = ({ stateData, setStateData }) => {
           incomingScale={playerData.scale}
           playerState={playerState}
           setPlayerState={setPlayerState}
+          stateData={stateData}
+          setStateData={setStateData}
         />
         <br />
       </div>

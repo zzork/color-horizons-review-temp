@@ -19,7 +19,7 @@ function App() {
       <h1>COLOR HORIZONS</h1>
       <h1>Scale Player</h1>
       <button onClick={() => handleShowPlayerClick(stateData, setStateData)}>
-        Show/Hide Player
+        {stateData[9].showPlayer ? "Hide Player" : "Show Player"}
       </button>
       <Player stateData={stateData} setStateData={setStateData} />
       <br />
@@ -51,19 +51,26 @@ export default App;
 // TO ADD
 // ------
 
-// create permalink for sharing scale via url
+// LIFT STATE of PLAYER ACTIVE so it can be PASSED DOWN to USE IN PLAYER buttons (activeplayer)
+// and make it so the behaviors of each click area make sense for where it should disable it
+// what was focus before
 
-// IP being able to do double digit entries via () e.g. 4(12)4(12)
+// WTF - now changes to sound playback properties need one more keydown before they update
+// how did I fix that before?
 
 // - Extracting handler events where possible
 
-// - Optimal focus...
+// create permalink for sharing scale via url!
+
+// IP being able to do double digit entries via () e.g. 4(12)4(12)
 
 // - Custom Harmonics Based Waveform?
 
 // - Data visualization per mode or all of scale
 
 // comparison window... what should the ratio group options be??
+
+// reset sounds button
 
 /////////////
 

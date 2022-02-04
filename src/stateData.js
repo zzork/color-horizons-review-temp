@@ -79,6 +79,7 @@ export const stateTable = [
     index: 9,
     id: "j",
     name: "player",
+    active: false,
     showPlayer: true,
     playerData: {
       tool: "ltbr",

@@ -19,7 +19,7 @@ import Tremolo from "./components/settings/Tremolo";
 import Attack from "./components/settings/Attack";
 import PitchAdjustments from "./components/settings/PitchAdjustments";
 import Release from "./components/settings/Release";
-import getAbove44kHz from "./util/getAbove44kHz";
+import getAbove22kHz from "./util/getAbove22kHz";
 import useOnClickOutside from "./hooks/useOnClickOutside";
 
 const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
@@ -43,7 +43,7 @@ const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
   const chordsOrSingles = playerState.chordsOrSingles;
   const rootButtonPositions = getRootButtonPositions(incomingScale);
   const hzScale = getHzScale(incomingScale, soundReferencePitch);
-  const above44kHz = getAbove44kHz(hzScale);
+  const above22kHz = getAbove22kHz(hzScale);
   const keyboardMapping = getKeyboardMapping(hzScale, note2, note3);
   const centsScaleRepeating = getCentsScaleRepeating(incomingScale);
   const possibleKeys = "zxcvbnm,./asdfghjkl;'qwertyuiop[]1234567890-=".split(
@@ -55,20 +55,22 @@ const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
 
   const [pressedKeys, setPressedKeys] = useState([]);
   const [playNotes] = useState({});
-  const [active, setActive] = useState(false);
+  const [playerActive, setPlayerActive] = useState(false);
 
   // key down and up
-  const handleOutsideClick = useCallback(() => {
-    if (active) {
-      setActive(false);
-    }
-    console.log("click");
-  }, [active]);
+  const handleInputClick = useCallback(
+    (event) => {
+      if (playerActive && event.target.type === "number") {
+        setPlayerActive(false);
+      }
+    },
+    [playerActive]
+  );
 
-  useOnClickOutside(handleOutsideClick);
+  useOnClickOutside(handleInputClick);
 
   useEffect(() => {
-    if (!active) return;
+    if (!playerActive) return;
     const handleKeyDown = (event) => {
       const pressedKey = event.key.toLowerCase();
 
@@ -110,7 +112,7 @@ const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
     };
-  }, [active, pressedKeys]);
+  }, [playerActive, pressedKeys]);
 
   // had to put pressedKeys in there to get the keys to render on press,
   // is that wrong?
@@ -263,15 +265,15 @@ const ActualPlayer = ({ incomingScale, playerState, setPlayerState }) => {
         playerState={playerState}
       />
       <br />
-      {above44kHz && (
+      {above22kHz && (
         <div>
           Selection Contains Values Above the Range of Human Hearing
           <br />
           <br />
         </div>
       )}
-      <button id="engage" onClick={() => setActive(!active)}>
-        {active ? "Disengage" : "Engage"}
+      <button id="engage" onClick={() => setPlayerActive(!playerActive)}>
+        {playerActive ? "Disengage QWERTY Playback" : "Engage QWERTY Playback"}
       </button>
       <br />
       <br />

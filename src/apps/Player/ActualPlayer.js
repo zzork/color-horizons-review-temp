@@ -119,10 +119,7 @@ const ActualPlayer = ({
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
     };
-  }, [pressedKeys, playerState]);
-
-  // had to put pressedKeys in there to get the keys to render on press,
-  // is that wrong?
+  }, [playerActive, pressedKeys, playerState]);
 
   const handleChordsSinglesClick = (event) => {
     let newState = { ...playerState, chordsOrSingles: event.target.name };

@@ -136,6 +136,7 @@ export const handleSetPlayerClick = (stateData, setStateData, playerData) => {
       return {
         ...stateTableRow,
         playerData: playerData,
+        active: true,
       };
     }
     return stateTableRow;

@@ -51,26 +51,23 @@ export default App;
 // TO ADD
 // ------
 
-// LIFT STATE of PLAYER ACTIVE so it can be PASSED DOWN to USE IN PLAYER buttons (activeplayer)
-// and make it so the behaviors of each click area make sense for where it should disable it
-// what was focus before
-
-// WTF - now changes to sound playback properties need one more keydown before they update
-// how did I fix that before?
-
 // - Extracting handler events where possible
 
-// create permalink for sharing scale via url!
+// - create permalink for sharing scale via url!
 
-// IP being able to do double digit entries via () e.g. 4(12)4(12)
+// - IP being able to do double digit entries via () e.g. 4(12)4(12)
 
 // - Custom Harmonics Based Waveform?
 
 // - Data visualization per mode or all of scale
 
-// comparison window... what should the ratio group options be??
+// - comparison window... what should the ratio group options be??
 
-// reset sounds button
+// - reset sounds button
+
+// - make engaged / disengaged player state clearer to user
+
+// - why does enableQwerty call break the useInPlayer call in eventHandlers?
 
 /////////////
 

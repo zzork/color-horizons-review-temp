@@ -119,7 +119,7 @@ const ActualPlayer = ({
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
     };
-  }, [playerActive, pressedKeys]);
+  }, [pressedKeys, playerState]);
 
   // had to put pressedKeys in there to get the keys to render on press,
   // is that wrong?
@@ -280,7 +280,7 @@ const ActualPlayer = ({
         </div>
       )}
       <button onClick={() => reverseQwerty(stateData, setStateData)}>
-        {playerActive ? "Disengage QWERTY Playback" : "Engage QWERTzY Playback"}
+        {playerActive ? "Disengage QWERTY Playback" : "Engage QWERTY Playback"}
       </button>
       <br />
       <br />

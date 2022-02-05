@@ -3,7 +3,9 @@ import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
 import generateEDOScl from "./util/generateEDOScl";
 import getEdoScale from "./util/getEdoScale";
 
-export const EDOReadout = ({ edo, stateData, setStateData }) => {
+export const EDOReadout = ({ stateData, setStateData }) => {
+  const edo = stateData.edo.value;
+
   const isValidState = () => {
     return edo > 0;
   };

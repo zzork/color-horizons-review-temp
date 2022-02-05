@@ -15,13 +15,13 @@ export const CalculatorWindow = ({ stateData, setStateData }) => {
       {viewId === "axby" && (
         <AxByEqualsP stateData={stateData} setStateData={setStateData} />
       )}
-      {/* {viewId === "edo" && (
+      {viewId === "edo" && (
         <EDO stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "edomos" && (
         <EDOMOS stateData={stateData} setStateData={setStateData} />
       )}
-      {viewId === "ip" && (
+      {/* {viewId === "ip" && (
         <IntervalPattern stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "ltbc" && (

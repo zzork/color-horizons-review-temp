@@ -4,17 +4,16 @@ import getMos from "../LTShared/util/getMos";
 import getEDOMOSLmsList from "./util/getEDOMOSLmsList";
 import getEDOMOSGenerator from "./util/getEDOMOSGenerator";
 import { EDOMOSAllModes } from "./EDOMOSAllModes";
+import {
+  handleEdoMosChange,
+  handleEdoMosMosClick,
+} from "./edoMosEventHandlers";
 
-const EDOMOSReadout = ({
-  edo,
-  step,
-  noteTotal,
-  handleMOSClick,
-  handleChange,
-  handleSetPlayerClick,
-  stateData,
-  setStateData,
-}) => {
+const EDOMOSReadout = ({ stateData, setStateData }) => {
+  const edo = parseInt(stateData.edoMos.edo);
+  const step = parseInt(stateData.edoMos.step);
+  const noteTotal = parseInt(stateData.edoMos.noteTotal);
+
   const isValidState = () => {
     return edo > 1 && step > 0 && step < edo;
   };
@@ -25,7 +24,11 @@ const EDOMOSReadout = ({
   const generator = getEDOMOSGenerator(step, edo);
   const momentsOfSymmetry = getMos(generator);
   const mosButtons = momentsOfSymmetry.map((value) => (
-    <button onClick={() => handleMOSClick(value)}>{value}</button>
+    <button
+      onClick={() => handleEdoMosMosClick(value, stateData, setStateData)}
+    >
+      {value}
+    </button>
   ));
   const scale = getLTScaleFromCents(generator, noteTotal);
   const lmsIn = getEDOMOSLmsList(scale, edo);
@@ -42,7 +45,7 @@ const EDOMOSReadout = ({
       </p>
       Note Amount:{" "}
       <input
-        onChange={handleChange}
+        onChange={(event) => handleEdoMosChange(event, stateData, setStateData)}
         type="number"
         name="edomosNoteTotalField"
         value={noteTotal}
@@ -55,10 +58,10 @@ const EDOMOSReadout = ({
       {noteTotal > 1 && (
         <EDOMOSAllModes
           scale={scale}
-          stateData={stateData}
-          setStateData={setStateData}
           lmsIn={lmsIn}
           sclData={sclData}
+          stateData={stateData}
+          setStateData={setStateData}
         />
       )}
     </div>

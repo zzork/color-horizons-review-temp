@@ -121,10 +121,10 @@ const ActualPlayer = ({
     };
   }, [playerActive, pressedKeys, playerState]);
 
-  const handleDelay1OnOff = () => {
-    let newState = { ...playerState, delay1On: !playerState.delay1On };
-    setPlayerState(newState);
-  };
+  // const handleDelay1OnOff = (playerState, setPlayerState) => {
+  //   let newState = { ...playerState, delay1On: !playerState.delay1On };
+  //   setPlayerState(newState);
+  // };
 
   const handleDelay2OnOff = () => {
     let newState = { ...playerState, delay2On: !playerState.delay2On };
@@ -372,8 +372,8 @@ const ActualPlayer = ({
             <td style={tdBorder} colSpan="3">
               <Delay1
                 playerState={playerState}
+                setPlayerState={setPlayerState}
                 handleChange={handleChange}
-                handleDelay1OnOff={handleDelay1OnOff}
               />
             </td>
             <td style={tdBorder} colSpan="3">

@@ -8,7 +8,6 @@ export const AxByAllModes = ({
   stateData,
   setStateData,
   sclData,
-  handleSetPlayerClick,
 }) => {
   console.log(stateData);
   const allLTObjects = convertLTInputToModesObjects(scale, lmsIn);

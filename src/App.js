@@ -40,7 +40,7 @@ function App() {
           <br />
         </tbody>
       </table>
-      {/* <CalculatorWindow stateData={stateData} setStateData={setStateData} /> */}
+      <CalculatorWindow stateData={stateData} setStateData={setStateData} />
       <br />
     </div>
   );

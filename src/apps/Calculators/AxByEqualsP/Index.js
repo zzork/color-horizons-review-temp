@@ -1,79 +1,29 @@
+import { handleAxByChange } from "./axByEventHandlers";
 import { AxByReadout } from "./AxByReadout";
 
 export const AxByEqualsP = ({ stateData, setStateData }) => {
-  const handleChange = (event) => {
-    let fieldReader = event.target.name;
-    let newValue = event.target.value;
-
-    if (fieldReader === "axBy1StepsEntryField") {
-      let newState = stateData.map((stateTableRow) => {
-        if (stateTableRow.id === "f") {
-          return {
-            ...stateTableRow,
-            firstSteps: newValue,
-          };
-        }
-        return stateTableRow;
-      });
-      setStateData(newState);
-    }
-
-    if (fieldReader === "axBy1CentsEntryField") {
-      let newState = stateData.map((stateTableRow) => {
-        if (stateTableRow.id === "f") {
-          return {
-            ...stateTableRow,
-            firstCents: newValue,
-          };
-        }
-        return stateTableRow;
-      });
-      setStateData(newState);
-    }
-
-    if (fieldReader === "axBy2StepsEntryField") {
-      let newState = stateData.map((stateTableRow) => {
-        if (stateTableRow.id === "f") {
-          return {
-            ...stateTableRow,
-            secondSteps: newValue,
-          };
-        }
-        return stateTableRow;
-      });
-      setStateData(newState);
-    }
-  };
-
   return (
     <div>
       <h2>ax+by=p</h2>
       <p>
         First Interval Steps:{" "}
         <input
-          onChange={handleChange}
+          onChange={(event) => handleAxByChange(event, stateData, setStateData)}
           type="number"
           name="axBy1StepsEntryField"
-          value={stateData[5].firstSteps}
+          value={stateData.axByEqualsP.firstSteps}
         ></input>
       </p>
       <p>
         First Interval Cents:{" "}
         <input
-          onChange={handleChange}
+          onChange={(event) => handleAxByChange(event, stateData, setStateData)}
           type="number"
           name="axBy1CentsEntryField"
-          value={stateData[5].firstCents}
+          value={stateData.axByEqualsP.firstCents}
         ></input>
       </p>
-      <AxByReadout
-        firstSteps={stateData[5].firstSteps}
-        firstCents={stateData[5].firstCents}
-        secondSteps={stateData[5].secondSteps}
-        stateData={stateData}
-        setStateData={setStateData}
-        handleChange={handleChange}
-      />
+      <AxByReadout stateData={stateData} setStateData={setStateData} />
     </div>
   );
 };

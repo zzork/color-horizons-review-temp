@@ -9,13 +9,13 @@ import { TonalityDiamond } from "../apps/Calculators/TonalityDiamond/Index";
 import { Utones } from "../apps/Calculators/Utones/Index";
 
 export const CalculatorWindow = ({ stateData, setStateData }) => {
-  const viewId = stateData[11].tool;
+  const viewId = stateData.selectedTool.tool;
   return (
     <div>
       {viewId === "axby" && (
         <AxByEqualsP stateData={stateData} setStateData={setStateData} />
       )}
-      {viewId === "edo" && (
+      {/* {viewId === "edo" && (
         <EDO stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "edomos" && (
@@ -38,7 +38,7 @@ export const CalculatorWindow = ({ stateData, setStateData }) => {
       )}
       {viewId === "ut" && (
         <Utones stateData={stateData} setStateData={setStateData} />
-      )}
+      )} */}
     </div>
   );
 };

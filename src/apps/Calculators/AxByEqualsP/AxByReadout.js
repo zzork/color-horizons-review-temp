@@ -1,16 +1,14 @@
 import LTUniquesDisplay from "../LTShared/LTUniquesDisplay";
 import { AxByAllModes } from "./AxByAllModes";
+import { handleAxByChange } from "./axByEventHandlers";
 import getAxByScale from "./util/getAxByScale";
 import getSecondCents from "./util/getSecondCents";
 
-export const AxByReadout = ({
-  firstSteps,
-  firstCents,
-  secondSteps,
-  stateData,
-  setStateData,
-  handleChange,
-}) => {
+export const AxByReadout = ({ stateData, setStateData }) => {
+  const firstSteps = stateData.axByEqualsP.firstSteps;
+  const firstCents = stateData.axByEqualsP.firstCents;
+  const secondSteps = stateData.axByEqualsP.secondSteps;
+
   const isValidState = () => {
     return firstSteps > 0 && firstCents > 0 && firstSteps * firstCents < 1200;
   };
@@ -27,7 +25,7 @@ export const AxByReadout = ({
       <p>
         Second Interval Steps:{" "}
         <input
-          onChange={handleChange}
+          onChange={(event) => handleAxByChange(event, stateData, setStateData)}
           type="number"
           name="axBy2StepsEntryField"
           value={secondSteps}

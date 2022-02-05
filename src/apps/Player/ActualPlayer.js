@@ -126,10 +126,10 @@ const ActualPlayer = ({
   //   setPlayerState(newState);
   // };
 
-  const handleDelay2OnOff = () => {
-    let newState = { ...playerState, delay2On: !playerState.delay2On };
-    setPlayerState(newState);
-  };
+  // const handleDelay2OnOff = () => {
+  //   let newState = { ...playerState, delay2On: !playerState.delay2On };
+  //   setPlayerState(newState);
+  // };
 
   const handlePitchVibratoOnOff = () => {
     let newState = {
@@ -379,8 +379,8 @@ const ActualPlayer = ({
             <td style={tdBorder} colSpan="3">
               <Delay2
                 playerState={playerState}
+                setPlayerState={setPlayerState}
                 handleChange={handleChange}
-                handleDelay2OnOff={handleDelay2OnOff}
               />
             </td>
           </tr>

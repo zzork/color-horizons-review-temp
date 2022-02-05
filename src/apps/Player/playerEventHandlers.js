@@ -16,3 +16,8 @@ export const handleDelay1OnOff = (playerState, setPlayerState) => {
   let newState = { ...playerState, delay1On: !playerState.delay1On };
   setPlayerState(newState);
 };
+
+export const handleDelay2OnOff = (playerState, setPlayerState) => {
+  let newState = { ...playerState, delay2On: !playerState.delay2On };
+  setPlayerState(newState);
+};

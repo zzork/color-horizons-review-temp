@@ -1,4 +1,6 @@
-const Delay2 = ({ playerState, handleChange, handleDelay2OnOff }) => {
+import { handleDelay2OnOff } from "../../playerEventHandlers";
+
+const Delay2 = ({ playerState, setPlayerState, handleChange }) => {
   return (
     <div>
       <br />
@@ -53,7 +55,10 @@ const Delay2 = ({ playerState, handleChange, handleDelay2OnOff }) => {
       %
       <br />
       <br />
-      <button name="delay2OnOff" onClick={handleDelay2OnOff}>
+      <button
+        name="delay2OnOff"
+        onClick={() => handleDelay2OnOff(playerState, setPlayerState)}
+      >
         On/Off
       </button>
       <br />

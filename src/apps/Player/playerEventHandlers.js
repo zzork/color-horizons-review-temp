@@ -1,4 +1,4 @@
-import { setMasterVolumeStep1 } from "./services/notePlayerService";
+import { play, setMasterVolumeStep1, stop } from "./services/notePlayerService";
 
 export const handleChordsSinglesClick = (
   event,
@@ -116,5 +116,48 @@ export const handlePlayerChange = (event, playerState, setPlayerState) => {
   if (fieldReader === "distortion") {
     let newState = { ...playerState, distortion: Number(newValue) };
     setPlayerState(newState);
+  }
+};
+
+// mouse events for playing notes
+const playNotes = {};
+
+export const handlePlaytableMouseDown = (key, playerState, keyboardMapping) => {
+  const clickedNote = key;
+  if (!playNotes.hasOwnProperty(playerState.chordsOrSingles)) {
+    playNotes[playerState.chordsOrSingles] = {};
+  }
+  const engagedNoteDetails = play(
+    keyboardMapping[playerState.chordsOrSingles][clickedNote],
+    playerState
+  );
+  playNotes[playerState.chordsOrSingles][clickedNote] = engagedNoteDetails;
+};
+
+export const handlePlaytableMouseUp = (key, playerState) => {
+  const releasedNote = key;
+  if (!playNotes[playerState.chordsOrSingles].hasOwnProperty(releasedNote))
+    return;
+  const engagedNoteDetails =
+    playNotes[playerState.chordsOrSingles][releasedNote];
+  if (engagedNoteDetails !== null) {
+    stop(engagedNoteDetails, playerState);
+    playNotes[playerState.chordsOrSingles][releasedNote] = null;
+  }
+};
+
+export const handlePlaytableMouseLeave = (key, playerState) => {
+  const hoveredNote = key;
+  if (!playNotes.hasOwnProperty(playerState.chordsOrSingles)) {
+    playNotes[playerState.chordsOrSingles] = {};
+  }
+  if (!playNotes[playerState.chordsOrSingles].hasOwnProperty(hoveredNote))
+    return;
+  if (playNotes[playerState.chordsOrSingles][hoveredNote] !== null) {
+    const engagedNoteDetails =
+      playNotes[playerState.chordsOrSingles][hoveredNote];
+
+    stop(engagedNoteDetails, playerState);
+    playNotes[playerState.chordsOrSingles][hoveredNote] = null;
   }
 };

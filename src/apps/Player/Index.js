@@ -6,9 +6,9 @@ import getPlayerReadouts from "./util/getPlayerReadouts";
 
 const Player = ({ stateData, setStateData }) => {
   const [playerState, setPlayerState] = useState(playerStateData);
-  const playerReadouts = getPlayerReadouts(stateData[9].playerData);
+  const playerReadouts = getPlayerReadouts(stateData.player.playerData);
 
-  if (stateData[9].showPlayer === false) {
+  if (stateData.player.showPlayer === false) {
     return <div></div>;
   } else {
     return (
@@ -22,7 +22,7 @@ const Player = ({ stateData, setStateData }) => {
         </h4>
         <p>{playerReadouts.sclButton}</p>
         <ComparisonWindow
-          scale={stateData[9].playerData.scale}
+          scale={stateData.player.playerData.scale}
           stateData={stateData}
         />
         <ActualPlayer

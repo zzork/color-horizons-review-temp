@@ -19,7 +19,7 @@ function App() {
       <h1>COLOR HORIZONS</h1>
       <h1>Scale Player</h1>
       <button onClick={() => handleShowPlayerClick(stateData, setStateData)}>
-        {stateData[9].showPlayer ? "Hide Player" : "Show Player"}
+        {stateData.player.showPlayer ? "Hide Player" : "Show Player"}
       </button>
       <Player stateData={stateData} setStateData={setStateData} />
       <br />

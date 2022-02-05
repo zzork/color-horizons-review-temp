@@ -11,7 +11,8 @@ const getRows = (scale, stateData, comparisonTable, highlightBoundaries) => {
 
     let highlight = "noHighlight";
     if (
-      Math.abs(rowComparer.leastDifference) <= stateData[10].closeApproximation
+      Math.abs(rowComparer.leastDifference) <=
+      stateData.comparisonWindow.closeApproximation
     ) {
       highlight = "level1Highlight";
     } else if (
@@ -24,7 +25,7 @@ const getRows = (scale, stateData, comparisonTable, highlightBoundaries) => {
       highlight = "level3Highlight";
     } else if (
       Math.abs(rowComparer.leastDifference) <=
-      stateData[10].approximationBoundary
+      stateData.comparisonWindow.approximationBoundary
     ) {
       highlight = "level4Highlight";
     }
@@ -32,7 +33,7 @@ const getRows = (scale, stateData, comparisonTable, highlightBoundaries) => {
     let inverseHighlight = "noHighlight";
     if (
       Math.abs(rowComparerInverse.leastDifference) <=
-      stateData[10].closeApproximation
+      stateData.comparisonWindow.closeApproximation
     ) {
       inverseHighlight = "level1Highlight";
     } else if (
@@ -45,7 +46,7 @@ const getRows = (scale, stateData, comparisonTable, highlightBoundaries) => {
       inverseHighlight = "level3Highlight";
     } else if (
       Math.abs(rowComparerInverse.leastDifference) <=
-      stateData[10].approximationBoundary
+      stateData.comparisonWindow.approximationBoundary
     ) {
       inverseHighlight = "level4Highlight";
     }

@@ -1,18 +1,14 @@
-import focusPlayer from "./apps/Player/util/focusPlayer";
-
 // app.js
 
 export const handleShowPlayerClick = (stateData, setStateData) => {
-  let newState = stateData.map((stateTableRow) => {
-    let showPlayer = !stateData[9].showPlayer;
-    if (stateTableRow.id === "j") {
-      return {
-        ...stateTableRow,
-        showPlayer: showPlayer,
-      };
-    }
-    return stateTableRow;
-  });
+  let newShowPlayer = !stateData.player.showPlayer;
+  let newState = {
+    ...stateData,
+    player: {
+      ...stateData.player,
+      showPlayer: newShowPlayer,
+    },
+  };
   setStateData(newState);
 };
 
@@ -23,15 +19,13 @@ export const handleScaleGenerationMethodClick = (
   stateData,
   setStateData
 ) => {
-  let newState = stateData.map((stateTableRow) => {
-    if (stateTableRow.id === "l") {
-      return {
-        ...stateTableRow,
-        tool: viewId,
-      };
-    }
-    return stateTableRow;
-  });
+  let newState = {
+    ...stateData,
+    selectedTool: {
+      ...stateData.selectedTool,
+      tool: viewId,
+    },
+  };
   setStateData(newState);
 };
 
@@ -42,15 +36,13 @@ export const handleComparisonSelect = (
   stateData,
   setStateData
 ) => {
-  let newState = stateData.map((stateTableRow) => {
-    if (stateTableRow.id === "k") {
-      return {
-        ...stateTableRow,
-        comparison: comparisonId,
-      };
-    }
-    return stateTableRow;
-  });
+  let newState = {
+    ...stateData,
+    comparisonWindow: {
+      ...stateData.comparisonWindow,
+      comparison: comparisonId,
+    },
+  };
   setStateData(newState);
 };
 
@@ -59,29 +51,25 @@ export const handleComparisonSelect = (
 export const handleApproximationEntry = (event, stateData, setStateData) => {
   if (event.target.name === "closeApproximation") {
     let newValue = Number(event.target.value);
-    let newState = stateData.map((stateTableRow) => {
-      if (stateTableRow.id === "k") {
-        return {
-          ...stateTableRow,
-          closeApproximation: newValue,
-        };
-      }
-      return stateTableRow;
-    });
+    let newState = {
+      ...stateData,
+      comparisonWindow: {
+        ...stateData.comparisonWindow,
+        closeApproximation: newValue,
+      },
+    };
     setStateData(newState);
   }
 
   if (event.target.name === "approximationBoundary") {
     let newValue = Number(event.target.value);
-    let newState = stateData.map((stateTableRow) => {
-      if (stateTableRow.id === "k") {
-        return {
-          ...stateTableRow,
-          approximationBoundary: newValue,
-        };
-      }
-      return stateTableRow;
-    });
+    let newState = {
+      ...stateData,
+      comparisonWindow: {
+        ...stateData.comparisonWindow,
+        approximationBoundary: newValue,
+      },
+    };
     setStateData(newState);
   }
 };
@@ -89,57 +77,49 @@ export const handleApproximationEntry = (event, stateData, setStateData) => {
 // passed to player and all scale generation methods via handleSetPlayerClick below
 
 export const enableQwerty = (stateData, setStateData) => {
-  let newState = stateData.map((stateTableRow) => {
-    if (stateTableRow.id === "j") {
-      return {
-        ...stateTableRow,
-        active: true,
-      };
-    }
-    return stateTableRow;
-  });
+  let newState = {
+    ...stateData,
+    player: {
+      ...stateData.player,
+      active: true,
+    },
+  };
   setStateData(newState);
 };
 
 export const disableQwerty = (stateData, setStateData) => {
-  let newState = stateData.map((stateTableRow) => {
-    if (stateTableRow.id === "j") {
-      return {
-        ...stateTableRow,
-        active: false,
-      };
-    }
-    return stateTableRow;
-  });
+  let newState = {
+    ...stateData,
+    player: {
+      ...stateData.player,
+      active: false,
+    },
+  };
   setStateData(newState);
 };
 
 export const reverseQwerty = (stateData, setStateData) => {
-  let active = stateData[9].active;
-  let newState = stateData.map((stateTableRow) => {
-    if (stateTableRow.id === "j") {
-      return {
-        ...stateTableRow,
-        active: !active,
-      };
-    }
-    return stateTableRow;
-  });
+  let active = stateData.player.active;
+  let newState = {
+    ...stateData,
+    player: {
+      ...stateData.player,
+      active: !active,
+    },
+  };
   setStateData(newState);
 };
 
 // all scale generation methods
 
 export const handleSetPlayerClick = (stateData, setStateData, playerData) => {
-  let newState = stateData.map((stateTableRow) => {
-    if (stateTableRow.id === "j") {
-      return {
-        ...stateTableRow,
-        playerData: playerData,
-        active: true,
-      };
-    }
-    return stateTableRow;
-  });
+  let newState = {
+    ...stateData,
+    player: {
+      ...stateData.player,
+      playerData: playerData,
+      active: true,
+    },
+  };
   setStateData(newState);
 };

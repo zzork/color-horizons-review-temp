@@ -41,8 +41,8 @@ const ActualPlayer = ({
   //     2 / 1,
   //   ];
 
-  const incomingScale = stateData[9].playerData.scale;
-  const playerActive = stateData[9].active;
+  const incomingScale = stateData.player.playerData.scale;
+  const playerActive = stateData.player.active;
   const generalReferencePitch = playerState.referencePitch;
   const soundReferencePitch = getReferencePitch(playerState);
   const octaveAdjust = playerState.octaveAdjust;

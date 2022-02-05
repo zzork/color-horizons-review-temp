@@ -12,8 +12,8 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
         type="number"
         name="closeApproximation"
         min="1"
-        max={stateData[10].approximationBoundary - 1}
-        value={stateData[10].closeApproximation}
+        max={stateData.comparisonWindow.approximationBoundary - 1}
+        value={stateData.comparisonWindow.closeApproximation}
         onChange={(event) =>
           handleApproximationEntry(event, stateData, setStateData)
         }
@@ -24,9 +24,9 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
       <input
         type="number"
         name="approximationBoundary"
-        min={stateData[10].closeApproximation}
+        min={stateData.comparisonWindow.closeApproximation}
         max="1200"
-        value={stateData[10].approximationBoundary}
+        value={stateData.comparisonWindow.approximationBoundary}
         onChange={(event) =>
           handleApproximationEntry(event, stateData, setStateData)
         }

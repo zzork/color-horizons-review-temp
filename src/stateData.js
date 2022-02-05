@@ -1,20 +1,9 @@
-// export const stateTable = {
-//   edo: {value: 12, test: "abc"}
-// }
-// {
-//   ...stateTable,
-//   edo: {
-//     ...stateTable.edo,
-//     value: 13
-//   }
-// }
-//
 // to make iterable since can't do w/ object
 // Object.keys(stateTable).map(key => stateTable[key])
 
-export const stateTable = [
-  { index: 0, id: "a", name: "edo", value: "12" },
-  {
+export const stateTable = {
+  edo: { index: 0, id: "a", name: "edo", value: "12" },
+  linearTemperamentByRatio: {
     index: 1,
     id: "b",
     name: "linearTemperamentByRatio",
@@ -22,8 +11,13 @@ export const stateTable = [
     denominator: "2",
     noteTotal: "7",
   },
-  { index: 2, id: "c", name: "intervalPattern", pattern: "2212221" },
-  {
+  intervalPattern: {
+    index: 2,
+    id: "c",
+    name: "intervalPattern",
+    pattern: "2212221",
+  },
+  linearTemperamentByCents: {
     index: 3,
     id: "d",
     name: "linearTemperamentByCents",
@@ -31,7 +25,7 @@ export const stateTable = [
     noteTotal: "7",
     granularity: "0.01",
   },
-  {
+  edoMos: {
     index: 4,
     id: "e",
     name: "edoMos",
@@ -39,7 +33,7 @@ export const stateTable = [
     step: "7",
     noteTotal: "7",
   },
-  {
+  axByEqualsP: {
     index: 5,
     id: "f",
     name: "axByEqualsP",
@@ -47,7 +41,7 @@ export const stateTable = [
     firstSteps: "5",
     secondSteps: "2",
   },
-  {
+  tonalityDiamond: {
     index: 6,
     id: "g",
     name: "tonalityDiamond",
@@ -55,7 +49,7 @@ export const stateTable = [
     allOtUt: "all",
     showEquivalent: false,
   },
-  {
+  otones: {
     index: 7,
     id: "h",
     name: "otones",
@@ -65,7 +59,7 @@ export const stateTable = [
     progression: "1",
     showEquivalent: false,
   },
-  {
+  utones: {
     index: 8,
     id: "i",
     name: "utones",
@@ -75,7 +69,7 @@ export const stateTable = [
     progression: "1",
     showEquivalent: false,
   },
-  {
+  player: {
     index: 9,
     id: "j",
     name: "player",
@@ -88,7 +82,7 @@ export const stateTable = [
       mode: 1,
     },
   },
-  {
+  comparisonWindow: {
     index: 10,
     id: "k",
     name: "comparisonWindow",
@@ -97,10 +91,10 @@ export const stateTable = [
     approximationBoundary: 22,
     comparison: "harmonics6",
   },
-  {
+  selectedTool: {
     index: 11,
     id: "l",
     name: "selectedTool",
     tool: "ltbr",
   },
-];
+};

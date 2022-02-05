@@ -121,16 +121,6 @@ const ActualPlayer = ({
     };
   }, [playerActive, pressedKeys, playerState]);
 
-  const handleChordsSinglesClick = (event) => {
-    let newState = { ...playerState, chordsOrSingles: event.target.name };
-    setPlayerState(newState);
-  };
-
-  const handleTypeClick = (event) => {
-    let newState = { ...playerState, oscillatorType: event.target.name };
-    setPlayerState(newState);
-  };
-
   const handleDelay1OnOff = () => {
     let newState = { ...playerState, delay1On: !playerState.delay1On };
     setPlayerState(newState);
@@ -310,14 +300,14 @@ const ActualPlayer = ({
             <td style={tdBorder} colSpan="2">
               <OscillatorType
                 playerState={playerState}
-                handleTypeClick={handleTypeClick}
+                setPlayerState={setPlayerState}
               />
             </td>
             <td style={tdBorder} colSpan="2">
               <NotesChordsSelector
-                handleChordsSinglesClick={handleChordsSinglesClick}
                 handleChange={handleChange}
                 playerState={playerState}
+                setPlayerState={setPlayerState}
               />
             </td>
           </tr>

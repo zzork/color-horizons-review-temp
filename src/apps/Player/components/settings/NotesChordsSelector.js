@@ -1,8 +1,6 @@
-const NotesChordsSelector = ({
-  handleChordsSinglesClick,
-  handleChange,
-  playerState,
-}) => {
+import { handleChordsSinglesClick } from "../../playerEventHandlers";
+
+const NotesChordsSelector = ({ handleChange, playerState, setPlayerState }) => {
   return (
     <div>
       Note 2<br />
@@ -27,10 +25,20 @@ const NotesChordsSelector = ({
       ></input>
       <br />
       <br />
-      <button name="singles" onClick={handleChordsSinglesClick}>
+      <button
+        name="singles"
+        onClick={(event) =>
+          handleChordsSinglesClick(event, playerState, setPlayerState)
+        }
+      >
         Single Notes
       </button>
-      <button name="chords" onClick={handleChordsSinglesClick}>
+      <button
+        name="chords"
+        onClick={(event) =>
+          handleChordsSinglesClick(event, playerState, setPlayerState)
+        }
+      >
         Chords
       </button>
     </div>

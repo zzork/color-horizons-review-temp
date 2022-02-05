@@ -8,14 +8,10 @@ const ChordsPlayTable = ({
   rootButtonPositions,
   playerState,
 }) => {
-  const note2 = playerState.note2;
-  const note3 = playerState.note3;
-  const chordsOrSingles = playerState.chordsOrSingles;
-
   const buttonColorationObject = {};
 
   // root buttons different color
-  for (const key of rootButtonPositions[chordsOrSingles]) {
+  for (const key of rootButtonPositions[playerState.chordsOrSingles]) {
     const renamedKey = renameKeysForObjectRefs(key);
     buttonColorationObject[renamedKey] = "rootButton";
   }
@@ -39,38 +35,41 @@ const ChordsPlayTable = ({
 
   const handlePlaytableMouseDown = (event) => {
     const clickedNote = event;
-    if (!playNotes.hasOwnProperty(chordsOrSingles)) {
-      playNotes[chordsOrSingles] = {};
+    if (!playNotes.hasOwnProperty(playerState.chordsOrSingles)) {
+      playNotes[playerState.chordsOrSingles] = {};
     }
-    // if (playNotes[chordsOrSingles][clickedNote]) return;
     const engagedNoteDetails = play(
-      keyboardMapping[chordsOrSingles][clickedNote],
+      keyboardMapping[playerState.chordsOrSingles][clickedNote],
       playerState
     );
-    playNotes[chordsOrSingles][clickedNote] = engagedNoteDetails;
+    playNotes[playerState.chordsOrSingles][clickedNote] = engagedNoteDetails;
   };
 
   const handlePlaytableMouseUp = (event) => {
     const releasedNote = event;
-    if (!playNotes[chordsOrSingles].hasOwnProperty(releasedNote)) return;
-    const engagedNoteDetails = playNotes[chordsOrSingles][releasedNote];
+    if (!playNotes[playerState.chordsOrSingles].hasOwnProperty(releasedNote))
+      return;
+    const engagedNoteDetails =
+      playNotes[playerState.chordsOrSingles][releasedNote];
     if (engagedNoteDetails !== null) {
       stop(engagedNoteDetails, playerState);
-      playNotes[chordsOrSingles][releasedNote] = null;
+      playNotes[playerState.chordsOrSingles][releasedNote] = null;
     }
   };
 
   const handlePlaytableMouseLeave = (event) => {
     const hoveredNote = event;
-    if (!playNotes.hasOwnProperty(chordsOrSingles)) {
-      playNotes[chordsOrSingles] = {};
+    if (!playNotes.hasOwnProperty(playerState.chordsOrSingles)) {
+      playNotes[playerState.chordsOrSingles] = {};
     }
-    if (!playNotes[chordsOrSingles].hasOwnProperty(hoveredNote)) return;
-    if (playNotes[chordsOrSingles][hoveredNote] !== null) {
-      const engagedNoteDetails = playNotes[chordsOrSingles][hoveredNote];
+    if (!playNotes[playerState.chordsOrSingles].hasOwnProperty(hoveredNote))
+      return;
+    if (playNotes[playerState.chordsOrSingles][hoveredNote] !== null) {
+      const engagedNoteDetails =
+        playNotes[playerState.chordsOrSingles][hoveredNote];
 
       stop(engagedNoteDetails, playerState);
-      playNotes[chordsOrSingles][hoveredNote] = null;
+      playNotes[playerState.chordsOrSingles][hoveredNote] = null;
     }
   };
 
@@ -86,7 +85,7 @@ const ChordsPlayTable = ({
   let row2Buttons = null;
   let row1Buttons = null;
 
-  if (chordsOrSingles === "chords") {
+  if (playerState.chordsOrSingles === "chords") {
     row4Buttons = row4Keys.map((key, index) => (
       <button
         key={index}
@@ -123,9 +122,9 @@ const ChordsPlayTable = ({
       >
         <div className="tableKeys">{key}</div>
         <div className="chordNotes">
-          {centsScaleRepeating[index + 10 + note3].toFixed(5)}
+          {centsScaleRepeating[index + 10 + playerState.note3].toFixed(5)}
           <br />
-          {centsScaleRepeating[index + 10 + note2].toFixed(5)}
+          {centsScaleRepeating[index + 10 + playerState.note2].toFixed(5)}
         </div>
         {centsScaleRepeating[index + 10].toFixed(5)}
       </button>
@@ -141,16 +140,16 @@ const ChordsPlayTable = ({
       >
         <div className="tableKeys">{key}</div>
         <div className="chordNotes">
-          {centsScaleRepeating[index + note3].toFixed(5)}
+          {centsScaleRepeating[index + playerState.note3].toFixed(5)}
           <br />
-          {centsScaleRepeating[index + note2].toFixed(5)}
+          {centsScaleRepeating[index + playerState.note2].toFixed(5)}
         </div>
         {centsScaleRepeating[index].toFixed(5)}
       </button>
     ));
   }
 
-  if (chordsOrSingles === "singles") {
+  if (playerState.chordsOrSingles === "singles") {
     row4Buttons = row4Keys.map((key, index) => (
       <button
         key={index}

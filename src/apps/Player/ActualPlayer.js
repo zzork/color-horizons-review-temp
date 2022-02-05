@@ -1,11 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 import ChordsPlayTable from "./components/ChordsPlayTable";
-import { play, stop, setMasterVolumeStep1 } from "./services/notePlayerService";
+import { play, stop } from "./services/notePlayerService";
 import getCentsScaleRepeating from "./util/getCentsScaleRepeating";
 import getHzScale from "./util/getHzScale";
 import getKeyboardMapping from "./util/getKeyboardMapping";
 import getRootButtonPositions from "./util/getRootButtonPositions";
-import { playerStateData } from "./playerStateData";
 import getReferencePitch from "./util/getReferencePitch";
 import PitchVibrato from "./components/settings/PitchVibrato";
 import Delay1 from "./components/settings/Delay1";
@@ -121,111 +120,6 @@ const ActualPlayer = ({
     };
   }, [playerActive, pressedKeys, playerState]);
 
-  // const handleDelay1OnOff = (playerState, setPlayerState) => {
-  //   let newState = { ...playerState, delay1On: !playerState.delay1On };
-  //   setPlayerState(newState);
-  // };
-
-  // const handleDelay2OnOff = () => {
-  //   let newState = { ...playerState, delay2On: !playerState.delay2On };
-  //   setPlayerState(newState);
-  // };
-
-  // const handlePitchVibratoOnOff = () => {
-  //   let newState = {
-  //     ...playerState,
-  //     pitchVibratoOn: !playerState.pitchVibratoOn,
-  //   };
-  //   setPlayerState(newState);
-  // };
-
-  const handleTremoloOnOff = () => {
-    let newState = {
-      ...playerState,
-      tremoloOn: !playerState.tremoloOn,
-    };
-    setPlayerState(newState);
-  };
-
-  const handleChange = (event) => {
-    let fieldReader = event.target.name;
-    let newValue = event.target.value;
-
-    if (fieldReader === "masterVolume") {
-      let newState = { ...playerState, masterVolume: Number(newValue) };
-      setPlayerState(newState);
-      setMasterVolumeStep1(playerState);
-    }
-
-    if (fieldReader === "referencePitch") {
-      let newState = { ...playerState, referencePitch: Number(newValue) };
-      setPlayerState(newState);
-    }
-
-    if (fieldReader === "note2") {
-      let newState = { ...playerState, note2: Number(newValue) };
-      setPlayerState(newState);
-    }
-
-    if (fieldReader === "note3") {
-      let newState = { ...playerState, note3: Number(newValue) };
-      setPlayerState(newState);
-    }
-
-    if (fieldReader === "octaveAdjust") {
-      let newState = { ...playerState, octaveAdjust: Number(newValue) };
-      setPlayerState(newState);
-    }
-
-    if (fieldReader === "attackTime") {
-      let newState = { ...playerState, attackTime: Number(newValue) };
-      setPlayerState(newState);
-    }
-
-    if (fieldReader === "releaseTime") {
-      let newState = { ...playerState, releaseTime: Number(newValue) };
-      setPlayerState(newState);
-    }
-
-    if (fieldReader === "delay1Time") {
-      let newState = { ...playerState, delay1Time: Number(newValue) };
-      setPlayerState(newState);
-    }
-    if (fieldReader === "delay1Feedback") {
-      let newState = { ...playerState, delay1Feedback: Number(newValue) };
-      setPlayerState(newState);
-    }
-
-    if (fieldReader === "delay2Time") {
-      let newState = { ...playerState, delay2Time: Number(newValue) };
-      setPlayerState(newState);
-    }
-    if (fieldReader === "delay2Feedback") {
-      let newState = { ...playerState, delay2Feedback: Number(newValue) };
-      setPlayerState(newState);
-    }
-    if (fieldReader === "pitchVibratoSpeed") {
-      let newState = { ...playerState, pitchVibratoSpeed: Number(newValue) };
-      setPlayerState(newState);
-    }
-    if (fieldReader === "pitchVibratoDepth") {
-      let newState = { ...playerState, pitchVibratoDepth: Number(newValue) };
-      setPlayerState(newState);
-    }
-    if (fieldReader === "tremoloSpeed") {
-      let newState = { ...playerState, tremoloSpeed: Number(newValue) };
-      setPlayerState(newState);
-    }
-    if (fieldReader === "tremoloIntensity") {
-      let newState = { ...playerState, tremoloIntensity: Number(newValue) };
-      setPlayerState(newState);
-    }
-    if (fieldReader === "distortion") {
-      let newState = { ...playerState, distortion: Number(newValue) };
-      setPlayerState(newState);
-    }
-  };
-
   const tableBorder = {
     // border: "1px solid black",
     borderCollapse: "collapse",
@@ -271,7 +165,7 @@ const ActualPlayer = ({
       </button>
       <br />
       <br />
-      <MasterVolume playerState={playerState} handleChange={handleChange} />
+      <MasterVolume playerState={playerState} setPlayerState={setPlayerState} />
       <br />
       <table style={tableBorder}>
         <tbody>
@@ -294,7 +188,8 @@ const ActualPlayer = ({
               <PitchAdjustments
                 generalReferencePitch={generalReferencePitch}
                 octaveAdjust={octaveAdjust}
-                handleChange={handleChange}
+                playerState={playerState}
+                setPlayerState={setPlayerState}
               />
             </td>
             <td style={tdBorder} colSpan="2">
@@ -305,7 +200,6 @@ const ActualPlayer = ({
             </td>
             <td style={tdBorder} colSpan="2">
               <NotesChordsSelector
-                handleChange={handleChange}
                 playerState={playerState}
                 setPlayerState={setPlayerState}
               />
@@ -324,15 +218,21 @@ const ActualPlayer = ({
           </tr>
           <tr>
             <td style={tdBorder} colSpan="2">
-              <Attack playerState={playerState} handleChange={handleChange} />
+              <Attack
+                playerState={playerState}
+                setPlayerState={setPlayerState}
+              />
             </td>
             <td style={tdBorder} colSpan="2">
-              <Release playerState={playerState} handleChange={handleChange} />
+              <Release
+                playerState={playerState}
+                setPlayerState={setPlayerState}
+              />
             </td>
             <td style={tdBorder} colSpan="2">
               <Distortion
                 playerState={playerState}
-                handleChange={handleChange}
+                setPlayerState={setPlayerState}
               />
             </td>
           </tr>
@@ -349,14 +249,12 @@ const ActualPlayer = ({
               <PitchVibrato
                 playerState={playerState}
                 setPlayerState={setPlayerState}
-                handleChange={handleChange}
               />
             </td>
             <td style={tdBorder} colSpan="3">
               <Tremolo
                 playerState={playerState}
-                handleTremoloOnOff={handleTremoloOnOff}
-                handleChange={handleChange}
+                setPlayerState={setPlayerState}
               />
             </td>
           </tr>
@@ -373,14 +271,12 @@ const ActualPlayer = ({
               <Delay1
                 playerState={playerState}
                 setPlayerState={setPlayerState}
-                handleChange={handleChange}
               />
             </td>
             <td style={tdBorder} colSpan="3">
               <Delay2
                 playerState={playerState}
                 setPlayerState={setPlayerState}
-                handleChange={handleChange}
               />
             </td>
           </tr>

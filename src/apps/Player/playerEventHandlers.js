@@ -1,3 +1,5 @@
+import { setMasterVolumeStep1 } from "./services/notePlayerService";
+
 export const handleChordsSinglesClick = (
   event,
   playerState,
@@ -28,4 +30,91 @@ export const handlePitchVibratoOnOff = (playerState, setPlayerState) => {
     pitchVibratoOn: !playerState.pitchVibratoOn,
   };
   setPlayerState(newState);
+};
+
+export const handleTremoloOnOff = (playerState, setPlayerState) => {
+  let newState = {
+    ...playerState,
+    tremoloOn: !playerState.tremoloOn,
+  };
+  setPlayerState(newState);
+};
+
+export const handlePlayerChange = (event, playerState, setPlayerState) => {
+  let fieldReader = event.target.name;
+  let newValue = event.target.value;
+
+  if (fieldReader === "masterVolume") {
+    let newState = { ...playerState, masterVolume: Number(newValue) };
+    setPlayerState(newState);
+    setMasterVolumeStep1(playerState);
+  }
+
+  if (fieldReader === "referencePitch") {
+    let newState = { ...playerState, referencePitch: Number(newValue) };
+    setPlayerState(newState);
+  }
+
+  if (fieldReader === "note2") {
+    let newState = { ...playerState, note2: Number(newValue) };
+    setPlayerState(newState);
+  }
+
+  if (fieldReader === "note3") {
+    let newState = { ...playerState, note3: Number(newValue) };
+    setPlayerState(newState);
+  }
+
+  if (fieldReader === "octaveAdjust") {
+    let newState = { ...playerState, octaveAdjust: Number(newValue) };
+    setPlayerState(newState);
+  }
+
+  if (fieldReader === "attackTime") {
+    let newState = { ...playerState, attackTime: Number(newValue) };
+    setPlayerState(newState);
+  }
+
+  if (fieldReader === "releaseTime") {
+    let newState = { ...playerState, releaseTime: Number(newValue) };
+    setPlayerState(newState);
+  }
+
+  if (fieldReader === "delay1Time") {
+    let newState = { ...playerState, delay1Time: Number(newValue) };
+    setPlayerState(newState);
+  }
+  if (fieldReader === "delay1Feedback") {
+    let newState = { ...playerState, delay1Feedback: Number(newValue) };
+    setPlayerState(newState);
+  }
+
+  if (fieldReader === "delay2Time") {
+    let newState = { ...playerState, delay2Time: Number(newValue) };
+    setPlayerState(newState);
+  }
+  if (fieldReader === "delay2Feedback") {
+    let newState = { ...playerState, delay2Feedback: Number(newValue) };
+    setPlayerState(newState);
+  }
+  if (fieldReader === "pitchVibratoSpeed") {
+    let newState = { ...playerState, pitchVibratoSpeed: Number(newValue) };
+    setPlayerState(newState);
+  }
+  if (fieldReader === "pitchVibratoDepth") {
+    let newState = { ...playerState, pitchVibratoDepth: Number(newValue) };
+    setPlayerState(newState);
+  }
+  if (fieldReader === "tremoloSpeed") {
+    let newState = { ...playerState, tremoloSpeed: Number(newValue) };
+    setPlayerState(newState);
+  }
+  if (fieldReader === "tremoloIntensity") {
+    let newState = { ...playerState, tremoloIntensity: Number(newValue) };
+    setPlayerState(newState);
+  }
+  if (fieldReader === "distortion") {
+    let newState = { ...playerState, distortion: Number(newValue) };
+    setPlayerState(newState);
+  }
 };

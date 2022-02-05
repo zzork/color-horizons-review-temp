@@ -1,4 +1,6 @@
-const Release = ({ playerState, handleChange }) => {
+import { handlePlayerChange } from "../../playerEventHandlers";
+
+const Release = ({ playerState, setPlayerState }) => {
   return (
     <div>
       <br />
@@ -10,7 +12,9 @@ const Release = ({ playerState, handleChange }) => {
         min="10"
         max="20000"
         value={playerState.releaseTime}
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>
       <br />
       <input
@@ -19,7 +23,9 @@ const Release = ({ playerState, handleChange }) => {
         min="10"
         max="20000"
         value={playerState.releaseTime}
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>{" "}
       ms
       <br />

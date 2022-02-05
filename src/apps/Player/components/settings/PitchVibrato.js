@@ -1,6 +1,9 @@
-import { handlePitchVibratoOnOff } from "../../playerEventHandlers";
+import {
+  handlePitchVibratoOnOff,
+  handlePlayerChange,
+} from "../../playerEventHandlers";
 
-const PitchVibrato = ({ playerState, setPlayerState, handleChange }) => {
+const PitchVibrato = ({ playerState, setPlayerState }) => {
   return (
     <div>
       <br />
@@ -10,24 +13,28 @@ const PitchVibrato = ({ playerState, setPlayerState, handleChange }) => {
       <br />
       Speed
       <br />
-      0 - 1,000,000 Hz
+      0 - 10,000 Hz
       <br />
       <input
         type="range"
         min="0"
-        max="1000000"
+        max="10000"
         value={playerState.pitchVibratoSpeed}
         name="pitchVibratoSpeed"
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>
       <br />
       <input
         type="number"
         min="0"
-        max="1000000"
+        max="10000"
         value={playerState.pitchVibratoSpeed}
         name="pitchVibratoSpeed"
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>{" "}
       Hz
       <br />
@@ -42,7 +49,9 @@ const PitchVibrato = ({ playerState, setPlayerState, handleChange }) => {
         max="1200"
         value={playerState.pitchVibratoDepth}
         name="pitchVibratoDepth"
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>
       <br />
       <input
@@ -51,7 +60,9 @@ const PitchVibrato = ({ playerState, setPlayerState, handleChange }) => {
         max="1200"
         value={playerState.pitchVibratoDepth}
         name="pitchVibratoDepth"
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>{" "}
       Cents
       <br />

@@ -1,6 +1,9 @@
-import { handleDelay1OnOff } from "../../playerEventHandlers";
+import {
+  handleDelay1OnOff,
+  handlePlayerChange,
+} from "../../playerEventHandlers";
 
-const Delay1 = ({ playerState, setPlayerState, handleChange }) => {
+const Delay1 = ({ playerState, setPlayerState }) => {
   return (
     <div>
       <br />
@@ -17,7 +20,9 @@ const Delay1 = ({ playerState, setPlayerState, handleChange }) => {
         min="5"
         max="5000"
         value={playerState.delay1Time}
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>
       <br />
       <input
@@ -26,7 +31,9 @@ const Delay1 = ({ playerState, setPlayerState, handleChange }) => {
         min="5"
         max="5000"
         value={playerState.delay1Time}
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>{" "}
       ms
       <br />
@@ -41,7 +48,9 @@ const Delay1 = ({ playerState, setPlayerState, handleChange }) => {
         max="99"
         value={playerState.delay1Feedback}
         name="delay1Feedback"
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>
       <br />
       <input
@@ -50,7 +59,9 @@ const Delay1 = ({ playerState, setPlayerState, handleChange }) => {
         max="99"
         value={playerState.delay1Feedback}
         name="delay1Feedback"
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>{" "}
       %
       <br />

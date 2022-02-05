@@ -1,4 +1,6 @@
-const Distortion = ({ playerState, handleChange }) => {
+import { handlePlayerChange } from "../../playerEventHandlers";
+
+const Distortion = ({ playerState, setPlayerState }) => {
   return (
     <div>
       <br />
@@ -10,7 +12,9 @@ const Distortion = ({ playerState, handleChange }) => {
         min="0"
         max="110"
         value={playerState.distortion}
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>
       <br />
       <input
@@ -19,7 +23,9 @@ const Distortion = ({ playerState, handleChange }) => {
         min="0"
         max="110"
         value={playerState.distortion}
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>{" "}
       %
       <br />

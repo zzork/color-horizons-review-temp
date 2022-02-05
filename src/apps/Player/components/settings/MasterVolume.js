@@ -1,4 +1,6 @@
-const MasterVolume = ({ playerState, handleChange }) => {
+import { handlePlayerChange } from "../../playerEventHandlers";
+
+const MasterVolume = ({ playerState, setPlayerState }) => {
   return (
     <div>
       Master Volume
@@ -9,7 +11,7 @@ const MasterVolume = ({ playerState, handleChange }) => {
         max="100"
         value={playerState.masterVolume}
         name="masterVolume"
-        onChange={handleChange}
+        onChange={() => handlePlayerChange(playerState, setPlayerState)}
       ></input>
       <br />
       {playerState.masterVolume}%

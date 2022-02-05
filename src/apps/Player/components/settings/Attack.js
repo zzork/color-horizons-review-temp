@@ -1,4 +1,6 @@
-const Attack = ({ playerState, handleChange }) => {
+import { handlePlayerChange } from "../../playerEventHandlers";
+
+const Attack = ({ playerState, setPlayerState }) => {
   return (
     <div>
       <br />
@@ -10,7 +12,9 @@ const Attack = ({ playerState, handleChange }) => {
         min="10"
         max="5000"
         value={playerState.attackTime}
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>
       <br />
       <input
@@ -19,7 +23,9 @@ const Attack = ({ playerState, handleChange }) => {
         min="10"
         max="5000"
         value={playerState.attackTime}
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>{" "}
       ms
       <br />

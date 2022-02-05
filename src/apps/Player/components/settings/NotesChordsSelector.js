@@ -1,6 +1,9 @@
-import { handleChordsSinglesClick } from "../../playerEventHandlers";
+import {
+  handleChordsSinglesClick,
+  handlePlayerChange,
+} from "../../playerEventHandlers";
 
-const NotesChordsSelector = ({ handleChange, playerState, setPlayerState }) => {
+const NotesChordsSelector = ({ playerState, setPlayerState }) => {
   return (
     <div>
       Note 2<br />
@@ -10,7 +13,9 @@ const NotesChordsSelector = ({ handleChange, playerState, setPlayerState }) => {
         min="0"
         max="100"
         value={playerState.note2}
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>
       <br />
       <br />
@@ -21,7 +26,9 @@ const NotesChordsSelector = ({ handleChange, playerState, setPlayerState }) => {
         min="0"
         max="100"
         value={playerState.note3}
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>
       <br />
       <br />

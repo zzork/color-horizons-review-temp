@@ -1,7 +1,10 @@
+import { handlePlayerChange } from "../../playerEventHandlers";
+
 const PitchAdjustments = ({
   generalReferencePitch,
   octaveAdjust,
-  handleChange,
+  playerState,
+  setPlayerState,
 }) => {
   return (
     <div>
@@ -14,7 +17,9 @@ const PitchAdjustments = ({
         min="20"
         max="1000"
         value={generalReferencePitch}
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
         name="referencePitch"
       ></input>
       <br />
@@ -23,7 +28,9 @@ const PitchAdjustments = ({
         min="20"
         max="1000"
         value={generalReferencePitch}
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
         name="referencePitch"
       ></input>{" "}
       Hz
@@ -39,7 +46,9 @@ const PitchAdjustments = ({
         min="-3"
         max="3"
         value={octaveAdjust}
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>
       <br />
       <input
@@ -48,7 +57,9 @@ const PitchAdjustments = ({
         min="-3"
         max="3"
         value={octaveAdjust}
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>
       <br />
       <br />

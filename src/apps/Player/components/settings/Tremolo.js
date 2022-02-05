@@ -1,4 +1,9 @@
-const Tremolo = ({ playerState, handleTremoloOnOff, handleChange }) => {
+import {
+  handlePlayerChange,
+  handleTremoloOnOff,
+} from "../../playerEventHandlers";
+
+const Tremolo = ({ playerState, setPlayerState }) => {
   return (
     <div>
       <br />
@@ -15,7 +20,9 @@ const Tremolo = ({ playerState, handleTremoloOnOff, handleChange }) => {
         max="20"
         value={playerState.tremoloSpeed}
         name="tremoloSpeed"
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>
       <br />
       <input
@@ -24,7 +31,9 @@ const Tremolo = ({ playerState, handleTremoloOnOff, handleChange }) => {
         max="20"
         value={playerState.tremoloSpeed}
         name="tremoloSpeed"
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>{" "}
       Hz
       <br />
@@ -39,7 +48,9 @@ const Tremolo = ({ playerState, handleTremoloOnOff, handleChange }) => {
         max="100"
         value={playerState.tremoloIntensity}
         name="tremoloIntensity"
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>
       <br />
       <input
@@ -48,12 +59,17 @@ const Tremolo = ({ playerState, handleTremoloOnOff, handleChange }) => {
         max="100"
         value={playerState.tremoloIntensity}
         name="tremoloIntensity"
-        onChange={handleChange}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>{" "}
       %
       <br />
       <br />
-      <button name="tremoloOnOff" onClick={handleTremoloOnOff}>
+      <button
+        name="tremoloOnOff"
+        onClick={() => handleTremoloOnOff(playerState, setPlayerState)}
+      >
         On/Off
       </button>
       <br />

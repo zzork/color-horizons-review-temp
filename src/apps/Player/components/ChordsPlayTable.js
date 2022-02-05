@@ -1,21 +1,17 @@
-// mouse down and up work great for simple clicks
-// but if you drag across cells of the table it won't register as a up when you leave the button
-// and doesn't register as a down when holding down onto a new button
-
-import { useRef } from "react";
 import { play, stop } from "../services/notePlayerService";
 import renameKeysForObjectRefs from "../util/renameKeysForObjectRefs";
 
 const ChordsPlayTable = ({
   centsScaleRepeating,
-  chordsOrSingles,
-  note2,
-  note3,
   keyboardMapping,
   pressedKeys,
   rootButtonPositions,
   playerState,
 }) => {
+  const note2 = playerState.note2;
+  const note3 = playerState.note3;
+  const chordsOrSingles = playerState.chordsOrSingles;
+
   const buttonColorationObject = {};
 
   // root buttons different color

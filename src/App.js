@@ -51,7 +51,17 @@ export default App;
 // TO ADD
 // ------
 
+//////// NEED
+
 // - Extracting handler events where possible
+
+// - comparison window... what should the ratio group options be??
+
+// - reset sounds button
+
+// - make engaged / disengaged player state clearer to user
+
+//////// WANT
 
 // - create permalink for sharing scale via url!
 
@@ -61,13 +71,7 @@ export default App;
 
 // - Data visualization per mode or all of scale
 
-// - comparison window... what should the ratio group options be??
-
-// - reset sounds button
-
-// - make engaged / disengaged player state clearer to user
-
-// - why does enableQwerty call break the useInPlayer call in eventHandlers?
+// - add explanations of scale generation methods
 
 /////////////
 

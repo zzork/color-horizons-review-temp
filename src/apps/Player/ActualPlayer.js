@@ -24,7 +24,6 @@ import useOnClickOutside from "./hooks/useOnClickOutside";
 import { disableQwerty, reverseQwerty } from "../../eventHandlers";
 
 const ActualPlayer = ({
-  incomingScale,
   playerState,
   setPlayerState,
   stateData,
@@ -42,6 +41,7 @@ const ActualPlayer = ({
   //     2 / 1,
   //   ];
 
+  const incomingScale = stateData[9].playerData.scale;
   const playerActive = stateData[9].active;
   const generalReferencePitch = playerState.referencePitch;
   const soundReferencePitch = getReferencePitch(playerState);

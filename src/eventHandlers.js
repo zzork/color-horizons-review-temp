@@ -142,5 +142,4 @@ export const handleSetPlayerClick = (stateData, setStateData, playerData) => {
     return stateTableRow;
   });
   setStateData(newState);
-  // enableQwerty(stateData, setStateData);
 };

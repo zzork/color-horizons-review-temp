@@ -5,13 +5,10 @@ import { playerStateData } from "./playerStateData";
 import getPlayerReadouts from "./util/getPlayerReadouts";
 
 const Player = ({ stateData, setStateData }) => {
-  const showPlayer = stateData[9].showPlayer;
-  const playerData = stateData[9].playerData;
-
   const [playerState, setPlayerState] = useState(playerStateData);
-  const playerReadouts = getPlayerReadouts(playerData);
+  const playerReadouts = getPlayerReadouts(stateData[9].playerData);
 
-  if (showPlayer === false) {
+  if (stateData[9].showPlayer === false) {
     return <div></div>;
   } else {
     return (
@@ -24,9 +21,11 @@ const Player = ({ stateData, setStateData }) => {
           {playerReadouts.readout}
         </h4>
         <p>{playerReadouts.sclButton}</p>
-        <ComparisonWindow scale={playerData.scale} stateData={stateData} />
+        <ComparisonWindow
+          scale={stateData[9].playerData.scale}
+          stateData={stateData}
+        />
         <ActualPlayer
-          incomingScale={playerData.scale}
           playerState={playerState}
           setPlayerState={setPlayerState}
           stateData={stateData}

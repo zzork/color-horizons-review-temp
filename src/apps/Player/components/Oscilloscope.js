@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { oscilloscopeAnalyser } from "../services/notePlayerService";
 
-const Oscilloscope = ({ referencePitch }) => {
+const Oscilloscope = ({}) => {
   const width = 800;
   const height = 175;
 

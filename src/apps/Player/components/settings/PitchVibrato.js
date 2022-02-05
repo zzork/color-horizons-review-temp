@@ -1,8 +1,6 @@
-const PitchVibrato = ({
-  playerState,
-  handlePitchVibratoOnOff,
-  handleChange,
-}) => {
+import { handlePitchVibratoOnOff } from "../../playerEventHandlers";
+
+const PitchVibrato = ({ playerState, setPlayerState, handleChange }) => {
   return (
     <div>
       <br />
@@ -58,7 +56,10 @@ const PitchVibrato = ({
       Cents
       <br />
       <br />
-      <button name="pitchVibratoOnOff" onClick={handlePitchVibratoOnOff}>
+      <button
+        name="pitchVibratoOnOff"
+        onClick={() => handlePitchVibratoOnOff(playerState, setPlayerState)}
+      >
         On/Off
       </button>
       <br />

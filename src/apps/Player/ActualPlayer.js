@@ -131,13 +131,13 @@ const ActualPlayer = ({
   //   setPlayerState(newState);
   // };
 
-  const handlePitchVibratoOnOff = () => {
-    let newState = {
-      ...playerState,
-      pitchVibratoOn: !playerState.pitchVibratoOn,
-    };
-    setPlayerState(newState);
-  };
+  // const handlePitchVibratoOnOff = () => {
+  //   let newState = {
+  //     ...playerState,
+  //     pitchVibratoOn: !playerState.pitchVibratoOn,
+  //   };
+  //   setPlayerState(newState);
+  // };
 
   const handleTremoloOnOff = () => {
     let newState = {
@@ -348,7 +348,7 @@ const ActualPlayer = ({
             <td style={tdBorder} colSpan="3">
               <PitchVibrato
                 playerState={playerState}
-                handlePitchVibratoOnOff={handlePitchVibratoOnOff}
+                setPlayerState={setPlayerState}
                 handleChange={handleChange}
               />
             </td>

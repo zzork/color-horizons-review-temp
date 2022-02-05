@@ -21,3 +21,11 @@ export const handleDelay2OnOff = (playerState, setPlayerState) => {
   let newState = { ...playerState, delay2On: !playerState.delay2On };
   setPlayerState(newState);
 };
+
+export const handlePitchVibratoOnOff = (playerState, setPlayerState) => {
+  let newState = {
+    ...playerState,
+    pitchVibratoOn: !playerState.pitchVibratoOn,
+  };
+  setPlayerState(newState);
+};

@@ -47,16 +47,21 @@ const ActualPlayer = ({
   const [playNotes] = useState({});
 
   // key down and up
-  const handleInputClick = useCallback(
-    (event) => {
-      if (stateData.player.active && event.target.type === "number") {
-        disableQwerty(stateData, setStateData);
-      }
-    },
-    [stateData.player.active]
-  );
 
-  useOnClickOutside(handleInputClick);
+  // disables player when number fields are clicked
+  // BUT is causing a weird bug
+  // load the player with a scale, change to a different scale generation method, make a change, and it jumps back to the previous method
+
+  // const handleInputClick = useCallback(
+  //   (event) => {
+  //     if (stateData.player.active && event.target.type === "number") {
+  //       disableQwerty(stateData, setStateData);
+  //     }
+  //   },
+  //   [stateData.player.active]
+  // );
+
+  // useOnClickOutside(handleInputClick);
 
   useEffect(() => {
     if (!stateData.player.active) return;

@@ -2,7 +2,8 @@ import { ComparisonWindow } from "../../RatioComparer/ComparisonWindow";
 import IPModeReadoutTable from "./IPModeReadoutTable";
 import convertPatternToModesObjects from "./util/convertPatternToModesObjects";
 
-const IPAllModes = ({ pattern, stateData, setStateData }) => {
+const IPAllModes = ({ stateData, setStateData }) => {
+  const pattern = stateData.intervalPattern.pattern;
   const allIPObjects = convertPatternToModesObjects(pattern);
   return (
     <div>

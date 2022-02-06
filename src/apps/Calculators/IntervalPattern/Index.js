@@ -1,38 +1,21 @@
+import { handleIPChange } from "./ipEventHandlers";
 import { IPReadout } from "./IPReadout";
 
 export const IntervalPattern = ({ stateData, setStateData }) => {
-  const handleChange = (event) => {
-    const newPattern = event.target.value;
-    let newState = stateData.map((stateTableRow) => {
-      if (stateTableRow.id === "c") {
-        return {
-          ...stateTableRow,
-          pattern: newPattern,
-        };
-      }
-      return stateTableRow;
-    });
-    setStateData(newState);
-  };
-
   return (
     <div>
       <div>
         <h2>Interval Pattern</h2>
         <input
-          onChange={handleChange}
+          onChange={(event) => handleIPChange(event, stateData, setStateData)}
           type="number"
           name="intervalPatternEntryField"
-          value={stateData[2].pattern}
+          value={stateData.intervalPattern.pattern}
         ></input>
       </div>
       <div>
         <p></p>
-        <IPReadout
-          pattern={stateData[2].pattern}
-          stateData={stateData}
-          setStateData={setStateData}
-        />
+        <IPReadout stateData={stateData} setStateData={setStateData} />
       </div>
     </div>
   );

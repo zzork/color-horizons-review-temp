@@ -21,10 +21,10 @@ export const CalculatorWindow = ({ stateData, setStateData }) => {
       {viewId === "edomos" && (
         <EDOMOS stateData={stateData} setStateData={setStateData} />
       )}
-      {/* {viewId === "ip" && (
+      {viewId === "ip" && (
         <IntervalPattern stateData={stateData} setStateData={setStateData} />
       )}
-      {viewId === "ltbc" && (
+      {/* {viewId === "ltbc" && (
         <LTByCents stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "ltbr" && (

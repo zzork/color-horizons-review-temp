@@ -24,10 +24,10 @@ export const CalculatorWindow = ({ stateData, setStateData }) => {
       {viewId === "ip" && (
         <IntervalPattern stateData={stateData} setStateData={setStateData} />
       )}
-      {/* {viewId === "ltbc" && (
+      {viewId === "ltbc" && (
         <LTByCents stateData={stateData} setStateData={setStateData} />
       )}
-      {viewId === "ltbr" && (
+      {/* {viewId === "ltbr" && (
         <LTByRatio stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "ot" && (

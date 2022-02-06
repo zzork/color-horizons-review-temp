@@ -4,17 +4,17 @@ import getCentsFromRatio from "../../../util/getCentsFromRatio";
 import getLTScaleByRatio from "./util/getLTScaleFromRatio";
 import LTUniquesDisplay from "../LTShared/LTUniquesDisplay";
 import { LTBRAllModes } from "./LTBRAllModes";
+import {
+  handleLtbrChange,
+  handleLtbrInvertClick,
+  handleLtbrMOSClick,
+} from "./ltbrEventHandlers";
 
-export const LTBRReadout = ({
-  numerator,
-  denominator,
-  noteTotal,
-  handleInvertClick,
-  handleMOSClick,
-  handleChange,
-  stateData,
-  setStateData,
-}) => {
+export const LTBRReadout = ({ stateData, setStateData }) => {
+  const numerator = stateData.linearTemperamentByRatio.numerator;
+  const denominator = stateData.linearTemperamentByRatio.denominator;
+  const noteTotal = stateData.linearTemperamentByRatio.noteTotal;
+
   const reducedFraction = getReducedFraction(numerator, denominator);
 
   const reducedFractionIsDuple =
@@ -55,7 +55,9 @@ export const LTBRReadout = ({
   const momentsOfSymmetry = getMos(mainGenerator);
 
   const mosButtons = momentsOfSymmetry.map((value) => (
-    <button onClick={() => handleMOSClick(value)}>{value}</button>
+    <button onClick={() => handleLtbrMOSClick(value, stateData, setStateData)}>
+      {value}
+    </button>
   ));
 
   const scale = getLTScaleByRatio(
@@ -79,7 +81,11 @@ export const LTBRReadout = ({
         Inverse Generator: {inverseGenerator.toFixed(5)}
         <br />
         <br />
-        <button onClick={() => handleInvertClick(inverseFraction)}>
+        <button
+          onClick={() =>
+            handleLtbrInvertClick(inverseFraction, stateData, setStateData)
+          }
+        >
           Invert Generator
         </button>
         <p>
@@ -88,7 +94,9 @@ export const LTBRReadout = ({
           <br />
           Note Amount:{" "}
           <input
-            onChange={handleChange}
+            onChange={(event) =>
+              handleLtbrChange(event, stateData, setStateData)
+            }
             type="number"
             name="ltNoteTotalEntryField"
             value={noteTotal}

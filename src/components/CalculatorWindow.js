@@ -30,10 +30,10 @@ export const CalculatorWindow = ({ stateData, setStateData }) => {
       {viewId === "ltbr" && (
         <LTByRatio stateData={stateData} setStateData={setStateData} />
       )}
-      {/* {viewId === "ot" && (
+      {viewId === "ot" && (
         <Otones stateData={stateData} setStateData={setStateData} />
       )}
-      {viewId === "td" && (
+      {/* {viewId === "td" && (
         <TonalityDiamond stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "ut" && (

@@ -33,12 +33,12 @@ export const CalculatorWindow = ({ stateData, setStateData }) => {
       {viewId === "ot" && (
         <Otones stateData={stateData} setStateData={setStateData} />
       )}
-      {/* {viewId === "td" && (
+      {viewId === "td" && (
         <TonalityDiamond stateData={stateData} setStateData={setStateData} />
       )}
       {viewId === "ut" && (
         <Utones stateData={stateData} setStateData={setStateData} />
-      )} */}
+      )}
     </div>
   );
 };

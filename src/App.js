@@ -53,8 +53,6 @@ export default App;
 
 //////// NEED
 
-// - Extracting handler events where possible
-
 // - comparison window... what should the ratio group options be??
 
 // - reset sounds button
@@ -72,14 +70,6 @@ export default App;
 // - Data visualization per mode or all of scale
 
 // - add explanations of scale generation methods
-
-/////////////
-
-// LIFT STATE ALL TO GLOBAL STATE OBJECT
-
-// state needs to be compacted and turned into an object... seems like a big project! but I can do it!
-
-// pass state down differently, simpler
 
 /////////////
 

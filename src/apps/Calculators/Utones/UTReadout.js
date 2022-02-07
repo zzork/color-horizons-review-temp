@@ -1,19 +1,15 @@
 import getSortedRatioList from "../../../util/getSortedRatioList";
 import OTScaleDisplay from "../Otones/OTScaleDisplay";
 import { UTAllModes } from "./UTAllModes";
+import { handleUtShowEquivalent } from "./utEventHandlers";
 import getUTRawScale from "./util/getUTRawScale";
 
-export const UTReadout = ({
-  numerator,
-  start,
-  stop,
-  progression,
-  sclData,
-  showEquivalent,
-  handleShowEquivalent,
-  stateData,
-  setStateData,
-}) => {
+export const UTReadout = ({ stateData, setStateData }) => {
+  const numerator = parseInt(stateData.utones.numerator);
+  const start = parseInt(stateData.utones.start);
+  const stop = parseInt(stateData.utones.stop);
+  const progression = parseInt(stateData.utones.progression);
+
   const isValidState = () => {
     return numerator > 0 && start > 0 && stop > start && progression > 0;
   };
@@ -28,6 +24,15 @@ export const UTReadout = ({
     );
   }
 
+  const showEquivalent = stateData.utones.showEquivalent;
+
+  const sclData = [
+    parseInt(stateData.utones.numerator),
+    parseInt(stateData.utones.start),
+    parseInt(stateData.utones.stop),
+    parseInt(stateData.utones.progression),
+  ];
+
   const rawScale = getUTRawScale(numerator, start, stop, progression);
   const scale = getSortedRatioList(rawScale);
 
@@ -37,7 +42,9 @@ export const UTReadout = ({
         <OTScaleDisplay
           rawScale={rawScale}
           showEquivalent={showEquivalent}
-          handleShowEquivalent={handleShowEquivalent}
+          handleShowEquivalent={() =>
+            handleUtShowEquivalent(stateData, setStateData)
+          }
         />
       </p>
       <UTAllModes

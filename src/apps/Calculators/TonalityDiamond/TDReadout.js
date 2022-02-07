@@ -1,18 +1,16 @@
 import { TDAllModes } from "./TDAllModes";
+import {
+  handleTdAllOtUtClick,
+  handleTdRawEquivalentClick,
+} from "./tdEventHandlers";
 import TDTable from "./TDTable";
+import getAllOtUtReadout from "./util/getAllOtUtReadout";
 import getTDRatios from "./util/getTDRatios";
 import getTDScale from "./util/getTDScale";
 
-const TDReadout = ({
-  checked,
-  allOtUt,
-  sclData,
-  showEquivalent,
-  handleAllOtUtClick,
-  handleRawEquivalentClick,
-  stateData,
-  setStateData,
-}) => {
+const TDReadout = ({ stateData, setStateData }) => {
+  const checked = stateData.tonalityDiamond.numbers;
+
   const isValidState = () => {
     return checked.length > 1;
   };
@@ -20,10 +18,13 @@ const TDReadout = ({
     return <InvalidState checked={checked} />;
   }
 
-  // returns list of 3 arrays, whole td/overtones only/undertones only
+  const allOtUt = stateData.tonalityDiamond.allOtUt;
+  const showEquivalent = stateData.tonalityDiamond.showEquivalent;
+  const allOtUtReadout = getAllOtUtReadout(allOtUt);
+  const checkedReadout = checked.join("-");
+  const sclData = [allOtUtReadout, checkedReadout];
   const tonalityDiamondRatios = getTDRatios(checked);
   const scale = getTDScale(tonalityDiamondRatios, allOtUt);
-
   const scaleDisplay = scale.map((value) => (
     <td>
       {value[0]}/{value[1]}
@@ -33,12 +34,26 @@ const TDReadout = ({
   return (
     <div>
       <p>
-        <button onClick={() => handleAllOtUtClick("all")}>All</button>
-        <button onClick={() => handleAllOtUtClick("ot")}>Overtones</button>
-        <button onClick={() => handleAllOtUtClick("ut")}>Undertones</button>
+        <button
+          onClick={() => handleTdAllOtUtClick("all", stateData, setStateData)}
+        >
+          All
+        </button>
+        <button
+          onClick={() => handleTdAllOtUtClick("ot", stateData, setStateData)}
+        >
+          Overtones
+        </button>
+        <button
+          onClick={() => handleTdAllOtUtClick("ut", stateData, setStateData)}
+        >
+          Undertones
+        </button>
       </p>
       <p>
-        <button onClick={() => handleRawEquivalentClick()}>
+        <button
+          onClick={() => handleTdRawEquivalentClick(stateData, setStateData)}
+        >
           Raw / Equivalent Values
         </button>
       </p>

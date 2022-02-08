@@ -59,11 +59,13 @@ export default App;
 
 // - make engaged / disengaged player state clearer to user
 
+// - engage / disengage effects table colors
+
+// - IP being able to do double digit entries via () e.g. 4(12)4(12)
+
 //////// WANT
 
 // - create permalink for sharing scale via url!
-
-// - IP being able to do double digit entries via () e.g. 4(12)4(12)
 
 // - Custom Harmonics Based Waveform?
 

@@ -8,9 +8,8 @@ export const IntervalPattern = ({ stateData, setStateData }) => {
         <h2>Interval Pattern</h2>
         <input
           onChange={(event) => handleIPChange(event, stateData, setStateData)}
-          type="number"
           name="intervalPatternEntryField"
-          value={stateData.intervalPattern.pattern}
+          value={stateData.intervalPattern.inputPatternDisplay}
         ></input>
       </div>
       <div>

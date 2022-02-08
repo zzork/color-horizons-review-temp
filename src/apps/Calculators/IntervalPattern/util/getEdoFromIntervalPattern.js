@@ -1,8 +1,7 @@
 const getEdoFromIntervalPattern = (pattern) => {
-  const patternArray = pattern.split("");
   let edo = 0;
-  for (let i = 0; i < patternArray.length; i++) {
-    edo += parseInt(patternArray[i]);
+  for (let i = 0; i < pattern.length; i++) {
+    edo += parseInt(pattern[i]);
   }
   return edo;
 };

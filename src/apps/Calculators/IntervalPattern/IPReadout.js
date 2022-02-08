@@ -6,10 +6,10 @@ export const IPReadout = ({ stateData, setStateData }) => {
   const pattern = stateData.intervalPattern.pattern;
 
   const isValidState = () => {
-    return pattern > 0;
+    return stateData.intervalPattern.parenthesesMatch && pattern.length > 1;
   };
   if (!isValidState()) {
-    return <InvalidState value={pattern} />;
+    return <InvalidState stateData={stateData} />;
   }
 
   const edo = getEdoFromIntervalPattern(pattern);
@@ -25,12 +25,23 @@ export const IPReadout = ({ stateData, setStateData }) => {
   );
 };
 
-const InvalidState = ({ value }) => {
+const InvalidState = ({ stateData }) => {
   return (
     <div>
-      {value === "" && <p>Enter a Pattern</p>}
-      {value === "0" && <p>0 is not a Pattern</p>}
-      {value < 0 && <p>Pattern Cannot Be Negative</p>}
+      {stateData.intervalPattern.inputPatternDisplay.length === 0 && (
+        <p>Enter a Pattern</p>
+      )}
+      {stateData.intervalPattern.pattern.length === 0 &&
+        stateData.intervalPattern.inputPatternDisplay.length !== 0 &&
+        stateData.intervalPattern.parenthesesMatch && (
+          <p>Entry Contains Only Zeroes and/or Parentheses</p>
+        )}
+      {stateData.intervalPattern.pattern.length === 1 && (
+        <p>Pattern Length Must Be Greater Than 1</p>
+      )}
+      {!stateData.intervalPattern.parenthesesMatch && (
+        <p>Opening and Closing Parentheses Do Not Match</p>
+      )}
     </div>
   );
 };

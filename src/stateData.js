@@ -29,7 +29,9 @@ export const stateTable = {
     noteTotal: "7",
   },
   intervalPattern: {
-    pattern: "2212221",
+    pattern: [2, 2, 1, 2, 2, 2, 1],
+    inputPatternDisplay: "2212221",
+    parenthesesMatch: true,
   },
   linearTemperamentByCents: {
     generator: "701.95",

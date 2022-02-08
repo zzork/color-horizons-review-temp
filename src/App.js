@@ -53,15 +53,13 @@ export default App;
 
 //////// NEED
 
-// - comparison window... what should the ratio group options be??
-
 // - reset sounds button
+
+// - comparison window... what should the ratio group options be??
 
 // - make engaged / disengaged player state clearer to user
 
 // - engage / disengage effects table colors
-
-// - IP being able to do double digit entries via () e.g. 4(12)4(12)
 
 //////// WANT
 

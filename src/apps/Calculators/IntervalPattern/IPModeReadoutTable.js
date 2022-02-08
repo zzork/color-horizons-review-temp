@@ -12,8 +12,6 @@ const IPModeReadoutTable = ({ index, ipObject, stateData, setStateData }) => {
   };
   const modeDisplay = addParenthesesToModeReadout([...ipObject.pattern]);
 
-  console.log(sclData);
-
   return (
     <div>
       <h2>

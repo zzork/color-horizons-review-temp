@@ -9,7 +9,6 @@ export const AxByAllModes = ({
   setStateData,
   sclData,
 }) => {
-  console.log(stateData);
   const allLTObjects = convertLTInputToModesObjects(scale, lmsIn);
   return (
     <div>

@@ -1,19 +1,23 @@
 import { handleSetPlayerClick } from "../../../eventHandlers";
+import addParenthesesToModeReadout from "../../../util/addParenthesesToModeReadout";
 import generateIPScl from "./util/generateIPScale";
 
 const IPModeReadoutTable = ({ index, ipObject, stateData, setStateData }) => {
-  const sclData = ipObject.pattern.join("");
+  const sclData = addParenthesesToModeReadout([...ipObject.pattern]);
   const setPlayerObject = {
     tool: "ip",
     scale: ipObject.mode,
     sclData: sclData,
     mode: index + 1,
   };
+  const modeDisplay = addParenthesesToModeReadout([...ipObject.pattern]);
+
+  console.log(sclData);
 
   return (
     <div>
       <h2>
-        Mode {index + 1} - {ipObject.pattern.join("")}
+        Mode {index + 1} - {modeDisplay}
         <br />
         <button
           onClick={() =>

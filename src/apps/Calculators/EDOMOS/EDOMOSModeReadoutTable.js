@@ -1,4 +1,5 @@
 import { handleSetPlayerClick } from "../../../eventHandlers";
+import addParenthesesToModeReadout from "../../../util/addParenthesesToModeReadout";
 import generateEDOMOSScl from "./util/generateEDOMOSScl";
 
 const EDOMOSModeReadoutTable = ({
@@ -14,11 +15,12 @@ const EDOMOSModeReadoutTable = ({
     sclData: sclData,
     mode: index + 1,
   };
+  const modeReadout = addParenthesesToModeReadout([...ltObject.lmsList]);
   return (
     <div>
       <br />
       <h2>
-        Mode {index + 1} - {ltObject.lmsList.join("")}
+        Mode {index + 1} - {modeReadout}
         <br />
         <button
           onClick={() =>

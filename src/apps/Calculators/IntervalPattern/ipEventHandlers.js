@@ -1,7 +1,6 @@
 export const handleIPChange = (event, stateData, setStateData) => {
-  const newEntry = event.target.value.split("");
-
   // filter only sensible characters
+  const newEntry = event.target.value.split("");
   const possibleCharacters = "1234567890()";
   let newEntryOnlyAllowed = [];
   for (const character of newEntry) {
@@ -41,14 +40,13 @@ export const handleIPChange = (event, stateData, setStateData) => {
     }
   }
 
+  // if no parentheses just bypass above
   if (openCount === 0) {
     finalArray = mutationArray;
   }
 
   // remove any zeroes or any ()s
   finalArray = finalArray.filter((value) => value !== "0" && value !== "");
-
-  console.log("final array", finalArray);
 
   if (openCount === closedCount) {
     let newState = {

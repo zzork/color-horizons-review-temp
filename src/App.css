@@ -35,6 +35,7 @@ table {
   margin-right: auto;
   width: 80%;
   background: white;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 /* table {
@@ -44,6 +45,12 @@ table {
 
 body {
   text-align: center;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 0.7287289915966386) 0%,
+    rgba(255, 149, 63, 0.631) 100%
+  );
 }
 
 td {
@@ -61,14 +68,26 @@ td {
 
 button {
   background-color: #e6e4e3;
+  border: 1px inset;
+  border-color: black;
+  color: black;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 button:active {
   background-color: #e0b3f5;
+  transform: translateY(1px);
 }
 
 .activeButton {
   background-color: #e0b3f5;
+  transform: translateY(1px);
 }
 
 .rootButton {
@@ -77,6 +96,7 @@ button:active {
 
 .activeRootButton {
   background-color: #c870f1;
+  transform: translateY(1px);
 }
 
 .tableKeys {
@@ -91,6 +111,8 @@ button:active {
 
 canvas {
   border: 1px solid #000000;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: rgba(255, 255, 255, 0.836);
 }
 
 input {
@@ -123,10 +145,22 @@ input {
 
 .disengagedEffect {
   border: 1px solid black;
-  background-color: #e6e4e3;
+  background-color: #f5f3f1;
 }
 
 .engagedEffect {
   border: 1px solid black;
   background-color: #f5deb3;
+}
+
+.noBorder {
+  border: none;
+}
+
+input[type="number"] {
+  background-color: #fff5e3;
+}
+
+input {
+  background-color: #fff5e3;
 }

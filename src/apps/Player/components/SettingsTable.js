@@ -46,7 +46,8 @@ const SettingsTable = ({ playerState, setPlayerState }) => {
     <table style={tableBorder}>
       <tbody>
         <tr>
-          <td></td> <td></td> <td></td> <td></td> <td></td> <td></td>
+          <td></td> <td></td> <td></td> <td></td> <td></td>
+          <td></td>
         </tr>
         <tr>
           <td style={thBorder} colSpan="2">

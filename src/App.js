@@ -57,9 +57,7 @@ export default App;
 
 // - make engaged / disengaged player state clearer to user
 
-// - engage / disengage effects table colors
-
-// - make all .scl generators uniform (microtonalexplorer.com!!)
+// - make all .scl generators uniform (microtonalexplorer.com!! no!)
 
 //////// WANT
 

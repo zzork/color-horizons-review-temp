@@ -70,7 +70,7 @@ const Tremolo = ({ playerState, setPlayerState }) => {
         name="tremoloOnOff"
         onClick={() => handleTremoloOnOff(playerState, setPlayerState)}
       >
-        On/Off
+        {playerState.TremoloOn ? "Disengage" : "Engage"}
       </button>
       <br />
       <br />

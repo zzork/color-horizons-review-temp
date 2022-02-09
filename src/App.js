@@ -53,8 +53,6 @@ export default App;
 
 //////// NEED
 
-// - reset sounds button
-
 // - comparison window... what should the ratio group options be??
 
 // - make engaged / disengaged player state clearer to user

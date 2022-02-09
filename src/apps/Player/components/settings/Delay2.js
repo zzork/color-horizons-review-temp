@@ -70,7 +70,7 @@ const Delay2 = ({ playerState, setPlayerState }) => {
         name="delay2OnOff"
         onClick={() => handleDelay2OnOff(playerState, setPlayerState)}
       >
-        On/Off
+        {playerState.delay2On ? "Disengage" : "Engage"}
       </button>
       <br />
       <br />

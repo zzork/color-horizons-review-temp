@@ -24,6 +24,24 @@ const SettingsTable = ({ playerState, setPlayerState }) => {
   const thBorder = {
     border: "1px solid black",
   };
+
+  let pitchVibratoClass = "disengagedEffect";
+  if (playerState.pitchVibratoOn) {
+    pitchVibratoClass = "engagedEffect";
+  }
+  let tremoloClass = "disengagedEffect";
+  if (playerState.tremoloOn) {
+    tremoloClass = "engagedEffect";
+  }
+  let delay1Class = "disengagedEffect";
+  if (playerState.delay1On) {
+    delay1Class = "engagedEffect";
+  }
+  let delay2Class = "disengagedEffect";
+  if (playerState.delay2On) {
+    delay2Class = "engagedEffect";
+  }
+
   return (
     <table style={tableBorder}>
       <tbody>
@@ -90,21 +108,21 @@ const SettingsTable = ({ playerState, setPlayerState }) => {
           </td>
         </tr>
         <tr>
-          <td style={thBorder} colSpan="3">
+          <td className={pitchVibratoClass} colSpan="3">
             <h4>Pitch Vibrato</h4>
           </td>
-          <td style={thBorder} colSpan="3">
+          <td className={tremoloClass} colSpan="3">
             <h4>Tremolo</h4>
           </td>
         </tr>
         <tr>
-          <td style={tdBorder} colSpan="3">
+          <td className={pitchVibratoClass} colSpan="3">
             <PitchVibrato
               playerState={playerState}
               setPlayerState={setPlayerState}
             />
           </td>
-          <td style={tdBorder} colSpan="3">
+          <td className={tremoloClass} colSpan="3">
             <Tremolo
               playerState={playerState}
               setPlayerState={setPlayerState}
@@ -112,18 +130,18 @@ const SettingsTable = ({ playerState, setPlayerState }) => {
           </td>
         </tr>
         <tr>
-          <td style={thBorder} colSpan="3">
+          <td className={delay1Class} colSpan="3">
             <h4>Delay One</h4>
           </td>
-          <td style={thBorder} colSpan="3">
+          <td className={delay2Class} colSpan="3">
             <h4>Delay Two</h4>
           </td>
         </tr>
         <tr>
-          <td style={tdBorder} colSpan="3">
+          <td className={delay1Class} colSpan="3">
             <Delay1 playerState={playerState} setPlayerState={setPlayerState} />
           </td>
-          <td style={tdBorder} colSpan="3">
+          <td className={delay2Class} colSpan="3">
             <Delay2 playerState={playerState} setPlayerState={setPlayerState} />
           </td>
         </tr>

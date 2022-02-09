@@ -71,7 +71,7 @@ const PitchVibrato = ({ playerState, setPlayerState }) => {
         name="pitchVibratoOnOff"
         onClick={() => handlePitchVibratoOnOff(playerState, setPlayerState)}
       >
-        On/Off
+        {playerState.pitchVibratoOn ? "Disengage" : "Engage"}
       </button>
       <br />
       <br />

@@ -120,3 +120,13 @@ input {
 .level1Highlight {
   background-color: #f5deb3;
 }
+
+.disengagedEffect {
+  border: 1px solid black;
+  background-color: #e6e4e3;
+}
+
+.engagedEffect {
+  border: 1px solid black;
+  background-color: #f5deb3;
+}

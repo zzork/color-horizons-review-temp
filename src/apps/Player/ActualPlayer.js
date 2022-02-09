@@ -12,6 +12,7 @@ import getAbove22kHz from "./util/getAbove22kHz";
 import useOnClickOutside from "./hooks/useOnClickOutside";
 import { disableQwerty, reverseQwerty } from "../../eventHandlers";
 import SettingsTable from "./components/SettingsTable";
+import { handleResetSounds } from "./playerEventHandlers";
 
 const ActualPlayer = ({
   playerState,
@@ -145,7 +146,9 @@ const ActualPlayer = ({
         setPlayerState={setPlayerState}
       />
       <br />
-      <button>Reset All (Inactive)</button>
+      <button onClick={() => handleResetSounds(playerState, setPlayerState)}>
+        Reset All
+      </button>
       <br />
       <br />
     </div>

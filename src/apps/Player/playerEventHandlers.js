@@ -119,6 +119,34 @@ export const handlePlayerChange = (event, playerState, setPlayerState) => {
   }
 };
 
+export const handleResetSounds = (playerState, setPlayerState) => {
+  let newState = {
+    ...playerState,
+    referencePitch: 440,
+    octaveAdjust: 0,
+    chordsOrSingles: "singles",
+    note2: 2,
+    note3: 4,
+    oscillatorType: "triangle",
+    attackTime: 10,
+    releaseTime: 2000,
+    delay1On: false,
+    delay1Time: 50,
+    delay1Feedback: 75,
+    delay2On: false,
+    delay2Time: 500,
+    delay2Feedback: 50,
+    pitchVibratoOn: false,
+    pitchVibratoSpeed: 1000,
+    pitchVibratoDepth: 10,
+    tremoloOn: false,
+    tremoloSpeed: 10,
+    tremoloIntensity: 80,
+    distortion: 0,
+  };
+  setPlayerState(newState);
+};
+
 // mouse events for playing notes
 const playNotes = {};
 

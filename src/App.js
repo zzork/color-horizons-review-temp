@@ -61,6 +61,8 @@ export default App;
 
 // - engage / disengage effects table colors
 
+// - make all .scl generators uniform (microtonalexplorer.com!!)
+
 //////// WANT
 
 // - create permalink for sharing scale via url!

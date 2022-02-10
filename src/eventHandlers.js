@@ -117,6 +117,7 @@ export const handleSetPlayerClick = (stateData, setStateData, playerData) => {
     ...stateData,
     player: {
       ...stateData.player,
+      showPlayer: true,
       playerData: playerData,
       active: true,
     },

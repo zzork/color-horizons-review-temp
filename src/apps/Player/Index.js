@@ -17,6 +17,7 @@ const Player = ({ stateData, setStateData }) => {
   } else {
     return (
       <div>
+        <h1>Scale Player</h1>
         <h3>Currently Loaded Scale</h3>
 
         <h4>

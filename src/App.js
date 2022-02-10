@@ -17,9 +17,11 @@ function App() {
   return (
     <div>
       <h1>COLOR HORIZONS</h1>
-      <h1>Scale Player</h1>
+      <h3>Microtonal Scale Tools and Virtual Synth</h3>
       <button onClick={() => handleShowPlayerClick(stateData, setStateData)}>
-        {stateData.player.showPlayer ? "Hide Player" : "Show Player"}
+        {stateData.player.showPlayer
+          ? "Hide Scale Player"
+          : "Show Scale Player"}
       </button>
       <Player stateData={stateData} setStateData={setStateData} />
       <br />

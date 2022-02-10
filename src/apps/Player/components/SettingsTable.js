@@ -25,6 +25,8 @@ const SettingsTable = ({ playerState, setPlayerState }) => {
     border: "1px solid black",
   };
 
+  // extract this
+
   let pitchVibratoClass = "disengagedEffect";
   let pitchVibratoHeading = "disengagedEffect";
   if (playerState.pitchVibratoOn) {

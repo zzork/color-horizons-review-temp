@@ -37,7 +37,6 @@ function App() {
               />
             </td>
           </tr>
-          <br />
         </tbody>
       </table>
       <CalculatorWindow stateData={stateData} setStateData={setStateData} />

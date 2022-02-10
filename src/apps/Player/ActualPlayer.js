@@ -69,6 +69,11 @@ const ActualPlayer = ({
     const handleKeyDown = (event) => {
       const pressedKey = event.key.toLowerCase();
 
+      console.log(event.key);
+      if (pressedKey === "/" || pressedKey === "'") {
+        event.preventDefault();
+      }
+
       if (possibleKeys.includes(pressedKey)) {
         if (!playNotes.hasOwnProperty(playerState.chordsOrSingles)) {
           playNotes[playerState.chordsOrSingles] = {};

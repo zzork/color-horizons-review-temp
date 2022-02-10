@@ -102,6 +102,8 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
       >
         Disable
       </button>
+      <br />
+      <br />
     </div>
   );
 };

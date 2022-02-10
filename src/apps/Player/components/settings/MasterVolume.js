@@ -11,7 +11,9 @@ const MasterVolume = ({ playerState, setPlayerState }) => {
         max="100"
         value={playerState.masterVolume}
         name="masterVolume"
-        onChange={() => handlePlayerChange(playerState, setPlayerState)}
+        onChange={(event) =>
+          handlePlayerChange(event, playerState, setPlayerState)
+        }
       ></input>
       <br />
       {playerState.masterVolume}%

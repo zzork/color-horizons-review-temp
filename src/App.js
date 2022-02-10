@@ -17,7 +17,7 @@ function App() {
   return (
     <div>
       <h1>COLOR HORIZONS</h1>
-      <h3>Microtonal Scale Tools and Virtual Synth</h3>
+      <h3>Microtonal Scale Tools / Virtual Synthesizer</h3>
       <button onClick={() => handleShowPlayerClick(stateData, setStateData)}>
         {stateData.player.showPlayer
           ? "Hide Scale Player"

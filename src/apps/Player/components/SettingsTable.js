@@ -1,3 +1,4 @@
+import getEffectsEngagementColors from "../util/getEffectsEngagementColors";
 import Attack from "./settings/Attack";
 import Delay1 from "./settings/Delay1";
 import Delay2 from "./settings/Delay2";
@@ -25,32 +26,7 @@ const SettingsTable = ({ playerState, setPlayerState }) => {
     border: "1px solid black",
   };
 
-  // extract this
-
-  let pitchVibratoClass = "disengagedEffect";
-  let pitchVibratoHeading = "disengagedEffect";
-  if (playerState.pitchVibratoOn) {
-    pitchVibratoClass = "engagedEffect";
-    pitchVibratoHeading = "engagedEffectHeading";
-  }
-  let tremoloClass = "disengagedEffect";
-  let tremoloHeading = "disengagedEffect";
-  if (playerState.tremoloOn) {
-    tremoloClass = "engagedEffect";
-    tremoloHeading = "engagedEffectHeading";
-  }
-  let delay1Class = "disengagedEffect";
-  let delay1Heading = "disengagedEffect";
-  if (playerState.delay1On) {
-    delay1Class = "engagedEffect";
-    delay1Heading = "engagedEffectHeading";
-  }
-  let delay2Class = "disengagedEffect";
-  let delay2Heading = "disengagedEffect";
-  if (playerState.delay2On) {
-    delay2Class = "engagedEffect";
-    delay2Heading = "engagedEffectHeading";
-  }
+  const effectsOnOffColors = getEffectsEngagementColors(playerState);
 
   return (
     <table style={tableBorder}>
@@ -119,21 +95,21 @@ const SettingsTable = ({ playerState, setPlayerState }) => {
           </td>
         </tr>
         <tr>
-          <td className={pitchVibratoHeading} colSpan="3">
+          <td className={effectsOnOffColors.pitchVibratoHeading} colSpan="3">
             <h4>Pitch Vibrato</h4>
           </td>
-          <td className={tremoloHeading} colSpan="3">
+          <td className={effectsOnOffColors.tremoloHeading} colSpan="3">
             <h4>Tremolo</h4>
           </td>
         </tr>
         <tr>
-          <td className={pitchVibratoClass} colSpan="3">
+          <td className={effectsOnOffColors.pitchVibratoClass} colSpan="3">
             <PitchVibrato
               playerState={playerState}
               setPlayerState={setPlayerState}
             />
           </td>
-          <td className={tremoloClass} colSpan="3">
+          <td className={effectsOnOffColors.tremoloClass} colSpan="3">
             <Tremolo
               playerState={playerState}
               setPlayerState={setPlayerState}
@@ -141,18 +117,18 @@ const SettingsTable = ({ playerState, setPlayerState }) => {
           </td>
         </tr>
         <tr>
-          <td className={delay1Heading} colSpan="3">
+          <td className={effectsOnOffColors.delay1Heading} colSpan="3">
             <h4>Delay One</h4>
           </td>
-          <td className={delay2Heading} colSpan="3">
+          <td className={effectsOnOffColors.delay2Heading} colSpan="3">
             <h4>Delay Two</h4>
           </td>
         </tr>
         <tr>
-          <td className={delay1Class} colSpan="3">
+          <td className={effectsOnOffColors.delay1Class} colSpan="3">
             <Delay1 playerState={playerState} setPlayerState={setPlayerState} />
           </td>
-          <td className={delay2Class} colSpan="3">
+          <td className={effectsOnOffColors.delay2Class} colSpan="3">
             <Delay2 playerState={playerState} setPlayerState={setPlayerState} />
           </td>
         </tr>

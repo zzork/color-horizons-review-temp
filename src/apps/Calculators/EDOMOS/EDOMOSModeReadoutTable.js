@@ -19,6 +19,7 @@ const EDOMOSModeReadoutTable = ({
   return (
     <div>
       <br />
+
       <h2>
         Mode {index + 1} - {modeReadout}
         <br />
@@ -35,6 +36,7 @@ const EDOMOSModeReadoutTable = ({
           Export .scl
         </button>
       </h2>
+
       <br />
       <table>
         <tbody>

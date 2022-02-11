@@ -37,24 +37,36 @@ const EDOMOSReadout = ({ stateData, setStateData }) => {
 
   return (
     <div>
-      <p>Generator: {generator.toFixed(5)}</p>
-      <p>
-        Moments of Symmetry
-        <br />
-        {mosButtons}
-      </p>
-      Note Amount:{" "}
-      <input
-        onChange={(event) => handleEdoMosChange(event, stateData, setStateData)}
-        type="number"
-        name="edomosNoteTotalField"
-        value={noteTotal}
-      ></input>
       <br />
-      EDO Step Size: {(1200 / edo).toFixed(5)}
-      {noteTotal <= 1 && <p>Note Total Must Be Greater Than One</p>}
+      <div className="tableClone">
+        <p>Generator: {generator.toFixed(5)}</p>
+        <p>
+          Moments of Symmetry
+          <br />
+          {mosButtons}
+        </p>
+        Note Amount:{" "}
+        <input
+          onChange={(event) =>
+            handleEdoMosChange(event, stateData, setStateData)
+          }
+          type="number"
+          name="edomosNoteTotalField"
+          value={noteTotal}
+        ></input>
+        <br />
+        EDO Step Size: {(1200 / edo).toFixed(5)}
+        <br />
+        <br />
+      </div>
+      {noteTotal <= 1 && (
+        <div className="tableClone">
+          <p>Note Total Must Be Greater Than One</p>
+        </div>
+      )}
       {noteTotal > 1 && <LTUniquesDisplay scale={scale} lmsIn={lmsIn} />}
       <br />
+
       {noteTotal > 1 && (
         <EDOMOSAllModes
           scale={scale}
@@ -71,9 +83,30 @@ const EDOMOSReadout = ({ stateData, setStateData }) => {
 const InvalidState = ({ step, edo }) => {
   return (
     <div>
-      {edo <= 1 && <p>EDO Must Be Greater Than 1</p>}
-      {step < 1 && <p>Step Must Be Greater than 0</p>}
-      {step >= edo && <p>Step Must Be Less Than EDO</p>}
+      {edo <= 1 && (
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>EDO Must Be Greater Than 1</p>
+          </div>
+        </div>
+      )}
+      {step < 1 && (
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>Step Must Be Greater than 0</p>
+          </div>
+        </div>
+      )}
+      {step >= edo && (
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>Step Must Be Less Than EDO</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

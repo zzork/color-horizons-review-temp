@@ -71,38 +71,50 @@ export const LTBRReadout = ({ stateData, setStateData }) => {
   return (
     <div>
       <div>
-        Your entry is equivalent to {reducedFraction[0]} / {reducedFraction[1]}
         <br />
-        Generator: {mainGenerator.toFixed(5)}
-        <br />
-        <br />
-        The inverse fraction is {inverseFraction[0]} / {inverseFraction[1]}
-        <br />
-        Inverse Generator: {inverseGenerator.toFixed(5)}
-        <br />
-        <br />
-        <button
-          onClick={() =>
-            handleLtbrInvertClick(inverseFraction, stateData, setStateData)
-          }
-        >
-          Invert Generator
-        </button>
-        <p>
-          Moments of Symmetry <br />
-          {mosButtons} <br />
+        <div className="tableClone">
           <br />
-          Note Amount:{" "}
-          <input
-            onChange={(event) =>
-              handleLtbrChange(event, stateData, setStateData)
+          Your entry is equivalent to {reducedFraction[0]} /{" "}
+          {reducedFraction[1]}
+          <br />
+          Generator: {mainGenerator.toFixed(5)}
+          <br />
+          <br />
+          The inverse fraction is {inverseFraction[0]} / {inverseFraction[1]}
+          <br />
+          Inverse Generator: {inverseGenerator.toFixed(5)}
+          <br />
+          <br />
+          <button
+            onClick={() =>
+              handleLtbrInvertClick(inverseFraction, stateData, setStateData)
             }
-            type="number"
-            name="ltNoteTotalEntryField"
-            value={noteTotal}
-          ></input>
-        </p>
-        {noteTotal <= 1 && <div>Note Total Must Be Greater Than One</div>}
+          >
+            Invert Generator
+          </button>
+          <p>
+            Moments of Symmetry <br />
+            {mosButtons} <br />
+            <br />
+            Note Amount:{" "}
+            <input
+              onChange={(event) =>
+                handleLtbrChange(event, stateData, setStateData)
+              }
+              type="number"
+              name="ltNoteTotalEntryField"
+              value={noteTotal}
+            ></input>
+          </p>
+        </div>
+        {noteTotal <= 1 && (
+          <div>
+            <br />
+            <div className="tableClone">
+              <p>Note Amount Must Be Greater Than One</p>
+            </div>
+          </div>
+        )}
         {noteTotal > 1 && <LTUniquesDisplay scale={scale} lmsIn={"Lms"} />}
         <br />
         {noteTotal > 1 && (
@@ -124,19 +136,46 @@ const InvalidState = ({ numerator, denominator, reducedFractionIsDuple }) => {
   return (
     <div>
       {numerator === denominator && (
-        <p>Numerator and Denominator are Identical</p>
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>Numerator and Denominator are Identical</p>
+          </div>
+        </div>
       )}
-      {reducedFractionIsDuple && <p>Your entry is equivalent to 2/1</p>}
+      {reducedFractionIsDuple && (
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>Your entry is equivalent to 2/1</p>
+          </div>
+        </div>
+      )}
       {numerator === "" && denominator === "" && (
-        <p>Enter a Numerator and Denominator</p>
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>Enter a Numerator and Denominator</p>{" "}
+          </div>
+        </div>
       )}
       {numerator === "" && denominator !== "" && <p>Enter a Numerator</p>}
       {numerator < 1 && numerator !== "" && (
-        <p>Numerator Cannot Be Less than 1</p>
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>Numerator Cannot Be Less than 1</p>{" "}
+          </div>
+        </div>
       )}
       {denominator === "" && numerator !== "" && <p>Enter a Denominator</p>}
       {denominator < 1 && denominator !== "" && (
-        <p>Denominator Cannot Be Less than 1</p>
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>Denominator Cannot Be Less than 1</p>{" "}
+          </div>
+        </div>
       )}
     </div>
   );

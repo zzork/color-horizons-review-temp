@@ -22,21 +22,29 @@ export const AxByReadout = ({ stateData, setStateData }) => {
 
   return (
     <div>
-      <p>
-        Second Interval Steps:{" "}
-        <input
-          onChange={(event) => handleAxByChange(event, stateData, setStateData)}
-          type="number"
-          name="axBy2StepsEntryField"
-          value={secondSteps}
-        ></input>
-      </p>
+      <br />
+      <div className="tableClone">
+        <p>
+          Second Interval Steps:{" "}
+          <input
+            onChange={(event) =>
+              handleAxByChange(event, stateData, setStateData)
+            }
+            type="number"
+            name="axBy2StepsEntryField"
+            value={secondSteps}
+          ></input>
+        </p>
+      </div>
       {secondSteps < 1 && (
         <p>Second Interval Steps Must Be Greater Than Zero</p>
       )}
       {secondSteps >= 1 && (
         <div>
-          <p>Second Interval Cents: {secondCents.toFixed(5)}</p>
+          <br />
+          <div className="tableClone">
+            <p>Second Interval Cents: {secondCents.toFixed(5)}</p>
+          </div>
           <LTUniquesDisplay scale={scale} lmsIn={"Lms"} />
           <AxByAllModes
             scale={scale}
@@ -55,16 +63,40 @@ const InvalidState = ({ firstSteps, firstCents }) => {
   return (
     <div>
       {firstCents * firstSteps > 1200 && (
-        <p>
-          First Interval Set Adds To More Than One Octave (
-          {(firstCents * firstSteps).toFixed(5)} Cents)
-        </p>
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>
+              First Interval Set Adds To More Than One Octave (
+              {(firstCents * firstSteps).toFixed(5)} Cents)
+            </p>
+          </div>
+        </div>
       )}
       {firstCents * firstSteps === 1200 && (
-        <p>First Interval Set Adds To One Octave</p>
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>First Interval Set Adds To One Octave</p>
+          </div>
+        </div>
       )}
-      {firstSteps <= 0 && <p>First Interval Steps Must Be Greater Than Zero</p>}
-      {firstCents <= 0 && <p>First Interval Cents Must Be Greater Than Zero</p>}
+      {firstSteps <= 0 && (
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>First Interval Steps Must Be Greater Than Zero</p>
+          </div>
+        </div>
+      )}
+      {firstCents <= 0 && (
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>First Interval Cents Must Be Greater Than Zero</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

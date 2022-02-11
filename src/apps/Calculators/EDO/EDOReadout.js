@@ -24,8 +24,12 @@ export const EDOReadout = ({ stateData, setStateData }) => {
 
   return (
     <div>
-      <h3>{edo} EDO</h3>
-      <h4>Step Size: {stepSize.toFixed(5)} Cents</h4>
+      <br />
+      <div className="tableClone">
+        <h3>{edo} EDO</h3>
+        <h4>Step Size: {stepSize.toFixed(5)} Cents</h4>
+      </div>
+      <br />
       <button
         onClick={() =>
           handleSetPlayerClick(stateData, setStateData, setPlayerObject)
@@ -61,14 +65,22 @@ export const EDOReadout = ({ stateData, setStateData }) => {
 const InvalidState = ({ value }) => {
   return (
     <div>
-      {value === "" && <p>Enter an EDO</p>}
-      {value === "0" && (
+      {value === "" && (
         <div>
-          <h3>0 EDO</h3>
-          <p>John Cage? Is that you?</p>
+          <br />
+          <div className="tableClone">
+            <p>Enter an EDO</p>
+          </div>
         </div>
       )}
-      {value < 0 && <p>EDO Value Must Be Greater than 0</p>}
+      {value < 1 && (
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>EDO Value Must Be Greater than 0</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

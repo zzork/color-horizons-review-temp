@@ -59,11 +59,46 @@ export const OTReadout = ({ stateData, setStateData }) => {
 const InvalidState = ({ denominator, start, stop, progression }) => {
   return (
     <div>
-      {denominator < 1 && <p>Denominator Must Be Greater Than Zero</p>}
-      {start < 1 && <p>Start Must Be Greater Than Zero</p>}
-      {stop <= start && <p>Stop Must Be Greater Than Start</p>}
-      {stop < 0 && <p>Stop Must Be Greater </p>}
-      {progression < 1 && <p>Progression Must Be Greater Than Zero</p>}
+      {denominator < 1 && (
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>Denominator Must Be Greater Than Zero</p>
+          </div>
+        </div>
+      )}
+      {start < 1 && (
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>Start Must Be Greater Than Zero</p>
+          </div>
+        </div>
+      )}
+      {stop <= start && (
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>Stop Must Be Greater Than Start</p>
+          </div>
+        </div>
+      )}
+      {stop < 0 && (
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>Stop Must Be Greater Than Zero </p>
+          </div>
+        </div>
+      )}
+      {progression < 1 && (
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>Progression Must Be Greater Than Zero</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

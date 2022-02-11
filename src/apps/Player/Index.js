@@ -18,13 +18,15 @@ const Player = ({ stateData, setStateData }) => {
     return (
       <div>
         <h1>Scale Player</h1>
-        <h3>Currently Loaded Scale</h3>
+        <div className="tableClone">
+          <h3>Currently Loaded Scale</h3>
 
-        <h4>
-          {playerReadouts.title}
-          <br />
-          {playerReadouts.readout}
-        </h4>
+          <h4>
+            {playerReadouts.title}
+            <br />
+            {playerReadouts.readout}
+          </h4>
+        </div>
         <p>{playerReadouts.sclButton}</p>
         <ComparisonWindow
           scale={stateData.player.playerData.scale}

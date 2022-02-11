@@ -61,11 +61,46 @@ export const UTReadout = ({ stateData, setStateData }) => {
 const InvalidState = ({ numerator, start, stop, progression }) => {
   return (
     <div>
-      {numerator < 1 && <p>Numerator Must Be Greater Than Zero</p>}
-      {start < 1 && <p>Start Must Be Greater Than Zero</p>}
-      {stop <= start && <p>Stop Must Be Greater Than Start</p>}
-      {stop < 0 && <p>Stop Must Be Greater </p>}
-      {progression < 1 && <p>Progression Must Be Greater Than Zero</p>}
+      {numerator < 1 && (
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>Numerator Must Be Greater Than Zero</p>
+          </div>
+        </div>
+      )}
+      {start < 1 && (
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>Start Must Be Greater Than Zero</p>
+          </div>
+        </div>
+      )}
+      {stop <= start && (
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>Stop Must Be Greater Than Start</p>
+          </div>
+        </div>
+      )}
+      {stop < 0 && (
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>Stop Must Be Greater Than Zero</p>
+          </div>
+        </div>
+      )}
+      {progression < 1 && (
+        <div>
+          <br />
+          <div className="tableClone">
+            <p>Progression Must Be Greater Than Zero</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

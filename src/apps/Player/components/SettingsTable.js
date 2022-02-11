@@ -15,7 +15,7 @@ const SettingsTable = ({ playerState, setPlayerState }) => {
     // border: "1px solid black",
     borderCollapse: "collapse",
     tableLayout: "fixed",
-    width: "40%",
+    width: "50%",
   };
 
   const tdBorder = {

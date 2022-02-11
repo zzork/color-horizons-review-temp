@@ -144,7 +144,12 @@ const ActualPlayer = ({
       </button>
       <br />
       <br />
-      <MasterVolume playerState={playerState} setPlayerState={setPlayerState} />
+      <div className="tableClone">
+        <MasterVolume
+          playerState={playerState}
+          setPlayerState={setPlayerState}
+        />
+      </div>
       <br />
       <SettingsTable
         playerState={playerState}

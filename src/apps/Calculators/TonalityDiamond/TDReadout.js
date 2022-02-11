@@ -33,23 +33,26 @@ const TDReadout = ({ stateData, setStateData }) => {
 
   return (
     <div>
-      <p>
-        <button
-          onClick={() => handleTdAllOtUtClick("all", stateData, setStateData)}
-        >
-          All
-        </button>
-        <button
-          onClick={() => handleTdAllOtUtClick("ot", stateData, setStateData)}
-        >
-          Overtones
-        </button>
-        <button
-          onClick={() => handleTdAllOtUtClick("ut", stateData, setStateData)}
-        >
-          Undertones
-        </button>
-      </p>
+      <br />
+      <div className="tableClone">
+        <p>
+          <button
+            onClick={() => handleTdAllOtUtClick("all", stateData, setStateData)}
+          >
+            All
+          </button>
+          <button
+            onClick={() => handleTdAllOtUtClick("ot", stateData, setStateData)}
+          >
+            Overtones
+          </button>
+          <button
+            onClick={() => handleTdAllOtUtClick("ut", stateData, setStateData)}
+          >
+            Undertones
+          </button>
+        </p>
+      </div>
       <p>
         <button
           onClick={() => handleTdRawEquivalentClick(stateData, setStateData)}
@@ -57,6 +60,7 @@ const TDReadout = ({ stateData, setStateData }) => {
           Raw / Equivalent Values
         </button>
       </p>
+
       <TDTable
         checked={checked}
         allOtUt={allOtUt}
@@ -88,8 +92,11 @@ const InvalidState = ({ checked }) => {
   }
   return (
     <div>
-      <p>At Least Two Parameters Must Be Selected</p>
-      <p>Currently Selected: {checkedDisplay}</p>
+      <br />
+      <div className="tableClone">
+        <p>At Least Two Parameters Must Be Selected</p>
+        <p>Currently Selected: {checkedDisplay}</p>
+      </div>
     </div>
   );
 };

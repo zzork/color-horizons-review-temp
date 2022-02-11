@@ -60,6 +60,8 @@ export default App;
 
 // - make all .scl generators uniform (microtonalexplorer.com!! no!)
 
+// - wtf, going to -1 on second steps of axby freezes it... why
+
 //////// WANT
 
 // - create permalink for sharing scale via url!

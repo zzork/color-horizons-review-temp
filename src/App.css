@@ -61,6 +61,20 @@ table {
   border-radius: 10px;
 }
 
+.settingsTable {
+  /* border-collapse: "collapse"; */
+  table-layout: fixed;
+  width: 50%;
+}
+
+.settingsTdBorder {
+  /* border: 1px solid black; */
+}
+
+.settingsThBorder {
+  /* border: 1px solid black; */
+}
+
 /* table {
   margin-left: auto;
   margin-right: auto;
@@ -135,6 +149,7 @@ button:active {
 
 canvas {
   border: 1px solid #000000;
+  border-radius: 10px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background: rgba(255, 255, 255, 0.836);
 }
@@ -168,17 +183,14 @@ input {
 }
 
 .disengagedEffect {
-  border: 1px solid black;
   background-color: #e7e5e3;
 }
 
 .engagedEffect {
-  border: 1px solid black;
   background-color: #e0b3f5;
 }
 
 .engagedEffectHeading {
-  border: 1px solid black;
   background-color: #c870f1;
 }
 
@@ -229,5 +241,5 @@ input {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 10px 10px;
   border-radius: 10px;
-  opacity: 0.75;
+  opacity: 0.8;
 }

@@ -11,55 +11,36 @@ import Release from "./settings/Release";
 import Tremolo from "./settings/Tremolo";
 
 const SettingsTable = ({ playerState, setPlayerState }) => {
-  const tableBorder = {
-    // border: "1px solid black",
-    borderCollapse: "collapse",
-    tableLayout: "fixed",
-    width: "50%",
-  };
-
-  const tdBorder = {
-    border: "1px solid black",
-  };
-
-  const thBorder = {
-    border: "1px solid black",
-  };
-
   const effectsOnOffColors = getEffectsEngagementColors(playerState);
 
   return (
-    <table style={tableBorder}>
+    <table className="settingsTable">
       <tbody>
         <tr>
-          <td></td> <td></td> <td></td> <td></td> <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td style={thBorder} colSpan="2">
+          <td className="settingsThBorder" colSpan="2">
             <h4>Pitch Adjustments</h4>
           </td>
-          <td style={thBorder} colSpan="2">
+          <td className="settingsThBorder" colSpan="2">
             <h4>Oscillator Type</h4>
           </td>
-          <td style={thBorder} colSpan="2">
+          <td className="settingsThBorder" colSpan="2">
             <h4>Single Notes / Chords</h4>
           </td>
         </tr>
         <tr>
-          <td style={tdBorder} colSpan="2">
+          <td className="settingsTdBorder" colSpan="2">
             <PitchAdjustments
               playerState={playerState}
               setPlayerState={setPlayerState}
             />
           </td>
-          <td style={tdBorder} colSpan="2">
+          <td className="settingsTdBorder" colSpan="2">
             <OscillatorType
               playerState={playerState}
               setPlayerState={setPlayerState}
             />
           </td>
-          <td style={tdBorder} colSpan="2">
+          <td className="settingsTdBorder" colSpan="2">
             <NotesChordsSelector
               playerState={playerState}
               setPlayerState={setPlayerState}
@@ -67,27 +48,27 @@ const SettingsTable = ({ playerState, setPlayerState }) => {
           </td>
         </tr>
         <tr>
-          <td style={thBorder} colSpan="2">
+          <td className="settingsThBorder" colSpan="2">
             <h4>Attack Time</h4>
           </td>
-          <td style={thBorder} colSpan="2">
+          <td className="settingsThBorder" colSpan="2">
             <h4>Release Time</h4>
           </td>
-          <td style={thBorder} colSpan="2">
+          <td className="settingsThBorder" colSpan="2">
             <h4>Distortion</h4>
           </td>
         </tr>
         <tr>
-          <td style={tdBorder} colSpan="2">
+          <td className="settingsTdBorder" colSpan="2">
             <Attack playerState={playerState} setPlayerState={setPlayerState} />
           </td>
-          <td style={tdBorder} colSpan="2">
+          <td className="settingsTdBorder" colSpan="2">
             <Release
               playerState={playerState}
               setPlayerState={setPlayerState}
             />
           </td>
-          <td style={tdBorder} colSpan="2">
+          <td className="settingsTdBorder" colSpan="2">
             <Distortion
               playerState={playerState}
               setPlayerState={setPlayerState}

@@ -17,7 +17,10 @@ export const AxByReadout = ({ stateData, setStateData }) => {
   }
 
   const secondCents = getSecondCents(firstSteps, firstCents, secondSteps);
-  const scale = getAxByScale(firstSteps, firstCents, secondSteps, secondCents);
+  let scale = [];
+  if (secondCents > 0) {
+    scale = getAxByScale(firstSteps, firstCents, secondSteps, secondCents);
+  }
   const sclData = [firstSteps, firstCents, secondSteps, secondCents];
 
   return (

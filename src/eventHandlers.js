@@ -1,12 +1,16 @@
 // app.js
 
 export const handleShowPlayerClick = (stateData, setStateData) => {
-  let newShowPlayer = !stateData.player.showPlayer;
+  let newActive = stateData.player.active;
+  if (stateData.player.active) {
+    newActive = false;
+  }
   let newState = {
     ...stateData,
     player: {
       ...stateData.player,
-      showPlayer: newShowPlayer,
+      showPlayer: !stateData.player.showPlayer,
+      active: newActive,
     },
   };
   setStateData(newState);
@@ -104,6 +108,19 @@ export const reverseQwerty = (stateData, setStateData) => {
     ...stateData,
     player: {
       ...stateData.player,
+      active: !active,
+    },
+  };
+  setStateData(newState);
+};
+
+export const floatingReverseQwerty = (stateData, setStateData) => {
+  let active = stateData.player.active;
+  let newState = {
+    ...stateData,
+    player: {
+      ...stateData.player,
+      showPlayer: true,
       active: !active,
     },
   };

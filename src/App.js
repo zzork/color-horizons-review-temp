@@ -6,12 +6,13 @@ import { stateTable } from "./stateData";
 import { ComparisonOptions } from "./apps/RatioComparer/ComparisonOptions";
 import Player from "./apps/Player/Index";
 import { handleShowPlayerClick } from "./eventHandlers";
+import QwertyFloat from "./components/QwertyFloat";
 
 function App() {
   const [stateData, setStateData] = useState(stateTable);
 
   useEffect(() => {
-    console.log(stateData);
+    console.log({ stateData });
   }, [stateData]);
 
   return (
@@ -43,6 +44,7 @@ function App() {
       </table>
       <CalculatorWindow stateData={stateData} setStateData={setStateData} />
       <br />
+      <QwertyFloat stateData={stateData} setStateData={setStateData} />
     </div>
   );
 }

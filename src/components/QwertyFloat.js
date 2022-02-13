@@ -3,7 +3,7 @@ import { floatingReverseQwerty } from "../eventHandlers";
 const QwertyFloat = ({ stateData, setStateData }) => {
   return (
     <div className="bottomCorner">
-      <h3>Qwerty Playback</h3>
+      <h3>QWERTY Playback</h3>
       <h4> {stateData.player.active ? "Engaged" : "Disengaged"}</h4>
       <button onClick={() => floatingReverseQwerty(stateData, setStateData)}>
         {stateData.player.active

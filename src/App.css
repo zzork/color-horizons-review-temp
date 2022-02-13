@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -15,7 +15,7 @@
 
 .App-link {
   color: #61dafb;
-}
+} */
 
 input[type="range"] {
   -webkit-appearance: none;
@@ -92,16 +92,7 @@ body {
 
 td {
   text-align: center;
-  background-color: rgb(238, 238, 238);
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  background-color: #e6e4e3;
 }
 
 button {
@@ -121,11 +112,13 @@ button {
 button:active {
   background-color: #e0b3f5;
   transform: translateY(1px);
+  z-index: 1;
 }
 
 .activeButton {
   background-color: #e0b3f5;
   transform: translateY(1px);
+  z-index: 1;
 }
 
 .rootButton {
@@ -135,6 +128,7 @@ button:active {
 .activeRootButton {
   background-color: #c870f1;
   transform: translateY(1px);
+  z-index: 1;
 }
 
 .tableKeys {
@@ -160,6 +154,10 @@ input {
 
 .bordered {
   border: 1px solid black;
+}
+
+.tableTopRow {
+  background-color: #f5f2ee;
 }
 
 .noHighlight {
@@ -242,4 +240,60 @@ input {
   padding: 10px 10px;
   border-radius: 10px;
   opacity: 0.8;
+}
+
+.topBar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  /* margin-top: 10px;
+  margin-left: 10px; */
+  /* opacity: 0.8; */
+  width: 100%;
+  height: 75px;
+  border: 1px solid black;
+  background-color: rgb(238, 238, 238);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* padding: 10px 10px; */
+  /* border-radius: 10px; */
+  z-index: 10;
+}
+
+.wideTable {
+  width: 92%;
+}
+
+.leftTd {
+  text-align: left;
+}
+
+header {
+  /* border-bottom: 1px solid #000; */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 75px;
+  justify-content: flex-end;
+}
+header > h2 {
+  margin-right: auto;
+  margin-left: 10px;
+  /* display: flex; */
+}
+header span {
+  float: right;
+  margin-right: 10px;
+
+  /* transform: translateY(50%); */
+}
+
+.marginTop {
+  margin-top: 100px;
+}
+
+.vl {
+  border-left: 3px solid white;
+  height: 75px;
+  margin-right: 10px;
 }

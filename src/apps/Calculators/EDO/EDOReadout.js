@@ -43,13 +43,13 @@ export const EDOReadout = ({ stateData, setStateData }) => {
       <table>
         <tbody>
           <tr>
-            <td>Step</td>
-            <td>Value</td>
+            <td className="tableTopRow">Step</td>
+            <td className="tableTopRow">Value</td>
           </tr>
           {scale.map((displayStep, index) => {
             return (
               <tr key={index}>
-                <td>Step {index}</td>
+                <td>{index}</td>
                 <td>{displayStep.toFixed(5)}</td>
               </tr>
             );

@@ -38,14 +38,14 @@ const OTModeReadoutTable = ({
       <table>
         <tbody>
           <tr>
-            <td>Step</td>
-            <td>Ratio</td>
-            <td>Value</td>
-            <td>Difference</td>
+            <td className="tableTopRow">Step</td>
+            <td className="tableTopRow">Ratio</td>
+            <td className="tableTopRow">Value</td>
+            <td className="tableTopRow">Difference</td>
           </tr>
           {otObject.ratios.map((values, valueIndex) => (
             <tr key={valueIndex}>
-              <td>Step {valueIndex}</td>
+              <td>{valueIndex}</td>
               <td>
                 {otObject.ratios[valueIndex][0]} /{" "}
                 {otObject.ratios[valueIndex][1]}

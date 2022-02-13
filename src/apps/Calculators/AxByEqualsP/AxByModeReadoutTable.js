@@ -37,14 +37,14 @@ const AxByModeReadoutTable = ({
       <table>
         <tbody>
           <tr>
-            <td>Step</td>
-            <td>Value</td>
-            <td>Difference</td>
-            <td>Interval</td>
+            <td className="tableTopRow">Step</td>
+            <td className="tableTopRow">Value</td>
+            <td className="tableTopRow">Difference</td>
+            <td className="tableTopRow">Interval</td>
           </tr>
           {ltObject.mode.map((value, valueIndex) => (
             <tr key={valueIndex}>
-              <td>Step {valueIndex}</td>
+              <td>{valueIndex}</td>
               <td>{value.toFixed(5)}</td>
               <td>
                 {valueIndex === 0

@@ -7,6 +7,7 @@ import { ComparisonOptions } from "./apps/RatioComparer/ComparisonOptions";
 import Player from "./apps/Player/Index";
 import { handleShowPlayerClick } from "./eventHandlers";
 import QwertyFloat from "./components/QwertyFloat";
+import TopBar from "./components/TopBar";
 
 function App() {
   const [stateData, setStateData] = useState(stateTable);
@@ -16,16 +17,10 @@ function App() {
   }, [stateData]);
 
   return (
-    <div>
-      <h1>COLOR HORIZONS</h1>
-      <h3>Microtonal Scale Tools / Virtual Synthesizer</h3>
-      <button onClick={() => handleShowPlayerClick(stateData, setStateData)}>
-        {stateData.player.showPlayer
-          ? "Hide Scale Player"
-          : "Show Scale Player"}
-      </button>
+    <div className="marginTop">
+      <TopBar stateData={stateData} setStateData={setStateData} />
+      <QwertyFloat stateData={stateData} setStateData={setStateData} />
       <Player stateData={stateData} setStateData={setStateData} />
-      <br />
       <h1>Scale Creation Tools</h1>
       <table>
         <tbody>
@@ -44,7 +39,13 @@ function App() {
       </table>
       <CalculatorWindow stateData={stateData} setStateData={setStateData} />
       <br />
-      <QwertyFloat stateData={stateData} setStateData={setStateData} />
+      <br />
+      <br />
+      <br />
+      <div className="tableClone">
+        <p>jonlervold.com - 2022</p>
+      </div>
+      <br />
     </div>
   );
 }
@@ -58,11 +59,17 @@ export default App;
 
 // - comparison window... what should the ratio group options be??
 
-// - make engaged / disengaged player state clearer to user
-
 // - make all .scl generators uniform (microtonalexplorer.com!! no!)
 
-// - wtf, going to -1 on second steps of axby freezes it... why
+// about window...
+
+// add explanations of methods
+
+// make all buttons dynamic instead of "show/hide" or whatever
+
+// on off on effects make bigger
+
+// table header rows darker than content rows
 
 //////// WANT
 

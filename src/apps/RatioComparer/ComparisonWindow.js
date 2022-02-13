@@ -16,22 +16,22 @@ export const ComparisonWindow = ({ scale, stateData }) => {
       <table>
         <tbody>
           <tr>
-            <td>Ratio</td>
-            <td>Cents</td>
-            <td>
+            <td className="tableTopRow">Ratio</td>
+            <td className="tableTopRow">Cents</td>
+            <td className="tableTopRow">
               Closest
               <br /> Step
             </td>
-            <td>Value</td>
-            <td>Difference</td>
-            <td>Inverted Ratio</td>
-            <td>Cents</td>
-            <td>
+            <td className="tableTopRow">Value</td>
+            <td className="tableTopRow">Difference</td>
+            <td className="tableTopRow">Inverted Ratio</td>
+            <td className="tableTopRow">Cents</td>
+            <td className="tableTopRow">
               Closest
               <br /> Step
             </td>
-            <td>Value</td>
-            <td>Difference</td>
+            <td className="tableTopRow">Value</td>
+            <td className="tableTopRow">Difference</td>
           </tr>
           {endTable}
         </tbody>

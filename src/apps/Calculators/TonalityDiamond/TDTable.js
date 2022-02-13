@@ -46,13 +46,13 @@ const TDTable = ({ checked, allOtUt, showEquivalent }) => {
   };
 
   const topRow = checked.map((number) => (
-    <td>
+    <td className="tableTopRow">
       <b>{number}</b>
     </td>
   ));
   const additionalRows = checked.map((outerLoopNumber) => (
     <tr>
-      <td>
+      <td className="tableTopRow">
         <b>{outerLoopNumber}</b>
       </td>
       {checked.map((innerLoopNumber) => (
@@ -68,7 +68,7 @@ const TDTable = ({ checked, allOtUt, showEquivalent }) => {
     <table>
       <tbody>
         <tr>
-          <td></td>
+          <td>*</td>
           {topRow}
         </tr>
         {additionalRows}

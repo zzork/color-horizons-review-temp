@@ -5,7 +5,7 @@ const TopBar = ({ stateData, setStateData }) => {
     <div className="topBar">
       <header>
         <h2>COLOR HORIZONS</h2>
-        <div className="vl"></div>
+        {/* <div className="vl"></div> */}
         <span>
           <button
             onClick={() => handleShowPlayerClick(stateData, setStateData)}
@@ -15,7 +15,7 @@ const TopBar = ({ stateData, setStateData }) => {
               : "Show Scale Player"}
           </button>
         </span>
-        <div className="vl"></div>
+        {/* <div className="vl"></div> */}
         <span>
           <button>About</button>
         </span>

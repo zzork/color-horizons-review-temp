@@ -17,35 +17,36 @@ function App() {
   }, [stateData]);
 
   return (
-    <div className="marginTop">
-      <TopBar stateData={stateData} setStateData={setStateData} />
-      <QwertyFloat stateData={stateData} setStateData={setStateData} />
-      <Player stateData={stateData} setStateData={setStateData} />
-      <h1>Scale Creation Tools</h1>
-      <table>
-        <tbody>
-          <tr>
-            <td>
-              <Selector stateData={stateData} setStateData={setStateData} />
-            </td>
-            <td>
-              <ComparisonOptions
-                stateData={stateData}
-                setStateData={setStateData}
-              />
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <CalculatorWindow stateData={stateData} setStateData={setStateData} />
-      <br />
-      <br />
-      <br />
-      <br />
-      <div className="tableClone">
-        <p>jonlervold.com - 2022</p>
+    <div>
+      <div className="marginTop">
+        <TopBar stateData={stateData} setStateData={setStateData} />
+        <QwertyFloat stateData={stateData} setStateData={setStateData} />
+        <Player stateData={stateData} setStateData={setStateData} />
+        <h1>Scale Creation Tools</h1>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <Selector stateData={stateData} setStateData={setStateData} />
+              </td>
+              <td>
+                <ComparisonOptions
+                  stateData={stateData}
+                  setStateData={setStateData}
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <CalculatorWindow stateData={stateData} setStateData={setStateData} />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
-      <br />
+      <div className="bottomBar">
+        <p>created by jon lervold // jonlervold.com // 2022</p>
+      </div>
     </div>
   );
 }

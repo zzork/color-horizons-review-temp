@@ -1,54 +1,21 @@
-/* .App {
+/* page body */
+
+body {
   text-align: center;
+  background: rgb(255, 254, 143);
+  background: linear-gradient(
+    45deg,
+    rgb(255, 225, 143) 0%,
+    rgba(255, 211, 140, 1) 100%
+  );
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.marginTop {
+  margin-top: 100px;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
-} */
-
-input[type="range"] {
-  -webkit-appearance: none;
-  background: transparent;
-  cursor: pointer;
-}
-
-input[type="range"]::-webkit-slider-runnable-track {
-  background: #b1b1b1;
-  height: 0.75rem;
-}
-
-input[type="range"]::-moz-range-track {
-  background: #b1b1b1;
-  height: 0.755rem;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  margin-top: 0px;
-  background-color: #6c6ed6;
-  height: 0.75rem;
-  width: 1rem;
-}
-
-input[type="range"]::-moz-range-thumb {
-  border: none;
-  border-radius: 0;
-  background-color: #6c6ed6;
-  height: 0.75rem;
-  width: 1rem;
-}
+/* tables */
 
 table {
   table-layout: fixed;
@@ -61,39 +28,78 @@ table {
   border-radius: 10px;
 }
 
+td {
+  text-align: center;
+  background-color: #e6e4e3;
+  overflow: hidden;
+}
+
+.tableTopRow {
+  background-color: #f5f2ee;
+}
+
 .settingsTable {
-  /* border-collapse: "collapse"; */
   table-layout: fixed;
   width: 50%;
 }
 
-.settingsTdBorder {
-  /* border: 1px solid black; */
-}
-
-.settingsThBorder {
-  /* border: 1px solid black; */
-}
-
-/* table {
+.tableClone {
+  table-layout: fixed;
+  border: 1px solid black;
   margin-left: auto;
   margin-right: auto;
-} */
-
-body {
-  text-align: center;
-  background: rgb(255, 254, 143);
-  background: linear-gradient(
-    45deg,
-    rgb(255, 225, 143) 0%,
-    rgba(255, 211, 140, 1) 100%
-  );
+  width: 80%;
+  display: table;
+  background-color: rgb(238, 238, 238);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
 }
 
-td {
-  text-align: center;
+.noHighlight {
   background-color: #e6e4e3;
 }
+
+.level4Highlight {
+  background-color: #f5deb363;
+}
+
+.level3Highlight {
+  background-color: #f5deb39d;
+}
+
+.level2Highlight {
+  background-color: #f5deb3d3;
+}
+
+.level1Highlight {
+  background-color: #f5deb3;
+}
+
+.disengagedEffect {
+  background-color: #e7e5e3;
+}
+
+.engagedEffect {
+  background-color: #e0b3f5;
+}
+
+.engagedEffectHeading {
+  background-color: #c870f1;
+}
+
+.masterVolume {
+  table-layout: fixed;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  display: table;
+  background-color: rgb(238, 238, 238);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
+}
+
+/* buttons */
 
 button {
   background-color: #e6e4e3;
@@ -141,6 +147,8 @@ button:active {
   font-style: italic;
 }
 
+/* oscilloscope */
+
 canvas {
   border: 1px solid #000000;
   border-radius: 10px;
@@ -148,52 +156,10 @@ canvas {
   background: rgba(255, 255, 255, 0.836);
 }
 
+/* inputs */
+
 input {
   text-align: center;
-}
-
-.bordered {
-  border: 1px solid black;
-}
-
-.tableTopRow {
-  background-color: #f5f2ee;
-}
-
-.noHighlight {
-  background-color: #e6e4e3;
-}
-
-.level4Highlight {
-  background-color: #f5deb363;
-}
-
-.level3Highlight {
-  background-color: #f5deb39d;
-}
-
-.level2Highlight {
-  background-color: #f5deb3d3;
-}
-
-.level1Highlight {
-  background-color: #f5deb3;
-}
-
-.disengagedEffect {
-  background-color: #e7e5e3;
-}
-
-.engagedEffect {
-  background-color: #e0b3f5;
-}
-
-.engagedEffectHeading {
-  background-color: #c870f1;
-}
-
-.noBorder {
-  border: none;
 }
 
 input[type="number"] {
@@ -204,29 +170,42 @@ input {
   background-color: #fff5e3;
 }
 
-.tableClone {
-  table-layout: fixed;
-  border: 1px solid black;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  display: table;
-  background-color: rgb(238, 238, 238);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 10px;
+/* range sliders */
+
+input[type="range"] {
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
 }
 
-.masterVolume {
-  table-layout: fixed;
-  border: 1px solid black;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  display: table;
-  background-color: rgb(238, 238, 238);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 10px;
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #b1b1b1;
+  height: 0.75rem;
 }
+
+input[type="range"]::-moz-range-track {
+  background: #b1b1b1;
+  height: 0.755rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: 0px;
+  background-color: #6c6ed6;
+  height: 0.75rem;
+  width: 1rem;
+}
+
+input[type="range"]::-moz-range-thumb {
+  border: none;
+  border-radius: 0;
+  background-color: #6c6ed6;
+  height: 0.75rem;
+  width: 1rem;
+}
+
+/* top, bottom, float components */
 
 .bottomCorner {
   position: fixed;
@@ -241,6 +220,18 @@ input {
   border-radius: 10px;
   opacity: 0.8;
   z-index: 1;
+}
+
+.bottomBar {
+  table-layout: fixed;
+  border-top: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  display: table;
+  background-color: rgb(238, 238, 238);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* border-radius: 10px; */
 }
 
 .topBar {
@@ -261,26 +252,6 @@ input {
   z-index: 10;
 }
 
-.bottomBar {
-  table-layout: fixed;
-  border-top: 1px solid black;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  display: table;
-  background-color: rgb(238, 238, 238);
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  /* border-radius: 10px; */
-}
-
-.wideTable {
-  width: 92%;
-}
-
-.leftTd {
-  text-align: left;
-}
-
 header {
   /* border-bottom: 1px solid #000; */
   display: flex;
@@ -292,18 +263,11 @@ header {
 header > h2 {
   margin-right: auto;
   margin-left: 10px;
-  /* display: flex; */
 }
+
 header span {
   float: right;
   margin-right: 10px;
-
-  /* transform: translateY(50%); */
-}
-
-.marginTop {
-  margin-top: 100px;
-  position: relative;
 }
 
 .vl {
@@ -316,5 +280,5 @@ header span {
   width: 175px;
 }
 .topButton2 {
-  width: 350px;
+  width: 215px;
 }

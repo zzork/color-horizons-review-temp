@@ -50,8 +50,6 @@ export const handleComparisonSelect = (
   setStateData(newState);
 };
 
-// ALSO IN COMPARISON OPTIONS, FOLLOW THIS FORMULA TO EXTRACT NO PARENS HANDLERS!
-
 export const handleApproximationEntry = (event, stateData, setStateData) => {
   if (event.target.name === "closeApproximation") {
     let newValue = Number(event.target.value);

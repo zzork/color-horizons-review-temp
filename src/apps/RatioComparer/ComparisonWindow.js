@@ -4,6 +4,10 @@ import getHighlightBoundaries from "./util/getHighlightBoundaries";
 import getRows from "./util/getRows";
 
 export const ComparisonWindow = ({ scale, stateData }) => {
+  if (stateData.comparisonWindow.comparison === "off") {
+    return <div></div>;
+  }
+
   const selectedComparison = stateData.comparisonWindow.comparison;
 
   const highlightBoundaries = getHighlightBoundaries(stateData);

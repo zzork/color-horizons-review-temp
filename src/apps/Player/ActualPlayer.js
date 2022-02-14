@@ -49,16 +49,16 @@ const ActualPlayer = ({
 
   // key down and up
 
-  const handleInputClick = useCallback(
-    (event) => {
-      if (stateData.player.active && event.target.type === "number") {
-        disableQwerty(stateData, setStateData);
-      }
-    },
-    [stateData]
-  );
+  // const handleInputClick = useCallback(
+  //   (event) => {
+  //     if (stateData.player.active && event.target.type === "number") {
+  //       disableQwerty(stateData, setStateData);
+  //     }
+  //   },
+  //   [stateData]
+  // );
 
-  useOnClickOutside(handleInputClick);
+  // useOnClickOutside(handleInputClick);
 
   useEffect(() => {
     if (!stateData.player.active) return;
@@ -129,13 +129,12 @@ const ActualPlayer = ({
         <div>
           Selection Contains Values Above the Range of Human Hearing
           <br />
-          <br />
         </div>
       )}
       <button onClick={() => reverseQwerty(stateData, setStateData)}>
         {stateData.player.active
-          ? "Disengage QWERTY Playback"
-          : "Engage QWERTY Playback"}
+          ? "QWERTY Player ON 🔊"
+          : "QWERTY Player OFF 🔇"}
       </button>
       <br />
       <br />

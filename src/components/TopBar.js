@@ -15,8 +15,8 @@ const TopBar = ({ stateData, setStateData }) => {
             onClick={() => handleShowPlayerClick(stateData, setStateData)}
           >
             {stateData.player.showPlayer
-              ? "Hide Scale Player"
-              : "Show Scale Player"}
+              ? "Scale Player Visible"
+              : "Scale Player Hidden"}
           </button>
         </span>
         <span>
@@ -25,8 +25,8 @@ const TopBar = ({ stateData, setStateData }) => {
             onClick={() => floatingReverseQwerty(stateData, setStateData)}
           >
             {stateData.player.active
-              ? "QWERTY Player ON (Click to Disengage)"
-              : "QWERTY Player OFF (Click to Engage)"}
+              ? "QWERTY Player ON 🔊"
+              : "QWERTY Player OFF 🔇"}
           </button>
         </span>
         <span>

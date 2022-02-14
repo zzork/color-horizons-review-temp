@@ -20,7 +20,7 @@ function App() {
     <div>
       <div className="marginTop">
         <TopBar stateData={stateData} setStateData={setStateData} />
-        <QwertyFloat stateData={stateData} setStateData={setStateData} />
+        {/* <QwertyFloat stateData={stateData} setStateData={setStateData} /> */}
         <Player stateData={stateData} setStateData={setStateData} />
         <h1>Scale Creation Tools</h1>
         <table>
@@ -39,8 +39,6 @@ function App() {
           </tbody>
         </table>
         <CalculatorWindow stateData={stateData} setStateData={setStateData} />
-        <br />
-        <br />
         <br />
         <br />
       </div>

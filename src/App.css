@@ -311,3 +311,10 @@ header span {
   height: 75px;
   margin-right: 10px;
 }
+
+.topButton1 {
+  width: 175px;
+}
+.topButton2 {
+  width: 350px;
+}

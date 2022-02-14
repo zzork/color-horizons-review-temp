@@ -6,8 +6,12 @@ const TopBar = ({ stateData, setStateData }) => {
       <header>
         <h2>COLOR HORIZONS</h2>
         {/* <div className="vl"></div> */}
+        {/* <span>
+          <h4>QWERTY Playback {stateData.player.active ? "On" : "Off"}</h4>
+        </span> */}
         <span>
           <button
+            className="topButton1"
             onClick={() => handleShowPlayerClick(stateData, setStateData)}
           >
             {stateData.player.showPlayer
@@ -15,36 +19,21 @@ const TopBar = ({ stateData, setStateData }) => {
               : "Show Scale Player"}
           </button>
         </span>
-        {/* <div className="vl"></div> */}
+        <span>
+          <button
+            className="topButton2"
+            onClick={() => floatingReverseQwerty(stateData, setStateData)}
+          >
+            {stateData.player.active
+              ? "QWERTY Player ON (Click to Disengage)"
+              : "QWERTY Player OFF (Click to Engage)"}
+          </button>
+        </span>
         <span>
           <button>About</button>
         </span>
         {/* <div className="vl"></div> */}
-        {/* <span>
-          <h3>
-            QWERTY Playback
-            <br />
-            {stateData.player.active ? "On" : "Off"}
-          </h3>
-        </span> */}
-        {/* <span>
-          <button
-            onClick={() => floatingReverseQwerty(stateData, setStateData)}
-          >
-            {stateData.player.active ? (
-              <div>
-                QWERTY Playback ON
-                <br />
-                Click to Disengage
-              </div>
-            ) : (
-              <div>
-                QWERTY Playback OFF <br />
-                Click to Engage
-              </div>
-            )}
-          </button>
-        </span> */}
+        {/* <div className="vl"></div> */}
         {/* <div className="vl"></div> */}
         {/* <div className="vl"></div> */}
       </header>

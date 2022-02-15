@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div>
-      <div className="marginTop">
+      <div className="mainDiv">
         <TopBar stateData={stateData} setStateData={setStateData} />
         {/* <QwertyFloat stateData={stateData} setStateData={setStateData} /> */}
         <Player stateData={stateData} setStateData={setStateData} />
@@ -64,11 +64,11 @@ export default App;
 
 // add explanations of methods
 
-// make all buttons dynamic instead of "show/hide" or whatever
+// dynamic handling of the size of the canvas
 
-// on off on effects make bigger
+// dynamic handling of the player buttons
 
-// table header rows darker than content rows
+// dynamic handling of the qwerty on/off buttons... disappear on mobile
 
 //////// WANT
 

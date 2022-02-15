@@ -6,10 +6,8 @@ import {
 const Tremolo = ({ playerState, setPlayerState }) => {
   return (
     <div>
-      <br />
-      {(playerState.tremoloOn && "On") || (!playerState.tremoloOn && "Off")}
-      <br />
-      <br />
+      {(playerState.tremoloOn && <h4>On</h4>) ||
+        (!playerState.tremoloOn && <h4>Off</h4>)}
       Speed
       <br />
       0.5 - 20 Hz

@@ -57,9 +57,10 @@ const TDReadout = ({ stateData, setStateData }) => {
         <button
           onClick={() => handleTdRawEquivalentClick(stateData, setStateData)}
         >
-          Raw / Equivalent Values
+          {showEquivalent ? "Show Raw Values" : "Show Equivalent Values"}
         </button>
       </p>
+      <h4>{showEquivalent ? "Equivalent Values" : "Raw Values"}</h4>
 
       <TDTable
         checked={checked}

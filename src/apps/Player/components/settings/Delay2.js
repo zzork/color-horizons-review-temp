@@ -6,10 +6,8 @@ import {
 const Delay2 = ({ playerState, setPlayerState }) => {
   return (
     <div>
-      <br />
-      {(playerState.delay2On && "On") || (!playerState.delay2On && "Off")}
-      <br />
-      <br />
+      {(playerState.delay2On && <h4>On</h4>) ||
+        (!playerState.delay2On && <h4>Off</h4>)}
       Time
       <br />
       5 - 5,000 ms

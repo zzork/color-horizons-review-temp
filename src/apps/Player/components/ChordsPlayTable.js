@@ -181,7 +181,7 @@ const ChordsPlayTable = ({
   }
 
   return (
-    <div>
+    <div className="chordsPlayTable">
       {row4Buttons}
       <br />
       {row3Buttons}

@@ -6,11 +6,8 @@ import {
 const PitchVibrato = ({ playerState, setPlayerState }) => {
   return (
     <div>
-      <br />
-      {(playerState.pitchVibratoOn && "On") ||
-        (!playerState.pitchVibratoOn && "Off")}
-      <br />
-      <br />
+      {(playerState.pitchVibratoOn && <h4>On</h4>) ||
+        (!playerState.pitchVibratoOn && <h4>Off</h4>)}
       Speed
       <br />
       0 - 10,000 Hz

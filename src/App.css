@@ -10,9 +10,22 @@ body {
   );
 }
 
-.marginTop {
+.mainDiv {
   margin-top: 100px;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+@media (max-width: 900px) {
+  .mainDiv {
+    width: 90%;
+  }
+}
+@media (max-width: 750px) {
+  .mainDiv {
+    width: 99%;
+  }
 }
 
 /* tables */
@@ -22,7 +35,7 @@ table {
   border: 1px solid black;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 99%;
   background: white;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
@@ -40,7 +53,17 @@ td {
 
 .settingsTable {
   table-layout: fixed;
-  width: 50%;
+  width: 60%;
+}
+@media (max-width: 900px) {
+  .settingsTable {
+    width: 85%;
+  }
+}
+@media (max-width: 750px) {
+  .settingsTable {
+    width: 99%;
+  }
 }
 
 .tableClone {
@@ -48,7 +71,7 @@ td {
   border: 1px solid black;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
+  width: 99%;
   display: table;
   background-color: rgb(238, 238, 238);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -92,11 +115,21 @@ td {
   border: 1px solid black;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 60%;
   display: table;
   background-color: rgb(238, 238, 238);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
+}
+@media (max-width: 900px) {
+  .masterVolume {
+    width: 90%;
+  }
+}
+@media (max-width: 750px) {
+  .masterVolume {
+    width: 99%;
+  }
 }
 
 /* buttons */
@@ -281,4 +314,8 @@ header span {
 }
 .topButton2 {
   width: 215px;
+}
+
+.chordsPlayTable {
+  white-space: nowrap;
 }

@@ -56,6 +56,8 @@ export default App;
 
 //////// NEED
 
+// - eliminate key error messages on each calc method
+
 // - comparison window... what should the ratio group options be??
 
 // - make all .scl generators uniform (microtonalexplorer.com!! no!)
@@ -67,6 +69,8 @@ export default App;
 // dynamic handling of the size of the canvas
 
 // dynamic handling of the player buttons
+
+// dynamic handling of comparison window - put inversions underneath on small screen
 
 // dynamic handling of the qwerty on/off buttons... disappear on mobile
 

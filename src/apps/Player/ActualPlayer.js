@@ -110,6 +110,8 @@ const ActualPlayer = ({
     };
   }, [stateData, playerState, pressedKeys]);
 
+  MyComponent();
+
   return (
     <div id="player">
       <br />
@@ -131,6 +133,7 @@ const ActualPlayer = ({
           <br />
         </div>
       )}
+      <br />
       <button onClick={() => reverseQwerty(stateData, setStateData)}>
         {stateData.player.active
           ? "QWERTY Player ON 🔊"
@@ -160,3 +163,37 @@ const ActualPlayer = ({
 };
 
 export default ActualPlayer;
+
+// COPIED CODE, REFACTOR
+
+function debounce(fn, ms) {
+  let timer;
+  return (_) => {
+    clearTimeout(timer);
+    timer = setTimeout((_) => {
+      timer = null;
+      fn.apply(this, arguments);
+    }, ms);
+  };
+}
+
+function MyComponent() {
+  const [dimensions, setDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
+  });
+  useEffect(() => {
+    const debouncedHandleResize = debounce(function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth,
+      });
+    }, 250);
+
+    window.addEventListener("resize", debouncedHandleResize);
+
+    return (_) => {
+      window.removeEventListener("resize", debouncedHandleResize);
+    };
+  });
+}

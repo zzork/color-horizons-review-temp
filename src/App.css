@@ -17,12 +17,7 @@ body {
   margin-right: auto;
   width: 80%;
 }
-@media (max-width: 900px) {
-  .mainDiv {
-    width: 90%;
-  }
-}
-@media (max-width: 750px) {
+@media (max-width: 1050px) {
   .mainDiv {
     width: 99%;
   }
@@ -50,15 +45,15 @@ td {
 .tableTopRow {
   background-color: #f5f2ee;
 }
+@media (max-width: 800px) {
+  .tableTopRow {
+    font-size: 0.5em;
+  }
+}
 
 .settingsTable {
   table-layout: fixed;
   width: 60%;
-}
-@media (max-width: 900px) {
-  .settingsTable {
-    width: 85%;
-  }
 }
 @media (max-width: 750px) {
   .settingsTable {
@@ -81,21 +76,46 @@ td {
 .noHighlight {
   background-color: #e6e4e3;
 }
+@media (max-width: 800px) {
+  .noHighlight {
+    font-size: 0.6em;
+  }
+}
 
 .level4Highlight {
   background-color: #f5deb363;
+}
+@media (max-width: 800px) {
+  .level4Highlight {
+    font-size: 0.6em;
+  }
 }
 
 .level3Highlight {
   background-color: #f5deb39d;
 }
+@media (max-width: 800px) {
+  .level3Highlight {
+    font-size: 0.6em;
+  }
+}
 
 .level2Highlight {
   background-color: #f5deb3d3;
 }
+@media (max-width: 800px) {
+  .level2Highlight {
+    font-size: 0.6em;
+  }
+}
 
 .level1Highlight {
   background-color: #f5deb3;
+}
+@media (max-width: 800px) {
+  .level1Highlight {
+    font-size: 0.6em;
+  }
 }
 
 .disengagedEffect {
@@ -120,11 +140,6 @@ td {
   background-color: rgb(238, 238, 238);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
-}
-@media (max-width: 900px) {
-  .masterVolume {
-    width: 90%;
-  }
 }
 @media (max-width: 750px) {
   .masterVolume {
@@ -152,6 +167,15 @@ button:active {
   background-color: #e0b3f5;
   transform: translateY(1px);
   z-index: 1;
+}
+
+.regularPlayButton {
+  background-color: #e6e4e3;
+}
+@media (max-width: 750px) {
+  .regularPlayButton {
+    width: 99%;
+  }
 }
 
 .activeButton {
@@ -317,5 +341,19 @@ header span {
 }
 
 .chordsPlayTable {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
   white-space: nowrap;
+}
+@media (max-width: 1525px) {
+  .chordsPlayTable {
+    transform: scale(0.9);
+  }
+}
+@media (max-width: 1050px) {
+  .chordsPlayTable {
+    transform: scale(0.4);
+    transform-origin: left;
+  }
 }

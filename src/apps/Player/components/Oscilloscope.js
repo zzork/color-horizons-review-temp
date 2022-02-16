@@ -2,7 +2,11 @@ import { useRef, useEffect } from "react";
 import { oscilloscopeAnalyser } from "../services/notePlayerService";
 
 const Oscilloscope = ({}) => {
-  const width = window.innerWidth * 0.5;
+  let width = window.innerWidth * 0.5;
+  if (window.innerWidth < 975) {
+    width = window.innerWidth * 0.9;
+  }
+
   const height = 175;
 
   const canvasRef = useRef(null);
@@ -49,7 +53,7 @@ const Oscilloscope = ({}) => {
       canvasCtx.stroke();
     }
     draw();
-  }, []);
+  }, [width]);
 
   return <canvas height={height} width={width} ref={canvasRef} />;
 };

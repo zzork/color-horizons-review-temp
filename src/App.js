@@ -16,9 +16,11 @@ function App() {
     console.log({ stateData });
   }, [stateData]);
 
+  MyComponent();
+
   return (
     <div>
-      <div className="mainDiv">
+      <div className="mainDiv" id="mainDiv">
         <TopBar stateData={stateData} setStateData={setStateData} />
         {/* <QwertyFloat stateData={stateData} setStateData={setStateData} /> */}
         <Player stateData={stateData} setStateData={setStateData} />
@@ -50,6 +52,39 @@ function App() {
 }
 
 export default App;
+
+// COPIED RESIZE HOOK CODE, REFACTOR
+function debounce(fn, ms) {
+  let timer;
+  return (_) => {
+    clearTimeout(timer);
+    timer = setTimeout((_) => {
+      timer = null;
+      fn.apply(this, arguments);
+    }, ms);
+  };
+}
+
+function MyComponent() {
+  const [dimensions, setDimensions] = useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
+  });
+  useEffect(() => {
+    const debouncedHandleResize = debounce(function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth,
+      });
+    }, 250);
+
+    window.addEventListener("resize", debouncedHandleResize);
+
+    return (_) => {
+      window.removeEventListener("resize", debouncedHandleResize);
+    };
+  });
+}
 
 // TO ADD
 // ------

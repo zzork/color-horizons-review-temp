@@ -162,6 +162,49 @@ button {
   border-radius: 10px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+@media (max-width: 1500px) {
+  Button {
+    width: fit-content;
+    padding: 10px 5px;
+  }
+}
+@media (max-width: 1200px) {
+  Button {
+    width: fit-content;
+    padding: 10px 2px;
+  }
+}
+@media (max-width: 1050px) {
+  Button {
+    width: fit-content;
+    padding: 10px 5px;
+  }
+}
+@media (max-width: 950px) {
+  Button {
+    width: 65px;
+    overflow: hidden;
+    padding: 10px 0px;
+  }
+}
+@media (max-width: 820px) {
+  Button {
+    width: 55px;
+    padding: 10px 0px;
+  }
+}
+@media (max-width: 690px) {
+  Button {
+    width: 45px;
+    padding: 10px 0px;
+  }
+}
+@media (max-width: 565px) {
+  Button {
+    width: 39px;
+    padding: 10px 0px;
+  }
+}
 
 button:active {
   background-color: #e0b3f5;
@@ -171,11 +214,6 @@ button:active {
 
 .regularPlayButton {
   background-color: #e6e4e3;
-}
-@media (max-width: 750px) {
-  .regularPlayButton {
-    width: 99%;
-  }
 }
 
 .activeButton {
@@ -346,7 +384,7 @@ header span {
   margin-right: auto;
   white-space: nowrap;
 }
-@media (max-width: 1525px) {
+/* @media (max-width: 1525px) {
   .chordsPlayTable {
     transform: scale(0.9);
   }
@@ -354,6 +392,5 @@ header span {
 @media (max-width: 1050px) {
   .chordsPlayTable {
     transform: scale(0.4);
-    transform-origin: left;
   }
-}
+} */

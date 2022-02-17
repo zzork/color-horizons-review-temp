@@ -46,6 +46,16 @@ const ChordsPlayTable = ({
   let row2Buttons = null;
   let row1Buttons = null;
 
+  // this should be a useeffect
+  // right now first render shows up with 5 no matter what because main div hasn't rendered yet at calculation
+  let fixValue = 5;
+  if (document.getElementById("mainDiv") !== null) {
+    console.log(document.getElementById("mainDiv").offsetWidth);
+    if (document.getElementById("mainDiv").offsetWidth < 950) {
+      fixValue = 3;
+    }
+  }
+
   if (playerState.chordsOrSingles === "chords") {
     row4Buttons = row4Keys.map((key, index) => (
       <button
@@ -58,7 +68,7 @@ const ChordsPlayTable = ({
         onMouseLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
-        {centsScaleRepeating[index + 12].toFixed(5)}
+        {centsScaleRepeating[index + 12].toFixed(fixValue)}
       </button>
     ));
 
@@ -73,7 +83,7 @@ const ChordsPlayTable = ({
         onMouseLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
-        {centsScaleRepeating[index].toFixed(5)}
+        {centsScaleRepeating[index].toFixed(fixValue)}
       </button>
     ));
 
@@ -89,11 +99,15 @@ const ChordsPlayTable = ({
       >
         <div className="tableKeys">{key}</div>
         <div className="chordNotes">
-          {centsScaleRepeating[index + 10 + playerState.note3].toFixed(5)}
+          {centsScaleRepeating[index + 10 + playerState.note3].toFixed(
+            fixValue
+          )}
           <br />
-          {centsScaleRepeating[index + 10 + playerState.note2].toFixed(5)}
+          {centsScaleRepeating[index + 10 + playerState.note2].toFixed(
+            fixValue
+          )}
         </div>
-        {centsScaleRepeating[index + 10].toFixed(5)}
+        {centsScaleRepeating[index + 10].toFixed(fixValue)}
       </button>
     ));
 
@@ -109,11 +123,11 @@ const ChordsPlayTable = ({
       >
         <div className="tableKeys">{key}</div>
         <div className="chordNotes">
-          {centsScaleRepeating[index + playerState.note3].toFixed(5)}
+          {centsScaleRepeating[index + playerState.note3].toFixed(fixValue)}
           <br />
-          {centsScaleRepeating[index + playerState.note2].toFixed(5)}
+          {centsScaleRepeating[index + playerState.note2].toFixed(fixValue)}
         </div>
-        {centsScaleRepeating[index].toFixed(5)}
+        {centsScaleRepeating[index].toFixed(fixValue)}
       </button>
     ));
   }
@@ -130,7 +144,7 @@ const ChordsPlayTable = ({
         onMouseLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
-        {centsScaleRepeating[index + 33].toFixed(5)}
+        {centsScaleRepeating[index + 33].toFixed(fixValue)}
       </button>
     ));
 
@@ -145,7 +159,7 @@ const ChordsPlayTable = ({
         onMouseLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
-        {centsScaleRepeating[index + 21].toFixed(5)}
+        {centsScaleRepeating[index + 21].toFixed(fixValue)}
       </button>
     ));
 
@@ -160,7 +174,7 @@ const ChordsPlayTable = ({
         onMouseLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
-        {centsScaleRepeating[index + 10].toFixed(5)}
+        {centsScaleRepeating[index + 10].toFixed(fixValue)}
       </button>
     ));
 
@@ -175,12 +189,28 @@ const ChordsPlayTable = ({
         onMouseLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
-        {centsScaleRepeating[index].toFixed(5)}
+        {centsScaleRepeating[index].toFixed(fixValue)}
       </button>
     ));
   }
 
+  // console.log(window.innerWidth);
+
+  // let scaling = "1";
+  // if (window.innerWidth <= 1500) {
+  //   scaling = String(window.innerWidth / 1500);
+  // }
+  // if (window.innerWidth <= 1050) {
+  //   scaling = String(window.innerWidth / 1230);
+  // }
+
+  // console.log("scaling", scaling);
+
   return (
+    // <div
+    //   style={{ transform: `scale(${scaling})`, transformOrigin: "top left" }}
+    //   className="chordsPlayTable"
+    // >
     <div className="chordsPlayTable">
       {row4Buttons}
       <br />
@@ -194,3 +224,5 @@ const ChordsPlayTable = ({
 };
 
 export default ChordsPlayTable;
+
+// <div style={{ transform: `scale(${scaling})` }} className="chordsPlayTable"></div>

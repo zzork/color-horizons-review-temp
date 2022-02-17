@@ -18,12 +18,12 @@ export const ComparisonWindow = ({ scale, stateData }) => {
   let leftWord = "Ratio";
   let rightWord = "Inverted Ratio";
   if (stateData.comparisonWindow.comparison === "just12") {
-    leftWord = "Maj/Aug";
-    rightWord = "Min/Dim";
+    leftWord = "Major/Perfect";
+    rightWord = "Minor/Diminished";
   }
   if (stateData.comparisonWindow.comparison === "12tet") {
-    leftWord = "Interval";
-    rightWord = "Inverted Interval";
+    leftWord = "Major/Perfect";
+    rightWord = "Minor/Tritone";
   }
 
   return (

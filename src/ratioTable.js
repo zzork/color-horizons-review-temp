@@ -19,13 +19,6 @@ export const ratioTable = [
   {
     ratio: "P4",
     cents: 500,
-    invertedRatio: "P5",
-    invertedCents: 700,
-    twelveTet: true,
-  },
-  {
-    ratio: "Tritone",
-    cents: 600,
     invertedRatio: "Tritone",
     invertedCents: 600,
     twelveTet: true,
@@ -33,8 +26,8 @@ export const ratioTable = [
   {
     ratio: "P5",
     cents: 700,
-    invertedRatio: "P4",
-    invertedCents: 500,
+    invertedRatio: "Tritone",
+    invertedCents: 600,
     twelveTet: true,
   },
   {
@@ -300,25 +293,25 @@ export const ratioTable = [
     invertedCents: getCentsFromRatio(6, 5),
     just12: true,
   },
+  // {
+  //   ratio: "P4 (4/3)",
+  //   cents: getCentsFromRatio(4, 3),
+  //   invertedRatio: "P5 (3/2)",
+  //   invertedCents: getCentsFromRatio(3, 2),
+  //   just12: true,
+  // },
   {
     ratio: "P4 (4/3)",
     cents: getCentsFromRatio(4, 3),
-    invertedRatio: "P5 (3/2)",
-    invertedCents: getCentsFromRatio(3, 2),
-    just12: true,
-  },
-  {
-    ratio: "Aug4 (64/45)",
-    cents: getCentsFromRatio(64, 45),
-    invertedRatio: "Dim5 (45/32)",
+    invertedRatio: "Aug4 (45/32)",
     invertedCents: getCentsFromRatio(45, 32),
     just12: true,
   },
   {
     ratio: "P5 (3/2)",
     cents: getCentsFromRatio(3, 2),
-    invertedRatio: "P4 (4/3)",
-    invertedCents: getCentsFromRatio(4, 3),
+    invertedRatio: "Dim5 (64/45)",
+    invertedCents: getCentsFromRatio(64, 45),
     just12: true,
   },
   {

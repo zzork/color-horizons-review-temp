@@ -14,7 +14,53 @@ const ChordsPlayTable = ({
   rootButtonPositions,
   playerState,
 }) => {
-  const buttonColorationObject = {};
+  const buttonColorationObject = {
+    z: "regularPlayButton",
+    x: "regularPlayButton",
+    c: "regularPlayButton",
+    v: "regularPlayButton",
+    b: "regularPlayButton",
+    n: "regularPlayButton",
+    m: "regularPlayButton",
+    comma: "regularPlayButton",
+    period: "regularPlayButton",
+    slash: "regularPlayButton",
+    a: "regularPlayButton",
+    s: "regularPlayButton",
+    d: "regularPlayButton",
+    f: "regularPlayButton",
+    g: "regularPlayButton",
+    h: "regularPlayButton",
+    j: "regularPlayButton",
+    k: "regularPlayButton",
+    l: "regularPlayButton",
+    semiColon: "regularPlayButton",
+    singleQuote: "regularPlayButton",
+    q: "regularPlayButton",
+    w: "regularPlayButton",
+    e: "regularPlayButton",
+    r: "regularPlayButton",
+    t: "regularPlayButton",
+    y: "regularPlayButton",
+    u: "regularPlayButton",
+    i: "regularPlayButton",
+    o: "regularPlayButton",
+    p: "regularPlayButton",
+    leftBracket: "regularPlayButton",
+    rightBracket: "regularPlayButton",
+    one: "regularPlayButton",
+    two: "regularPlayButton",
+    three: "regularPlayButton",
+    four: "regularPlayButton",
+    five: "regularPlayButton",
+    six: "regularPlayButton",
+    seven: "regularPlayButton",
+    eight: "regularPlayButton",
+    nine: "regularPlayButton",
+    zero: "regularPlayButton",
+    dash: "regularPlayButton",
+    equals: "regularPlayButton",
+  };
 
   // root buttons different color
   for (const key of rootButtonPositions[playerState.chordsOrSingles]) {
@@ -35,6 +81,8 @@ const ChordsPlayTable = ({
       buttonColorationObject[renamedKey] = "activeRootButton";
     }
   }
+
+  console.log(buttonColorationObject);
 
   // mapping the data into the table
 

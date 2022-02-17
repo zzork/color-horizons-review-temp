@@ -162,46 +162,6 @@ button {
   border-radius: 10px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-@media (max-width: 1500px) {
-  Button {
-    width: fit-content;
-    padding: 10px 5px;
-  }
-}
-@media (max-width: 1200px) {
-  Button {
-    width: fit-content;
-    padding: 10px 2px;
-  }
-}
-@media (max-width: 1050px) {
-  Button {
-    width: fit-content;
-    padding: 10px 5px;
-  }
-}
-@media (max-width: 950px) {
-  Button {
-    width: 65px;
-    overflow: hidden;
-    padding: 10px 0px;
-  }
-}
-@media (max-width: 820px) {
-  Button {
-    width: 55px;
-  }
-}
-@media (max-width: 690px) {
-  Button {
-    width: 45px;
-  }
-}
-@media (max-width: 565px) {
-  Button {
-    width: 39px;
-  }
-}
 
 button:active {
   background-color: #e0b3f5;
@@ -227,6 +187,68 @@ button:active {
   background-color: #c870f1;
   transform: translateY(1px);
   z-index: 1;
+}
+
+@media (max-width: 1500px) {
+  .regularPlayButton,
+  .activeButton,
+  .rootButton,
+  .activeRootButton {
+    width: fit-content;
+    padding: 10px 5px;
+  }
+}
+@media (max-width: 1200px) {
+  .regularPlayButton,
+  .activeButton,
+  .rootButton,
+  .activeRootButton {
+    width: fit-content;
+    padding: 10px 2px;
+  }
+}
+@media (max-width: 1050px) {
+  .regularPlayButton,
+  .activeButton,
+  .rootButton,
+  .activeRootButton {
+    width: fit-content;
+    padding: 10px 5px;
+  }
+}
+@media (max-width: 950px) {
+  .regularPlayButton,
+  .activeButton,
+  .rootButton,
+  .activeRootButton {
+    width: 65px;
+    overflow: hidden;
+    padding: 10px 0px;
+  }
+}
+@media (max-width: 820px) {
+  .regularPlayButton,
+  .activeButton,
+  .rootButton,
+  .activeRootButton {
+    width: 55px;
+  }
+}
+@media (max-width: 690px) {
+  .regularPlayButton,
+  .activeButton,
+  .rootButton,
+  .activeRootButton {
+    width: 45px;
+  }
+}
+@media (max-width: 565px) {
+  .regularPlayButton,
+  .activeButton,
+  .rootButton,
+  .activeRootButton {
+    width: 39px;
+  }
 }
 
 .tableKeys {

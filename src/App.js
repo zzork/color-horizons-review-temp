@@ -22,7 +22,6 @@ function App() {
     <div>
       <div className="mainDiv" id="mainDiv">
         <TopBar stateData={stateData} setStateData={setStateData} />
-        {/* <QwertyFloat stateData={stateData} setStateData={setStateData} /> */}
         <Player stateData={stateData} setStateData={setStateData} />
         <h1>Scale Creation Tools</h1>
         <table>

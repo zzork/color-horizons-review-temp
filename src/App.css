@@ -250,6 +250,30 @@ button:active {
     width: 39px;
   }
 }
+@media (max-width: 500px) {
+  .regularPlayButton,
+  .activeButton,
+  .rootButton,
+  .activeRootButton {
+    width: 33px;
+  }
+}
+@media (max-width: 450px) {
+  .regularPlayButton,
+  .activeButton,
+  .rootButton,
+  .activeRootButton {
+    width: 30px;
+  }
+}
+@media (max-width: 390px) {
+  .regularPlayButton,
+  .activeButton,
+  .rootButton,
+  .activeRootButton {
+    width: 25px;
+  }
+}
 
 .tableKeys {
   font-size: large;
@@ -392,6 +416,16 @@ header span {
 
 .topButton1 {
   width: 175px;
+}
+@media (max-width: 430px) {
+  .topButton1 {
+    width: 160px;
+  }
+}
+@media (max-width: 410px) {
+  .topButton1 {
+    width: 130px;
+  }
 }
 .topButton2 {
   width: 215px;

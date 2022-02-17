@@ -15,12 +15,23 @@ export const ComparisonWindow = ({ scale, stateData }) => {
   const rows = getRows(scale, stateData, comparisonTable, highlightBoundaries);
   const endTable = getEndTable(rows);
 
+  let leftWord = "Ratio";
+  let rightWord = "Inverted Ratio";
+  if (stateData.comparisonWindow.comparison === "just12") {
+    leftWord = "Maj/Aug";
+    rightWord = "Min/Dim";
+  }
+  if (stateData.comparisonWindow.comparison === "12tet") {
+    leftWord = "Interval";
+    rightWord = "Inverted Interval";
+  }
+
   return (
     <div>
       <table>
         <tbody>
           <tr>
-            <td className="tableTopRow">Ratio</td>
+            <td className="tableTopRow">{leftWord}</td>
             <td className="tableTopRow">Cents</td>
             <td className="tableTopRow">
               Closest
@@ -28,7 +39,7 @@ export const ComparisonWindow = ({ scale, stateData }) => {
             </td>
             <td className="tableTopRow">Value</td>
             <td className="tableTopRow">Difference</td>
-            <td className="tableTopRow">Inverted Ratio</td>
+            <td className="tableTopRow">{rightWord}</td>
             <td className="tableTopRow">Cents</td>
             <td className="tableTopRow">
               Closest

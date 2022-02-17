@@ -36,21 +36,6 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
       <br />
       <button
         onClick={() =>
-          handleComparisonSelect("majorDiatonic", stateData, setStateData)
-        }
-      >
-        Major Diatonic
-      </button>
-      <button
-        onClick={() =>
-          handleComparisonSelect("primes", stateData, setStateData)
-        }
-      >
-        Prime Harmonics
-      </button>
-      <br />
-      <button
-        onClick={() =>
           handleComparisonSelect("harmonics6", stateData, setStateData)
         }
       >
@@ -65,35 +50,31 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
       </button>
       <br />
       <button
-        onClick={() => handleComparisonSelect("3", stateData, setStateData)}
+        onClick={() =>
+          handleComparisonSelect("harmonics31", stateData, setStateData)
+        }
       >
-        3 Limit
+        Harmonic Series to 31
       </button>
       <button
-        onClick={() => handleComparisonSelect("5", stateData, setStateData)}
+        onClick={() =>
+          handleComparisonSelect("primes", stateData, setStateData)
+        }
       >
-        5 Limit
-      </button>
-      <button
-        onClick={() => handleComparisonSelect("7", stateData, setStateData)}
-      >
-        7 Limit
+        Prime Harmonics to 31
       </button>
       <br />
       <button
-        onClick={() => handleComparisonSelect("11", stateData, setStateData)}
+        onClick={() => handleComparisonSelect("12tet", stateData, setStateData)}
       >
-        11 Limit
+        12 Tone Equal
       </button>
       <button
-        onClick={() => handleComparisonSelect("13", stateData, setStateData)}
+        onClick={() =>
+          handleComparisonSelect("just12", stateData, setStateData)
+        }
       >
-        13 Limit
-      </button>
-      <button
-        onClick={() => handleComparisonSelect("17", stateData, setStateData)}
-      >
-        17 Limit
+        12 Tone JI
       </button>
       <br />
       <br />

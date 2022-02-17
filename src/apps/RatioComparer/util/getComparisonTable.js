@@ -10,34 +10,20 @@ const getComparisonTable = (selectedComparison) => {
   if (selectedComparison === "primes") {
     comparisonTable = ratioTable.filter((entry) => entry.prime === true);
   }
-  if (selectedComparison === "majorDiatonic") {
-    comparisonTable = ratioTable.filter(
-      (entry) => entry.majorDiatonic === true
-    );
-  }
-  if (selectedComparison === "harmonics17") {
-    comparisonTable = ratioTable.filter((entry) => entry.harmonics === true);
-  }
   if (selectedComparison === "harmonics6") {
     comparisonTable = ratioTable.filter((entry) => entry.harmonicSix === true);
   }
-  if (selectedComparison === "3") {
-    comparisonTable = ratioTable.filter((entry) => entry.primeLimit === 3);
+  if (selectedComparison === "harmonics17") {
+    comparisonTable = ratioTable.filter((entry) => entry.harmonic17 === true);
   }
-  if (selectedComparison === "5") {
-    comparisonTable = ratioTable.filter((entry) => entry.primeLimit <= 5);
+  if (selectedComparison === "harmonics31") {
+    comparisonTable = ratioTable.filter((entry) => entry.harmonics === true);
   }
-  if (selectedComparison === "7") {
-    comparisonTable = ratioTable.filter((entry) => entry.primeLimit <= 7);
+  if (selectedComparison === "12tet") {
+    comparisonTable = ratioTable.filter((entry) => entry.twelveTet === true);
   }
-  if (selectedComparison === "11") {
-    comparisonTable = ratioTable.filter((entry) => entry.primeLimit <= 11);
-  }
-  if (selectedComparison === "13") {
-    comparisonTable = ratioTable.filter((entry) => entry.primeLimit <= 13);
-  }
-  if (selectedComparison === "17") {
-    comparisonTable = ratioTable.filter((entry) => entry.primeLimit <= 17);
+  if (selectedComparison === "just12") {
+    comparisonTable = ratioTable.filter((entry) => entry.just12 === true);
   }
   return comparisonTable;
 };

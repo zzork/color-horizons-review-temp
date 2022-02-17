@@ -19,7 +19,7 @@ function App() {
   MyComponent();
 
   return (
-    <div>
+    <div className="container">
       <div className="mainDiv" id="mainDiv">
         <TopBar stateData={stateData} setStateData={setStateData} />
         <Player stateData={stateData} setStateData={setStateData} />
@@ -97,8 +97,6 @@ function MyComponent() {
 // about window...
 
 // add explanations of methods
-
-// if too short, footer pops up... god damnit
 
 //////// WANT
 

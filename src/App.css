@@ -10,6 +10,14 @@ body {
   );
 }
 
+/* keeps footer at bottom */
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .mainDiv {
   margin-top: 100px;
   position: relative;

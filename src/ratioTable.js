@@ -282,8 +282,8 @@ export const ratioTable = [
   {
     ratio: "M2 (9/8)",
     cents: getCentsFromRatio(9, 8),
-    invertedRatio: "m2 (25/24)",
-    invertedCents: getCentsFromRatio(25, 24),
+    invertedRatio: "m2 (16/15)",
+    invertedCents: getCentsFromRatio(16, 15),
     just12: true,
   },
   {

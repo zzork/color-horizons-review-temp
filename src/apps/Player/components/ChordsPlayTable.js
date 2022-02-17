@@ -1,8 +1,10 @@
+import { useEffect } from "react";
 import {
   handlePlaytableMouseDown,
   handlePlaytableMouseLeave,
   handlePlaytableMouseUp,
 } from "../playerEventHandlers";
+import getFixValue from "../util/getFixValue";
 import renameKeysForObjectRefs from "../util/renameKeysForObjectRefs";
 
 const ChordsPlayTable = ({
@@ -46,15 +48,7 @@ const ChordsPlayTable = ({
   let row2Buttons = null;
   let row1Buttons = null;
 
-  // this should be a useeffect
-  // right now first render shows up with 5 no matter what because main div hasn't rendered yet at calculation
-  let fixValue = 5;
-  if (document.getElementById("mainDiv") !== null) {
-    console.log(document.getElementById("mainDiv").offsetWidth);
-    if (document.getElementById("mainDiv").offsetWidth < 950) {
-      fixValue = 3;
-    }
-  }
+  const fixValue = getFixValue();
 
   if (playerState.chordsOrSingles === "chords") {
     row4Buttons = row4Keys.map((key, index) => (

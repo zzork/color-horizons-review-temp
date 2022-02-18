@@ -1,6 +1,6 @@
 import { handleSetPlayerClick } from "../../../eventHandlers";
 import addParenthesesToModeReadout from "../../../util/addParenthesesToModeReadout";
-import generateIPScl from "./util/generateIPScale";
+import generateIPScl from "./util/generateIPScl";
 
 const IPModeReadoutTable = ({ index, ipObject, stateData, setStateData }) => {
   const sclData = addParenthesesToModeReadout([...ipObject.pattern]);

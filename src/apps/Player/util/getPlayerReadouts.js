@@ -2,7 +2,7 @@ import addParenthesesToModeReadout from "../../../util/addParenthesesToModeReado
 import generateAxByScl from "../../Calculators/AxByEqualsP/util/generateAxByScl";
 import generateEDOScl from "../../Calculators/EDO/util/generateEDOScl";
 import generateEDOMOSScl from "../../Calculators/EDOMOS/util/generateEDOMOSScl";
-import generateIPScl from "../../Calculators/IntervalPattern/util/generateIPScale";
+import generateIPScl from "../../Calculators/IntervalPattern/util/generateIPScl";
 import generateLTBCScl from "../../Calculators/LTByCents/util/generateLTBCScl";
 import generateLTBRScl from "../../Calculators/LTByRatio/util/generateLTBRScl";
 import generateOTScl from "../../Calculators/Otones/util/generateOTScl";

@@ -44,6 +44,79 @@ export const ratioTable = [
     invertedCents: 1000,
     twelveTet: true,
   },
+
+  // common just 12 ratios
+  {
+    ratio: "Lesser M2 (10/9)",
+    cents: getCentsFromRatio(10, 9),
+    invertedRatio: "Lesser m2 (25/24)",
+    invertedCents: getCentsFromRatio(25, 24),
+    just12: true,
+  },
+  // {
+  //   ratio: "Lesser M2 (10/9)",
+  //   cents: getCentsFromRatio(10, 9),
+  //   invertedRatio: "Harmonic m7 (7/4)",
+  //   invertedCents: getCentsFromRatio(7, 4),
+  //   just12: true,
+  // },
+  {
+    ratio: "M2 (9/8)",
+    cents: getCentsFromRatio(9, 8),
+    invertedRatio: "m2 (16/15)",
+    invertedCents: getCentsFromRatio(16, 15),
+    just12: true,
+  },
+  {
+    ratio: "M3 (5/4)",
+    cents: getCentsFromRatio(5, 4),
+    invertedRatio: "m3 (6/5)",
+    invertedCents: getCentsFromRatio(6, 5),
+    just12: true,
+  },
+  {
+    ratio: "P4 (4/3)",
+    cents: getCentsFromRatio(4, 3),
+    invertedRatio: "Aug4 (45/32)",
+    invertedCents: getCentsFromRatio(45, 32),
+    just12: true,
+  },
+  {
+    ratio: "P5 (3/2)",
+    cents: getCentsFromRatio(3, 2),
+    invertedRatio: "Dim5 (64/45)",
+    invertedCents: getCentsFromRatio(64, 45),
+    just12: true,
+  },
+  {
+    ratio: "M6 (5/3)",
+    cents: getCentsFromRatio(5, 3),
+    invertedRatio: "m6 (8/5)",
+    invertedCents: getCentsFromRatio(8, 5),
+    just12: true,
+  },
+  {
+    ratio: "Grave M7 (50/27)",
+    cents: getCentsFromRatio(50, 27),
+    invertedRatio: "Harmonic m7 (7/4)",
+    invertedCents: getCentsFromRatio(7, 4),
+    just12: true,
+  },
+  {
+    ratio: "M7 (15/8)",
+    cents: getCentsFromRatio(15, 8),
+    invertedRatio: "m7 (9/5)",
+    invertedCents: getCentsFromRatio(9, 5),
+    just12: true,
+  },
+  // {
+  //   ratio: "Lesser M2 (10/9)",
+  //   cents: getCentsFromRatio(10, 9),
+  //   invertedRatio: "Harmonic m7 (7/4)",
+  //   invertedCents: getCentsFromRatio(7, 4),
+  //   just12: true,
+  // },
+
   // harmonics to 27
   {
     ratio: "3/2",
@@ -275,56 +348,5 @@ export const ratioTable = [
     invertedCents: getCentsFromRatio(60, 31),
     harmonics: true,
     prime: true,
-  },
-
-  // just12
-  {
-    ratio: "M2 (9/8)",
-    cents: getCentsFromRatio(9, 8),
-    invertedRatio: "m2 (16/15)",
-    invertedCents: getCentsFromRatio(16, 15),
-    just12: true,
-  },
-  {
-    ratio: "M3 (5/4)",
-    cents: getCentsFromRatio(5, 4),
-    invertedRatio: "m3 (6/5)",
-    invertedCents: getCentsFromRatio(6, 5),
-    just12: true,
-  },
-  // {
-  //   ratio: "P4 (4/3)",
-  //   cents: getCentsFromRatio(4, 3),
-  //   invertedRatio: "P5 (3/2)",
-  //   invertedCents: getCentsFromRatio(3, 2),
-  //   just12: true,
-  // },
-  {
-    ratio: "P4 (4/3)",
-    cents: getCentsFromRatio(4, 3),
-    invertedRatio: "Aug4 (45/32)",
-    invertedCents: getCentsFromRatio(45, 32),
-    just12: true,
-  },
-  {
-    ratio: "P5 (3/2)",
-    cents: getCentsFromRatio(3, 2),
-    invertedRatio: "Dim5 (64/45)",
-    invertedCents: getCentsFromRatio(64, 45),
-    just12: true,
-  },
-  {
-    ratio: "M6 (5/3)",
-    cents: getCentsFromRatio(5, 3),
-    invertedRatio: "m6 (8/5)",
-    invertedCents: getCentsFromRatio(8, 5),
-    just12: true,
-  },
-  {
-    ratio: "M7 (15/8)",
-    cents: getCentsFromRatio(15, 8),
-    invertedRatio: "m7 (9/5)",
-    invertedCents: getCentsFromRatio(9, 5),
-    just12: true,
   },
 ];

@@ -4,8 +4,7 @@ import ActualPlayer from "./ActualPlayer";
 import { playerStateData } from "./playerStateData";
 import getPlayerReadouts from "./util/getPlayerReadouts";
 
-const Player = ({ stateData, setStateData }) => {
-  const [playerState, setPlayerState] = useState(playerStateData);
+const Player = ({ stateData, setStateData, playerState, setPlayerState }) => {
   const playerReadouts = getPlayerReadouts(stateData.player.playerData);
 
   useEffect(() => {

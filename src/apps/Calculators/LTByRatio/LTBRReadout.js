@@ -54,8 +54,11 @@ export const LTBRReadout = ({ stateData, setStateData }) => {
 
   const momentsOfSymmetry = getMos(mainGenerator);
 
-  const mosButtons = momentsOfSymmetry.map((value) => (
-    <button onClick={() => handleLtbrMOSClick(value, stateData, setStateData)}>
+  const mosButtons = momentsOfSymmetry.map((value, index) => (
+    <button
+      key={index}
+      onClick={() => handleLtbrMOSClick(value, stateData, setStateData)}
+    >
       {value}
     </button>
   ));

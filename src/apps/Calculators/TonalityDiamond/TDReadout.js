@@ -25,8 +25,8 @@ const TDReadout = ({ stateData, setStateData }) => {
   const sclData = [allOtUtReadout, checkedReadout];
   const tonalityDiamondRatios = getTDRatios(checked);
   const scale = getTDScale(tonalityDiamondRatios, allOtUt);
-  const scaleDisplay = scale.map((value) => (
-    <td>
+  const scaleDisplay = scale.map((value, index) => (
+    <td key={index}>
       {value[0]}/{value[1]}
     </td>
   ));

@@ -23,8 +23,9 @@ const EDOMOSReadout = ({ stateData, setStateData }) => {
 
   const generator = getEDOMOSGenerator(step, edo);
   const momentsOfSymmetry = getMos(generator);
-  const mosButtons = momentsOfSymmetry.map((value) => (
+  const mosButtons = momentsOfSymmetry.map((value, index) => (
     <button
+      key={index}
       onClick={() => handleEdoMosMosClick(value, stateData, setStateData)}
     >
       {value}

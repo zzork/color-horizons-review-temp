@@ -61,7 +61,6 @@ export const ratioTable = [
     invertedRatio: "3/2",
     invertedCents: getCentsFromRatio(3, 2),
     harmonics: true,
-    harmonicSix: true,
     harmonic17: true,
   },
   {

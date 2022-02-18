@@ -26,8 +26,11 @@ export const LTBCReadout = ({
 
   const invertedGenerator = 1200 - generator;
   const momentsOfSymmetry = getMos(generator);
-  const mosButtons = momentsOfSymmetry.map((value) => (
-    <button onClick={() => handleLtbcMOSClick(value, stateData, setStateData)}>
+  const mosButtons = momentsOfSymmetry.map((value, index) => (
+    <button
+      key={index}
+      onClick={() => handleLtbcMOSClick(value, stateData, setStateData)}
+    >
       {value}
     </button>
   ));

@@ -16,6 +16,16 @@ export const handleShowPlayerClick = (stateData, setStateData) => {
   setStateData(newState);
 };
 
+export const handleShowAbout = (stateData, setStateData) => {
+  let newState = {
+    ...stateData,
+    about: {
+      showAbout: !stateData.about.showAbout,
+    },
+  };
+  setStateData(newState);
+};
+
 // selector component
 
 export const handleScaleGenerationMethodClick = (

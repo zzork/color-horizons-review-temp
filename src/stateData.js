@@ -18,6 +18,9 @@ export const stateTable = {
     approximationBoundary: 22,
     comparison: "harmonics6",
   },
+  about: {
+    showAbout: false,
+  },
   selectedTool: {
     name: "selectedTool",
     tool: "ltbr",

@@ -14,6 +14,7 @@ const ChordsPlayTable = ({
   rootButtonPositions,
   playerState,
 }) => {
+  // extract
   const buttonColorationObject = {
     z: "regularPlayButton",
     x: "regularPlayButton",
@@ -81,8 +82,6 @@ const ChordsPlayTable = ({
       buttonColorationObject[renamedKey] = "activeRootButton";
     }
   }
-
-  console.log(buttonColorationObject);
 
   // mapping the data into the table
 
@@ -236,23 +235,7 @@ const ChordsPlayTable = ({
     ));
   }
 
-  // console.log(window.innerWidth);
-
-  // let scaling = "1";
-  // if (window.innerWidth <= 1500) {
-  //   scaling = String(window.innerWidth / 1500);
-  // }
-  // if (window.innerWidth <= 1050) {
-  //   scaling = String(window.innerWidth / 1230);
-  // }
-
-  // console.log("scaling", scaling);
-
   return (
-    // <div
-    //   style={{ transform: `scale(${scaling})`, transformOrigin: "top left" }}
-    //   className="chordsPlayTable"
-    // >
     <div className="chordsPlayTable">
       {row4Buttons}
       <br />
@@ -266,5 +249,3 @@ const ChordsPlayTable = ({
 };
 
 export default ChordsPlayTable;
-
-// <div style={{ transform: `scale(${scaling})` }} className="chordsPlayTable"></div>

@@ -45,21 +45,21 @@ const TDTable = ({ checked, allOtUt, showEquivalent }) => {
     }
   };
 
-  const topRow = checked.map((number) => (
-    <td className="tableTopRow">
+  const topRow = checked.map((number, index) => (
+    <td key={index} className="tableTopRow">
       <b>{number}</b>
     </td>
   ));
-  const additionalRows = checked.map((outerLoopNumber) => (
-    <tr>
+  const additionalRows = checked.map((outerLoopNumber, index) => (
+    <tr key={index}>
       <td className="tableTopRow">
         <b>{outerLoopNumber}</b>
       </td>
-      {checked.map((innerLoopNumber) => (
+      {checked.map((innerLoopNumber, index) => (
         // <td>
         //   {getReducedRatiosTableDisplay(innerLoopNumber, outerLoopNumber)}
         // </td>
-        <td>{getCellDisplay(innerLoopNumber, outerLoopNumber)}</td>
+        <td key={index}>{getCellDisplay(innerLoopNumber, outerLoopNumber)}</td>
       ))}
     </tr>
   ));

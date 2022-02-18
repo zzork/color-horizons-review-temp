@@ -1,14 +1,14 @@
-import { floatingReverseQwerty, handleShowPlayerClick } from "../eventHandlers";
+import {
+  floatingReverseQwerty,
+  handleShowAbout,
+  handleShowPlayerClick,
+} from "../eventHandlers";
 
 const TopBar = ({ stateData, setStateData }) => {
   return (
     <div className="topBar">
       <header>
         <h2>COLOR HORIZONS</h2>
-        {/* <div className="vl"></div> */}
-        {/* <span>
-          <h4>QWERTY Playback {stateData.player.active ? "On" : "Off"}</h4>
-        </span> */}
         <span>
           <button
             className="topButton1"
@@ -32,15 +32,17 @@ const TopBar = ({ stateData, setStateData }) => {
           </span>
         )}
         <span>
-          <button>About</button>
+          <button onClick={() => handleShowAbout(stateData, setStateData)}>
+            About
+          </button>
         </span>
-        {/* <div className="vl"></div> */}
-        {/* <div className="vl"></div> */}
-        {/* <div className="vl"></div> */}
-        {/* <div className="vl"></div> */}
       </header>
     </div>
   );
 };
 
 export default TopBar;
+
+{
+  /* <div className="vl"></div> */
+}

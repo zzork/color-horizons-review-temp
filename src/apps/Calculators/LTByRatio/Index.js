@@ -1,10 +1,22 @@
+import { useState } from "react";
+import { LtbrInfo } from "../infoButtons";
 import { handleLtbrChange } from "./ltbrEventHandlers";
 import { LTBRReadout } from "./LTBRReadout";
 
 export const LTByRatio = ({ stateData, setStateData }) => {
+  const [showLtbrInfo, setShowLtbrInfo] = useState(false);
   return (
     <div>
-      <h2>Linear Temperament by Ratio</h2>
+      <h2>
+        Linear Temperament by Ratio{" "}
+        <button
+          className="infoButton"
+          onClick={() => setShowLtbrInfo(!showLtbrInfo)}
+        >
+          info
+        </button>
+      </h2>
+      {showLtbrInfo && <LtbrInfo setShowLtbrInfo={setShowLtbrInfo} />}
       <div className="tableClone">
         <p>
           Numerator:{" "}

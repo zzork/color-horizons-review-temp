@@ -5,7 +5,7 @@ const About = ({ stateData, setStateData }) => {
     <div>
       <h1>About Color Horizons</h1>
       <div className="tableClone">
-        <div className="about">
+        <div className="writtenAreas">
           <br />
           <h2>General</h2>
           <p>
@@ -54,6 +54,9 @@ const About = ({ stateData, setStateData }) => {
             "Color Horizons"? This is a tool for exploring realms far off in the
             sonic distance. It can play any scale within 12TET, or it can help
             you discover entirely alien sonic realms.
+          </p>
+          <p>
+            Feature Request? Teach me additional methods of scale generation!
           </p>
           <p>It is my deep wish that this tool can bring inspiration.</p>
           <br />

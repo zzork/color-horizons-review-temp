@@ -1,10 +1,22 @@
+import { useState } from "react";
+import { OtInfo } from "../infoButtons";
 import { handleOtChange } from "./otEventHandlers";
 import { OTReadout } from "./OTReadout";
 
 export const Otones = ({ stateData, setStateData }) => {
+  const [showOtInfo, setShowOtInfo] = useState(false);
   return (
     <div>
-      <h2>Otonal Scale</h2>
+      <h2>
+        Otonal Scale{" "}
+        <button
+          className="infoButton"
+          onClick={() => setShowOtInfo(!showOtInfo)}
+        >
+          info
+        </button>
+      </h2>
+      {showOtInfo && <OtInfo setShowOtInfo={setShowOtInfo} />}
       <div className="tableClone">
         <p>
           Denominator:{" "}

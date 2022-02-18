@@ -110,10 +110,6 @@ function MyComponent() {
 
 //////// NEED
 
-// - !!!!!! - make all .scl generators uniform (microtonalexplorer.com!! no!)
-
-// - rename edomos to edosteps
-
 // about window...
 
 // add explanations of methods

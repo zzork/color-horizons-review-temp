@@ -1,10 +1,23 @@
+import { useState } from "react";
+import { UtInfo } from "../infoButtons";
 import { handleUtChange } from "./utEventHandlers";
 import { UTReadout } from "./UTReadout";
 
 export const Utones = ({ stateData, setStateData }) => {
+  const [showUtInfo, setShowUtInfo] = useState(false);
   return (
     <div>
-      <h2>Utonal Scale</h2>
+      <h2>
+        Utonal Scale{" "}
+        <button
+          className="infoButton"
+          onClick={() => setShowUtInfo(!showUtInfo)}
+        >
+          info
+        </button>
+      </h2>
+
+      {showUtInfo && <UtInfo setShowUtInfo={setShowUtInfo} />}
       <div className="tableClone">
         <p>
           Numerator:{" "}

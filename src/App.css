@@ -31,14 +31,15 @@ body {
   }
 }
 
-.about {
+.writtenAreas {
   width: 650px;
   white-space: normal;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   word-wrap: break-word;
 }
 @media (max-width: 700px) {
-  .about {
+  .writtenAreas {
     width: 99%;
   }
 }
@@ -181,6 +182,10 @@ button {
   font-size: 14px;
   border-radius: 10px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.infoButton {
+  padding: 2px 2px;
 }
 
 button:active {

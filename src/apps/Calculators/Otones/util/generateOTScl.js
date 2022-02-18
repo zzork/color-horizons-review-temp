@@ -10,9 +10,9 @@ const generateOTScl = (scale, sclData, mode) => {
   modifiedScale = modifiedScale.map((value) => value.toFixed(5));
   modifiedScale.push("2/1");
 
-  let outputString = `! OT-denominator${denominator}-start${start}-stop${stop}-progression${progression}-mode${mode}.scl
+  let outputString = `! OT-Denominator${denominator}-Start${start}-Stop${stop}-Progression${progression}-Mode${mode}.scl
 !
-microtonalexplorer.com - Otones - Denominator ${denominator} - Start ${start} - Stop ${stop} - Progression ${progression} - Mode ${mode}
+colorhorizons.com - Otones - Denominator ${denominator} - Start ${start} - Stop ${stop} - Progression ${progression} - Mode ${mode}
  ${modifiedScale.length}
 !`;
   for (let i = 0; i < modifiedScale.length; i++) {
@@ -24,7 +24,7 @@ ${modifiedScale[i]}`;
   let url = window.URL.createObjectURL(outputBlob);
   let anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = `OT-denominator${denominator}-start${start}-stop${stop}-progression${progression}-mode${mode}.scl`;
+  anchor.download = `OT-Denominator${denominator}-Start${start}-Stop${stop}-Progression${progression}-Mode${mode}.scl`;
 
   anchor.click();
   window.URL.revokeObjectURL(url);

@@ -38,15 +38,14 @@ export const UTReadout = ({ stateData, setStateData }) => {
 
   return (
     <div>
-      <p>
-        <OTScaleDisplay
-          rawScale={rawScale}
-          showEquivalent={showEquivalent}
-          handleShowEquivalent={() =>
-            handleUtShowEquivalent(stateData, setStateData)
-          }
-        />
-      </p>
+      <OTScaleDisplay
+        rawScale={rawScale}
+        showEquivalent={showEquivalent}
+        handleShowEquivalent={() =>
+          handleUtShowEquivalent(stateData, setStateData)
+        }
+      />
+
       <UTAllModes
         scale={scale}
         sclData={sclData}

@@ -10,9 +10,9 @@ const generateAxByScl = (scale, sclData, mode) => {
   modifiedScale = modifiedScale.map((value) => value.toFixed(5));
   modifiedScale.push("2/1");
 
-  let outputString = `! AXBY-${firstSteps}of${firstCents}-${secondSteps}of${secondCents}-mode${mode}.scl
+  let outputString = `! AXBY-${firstSteps}stepsOf${firstCents}-${secondSteps}stepsOf${secondCents}-Mode${mode}.scl
 !
-microtonalexplorer.com - ax+by=p - ${firstSteps} of ${firstCents} Cents - ${secondSteps} of ${secondCents} Cents - Mode ${mode}
+colorhorizons.com - ax+by=p - ${firstSteps} Steps of ${firstCents} Cents - ${secondSteps} Steps of ${secondCents} Cents - Mode ${mode}
  ${modifiedScale.length}
 !`;
   for (let i = 0; i < modifiedScale.length; i++) {
@@ -24,7 +24,7 @@ ${modifiedScale[i]}`;
   let url = window.URL.createObjectURL(outputBlob);
   let anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = `AXBY-${firstSteps}of${firstCents}-${secondSteps}of${secondCents}-mode${mode}.scl`;
+  anchor.download = `AXBY-${firstSteps}stepsOf${firstCents}-${secondSteps}stepsOf${secondCents}-Mode${mode}.scl`;
 
   anchor.click();
   window.URL.revokeObjectURL(url);

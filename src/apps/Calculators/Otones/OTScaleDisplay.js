@@ -11,8 +11,8 @@ const OTScaleDisplay = ({ rawScale, showEquivalent, handleShowEquivalent }) => {
     }
   };
 
-  const scaleDisplay = rawScale.map((ratio) => (
-    <td>{getSingleRatioForScaleDisplay(ratio[0], ratio[1])}</td>
+  const scaleDisplay = rawScale.map((ratio, index) => (
+    <td key={index}>{getSingleRatioForScaleDisplay(ratio[0], ratio[1])}</td>
   ));
 
   return (

@@ -110,9 +110,9 @@ function MyComponent() {
 
 //////// NEED
 
-// - !!!!!! - eliminate key error messages on each calc method
-
 // - !!!!!! - make all .scl generators uniform (microtonalexplorer.com!! no!)
+
+// - rename edomos to edosteps
 
 // about window...
 

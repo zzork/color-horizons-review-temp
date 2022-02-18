@@ -5,9 +5,12 @@ const generateIPScl = (scale, sclData) => {
   modifiedScale = modifiedScale.map((value) => value.toFixed(5));
   modifiedScale.push("2/1");
 
-  let outputString = `! IP-${sclData}.scl
+  const sclJoined = sclData.join("");
+  console.log(sclJoined);
+
+  let outputString = `! IP-${sclJoined}.scl
 !
-microtonalexplorer.com - Interval Pattern - ${sclData}
+colorhorizons.com - Interval Pattern - ${sclJoined}
  ${modifiedScale.length}
 !`;
   for (let i = 0; i < modifiedScale.length; i++) {
@@ -19,7 +22,7 @@ ${modifiedScale[i]}`;
   let url = window.URL.createObjectURL(outputBlob);
   let anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = `IP-${sclData}.scl`;
+  anchor.download = `IP-${sclJoined}.scl`;
 
   anchor.click();
   window.URL.revokeObjectURL(url);

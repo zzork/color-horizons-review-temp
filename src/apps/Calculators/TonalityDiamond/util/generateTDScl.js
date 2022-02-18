@@ -10,7 +10,7 @@ const generateTDScl = (scale, sclData, mode) => {
 
   let outputString = `! TD-${allOtUt}-${checked}-Mode${mode}.scl
 !
-microtonalexplorer.com - Tonality Diamond - ${allOtUt} - ${checked} - Mode ${mode}
+colorhorizons.com - Tonality Diamond - ${allOtUt} - ${checked} - Mode ${mode}
  ${modifiedScale.length}
 !`;
   for (let i = 0; i < modifiedScale.length; i++) {
@@ -22,7 +22,7 @@ ${modifiedScale[i]}`;
   let url = window.URL.createObjectURL(outputBlob);
   let anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = `TD-${allOtUt}-${checked}-mode${mode}.scl`;
+  anchor.download = `TD-${allOtUt}-${checked}-Mode${mode}.scl`;
 
   anchor.click();
   window.URL.revokeObjectURL(url);

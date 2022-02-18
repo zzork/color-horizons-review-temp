@@ -7,7 +7,7 @@ const generateEDOScl = (scale, edo) => {
 
   let outputString = `! EDO-${edo}.scl
 !
-microtonalexplorer.com - Equal Division of the Octave - ${edo}
+colorhorizons.com - ${edo} Equal Divisions of the Octave
  ${modifiedScale.length}
 !`;
   for (let i = 0; i < modifiedScale.length; i++) {
@@ -24,7 +24,7 @@ ${modifiedScale[i]}`;
   anchor.click();
   window.URL.revokeObjectURL(url);
 
-  //   document.removeChild(anchor); UNNECESSARY?
+  // document.removeChild(anchor);
 };
 
 export default generateEDOScl;

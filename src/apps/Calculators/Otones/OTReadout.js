@@ -36,15 +36,14 @@ export const OTReadout = ({ stateData, setStateData }) => {
 
   return (
     <div>
-      <p>
-        <OTScaleDisplay
-          rawScale={rawScale}
-          showEquivalent={showEquivalent}
-          handleShowEquivalent={() =>
-            handleOtShowEquivalent(stateData, setStateData)
-          }
-        />
-      </p>
+      <OTScaleDisplay
+        rawScale={rawScale}
+        showEquivalent={showEquivalent}
+        handleShowEquivalent={() =>
+          handleOtShowEquivalent(stateData, setStateData)
+        }
+      />
+
       <OTAllModes
         scale={scale}
         sclData={sclData}

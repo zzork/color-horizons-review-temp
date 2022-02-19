@@ -102,11 +102,11 @@ const ChordsPlayTable = ({
       <button
         key={index}
         className={buttonColorationObject[renameKeysForObjectRefs(key)]}
-        onMouseDown={() =>
+        onPointerDown={() =>
           handlePlaytableMouseDown(key, playerState, keyboardMapping)
         }
-        onMouseUp={() => handlePlaytableMouseUp(key, playerState)}
-        onMouseLeave={() => handlePlaytableMouseLeave(key, playerState)}
+        onPointerUp={() => handlePlaytableMouseUp(key, playerState)}
+        onPointerLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
         {centsScaleRepeating[index + 12].toFixed(fixValue)}
@@ -117,11 +117,11 @@ const ChordsPlayTable = ({
       <button
         key={index}
         className={buttonColorationObject[renameKeysForObjectRefs(key)]}
-        onMouseDown={() =>
+        onPointerDown={() =>
           handlePlaytableMouseDown(key, playerState, keyboardMapping)
         }
-        onMouseUp={() => handlePlaytableMouseUp(key, playerState)}
-        onMouseLeave={() => handlePlaytableMouseLeave(key, playerState)}
+        onPointerUp={() => handlePlaytableMouseUp(key, playerState)}
+        onPointerLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
         {centsScaleRepeating[index].toFixed(fixValue)}
@@ -132,11 +132,11 @@ const ChordsPlayTable = ({
       <button
         key={index}
         className={buttonColorationObject[renameKeysForObjectRefs(key)]}
-        onMouseDown={() =>
+        onPointerDown={() =>
           handlePlaytableMouseDown(key, playerState, keyboardMapping)
         }
-        onMouseUp={() => handlePlaytableMouseUp(key, playerState)}
-        onMouseLeave={() => handlePlaytableMouseLeave(key, playerState)}
+        onPointerUp={() => handlePlaytableMouseUp(key, playerState)}
+        onPointerLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
         <div className="chordNotes">
@@ -156,11 +156,11 @@ const ChordsPlayTable = ({
       <button
         key={index}
         className={buttonColorationObject[renameKeysForObjectRefs(key)]}
-        onMouseDown={() =>
+        onPointerDown={() =>
           handlePlaytableMouseDown(key, playerState, keyboardMapping)
         }
-        onMouseUp={() => handlePlaytableMouseUp(key, playerState)}
-        onMouseLeave={() => handlePlaytableMouseLeave(key, playerState)}
+        onPointerUp={() => handlePlaytableMouseUp(key, playerState)}
+        onPointerLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
         <div className="chordNotes">
@@ -178,11 +178,11 @@ const ChordsPlayTable = ({
       <button
         key={index}
         className={buttonColorationObject[renameKeysForObjectRefs(key)]}
-        onMouseDown={() =>
+        onPointerDown={() =>
           handlePlaytableMouseDown(key, playerState, keyboardMapping)
         }
-        onMouseUp={() => handlePlaytableMouseUp(key, playerState)}
-        onMouseLeave={() => handlePlaytableMouseLeave(key, playerState)}
+        onPointerUp={() => handlePlaytableMouseUp(key, playerState)}
+        onPointerLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
         {centsScaleRepeating[index + 33].toFixed(fixValue)}
@@ -193,11 +193,11 @@ const ChordsPlayTable = ({
       <button
         key={index}
         className={buttonColorationObject[renameKeysForObjectRefs(key)]}
-        onMouseDown={() =>
+        onPointerDown={() =>
           handlePlaytableMouseDown(key, playerState, keyboardMapping)
         }
-        onMouseUp={() => handlePlaytableMouseUp(key, playerState)}
-        onMouseLeave={() => handlePlaytableMouseLeave(key, playerState)}
+        onPointerUp={() => handlePlaytableMouseUp(key, playerState)}
+        onPointerLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
         {centsScaleRepeating[index + 21].toFixed(fixValue)}
@@ -208,11 +208,11 @@ const ChordsPlayTable = ({
       <button
         key={index}
         className={buttonColorationObject[renameKeysForObjectRefs(key)]}
-        onMouseDown={() =>
+        onPointerDown={() =>
           handlePlaytableMouseDown(key, playerState, keyboardMapping)
         }
-        onMouseUp={() => handlePlaytableMouseUp(key, playerState)}
-        onMouseLeave={() => handlePlaytableMouseLeave(key, playerState)}
+        onPointerUp={() => handlePlaytableMouseUp(key, playerState)}
+        onPointerLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
         {centsScaleRepeating[index + 10].toFixed(fixValue)}
@@ -223,11 +223,11 @@ const ChordsPlayTable = ({
       <button
         key={index}
         className={buttonColorationObject[renameKeysForObjectRefs(key)]}
-        onMouseDown={() =>
+        onPointerDown={() =>
           handlePlaytableMouseDown(key, playerState, keyboardMapping)
         }
-        onMouseUp={() => handlePlaytableMouseUp(key, playerState)}
-        onMouseLeave={() => handlePlaytableMouseLeave(key, playerState)}
+        onPointerUp={() => handlePlaytableMouseUp(key, playerState)}
+        onPointerLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
         {centsScaleRepeating[index].toFixed(fixValue)}

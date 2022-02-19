@@ -16,7 +16,7 @@ export const stateTable = {
     enable: true,
     closeApproximation: 7,
     approximationBoundary: 22,
-    comparison: "harmonics6",
+    comparison: "12tet",
   },
   about: {
     showAbout: false,

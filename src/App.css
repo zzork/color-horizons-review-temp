@@ -468,6 +468,7 @@ header span {
   margin-left: auto;
   margin-right: auto;
   white-space: nowrap;
+  touch-action: none;
 }
 
 /* @media (max-width: 1525px) {

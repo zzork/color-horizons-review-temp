@@ -114,6 +114,8 @@ function MyComponent() {
 
 // add explanations of methods
 
+// ontouch events need to light up the keys too instead of the button:active css as current...
+
 //////// WANT
 
 // - create permalink for sharing scale via url!

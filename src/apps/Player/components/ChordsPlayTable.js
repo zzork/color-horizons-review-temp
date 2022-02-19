@@ -236,7 +236,10 @@ const ChordsPlayTable = ({
   }
 
   return (
-    <div className="chordsPlayTable">
+    <div
+      className="chordsPlayTable"
+      onContextMenu={(event) => event.preventDefault()}
+    >
       {row4Buttons}
       <br />
       {row3Buttons}

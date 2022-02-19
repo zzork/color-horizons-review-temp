@@ -19,16 +19,17 @@ export const TonalityDiamond = ({ stateData, setStateData }) => {
       </h2>
       {showTdInfo && <TdInfo setShowTdInfo={setShowTdInfo} />}
       <div className="tableClone">
-        <p>
-          <TDNumbersClickButtons
-            stateData={stateData}
-            setStateData={setStateData}
-          />
-          <br />
-          <button onClick={() => handleTdRefreshClick(stateData, setStateData)}>
-            Clear
-          </button>
-        </p>
+        <br />
+        <TDNumbersClickButtons
+          stateData={stateData}
+          setStateData={setStateData}
+        />
+        <br />
+        <button onClick={() => handleTdRefreshClick(stateData, setStateData)}>
+          Clear
+        </button>
+        <br />
+        <br />
       </div>
       <TDReadout stateData={stateData} setStateData={setStateData} />
     </div>

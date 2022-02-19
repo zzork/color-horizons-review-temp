@@ -2,7 +2,7 @@ import { handleTdNumbersClick } from "./tdEventHandlers";
 
 const TDNumbersClickButtons = ({ stateData, setStateData }) => {
   const numbersButtons = [];
-  for (let i = 1; i < 101; i += 2) {
+  for (let i = 1; i < 100; i += 2) {
     numbersButtons.push(i);
   }
 

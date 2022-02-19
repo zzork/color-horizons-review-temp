@@ -182,10 +182,17 @@ button {
   font-size: 14px;
   border-radius: 10px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* disable highlight */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .infoButton {
-  padding: 2px 2px;
+  padding: 4px 4px;
 }
 
 button:active {
@@ -462,6 +469,7 @@ header span {
   margin-right: auto;
   white-space: nowrap;
 }
+
 /* @media (max-width: 1525px) {
   .chordsPlayTable {
     transform: scale(0.9);

@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Selector } from "./components/Selector";
 import { CalculatorWindow } from "./components/CalculatorWindow";
 import { stateTable } from "./stateData";
@@ -18,11 +18,16 @@ function App() {
     console.log({ stateData });
   }, [stateData]);
 
-  MyComponent();
+  const [width, setWidth] = useState([]);
 
   return (
     <div className="container">
-      <TopBar stateData={stateData} setStateData={setStateData} />
+      <TopBar
+        stateData={stateData}
+        setStateData={setStateData}
+        width={width}
+        setWidth={setWidth}
+      />
       <div className="mainDiv" id="mainDiv">
         {stateData.about.showAbout && (
           <About stateData={stateData} setStateData={setStateData} />
@@ -73,37 +78,37 @@ function App() {
 export default App;
 
 // COPIED RESIZE HOOK CODE, REFACTOR
-function debounce(fn, ms) {
-  let timer;
-  return (_) => {
-    clearTimeout(timer);
-    timer = setTimeout((_) => {
-      timer = null;
-      fn.apply(this, arguments);
-    }, ms);
-  };
-}
+// function debounce(fn, ms) {
+//   let timer;
+//   return (_) => {
+//     clearTimeout(timer);
+//     timer = setTimeout((_) => {
+//       timer = null;
+//       fn.apply(this, arguments);
+//     }, ms);
+//   };
+// }
 
-function MyComponent() {
-  const [dimensions, setDimensions] = useState({
-    height: window.innerHeight,
-    width: window.innerWidth,
-  });
-  useEffect(() => {
-    const debouncedHandleResize = debounce(function handleResize() {
-      setDimensions({
-        height: window.innerHeight,
-        width: window.innerWidth,
-      });
-    }, 250);
+// function MyComponent() {
+//   const [dimensions, setDimensions] = useState({
+//     height: window.innerHeight,
+//     width: window.innerWidth,
+//   });
+//   useEffect(() => {
+//     const debouncedHandleResize = debounce(function handleResize() {
+//       setDimensions({
+//         height: window.innerHeight,
+//         width: window.innerWidth,
+//       });
+//     }, 250);
 
-    window.addEventListener("resize", debouncedHandleResize);
+//     window.addEventListener("resize", debouncedHandleResize);
 
-    return (_) => {
-      window.removeEventListener("resize", debouncedHandleResize);
-    };
-  });
-}
+//     return (_) => {
+//       window.removeEventListener("resize", debouncedHandleResize);
+//     };
+//   });
+// }
 
 // TO ADD
 // ------

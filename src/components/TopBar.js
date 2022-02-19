@@ -1,10 +1,24 @@
+import { useEffect } from "react";
 import {
   floatingReverseQwerty,
   handleShowAbout,
   handleShowPlayerClick,
 } from "../eventHandlers";
 
-const TopBar = ({ stateData, setStateData }) => {
+const TopBar = ({ stateData, setStateData, setWidth }) => {
+  // why does this need to be in HERE?
+  // if it is in app.js this component doesn't re-render properly when orientation is changed
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth([window.innerWidth]);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return (_) => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
   return (
     <div className="topBar">
       <header>

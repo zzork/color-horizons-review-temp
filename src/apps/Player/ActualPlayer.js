@@ -109,7 +109,6 @@ const ActualPlayer = ({
       document.removeEventListener("keyup", handleKeyUp);
     };
   }, [stateData, playerState, pressedKeys]);
-  console.log(pressedKeys);
 
   return (
     <div id="player">

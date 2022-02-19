@@ -7,6 +7,17 @@ const Oscilloscope = ({}) => {
     width = window.innerWidth * 0.9;
   }
 
+  // fixes glitch where the oscilloscope renders too big on chrome when turned
+  // null will be first render
+  // needs to fit in the main div, the window was rendering based on the size of this existing element
+  if (document.getElementById("mainDiv") !== null) {
+    const mainDivSize = document.getElementById("mainDiv").offsetWidth;
+    width = mainDivSize * 0.5;
+    if (mainDivSize < 975) {
+      width = mainDivSize * 0.9;
+    }
+  }
+
   const height = 175;
 
   const canvasRef = useRef(null);

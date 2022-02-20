@@ -8,6 +8,7 @@ const TDNumbersClickButtons = ({ stateData, setStateData }) => {
 
   const numbersClickButtons = numbersButtons.map((number, index) => (
     <button
+      className="mb"
       key={index}
       onClick={() => handleTdNumbersClick(number, stateData, setStateData)}
     >

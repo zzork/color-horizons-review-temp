@@ -25,7 +25,10 @@ export const TonalityDiamond = ({ stateData, setStateData }) => {
           setStateData={setStateData}
         />
         <br />
-        <button onClick={() => handleTdRefreshClick(stateData, setStateData)}>
+        <button
+          className="mb"
+          onClick={() => handleTdRefreshClick(stateData, setStateData)}
+        >
           Clear
         </button>
         <br />

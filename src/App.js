@@ -11,23 +11,30 @@ import { playerStateData } from "./apps/Player/playerStateData";
 
 function App() {
   const [stateData, setStateData] = useState(stateTable);
-
   const [playerState, setPlayerState] = useState(playerStateData);
 
   useEffect(() => {
     console.log({ stateData });
   }, [stateData]);
 
-  const [width, setWidth] = useState([]);
+  const [width, setWidth] = useState();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth - 1);
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return (_) => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
 
   return (
     <div className="container">
-      <TopBar
-        stateData={stateData}
-        setStateData={setStateData}
-        width={width}
-        setWidth={setWidth}
-      />
+      <TopBar stateData={stateData} setStateData={setStateData} />
       <div className="mainDiv" id="mainDiv">
         {stateData.about.showAbout && (
           <About stateData={stateData} setStateData={setStateData} />

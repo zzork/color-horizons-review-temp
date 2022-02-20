@@ -13,6 +13,7 @@ const ChordsPlayTable = ({
   pressedKeys,
   rootButtonPositions,
   playerState,
+  setPressedKeys,
 }) => {
   // extract
   const buttonColorationObject = {
@@ -103,9 +104,17 @@ const ChordsPlayTable = ({
         key={index}
         className={buttonColorationObject[renameKeysForObjectRefs(key)]}
         onPointerDown={() =>
-          handlePlaytableMouseDown(key, playerState, keyboardMapping)
+          handlePlaytableMouseDown(
+            key,
+            playerState,
+            keyboardMapping,
+            pressedKeys,
+            setPressedKeys
+          )
         }
-        onPointerUp={() => handlePlaytableMouseUp(key, playerState)}
+        onPointerUp={() =>
+          handlePlaytableMouseUp(key, playerState, pressedKeys, setPressedKeys)
+        }
         onPointerLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
@@ -118,9 +127,17 @@ const ChordsPlayTable = ({
         key={index}
         className={buttonColorationObject[renameKeysForObjectRefs(key)]}
         onPointerDown={() =>
-          handlePlaytableMouseDown(key, playerState, keyboardMapping)
+          handlePlaytableMouseDown(
+            key,
+            playerState,
+            keyboardMapping,
+            pressedKeys,
+            setPressedKeys
+          )
         }
-        onPointerUp={() => handlePlaytableMouseUp(key, playerState)}
+        onPointerUp={() =>
+          handlePlaytableMouseUp(key, playerState, pressedKeys, setPressedKeys)
+        }
         onPointerLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
@@ -133,9 +150,17 @@ const ChordsPlayTable = ({
         key={index}
         className={buttonColorationObject[renameKeysForObjectRefs(key)]}
         onPointerDown={() =>
-          handlePlaytableMouseDown(key, playerState, keyboardMapping)
+          handlePlaytableMouseDown(
+            key,
+            playerState,
+            keyboardMapping,
+            pressedKeys,
+            setPressedKeys
+          )
         }
-        onPointerUp={() => handlePlaytableMouseUp(key, playerState)}
+        onPointerUp={() =>
+          handlePlaytableMouseUp(key, playerState, pressedKeys, setPressedKeys)
+        }
         onPointerLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
@@ -157,9 +182,17 @@ const ChordsPlayTable = ({
         key={index}
         className={buttonColorationObject[renameKeysForObjectRefs(key)]}
         onPointerDown={() =>
-          handlePlaytableMouseDown(key, playerState, keyboardMapping)
+          handlePlaytableMouseDown(
+            key,
+            playerState,
+            keyboardMapping,
+            pressedKeys,
+            setPressedKeys
+          )
         }
-        onPointerUp={() => handlePlaytableMouseUp(key, playerState)}
+        onPointerUp={() =>
+          handlePlaytableMouseUp(key, playerState, pressedKeys, setPressedKeys)
+        }
         onPointerLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
@@ -179,9 +212,17 @@ const ChordsPlayTable = ({
         key={index}
         className={buttonColorationObject[renameKeysForObjectRefs(key)]}
         onPointerDown={() =>
-          handlePlaytableMouseDown(key, playerState, keyboardMapping)
+          handlePlaytableMouseDown(
+            key,
+            playerState,
+            keyboardMapping,
+            pressedKeys,
+            setPressedKeys
+          )
         }
-        onPointerUp={() => handlePlaytableMouseUp(key, playerState)}
+        onPointerUp={() =>
+          handlePlaytableMouseUp(key, playerState, pressedKeys, setPressedKeys)
+        }
         onPointerLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
@@ -194,9 +235,17 @@ const ChordsPlayTable = ({
         key={index}
         className={buttonColorationObject[renameKeysForObjectRefs(key)]}
         onPointerDown={() =>
-          handlePlaytableMouseDown(key, playerState, keyboardMapping)
+          handlePlaytableMouseDown(
+            key,
+            playerState,
+            keyboardMapping,
+            pressedKeys,
+            setPressedKeys
+          )
         }
-        onPointerUp={() => handlePlaytableMouseUp(key, playerState)}
+        onPointerUp={() =>
+          handlePlaytableMouseUp(key, playerState, pressedKeys, setPressedKeys)
+        }
         onPointerLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
@@ -209,9 +258,17 @@ const ChordsPlayTable = ({
         key={index}
         className={buttonColorationObject[renameKeysForObjectRefs(key)]}
         onPointerDown={() =>
-          handlePlaytableMouseDown(key, playerState, keyboardMapping)
+          handlePlaytableMouseDown(
+            key,
+            playerState,
+            keyboardMapping,
+            pressedKeys,
+            setPressedKeys
+          )
         }
-        onPointerUp={() => handlePlaytableMouseUp(key, playerState)}
+        onPointerUp={() =>
+          handlePlaytableMouseUp(key, playerState, pressedKeys, setPressedKeys)
+        }
         onPointerLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>
@@ -224,9 +281,17 @@ const ChordsPlayTable = ({
         key={index}
         className={buttonColorationObject[renameKeysForObjectRefs(key)]}
         onPointerDown={() =>
-          handlePlaytableMouseDown(key, playerState, keyboardMapping)
+          handlePlaytableMouseDown(
+            key,
+            playerState,
+            keyboardMapping,
+            pressedKeys,
+            setPressedKeys
+          )
         }
-        onPointerUp={() => handlePlaytableMouseUp(key, playerState)}
+        onPointerUp={() =>
+          handlePlaytableMouseUp(key, playerState, pressedKeys, setPressedKeys)
+        }
         onPointerLeave={() => handlePlaytableMouseLeave(key, playerState)}
       >
         <div className="tableKeys">{key}</div>

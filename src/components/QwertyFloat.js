@@ -5,7 +5,10 @@ const QwertyFloat = ({ stateData, setStateData }) => {
     <div className="bottomCorner">
       <h3>QWERTY Playback</h3>
       <h4> {stateData.player.active ? "Engaged" : "Disengaged"}</h4>
-      <button onClick={() => floatingReverseQwerty(stateData, setStateData)}>
+      <button
+        className="mb"
+        onClick={() => floatingReverseQwerty(stateData, setStateData)}
+      >
         {stateData.player.active
           ? "Disengage QWERTY Playback"
           : "Engage QWERTY Playback"}

@@ -21,6 +21,7 @@ const LTBCModeReadoutTable = ({
         Mode {index + 1} - {ltObject.lmsList.join("")}
         <br />
         <button
+          className="mb"
           onClick={() =>
             handleSetPlayerClick(stateData, setStateData, setPlayerObject)
           }
@@ -28,6 +29,7 @@ const LTBCModeReadoutTable = ({
           Use In Player
         </button>
         <button
+          className="mb"
           onClick={() => generateLTBCScl(ltObject.mode, sclData, index + 1)}
         >
           Export .scl

@@ -5,20 +5,7 @@ import {
   handleShowPlayerClick,
 } from "../eventHandlers";
 
-const TopBar = ({ stateData, setStateData, setWidth }) => {
-  // why does this need to be in HERE?
-  // if it is in app.js this component doesn't re-render properly when orientation is changed
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth([window.innerWidth]);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return (_) => {
-      window.removeEventListener("resize", handleResize);
-    };
-  });
+const TopBar = ({ stateData, setStateData }) => {
   return (
     <div className="topBar">
       <header>
@@ -46,7 +33,10 @@ const TopBar = ({ stateData, setStateData, setWidth }) => {
           </span>
         )}
         <span>
-          <button onClick={() => handleShowAbout(stateData, setStateData)}>
+          <button
+            className="mb"
+            onClick={() => handleShowAbout(stateData, setStateData)}
+          >
             About
           </button>
         </span>

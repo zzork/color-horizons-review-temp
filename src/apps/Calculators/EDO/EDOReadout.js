@@ -31,13 +31,16 @@ export const EDOReadout = ({ stateData, setStateData }) => {
       </div>
       <br />
       <button
+        className="mb"
         onClick={() =>
           handleSetPlayerClick(stateData, setStateData, setPlayerObject)
         }
       >
         Use In Player
       </button>
-      <button onClick={() => generateEDOScl(scale, edo)}>Export .scl</button>
+      <button className="mb" onClick={() => generateEDOScl(scale, edo)}>
+        Export .scl
+      </button>
       <br />
       <br />
       <table>

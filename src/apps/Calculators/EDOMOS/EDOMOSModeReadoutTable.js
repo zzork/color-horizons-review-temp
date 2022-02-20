@@ -24,6 +24,7 @@ const EDOMOSModeReadoutTable = ({
         Mode {index + 1} - {modeReadout}
         <br />
         <button
+          className="mb"
           onClick={() =>
             handleSetPlayerClick(stateData, setStateData, setPlayerObject)
           }
@@ -31,6 +32,7 @@ const EDOMOSModeReadoutTable = ({
           Use In Player
         </button>
         <button
+          className="mb"
           onClick={() => generateEDOMOSScl(ltObject.mode, sclData, index + 1)}
         >
           Export .scl

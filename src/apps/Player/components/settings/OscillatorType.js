@@ -8,12 +8,14 @@ const OscillatorType = ({ playerState, setPlayerState }) => {
       <br />
       <br />
       <button
+        className="mb"
         name="sine"
         onClick={(event) => handleTypeClick(event, playerState, setPlayerState)}
       >
         Sine
       </button>
       <button
+        className="mb"
         name="triangle"
         onClick={(event) => handleTypeClick(event, playerState, setPlayerState)}
       >
@@ -21,12 +23,14 @@ const OscillatorType = ({ playerState, setPlayerState }) => {
       </button>
       <br />
       <button
+        className="mb"
         name="square"
         onClick={(event) => handleTypeClick(event, playerState, setPlayerState)}
       >
         Square
       </button>
       <button
+        className="mb"
         name="sawtooth"
         onClick={(event) => handleTypeClick(event, playerState, setPlayerState)}
       >

@@ -121,6 +121,7 @@ const ActualPlayer = ({
         centsScaleRepeating={centsScaleRepeating}
         keyboardMapping={keyboardMapping}
         pressedKeys={pressedKeys}
+        setPressedKeys={setPressedKeys}
         rootButtonPositions={rootButtonPositions}
         playerState={playerState}
       />
@@ -132,7 +133,10 @@ const ActualPlayer = ({
         </div>
       )}
       <br />
-      <button onClick={() => reverseQwerty(stateData, setStateData)}>
+      <button
+        className="mb"
+        onClick={() => reverseQwerty(stateData, setStateData)}
+      >
         {stateData.player.active
           ? "QWERTY Player ON 🔊"
           : "QWERTY Player OFF 🔇"}

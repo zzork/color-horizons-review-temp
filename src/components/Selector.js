@@ -5,6 +5,7 @@ export const Selector = ({ stateData, setStateData }) => {
     <div>
       <h2>Scale Generation Method</h2>
       <button
+        className="mb"
         onClick={() =>
           handleScaleGenerationMethodClick("edo", stateData, setStateData)
         }
@@ -12,6 +13,7 @@ export const Selector = ({ stateData, setStateData }) => {
         Equal Division of the Octave
       </button>
       <button
+        className="mb"
         onClick={() =>
           handleScaleGenerationMethodClick("edomos", stateData, setStateData)
         }
@@ -19,6 +21,7 @@ export const Selector = ({ stateData, setStateData }) => {
         EDO MOS
       </button>
       <button
+        className="mb"
         onClick={() =>
           handleScaleGenerationMethodClick("ip", stateData, setStateData)
         }
@@ -27,6 +30,7 @@ export const Selector = ({ stateData, setStateData }) => {
       </button>
       <br />
       <button
+        className="mb"
         onClick={() =>
           handleScaleGenerationMethodClick("ltbr", stateData, setStateData)
         }
@@ -34,6 +38,7 @@ export const Selector = ({ stateData, setStateData }) => {
         Linear Temperament by Ratio
       </button>
       <button
+        className="mb"
         onClick={() =>
           handleScaleGenerationMethodClick("ltbc", stateData, setStateData)
         }
@@ -42,6 +47,7 @@ export const Selector = ({ stateData, setStateData }) => {
       </button>
       <br />
       <button
+        className="mb"
         onClick={() =>
           handleScaleGenerationMethodClick("axby", stateData, setStateData)
         }
@@ -49,6 +55,7 @@ export const Selector = ({ stateData, setStateData }) => {
         ax + by = p
       </button>
       <button
+        className="mb"
         onClick={() =>
           handleScaleGenerationMethodClick("td", stateData, setStateData)
         }
@@ -57,6 +64,7 @@ export const Selector = ({ stateData, setStateData }) => {
       </button>
       <br />
       <button
+        className="mb"
         onClick={() =>
           handleScaleGenerationMethodClick("ot", stateData, setStateData)
         }
@@ -64,6 +72,7 @@ export const Selector = ({ stateData, setStateData }) => {
         Otones
       </button>
       <button
+        className="mb"
         onClick={() =>
           handleScaleGenerationMethodClick("ut", stateData, setStateData)
         }

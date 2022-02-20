@@ -56,6 +56,7 @@ export const LTBRReadout = ({ stateData, setStateData }) => {
 
   const mosButtons = momentsOfSymmetry.map((value, index) => (
     <button
+      className="mb"
       key={index}
       onClick={() => handleLtbrMOSClick(value, stateData, setStateData)}
     >
@@ -89,6 +90,7 @@ export const LTBRReadout = ({ stateData, setStateData }) => {
           <br />
           <br />
           <button
+            className="mb"
             onClick={() =>
               handleLtbrInvertClick(inverseFraction, stateData, setStateData)
             }

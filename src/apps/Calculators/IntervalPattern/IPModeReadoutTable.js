@@ -18,6 +18,7 @@ const IPModeReadoutTable = ({ index, ipObject, stateData, setStateData }) => {
         Mode {index + 1} - {modeDisplay}
         <br />
         <button
+          className="mb"
           onClick={() =>
             handleSetPlayerClick(stateData, setStateData, setPlayerObject)
           }
@@ -25,6 +26,7 @@ const IPModeReadoutTable = ({ index, ipObject, stateData, setStateData }) => {
           Use In Player
         </button>
         <button
+          className="mb"
           onClick={() => generateIPScl(ipObject.mode, sclData, index + 1)}
         >
           Export .scl

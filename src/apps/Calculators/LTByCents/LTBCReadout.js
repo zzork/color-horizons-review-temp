@@ -28,6 +28,7 @@ export const LTBCReadout = ({
   const momentsOfSymmetry = getMos(generator);
   const mosButtons = momentsOfSymmetry.map((value, index) => (
     <button
+      className="mb"
       key={index}
       onClick={() => handleLtbcMOSClick(value, stateData, setStateData)}
     >
@@ -52,6 +53,7 @@ export const LTBCReadout = ({
           Granularity
           <br />
           <button
+            className="mb"
             onClick={() =>
               handleGranularityClick("100", stateData, setStateData)
             }
@@ -59,6 +61,7 @@ export const LTBCReadout = ({
             100
           </button>
           <button
+            className="mb"
             onClick={() =>
               handleGranularityClick("10", stateData, setStateData)
             }
@@ -66,11 +69,13 @@ export const LTBCReadout = ({
             10
           </button>
           <button
+            className="mb"
             onClick={() => handleGranularityClick("1", stateData, setStateData)}
           >
             1
           </button>
           <button
+            className="mb"
             onClick={() =>
               handleGranularityClick("0.1", stateData, setStateData)
             }
@@ -78,6 +83,7 @@ export const LTBCReadout = ({
             0.1
           </button>
           <button
+            className="mb"
             onClick={() =>
               handleGranularityClick("0.01", stateData, setStateData)
             }
@@ -85,6 +91,7 @@ export const LTBCReadout = ({
             0.01
           </button>
           <button
+            className="mb"
             onClick={() =>
               handleGranularityClick("0.001", stateData, setStateData)
             }
@@ -92,6 +99,7 @@ export const LTBCReadout = ({
             0.001
           </button>
           <button
+            className="mb"
             onClick={() =>
               handleGranularityClick("0.0001", stateData, setStateData)
             }
@@ -99,6 +107,7 @@ export const LTBCReadout = ({
             0.0001
           </button>
           <button
+            className="mb"
             onClick={() =>
               handleGranularityClick("0.00001", stateData, setStateData)
             }
@@ -106,6 +115,7 @@ export const LTBCReadout = ({
             0.00001
           </button>
           <button
+            className="mb"
             onClick={() =>
               handleGranularityClick("0.000001", stateData, setStateData)
             }
@@ -113,6 +123,7 @@ export const LTBCReadout = ({
             0.000001
           </button>
           <button
+            className="mb"
             onClick={() =>
               handleGranularityClick("0.0000001", stateData, setStateData)
             }
@@ -122,6 +133,7 @@ export const LTBCReadout = ({
         </p>
         <br />
         <button
+          className="mb"
           onClick={() =>
             handleLtbcInvertClick(
               invertedGenerator.toFixed(granularityFixValue),

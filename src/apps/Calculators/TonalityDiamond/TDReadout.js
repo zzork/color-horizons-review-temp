@@ -37,16 +37,19 @@ const TDReadout = ({ stateData, setStateData }) => {
       <div className="tableClone">
         <p>
           <button
+            className="mb"
             onClick={() => handleTdAllOtUtClick("all", stateData, setStateData)}
           >
             All
           </button>
           <button
+            className="mb"
             onClick={() => handleTdAllOtUtClick("ot", stateData, setStateData)}
           >
             Overtones
           </button>
           <button
+            className="mb"
             onClick={() => handleTdAllOtUtClick("ut", stateData, setStateData)}
           >
             Undertones
@@ -55,6 +58,7 @@ const TDReadout = ({ stateData, setStateData }) => {
       </div>
       <p>
         <button
+          className="mb"
           onClick={() => handleTdRawEquivalentClick(stateData, setStateData)}
         >
           {showEquivalent ? "Show Raw Values" : "Show Equivalent Values"}

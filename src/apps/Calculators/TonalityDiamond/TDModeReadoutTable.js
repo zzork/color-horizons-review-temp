@@ -20,6 +20,7 @@ const TDModeReadoutTable = ({
         Mode {index + 1}
         <br />
         <button
+          className="mb"
           onClick={() =>
             handleSetPlayerClick(stateData, setStateData, setPlayerObject)
           }
@@ -27,6 +28,7 @@ const TDModeReadoutTable = ({
           Use In Player
         </button>
         <button
+          className="mb"
           onClick={() =>
             generateTDScl(otObject.centsValues, sclData, index + 1)
           }

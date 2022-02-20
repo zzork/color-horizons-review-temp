@@ -18,7 +18,7 @@ const OTScaleDisplay = ({ rawScale, showEquivalent, handleShowEquivalent }) => {
   return (
     <div>
       <p>
-        <button onClick={() => handleShowEquivalent()}>
+        <button className="mb" onClick={() => handleShowEquivalent()}>
           {showEquivalent ? "Show Raw Values" : "Show Equivalent Values"}
         </button>
       </p>

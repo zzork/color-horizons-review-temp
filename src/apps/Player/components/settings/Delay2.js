@@ -65,6 +65,7 @@ const Delay2 = ({ playerState, setPlayerState }) => {
       <br />
       <br />
       <button
+        className="mb"
         name="delay2OnOff"
         onClick={() => handleDelay2OnOff(playerState, setPlayerState)}
       >

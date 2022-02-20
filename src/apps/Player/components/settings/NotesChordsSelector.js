@@ -33,6 +33,7 @@ const NotesChordsSelector = ({ playerState, setPlayerState }) => {
       <br />
       <br />
       <button
+        className="mb"
         name="singles"
         onClick={(event) =>
           handleChordsSinglesClick(event, playerState, setPlayerState)
@@ -41,6 +42,7 @@ const NotesChordsSelector = ({ playerState, setPlayerState }) => {
         Single Notes
       </button>
       <button
+        className="mb"
         name="chords"
         onClick={(event) =>
           handleChordsSinglesClick(event, playerState, setPlayerState)

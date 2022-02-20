@@ -17,6 +17,7 @@ const getPlayerReadouts = (playerData) => {
   if (playerData.tool === "axby") {
     sclButton = (
       <button
+        className="mb"
         onClick={() =>
           generateAxByScl(playerData.scale, playerData.sclData, playerData.mode)
         }
@@ -36,7 +37,10 @@ const getPlayerReadouts = (playerData) => {
 
   if (playerData.tool === "edo") {
     sclButton = (
-      <button onClick={() => generateEDOScl(playerData.scale, playerData.edo)}>
+      <button
+        className="mb"
+        onClick={() => generateEDOScl(playerData.scale, playerData.edo)}
+      >
         Export .scl
       </button>
     );
@@ -47,6 +51,7 @@ const getPlayerReadouts = (playerData) => {
   if (playerData.tool === "edomos") {
     sclButton = (
       <button
+        className="mb"
         onClick={() =>
           generateEDOMOSScl(
             playerData.scale,
@@ -65,6 +70,7 @@ const getPlayerReadouts = (playerData) => {
   if (playerData.tool === "ip") {
     sclButton = (
       <button
+        className="mb"
         onClick={() => generateIPScl(playerData.scale, playerData.sclData)}
       >
         Export .scl
@@ -77,6 +83,7 @@ const getPlayerReadouts = (playerData) => {
   if (playerData.tool === "ltbc") {
     sclButton = (
       <button
+        className="mb"
         onClick={() =>
           generateLTBCScl(playerData.scale, playerData.sclData, playerData.mode)
         }
@@ -91,6 +98,7 @@ const getPlayerReadouts = (playerData) => {
   if (playerData.tool === "ltbr") {
     sclButton = (
       <button
+        className="mb"
         onClick={() =>
           generateLTBRScl(playerData.scale, playerData.sclData, playerData.mode)
         }
@@ -105,6 +113,7 @@ const getPlayerReadouts = (playerData) => {
   if (playerData.tool === "ot") {
     sclButton = (
       <button
+        className="mb"
         onClick={() =>
           generateOTScl(playerData.scale, playerData.sclData, playerData.mode)
         }
@@ -119,6 +128,7 @@ const getPlayerReadouts = (playerData) => {
   if (playerData.tool === "ut") {
     sclButton = (
       <button
+        className="mb"
         onClick={() =>
           generateUTScl(playerData.scale, playerData.sclData, playerData.mode)
         }
@@ -133,6 +143,7 @@ const getPlayerReadouts = (playerData) => {
   if (playerData.tool === "td") {
     sclButton = (
       <button
+        className="mb"
         onClick={() =>
           generateTDScl(playerData.scale, playerData.sclData, playerData.mode)
         }

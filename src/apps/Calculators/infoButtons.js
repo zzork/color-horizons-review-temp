@@ -5,7 +5,9 @@ export const EdoInfo = ({ setShowEdoInfo }) => {
         <br />
         <div className="textArea">Testing</div>
         <br />
-        <button onClick={() => setShowEdoInfo(false)}>Close</button>
+        <button className="mb" onClick={() => setShowEdoInfo(false)}>
+          Close
+        </button>
         <br />
         <br />
       </div>
@@ -22,7 +24,9 @@ export const EdoMosInfo = ({ setShowEdoMosInfo }) => {
         <br />
         <div className="textArea">Testing</div>
         <br />
-        <button onClick={() => setShowEdoMosInfo(false)}>Close</button>
+        <button className="mb" onClick={() => setShowEdoMosInfo(false)}>
+          Close
+        </button>
         <br />
         <br />
       </div>
@@ -39,7 +43,9 @@ export const IpInfo = ({ setShowIpInfo }) => {
         <br />
         <div className="textArea">Testing</div>
         <br />
-        <button onClick={() => setShowIpInfo(false)}>Close</button>
+        <button className="mb" onClick={() => setShowIpInfo(false)}>
+          Close
+        </button>
         <br />
         <br />
       </div>
@@ -56,7 +62,9 @@ export const LtbrInfo = ({ setShowLtbrInfo }) => {
         <br />
         <div className="textArea">Testing</div>
         <br />
-        <button onClick={() => setShowLtbrInfo(false)}>Close</button>
+        <button className="mb" onClick={() => setShowLtbrInfo(false)}>
+          Close
+        </button>
         <br />
         <br />
       </div>
@@ -73,7 +81,9 @@ export const LtbcInfo = ({ setShowLtbcInfo }) => {
         <br />
         <div className="textArea">Testing</div>
         <br />
-        <button onClick={() => setShowLtbcInfo(false)}>Close</button>
+        <button className="mb" onClick={() => setShowLtbcInfo(false)}>
+          Close
+        </button>
         <br />
         <br />
       </div>
@@ -90,7 +100,9 @@ export const AxbyInfo = ({ setShowAxbyInfo }) => {
         <br />
         <div className="textArea">Testing</div>
         <br />
-        <button onClick={() => setShowAxbyInfo(false)}>Close</button>
+        <button className="mb" onClick={() => setShowAxbyInfo(false)}>
+          Close
+        </button>
         <br />
         <br />
       </div>
@@ -107,7 +119,9 @@ export const TdInfo = ({ setShowTdInfo }) => {
         <br />
         <div className="textArea">Testing</div>
         <br />
-        <button onClick={() => setShowTdInfo(false)}>Close</button>
+        <button className="mb" onClick={() => setShowTdInfo(false)}>
+          Close
+        </button>
         <br />
         <br />
       </div>
@@ -124,7 +138,9 @@ export const OtInfo = ({ setShowOtInfo }) => {
         <br />
         <div className="textArea">Testing</div>
         <br />
-        <button onClick={() => setShowOtInfo(false)}>Close</button>
+        <button className="mb" onClick={() => setShowOtInfo(false)}>
+          Close
+        </button>
         <br />
         <br />
       </div>
@@ -141,7 +157,9 @@ export const UtInfo = ({ setShowUtInfo }) => {
         <br />
         <div className="textArea">Testing</div>
         <br />
-        <button onClick={() => setShowUtInfo(false)}>Close</button>
+        <button className="mb" onClick={() => setShowUtInfo(false)}>
+          Close
+        </button>
         <br />
         <br />
       </div>

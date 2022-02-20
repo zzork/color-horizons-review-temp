@@ -191,14 +191,25 @@ button {
   user-select: none;
 }
 
-.infoButton {
-  padding: 4px 4px;
+/* most buttons */
+.mb:active {
+  background-color: #e0b3f5;
 }
 
 button:active {
-  background-color: #e0b3f5;
   transform: translateY(1px);
   z-index: 1;
+}
+
+button:focus {
+  outline: none;
+}
+
+.infoButton {
+  padding: 4px 4px;
+}
+.infoButton:active {
+  background-color: #e0b3f5;
 }
 
 .regularPlayButton {
@@ -449,6 +460,9 @@ header span {
 .topButton1 {
   width: 175px;
 }
+.topButton1:active {
+  background-color: #e0b3f5;
+}
 @media (max-width: 430px) {
   .topButton1 {
     width: 160px;
@@ -462,6 +476,9 @@ header span {
 .topButton2 {
   width: 215px;
 }
+.topButton2:active {
+  background-color: #e0b3f5;
+}
 
 .chordsPlayTable {
   width: fit-content;
@@ -470,14 +487,3 @@ header span {
   white-space: nowrap;
   touch-action: none;
 }
-
-/* @media (max-width: 1525px) {
-  .chordsPlayTable {
-    transform: scale(0.9);
-  }
-}
-@media (max-width: 1050px) {
-  .chordsPlayTable {
-    transform: scale(0.4);
-  }
-} */

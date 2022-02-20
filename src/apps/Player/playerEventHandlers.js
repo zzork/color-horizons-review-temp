@@ -150,7 +150,13 @@ export const handleResetSounds = (playerState, setPlayerState) => {
 // mouse events for playing notes
 const playNotes = {};
 
-export const handlePlaytableMouseDown = (key, playerState, keyboardMapping) => {
+export const handlePlaytableMouseDown = (
+  key,
+  playerState,
+  keyboardMapping,
+  pressedKeys,
+  setPressedKeys
+) => {
   const clickedNote = key;
   if (!playNotes.hasOwnProperty(playerState.chordsOrSingles)) {
     playNotes[playerState.chordsOrSingles] = {};
@@ -160,10 +166,22 @@ export const handlePlaytableMouseDown = (key, playerState, keyboardMapping) => {
     playerState
   );
   playNotes[playerState.chordsOrSingles][clickedNote] = engagedNoteDetails;
+
+  if (!pressedKeys.includes(clickedNote)) {
+    let noteAdder = [...pressedKeys];
+    noteAdder.push(clickedNote);
+    setPressedKeys(noteAdder);
+  }
 };
 
-export const handlePlaytableMouseUp = (key, playerState) => {
+export const handlePlaytableMouseUp = (
+  key,
+  playerState,
+  pressedKeys,
+  setPressedKeys
+) => {
   const releasedNote = key;
+
   if (!playNotes[playerState.chordsOrSingles].hasOwnProperty(releasedNote))
     return;
   const engagedNoteDetails =
@@ -172,6 +190,11 @@ export const handlePlaytableMouseUp = (key, playerState) => {
     stop(engagedNoteDetails, playerState);
     playNotes[playerState.chordsOrSingles][releasedNote] = null;
   }
+
+  let noteRemover = [...pressedKeys];
+  let index = noteRemover.indexOf(releasedNote);
+  noteRemover.splice(index, 1);
+  setPressedKeys(noteRemover);
 };
 
 export const handlePlaytableMouseLeave = (key, playerState) => {

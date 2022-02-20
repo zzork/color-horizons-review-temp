@@ -20,6 +20,7 @@ const UTModeReadoutTable = ({
         Mode {index + 1}
         <br />
         <button
+          className="mb"
           onClick={() =>
             handleSetPlayerClick(stateData, setStateData, setPlayerObject)
           }
@@ -27,6 +28,7 @@ const UTModeReadoutTable = ({
           Use In Player
         </button>
         <button
+          className="mb"
           onClick={() =>
             generateUTScl(otObject.centsValues, sclData, index + 1)
           }

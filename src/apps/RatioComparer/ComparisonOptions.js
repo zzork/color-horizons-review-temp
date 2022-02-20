@@ -35,6 +35,7 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
       <br />
       <br />
       <button
+        className="mb"
         onClick={() =>
           handleComparisonSelect("harmonics6", stateData, setStateData)
         }
@@ -42,6 +43,7 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
         Harmonic Series to 6
       </button>
       <button
+        className="mb"
         onClick={() =>
           handleComparisonSelect("harmonics17", stateData, setStateData)
         }
@@ -50,6 +52,7 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
       </button>
       <br />
       <button
+        className="mb"
         onClick={() =>
           handleComparisonSelect("harmonics31", stateData, setStateData)
         }
@@ -57,6 +60,7 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
         Harmonic Series to 31
       </button>
       <button
+        className="mb"
         onClick={() =>
           handleComparisonSelect("primes", stateData, setStateData)
         }
@@ -65,11 +69,13 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
       </button>
       <br />
       <button
+        className="mb"
         onClick={() => handleComparisonSelect("12tet", stateData, setStateData)}
       >
         12 Tone Equal
       </button>
       <button
+        className="mb"
         onClick={() =>
           handleComparisonSelect("just12", stateData, setStateData)
         }
@@ -79,6 +85,7 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
       <br />
       <br />
       <button
+        className="mb"
         onClick={() => handleComparisonSelect("off", stateData, setStateData)}
       >
         Disable

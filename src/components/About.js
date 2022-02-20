@@ -105,7 +105,10 @@ const About = ({ stateData, setStateData }) => {
           </p>
           <br />
 
-          <button onClick={() => handleShowAbout(stateData, setStateData)}>
+          <button
+            className="mb"
+            onClick={() => handleShowAbout(stateData, setStateData)}
+          >
             Close
           </button>
         </div>

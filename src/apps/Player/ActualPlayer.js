@@ -155,7 +155,10 @@ const ActualPlayer = ({
         setPlayerState={setPlayerState}
       />
       <br />
-      <button onClick={() => handleResetSounds(playerState, setPlayerState)}>
+      <button
+        className="mb"
+        onClick={() => handleResetSounds(playerState, setPlayerState)}
+      >
         Reset All
       </button>
       <br />

@@ -9,7 +9,7 @@ export const stateTable = {
       tool: "ltbr",
       scale: [0, 203.91, 407.82, 611.73001, 701.955, 905.865, 1109.775, 1200],
       sclData: [3, 2, 7],
-      mode: 1,
+      mode: 4,
     },
   },
   comparisonWindow: {

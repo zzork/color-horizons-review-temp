@@ -126,7 +126,7 @@ export default App;
 
 // add explanations of methods
 
-// ontouch events need to light up the keys too instead of the button:active css as current...
+// make the basics all major instead of lydian
 
 //////// WANT
 

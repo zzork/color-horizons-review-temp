@@ -28,7 +28,7 @@ const ActualPlayer = ({
     stateData.player.playerData.scale,
     soundReferencePitch
   );
-  const above22kHz = getAbove22kHz(hzScale);
+  const above22kHz = getAbove22kHz(hzScale, playerState);
   const keyboardMapping = getKeyboardMapping(
     hzScale,
     playerState.note2,

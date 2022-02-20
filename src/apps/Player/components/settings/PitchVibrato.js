@@ -65,7 +65,7 @@ const PitchVibrato = ({ playerState, setPlayerState }) => {
       <br />
       <br />
       <button
-        className="mb"
+        className="fxButtons"
         name="pitchVibratoOnOff"
         onClick={() => handlePitchVibratoOnOff(playerState, setPlayerState)}
       >

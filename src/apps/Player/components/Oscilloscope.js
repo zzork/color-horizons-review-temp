@@ -2,16 +2,18 @@ import { useRef, useEffect } from "react";
 import { oscilloscopeAnalyser } from "../services/notePlayerService";
 
 const Oscilloscope = ({}) => {
-  let width = window.innerWidth * 0.5;
+  let width = window.innerWidth * 0.5 * 0.796;
   if (window.innerWidth < 975) {
-    width = window.innerWidth * 0.9;
+    width = window.innerWidth * 0.9 * 0.99;
   }
+  console.log("window", window.innerWidth);
 
   // fixes glitch where the oscilloscope renders too big on chrome when turned
   // null will be first render
   // needs to fit in the main div, the window was rendering based on the size of this existing element
   if (document.getElementById("mainDiv") !== null) {
     const mainDivSize = document.getElementById("mainDiv").offsetWidth;
+    console.log("maindiv", mainDivSize);
     width = mainDivSize * 0.5;
     if (mainDivSize < 975) {
       width = mainDivSize * 0.9;

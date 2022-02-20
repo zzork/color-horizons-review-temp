@@ -65,7 +65,7 @@ const Delay1 = ({ playerState, setPlayerState }) => {
       <br />
       <br />
       <button
-        className="mb"
+        className="fxButtons"
         name="delay1OnOff"
         onClick={() => handleDelay1OnOff(playerState, setPlayerState)}
       >

@@ -65,7 +65,7 @@ const Tremolo = ({ playerState, setPlayerState }) => {
       <br />
       <br />
       <button
-        className="mb"
+        className="fxButtons"
         name="tremoloOnOff"
         onClick={() => handleTremoloOnOff(playerState, setPlayerState)}
       >

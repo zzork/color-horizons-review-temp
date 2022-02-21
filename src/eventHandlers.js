@@ -144,7 +144,6 @@ export const handleSetPlayerClick = (stateData, setStateData, playerData) => {
       ...stateData.player,
       showPlayer: true,
       playerData: playerData,
-      active: true,
     },
   };
   setStateData(newState);

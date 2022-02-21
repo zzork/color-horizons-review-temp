@@ -112,37 +112,39 @@ const ActualPlayer = ({
 
   return (
     <div id="player">
-      <br />
-      <br />
-      <Oscilloscope />
-      <br />
-      <br />
-      <ChordsPlayTable
-        centsScaleRepeating={centsScaleRepeating}
-        keyboardMapping={keyboardMapping}
-        pressedKeys={pressedKeys}
-        setPressedKeys={setPressedKeys}
-        rootButtonPositions={rootButtonPositions}
-        playerState={playerState}
-      />
-      <br />
-      {above22kHz && (
-        <div>
-          Selection Contains Values Above the Range of Human Hearing
-          <br />
-        </div>
-      )}
-      <br />
-      <button
-        className="mb"
-        onClick={() => reverseQwerty(stateData, setStateData)}
-      >
-        {stateData.player.active
-          ? "QWERTY Player ON 🔊"
-          : "QWERTY Player OFF 🔇"}
-      </button>
-      <br />
-      <br />
+      <div className="noSelect">
+        <br />
+        <br />
+        <Oscilloscope />
+        <br />
+        <br />
+        <ChordsPlayTable
+          centsScaleRepeating={centsScaleRepeating}
+          keyboardMapping={keyboardMapping}
+          pressedKeys={pressedKeys}
+          setPressedKeys={setPressedKeys}
+          rootButtonPositions={rootButtonPositions}
+          playerState={playerState}
+        />
+        <br />
+        {above22kHz && (
+          <div>
+            Selection Contains Values Above the Range of Human Hearing
+            <br />
+          </div>
+        )}
+        <br />
+        <button
+          className="mb"
+          onClick={() => reverseQwerty(stateData, setStateData)}
+        >
+          {stateData.player.active
+            ? "QWERTY Player ON 🔊"
+            : "QWERTY Player OFF 🔇"}
+        </button>
+        <br />
+        <br />
+      </div>
       <div className="masterVolume">
         <MasterVolume
           playerState={playerState}

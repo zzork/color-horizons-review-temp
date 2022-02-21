@@ -1,4 +1,5 @@
 import { handleSetPlayerClick } from "../../../eventHandlers";
+import convertSclDataForTopReadout from "./util/convertSclDataForTopReadout";
 import generateLTBRScl from "./util/generateLTBRScl";
 
 const LTBRModeReadoutTable = ({
@@ -11,7 +12,7 @@ const LTBRModeReadoutTable = ({
   const setPlayerObject = {
     tool: "ltbr",
     scale: ltObject.mode,
-    sclData: sclData,
+    sclData: convertSclDataForTopReadout(sclData),
     mode: index + 1,
   };
   return (

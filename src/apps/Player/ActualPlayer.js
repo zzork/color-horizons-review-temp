@@ -144,14 +144,15 @@ const ActualPlayer = ({
         </button>
         <br />
         <br />
+
+        <div className="masterVolume">
+          <MasterVolume
+            playerState={playerState}
+            setPlayerState={setPlayerState}
+          />
+        </div>
+        <br />
       </div>
-      <div className="masterVolume">
-        <MasterVolume
-          playerState={playerState}
-          setPlayerState={setPlayerState}
-        />
-      </div>
-      <br />
       <SettingsTable
         playerState={playerState}
         setPlayerState={setPlayerState}

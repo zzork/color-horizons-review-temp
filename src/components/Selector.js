@@ -18,7 +18,7 @@ export const Selector = ({ stateData, setStateData }) => {
           handleScaleGenerationMethodClick("edomos", stateData, setStateData)
         }
       >
-        EDO MOS
+        EDO Steps
       </button>
       <button
         className="mb"

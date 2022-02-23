@@ -25,6 +25,10 @@ export const ComparisonWindow = ({ scale, stateData }) => {
     leftWord = "Major / Perfect";
     rightWord = "Minor / Tritone";
   }
+  if (stateData.comparisonWindow.comparison === "24tet") {
+    leftWord = "Interval";
+    rightWord = "Inverted Interval";
+  }
 
   return (
     <div>

@@ -7,9 +7,9 @@ import getPlayerReadouts from "./util/getPlayerReadouts";
 const Player = ({ stateData, setStateData, playerState, setPlayerState }) => {
   const playerReadouts = getPlayerReadouts(stateData.player.playerData);
 
-  useEffect(() => {
-    console.log(playerState);
-  }, [playerState]);
+  // useEffect(() => {
+  //   console.log(playerState);
+  // }, [playerState]);
 
   if (stateData.player.showPlayer === false) {
     return <div></div>;

@@ -8,7 +8,7 @@ export const EDOMOS = ({ stateData, setStateData }) => {
   return (
     <div>
       <h2>
-        Equal Division of the Octave Moments of Symmetry{" "}
+        Equal Division of the Octave Steps{" "}
         <button
           className="infoButton"
           onClick={() => setShowEdoMosInfo(!showEdoMosInfo)}

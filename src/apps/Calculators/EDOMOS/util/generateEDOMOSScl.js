@@ -9,9 +9,9 @@ const generateEDOMOSScl = (scale, sclData, mode) => {
   modifiedScale = modifiedScale.map((value) => value.toFixed(5));
   modifiedScale.push("2/1");
 
-  let outputString = `! EDOMOS-${steps}stepsOf${edo}edo-${noteTotal}notes-Mode${mode}.scl
+  let outputString = `! EDOSteps-${steps}stepsOf${edo}edo-${noteTotal}notes-Mode${mode}.scl
 !
-colorhorizons.com - EDOMOS - ${steps} Steps of ${edo} EDO - ${noteTotal} Notes - Mode ${mode}
+colorhorizons.com - EDO Steps - ${steps} Steps of ${edo} EDO - ${noteTotal} Notes - Mode ${mode}
  ${modifiedScale.length}
 !`;
   for (let i = 0; i < modifiedScale.length; i++) {
@@ -23,7 +23,7 @@ ${modifiedScale[i]}`;
   let url = window.URL.createObjectURL(outputBlob);
   let anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = `EDOMOS-${steps}stepsOf${edo}edo-${noteTotal}notes-Mode${mode}.scl`;
+  anchor.download = `EDOSteps-${steps}stepsOf${edo}edo-${noteTotal}notes-Mode${mode}.scl`;
 
   anchor.click();
   window.URL.revokeObjectURL(url);

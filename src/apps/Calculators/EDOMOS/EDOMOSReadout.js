@@ -7,6 +7,7 @@ import { EDOMOSAllModes } from "./EDOMOSAllModes";
 import {
   handleEdoMosChange,
   handleEdoMosMosClick,
+  handleInvertEdoMosGeneratorClick,
 } from "./edoMosEventHandlers";
 
 const EDOMOSReadout = ({ stateData, setStateData }) => {
@@ -42,6 +43,14 @@ const EDOMOSReadout = ({ stateData, setStateData }) => {
       <br />
       <div className="tableClone">
         <p>Generator: {generator.toFixed(5)}</p>
+        <p>Inverted Generator: {(1200 - generator).toFixed(5)}</p>
+        <button
+          onClick={() =>
+            handleInvertEdoMosGeneratorClick(stateData, setStateData)
+          }
+        >
+          Invert Generator
+        </button>
         <p>
           Moments of Symmetry
           <br />

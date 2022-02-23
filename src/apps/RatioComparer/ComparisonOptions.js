@@ -76,11 +76,18 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
       </button>
       <button
         className="mb"
+        onClick={() => handleComparisonSelect("24tet", stateData, setStateData)}
+      >
+        24 Tone Equal
+      </button>
+      <br />
+      <button
+        className="mb"
         onClick={() =>
           handleComparisonSelect("just12", stateData, setStateData)
         }
       >
-        12 Tone JI
+        Some 12 Tone JI Possibilities
       </button>
       <br />
       <br />

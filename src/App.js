@@ -13,9 +13,9 @@ function App() {
   const [stateData, setStateData] = useState(stateTable);
   const [playerState, setPlayerState] = useState(playerStateData);
 
-  useEffect(() => {
-    console.log({ stateData });
-  }, [stateData]);
+  // useEffect(() => {
+  //   console.log({ stateData });
+  // }, [stateData]);
 
   const [width, setWidth] = useState();
 
@@ -84,39 +84,6 @@ function App() {
 
 export default App;
 
-// COPIED RESIZE HOOK CODE, REFACTOR
-// function debounce(fn, ms) {
-//   let timer;
-//   return (_) => {
-//     clearTimeout(timer);
-//     timer = setTimeout((_) => {
-//       timer = null;
-//       fn.apply(this, arguments);
-//     }, ms);
-//   };
-// }
-
-// function MyComponent() {
-//   const [dimensions, setDimensions] = useState({
-//     height: window.innerHeight,
-//     width: window.innerWidth,
-//   });
-//   useEffect(() => {
-//     const debouncedHandleResize = debounce(function handleResize() {
-//       setDimensions({
-//         height: window.innerHeight,
-//         width: window.innerWidth,
-//       });
-//     }, 250);
-
-//     window.addEventListener("resize", debouncedHandleResize);
-
-//     return (_) => {
-//       window.removeEventListener("resize", debouncedHandleResize);
-//     };
-//   });
-// }
-
 // TO ADD
 // ------
 
@@ -126,7 +93,9 @@ export default App;
 
 // add explanations of methods
 
-// make the basics all major instead of lydian
+// volume slider ALMOST works right, move fast and it won't zero out...
+
+// info states being specific to each component was a bad call, change to global state
 
 //////// WANT
 

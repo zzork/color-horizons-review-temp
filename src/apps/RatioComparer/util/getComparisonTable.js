@@ -22,6 +22,11 @@ const getComparisonTable = (selectedComparison) => {
   if (selectedComparison === "12tet") {
     comparisonTable = ratioTable.filter((entry) => entry.twelveTet === true);
   }
+  if (selectedComparison === "24tet") {
+    comparisonTable = ratioTable.filter(
+      (entry) => entry.twentyFourTet === true
+    );
+  }
   if (selectedComparison === "just12") {
     comparisonTable = ratioTable.filter((entry) => entry.just12 === true);
   }

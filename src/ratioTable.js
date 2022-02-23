@@ -45,6 +45,93 @@ export const ratioTable = [
     twelveTet: true,
   },
 
+  //24tet
+
+  {
+    ratio: "Infra 2nd",
+    cents: 50,
+    invertedRatio: "Wide 7th",
+    invertedCents: 1150,
+    twentyFourTet: true,
+  },
+  {
+    ratio: "Minor 2nd",
+    cents: 100,
+    invertedRatio: "Major 7th",
+    invertedCents: 1100,
+    twentyFourTet: true,
+  },
+  {
+    ratio: "Neutral 2nd",
+    cents: 150,
+    invertedRatio: "Neutral 7th",
+    invertedCents: 1050,
+    twentyFourTet: true,
+  },
+  {
+    ratio: "Major 2nd",
+    cents: 200,
+    invertedRatio: "Minor 7th",
+    invertedCents: 1000,
+    twentyFourTet: true,
+  },
+  {
+    ratio: "Ultra 2nd / Infra 3rd",
+    cents: 250,
+    invertedRatio: "Infra 7th / Ultra 6th",
+    invertedCents: 950,
+    twentyFourTet: true,
+  },
+  {
+    ratio: "Minor 3rd",
+    cents: 300,
+    invertedRatio: "Major 6th",
+    invertedCents: 900,
+    twentyFourTet: true,
+  },
+  {
+    ratio: "Neutral 3rd",
+    cents: 350,
+    invertedRatio: "Neutral 6th",
+    invertedCents: 850,
+    twentyFourTet: true,
+  },
+  {
+    ratio: "Major 3rd",
+    cents: 400,
+    invertedRatio: "Minor 6th",
+    invertedCents: 800,
+    twentyFourTet: true,
+  },
+  {
+    ratio: "Ultra 3rd / Narrow 4th",
+    cents: 450,
+    invertedRatio: "Infra 6th / Wide 5th",
+    invertedCents: 750,
+    twentyFourTet: true,
+  },
+  {
+    ratio: "Perfect 4",
+    cents: 500,
+    invertedRatio: "Perfect 5",
+    invertedCents: 700,
+    twentyFourTet: true,
+  },
+  {
+    ratio: "Wide 4th",
+    cents: 550,
+    invertedRatio: "Narrow 5th",
+    invertedCents: 650,
+    twentyFourTet: true,
+  },
+  {
+    ratio: "Augmented 4th",
+    cents: 600,
+    invertedRatio: "Diminished 5th",
+    invertedCents: 600,
+    twentyFourTet: true,
+  },
+
   // common just 12 ratios
   {
     ratio: "Lesser M2 (10/9)",
@@ -53,13 +140,6 @@ export const ratioTable = [
     invertedCents: getCentsFromRatio(25, 24),
     just12: true,
   },
-  // {
-  //   ratio: "Lesser M2 (10/9)",
-  //   cents: getCentsFromRatio(10, 9),
-  //   invertedRatio: "Harmonic m7 (7/4)",
-  //   invertedCents: getCentsFromRatio(7, 4),
-  //   just12: true,
-  // },
   {
     ratio: "M2 (9/8)",
     cents: getCentsFromRatio(9, 8),
@@ -109,13 +189,6 @@ export const ratioTable = [
     invertedCents: getCentsFromRatio(9, 5),
     just12: true,
   },
-  // {
-  //   ratio: "Lesser M2 (10/9)",
-  //   cents: getCentsFromRatio(10, 9),
-  //   invertedRatio: "Harmonic m7 (7/4)",
-  //   invertedCents: getCentsFromRatio(7, 4),
-  //   just12: true,
-  // },
 
   // harmonics to 27
   {

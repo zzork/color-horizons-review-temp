@@ -46,3 +46,15 @@ export const handleEdoMosMosClick = (value, stateData, setStateData) => {
   };
   setStateData(newState);
 };
+
+export const handleInvertEdoMosGeneratorClick = (stateData, setStateData) => {
+  let newStep = stateData.edoMos.edo - stateData.edoMos.step;
+  let newState = {
+    ...stateData,
+    edoMos: {
+      ...stateData.edoMos,
+      step: newStep,
+    },
+  };
+  setStateData(newState);
+};

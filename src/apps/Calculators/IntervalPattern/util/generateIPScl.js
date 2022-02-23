@@ -6,7 +6,6 @@ const generateIPScl = (scale, sclData) => {
   modifiedScale.push("2/1");
 
   const sclJoined = sclData.join("");
-  console.log(sclJoined);
 
   let outputString = `! IP-${sclJoined}.scl
 !

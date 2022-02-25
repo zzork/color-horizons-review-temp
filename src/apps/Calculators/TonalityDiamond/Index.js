@@ -1,23 +1,25 @@
 import { useState } from "react";
 import { TdInfo } from "../infoButtons";
+import { setShowTdInfo } from "../infoEventHandlers";
 import { handleTdRefreshClick } from "./tdEventHandlers";
 import TDNumbersClickButtons from "./TDNumbersClickButtons";
 import TDReadout from "./TDReadout";
 
 export const TonalityDiamond = ({ stateData, setStateData }) => {
-  const [showTdInfo, setShowTdInfo] = useState(false);
   return (
     <div>
       <h2>
         Tonality Diamond{" "}
         <button
           className="infoButton"
-          onClick={() => setShowTdInfo(!showTdInfo)}
+          onClick={() => setShowTdInfo(stateData, setStateData)}
         >
           info
         </button>
       </h2>
-      {showTdInfo && <TdInfo setShowTdInfo={setShowTdInfo} />}
+      {stateData.tonalityDiamond.showInfo && (
+        <TdInfo stateData={stateData} setStateData={setStateData} />
+      )}
       <div className="tableClone">
         <br />
         <TDNumbersClickButtons

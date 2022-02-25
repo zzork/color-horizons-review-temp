@@ -25,36 +25,42 @@ export const stateTable = {
     name: "selectedTool",
     tool: "ltbr",
   },
-  edo: { value: "12" },
+  edo: { value: "12", showInfo: false },
   linearTemperamentByRatio: {
     numerator: "3",
     denominator: "2",
     noteTotal: "7",
+    showInfo: false,
   },
   intervalPattern: {
     pattern: [2, 2, 1, 2, 2, 2, 1],
     inputPatternDisplay: "2212221",
     parenthesesMatch: true,
+    showInfo: false,
   },
   linearTemperamentByCents: {
     generator: "701.95",
     noteTotal: "7",
     granularity: "0.01",
+    showInfo: false,
   },
   edoMos: {
     edo: "12",
     step: "7",
     noteTotal: "7",
+    showInfo: false,
   },
   axByEqualsP: {
     firstCents: "200",
     firstSteps: "5",
     secondSteps: "2",
+    showInfo: false,
   },
   tonalityDiamond: {
     numbers: [1, 3, 5],
     allOtUt: "all",
     showEquivalent: false,
+    showInfo: false,
   },
   otones: {
     denominator: "1",
@@ -62,6 +68,7 @@ export const stateTable = {
     stop: "7",
     progression: "1",
     showEquivalent: false,
+    showInfo: false,
   },
   utones: {
     numerator: "1",
@@ -69,5 +76,6 @@ export const stateTable = {
     stop: "7",
     progression: "1",
     showEquivalent: false,
+    showInfo: false,
   },
 };

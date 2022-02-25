@@ -1,11 +1,22 @@
-export const EdoInfo = ({ setShowEdoInfo }) => {
+import {
+  setShowAxbyInfo,
+  setShowEdoInfo,
+  setShowEdoMosInfo,
+  setShowIpInfo,
+  setShowLtbcInfo,
+  setShowLtbrInfo,
+  setShowOtInfo,
+  setShowTdInfo,
+  setShowUtInfo,
+} from "./infoEventHandlers";
+
+export const EdoInfo = ({ stateData, setStateData }) => {
   return (
     <div>
       <div className="tableClone">
         <br />
         {/* <div className="writtenAreas" style={{ textAlign: "justify" }}> */}
         <div className="writtenAreas">
-          <h2>Info</h2>
           <p>
             Splitting the octave into equal divisions other than 12 is one of
             the simplest methods for accessing new tonalities.
@@ -13,10 +24,10 @@ export const EdoInfo = ({ setShowEdoInfo }) => {
           <p>
             In order to do so, take the octave in cents (1200) and divide by the
             amount you wish. Then add that value onto itself until you reach
-            1200 cents again.
+            1200 cents.
           </p>
           <p>
-            Some options will provide you with more options for harmonious
+            Some options will provide you with more possibilities of harmonious
             results than others.
           </p>
           <p>
@@ -37,44 +48,89 @@ export const EdoInfo = ({ setShowEdoInfo }) => {
               </tr>
               <tr>
                 <td>0</td>
-                <td>(0 + 240)</td>
+                <td>+ 240</td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>240</td>
-                <td>(240 + 240)</td>
+                <td></td>
+                <td>= 240</td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
+                <td></td>
                 <td>240</td>
+                <td> + 240</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>= 480</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
                 <td>480</td>
-                <td>(480 + 240)</td>
+                <td>+ 240</td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>240</td>
-                <td>480</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>= 720</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>720</td>
-                <td>(720 + 240)</td>
+                <td>+ 240</td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>240</td>
-                <td>480</td>
-                <td>720</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>= 960</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>960</td>
-                <td>(960 + 240)</td>
+                <td>+ 240</td>
               </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>= 1200</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>The complete 5edo scale:</p>
+          <table>
+            <tbody>
               <tr>
                 <td>0</td>
                 <td>240</td>
@@ -98,7 +154,10 @@ export const EdoInfo = ({ setShowEdoInfo }) => {
           </p>
           <br />
         </div>
-        <button className="mb" onClick={() => setShowEdoInfo(false)}>
+        <button
+          className="mb"
+          onClick={() => setShowEdoInfo(stateData, setStateData)}
+        >
           Close
         </button>
         <br />
@@ -110,7 +169,7 @@ export const EdoInfo = ({ setShowEdoInfo }) => {
   );
 };
 
-export const EdoMosInfo = ({ setShowEdoMosInfo }) => {
+export const EdoMosInfo = ({ stateData, setStateData }) => {
   return (
     <div>
       <div className="tableClone">
@@ -144,73 +203,87 @@ export const EdoMosInfo = ({ setShowEdoMosInfo }) => {
               </tr>
               <tr>
                 <td>0</td>
-                <td>(0 + 694.7368...)</td>
+                <td>+ 694.7368...</td>
                 <td></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
+                <td></td>
                 <td>= 694.7368...</td>
-                <td>(694.7368... + 694.7368...)</td>
+                <td></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
+                <td></td>
                 <td>694.7368...</td>
+                <td>+ 694.7368...</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
                 <td>= 1389.4737...</td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>694.7368...</td>
-                <td>(1389.4737... - 1200)</td>
+                <td></td>
+                <td></td>
+                <td>- 1200</td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>694.7368...</td>
+                <td></td>
+                <td></td>
                 <td>= 189.4737...</td>
-                <td>(189.4737... + 694.7368)</td>
+                <td></td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>694.7368...</td>
+                <td></td>
+                <td></td>
                 <td>189.4737...</td>
-                <td>= 884.2105...</td>
-                <td>(884.2105... + 694.7368...)</td>
+                <td>+ 694.7368...</td>
+                <td></td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>694.7368...</td>
-                <td>189.4737...</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>= 884.2105...</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>884.2105...</td>
+                <td>+ 694.7368...</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>= 1578.9474...</td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>694.7368...</td>
-                <td>189.4737...</td>
-                <td>884.2105...</td>
-                <td>(1578.9474... - 1200)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>- 1200</td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>694.7368...</td>
-                <td>189.4737...</td>
-                <td>884.2105...</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>= 378.9474...</td>
-              </tr>
-              <tr>
-                <td>0</td>
-                <td>694.7368...</td>
-                <td>189.4737...</td>
-                <td>884.2105...</td>
-                <td>378.9474...</td>
               </tr>
             </tbody>
           </table>
@@ -226,6 +299,7 @@ export const EdoMosInfo = ({ setShowEdoMosInfo }) => {
                 <td>378.9474...</td>
                 <td>694.7368...</td>
                 <td>884.2105...</td>
+                <td>1200</td>
               </tr>
             </tbody>
           </table>
@@ -257,46 +331,61 @@ export const EdoMosInfo = ({ setShowEdoMosInfo }) => {
               </tr>
               <tr>
                 <td>0</td>
-                <td>(0 + 400)</td>
+                <td>+ 400</td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
+                <td></td>
                 <td>= 400</td>
-                <td>(400 + 400)</td>
+                <td></td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
+                <td></td>
                 <td>400</td>
-                <td>= 800</td>
-                <td>(800 + 400)</td>
+                <td>+ 400</td>
+                <td></td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>400</td>
+                <td></td>
+                <td></td>
+                <td>= 800</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
                 <td>800</td>
+                <td>+ 400</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>= 1200</td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>400</td>
-                <td>800</td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>1200</td>
               </tr>
             </tbody>
           </table>
+
           <p>
             If your chosen EDO divided by your step amount (or its inversion)
             does not result in a whole number, you will be able to keep adding
-            notes until you reach every single note in the EDO.
+            notes until you reach every single note in the EDO. For example, 12
+            / 5 = 2.4, so 5\12 will iterate through every note available within
+            12edo.
           </p>
           <p>
-            If your chosen EDO is prime, every step choice will iterate through
-            the every note available in the EDO. For example, with 11edo, for
-            any chosen step value you will be able to run 11 iterations before
-            the system closes on itself.
+            If your chosen EDO is prime, every step choice possible will iterate
+            through the every note available in the EDO. For example, with
+            11edo, for any chosen step value you will be able to run 11
+            iterations before the system closes on itself.
           </p>
           <p>
             As with other linear temperaments, this method will always result in
@@ -304,7 +393,10 @@ export const EdoMosInfo = ({ setShowEdoMosInfo }) => {
           </p>
         </div>
         <br />
-        <button className="mb" onClick={() => setShowEdoMosInfo(false)}>
+        <button
+          className="mb"
+          onClick={() => setShowEdoMosInfo(stateData, setStateData)}
+        >
           Close
         </button>
         <br />
@@ -316,14 +408,164 @@ export const EdoMosInfo = ({ setShowEdoMosInfo }) => {
   );
 };
 
-export const IpInfo = ({ setShowIpInfo }) => {
+export const IpInfo = ({ stateData, setStateData }) => {
   return (
     <div>
       <div className="tableClone">
         <br />
-        <div className="textArea">Testing</div>
+        <div className="writtenAreas">
+          <p>
+            This interval pattern scale function will always return Equal
+            Division of the Octave (EDO) based scales. When a pattern is
+            entered, the values provided are added together to determine from
+            which EDO the scale will be derived.
+          </p>
+          <p>
+            For example, <b>55151</b>:
+          </p>
+          <p>5 + 5 + 1 + 5 + 1 = 17</p>
+          <p>
+            Then we divide the octave by the EDO to determine the cents value of
+            a single step in the EDO.
+          </p>
+          <p>1200 / 17 = 70.5882...</p>
+          <p>
+            Then, we multiply each value in the input by the EDO's single step
+            step value to get the step values of our scale.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>70.5882... * 5</td>
+                <td>70.5882... * 5</td>
+                <td>70.5882... * 1</td>
+                <td>70.5882... * 5</td>
+                <td>70.5882... * 1</td>
+              </tr>
+              <tr>
+                <td>= 352.9412...</td>
+                <td>= 352.9412...</td>
+                <td>= 70.5882...</td>
+                <td>= 352.9412...</td>
+                <td>= 70.5882...</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Now we add each value to the sum of the values that come before it
+            until we have the cents values of each note in the scale.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>0</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>0</td>
+                <td>+ 352.9412...</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>= 352.9412...</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>352.9412...</td>
+                <td>+ 352.9412...</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>= 705.8823...</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>705.8823...</td>
+                <td>+ 70.5882...</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>= 776.4705...</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>776.4705...</td>
+                <td>+ 352.9412...</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>= 1129.4117...</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1129.4117...</td>
+                <td>+ 70.5882...</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>= 1200</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>The complete scale:</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>0</td>
+                <td>352.9412...</td>
+                <td>705.8823...</td>
+                <td>776.4705...</td>
+                <td>1129.4117...</td>
+                <td>1200</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <br />
-        <button className="mb" onClick={() => setShowIpInfo(false)}>
+        <button
+          className="mb"
+          onClick={() => setShowIpInfo(stateData, setStateData)}
+        >
           Close
         </button>
         <br />
@@ -335,7 +577,7 @@ export const IpInfo = ({ setShowIpInfo }) => {
   );
 };
 
-export const LtbrInfo = ({ setShowLtbrInfo }) => {
+export const LtbrInfo = ({ stateData, setStateData }) => {
   return (
     <div>
       <div className="tableClone">
@@ -503,7 +745,10 @@ export const LtbrInfo = ({ setShowLtbrInfo }) => {
           </p>
         </div>
         <br />
-        <button className="mb" onClick={() => setShowLtbrInfo(false)}>
+        <button
+          className="mb"
+          onClick={() => setShowLtbrInfo(stateData, setStateData)}
+        >
           Close
         </button>
         <br />
@@ -515,14 +760,17 @@ export const LtbrInfo = ({ setShowLtbrInfo }) => {
   );
 };
 
-export const LtbcInfo = ({ setShowLtbcInfo }) => {
+export const LtbcInfo = ({ stateData, setStateData }) => {
   return (
     <div>
       <div className="tableClone">
         <br />
         <div className="textArea">Testing</div>
         <br />
-        <button className="mb" onClick={() => setShowLtbcInfo(false)}>
+        <button
+          className="mb"
+          onClick={() => setShowLtbcInfo(stateData, setStateData)}
+        >
           Close
         </button>
         <br />
@@ -534,14 +782,17 @@ export const LtbcInfo = ({ setShowLtbcInfo }) => {
   );
 };
 
-export const AxbyInfo = ({ setShowAxbyInfo }) => {
+export const AxbyInfo = ({ stateData, setStateData }) => {
   return (
     <div>
       <div className="tableClone">
         <br />
         <div className="textArea">Testing</div>
         <br />
-        <button className="mb" onClick={() => setShowAxbyInfo(false)}>
+        <button
+          className="mb"
+          onClick={() => setShowAxbyInfo(stateData, setStateData)}
+        >
           Close
         </button>
         <br />
@@ -553,14 +804,17 @@ export const AxbyInfo = ({ setShowAxbyInfo }) => {
   );
 };
 
-export const TdInfo = ({ setShowTdInfo }) => {
+export const TdInfo = ({ stateData, setStateData }) => {
   return (
     <div>
       <div className="tableClone">
         <br />
         <div className="textArea">Testing</div>
         <br />
-        <button className="mb" onClick={() => setShowTdInfo(false)}>
+        <button
+          className="mb"
+          onClick={() => setShowTdInfo(stateData, setStateData)}
+        >
           Close
         </button>
         <br />
@@ -572,14 +826,17 @@ export const TdInfo = ({ setShowTdInfo }) => {
   );
 };
 
-export const OtInfo = ({ setShowOtInfo }) => {
+export const OtInfo = ({ stateData, setStateData }) => {
   return (
     <div>
       <div className="tableClone">
         <br />
         <div className="textArea">Testing</div>
         <br />
-        <button className="mb" onClick={() => setShowOtInfo(false)}>
+        <button
+          className="mb"
+          onClick={() => setShowOtInfo(stateData, setStateData)}
+        >
           Close
         </button>
         <br />
@@ -591,14 +848,17 @@ export const OtInfo = ({ setShowOtInfo }) => {
   );
 };
 
-export const UtInfo = ({ setShowUtInfo }) => {
+export const UtInfo = ({ stateData, setStateData }) => {
   return (
     <div>
       <div className="tableClone">
         <br />
         <div className="textArea">Testing</div>
         <br />
-        <button className="mb" onClick={() => setShowUtInfo(false)}>
+        <button
+          className="mb"
+          onClick={() => setShowUtInfo(stateData, setStateData)}
+        >
           Close
         </button>
         <br />

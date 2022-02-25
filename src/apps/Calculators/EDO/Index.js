@@ -1,25 +1,25 @@
 import { useState } from "react";
 import { EdoInfo } from "../infoButtons";
+import { setShowEdoInfo } from "../infoEventHandlers";
 import { handleEdoChange } from "./edoEventHandlers";
 import { EDOReadout } from "./EDOReadout";
 
 export const EDO = ({ stateData, setStateData }) => {
-  const [showEdoInfo, setShowEdoInfo] = useState(false);
-  //
   return (
     <div>
       <h2>
         Equal Division of the Octave{" "}
         <button
           className="infoButton"
-          onClick={() => setShowEdoInfo(!showEdoInfo)}
+          onClick={() => setShowEdoInfo(stateData, setStateData)}
         >
           info
         </button>
-        {/* // */}
       </h2>
-      {showEdoInfo && <EdoInfo setShowEdoInfo={setShowEdoInfo} />}
-      {/* // */}
+      {stateData.edo.showInfo && (
+        <EdoInfo stateData={stateData} setStateData={setStateData} />
+      )}
+
       <div className="tableClone">
         <br />
         <input

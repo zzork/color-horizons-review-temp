@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { LtbcInfo } from "../infoButtons";
+import { setShowLtbcInfo } from "../infoEventHandlers";
 import { handleLtbcChange } from "./ltbcEventHandlers";
 import { LTBCReadout } from "./LTBCReadout";
 import getGranularitySettings from "./util/getGranularitySettings";
 
 export const LTByCents = ({ stateData, setStateData }) => {
-  const [showLtbcInfo, setShowLtbcInfo] = useState(false);
   const granularitySettings = getGranularitySettings(
     stateData.linearTemperamentByCents.granularity
   );
@@ -16,12 +16,14 @@ export const LTByCents = ({ stateData, setStateData }) => {
         Linear Temperament by Cents{" "}
         <button
           className="infoButton"
-          onClick={() => setShowLtbcInfo(!showLtbcInfo)}
+          onClick={() => setShowLtbcInfo(stateData, setStateData)}
         >
           info
         </button>
       </h2>
-      {showLtbcInfo && <LtbcInfo setShowLtbcInfo={setShowLtbcInfo} />}
+      {stateData.linearTemperamentByCents.showInfo && (
+        <LtbcInfo stateData={stateData} setStateData={setStateData} />
+      )}
       <div className="tableClone">
         <p>
           Generator:{" "}

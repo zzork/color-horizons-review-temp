@@ -1,22 +1,24 @@
 import { useState } from "react";
 import { EdoMosInfo } from "../infoButtons";
+import { setShowEdoMosInfo } from "../infoEventHandlers";
 import { handleEdoMosChange } from "./edoMosEventHandlers";
 import EDOMOSReadout from "./EDOMOSReadout";
 
 export const EDOMOS = ({ stateData, setStateData }) => {
-  const [showEdoMosInfo, setShowEdoMosInfo] = useState(false);
   return (
     <div>
       <h2>
         Equal Division of the Octave Steps{" "}
         <button
           className="infoButton"
-          onClick={() => setShowEdoMosInfo(!showEdoMosInfo)}
+          onClick={() => setShowEdoMosInfo(stateData, setStateData)}
         >
           info
         </button>
       </h2>
-      {showEdoMosInfo && <EdoMosInfo setShowEdoMosInfo={setShowEdoMosInfo} />}
+      {stateData.edoMos.showInfo && (
+        <EdoMosInfo stateData={stateData} setStateData={setStateData} />
+      )}
       <div className="tableClone">
         <p>
           EDO:{" "}

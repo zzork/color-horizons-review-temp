@@ -1,22 +1,24 @@
 import { useState } from "react";
 import { AxbyInfo } from "../infoButtons";
+import { setShowAxbyInfo } from "../infoEventHandlers";
 import { handleAxByChange } from "./axByEventHandlers";
 import { AxByReadout } from "./AxByReadout";
 
 export const AxByEqualsP = ({ stateData, setStateData }) => {
-  const [showAxbyInfo, setShowAxbyInfo] = useState(false);
   return (
     <div>
       <h2>
         ax+by=p{" "}
         <button
           className="infoButton"
-          onClick={() => setShowAxbyInfo(!showAxbyInfo)}
+          onClick={() => setShowAxbyInfo(stateData, setStateData)}
         >
           info
         </button>
       </h2>
-      {showAxbyInfo && <AxbyInfo setShowAxbyInfo={setShowAxbyInfo} />}
+      {stateData.axByEqualsP.showInfo && (
+        <AxbyInfo stateData={stateData} setStateData={setStateData} />
+      )}
       <div className="tableClone">
         <p>
           First Interval Steps:{" "}

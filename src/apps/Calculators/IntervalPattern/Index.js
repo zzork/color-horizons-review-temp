@@ -1,23 +1,27 @@
 import { useState } from "react";
 import { IpInfo } from "../infoButtons";
+import { setShowIpInfo } from "../infoEventHandlers";
 import { handleIPChange } from "./ipEventHandlers";
 import { IPReadout } from "./IPReadout";
 
 export const IntervalPattern = ({ stateData, setStateData }) => {
-  const [showIpInfo, setShowIpInfo] = useState(false);
+  // remove state
   return (
     <div>
       <div>
         <h2>
-          Interval Pattern{" "}
+          Interval Pattern {/* modify button */}
           <button
             className="infoButton"
-            onClick={() => setShowIpInfo(!showIpInfo)}
+            onClick={() => setShowIpInfo(stateData, setStateData)}
           >
             info
           </button>
         </h2>
-        {showIpInfo && <IpInfo setShowIpInfo={setShowIpInfo} />}
+        {/* change component below */}
+        {stateData.intervalPattern.showInfo && (
+          <IpInfo stateData={stateData} setStateData={setStateData} />
+        )}
         <div className="tableClone">
           <br />
           <input

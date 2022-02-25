@@ -40,14 +40,6 @@ export const EdoInfo = ({ stateData, setStateData }) => {
             <tbody>
               <tr>
                 <td>0</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>0</td>
                 <td>+ 240</td>
                 <td></td>
                 <td></td>
@@ -194,13 +186,6 @@ export const EdoMosInfo = ({ stateData, setStateData }) => {
           <p>63.1579... * 11 = 694.7368...</p>
           <table>
             <tbody>
-              <tr>
-                <td>0</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
               <tr>
                 <td>0</td>
                 <td>+ 694.7368...</td>
@@ -365,12 +350,6 @@ export const EdoMosInfo = ({ stateData, setStateData }) => {
                 <td></td>
                 <td>= 1200</td>
               </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>1200</td>
-              </tr>
             </tbody>
           </table>
 
@@ -457,14 +436,6 @@ export const IpInfo = ({ stateData, setStateData }) => {
           </p>
           <table>
             <tbody>
-              <tr>
-                <td>0</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
               <tr>
                 <td>0</td>
                 <td>+ 352.9412...</td>
@@ -605,107 +576,107 @@ export const LtbrInfo = ({ stateData, setStateData }) => {
             <tbody>
               <tr>
                 <td>0</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>0</td>
-                <td>(0 + 968.8259...)</td>
+                <td>+ 968.8259...</td>
                 <td></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
+                <td></td>
                 <td> = 968.8259...</td>
-                <td>(968.8259... + 968.8259...)</td>
+                <td></td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
+                <td></td>
                 <td>968.8259...</td>
+                <td>+ 968.8259...</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
                 <td>= 1937.6518...</td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>968.8259...</td>
-                <td>(1937.6518... - 1200)</td>
+                <td></td>
+                <td></td>
+                <td>- 1200</td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>968.8259...</td>
+                <td></td>
+                <td></td>
                 <td> = 737.6518...</td>
                 <td></td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>968.8259...</td>
+                <td></td>
+                <td></td>
                 <td>737.6518...</td>
-                <td>(737.6518... + 968.8259...)</td>
+                <td>+ 968.8259...</td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>968.8259...</td>
-                <td>737.6518...</td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>= 1706.4777...</td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>968.8259...</td>
-                <td>737.6518...</td>
-                <td>(1706.4777... - 1200)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>- 1200</td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>968.8259...</td>
-                <td>737.6518...</td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>= 506.4777...</td>
                 <td></td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>968.8259...</td>
-                <td>737.6518...</td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>506.4777...</td>
-                <td>(506.4777... + 968.8259...)</td>
+                <td>+ 968.8259...</td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>968.8259...</td>
-                <td>737.6518...</td>
-                <td>506.4777...</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>= 1475.3036...</td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>968.8259...</td>
-                <td>737.6518...</td>
-                <td>506.4777...</td>
-                <td>(1475.3036... - 1200)</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>- 1200</td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>968.8259...</td>
-                <td>737.6518...</td>
-                <td>506.4777...</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>= 275.3036...</td>
               </tr>
               <tr>
-                <td>0</td>
-                <td>968.8259...</td>
-                <td>737.6518...</td>
-                <td>506.4777...</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>275.3036...</td>
               </tr>
             </tbody>
@@ -765,7 +736,126 @@ export const LtbcInfo = ({ stateData, setStateData }) => {
     <div>
       <div className="tableClone">
         <br />
-        <div className="textArea">Testing</div>
+        <div className="writtenAreas">
+          <p>
+            A linear temperament is an octave based scale that is created by
+            choosing a generating interval and then continually stacking it on
+            top of itself. If the result of the current step in the process is
+            greater than 1200, then we reduce the amount by 1200.
+          </p>
+          <p>
+            The linear temperament by cents option can create any scale that the
+            EDO, EDO Steps, or Linear Temperament by Ratio tools can create. At
+            their core, each of those are just subsets of what is available
+            utilizing this tool.
+          </p>
+          <p>
+            For example, a 5 note scale using a generator of 671.288. This scale
+            is known as a Mavila Temperament.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>0</td>
+                <td>+ 671.288</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>= 671.288</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>671.288</td>
+                <td>+ 671.288</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>= 1342.576</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>- 1200</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>= 142.576</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>142.576</td>
+                <td>+ 671.288</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>= 813.864</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>813.864</td>
+                <td>+ 671.288</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>= 1485.152</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>- 1200</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>= 285.152</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Then, arrange the pitches in order.</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>0</td>
+                <td>142.576</td>
+                <td>285.152</td>
+                <td>671.288</td>
+                <td>813.864</td>
+                <td>1200</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+        </div>
         <br />
         <button
           className="mb"
@@ -787,7 +877,7 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
     <div>
       <div className="tableClone">
         <br />
-        <div className="textArea">Testing</div>
+        <div className="writtenAreas">Testing</div>
         <br />
         <button
           className="mb"
@@ -809,7 +899,7 @@ export const TdInfo = ({ stateData, setStateData }) => {
     <div>
       <div className="tableClone">
         <br />
-        <div className="textArea">Testing</div>
+        <div className="writtenAreas">Testing</div>
         <br />
         <button
           className="mb"
@@ -831,7 +921,7 @@ export const OtInfo = ({ stateData, setStateData }) => {
     <div>
       <div className="tableClone">
         <br />
-        <div className="textArea">Testing</div>
+        <div className="writtenAreas">Testing</div>
         <br />
         <button
           className="mb"
@@ -853,7 +943,7 @@ export const UtInfo = ({ stateData, setStateData }) => {
     <div>
       <div className="tableClone">
         <br />
-        <div className="textArea">Testing</div>
+        <div className="writtenAreas">Testing</div>
         <br />
         <button
           className="mb"

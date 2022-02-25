@@ -31,7 +31,6 @@ function App() {
       window.removeEventListener("resize", handleResize);
     };
   });
-
   return (
     <div className="container">
       <TopBar stateData={stateData} setStateData={setStateData} />

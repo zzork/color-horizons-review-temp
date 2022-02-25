@@ -20,6 +20,7 @@ export const stateTable = {
   },
   about: {
     showAbout: false,
+    whichAbout: "aboutColorHorizons",
   },
   selectedTool: {
     name: "selectedTool",

@@ -20,7 +20,30 @@ export const handleShowAbout = (stateData, setStateData) => {
   let newState = {
     ...stateData,
     about: {
+      ...stateData.about,
       showAbout: !stateData.about.showAbout,
+    },
+  };
+  setStateData(newState);
+};
+
+export const handleShowAboutColorHorizons = (stateData, setStateData) => {
+  let newState = {
+    ...stateData,
+    about: {
+      ...stateData.about,
+      whichAbout: "aboutColorHorizons",
+    },
+  };
+  setStateData(newState);
+};
+
+export const handleShowKeyConcepts = (stateData, setStateData) => {
+  let newState = {
+    ...stateData,
+    about: {
+      ...stateData.about,
+      whichAbout: "keyConcepts",
     },
   };
   setStateData(newState);

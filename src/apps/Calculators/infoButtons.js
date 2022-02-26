@@ -877,7 +877,267 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
     <div>
       <div className="tableClone">
         <br />
-        <div className="writtenAreas">Testing</div>
+        <div className="writtenAreas">
+          <p>
+            The ax + by = p method is relatively straightforward, and will often
+            lead to more dissonant results than the other methods available
+            here, but with experimentation can sometimes yield interesting
+            results.
+          </p>
+          <h4 className="center">Process</h4>
+          <p>
+            It uses basic algebraic principles. We manually create variable A,
+            the size of the first interval, and variable X, how many instances
+            of the first variable size are present in the scale.
+          </p>
+          <p>
+            Lastly, we manually choose variable Y, which represents how many
+            instances of the second interval we would like to have.
+          </p>
+          <p>
+            The variable P on the other side of the equation represents the
+            "period", which is at what value the scale repeats itself. In all of
+            our cases on this website at the moment, the P will be the octave
+            (2/1 or 1200 cents).
+          </p>
+          <p>The formula:</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>( a</td>
+                <td></td>
+                <td>( b</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>*</td>
+                <td>+</td>
+                <td>*</td>
+                <td>=</td>
+                <td>p</td>
+              </tr>
+              <tr>
+                <td>x )</td>
+                <td></td>
+                <td>y )</td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Made explicit:</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>( size of first interval</td>
+                <td></td>
+                <td>( size of second interval</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>*</td>
+                <td>+</td>
+                <td>*</td>
+                <td>=</td>
+                <td>1200</td>
+              </tr>
+              <tr>
+                <td>instances of first interval )</td>
+                <td></td>
+                <td>instances of second interval )</td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            After all of the input fields have been filled, the tool solves the
+            only variable left in the equation, which is B, the size of the
+            second interval.
+          </p>
+          <p>
+            Once Y is solved for, the tool will spread the two intervals out
+            amongst each other as evenly as possible. It does this by taking the
+            larger step count of the two provided and dividing it by the smaller
+            step count. If this results in a decimal value, the result is always
+            rounded up to the whole number above it. Then the smaller step
+            quantity is dispersed evenly throughout the larger step quantity
+            using the resulting value.
+          </p>
+          <h4 className="center">Example</h4>
+          <p>
+            One way to choose first interval sizes that can yield interesting
+            results is to enter the cents value of a ratio. As an example, let's
+            try using 25/24: 70.672 cents.
+          </p>
+          <p>
+            If we wanted a 5 note scale with this as a the small step, we could
+            enter 2 in the First Interval Steps box, then 3 in the Second
+            Interval Steps box. This gives us a complete equation to solve:
+            (70.672 * 2) + (b * 3) = 1200.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>(70.672 * 2) + (b * 3)</td>
+                <td>=</td>
+                <td>1200</td>
+              </tr>
+              <tr>
+                <td>(141.344) + (b * 3)</td>
+                <td>=</td>
+                <td>1200</td>
+              </tr>
+              <tr>
+                <td>b * 3</td>
+                <td>=</td>
+                <td>1200 - 141.344</td>
+              </tr>
+              <tr>
+                <td>b * 3</td>
+                <td>=</td>
+                <td>1056.656</td>
+              </tr>
+              <tr>
+                <td>b</td>
+                <td>=</td>
+                <td>1056.656 / 3</td>
+              </tr>
+              <tr>
+                <td>b</td>
+                <td>=</td>
+                <td>352.885</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Solving for b yields a neutral third of 352.885.</p>
+          <p>
+            Now we take the larger step amount of the two provided, in this case
+            3, and divide it by the lower amount, in this case 2. This provides
+            1.5, and this tool will always round any decimal value up, so it
+            becomes 2. Now we iterate over the larger step count, in this case
+            LLL, and place the smaller step size at least every 2 iterations, in
+            this case yielding LLsLs.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>L</td>
+                <td>L</td>
+                <td>s</td>
+                <td>L</td>
+                <td>s</td>
+              </tr>
+              <tr>
+                <td>352.885</td>
+                <td>352.885</td>
+                <td>70.672</td>
+                <td>352.885</td>
+                <td>70.672</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <table>
+            <tbody>
+              <tr>
+                <td>0</td>
+                <td>+ 352.885</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>= 352.885</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>352.885</td>
+                <td>+ 352.885</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>= 705.770</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>705.770</td>
+                <td>+ 70.672</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>=776.443</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>776.443</td>
+                <td>+ 352.885</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>= 1129.328</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1129.328</td>
+                <td>+ 70.672</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>= 1200</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>The complete scale:</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>0</td>
+                <td>352.885</td>
+                <td>705.770</td>
+                <td>776.443</td>
+                <td>1129.328</td>
+                <td>1200</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
         <br />
         <button
           className="mb"

@@ -16,7 +16,7 @@ const TDNumbersClickButtons = ({ stateData, setStateData }) => {
     </button>
   ));
 
-  return <div className="writtenAreas">{numbersClickButtons}</div>;
+  return <div className="tdButtons">{numbersClickButtons}</div>;
 };
 
 export default TDNumbersClickButtons;

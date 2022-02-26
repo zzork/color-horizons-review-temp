@@ -8,7 +8,7 @@ const KeyConcepts = ({ stateData, setStateData }) => {
         <div className="writtenAreas">
           <br />
           <h2>General</h2>
-          <p>Ratios</p>
+          <p>Ratios, Hz logarithmic, pythagorean tuning, commas, </p>
           <h3>A Brief Discussion of the Concept of Temperaments</h3>
           <p>
             This tool can be used to create temperaments, which are tuning
@@ -243,7 +243,7 @@ const KeyConcepts = ({ stateData, setStateData }) => {
           </p>
           <p>
             To modify our generating 3/2 so that three iterations creates a
-            perfect 8/5, we take the Pelogic Comma and divide it by 3, yeilding
+            perfect 8/5, we take the Pelogic Comma and divide it by 3, yielding
             ~30.726 cents. Then we subtract that value from the pure 3/2
             (701.955 cents) and arrive at 671.288 cents for our generator.
           </p>
@@ -267,7 +267,8 @@ const KeyConcepts = ({ stateData, setStateData }) => {
           </p>
           <p>
             Uh... then go into how to tell if an EDO tempers an interval. Which
-            requires a discussion of vals and monzos.
+            requires a discussion of vals and monzos. Prime factorization. A
+            database with choices to make! Temperament calculator!
           </p>
           <br />
 

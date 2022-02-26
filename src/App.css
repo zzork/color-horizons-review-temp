@@ -54,6 +54,18 @@ body {
   }
 }
 
+.tdButtons {
+  width: 650px;
+  white-space: normal;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 700px) {
+  .tdButtons {
+    width: 99%;
+  }
+}
+
 /* tables */
 
 table {
@@ -510,4 +522,8 @@ header span {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.center {
+  text-align: center;
 }

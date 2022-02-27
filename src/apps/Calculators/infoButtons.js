@@ -1159,7 +1159,39 @@ export const TdInfo = ({ stateData, setStateData }) => {
     <div>
       <div className="tableClone">
         <br />
-        <div className="writtenAreas">Testing</div>
+        <div className="writtenAreas">
+          <p>
+            With the Tonality Diamond function, a set of factors are chosen and
+            are combined with one another to create a set of ratios. Each factor
+            chosen is combined with each other factor chosen to create two
+            ratios, one with the larger number on top (the overtone version),
+            and one with the smaller number on top (the undertone version).
+          </p>
+          <p>
+            Depending on the factors chosen, sometimes multiple ratios within
+            the diamond will reduce down to the same cents value. If this is the
+            case, the duplicate values are removed. As more factors are
+            included, more duplicates tend to arise, unless all factors chosen
+            are prime numbers, since they can't reduce.
+          </p>
+          <p>
+            We have the choice of including all values in the diamond, only the
+            overtones, or only the undertones. Interestingly, the overtones-only
+            and undertones-only options end up creating the same final set of
+            modal transformations, just starting on opposite ends of the set of
+            modes generated.
+          </p>
+          <p>
+            The "all" option will include both the overtones and undertones, and
+            will always double the amount of values other than 1/1 and 2/1
+            available in the scale.
+          </p>
+          <p>Example 1-3-5-9</p>
+          <p>
+            In order to apply modal transformations to a scale composed of a set
+            of ratios, we utilize the process of cross multiplication.
+          </p>
+        </div>
         <br />
         <button
           className="mb"

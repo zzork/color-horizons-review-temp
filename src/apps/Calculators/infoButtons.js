@@ -1160,6 +1160,7 @@ export const TdInfo = ({ stateData, setStateData }) => {
       <div className="tableClone">
         <br />
         <div className="writtenAreas">
+          <h4 className="center">Process</h4>
           <p>
             With the Tonality Diamond function, a set of factors are chosen and
             are combined with one another to create a set of ratios. Each factor
@@ -1183,14 +1184,328 @@ export const TdInfo = ({ stateData, setStateData }) => {
           </p>
           <p>
             The "all" option will include both the overtones and undertones, and
-            will always double the amount of values other than 1/1 and 2/1
-            available in the scale.
+            will always double the amount of values available in the scale other
+            than 1/1 and 2/1.
           </p>
-          <p>Example 1-3-5-9</p>
+          <br />
+          <h4 className="center">Example: 1-3-5, All</h4>
           <p>
-            In order to apply modal transformations to a scale composed of a set
-            of ratios, we utilize the process of cross multiplication.
+            First we will look at all values created by factors 1, 3, and 5.
+            This is the resulting table with totally raw values.
           </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>*</td>
+                <td className="tableTopRow">
+                  <b>1</b>
+                </td>
+                <td className="tableTopRow">
+                  <b>3</b>
+                </td>
+                <td className="tableTopRow">
+                  <b>5</b>
+                </td>
+              </tr>
+              <tr>
+                <td className="tableTopRow">
+                  <b>1</b>
+                </td>
+                <td>1/1</td>
+                <td>3/1</td>
+                <td>5/1</td>
+              </tr>
+              <tr>
+                <td className="tableTopRow">
+                  <b>3</b>
+                </td>
+                <td>1/3</td>
+                <td>3/3</td>
+                <td>5/3</td>
+              </tr>
+              <tr>
+                <td className="tableTopRow">
+                  <b>5</b>
+                </td>
+                <td>1/5</td>
+                <td>3/5</td>
+                <td>5/5</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Then we octave reduce each ratio on the table. Notice that with this
+            combination of factors all values on the table are unique.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>*</td>
+                <td className="tableTopRow">
+                  <b>1</b>
+                </td>
+                <td className="tableTopRow">
+                  <b>3</b>
+                </td>
+                <td className="tableTopRow">
+                  <b>5</b>
+                </td>
+              </tr>
+              <tr>
+                <td className="tableTopRow">
+                  <b>1</b>
+                </td>
+                <td>unison</td>
+                <td>3/2</td>
+                <td>5/4</td>
+              </tr>
+              <tr>
+                <td className="tableTopRow">
+                  <b>3</b>
+                </td>
+                <td>4/3</td>
+                <td>unison</td>
+                <td>5/3</td>
+              </tr>
+              <tr>
+                <td className="tableTopRow">
+                  <b>5</b>
+                </td>
+                <td>8/5</td>
+                <td>6/5</td>
+                <td>unison</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Now apply 1200*(log(x/y)/log(2) to each ratio to get its cents
+            value, and sort the values in order.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>1/1</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>6/5</td>
+                <td>315.641</td>
+              </tr>
+              <tr>
+                <td>5/4</td>
+                <td>386.314</td>
+              </tr>
+              <tr>
+                <td>4/3</td>
+                <td>498.045</td>
+              </tr>
+              <tr>
+                <td>3/2</td>
+                <td>701.955</td>
+              </tr>
+              <tr>
+                <td>8/5</td>
+                <td>813.686</td>
+              </tr>
+              <tr>
+                <td>5/3</td>
+                <td>884.359</td>
+              </tr>
+              <tr>
+                <td>2/1</td>
+                <td>1200</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <h4 className="center">Example: 1-3-9, Overtones Only</h4>
+          <p>
+            With some combinations of factors, the table will end up with
+            duplicate values. For example, this happens with the factor
+            combination 1-3-9. In this example we will also choose just the
+            overtone setting instead of using all the resulting values in our
+            scale.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>*</td>
+                <td className="tableTopRow">
+                  <b>1</b>
+                </td>
+                <td className="tableTopRow">
+                  <b>3</b>
+                </td>
+                <td className="tableTopRow">
+                  <b>9</b>
+                </td>
+              </tr>
+              <tr>
+                <td className="tableTopRow">
+                  <b>1</b>
+                </td>
+                <td>1/1</td>
+                <td>3/1</td>
+                <td>9/1</td>
+              </tr>
+              <tr>
+                <td className="tableTopRow">
+                  <b>3</b>
+                </td>
+                <td>1/3</td>
+                <td>3/3</td>
+                <td>9/3</td>
+              </tr>
+              <tr>
+                <td className="tableTopRow">
+                  <b>9</b>
+                </td>
+                <td>1/9</td>
+                <td>3/9</td>
+                <td>9/9</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Undertones removed and values octave reduced:</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>*</td>
+                <td className="tableTopRow">
+                  <b>1</b>
+                </td>
+                <td className="tableTopRow">
+                  <b>3</b>
+                </td>
+                <td className="tableTopRow">
+                  <b>9</b>
+                </td>
+              </tr>
+              <tr>
+                <td className="tableTopRow">
+                  <b>1</b>
+                </td>
+                <td>unison</td>
+                <td>3/2</td>
+                <td>9/8</td>
+              </tr>
+              <tr>
+                <td className="tableTopRow">
+                  <b>3</b>
+                </td>
+                <td>*</td>
+                <td>unison</td>
+                <td>3/2</td>
+              </tr>
+              <tr>
+                <td className="tableTopRow">
+                  <b>9</b>
+                </td>
+                <td>*</td>
+                <td>*</td>
+                <td>unison</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            9/3 and 3/1 both reduce to 3/2. As such, the 1-3-9 overtone set
+            leaves only 1/1, 9/8, 3/2, and the octave 2/1.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>1/1</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>9/8</td>
+                <td>203.910</td>
+              </tr>
+              <tr>
+                <td>3/2</td>
+                <td>701.955</td>
+              </tr>
+              <tr>
+                <td>2/1</td>
+                <td>1200</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <h4 className="center">
+            Applying Modal Transformations to Ratio Scales
+          </h4>
+          <p>
+            In order to find the distance between two ratios, the process of
+            cross multiplication is utilized. This process can be applied to an
+            entire scale to find its modal transformations. As a demonstration
+            we will apply this to the simple scale created by this tool when it
+            is set to 1-3-9 Overtones Only.
+          </p>
+          <p>
+            To do so, take the scale degree you would like to be your new
+            starting note, and then cross multiply it with every note in the
+            scale except 2/1, which is implied as these are octave based scales.
+            Then octave reduce each ratio.
+          </p>
+          <p>
+            Let's use the second scale degree, 9/8, as our new starting note.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>1/1</td>
+                <td>*</td>
+                <td>9/8</td>
+                <td>=</td>
+                <td>8/9</td>
+                <td>=</td>
+                <td>16/9</td>
+              </tr>
+              <tr>
+                <td>9/8</td>
+                <td>*</td>
+                <td>9/8</td>
+                <td>=</td>
+                <td>72/72</td>
+                <td>=</td>
+                <td>1/1</td>
+              </tr>
+              <tr>
+                <td>3/2</td>
+                <td>*</td>
+                <td>9/8</td>
+                <td>=</td>
+                <td>24/18</td>
+                <td>=</td>
+                <td>4/3</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Now that the new values have been calculated and octave reduced,
+            place them in order of pitch.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>1/1</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>4/3</td>
+                <td>498.045</td>
+              </tr>
+              <tr>
+                <td>16/9</td>
+                <td>996.090</td>
+              </tr>
+              <tr>
+                <td>2/1</td>
+                <td>1200</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <br />
         <button

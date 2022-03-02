@@ -8,7 +8,10 @@ const KeyConcepts = ({ stateData, setStateData }) => {
         <div className="writtenAreas">
           <br />
           <h2>General</h2>
-          <p>Ratios, Hz logarithmic, pythagorean tuning, commas, </p>
+          <p>
+            Ratios, Hz logarithmic, pythagorean tuning, commas, move the ratio
+            scale transformation info into here...
+          </p>
           <h3>A Brief Discussion of the Concept of Temperaments</h3>
           <p>
             This tool can be used to create temperaments, which are tuning

@@ -88,13 +88,15 @@ export default App;
 
 //////// NEED
 
-// about window...
+// full about rough draft
 
-// add explanations of methods
+// final drafts for info buttons on methods
 
 // volume slider ALMOST works right, move fast and it won't zero out...
 
-// info states being specific to each component was a bad call, change to global state
+// QWERTY Button disappear on About Windows, possible change that to MORE or something
+
+// favicon, metadata for google/facebook shares...
 
 //////// WANT
 
@@ -103,6 +105,8 @@ export default App;
 // - Custom Harmonics Based Waveform?
 
 // - Data visualization per mode or all of scale
+
+// - Sample based sound player
 
 /////////////
 

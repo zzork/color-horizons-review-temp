@@ -901,12 +901,17 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
             (2/1 or 1200 cents).
           </p>
           <p>The formula:</p>
+
           <table>
             <tbody>
               <tr>
-                <td>( a</td>
+                <td>
+                  ( <b>a</b>: size of first interval
+                </td>
                 <td></td>
-                <td>( b</td>
+                <td>
+                  ( <b>b</b>: size of second interval
+                </td>
                 <td></td>
                 <td></td>
               </tr>
@@ -915,38 +920,18 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
                 <td>+</td>
                 <td>*</td>
                 <td>=</td>
-                <td>p</td>
+                <td>
+                  <b>p</b>: period - 1200
+                </td>
               </tr>
               <tr>
-                <td>x )</td>
+                <td>
+                  <b>x</b>: instances of first interval )
+                </td>
                 <td></td>
-                <td>y )</td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-          <p>Made explicit:</p>
-          <table>
-            <tbody>
-              <tr>
-                <td>( size of first interval</td>
-                <td></td>
-                <td>( size of second interval</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>*</td>
-                <td>+</td>
-                <td>*</td>
-                <td>=</td>
-                <td>1200</td>
-              </tr>
-              <tr>
-                <td>instances of first interval )</td>
-                <td></td>
-                <td>instances of second interval )</td>
+                <td>
+                  <b>y</b>: instances of second interval )
+                </td>
                 <td></td>
                 <td></td>
               </tr>
@@ -1528,8 +1513,266 @@ export const OtInfo = ({ stateData, setStateData }) => {
     <div>
       <div className="tableClone">
         <br />
-        <div className="writtenAreas">Testing</div>
-        <br />
+        <div className="writtenAreas">
+          <h4 className="center">Process</h4>
+          <p>
+            The Otonal and Utonal scale generation methods provide scales that
+            are built off of a chosen factor, resulting in scale values that
+            have low-complexity ratio relationships between one another. In the
+            case of an Otonal scale, the user chooses the denominator, then
+            chooses what values will appear in the numerators of each value in
+            the scale by choosing a first value (Start), a last value (Stop),
+            and how often the tool will take a value from that overtone series
+            and insert it into the scale (Progression).
+          </p>
+          <p>
+            It is important to note that the progression tool available here is
+            only one way to create an Otonal scale. The values do not need to be
+            evenly spaced. It is currently outside the scope of the tools
+            available on this website, but one could create a scale using any
+            interger numerators they like over the denominator they choose.
+          </p>
+          <p>
+            It is also important to note that both the Otonal and Utonal scale
+            tools here are not strict. A true Otonal scale should not have any
+            numerator values less than the denominator, and a true Utonal scale
+            should not have any denominator values less than the numerator, but
+            this tool allows both because those settings can create useful
+            results.
+          </p>
+          <br />
+          <h4 className="center">Example - 5 to 10 over 5 - Progression 1</h4>
+          <p>
+            As an example, we will examine an overtone series with the
+            denominator of 5, starting on 5, ending on 10, and with a
+            progression of 1, meaning that every value in the series between 5
+            and 10 will be inserted into the final scale.
+          </p>
+          <p>The raw result:</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>5/5</td>
+                <td>6/5</td>
+                <td>7/5</td>
+                <td>8/5</td>
+                <td>9/5</td>
+                <td>10/5</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            In this case there are no values other than the root and the octave
+            that will reduce, due to 5 being prime.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>1/1</td>
+                <td>6/5</td>
+                <td>7/5</td>
+                <td>8/5</td>
+                <td>9/5</td>
+                <td>2/1</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            The values are already in order, so all that needs to be done is to
+            apply 1200*log(x/y)/log(2) to convert these values to cents.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>1/1</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>6/5</td>
+                <td>315.641</td>
+              </tr>
+              <tr>
+                <td>7/5</td>
+                <td>582.512</td>
+              </tr>
+              <tr>
+                <td>8/5</td>
+                <td>813.686</td>
+              </tr>
+              <tr>
+                <td>9/5</td>
+                <td>1017.596</td>
+              </tr>
+              <tr>
+                <td>2/1</td>
+                <td>1200</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <h4 className="center">Example - 2 to 14 over 2 - Progression 2</h4>
+          <p>
+            As an additional example, to demonstrate how the Progression setting
+            works and how duplicate values are eliminated, we will show
+            denominator 2, start value 2, end value 14, and progression 2.
+          </p>
+          <p>The raw result:</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>2/2</td>
+                <td>4/2</td>
+                <td>6/2</td>
+                <td>8/2</td>
+                <td>10/2</td>
+                <td>12/2</td>
+                <td>14/2</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>And now those values reduced:</p>
+
+          <table>
+            <tbody>
+              <tr>
+                <td>1/1</td>
+                <td>2/1</td>
+                <td>3/2</td>
+                <td>2/1</td>
+                <td>5/4</td>
+                <td>3/2</td>
+                <td>7/4</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            6/2 and 12/2 both reduce to 3/2. 4/2 and 8/2 both reduce to 2/1,
+            which is always implied in an octave based scale regardless.
+            Therefore, despite the fact that the method generates 7 raw values,
+            we only end up with 4 unique pitches.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>1/1</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>5/4</td>
+                <td>386.313</td>
+              </tr>
+              <tr>
+                <td>3/2</td>
+                <td>701.955</td>
+              </tr>
+              <tr>
+                <td>7/4</td>
+                <td>968.826</td>
+              </tr>
+              <tr>
+                <td>2/1</td>
+                <td>1200</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <h4 className="center">
+            Applying Modal Transformations to Ratio Scales
+          </h4>
+          <p>
+            In order to find the distance between two ratios, the process of
+            cross multiplication is utilized. This process can be applied to an
+            entire scale to find its modal transformations. As a demonstration
+            we will apply this to the simple scale created by this tool when it
+            is set to Denominator 2, Start 2, End 14, Progression 2.
+          </p>
+          <p>
+            To do so, take the scale degree you would like to be your new
+            starting note, and then cross multiply it with every note in the
+            scale except 2/1, which is implied as these are octave based scales.
+            Then octave reduce each ratio.
+          </p>
+          <p>Let's use the second degree, 5/4, as our new starting note.</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>1/1</td>
+                <td>*</td>
+                <td>5/4</td>
+                <td>=</td>
+                <td>4/5</td>
+                <td>=</td>
+                <td>8/5</td>
+              </tr>
+              <tr>
+                <td>5/4</td>
+                <td>*</td>
+                <td>5/4</td>
+                <td>=</td>
+                <td>20/20</td>
+                <td>=</td>
+                <td>1/1</td>
+              </tr>
+              <tr>
+                <td>3/2</td>
+                <td>*</td>
+                <td>5/4</td>
+                <td>=</td>
+                <td>12/10</td>
+                <td>=</td>
+                <td>6/5</td>
+              </tr>
+              <tr>
+                <td>7/4</td>
+                <td>*</td>
+                <td>5/4</td>
+                <td>=</td>
+                <td>28/20</td>
+                <td>=</td>
+                <td>7/5</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Now that the new values have been calculated and octave reduced,
+            place them in order of pitch.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>1/1</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>6/5</td>
+                <td>315.641</td>
+              </tr>
+              <tr>
+                <td>7/5</td>
+                <td>582.512</td>
+              </tr>
+              <tr>
+                <td>8/5</td>
+                <td>813.686</td>
+              </tr>
+              <tr>
+                <td>2/1</td>
+                <td>1200</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Worth noticing is that all of the new values are of denominator 5.
+            If we transform the scale again using the second degree of this new
+            scale, the values all end up being denominator 3, or multiples of
+            denominator 3. Repeating this process again yields values all of
+            denominator 7. Modal transformations of Otonal scales result in new
+            scales with shared denominator factors because each step in the
+            scale is multiplied by the same value.
+          </p>
+          <br />
+        </div>
         <button
           className="mb"
           onClick={() => setShowOtInfo(stateData, setStateData)}
@@ -1550,7 +1793,263 @@ export const UtInfo = ({ stateData, setStateData }) => {
     <div>
       <div className="tableClone">
         <br />
-        <div className="writtenAreas">Testing</div>
+        <div className="writtenAreas">
+          <h4 className="center">Process</h4>
+          <p>
+            The Otonal and Utonal scale generation methods provide scales that
+            are built off of a chosen factor, resulting in scale values that
+            have low-complexity ratio relationships between one another. In the
+            case of an Otonal scale, the user chooses the numerator, then
+            chooses what values will appear in the denominators of each value in
+            the scale by choosing a first value (Start), a last value (Stop),
+            and how often the tool will take a value from that overtone series
+            and insert it into the scale (Progression).
+          </p>
+          <p>
+            It is important to note that the progression tool available here is
+            only one way to create a Utonal scale. The values do not need to be
+            evenly spaced. It is currently outside the scope of the tools
+            available on this website, but one could create a scale using any
+            interger denominators they like under the numerators they choose.
+          </p>
+          <p>
+            It is also important to note that both the Otonal and Utonal scale
+            tools here are not strict. A true Otonal scale should not have any
+            numerator values less than the denominator, and a true Utonal scale
+            should not have any denominator values less than the numerator, but
+            this tool allows both because those settings can create useful
+            results.
+          </p>
+          <br />
+          <h4 className="center">Example - 5 to 10 over 5 - Progression 1</h4>
+          <p>
+            As an example, we will examine an undertone series with the
+            denominator of 5, starting on 5, ending on 10, and with a
+            progression of 1, meaning that every value in the series between 5
+            and 10 will be inserted into the final scale.
+          </p>
+          <p>The raw result:</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>5/5</td>
+                <td>5/6</td>
+                <td>5/7</td>
+                <td>5/8</td>
+                <td>5/9</td>
+                <td>5/10</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Then we transform each value to its positive form.</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>1/1</td>
+                <td>5/3</td>
+                <td>10/7</td>
+                <td>5/4</td>
+                <td>10/9</td>
+                <td>2/1</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Now we apply 1200*log(x/y)/log(2) to convert these values to cents
+            and reverse them so they appear in order.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>1/1</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>10/9</td>
+                <td>182.404</td>
+              </tr>
+              <tr>
+                <td>5/4</td>
+                <td>386.314</td>
+              </tr>
+              <tr>
+                <td>10/7</td>
+                <td>617.488</td>
+              </tr>
+              <tr>
+                <td>5/3</td>
+                <td>884.359</td>
+              </tr>
+              <tr>
+                <td>2/1</td>
+                <td>1200</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <h4 className="center">Example - 2 to 14 over 2 - Progression 2</h4>
+          <p>
+            As an additional example, to demonstrate how the Progression setting
+            works and how duplicate values are eliminated, we will show
+            denominator 2, start value 2, end value 14, and progression 2.
+          </p>
+          <p>The raw result:</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>2/2</td>
+                <td>2/4</td>
+                <td>2/6</td>
+                <td>2/8</td>
+                <td>2/10</td>
+                <td>2/12</td>
+                <td>2/14</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>And now those values reduced:</p>
+
+          <table>
+            <tbody>
+              <tr>
+                <td>1/1</td>
+                <td>2/1</td>
+                <td>4/3</td>
+                <td>2/1</td>
+                <td>8/5</td>
+                <td>4/3</td>
+                <td>8/7</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            2/6 and 2/12 both reduce to 4/3. 2/4 and 2/8 both reduce to 2/1,
+            which is always implied in an octave based scale regardless.
+            Therefore, despite the fact that the method generates 7 raw values,
+            we only end up with 4 unique pitches.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>1/1</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>8/7</td>
+                <td>231.174</td>
+              </tr>
+              <tr>
+                <td>4/3</td>
+                <td>498.045</td>
+              </tr>
+              <tr>
+                <td>8/5</td>
+                <td>813.686</td>
+              </tr>
+              <tr>
+                <td>2/1</td>
+                <td>1200</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <h4 className="center">
+            Applying Modal Transformations to Ratio Scales
+          </h4>
+          <p>
+            In order to find the distance between two ratios, the process of
+            cross multiplication is utilized. This process can be applied to an
+            entire scale to find its modal transformations. As a demonstration
+            we will apply this to the simple scale created by this tool when it
+            is set to Denominator 2, Start 2, End 14, Progression 2.
+          </p>
+          <p>
+            To do so, take the scale degree you would like to be your new
+            starting note, and then cross multiply it with every note in the
+            scale except 2/1, which is implied as these are octave based scales.
+            Then octave reduce each ratio.
+          </p>
+          <p>Let's use the second degree, 8/7, as our new starting note.</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>1/1</td>
+                <td>*</td>
+                <td>8/7</td>
+                <td>=</td>
+                <td>7/8</td>
+                <td>=</td>
+                <td>7/4</td>
+              </tr>
+              <tr>
+                <td>8/7</td>
+                <td>*</td>
+                <td>8/7</td>
+                <td>=</td>
+                <td>56/56</td>
+                <td>=</td>
+                <td>1/1</td>
+              </tr>
+              <tr>
+                <td>4/3</td>
+                <td>*</td>
+                <td>8/7</td>
+                <td>=</td>
+                <td>28/24</td>
+                <td>=</td>
+                <td>7/6</td>
+              </tr>
+              <tr>
+                <td>8/5</td>
+                <td>*</td>
+                <td>8/7</td>
+                <td>=</td>
+                <td>56/40</td>
+                <td>=</td>
+                <td>7/5</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Now that the new values have been calculated and octave reduced,
+            place them in order of pitch.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>1/1</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>7/6</td>
+                <td>266.871</td>
+              </tr>
+              <tr>
+                <td>7/5</td>
+                <td>582.512</td>
+              </tr>
+              <tr>
+                <td>7/4</td>
+                <td>968.826</td>
+              </tr>
+              <tr>
+                <td>2/1</td>
+                <td>1200</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Worth noticing is that all of the new values are of numerator 7. If
+            we transform the scale again using the second degree of this new
+            scale, the values all end up having numerator 3 or multiples of
+            numerator 3. Repeating this process again yields values all of
+            numerator 5. Modal transformations of Utonal scales result in new
+            scales with shared denominator factors because each step in the
+            scale is multiplied by the same value.
+          </p>
+          <br />
+        </div>
         <br />
         <button
           className="mb"

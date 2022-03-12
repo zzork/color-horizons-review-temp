@@ -91,7 +91,7 @@ const getPlayerReadouts = (playerData) => {
         Export .scl
       </button>
     );
-    title = "Linear Temperament By Cents";
+    title = "Linear Tuning By Cents";
     readout = `${playerData.sclData[1]} Notes of ${playerData.sclData[0]}, Mode ${playerData.mode}`;
   }
 
@@ -106,7 +106,7 @@ const getPlayerReadouts = (playerData) => {
         Export .scl
       </button>
     );
-    title = "Linear Temperament By Ratio";
+    title = "Linear Tuning By Ratio";
     readout = `${playerData.sclData[2]} Notes of ${playerData.sclData[0]}/${playerData.sclData[1]}, Mode ${playerData.mode}`;
   }
 

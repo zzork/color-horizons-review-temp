@@ -11,7 +11,7 @@ const generateLTBRScl = (scale, sclData, mode) => {
 
   let outputString = `! LTBR-${numerator}over${denominator}-${noteTotal}notes-Mode${mode}
 !
-colorhorizons.com - Linear Temperament By Ratio - Numerator ${numerator} - Denominator ${denominator} - Note Total ${noteTotal} - Mode ${mode}
+colorhorizons.com - Linear Tuning By Ratio - Numerator ${numerator} - Denominator ${denominator} - Note Total ${noteTotal} - Mode ${mode}
  ${noteTotal}
 !`;
   for (let i = 0; i < modifiedScale.length; i++) {

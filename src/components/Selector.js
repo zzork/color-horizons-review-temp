@@ -35,7 +35,7 @@ export const Selector = ({ stateData, setStateData }) => {
           handleScaleGenerationMethodClick("ltbr", stateData, setStateData)
         }
       >
-        Linear Temperament by Ratio
+        Linear Tuning by Ratio
       </button>
       <button
         className="mb"
@@ -43,7 +43,7 @@ export const Selector = ({ stateData, setStateData }) => {
           handleScaleGenerationMethodClick("ltbc", stateData, setStateData)
         }
       >
-        Linear Temperament by Cents
+        Linear Tuning by Cents
       </button>
       <br />
       <button

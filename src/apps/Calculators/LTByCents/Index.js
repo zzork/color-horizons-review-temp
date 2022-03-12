@@ -13,7 +13,7 @@ export const LTByCents = ({ stateData, setStateData }) => {
   return (
     <div>
       <h2>
-        Linear Temperament by Cents{" "}
+        Linear Tuning by Cents{" "}
         <button
           className="infoButton"
           onClick={() => setShowLtbcInfo(stateData, setStateData)}

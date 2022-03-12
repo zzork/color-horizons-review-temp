@@ -75,7 +75,20 @@ function App() {
         )}
       </div>
       <div className="bottomBar">
-        <p>created by jon lervold // jonlervold.com // 2022</p>
+        <p>
+          <a href="http://jonlervold.com" target="_blank" rel="noreferrer">
+            jonlervold.com
+          </a>{" "}
+          //{" "}
+          <a
+            href="https://github.com/jonlervold/color-horizons"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>{" "}
+          // 2022
+        </p>
       </div>
     </div>
   );

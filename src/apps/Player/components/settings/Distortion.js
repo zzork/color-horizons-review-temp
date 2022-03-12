@@ -4,13 +4,13 @@ const Distortion = ({ playerState, setPlayerState }) => {
   return (
     <div>
       <br />
-      0 - 110%
+      0 - 100%
       <br />
       <input
         name="distortion"
         type="range"
         min="0"
-        max="110"
+        max="100"
         value={playerState.distortion}
         onChange={(event) =>
           handlePlayerChange(event, playerState, setPlayerState)
@@ -21,7 +21,7 @@ const Distortion = ({ playerState, setPlayerState }) => {
         name="distortion"
         type="number"
         min="0"
-        max="110"
+        max="100"
         value={playerState.distortion}
         onChange={(event) =>
           handlePlayerChange(event, playerState, setPlayerState)

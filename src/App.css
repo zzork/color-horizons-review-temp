@@ -50,7 +50,7 @@ body {
 }
 @media (max-width: 700px) {
   .writtenAreas {
-    width: 99%;
+    width: 87%;
   }
 }
 
@@ -188,6 +188,35 @@ td {
   .masterVolume {
     width: 99%;
   }
+}
+
+/* links */
+/* unvisited link */
+a:link {
+  color: black;
+  border-bottom: 1px dotted #000;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+  border-bottom: 1px dotted #000;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: #454adb;
+  border-bottom: 1px dotted #000;
+  text-decoration: none;
+}
+
+/* selected link */
+a:active {
+  color: #c870f1;
+  border-bottom: 1px dotted #000;
+  text-decoration: none;
 }
 
 /* buttons */

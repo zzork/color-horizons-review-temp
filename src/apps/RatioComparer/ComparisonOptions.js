@@ -7,7 +7,7 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
   return (
     <div>
       <h2>Comparison Window Options</h2>
-      Strongest Highlight:{" "}
+      Strong Highlight:{" "}
       <input
         type="number"
         name="closeApproximation"

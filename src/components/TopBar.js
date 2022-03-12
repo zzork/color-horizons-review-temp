@@ -38,26 +38,26 @@ const TopBar = ({ stateData, setStateData }) => {
           </span>
         )}
         {stateData.about.showAbout && (
-          <div>
-            <span>
-              <button
-                className="mb"
-                onClick={() => handleShowKeyConcepts(stateData, setStateData)}
-              >
-                Key Concepts
-              </button>
-            </span>
-            <span>
-              <button
-                className="mb"
-                onClick={() =>
-                  handleShowAboutColorHorizons(stateData, setStateData)
-                }
-              >
-                About Color Horizons
-              </button>
-            </span>
-          </div>
+          <span>
+            <button
+              className="mb"
+              onClick={() => handleShowKeyConcepts(stateData, setStateData)}
+            >
+              Key Concepts
+            </button>
+          </span>
+        )}
+        {stateData.about.showAbout && (
+          <span>
+            <button
+              className="mb"
+              onClick={() =>
+                handleShowAboutColorHorizons(stateData, setStateData)
+              }
+            >
+              About Color Horizons
+            </button>
+          </span>
         )}
         <span>
           <button

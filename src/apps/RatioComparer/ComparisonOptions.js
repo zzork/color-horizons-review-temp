@@ -7,7 +7,7 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
   return (
     <div>
       <h2>Comparison Window Options</h2>
-      "Close" Approximation:{" "}
+      Strongest Highlight:{" "}
       <input
         type="number"
         name="closeApproximation"
@@ -20,7 +20,7 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
       ></input>{" "}
       Cents
       <br />
-      Approximation Boundary:{" "}
+      Highlight Boundary:{" "}
       <input
         type="number"
         name="approximationBoundary"

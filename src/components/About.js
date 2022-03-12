@@ -9,18 +9,6 @@ const About = ({ stateData, setStateData }) => {
   console.log(stateData.about.whichAbout);
   return (
     <div>
-      <button
-        className="mb"
-        onClick={() => handleShowKeyConcepts(stateData, setStateData)}
-      >
-        Key Concepts
-      </button>{" "}
-      <button
-        className="mb"
-        onClick={() => handleShowAboutColorHorizons(stateData, setStateData)}
-      >
-        About Color Horizons
-      </button>
       {stateData.about.whichAbout === "keyConcepts" && (
         <KeyConcepts stateData={stateData} setStateData={setStateData} />
       )}

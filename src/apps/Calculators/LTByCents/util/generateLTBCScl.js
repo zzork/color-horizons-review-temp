@@ -8,9 +8,9 @@ const generateLTBCScl = (scale, sclData, mode) => {
   modifiedScale = modifiedScale.map((value) => value.toFixed(5));
   modifiedScale.push("2/1");
 
-  let outputString = `! LTBC-${generator}-${noteTotal}notes-Mode${mode}
+  let outputString = `! LSBC-${generator}-${noteTotal}notes-Mode${mode}
 !
-colorhorizons.com - Linear Tuning By Cents - Generator ${generator} - ${noteTotal} Notes - Mode ${mode}
+colorhorizons.com - Linear Scale By Cents - Generator ${generator} - ${noteTotal} Notes - Mode ${mode}
  ${noteTotal}
 !`;
   for (let i = 0; i < modifiedScale.length; i++) {
@@ -22,7 +22,7 @@ ${modifiedScale[i]}`;
   let url = window.URL.createObjectURL(outputBlob);
   let anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = `LTBC-${generator}-${noteTotal}notes-Mode${mode}.scl`;
+  anchor.download = `LSBC-${generator}-${noteTotal}notes-Mode${mode}.scl`;
 
   anchor.click();
   window.URL.revokeObjectURL(url);

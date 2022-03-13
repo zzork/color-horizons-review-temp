@@ -9,9 +9,9 @@ const generateLTBRScl = (scale, sclData, mode) => {
   modifiedScale = modifiedScale.map((value) => value.toFixed(5));
   modifiedScale.push("2/1");
 
-  let outputString = `! LTBR-${numerator}over${denominator}-${noteTotal}notes-Mode${mode}
+  let outputString = `! LSBR-${numerator}over${denominator}-${noteTotal}notes-Mode${mode}
 !
-colorhorizons.com - Linear Tuning By Ratio - Numerator ${numerator} - Denominator ${denominator} - Note Total ${noteTotal} - Mode ${mode}
+colorhorizons.com - Linear Scale By Ratio - Numerator ${numerator} - Denominator ${denominator} - Note Total ${noteTotal} - Mode ${mode}
  ${noteTotal}
 !`;
   for (let i = 0; i < modifiedScale.length; i++) {
@@ -23,7 +23,7 @@ ${modifiedScale[i]}`;
   let url = window.URL.createObjectURL(outputBlob);
   let anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = `LTBR-${numerator}over${denominator}-${noteTotal}notes-Mode${mode}.scl`;
+  anchor.download = `LSBR-${numerator}over${denominator}-${noteTotal}notes-Mode${mode}.scl`;
 
   anchor.click();
   window.URL.revokeObjectURL(url);

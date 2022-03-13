@@ -55,8 +55,8 @@ const KeyConcepts = ({ stateData, setStateData }) => {
             <a href="#MomentsOfSymmetry">Moments of Symmetry</a>
             <br />
             <a href="#Tempering">Tempering</a>
-            <br />
-            <a href="#EDOsAndTempering">EDOs and Tempering</a>
+            {/* <br />
+            <a href="#EDOsAndTempering">EDOs and Tempering</a> */}
           </p>
           <div>
             <div id="Sound"></div>
@@ -93,8 +93,8 @@ const KeyConcepts = ({ stateData, setStateData }) => {
           <div id="Tempering"></div>
           <Spacer id={"Sound"} />
           <Tempering />
-          <Spacer id={"EDOsAndTempering"} />
-          <EDOsAndTempering />
+          {/* <Spacer id={"EDOsAndTempering"} />
+          <EDOsAndTempering /> */}
           <br />
           <br />
           <div className="center">

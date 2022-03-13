@@ -3,13 +3,21 @@ import { basicPlay } from "../../util/aboutNotePlayer";
 const Tempering = () => {
   return (
     <div>
-      <h2 className="center">Temperaments</h2>
+      <h2 className="center">Tempering</h2>
       <p>
-        The Linear Temperament by Cents tool can be used to create temperaments,
-        which are tuning systems that equate different musical ratios to one
-        another. This is accomplished by intentionally modifying the generating
-        interval so that it is not a pure ratio.
+        The Linear Scale by Cents tool can be used to temper intervals, which
+        means intentionally modifying the generating interval so that it is
+        slightly impure in order to make other intervals in the scales that that
+        generator creates more in tune. It can also be used for the purpose of
+        generating temperaments, which are systems which equate different ratios
+        to one another. A full discussion of temperaments is currently beyond
+        the scope of my personal knowledge, but we will touch on the basics of
+        the most important one.
       </p>
+      <br />
+      <div className="center">—</div>
+      <br />
+      <h4 className="center">12 Tone Equal Temperament</h4>
       <p>
         The primary example of a temperament is 12 Tone Equal Temperament, the
         most commonly used musical system in the world. Whether they are aware
@@ -22,9 +30,9 @@ const Tempering = () => {
       </p>
       <p>
         Previously, we examined what happens when 3/2 is stacked on top of
-        itself 11 times to create a scale with 12 unique pitches. Despite using
-        a pure 3/2 as the generating interval, we still ended up with one wolf
-        fifth at 678 cents. Here's why.
+        itself 11 times to create a scale with 12 unique pitches (Pythagorean
+        Tuning). Despite using a pure 3/2 as the generating interval, we still
+        ended up with one wolf fifth at 678 cents. Here's why:
       </p>
       <p>
         When 3/2 is stacked on top of itself 12 times, the final value comes
@@ -115,7 +123,13 @@ const Tempering = () => {
         this case, we would take the Pythagorean Comma and divide it by 12,
         since we arrived at this comma by stacking twelve 3/2s on one another.
       </p>
-      <p>~23.46 / 12 = ~1.955</p>
+      <table>
+        <tbody>
+          <tr>
+            <td>~23.46 / 12 = ~1.955</td>
+          </tr>
+        </tbody>
+      </table>
       <p>
         Then, we reduce our original generator of ~701.955 cents by ~1.955 and
         arrive at exactly 700 cents for the generator of 12 Tone Equal
@@ -193,35 +207,167 @@ const Tempering = () => {
             <td>12</td>
             <td>8400</td>
             <td>
-              <b>0 aka 1200 aka 2/1</b>
+              <b>0</b>
             </td>
           </tr>
         </tbody>
       </table>
       <p>
-        Due to the fundamental theorem of arithmetic, stacking 3/2 will always
-        repeat infinitely, never exactly looping back onto 2/1. By tempering out
-        this comma, we create an even, closed system that loops back in on
-        itself, allowing for free key modulation.
+        No matter how many iterations you run, stacking 3/2 will always repeat
+        infinitely, never exactly looping back onto 2/1. By tempering out this
+        comma, we create an even, closed system that loops back in on itself,
+        allowing for free key modulation. With this type of system, we don't
+        need to worry about different keys having different tonal
+        characteristics.{" "}
       </p>
-      <p>Problem: 3rds are whack</p>
-      <button className="mb" onPointerDown={() => basicPlay([220, 275])}>
-        5/4 Major Third
-      </button>
-      <button className="mb" onPointerDown={() => basicPlay([220, 277.183])}>
-        400 Cents Major Third
-      </button>
-      <br />
-      <button className="mb" onPointerDown={() => basicPlay([220, 264])}>
-        6/5 Minor Third
-      </button>
-      <button className="mb" onPointerDown={() => basicPlay([220, 261.626])}>
-        300 Cents Minor Third
-      </button>
       <p>
-        As an additional, less familiar example, we will examine the Mavila
-        Temperament mentioned above. Mavila equates 3 stacks of 3/2 (905.865) to
-        8/5 (813.686 cents).
+        When compared directly against the simple JI ratios that each 12TET
+        interval approximates, it is easy to hear that the intervals are
+        somewhat out of tune. But our collective consciousness seems to have
+        determined that the positives of this system are worth it. Within 12TET,
+        we have relatively few notes that allow us to create fairly complex
+        harmonies with good-enough pitch accuracy.
+      </p>
+
+      <table>
+        <tbody>
+          <tr>
+            <td className="lighterTable">Interval</td>
+            <td className="lighterTable">Simple JI</td>
+            <td className="lighterTable">12TET</td>
+          </tr>
+          <tr>
+            <td>Minor Third</td>
+            <td>
+              <button
+                className="mb"
+                onPointerDown={() => basicPlay([220, 264])}
+              >
+                6/5
+              </button>
+            </td>
+            <td>
+              <button
+                className="mb"
+                onPointerDown={() => basicPlay([220, 261.626])}
+              >
+                300 cents
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>Major Third</td>
+            <td>
+              <button
+                className="mb"
+                onPointerDown={() => basicPlay([220, 275])}
+              >
+                5/4
+              </button>
+            </td>
+            <td>
+              <button
+                className="mb"
+                onPointerDown={() => basicPlay([220, 277.183])}
+              >
+                400 cents
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>Perfect Fourth</td>
+            <td>
+              <button
+                className="mb"
+                onPointerDown={() => basicPlay([220, 293.333])}
+              >
+                4/3
+              </button>
+            </td>
+            <td>
+              <button
+                className="mb"
+                onPointerDown={() => basicPlay([220, 293.665])}
+              >
+                500 cents
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>Perfect Fifth</td>
+            <td>
+              <button
+                className="mb"
+                onPointerDown={() => basicPlay([220, 330])}
+              >
+                3/2
+              </button>
+            </td>
+            <td>
+              <button
+                className="mb"
+                onPointerDown={() => basicPlay([220, 329.628])}
+              >
+                700 cents
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>Minor Sixth</td>
+            <td>
+              <button
+                className="mb"
+                onPointerDown={() => basicPlay([220, 352])}
+              >
+                8/5
+              </button>
+            </td>
+            <td>
+              <button
+                className="mb"
+                onPointerDown={() => basicPlay([220, 349.228])}
+              >
+                800 cents
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>Major Sixth</td>
+            <td>
+              <button
+                className="mb"
+                onPointerDown={() => basicPlay([220, 366.666])}
+              >
+                5/3
+              </button>
+            </td>
+            <td>
+              <button
+                className="mb"
+                onPointerDown={() => basicPlay([220, 369.994])}
+              >
+                900 cents
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <p>
+        12TET is an excellent system overall for many reasons. But there are
+        multitudes of other options that allow for aural world building that
+        12TET simply does not have available. This brings us to the point of
+        this entire project: help facilitate exploration of the universe of
+        harmony and encourage people to make music in alternative systems.
+      </p>
+      {/* <br />
+      <div className="center">—</div>
+      <br />
+      <h4 className="center">Mavila Scales</h4>
+      <p>
+        As an additional, less familiar example, we will examine the phenomenon
+        known as Mavila scales. Mavila is a temperament that equates 3 stacks of
+        3/2 (905.865) to 8/5 (813.686 cents).
       </p>
       <table>
         <tbody>
@@ -279,8 +425,8 @@ const Tempering = () => {
         mistune the target ratio as well as the generating ratio, in order to
         bring other intervals that the scale creates closer to purer harmonies.
         The limits of what constitutes a Mavila Temperament are generally
-        considered to be generators between 666.666 cents and 685.713 cents.
-      </p>
+        considered to be generators between 666.667 cents and 685.713 cents.
+      </p> */}
     </div>
   );
 };

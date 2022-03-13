@@ -572,5 +572,9 @@ ol li {
 }
 
 ul li {
-  padding: 0px;
+  padding-right: 1em;
+}
+
+.noPadding {
+  padding: none;
 }

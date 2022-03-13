@@ -85,6 +85,10 @@ td {
   overflow: hidden;
 }
 
+.lighterTable {
+  background-color: #f5f2ee;
+}
+
 .tableTopRow {
   background-color: #f5f2ee;
 }
@@ -555,4 +559,18 @@ header span {
 
 .center {
   text-align: center;
+}
+
+/* lists */
+
+ul {
+  list-style-type: square;
+}
+
+ol li {
+  padding: 10px;
+}
+
+ul li {
+  padding: 0px;
 }

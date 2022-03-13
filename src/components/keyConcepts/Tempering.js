@@ -1,3 +1,5 @@
+import { basicPlay } from "../../util/aboutNotePlayer";
+
 const Tempering = () => {
   return (
     <div>
@@ -34,9 +36,9 @@ const Tempering = () => {
       <table>
         <tbody>
           <tr>
-            <td className="tableTopRow">Iteration</td>
-            <td className="tableTopRow">Raw Cents</td>
-            <td className="tableTopRow">Octave Reduced</td>
+            <td className="lighterTable">Iteration</td>
+            <td className="lighterTable">Raw Cents</td>
+            <td className="lighterTable">Octave Reduced</td>
           </tr>
           <tr>
             <td>0</td>
@@ -123,9 +125,9 @@ const Tempering = () => {
       <table>
         <tbody>
           <tr>
-            <td className="tableTopRow">Iteration</td>
-            <td className="tableTopRow">Raw Cents</td>
-            <td className="tableTopRow">Octave Reduced</td>
+            <td className="lighterTable">Iteration</td>
+            <td className="lighterTable">Raw Cents</td>
+            <td className="lighterTable">Octave Reduced</td>
           </tr>
           <tr>
             <td>0</td>
@@ -202,6 +204,20 @@ const Tempering = () => {
         this comma, we create an even, closed system that loops back in on
         itself, allowing for free key modulation.
       </p>
+      <p>Problem: 3rds are whack</p>
+      <button className="mb" onPointerDown={() => basicPlay([220, 275])}>
+        5/4 Major Third
+      </button>
+      <button className="mb" onPointerDown={() => basicPlay([220, 277.183])}>
+        400 Cents Major Third
+      </button>
+      <br />
+      <button className="mb" onPointerDown={() => basicPlay([220, 264])}>
+        6/5 Minor Third
+      </button>
+      <button className="mb" onPointerDown={() => basicPlay([220, 261.626])}>
+        300 Cents Minor Third
+      </button>
       <p>
         As an additional, less familiar example, we will examine the Mavila
         Temperament mentioned above. Mavila equates 3 stacks of 3/2 (905.865) to
@@ -210,9 +226,9 @@ const Tempering = () => {
       <table>
         <tbody>
           <tr>
-            <td className="tableTopRow">Iteration</td>
-            <td className="tableTopRow">Raw Cents</td>
-            <td className="tableTopRow">Octave Reduced</td>
+            <td className="lighterTable">Iteration</td>
+            <td className="lighterTable">Raw Cents</td>
+            <td className="lighterTable">Octave Reduced</td>
           </tr>
           <tr>
             <td>0</td>

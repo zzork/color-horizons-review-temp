@@ -2,7 +2,7 @@ const EDOsAndTempering = () => {
   return (
     <div>
       {" "}
-      <h2>Determining EDO / Temperament Compatability</h2>
+      <h2 className="center">Determining EDO / Temperament Compatability</h2>
       <p>
         As just mentioned, each temperament has a range of generators, each
         creating slightly different scales that end up with very similar
@@ -17,7 +17,7 @@ const EDOsAndTempering = () => {
         EDOs temper the interval. Ok, now how do we do that? For this we use
         vals and monzos.
       </p>
-      <h4>Vals</h4>
+      <h4 className="center">Vals</h4>
       <p>
         A val is a map of a given tuning that says which amount of steps is the
         closest to each prime interval. The prime intervals are 2/1 (octave),
@@ -46,7 +46,7 @@ const EDOsAndTempering = () => {
         <sub>2</sub>(11), log<sub>2</sub>(13), etc, then rounding those values
         to the nearest interger.
       </p>
-      <h4>Monzos</h4>
+      <h4 className="center">Monzos</h4>
       <p>A monzo is a notation that represents a ratio as its prime factors.</p>
       <p>
         As an example, the prime factorization of 81/80 is 3*3*3*3 / 2*2*2*2*5.
@@ -63,7 +63,7 @@ const EDOsAndTempering = () => {
         numerator of the ratio. If the value in a monzo is negative, it means
         that that prime appears in the denominator of the ratio.
       </p>
-      <h4>Using Vals and Monzos Together</h4>
+      <h4 className="center">Using Vals and Monzos Together</h4>
       <p>
         To determine if an EDO tempers out a given interval, we use the val of
         that EDO and the monzo of the interval. Let's check if 12edo tempers out

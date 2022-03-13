@@ -97,12 +97,14 @@ const KeyConcepts = ({ stateData, setStateData }) => {
           <EDOsAndTempering />
           <br />
           <br />
-          <button
-            className="mb"
-            onClick={() => handleShowAbout(stateData, setStateData)}
-          >
-            Close More Info
-          </button>
+          <div className="center">
+            <button
+              className="mb"
+              onClick={() => handleShowAbout(stateData, setStateData)}
+            >
+              Home
+            </button>
+          </div>
           <br />
           <br />
         </div>
@@ -114,12 +116,10 @@ const KeyConcepts = ({ stateData, setStateData }) => {
 export default KeyConcepts;
 
 const Spacer = ({ id }) => {
-  console.log(id);
   return (
     <div>
-      <div id={id}></div>
       <br />
-      <p className="center">
+      <p id={id} className="center">
         <a href="#Top">Table of Contents</a>
       </p>
       <br />

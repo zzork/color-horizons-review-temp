@@ -64,7 +64,7 @@ const TopBar = ({ stateData, setStateData }) => {
             className="mb"
             onClick={() => handleShowAbout(stateData, setStateData)}
           >
-            {stateData.about.showAbout ? "Main Page" : "More Info"}
+            {stateData.about.showAbout ? "Home" : "More Info"}
           </button>
         </span>
       </header>

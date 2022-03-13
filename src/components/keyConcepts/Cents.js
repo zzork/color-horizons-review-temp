@@ -1,3 +1,5 @@
+import { basicPlay } from "../../util/aboutNotePlayer";
+
 const Cents = () => {
   return (
     <div>
@@ -10,19 +12,73 @@ const Cents = () => {
         What this means is that if 220Hz is your root note, 440Hz is perceived
         as the same pitch but one octave higher. That makes perfect sense.
         Intuition leads most people to expect 660Hz to be the third octave,
-        880Hz to be the fourth octave, and 1100Hz to be the fifth octave.
+        880Hz to be the fourth octave, and 1100Hz to be the fifth octave. But
+        instead of pure octaves, this creates a harmonic series chord:
       </p>
+      <div className="center">
+        <button className="mb" onPointerDown={() => basicPlay([220])}>
+          Root
+          <br />
+          220Hz
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([440])}>
+          + 220Hz =<br />
+          440Hz
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([660])}>
+          + 220Hz =<br />
+          660Hz
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([880])}>
+          + 220Hz =<br />
+          880Hz
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([1100])}>
+          + 220Hz =<br />
+          1100Hz
+        </button>
+      </div>
+      <br />
       <p>
-        But instead, the spacing is uneven! 880Hz is the third octave. 1760Hz is
-        the fourth octave. 3250Hz is the fifth octave. The size of the octave
-        gets larger and larger as your frequencies get higher and higher,
-        because each octave is another instance of multiplying the root
-        frequency by 2.
+        Thanks to octaves being the result of a 2/1 frequency ratio, the spacing
+        is not so intuitively simple! With 220Hz as the root, 440Hz is still the
+        second octave, but 880Hz is the third octave. 1760Hz is the fourth
+        octave. 3520Hz is the fifth octave. The size of the octave gets
+        exponentially larger as your frequencies get higher and higher, because
+        each octave is another instance of multiplying the root frequency by 2.
       </p>
+      <div className="center">
+        <button className="mb" onPointerDown={() => basicPlay([220])}>
+          Root
+          <br />
+          220Hz
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([440])}>
+          * 2 =<br />
+          440Hz
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([880])}>
+          * 2 =<br />
+          880Hz
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([1760])}>
+          * 2 =<br />
+          1760Hz
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([3520])}>
+          * 2 =<br />
+          3520Hz
+        </button>
+      </div>
+      <br />
       <p>
-        So this brings about an important point, the ratios we discussed earlier
-        apply specifically to Hz measurements of sounds.
+        So this brings about an important point, the <b>ratios</b> we discussed
+        earlier <b>apply specifically to Hz</b> measurements of sounds.
       </p>
+      <br />
+      <div className="center">—</div>
+      <br />
+      <h4 className="center">A Different System of Pitch Measurement</h4>
       <p>
         While many phenomena in the world truly are mathematically logarithmic
         or exponential, it is difficult for the human mind to naturally think in
@@ -44,11 +100,10 @@ const Cents = () => {
         microtonal music will need to become much more popular before a new,
         better standard becomes commonplace. So for now it's just the way it is!
       </p>
-      <p>
-        Below is the formula for converting a ratio to cents. Variables x and y
-        are your ratio's numerator and denominator. Variable c is the cents
-        measurement that represents that ratio.
-      </p>
+      <br />
+      <div className="center">—</div>
+      <br />
+      <h4 className="center">Converting a Ratio to Cents</h4>
       <table>
         <tbody>
           <tr>
@@ -56,15 +111,30 @@ const Cents = () => {
           </tr>
         </tbody>
       </table>
+
+      <p className="center">
+        <b>x</b> - Numerator of Ratio
+        <br />
+        <b>y</b> - Denominator of Ratio
+        <br />
+        <b>c</b> - Outcome (Cents)
+      </p>
+
       <p>
         Cents measurement is inherently a measurement of difference. Without a
         reference note, it is meaningless. If someone says "play 300 cents"
         without providing reference pitch in Hz, there is no way to determine
         what pitch that would be.
       </p>
+      <br />
+      <div className="center">—</div>
+      <br />
+      <h4 className="center">Converting Cents to Hz</h4>
       <p>
-        There is also a reverse formula, that will get a Hz value from a cents
-        measurement, again provided that you have a reference frequency:
+        There is also a formula that will provide a Hz value from a cents
+        measurement. Due to cents being inherently a measurement of difference,
+        and Hz being an absolute measurement, this formula requires an explicit
+        reference pitch.
       </p>
       <table>
         <tbody>
@@ -75,10 +145,12 @@ const Cents = () => {
           </tr>
         </tbody>
       </table>
-      <p>
-        In the above formula, variable b is your base frequency in Hz. Variable
-        c is the cents value by which you are modifying your root pitch.
-        Variable n, the result, is the resulting Hz value.
+      <p className="center">
+        <b>b</b> - Reference Pitch in Hz
+        <br />
+        <b>c</b> - Cents Change to Reference Pitch
+        <br />
+        <b>n</b> - Outcome (Hz)
       </p>
     </div>
   );

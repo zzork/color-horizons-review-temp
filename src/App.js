@@ -107,10 +107,6 @@ export default App;
 
 // volume slider ALMOST works right, move fast and it won't zero out...
 
-// QWERTY Button disappear on About Windows, possible change that to MORE or something
-
-// favicon, metadata for google/facebook shares...
-
 //////// WANT
 
 // - create permalink for sharing scale via url!

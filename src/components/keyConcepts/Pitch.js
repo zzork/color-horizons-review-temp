@@ -1,3 +1,5 @@
+import { basicPlay } from "../../util/aboutNotePlayer";
+
 const Pitch = () => {
   return (
     <div>
@@ -18,12 +20,32 @@ const Pitch = () => {
         highest pitches you can imagine.
       </p>
       <p>
-        The buttons below will demonstrate some pure sound waves at various
-        frequencies.
+        The buttons below will demonstrate some sound waves at various
+        frequencies. All soundwaves on this page will be sawtooth waves, as it
+        is easier to hear tuning discrepencies with more angular waves than pure
+        sine waves.
       </p>
-      <button>250Hz</button>
-      <button>325Hz</button>
-      <button>440Hz</button>
+      <br />
+      <div className="center">
+        <button className="mb" onPointerDown={() => basicPlay([220])}>
+          220Hz
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([330])}>
+          330Hz
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([440])}>
+          440Hz
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([550])}>
+          550Hz
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([660])}>
+          660Hz
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([770])}>
+          770Hz
+        </button>
+      </div>
       <br />
     </div>
   );

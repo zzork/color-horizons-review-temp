@@ -7,7 +7,7 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
       <div className="tableClone">
         <div className="writtenAreas">
           <br />
-          <h2>General</h2>
+          <h2 className="center">General</h2>
           <p>
             Color Horizons is a microtonal-capable scale generator and
             synthesizer.
@@ -28,7 +28,7 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
             QWERTY playback capability, but it does support mobile platforms.
           </p>
           <br />
-          <h2>Mission / Intentions</h2>
+          <h2 className="center">Mission / Intentions</h2>
           <p>
             Color Horizons is developed by me, <b>Jon Lervold</b>.
           </p>
@@ -60,7 +60,7 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
           </p>
           <p>It is my deep wish that this tool can bring inspiration.</p>
           <br />
-          <h2>Acknowledgements</h2>
+          <h2 className="center">Acknowledgements</h2>
           <p>
             Thank you to everyone involved with the <b>Xenharmonic Alliance</b>{" "}
             and <b>Microtonal Music and Tuning Theory</b> Facebook groups. The
@@ -97,20 +97,21 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
             have been an absolutely invaluable resource.
           </p>
           <br />
-          <p>
+          <p className="center">
             Made with <b>React</b> and <b>Web Audio API</b>.
           </p>
-          <p>
-            <b>Color Horizons GitHub</b>.
+          <p className="center">
+            <b>Color Horizons GitHub</b>
           </p>
           <br />
-
-          <button
-            className="mb"
-            onClick={() => handleShowAbout(stateData, setStateData)}
-          >
-            Close About
-          </button>
+          <div className="center">
+            <button
+              className="mb"
+              onClick={() => handleShowAbout(stateData, setStateData)}
+            >
+              Home
+            </button>
+          </div>
           <br />
           <br />
         </div>

@@ -1,3 +1,5 @@
+import { basicPlay } from "../../util/aboutNotePlayer";
+
 const ModalTransformation = () => {
   return (
     <div>
@@ -10,7 +12,7 @@ const ModalTransformation = () => {
       <table>
         <tbody>
           <tr>
-            <td>Degree</td>
+            <td className="lighterTable">Degree</td>
             <td>1</td>
             <td>2</td>
             <td>3</td>
@@ -21,7 +23,7 @@ const ModalTransformation = () => {
             <td>1</td>
           </tr>
           <tr>
-            <td>Ratio</td>
+            <td className="lighterTable">Ratio</td>
             <td>1/1</td>
             <td>9/8</td>
             <td>5/4</td>
@@ -32,7 +34,7 @@ const ModalTransformation = () => {
             <td>2/1</td>
           </tr>
           <tr>
-            <td>Cents</td>
+            <td className="lighterTable">Cents</td>
             <td>0</td>
             <td>203.910</td>
             <td>386.314</td>
@@ -44,14 +46,46 @@ const ModalTransformation = () => {
           </tr>
         </tbody>
       </table>
+      <br />
+
+      <div className="center">
+        <button className="mb" onPointerDown={() => basicPlay([220])}>
+          1/1
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([247.5])}>
+          9/8
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([275])}>
+          5/4
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([293.333])}>
+          4/3
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([330])}>
+          3/2
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([366.666])}>
+          5/3
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([412.5])}>
+          15/8
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([440])}>
+          2/1
+        </button>
+      </div>
       <p>
         This scale is very harmonious, since it is made up entirely of very
         simple ratios.
       </p>
+      <br />
+      <div className="center">—</div>
+      <br />
       <p>
         One thing that we like to do in music is play in different modes of a
         given scale, meaning that interpret one of the non-root intervals in the
-        scale as the root.
+        scale as the root. Then, we can take those intervals and play them from
+        our base Hz value.
       </p>
       <p>
         In order to do this, we take the scale degree that we would like to
@@ -134,7 +168,7 @@ const ModalTransformation = () => {
       <table>
         <tbody>
           <tr>
-            <td>Degree</td>
+            <td className="lighterTable">Degree</td>
             <td>1</td>
             <td>2</td>
             <td>3</td>
@@ -145,7 +179,7 @@ const ModalTransformation = () => {
             <td>1</td>
           </tr>
           <tr>
-            <td>Ratio</td>
+            <td className="lighterTable">Ratio</td>
             <td>1/1</td>
             <td>10/9</td>
             <td>32/27</td>
@@ -156,7 +190,7 @@ const ModalTransformation = () => {
             <td>2/1</td>
           </tr>
           <tr>
-            <td>Cents</td>
+            <td className="lighterTable">Cents</td>
             <td>0</td>
             <td>182.403</td>
             <td>294.135</td>
@@ -168,6 +202,37 @@ const ModalTransformation = () => {
           </tr>
         </tbody>
       </table>
+      <br />
+      <div className="center">
+        <button className="mb" onPointerDown={() => basicPlay([220])}>
+          0
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([244.444])}>
+          10/9
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([260.74])}>
+          32/27
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([293.333])}>
+          4/3
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([325.925])}>
+          40/27
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([366.666])}>
+          5/3
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([391.111])}>
+          16/9
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([440])}>
+          2/1
+        </button>
+      </div>
+      <br />
+      <br />
+      <div className="center">—</div>
+      <br />
       <p>
         First, please note that many scales have many excellent, usable modal
         transformations!
@@ -183,6 +248,14 @@ const ModalTransformation = () => {
         is known as a "wolf" interval. (Wolf 3/2 intervals are the most
         noticeable, since they are the simplest ratio other than the octave.)
       </p>
+      <div className="center">
+        <button className="mb" onPointerDown={() => basicPlay([220, 330])}>
+          Pure 3/2 Fifth
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([220, 325.925])}>
+          Wolf 40/27 Fifth
+        </button>
+      </div>
       <p>
         This is demonstrated to show why our modern musical system was created.
         It gets a little boring to have only music that is made entirely from

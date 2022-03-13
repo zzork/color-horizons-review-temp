@@ -23,11 +23,11 @@ const LinearTuningsPythagorean = () => {
       <table>
         <tbody>
           <tr>
-            <td className="tableTopRow">Iteration</td>
-            <td className="tableTopRow">Raw Ratio</td>
-            <td className="tableTopRow">Reduced Ratio</td>
-            <td className="tableTopRow">Raw Cents</td>
-            <td className="tableTopRow">Reduced Cents</td>
+            <td className="lighterTable">Iteration</td>
+            <td className="lighterTable">Raw Ratio</td>
+            <td className="lighterTable">Reduced Ratio</td>
+            <td className="lighterTable">Raw Cents</td>
+            <td className="lighterTable">Reduced Cents</td>
           </tr>
           <tr>
             <td>0</td>
@@ -70,11 +70,11 @@ const LinearTuningsPythagorean = () => {
       <table>
         <tbody>
           <tr>
-            <td className="tableTopRow">Scale Degree</td>
-            <td className="tableTopRow">Raw Ratio</td>
-            <td className="tableTopRow">Reduced Ratio</td>
-            <td className="tableTopRow">Raw Cents</td>
-            <td className="tableTopRow">Reduced Cents</td>
+            <td className="lighterTable">Scale Degree</td>
+            <td className="lighterTable">Raw Ratio</td>
+            <td className="lighterTable">Reduced Ratio</td>
+            <td className="lighterTable">Raw Cents</td>
+            <td className="lighterTable">Reduced Cents</td>
           </tr>
           <tr>
             <td>1</td>
@@ -128,11 +128,11 @@ const LinearTuningsPythagorean = () => {
       <table>
         <tbody>
           <tr>
-            <td className="tableTopRow">Iteration</td>
-            <td className="tableTopRow">Raw Ratio</td>
-            <td className="tableTopRow">Reduced Ratio</td>
-            <td className="tableTopRow">Raw Cents</td>
-            <td className="tableTopRow">Reduced Cents</td>
+            <td className="lighterTable">Iteration</td>
+            <td className="lighterTable">Raw Ratio</td>
+            <td className="lighterTable">Reduced Ratio</td>
+            <td className="lighterTable">Raw Cents</td>
+            <td className="lighterTable">Reduced Cents</td>
           </tr>
           <tr>
             <td>0</td>
@@ -189,11 +189,11 @@ const LinearTuningsPythagorean = () => {
       <table>
         <tbody>
           <tr>
-            <td className="tableTopRow">Scale Degree</td>
-            <td className="tableTopRow">Raw Ratio</td>
-            <td className="tableTopRow">Reduced Ratio</td>
-            <td className="tableTopRow">Raw Cents</td>
-            <td className="tableTopRow">Reduced Cents</td>
+            <td className="lighterTable">Scale Degree</td>
+            <td className="lighterTable">Raw Ratio</td>
+            <td className="lighterTable">Reduced Ratio</td>
+            <td className="lighterTable">Raw Cents</td>
+            <td className="lighterTable">Reduced Cents</td>
           </tr>
           <tr>
             <td>1</td>
@@ -273,11 +273,11 @@ const LinearTuningsPythagorean = () => {
       <table>
         <tbody>
           <tr>
-            <td className="tableTopRow">Iteration</td>
-            <td className="tableTopRow">Raw Ratio</td>
-            <td className="tableTopRow">Reduced Ratio</td>
-            <td className="tableTopRow">Raw Cents</td>
-            <td className="tableTopRow">Reduced Cents</td>
+            <td className="lighterTable">Iteration</td>
+            <td className="lighterTable">Raw Ratio</td>
+            <td className="lighterTable">Reduced Ratio</td>
+            <td className="lighterTable">Raw Cents</td>
+            <td className="lighterTable">Reduced Cents</td>
           </tr>
           <tr>
             <td>0</td>
@@ -372,11 +372,11 @@ const LinearTuningsPythagorean = () => {
       <table>
         <tbody>
           <tr>
-            <td className="tableTopRow">Scale degree</td>
-            <td className="tableTopRow">Raw Ratio</td>
-            <td className="tableTopRow">Reduced Ratio</td>
-            <td className="tableTopRow">Raw Cents</td>
-            <td className="tableTopRow">Reduced Cents</td>
+            <td className="lighterTable">Scale degree</td>
+            <td className="lighterTable">Raw Ratio</td>
+            <td className="lighterTable">Reduced Ratio</td>
+            <td className="lighterTable">Raw Cents</td>
+            <td className="lighterTable">Reduced Cents</td>
           </tr>
           <tr>
             <td>1</td>

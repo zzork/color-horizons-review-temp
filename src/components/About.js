@@ -1,7 +1,3 @@
-import {
-  handleShowAboutColorHorizons,
-  handleShowKeyConcepts,
-} from "../eventHandlers";
 import AboutColorHorizons from "./AboutColorHorizons";
 import KeyConcepts from "./KeyConcepts";
 

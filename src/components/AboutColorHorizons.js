@@ -15,75 +15,108 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
           <p>
             It is designed specifically to enable the user to instantly
             calculate how the notes of all modes of any scale that it can create
-            compare against 12 tone equal temperament, the harmonic series, and
-            other common just intonation intervals.
+            compare against 12 tone equal temperament, the harmonic series,
+            other common just intonation intervals, and more.
           </p>
           <p>
             The user can then immediately play these scales in the browser using
-            the QWERTY keyboard and export them as .scl files that can be used
-            to retune other synthesizers.
-          </p>
-          <p>
-            Color Horizons is primarily designed for desktop/laptop use due to
-            QWERTY playback capability, but it does support mobile platforms.
+            the QWERTY keyboard or their device's touchscreen and then can
+            export those scales as .scl files that can be used to retune other
+            synthesizers.
           </p>
           <br />
           <h2 className="center">Mission / Intentions</h2>
           <p>
-            Color Horizons is developed by me, <b>Jon Lervold</b>.
+            Color Horizons is developed by{" "}
+            <a href="http://jonlervold.com" target="_blank" rel="noreferrer">
+              <b>Jon Lervold</b>
+            </a>
+            .
           </p>
           <p>
             I sincerely believe that microtonality is not just a musical niche
-            that attracts iconoclastic types, but that in time it will become
-            the next frontier of popular music.
+            that attracts iconoclastic types, but that in time it will someday
+            become the next frontier of popular music.
           </p>
           <p>
-            Technology has reached a point where any musical tuning system
-            imaginable can be launched instantly. The problem now is not the
-            construction of microtonal capable instruments, but merely the lack
-            of proliferation of this knowledge. Whatever the reasons may be, for
-            the time being this field remains esoteric and nearly impenetrible
-            for many newcomers.
+            There is an incredible wealth of musical expression that is
+            inaccessible through 12 Tone Equal Temperament (12TET). Technology
+            has reached a point where any musical tuning system imaginable can
+            be tested instantly. The problem now is not the construction of
+            microtonal capable instruments, but merely the lack of proliferation
+            of this knowledge. Whatever the reasons may be, for the time being
+            this field remains esoteric and difficult to know where to begin for
+            many newcomers.
           </p>
           <p>
             My goal is to actively participate in bringing understandings of
-            these amazing tonal possibilities to the other non-math degree
-            holding musicians out there. Simplify an esoteric and obscure field.
-            I wish to share the knowledge that I have slowly and painfully
-            gained, so that others can jump right in and start building. Why
-            "Color Horizons"? This is a tool for exploring realms far off in the
-            sonic distance. It can play any scale within 12TET, or it can help
-            you discover entirely alien sonic realms.
+            these amazing tonal possibilities to other musicians. Color Horizons
+            is a tool for helping explore the realms far away from 12TET. What
+            tonal colors are available off in the distance? Let's find out.
           </p>
           <p>
-            Feature Request? Teach me additional methods of scale generation!
+            This tool will be actively maintained. New features like
+            non-octave-based scale tools and a custom waveform generator will be
+            added as time allows.
           </p>
-          <p>It is my deep wish that this tool can bring inspiration.</p>
+          <p>
+            It is my deep wish that this tool can help inspire musical creation!
+          </p>
           <br />
           <h2 className="center">Acknowledgements</h2>
           <p>
-            Thank you to everyone involved with the <b>Xenharmonic Alliance</b>{" "}
-            and <b>Microtonal Music and Tuning Theory</b> Facebook groups. The
-            majority of my exposure to these concepts comes from discussions I
-            have read in those communities. I've also met a lot of very
-            interesting people through them and hope to continue to get to know
-            more of you.
+            Thank you to everyone involved with the{" "}
+            <b>
+              <a
+                href="https://www.facebook.com/groups/476404232379884"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Xenharmonic Alliance
+              </a>
+            </b>{" "}
+            and{" "}
+            <b>
+              {" "}
+              <a
+                href="https://www.facebook.com/groups/497105067092502"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Microtonal Music and Tuning Theory
+              </a>
+            </b>{" "}
+            Facebook groups. The majority of my exposure to these concepts comes
+            from discussions I have read in those communities. I've also met a
+            lot of very interesting people through them and hope to continue to
+            get to know more of you.
           </p>
+
           <p>
             Thank you to those who write and maintain the{" "}
-            <b>Xenharmonic Wiki</b>. Though it is primarily written for those
-            who are already deeply embedded in microtonal practice, I have
-            managed to learn an incredible amount of concepts and information
-            thanks to it.
+            <a href="https://en.xen.wiki" target="_blank" rel="noreferrer">
+              <b>Xenharmonic Wiki</b>
+            </a>
+            . I have managed to learn an incredible amount of concepts and
+            information thanks to it.
           </p>
           <p>
             Thank you to <b>Manuel Op de Coul</b> for the wonderful tool known
-            as <b>Scala</b>. Without a tool that could quickly generate and play
-            scales outside of 12 tone equal temperament I never would have found
-            any interest in microtonal music. Scala can do everything that this
-            app can do, and an incredible amount more, albeit with a very
-            different user interface. Some day I will understand every single
-            function of the multitude that it provides.
+            as{" "}
+            <a
+              href="https://www.huygens-fokker.org/scala/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <b>Scala</b>
+            </a>
+            . Without a tool that could quickly generate and play scales outside
+            of 12 tone equal temperament I never would have found any interest
+            in microtonal music. With regards to scale generation, Scala can do
+            everything that this app can do, and an incredible amount more,
+            albeit with a very different user interface. Some day I will
+            understand every single function of the massive amount that it
+            provides.
           </p>
           <p>
             Thank you to <b>Brock Benzel</b> for my initial exposure to
@@ -98,10 +131,36 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
           </p>
           <br />
           <p className="center">
-            Made with <b>React</b> and <b>Web Audio API</b>.
+            Made with{" "}
+            <b>
+              <a href="https://reactjs.org" target="_blank" rel="noreferrer">
+                React
+              </a>
+            </b>{" "}
+            and{" "}
+            <b>
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Web Audio API
+              </a>
+            </b>
+            .
           </p>
           <p className="center">
-            <b>Color Horizons GitHub</b>
+            Feature requests, bug reports, source code:
+            <br />
+            <b>
+              <a
+                href="https://github.com/jonlervold/color-horizons"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <b>Color Horizons GitHub</b>.
+              </a>
+            </b>
           </p>
           <br />
           <div className="center">

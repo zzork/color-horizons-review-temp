@@ -1,3 +1,5 @@
+import { basicPlay } from "../../util/aboutNotePlayer";
+
 const EqualDivision = () => {
   return (
     <div>
@@ -13,6 +15,7 @@ const EqualDivision = () => {
         divide by how many tones we desire. Then we stack that number on top of
         itself until we reach 1200.
       </p>
+      <br />
       <h4 className="center">Example: 7edo - Reference Pitch 220Hz</h4>
       <table>
         <tbody>
@@ -89,6 +92,34 @@ const EqualDivision = () => {
           </tr>
         </tbody>
       </table>
+      <br />
+      <div className="center">
+        <button className="mb" onPointerDown={() => basicPlay([220])}>
+          0
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([242.9])}>
+          171.429
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([268.183])}>
+          342.858
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([296.098])}>
+          514.287
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([326.92])}>
+          685.716
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([360.948])}>
+          857.145
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([398.519])}>
+          1028.574
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([440])}>
+          1200
+        </button>
+      </div>
+      <br />
       <p>
         With an EDO scale, our interpretation of how far apart the notes are in
         pitch (the cents value) is perfectly even with every step increase. Due
@@ -109,6 +140,7 @@ const EqualDivision = () => {
         numerator until you reach the value equal to 2/1. If you started at 7/7,
         you would add 8/7, 9/7, 10/7... until reaching 14/7.
       </p>
+      <br />
       <h4 className="center">Example: Otones 7-14 - Reference Pitch 220Hz</h4>
       <table>
         <tbody>
@@ -156,7 +188,7 @@ const EqualDivision = () => {
           </tr>
           <tr>
             <td>12/7</td>
-            <td>377.1429</td>
+            <td>377.143</td>
             <td>31.429</td>
             <td>933.129</td>
             <td>150.637</td>
@@ -177,6 +209,34 @@ const EqualDivision = () => {
           </tr>
         </tbody>
       </table>
+      <br />
+      <div className="center">
+        <button className="mb" onPointerDown={() => basicPlay([220])}>
+          7/7
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([251.428])}>
+          8/7
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([282.857])}>
+          9/7
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([314.286])}>
+          10/7
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([345.714])}>
+          11/7
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([377.143])}>
+          12/7
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([408.571])}>
+          13/7
+        </button>
+        <button className="mb" onPointerDown={() => basicPlay([440])}>
+          14/7
+        </button>
+      </div>
+      <br />
       <p>
         With an Otonal scale, the opposite effect from an EDO is observed. In
         the objective math, the frequency differences between the notes (the Hz

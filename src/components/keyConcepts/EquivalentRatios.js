@@ -56,23 +56,24 @@ const EquivalentRatios = () => {
       <div className="tableClone">
         <ol>
           <li>
-            <ul>
-              <li>{`124 < 256`}</li>
-              <li>124 * 2 = 248</li>
-              <li>{`248 < 256`}</li>
-              <li>248 * 2 = 496</li>
-              <li>496/256</li>
-            </ul>
+            ⏵ {`124 < 256`}
+            <br />
+            ⏵ 124 * 2 = 248
+            <br />⏵ {`248 < 256`}
+            <br />
+            ⏵ 248 * 2 = 496
+            <br />
+            ⏵ 496/256
+            <br />
           </li>
           <li>N/A ({`256 * 2 > 496`})</li>
           <li>Factors of 496 - 1, 2, 4, 8, 16, 31, 62, 124, 248, 496</li>
           <li>Factors of 256 - 1, 2, 4, 8, 16, 32, 64, 128, 256</li>
           <li>
-            <ul>
-              <li>Greatest Common Factor - 16</li>
-              <li>496/16 = 31</li>
-              <li>256/16 = 16</li>
-            </ul>
+            ⏵Greatest Common Factor - 16
+            <br /> ⏵496/16 = 31
+            <br /> ⏵256/16 = 16
+            <br />
           </li>
         </ol>
       </div>
@@ -85,16 +86,18 @@ const EquivalentRatios = () => {
         <ol>
           <li>N/A ({`25 > 4`})</li>
           <li>
-            <ul>
-              <li>{`4 < 25`}</li>
-              <li>4 * 2 = 8</li>
-              <li>{`8 < 25`}</li>
-              <li>8 * 2 = 16</li>
-              <li>{`16 < 25`}</li>
-              <li>16 * 2 = 32</li>
-              <li>{`32 > 25`}</li>
-              <li>Therefore, 16 is our final number in this step</li>
-            </ul>
+            ⏵{`4 < 25`}
+            <br />
+            ⏵4 * 2 = 8<br />⏵{`8 < 25`}
+            <br />
+            ⏵8 * 2 = 16
+            <br />⏵{`16 < 25`}
+            <br />
+            ⏵16 * 2 = 32
+            <br />⏵{`32 > 25`}
+            <br />
+            ⏵Therefore, 16 is our final number in this step
+            <br />
             <li>Factors of 25: 1, 5, 25</li>
             <li>Factors of 16: 1, 2, 4, 8, 16</li>
             <li>

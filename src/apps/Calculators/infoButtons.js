@@ -28,98 +28,56 @@ export const EdoInfo = ({ stateData, setStateData }) => {
           </p>
           <p>
             Some options will provide you with more possibilities of harmonious
-            results than others.
+            results than others. Higher values will provide more options for
+            consonant intervals, but the tradeoff is that having too many notes
+            available can become unwieldy.
           </p>
           <p>
             As an example, we will split the octave into 5 equal divisions. 5edo
             is the lowest option that provides harmonies unavailable within
             12edo, as 2, 3, and 4 are all factors of 12.
           </p>
-          <p>1200 / 5 = 240</p>
           <table>
             <tbody>
               <tr>
-                <td>0</td>
-                <td>+ 240</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>= 240</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>240</td>
-                <td> + 240</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>= 480</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>480</td>
-                <td>+ 240</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 720</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>720</td>
-                <td>+ 240</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 960</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>960</td>
-                <td>+ 240</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 1200</td>
+                <td>1200 / 5 = 240</td>
               </tr>
             </tbody>
           </table>
+          <br />
+          <table>
+            <tbody>
+              <tr>
+                <td className="lighterTable">Iteration</td>
+                <td className="lighterTable">Cents Value</td>
+              </tr>
+              <tr>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>240</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>480</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>720</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>960</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>1200</td>
+              </tr>
+            </tbody>
+          </table>
+
           <p>The complete 5edo scale:</p>
           <table>
             <tbody>
@@ -168,107 +126,68 @@ export const EdoMosInfo = ({ stateData, setStateData }) => {
         <br />
         <div className="writtenAreas">
           <p>
-            A linear temperament is an octave based scale that is created by
-            choosing a generating interval and then continually stacking it on
-            top of itself. If the result of the current step in the process is
-            greater than 1200, then we reduce the amount by 1200.
+            A linear scale is an octave-based scale that is created by choosing
+            a generating interval and then continually stacking it on top of
+            itself. If any resulting value is above 1200, we continually
+            subtract 1200 until the value is between 0 and 1200.
           </p>
           <p>
             In this case, our generating interval will be a certain amount of
-            steps of an EDO. This is often notated "steps\edo".
+            steps of an Equal Division of the Octave (EDO) scale. This is often
+            notated "steps\edo".
           </p>
           <p>
             For example, we can create a 5 note scale using 11 steps of 19edo
             (11\19). We find the generator by dividing 1200 by 19, then
-            multiplying that number by 8.
+            multiplying that number by 11.
           </p>
-          <p>1200 / 19 = 63.1579...</p>
-          <p>63.1579... * 11 = 694.7368...</p>
           <table>
             <tbody>
               <tr>
+                <td>1200 / 19 = 63.158</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <table>
+            <tbody>
+              <tr>
+                <td>63.158 * 11 = 694.737</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <table>
+            <tbody>
+              <tr>
+                <td className="lighterTable">Iteration</td>
+                <td className="lighterTable">Raw</td>
+                <td className="lighterTable">Octave Reduced</td>
+              </tr>
+              <tr>
                 <td>0</td>
-                <td>+ 694.7368...</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>0</td>
+                <td>0</td>
               </tr>
               <tr>
-                <td></td>
-                <td>= 694.7368...</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>1</td>
+                <td>694.737</td>
+                <td>694.737</td>
               </tr>
               <tr>
-                <td></td>
-                <td>694.7368...</td>
-                <td>+ 694.7368...</td>
-                <td></td>
-                <td></td>
+                <td>2</td>
+                <td>1389.474</td>
+                <td>189.474</td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td>= 1389.4737...</td>
-                <td></td>
-                <td></td>
+                <td>3</td>
+                <td>2084.211</td>
+                <td>884.211</td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td>- 1200</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>= 189.4737...</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>189.4737...</td>
-                <td>+ 694.7368...</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 884.2105...</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>884.2105...</td>
-                <td>+ 694.7368...</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 1578.9474...</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>- 1200</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 378.9474...</td>
+                <td>4</td>
+                <td>2778.948</td>
+                <td>378.948</td>
               </tr>
             </tbody>
           </table>
@@ -280,14 +199,16 @@ export const EdoMosInfo = ({ stateData, setStateData }) => {
             <tbody>
               <tr>
                 <td>0</td>
-                <td>189.4737...</td>
-                <td>378.9474...</td>
-                <td>694.7368...</td>
-                <td>884.2105...</td>
+                <td>189.474</td>
+                <td>378.947</td>
+                <td>694.737</td>
+                <td>884.211</td>
                 <td>1200</td>
               </tr>
             </tbody>
           </table>
+          <br />
+
           <p>
             The inverted generator can be found by taking the EDO and
             subtracting your chosen amount of steps from it. Your inverted
@@ -295,6 +216,7 @@ export const EdoMosInfo = ({ stateData, setStateData }) => {
             will be reversed.
           </p>
           <p>For example, 9\15 inverts to 6\15. (15 - 9 = 6)</p>
+
           <p>
             If the EDO divided by the amount of steps chosen (or the inverted
             amount of steps chosen) results in a whole number, the system will
@@ -304,55 +226,47 @@ export const EdoMosInfo = ({ stateData, setStateData }) => {
             For example, 4\12 is equivalent to 1\3. (This will also be true for
             8\12, as it inverts to 4\12.)
           </p>
-          <p>1200 / 12 = 100</p>
-          <p>100 * 4 = 400</p>
           <table>
             <tbody>
               <tr>
-                <td>0</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>0</td>
-                <td>+ 400</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>= 400</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>400</td>
-                <td>+ 400</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>= 800</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>800</td>
-                <td>+ 400</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 1200</td>
+                <td>1200 / 12 = 100</td>
               </tr>
             </tbody>
           </table>
-
+          <br />
+          <table>
+            <tbody>
+              <tr>
+                <td>100 * 4 = 400</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <table>
+            <tbody>
+              <tr>
+                <td className="lighterTable">Iteration</td>
+                <td className="lighterTable">Cents Value</td>
+              </tr>
+              <tr>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>400</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>800</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>1200</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
           <p>
             If your chosen EDO divided by your step amount (or its inversion)
             does not result in a whole number, you will be able to keep adding
@@ -367,8 +281,10 @@ export const EdoMosInfo = ({ stateData, setStateData }) => {
             iterations before the system closes on itself.
           </p>
           <p>
-            As with other linear temperaments, this method will always result in
-            scales with either 2 or 3 step sizes, never more. Myhill vs MOS???
+            Linear scales have an interesting property where they always create
+            scales of exactly 2 or 3 step sizes. Any scale created using this
+            method that results in 2 step sizes is known as a Moment of Symmetry
+            scale.
           </p>
         </div>
         <br />
@@ -402,12 +318,24 @@ export const IpInfo = ({ stateData, setStateData }) => {
           <p>
             For example, <b>55151</b>:
           </p>
-          <p>5 + 5 + 1 + 5 + 1 = 17</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>5 + 5 + 1 + 5 + 1 = 17</td>
+              </tr>
+            </tbody>
+          </table>
           <p>
             Then we divide the octave by the EDO to determine the cents value of
             a single step in the EDO.
           </p>
-          <p>1200 / 17 = 70.5882...</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>1200 / 17 = 70.588</td>
+              </tr>
+            </tbody>
+          </table>
           <p>
             Then, we multiply each value in the input by the EDO's single step
             step value to get the step values of our scale.
@@ -415,18 +343,18 @@ export const IpInfo = ({ stateData, setStateData }) => {
           <table>
             <tbody>
               <tr>
-                <td>70.5882... * 5</td>
-                <td>70.5882... * 5</td>
-                <td>70.5882... * 1</td>
-                <td>70.5882... * 5</td>
-                <td>70.5882... * 1</td>
+                <td>70.588 * 5</td>
+                <td>70.588 * 5</td>
+                <td>70.588 * 1</td>
+                <td>70.588 * 5</td>
+                <td>70.588 * 1</td>
               </tr>
               <tr>
-                <td>= 352.9412...</td>
-                <td>= 352.9412...</td>
-                <td>= 70.5882...</td>
-                <td>= 352.9412...</td>
-                <td>= 70.5882...</td>
+                <td>= 352.941</td>
+                <td>= 352.941</td>
+                <td>= 70.588</td>
+                <td>= 352.941</td>
+                <td>= 70.588</td>
               </tr>
             </tbody>
           </table>
@@ -438,95 +366,51 @@ export const IpInfo = ({ stateData, setStateData }) => {
             <tbody>
               <tr>
                 <td>0</td>
-                <td>+ 352.9412...</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>+</td>
+                <td>352.941</td>
+                <td>=</td>
+                <td>352.941</td>
               </tr>
               <tr>
-                <td></td>
-                <td>= 352.9412...</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>352.941</td>
+                <td>+</td>
+                <td>352.941</td>
+                <td>=</td>
+                <td>705.882</td>
               </tr>
               <tr>
-                <td></td>
-                <td>352.9412...</td>
-                <td>+ 352.9412...</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>705.882</td>
+                <td>+</td>
+                <td>70.588</td>
+                <td>=</td>
+                <td>776.470</td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td>= 705.8823...</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>776.470</td>
+                <td>+</td>
+                <td>352.941</td>
+                <td>=</td>
+                <td>1129.411</td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td>705.8823...</td>
-                <td>+ 70.5882...</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 776.4705...</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>776.4705...</td>
-                <td>+ 352.9412...</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 1129.4117...</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>1129.4117...</td>
-                <td>+ 70.5882...</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 1200</td>
+                <td>1129.411</td>
+                <td>+</td>
+                <td>70.588</td>
+                <td>=</td>
+                <td>1200</td>
               </tr>
             </tbody>
           </table>
+
           <p>The complete scale:</p>
           <table>
             <tbody>
               <tr>
                 <td>0</td>
-                <td>352.9412...</td>
-                <td>705.8823...</td>
-                <td>776.4705...</td>
-                <td>1129.4117...</td>
+                <td>352.941</td>
+                <td>705.882</td>
+                <td>776.470</td>
+                <td>1129.411</td>
                 <td>1200</td>
               </tr>
             </tbody>
@@ -556,128 +440,65 @@ export const LtbrInfo = ({ stateData, setStateData }) => {
         <div className="writtenAreas">
           {/* <div> */}
           <p>
-            A linear temperament is an octave based scale that is created by
-            choosing a generating interval and then continually stacking it on
-            top of itself. If the result of the current step in the process is
-            greater than 1200, then we reduce the amount by 1200.
+            A linear scale is an octave-based scale that is created by choosing
+            a generating interval and then continually stacking it on top of
+            itself. If any resulting value is above 1200, we continually
+            subtract 1200 until the value is between 0 and 1200.
           </p>
           <p>
             In this case, our generating interval is a ratio. In order to
             convert a ratio to cents, we must apply the following formula.
           </p>
-          <p>(1200 * log(numerator / denominator)) / log(2)</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>1200 * log( numerator / denominator ) / log(2)</td>
+              </tr>
+            </tbody>
+          </table>
           <p>
             In this case, we will choose 7/4 as our generating interval, and we
             will iterate over this process until we have 5 notes in our scale.
           </p>
-          <p>(1200 * log(7 / 4)) / log(2) = 968.8259...</p>
-
           <table>
             <tbody>
               <tr>
+                <td>1200 * log(7 / 4) / log(2) = 968.826</td>
+              </tr>
+            </tbody>
+          </table>
+          <br />
+          <table>
+            <tbody>
+              <tr>
+                <td className="lighterTable">Iteration</td>
+                <td className="lighterTable">Raw Value</td>
+                <td className="lighterTable">Octave Reduced</td>
+              </tr>
+              <tr>
                 <td>0</td>
-                <td>+ 968.8259...</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>0</td>
+                <td>0</td>
               </tr>
               <tr>
-                <td></td>
-                <td> = 968.8259...</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>1</td>
+                <td>968.826</td>
+                <td>968.826</td>
               </tr>
               <tr>
-                <td></td>
-                <td>968.8259...</td>
-                <td>+ 968.8259...</td>
-                <td></td>
-                <td></td>
+                <td>2</td>
+                <td>1937.652</td>
+                <td>737.652</td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td>= 1937.6518...</td>
-                <td></td>
-                <td></td>
+                <td>3</td>
+                <td>2906.478</td>
+                <td>506.478</td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td>- 1200</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td> = 737.6518...</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>737.6518...</td>
-                <td>+ 968.8259...</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 1706.4777...</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>- 1200</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 506.4777...</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>506.4777...</td>
-                <td>+ 968.8259...</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 1475.3036...</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>- 1200</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 275.3036...</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>275.3036...</td>
+                <td>4</td>
+                <td>3875.304</td>
+                <td>275.304</td>
               </tr>
             </tbody>
           </table>
@@ -687,16 +508,24 @@ export const LtbrInfo = ({ stateData, setStateData }) => {
           </p>
           <table>
             <tbody>
-              {" "}
               <tr>
                 <td>0</td>
-                <td>275.3036...</td>
-                <td>506.4777...</td>
-                <td>737.6518...</td>
-                <td>968.8259...</td>
+                <td>275.304</td>
+                <td>506.478</td>
+                <td>737.652</td>
+                <td>968.826</td>
               </tr>
             </tbody>
           </table>
+          <br />
+          <p>
+            The inverted generator can be found by taking the ratio, reversing
+            the numerator and denominator, and multiplying the new numerator by
+            2, and then octave reducing the ratio if necessary. Your inverted
+            generator will create the same modes, but the order of the modes
+            will be reversed.
+          </p>
+          <p>For example, 8/7 inverts to 7/4. (8/7 → 7/8 → 14/8 → 7/4)</p>
           <p>
             Something to note is that every single linear temperament generated
             by a ratio will continue on infinitely. No ratio will ever line up
@@ -705,14 +534,10 @@ export const LtbrInfo = ({ stateData, setStateData }) => {
             will never close.
           </p>
           <p>
-            Also of interest is that this process will always create scales with
-            either 2 or 3 step sizes, never more. In the case of 5 steps of 7/4,
-            we end up with a large step of 275.3036 cents and a small step of
-            231.1741 cents. If you add one additional iteration, for a total of
-            6 notes, you instead end up with step sizes of 231.17409 and
-            44.12953. Scales with exactly two step sizes are known as having
-            Myhill property. This is related to the concept of a Moment of
-            Symmetry scale but I don't know the difference!
+            Linear scales have an interesting property where they always create
+            scales of exactly 2 or 3 step sizes. Any scale created using this
+            method that results in 2 step sizes is known as a Moment of Symmetry
+            scale.
           </p>
         </div>
         <br />
@@ -738,106 +563,52 @@ export const LtbcInfo = ({ stateData, setStateData }) => {
         <br />
         <div className="writtenAreas">
           <p>
-            A linear temperament is an octave based scale that is created by
-            choosing a generating interval and then continually stacking it on
-            top of itself. If the result of the current step in the process is
-            greater than 1200, then we reduce the amount by 1200.
+            A linear scale is an octave-based scale that is created by choosing
+            a generating interval and then continually stacking it on top of
+            itself. If any resulting value is above 1200, we continually
+            subtract 1200 until the value is between 0 and 1200.
           </p>
           <p>
-            The linear temperament by cents option can create any scale that the
-            EDO, EDO Steps, or Linear Temperament by Ratio tools can create. At
-            their core, each of those are just subsets of what is available
-            utilizing this tool.
+            The linear scale by cents option can create any scale that the EDO,
+            EDO Steps, or Linear Temperament by Ratio tools can create. At their
+            core, each of those are just subsets of what is available utilizing
+            this tool.
           </p>
           <p>
-            For example, a 5 note scale using a generator of 671.288. This scale
-            is known as a Mavila Temperament.
+            For example, a 5 note scale using a generator of 671.288. (Extending
+            this generator to 7 notes generates an anti-Lydian Mavila scale.)
           </p>
           <table>
             <tbody>
               <tr>
+                <td className="lighterTable">Iteration</td>
+                <td className="lighterTable">Raw Value</td>
+                <td className="lighterTable">Octave Reduced</td>
+              </tr>
+              <tr>
                 <td>0</td>
-                <td>+ 671.288</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>0</td>
+                <td>0</td>
               </tr>
               <tr>
-                <td></td>
-                <td>= 671.288</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
+                <td>1</td>
                 <td>671.288</td>
-                <td>+ 671.288</td>
-                <td></td>
-                <td></td>
+                <td>671.288</td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td>= 1342.576</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>- 1200</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td>= 142.576</td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
+                <td>2</td>
+                <td>1342.576</td>
                 <td>142.576</td>
-                <td>+ 671.288</td>
-                <td></td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 813.864</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>3</td>
+                <td>2013.864</td>
                 <td>813.864</td>
-                <td>+ 671.288</td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 1485.152</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>- 1200</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 285.152</td>
+                <td>4</td>
+                <td>2685.152</td>
+                <td>285.152</td>
               </tr>
             </tbody>
           </table>
@@ -855,6 +626,20 @@ export const LtbcInfo = ({ stateData, setStateData }) => {
             </tbody>
           </table>
           <br />
+          <p>
+            The inverted generator can be found by taking 1200 and subtracting
+            your generator from it. Your inverted generator will create the same
+            modes, but the order of the modes will be reversed.
+          </p>
+          <p>
+            For example, 671.288 inverts to 528.712. (1200 - 671.288 = 528.712)
+          </p>
+          <p>
+            Linear scales have an interesting property where they always create
+            scales of exactly 2 or 3 step sizes. Any scale created using this
+            method that results in 2 step sizes is known as a Moment of Symmetry
+            scale.
+          </p>
         </div>
         <br />
         <button
@@ -879,10 +664,10 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
         <br />
         <div className="writtenAreas">
           <p>
-            The ax + by = p method is relatively straightforward, and will often
-            lead to more dissonant results than the other methods available
-            here, but with experimentation can sometimes yield interesting
-            results.
+            The ax + by = p method is a non-standard scale generation method,
+            and will often lead to more dissonant results than the other methods
+            available here, but with experimentation can sometimes yield
+            interesting results.
           </p>
           <h4 className="center">Process</h4>
           <p>
@@ -891,14 +676,14 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
             of the first variable size are present in the scale.
           </p>
           <p>
-            Lastly, we manually choose variable Y, which represents how many
+            LThen, we manually choose variable Y, which represents how many
             instances of the second interval we would like to have.
           </p>
           <p>
             The variable P on the other side of the equation represents the
-            "period", which is at what value the scale repeats itself. In all of
-            our cases on this website at the moment, the P will be the octave
-            (2/1 or 1200 cents).
+            "period", which is at what value the scale repeats itself. In this
+            case, the P will be the octave (2/1 or 1200 cents), though this
+            method could be applied to non-octave scales.
           </p>
           <p>The formula:</p>
 
@@ -916,12 +701,12 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
                 <td></td>
               </tr>
               <tr>
-                <td>*</td>
+                <td>—</td>
                 <td>+</td>
-                <td>*</td>
+                <td>—</td>
                 <td>=</td>
                 <td>
-                  <b>p</b>: period - 1200
+                  <b>p</b>: period (1200)
                 </td>
               </tr>
               <tr>
@@ -939,11 +724,11 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
           </table>
           <p>
             After all of the input fields have been filled, the tool solves the
-            only variable left in the equation, which is B, the size of the
+            only variable left in the equation, which is b, the size of the
             second interval.
           </p>
           <p>
-            Once Y is solved for, the tool will spread the two intervals out
+            Once b is solved for, the tool will spread the two intervals out
             amongst each other as evenly as possible. It does this by taking the
             larger step count of the two provided and dividing it by the smaller
             step count. If this results in a decimal value, the result is always
@@ -1029,86 +814,42 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
             <tbody>
               <tr>
                 <td>0</td>
-                <td>+ 352.885</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>= 352.885</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
+                <td>+</td>
                 <td>352.885</td>
-                <td>+ 352.885</td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>=</td>
+                <td>352.885</td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td>= 705.770</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
+                <td>352.885</td>
+                <td>+</td>
+                <td>352.885</td>
+                <td>=</td>
                 <td>705.770</td>
-                <td>+ 70.672</td>
-                <td></td>
-                <td></td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>=776.443</td>
-                <td></td>
-                <td></td>
+                <td>705.770</td>
+                <td>+</td>
+                <td>70.672</td>
+                <td>=</td>
+                <td>776.442</td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>776.443</td>
-                <td>+ 352.885</td>
-                <td></td>
+                <td>776.442</td>
+                <td>+</td>
+                <td>352.885</td>
+                <td>=</td>
+                <td>1129.327</td>
               </tr>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 1129.328</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>1129.328</td>
-                <td>+ 70.672</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>= 1200</td>
+                <td>1129.327</td>
+                <td>+</td>
+                <td>70.672</td>
+                <td>=</td>
+                <td>1200</td>
               </tr>
             </tbody>
           </table>
+
           <p>The complete scale:</p>
           <table>
             <tbody>
@@ -1417,80 +1158,6 @@ export const TdInfo = ({ stateData, setStateData }) => {
             </tbody>
           </table>
           <br />
-          <h4 className="center">
-            Applying Modal Transformations to Ratio Scales
-          </h4>
-          <p>
-            In order to find the distance between two ratios, the process of
-            cross multiplication is utilized. This process can be applied to an
-            entire scale to find its modal transformations. As a demonstration
-            we will apply this to the simple scale created by this tool when it
-            is set to 1-3-9 Overtones Only.
-          </p>
-          <p>
-            To do so, take the scale degree you would like to be your new
-            starting note, and then cross multiply it with every note in the
-            scale except 2/1, which is implied as these are octave based scales.
-            Then octave reduce each ratio.
-          </p>
-          <p>
-            Let's use the second scale degree, 9/8, as our new starting note.
-          </p>
-          <table>
-            <tbody>
-              <tr>
-                <td>1/1</td>
-                <td>*</td>
-                <td>9/8</td>
-                <td>=</td>
-                <td>8/9</td>
-                <td>=</td>
-                <td>16/9</td>
-              </tr>
-              <tr>
-                <td>9/8</td>
-                <td>*</td>
-                <td>9/8</td>
-                <td>=</td>
-                <td>72/72</td>
-                <td>=</td>
-                <td>1/1</td>
-              </tr>
-              <tr>
-                <td>3/2</td>
-                <td>*</td>
-                <td>9/8</td>
-                <td>=</td>
-                <td>24/18</td>
-                <td>=</td>
-                <td>4/3</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>
-            Now that the new values have been calculated and octave reduced,
-            place them in order of pitch.
-          </p>
-          <table>
-            <tbody>
-              <tr>
-                <td>1/1</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>4/3</td>
-                <td>498.045</td>
-              </tr>
-              <tr>
-                <td>16/9</td>
-                <td>996.090</td>
-              </tr>
-              <tr>
-                <td>2/1</td>
-                <td>1200</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
         <br />
         <button
@@ -1677,100 +1344,6 @@ export const OtInfo = ({ stateData, setStateData }) => {
             </tbody>
           </table>
           <br />
-          <h4 className="center">
-            Applying Modal Transformations to Ratio Scales
-          </h4>
-          <p>
-            In order to find the distance between two ratios, the process of
-            cross multiplication is utilized. This process can be applied to an
-            entire scale to find its modal transformations. As a demonstration
-            we will apply this to the simple scale created by this tool when it
-            is set to Denominator 2, Start 2, End 14, Progression 2.
-          </p>
-          <p>
-            To do so, take the scale degree you would like to be your new
-            starting note, and then cross multiply it with every note in the
-            scale except 2/1, which is implied as these are octave based scales.
-            Then octave reduce each ratio.
-          </p>
-          <p>Let's use the second degree, 5/4, as our new starting note.</p>
-          <table>
-            <tbody>
-              <tr>
-                <td>1/1</td>
-                <td>*</td>
-                <td>5/4</td>
-                <td>=</td>
-                <td>4/5</td>
-                <td>=</td>
-                <td>8/5</td>
-              </tr>
-              <tr>
-                <td>5/4</td>
-                <td>*</td>
-                <td>5/4</td>
-                <td>=</td>
-                <td>20/20</td>
-                <td>=</td>
-                <td>1/1</td>
-              </tr>
-              <tr>
-                <td>3/2</td>
-                <td>*</td>
-                <td>5/4</td>
-                <td>=</td>
-                <td>12/10</td>
-                <td>=</td>
-                <td>6/5</td>
-              </tr>
-              <tr>
-                <td>7/4</td>
-                <td>*</td>
-                <td>5/4</td>
-                <td>=</td>
-                <td>28/20</td>
-                <td>=</td>
-                <td>7/5</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>
-            Now that the new values have been calculated and octave reduced,
-            place them in order of pitch.
-          </p>
-          <table>
-            <tbody>
-              <tr>
-                <td>1/1</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>6/5</td>
-                <td>315.641</td>
-              </tr>
-              <tr>
-                <td>7/5</td>
-                <td>582.512</td>
-              </tr>
-              <tr>
-                <td>8/5</td>
-                <td>813.686</td>
-              </tr>
-              <tr>
-                <td>2/1</td>
-                <td>1200</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>
-            Worth noticing is that all of the new values are of denominator 5.
-            If we transform the scale again using the second degree of this new
-            scale, the values all end up being denominator 3, or multiples of
-            denominator 3. Repeating this process again yields values all of
-            denominator 7. Modal transformations of Otonal scales result in new
-            scales with shared denominator factors because each step in the
-            scale is multiplied by the same value.
-          </p>
           <br />
         </div>
         <button
@@ -1953,101 +1526,6 @@ export const UtInfo = ({ stateData, setStateData }) => {
               </tr>
             </tbody>
           </table>
-          <br />
-          <h4 className="center">
-            Applying Modal Transformations to Ratio Scales
-          </h4>
-          <p>
-            In order to find the distance between two ratios, the process of
-            cross multiplication is utilized. This process can be applied to an
-            entire scale to find its modal transformations. As a demonstration
-            we will apply this to the simple scale created by this tool when it
-            is set to Denominator 2, Start 2, End 14, Progression 2.
-          </p>
-          <p>
-            To do so, take the scale degree you would like to be your new
-            starting note, and then cross multiply it with every note in the
-            scale except 2/1, which is implied as these are octave based scales.
-            Then octave reduce each ratio.
-          </p>
-          <p>Let's use the second degree, 8/7, as our new starting note.</p>
-          <table>
-            <tbody>
-              <tr>
-                <td>1/1</td>
-                <td>*</td>
-                <td>8/7</td>
-                <td>=</td>
-                <td>7/8</td>
-                <td>=</td>
-                <td>7/4</td>
-              </tr>
-              <tr>
-                <td>8/7</td>
-                <td>*</td>
-                <td>8/7</td>
-                <td>=</td>
-                <td>56/56</td>
-                <td>=</td>
-                <td>1/1</td>
-              </tr>
-              <tr>
-                <td>4/3</td>
-                <td>*</td>
-                <td>8/7</td>
-                <td>=</td>
-                <td>28/24</td>
-                <td>=</td>
-                <td>7/6</td>
-              </tr>
-              <tr>
-                <td>8/5</td>
-                <td>*</td>
-                <td>8/7</td>
-                <td>=</td>
-                <td>56/40</td>
-                <td>=</td>
-                <td>7/5</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>
-            Now that the new values have been calculated and octave reduced,
-            place them in order of pitch.
-          </p>
-          <table>
-            <tbody>
-              <tr>
-                <td>1/1</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>7/6</td>
-                <td>266.871</td>
-              </tr>
-              <tr>
-                <td>7/5</td>
-                <td>582.512</td>
-              </tr>
-              <tr>
-                <td>7/4</td>
-                <td>968.826</td>
-              </tr>
-              <tr>
-                <td>2/1</td>
-                <td>1200</td>
-              </tr>
-            </tbody>
-          </table>
-          <p>
-            Worth noticing is that all of the new values are of numerator 7. If
-            we transform the scale again using the second degree of this new
-            scale, the values all end up having numerator 3 or multiples of
-            numerator 3. Repeating this process again yields values all of
-            numerator 5. Modal transformations of Utonal scales result in new
-            scales with shared denominator factors because each step in the
-            scale is multiplied by the same value.
-          </p>
           <br />
         </div>
         <br />

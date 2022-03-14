@@ -44,8 +44,8 @@ const KeyConcepts = ({ stateData, setStateData }) => {
             <br />
             <a href="#Inversion">Inverted Ratios</a>
             <br />
-            <a href="#PrimeLimit">Prime Limit</a>
-            <br />
+            {/* <a href="#PrimeLimit">Prime Limit</a>
+            <br /> */}
             <a href="#ModalTransformation">Modal Transformations</a>
             <br />
             <a href="#LinearTuningsPythagorean">
@@ -82,8 +82,8 @@ const KeyConcepts = ({ stateData, setStateData }) => {
           <Subtraction />
           <Spacer id={"Inversion"} />
           <Inversion />
-          <Spacer id={"PrimeLimit"} />
-          <PrimeLimit />
+          {/* <Spacer id={"PrimeLimit"} />
+          <PrimeLimit /> */}
           <Spacer id={"ModalTransformation"} />
           <ModalTransformation />
           <Spacer id={"LinearTuningsPythagorean"} />

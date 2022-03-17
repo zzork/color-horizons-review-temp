@@ -252,6 +252,8 @@ const Tempering = () => {
                 onPointerDown={() => basicPlay([220, 261.626])}
               >
                 300 cents
+                <br />
+                (-15.641)
               </button>
             </td>
           </tr>
@@ -271,6 +273,8 @@ const Tempering = () => {
                 onPointerDown={() => basicPlay([220, 277.183])}
               >
                 400 cents
+                <br />
+                (+13.686)
               </button>
             </td>
           </tr>
@@ -290,6 +294,8 @@ const Tempering = () => {
                 onPointerDown={() => basicPlay([220, 293.665])}
               >
                 500 cents
+                <br />
+                (+1.955)
               </button>
             </td>
           </tr>
@@ -309,6 +315,8 @@ const Tempering = () => {
                 onPointerDown={() => basicPlay([220, 329.628])}
               >
                 700 cents
+                <br />
+                (-1.955)
               </button>
             </td>
           </tr>
@@ -328,6 +336,8 @@ const Tempering = () => {
                 onPointerDown={() => basicPlay([220, 349.228])}
               >
                 800 cents
+                <br />
+                (-13.686)
               </button>
             </td>
           </tr>
@@ -347,6 +357,8 @@ const Tempering = () => {
                 onPointerDown={() => basicPlay([220, 369.994])}
               >
                 900 cents
+                <br />
+                (+15.641)
               </button>
             </td>
           </tr>

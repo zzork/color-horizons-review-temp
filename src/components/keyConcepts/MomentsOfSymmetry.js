@@ -105,7 +105,7 @@ const MomentsOfSymmetry = () => {
       <div className="center">—</div>
       <br />
       <p>
-        The MOS scales are deliniation points. Anything with a medium step size
+        The MOS scales are delineation points. Anything with a medium step size
         is a subset of the next MOS larger than it. The 4 note scale that arises
         from 3/2 is really just the 5 note MOS scale with one of the tones
         removed. The 6 note scale is really just the 7 note MOS with one of the
@@ -258,12 +258,12 @@ const MomentsOfSymmetry = () => {
             <td className="lighterTable">Iteration</td>
             <td className="lighterTable">-</td>
             <td className="lighterTable">
-              Previous Outcome, Interger Part Removed
+              Previous Outcome, Integer Part Removed
             </td>
             <td className="lighterTable">-</td>
             <td className="lighterTable">New Outcome</td>
             <td className="lighterTable">
-              List of Interger Parts of Each Outcome
+              List of Integer Parts of Each Outcome
             </td>
           </tr>
           <tr>
@@ -403,12 +403,12 @@ const MomentsOfSymmetry = () => {
             <td className="lighterTable">Iteration</td>
             <td className="lighterTable">-</td>
             <td className="lighterTable">
-              Previous Outcome, Interger Part Removed
+              Previous Outcome, Integer Part Removed
             </td>
             <td className="lighterTable">-</td>
             <td className="lighterTable">New Outcome</td>
             <td className="lighterTable">
-              List of Interger Parts of Each Outcome
+              List of Integer Parts of Each Outcome
             </td>
           </tr>
           <tr>

@@ -95,15 +95,14 @@ const EquivalentRatios = () => {
             <br />
             ‣ 16 * 2 = 32
             <br />‣ {`32 > 25`}
-            <br />
-            ‣ Therefore, 16 is our final number in this step
-            <br />
-            <li>Factors of 25: 1, 5, 25</li>
-            <li>Factors of 16: 1, 2, 4, 8, 16</li>
-            <li>
-              There are no common factors other than 1. No further reduction is
-              possible.
-            </li>
+            <br />‣ Therefore, 16 is our final number in this step
+          </li>
+
+          <li>Factors of 25: 1, 5, 25</li>
+          <li>Factors of 16: 1, 2, 4, 8, 16</li>
+          <li>
+            There are no common factors other than 1. No further reduction is
+            possible.
           </li>
         </ol>
       </div>

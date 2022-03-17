@@ -79,7 +79,6 @@ const KeyConcepts = ({ stateData, setStateData }) => {
                 document.getElementById("EqualDivision").scrollIntoView(true)
               }
             >
-              {" "}
               Equally Dividing the Octave
             </button>
             <br />
@@ -200,8 +199,7 @@ const KeyConcepts = ({ stateData, setStateData }) => {
           <LinearTuningsPythagorean />
           <Spacer id={"MomentsOfSymmetry"} />
           <MomentsOfSymmetry />
-          <div id="Tempering"></div>
-          <Spacer id={"Sound"} />
+          <Spacer id={"Tempering"} />
           <Tempering />
           {/* <Spacer id={"EDOsAndTempering"} />
           <EDOsAndTempering /> */}
@@ -247,7 +245,7 @@ const Spacer = ({ id }) => {
         Table of Contents
       </button>
       <br />
-      <br />
+      <br id={id} />
       <br />
       <hr />
       <br />

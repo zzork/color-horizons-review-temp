@@ -87,7 +87,7 @@ export const ComparisonOptions = ({ stateData, setStateData }) => {
           handleComparisonSelect("just12", stateData, setStateData)
         }
       >
-        Common 12 Tone JI Options
+        Common JI Ratios
       </button>
       <br />
       <br />

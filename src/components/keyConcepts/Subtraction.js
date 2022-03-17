@@ -6,7 +6,7 @@ const Subtraction = () => {
       <h2 className="center">Distance Between Ratios (Subtraction)</h2>
       <p>
         Say that you wanted to determine what ratio would represent the distance
-        between two intervals. This concept becomes particularly imporant when
+        between two intervals. This concept becomes particularly important when
         doing modal transformations of ratio based scales.
       </p>
       <p>

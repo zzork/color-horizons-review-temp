@@ -8,6 +8,7 @@ import Player from "./apps/Player/Index";
 import TopBar from "./components/TopBar";
 import About from "./components/About";
 import { playerStateData } from "./apps/Player/playerStateData";
+import BottomBar from "./components/BottomBar";
 
 function App() {
   const [stateData, setStateData] = useState(stateTable);
@@ -74,22 +75,7 @@ function App() {
           </div>
         )}
       </div>
-      <div className="bottomBar">
-        <p>
-          <a href="http://jonlervold.com" target="_blank" rel="noreferrer">
-            jonlervold.com
-          </a>{" "}
-          //{" "}
-          <a
-            href="https://github.com/jonlervold/color-horizons"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>{" "}
-          // 2022
-        </p>
-      </div>
+      <BottomBar />
     </div>
   );
 }
@@ -101,9 +87,7 @@ export default App;
 
 //////// NEED
 
-// full about rough draft
-
-// final drafts for info buttons on methods
+// final drafts of text
 
 // volume slider ALMOST works right, move fast and it won't zero out...
 
@@ -118,8 +102,6 @@ export default App;
 // - Sample based sound player
 
 /////////////
-
-// MAKE EVERYTHING LOOK REALLY NICE
 
 //   //   const incomingScale = [
 //     0,

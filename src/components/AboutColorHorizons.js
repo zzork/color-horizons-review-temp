@@ -14,14 +14,14 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
           </p>
           <p>
             It is designed specifically to enable the user to instantly
-            calculate how the notes of all modes of any scale that it can create
-            compare against 12 tone equal temperament, the harmonic series,
-            other common just intonation intervals, and more.
+            calculate how the notes of all modes of any scale that it can
+            generate compare against 12 tone equal temperament, the harmonic
+            series, and more.
           </p>
           <p>
-            The user can then immediately play these scales in the browser using
-            the QWERTY keyboard or their device's touchscreen and then can
-            export those scales as .scl files that can be used to retune other
+            The user can immediately play these scales in the browser using the
+            QWERTY keyboard or their device's touchscreen and then can export
+            those scales as .scl files that can be used to retune other
             synthesizers.
           </p>
           <br />
@@ -35,8 +35,8 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
           </p>
           <p>
             I sincerely believe that microtonality is not just a musical niche
-            that attracts iconoclastic types, but that in time it will someday
-            become the next frontier of popular music.
+            that attracts iconoclasts, but that in time it will someday become
+            the next frontier of popular music.
           </p>
           <p>
             There is an incredible wealth of musical expression that is
@@ -44,23 +44,20 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
             has reached a point where any musical tuning system imaginable can
             be tested instantly. The problem now is not the construction of
             microtonal capable instruments, but merely the lack of proliferation
-            of this knowledge. Whatever the reasons may be, for the time being
-            this field remains esoteric and difficult to know where to begin for
-            many newcomers.
+            of this knowledge. Whatever the reasons may be, at the moment this
+            field remains esoteric, and many newcomers find it difficult to know
+            where to begin.
           </p>
           <p>
-            My goal is to actively participate in bringing understandings of
-            these amazing tonal possibilities to other musicians. Color Horizons
-            is a tool for helping explore the realms far away from 12TET. What
-            tonal colors are available off in the distance? Let's find out.
+            My goal with this application is to actively participate in bringing
+            understandings of these amazing tonal possibilities to other
+            musicians. Color Horizons is a tool for helping explore musical
+            realms near and far from 12TET. What tonal colors are available off
+            in the distance? Let's find out.
           </p>
           <p>
-            This tool will be actively maintained. New features like
-            non-octave-based scale tools and a custom waveform generator will be
-            added as time allows.
-          </p>
-          <p>
-            It is my deep wish that this tool can help inspire musical creation!
+            It is my deep wish that this tool can help inspire musical
+            creations!
           </p>
           <br />
           <h2 className="center">Acknowledgements</h2>
@@ -85,7 +82,7 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
               >
                 Microtonal Music and Tuning Theory
               </a>
-            </b>{" "}
+            </b>
             Facebook groups. The majority of my exposure to these concepts comes
             from discussions I have read in those communities. I've also met a
             lot of very interesting people through them and hope to continue to
@@ -97,11 +94,10 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
             <a href="https://en.xen.wiki" target="_blank" rel="noreferrer">
               <b>Xenharmonic Wiki</b>
             </a>
-            . I have managed to learn an incredible amount of concepts and
-            information thanks to it.
+            . It is absolutely full of cutting edge information.
           </p>
           <p>
-            Thank you to <b>Manuel Op de Coul</b> for the wonderful tool known
+            Thank you to <b>Manuel Op de Coul</b> for the excellent tool known
             as{" "}
             <a
               href="https://www.huygens-fokker.org/scala/"
@@ -110,13 +106,9 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
             >
               <b>Scala</b>
             </a>
-            . Without a tool that could quickly generate and play scales outside
-            of 12 tone equal temperament I never would have found any interest
-            in microtonal music. With regards to scale generation, Scala can do
-            everything that this app can do, and an incredible amount more,
-            albeit with a very different user interface. Some day I will
-            understand every single function of the massive amount that it
-            provides.
+            . Without an existing tool that could quickly generate and play
+            scales outside of 12 tone equal temperament I never would have found
+            a persistent interest in microtonality.
           </p>
           <p>
             Thank you to <b>Brock Benzel</b> for my initial exposure to
@@ -126,8 +118,8 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
           </p>
           <p>
             Thank you to <b>Jalil Laaraichi</b> for getting me started with
-            React and for continuing to help guide my coding development. You
-            have been an absolutely invaluable resource.
+            React and for continuing to be an invaluable resource for my coding
+            development.
           </p>
           <br />
           <p className="center">

@@ -25,6 +25,7 @@ export const handleShowAbout = (stateData, setStateData) => {
     },
   };
   setStateData(newState);
+  document.getElementById("Top").scrollIntoView(true);
 };
 
 export const handleShowAboutColorHorizons = (stateData, setStateData) => {
@@ -36,6 +37,7 @@ export const handleShowAboutColorHorizons = (stateData, setStateData) => {
     },
   };
   setStateData(newState);
+  document.getElementById("Top").scrollIntoView(true);
 };
 
 export const handleShowKeyConcepts = (stateData, setStateData) => {
@@ -47,6 +49,7 @@ export const handleShowKeyConcepts = (stateData, setStateData) => {
     },
   };
   setStateData(newState);
+  document.getElementById("Top").scrollIntoView(true);
 };
 
 // selector component

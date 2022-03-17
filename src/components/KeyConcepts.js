@@ -26,37 +26,147 @@ const KeyConcepts = ({ stateData, setStateData }) => {
           <h2 className="center">Table of Contents</h2>
           <br />
           <p className="center">
-            <a href="#Sound">Sound</a>
+            <button
+              className="mb"
+              onClick={() =>
+                document.getElementById("Sound").scrollIntoView(true)
+              }
+            >
+              Sound
+            </button>
             <br />
-            <a href="#Pitch">Pitch</a>
+            <button
+              className="mb"
+              onClick={() =>
+                document.getElementById("Pitch").scrollIntoView(true)
+              }
+            >
+              Pitch
+            </button>
             <br />
-            <a href="#RatiosHarmony">Ratios, Harmony</a>
+            <button
+              className="mb"
+              onClick={() =>
+                document.getElementById("RatiosHarmony").scrollIntoView(true)
+              }
+            >
+              {" "}
+              Ratios, Harmony
+            </button>
             <br />
-            <a href="#EquivalentRatios">Equivalent Ratios</a>
+            <button
+              className="mb"
+              onClick={() =>
+                document.getElementById("EquivalentRatios").scrollIntoView(true)
+              }
+            >
+              {" "}
+              Equivalent Ratios
+            </button>
             <br />
-            <a href="#Cents">Cents</a>
+            <button
+              className="mb"
+              onClick={() =>
+                document.getElementById("Cents").scrollIntoView(true)
+              }
+            >
+              Cents
+            </button>
             <br />
-            <a href="#EqualDivision">Equally Dividing the Octave</a>
+            <button
+              className="mb"
+              onClick={() =>
+                document.getElementById("EqualDivision").scrollIntoView(true)
+              }
+            >
+              {" "}
+              Equally Dividing the Octave
+            </button>
             <br />
-            <a href="#Addition">Stacking Ratios (Addition)</a>
+            <button
+              className="mb"
+              onClick={() =>
+                document.getElementById("Addition").scrollIntoView(true)
+              }
+            >
+              Stacking Ratios (Addition)
+            </button>
             <br />
-            <a href="#Subtraction">Distance Between Ratios (Subtraction)</a>
+            <button
+              className="mb"
+              onClick={() =>
+                document.getElementById("Subtraction").scrollIntoView(true)
+              }
+            >
+              {" "}
+              Distance Between Ratios (Subtraction)
+            </button>
             <br />
-            <a href="#Inversion">Inverted Ratios</a>
+            <button
+              className="mb"
+              onClick={() =>
+                document.getElementById("Inversion").scrollIntoView(true)
+              }
+            >
+              Inverted Ratios
+            </button>
             <br />
-            {/* <a href="#PrimeLimit">Prime Limit</a>
+            {/* <button className="mb"
+              onClick={() =>
+                document.getElementById("PrimeLimit").scrollIntoView(true)
+              }
+            >Prime Limit</button>
             <br /> */}
-            <a href="#ModalTransformation">Modal Transformations</a>
+            <button
+              className="mb"
+              onClick={() =>
+                document
+                  .getElementById("ModalTransformation")
+                  .scrollIntoView(true)
+              }
+            >
+              {" "}
+              Modal Transformations
+            </button>
             <br />
-            <a href="#LinearTuningsPythagorean">
+            <button
+              className="mb"
+              onClick={() =>
+                document
+                  .getElementById("LinearTuningsPythagorean")
+                  .scrollIntoView(true)
+              }
+            >
+              {" "}
               Linear Tunings and Pythagorean Tuning
-            </a>
+            </button>
             <br />
-            <a href="#MomentsOfSymmetry">Moments of Symmetry</a>
+            <button
+              className="mb"
+              onClick={() =>
+                document
+                  .getElementById("MomentsOfSymmetry")
+                  .scrollIntoView(true)
+              }
+            >
+              {" "}
+              Moments of Symmetry
+            </button>
             <br />
-            <a href="#Tempering">Tempering</a>
+            <button
+              className="mb"
+              onClick={() =>
+                document.getElementById("Tempering").scrollIntoView(true)
+              }
+            >
+              Tempering
+            </button>
             {/* <br />
-            <a href="#EDOsAndTempering">EDOs and Tempering</a> */}
+            <button className="mb"
+              onClick={() =>
+                document.getElementById("EDOsAndTempering").scrollIntoView(true)
+              }
+            >EDOs and Tempering</a> */}
           </p>
           <div>
             <div id="Sound"></div>
@@ -97,7 +207,18 @@ const KeyConcepts = ({ stateData, setStateData }) => {
           <EDOsAndTempering /> */}
           <br />
           <br />
+
           <div className="center">
+            <button
+              className="mb"
+              onClick={() =>
+                document.getElementById("Top").scrollIntoView(true)
+              }
+            >
+              Table of Contents
+            </button>{" "}
+            <br />
+            <br />
             <button
               className="mb"
               onClick={() => handleShowAbout(stateData, setStateData)}
@@ -117,11 +238,16 @@ export default KeyConcepts;
 
 const Spacer = ({ id }) => {
   return (
-    <div>
+    <div className="center">
       <br />
-      <p id={id} className="center">
-        <a href="#Top">Table of Contents</a>
-      </p>
+      <button
+        className="mb"
+        onClick={() => document.getElementById("Top").scrollIntoView(true)}
+      >
+        Table of Contents
+      </button>
+      <br />
+      <br />
       <br />
       <hr />
       <br />

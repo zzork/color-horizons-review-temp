@@ -5,9 +5,10 @@ const ModalTransformation = () => {
     <div>
       <h2 className="center">Modal Transformations of Ratio-Based Scales</h2>
       <p>
-        We can construct scales entirely out of ratio sets. One such scale is
-        Ptolemy's Intense Diatonic Scale, which can be said to be a pure version
-        of what our standard 12 tone equal temperament major scale approximates.
+        Scales can be constructed entirely out of ratio sets. One such scale is{" "}
+        <b>Ptolemy's Intense Diatonic Scale</b>, which can be said to be a pure
+        version of what the standard Major Scale within 12 Tone Equal
+        Temperament approximates.
       </p>
       <table>
         <tbody>
@@ -82,17 +83,24 @@ const ModalTransformation = () => {
       <div className="center">—</div>
       <br />
       <p>
-        One thing that we like to do in music is play in different modes of a
-        given scale, meaning that interpret one of the non-root intervals in the
-        scale as the root. Then, we can take those intervals and play them from
-        our base Hz value.
+        One thing that we like to do in music is play in different <b>modes</b>{" "}
+        of a given scale, meaning{" "}
+        <i>
+          to interpret one of the non-root intervals in the scale as the new
+          root
+        </i>
+        . Then, we can{" "}
+        <i>
+          take the intervals that would be built from that note and build a new
+          set of pitches from our base Hz value.
+        </i>
       </p>
       <p>
-        In order to do this, we take the scale degree that we would like to
-        start on and subtract it from every other interval in the scale. As
-        above, we do this by dividing the two intervals, which is the same as
-        cross multiplication, meaning to multiply one ratio by the reciprocal of
-        the other. Let's start on the second degree of the scale, 9/8.
+        In order to do this, take the scale degree that you would like to start
+        on and subtract it from every other interval in the scale. As above, do
+        this by dividing the two intervals, which is the same as cross
+        multiplication, meaning to multiply one ratio by the reciprocal of the
+        other. Here's the process using 9/8 as the new starting note:
       </p>
       <table>
         <tbody>
@@ -163,7 +171,7 @@ const ModalTransformation = () => {
       </table>
       <p>
         Thus, the modal transformation to the second degree of Ptolemy's Intense
-        Diatonic scale yields:
+        Diatonic Scale yields:
       </p>
       <table>
         <tbody>
@@ -205,7 +213,7 @@ const ModalTransformation = () => {
       <br />
       <div className="center">
         <button className="mb" onPointerDown={() => basicPlay([220])}>
-          0
+          1/1
         </button>
         <button className="mb" onPointerDown={() => basicPlay([244.444])}>
           10/9
@@ -234,19 +242,16 @@ const ModalTransformation = () => {
       <div className="center">—</div>
       <br />
       <p>
-        First, please note that many scales have many excellent, usable modal
-        transformations!
-      </p>
-      <p>
-        But this one particularly results in what many consider to be a problem.
-        This example was picked specifically because its 5th interval, 40/27, is
-        close enough to 3/2 (about 22 cents off) that the ear tends to interpret
-        it as a really out of tune 3/2. Without having specifically trained your
-        pitch recognition, your ear will tend to interpret more complex ratios
-        in the context of simpler ones. When a tone and a tone 40/27 away from
-        it sound together, it creates a very noticeable "owowowowow" sound. This
-        is known as a "wolf" interval. (Wolf 3/2 intervals are the most
-        noticeable, since they are the simplest ratio other than the octave.)
+        This particular transformation results in what many consider to be a
+        problem. This example was picked specifically because{" "}
+        <i>
+          its 5th interval, 40/27, is close enough to 3/2 (about 22 cents off)
+          that the ear tends to interpret it as an out of tune 3/2
+        </i>
+        . The ear tends to interpret more complex ratios as mistunings of
+        simpler ones. When a tone and the tone 40/27 away from it play together,
+        it creates a noticeable "<i>owowowowow</i>" sound. This is known as a{" "}
+        <b>wolf interval</b>.
       </p>
       <div className="center">
         <button className="mb" onPointerDown={() => basicPlay([220, 330])}>
@@ -257,13 +262,16 @@ const ModalTransformation = () => {
         </button>
       </div>
       <p>
-        This is demonstrated to show why our modern musical system was created.
-        It gets a little boring to have only music that is made entirely from
-        the basic just ratios of Ptolemy's Intense Diatonic. It's a pretty
-        sound, but it doesn't leave us with a huge amount of variety, which we
-        do crave for the sonic storytelling of a well-crafted piece of music.
-        But when we modulate within a system like this, we end up with dissonant
-        intervals that many people consider unacceptably "bad" sounding.
+        These wolf fifths are why our modern musical system was created. It gets
+        a boring to only have music that is made entirely from the basic just
+        ratios of Ptolemy's Intense Diatonic Scale. It's a pretty sound, but it
+        doesn't leave us with a huge amount of variety, which we crave for the
+        sonic storytelling of a well-crafted piece of music. But{" "}
+        <i>
+          when we modulate to different keys within a simple JI system like
+          this, we end up with dissonant intervals that many people consider
+          unacceptably "bad" sounding.
+        </i>
       </p>
     </div>
   );

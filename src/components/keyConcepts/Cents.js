@@ -5,15 +5,19 @@ const Cents = () => {
     <div>
       <h2 className="center">Cents</h2>
       <p>
-        So far the math is easy enough. But human perception of sound has an odd
-        property: it is logarithmic.
+        So far the math is relatively simple. But human perception of sound has
+        an odd property: it is <b>logarithmic</b>.
       </p>
       <p>
         What this means is that if 220Hz is your root note, 440Hz is perceived
         as the same pitch but one octave higher. That makes perfect sense.
-        Intuition leads most people to expect 660Hz to be the third octave,
-        880Hz to be the fourth octave, and 1100Hz to be the fifth octave. But
-        instead of pure octaves, this creates a harmonic series chord:
+        But...
+      </p>
+      <p>
+        Intuition at this point leads many people to expect 660Hz to be the
+        third octave, 880Hz to be the fourth octave, and 1100Hz to be the fifth
+        octave. But instead of pure octaves, this creates a harmonic series
+        chord:
       </p>
       <div className="center">
         <button className="mb" onPointerDown={() => basicPlay([220])}>
@@ -43,9 +47,12 @@ const Cents = () => {
         Thanks to octaves being the result of a 2/1 frequency ratio, the spacing
         is not so intuitively simple! With 220Hz as the root, 440Hz is still the
         second octave, but 880Hz is the third octave. 1760Hz is the fourth
-        octave. 3520Hz is the fifth octave. The size of the octave gets
-        exponentially larger as your frequencies get higher and higher, because
-        each octave is another instance of multiplying the root frequency by 2.
+        octave. 3520Hz is the fifth octave.{" "}
+        <i>
+          The size of the octave in Hz gets exponentially larger as your
+          frequencies get higher and higher, because each octave is another
+          instance of multiplying the root frequency by 2.
+        </i>
       </p>
       <div className="center">
         <button className="mb" onPointerDown={() => basicPlay([220])}>
@@ -78,27 +85,31 @@ const Cents = () => {
       <br />
       <div className="center">—</div>
       <br />
-      <h4 className="center">A Different System of Pitch Measurement</h4>
+      <h4 className="center">A Different System of Measurement: Cents</h4>
       <p>
         While many phenomena in the world truly are mathematically logarithmic
-        or exponential, it is difficult for the human mind to naturally think in
+        or exponential, it is difficult for many people to naturally think in
         those terms. Because of this, a system that evens out these logarithmic
-        differences and measures frequencies in the straightforward way you
-        would expect was developed: cents.
+        differences and measures pitch in the straightforward way you would
+        expect was developed: <b>cents</b>.
       </p>
       <p>
-        The cents measurement divides the octave into 1200 units, meaning that
-        each 100 matches one pitch of 12 tone equal temperament. If 0 is your
-        root pitch, 1200 is your octave. To get one octave above that, add 1200
-        again to reach 2400. To get one octave above that, add 1200 to reach
-        3600. This repeated addition is much simpler to comprehend than repeated
-        multiplication.
+        The cents measurement divides the octave into 1200 units. Each multiple
+        of 100 (0, 100, 200, 300...) represents a note within 12 Tone Equal
+        Temperament. 0 is the root pitch, and 1200 is the octave.
       </p>
       <p>
-        Cents measurement is kind of an imperfect system when working outside of
-        12 tone equal temperament, as it is inherently tied to that system, but
-        microtonal music will need to become much more popular before a new,
-        better standard becomes commonplace. So for now it's just the way it is!
+        {" "}
+        To get one octave above 1200, add 1200 again to reach 2400. To get one
+        octave above 2400, add 1200 again to reach 3600. This repeated addition
+        is much simpler to comprehend than repeated multiplication.
+      </p>
+      <p>
+        Cents measurement is an imperfect system when working outside of 12 Tone
+        Equal Temperament, as it is inherently tied to that system. Like the
+        interval names discussed in the ratios section, microtonal music will
+        need to become much more popular before a better standard becomes the
+        norm.
       </p>
       <br />
       <div className="center">—</div>

@@ -5,15 +5,18 @@ const EqualDivision = () => {
     <div>
       <h2 className="center">Equally Dividing the Octave</h2>
       <p>
-        One of the most common terms in microtonal music is EDO, for Equal
-        Division of the Octave. This specifically refers to dividing the octave
-        equally in <b>cents</b>. When the octave is divided in cents, we
-        perceive every tone as being evenly spaced in pitch.
+        One of the most common terms in microtonal music is <b>EDO</b>, for{" "}
+        <b>Equal Division of the Octave</b>. This specifically refers to
+        dividing the octave equally in <b>cents</b>.{" "}
+        <i>
+          When the octave is divided in cents, we perceive every tone as being
+          evenly spaced in pitch.
+        </i>
       </p>
       <p>
-        In order to create an EDO scale, we take the octave in cents (1200) and
-        divide by how many tones we desire. Then we stack that number on top of
-        itself until we reach 1200.
+        In order to create an EDO scale, take the octave in cents (1200) and
+        divide by the desired amount of tones. Then stack that number on top of
+        itself until reaching 1200.
       </p>
       <br />
       <h4 className="center">Example: 7edo - Reference Pitch 220Hz</h4>
@@ -122,7 +125,7 @@ const EqualDivision = () => {
       <br />
       <p>
         With an EDO scale, our interpretation of how far apart the notes are in
-        pitch (the cents value) is perfectly even with every step increase. Due
+        pitch (the cents value) is perfectly even with each step increase. Due
         to the way our hearing works, as the scale rises in pitch, the Hz values
         between each note become larger and larger.
       </p>
@@ -131,8 +134,8 @@ const EqualDivision = () => {
       <br />
       <h4 className="center">Otonal Scales</h4>
       <p>
-        So what if we divide the octave evenly in Hertz instead? We end up with
-        what is called an otonal scale, thanks to its relationship to the
+        So what if the octave is divided evenly in Hz instead? This creates what
+        is called an <b>otonal scale</b>, thanks to its relationship to the
         overtone series.
       </p>
       <p>
@@ -238,13 +241,13 @@ const EqualDivision = () => {
       </div>
       <br />
       <p>
-        With an Otonal scale, the opposite effect from an EDO is observed. In
-        the objective math, the frequency differences between the notes (the Hz
-        values) are exactly even note to note. Due to the way our hearing works,
-        as the scale rises in pitch, the cents values between each note get
-        smaller and smaller. The pitches do not sound like they are evenly
-        spaced out, the pitches get closer together as the scale gets higher
-        before reaching the octave and starting over.
+        With an Otonal scale, the opposite effect from an EDO is observed. The
+        frequency differences between the notes (the Hz values) are exactly even
+        note to note. Due to the way our hearing works, as the scale rises in
+        pitch, the cents values between each note get smaller and smaller. The
+        pitches do not sound like they are evenly spaced out, the pitches get
+        closer together as the scale gets higher before reaching the octave and
+        starting over.
       </p>
     </div>
   );

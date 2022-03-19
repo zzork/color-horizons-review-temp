@@ -5,14 +5,17 @@ const Tempering = () => {
     <div>
       <h2 className="center">Tempering</h2>
       <p>
-        The Linear Scale by Cents tool can be used to temper intervals, which
-        means intentionally modifying the generating interval so that it is
-        slightly impure in order to make other intervals in the scales that that
-        generator creates more in tune. It can also be used for the purpose of
-        generating temperaments, which are systems which equate different ratios
-        to one another. A full discussion of temperaments is currently beyond
-        the scope of my personal knowledge, but we will touch on the basics of
-        the most important one.
+        The Linear Scale by Cents tool can be used to <b>temper</b> intervals,
+        which means{" "}
+        <i>
+          intentionally modifying the generating interval so that it is slightly
+          impure in order to make other intervals in the scales that arise from
+          that generator more in tune
+        </i>
+        . It can also be used for the purpose of generating temperaments, which
+        are systems which equate different ratios to one another. A full
+        discussion of temperaments is currently beyond the scope of my personal
+        knowledge, but we will touch on the basics of the most important one.
       </p>
       <br />
       <div className="center">—</div>
@@ -25,8 +28,10 @@ const Tempering = () => {
         problems with other pure-ratio-based tuning systems discussed above.
       </p>
       <p>
-        12 Tone Equal Temperament equates 12 stacks of the 3/2 ratio (701.955
-        cents) with 2/1 (1200 cents).
+        <i>
+          12 Tone Equal Temperament equates 12 stacks of the 3/2 ratio (701.955
+          cents) with 2/1 (1200 cents).
+        </i>
       </p>
       <p>
         Previously, we examined what happens when 3/2 is stacked on top of
@@ -37,8 +42,8 @@ const Tempering = () => {
       <p>
         When 3/2 is stacked on top of itself 12 times, the final value comes
         close to 2/1 (1200 cents), but ends up slightly above by ~23.460 cents.
-        This value is known as the Pythagorean Comma. (The Pythagorean Comma can
-        also be expressed (3/2)<sup>12</sup>
+        This value is known as the <b>Pythagorean Comma</b>. (The Pythagorean
+        Comma can also be expressed (3/2)<sup>12</sup>
         /(2/1)<sup>7</sup> or 531441/524288.)
       </p>
       <table>
@@ -118,10 +123,10 @@ const Tempering = () => {
         </tbody>
       </table>
       <p>
-        To eliminate this difference, we can deliberately mistune the 3/2
-        generating ratio. This process is known as "tempering out" the comma. In
-        this case, we would take the Pythagorean Comma and divide it by 12,
-        since we arrived at this comma by stacking twelve 3/2s on one another.
+        To eliminate this difference, it is possible to deliberately mistune the
+        3/2 generating ratio. This process is known as <b>tempering out</b> the
+        comma. In this case, take the Pythagorean Comma and divide it by 12,
+        since this comma arises from stacking twelve 3/2s on one another.
       </p>
       <table>
         <tbody>
@@ -131,7 +136,7 @@ const Tempering = () => {
         </tbody>
       </table>
       <p>
-        Then, we reduce our original generator of ~701.955 cents by ~1.955 and
+        Then, reduce the original generator of ~701.955 cents by ~1.955 and
         arrive at exactly 700 cents for the generator of 12 Tone Equal
         Temperament. Now, 12 stacks of the not-quite-justly-intonated 3/2 our
         system uses exactly equal 2/1.
@@ -213,20 +218,23 @@ const Tempering = () => {
         </tbody>
       </table>
       <p>
-        No matter how many iterations you run, stacking 3/2 will always repeat
-        infinitely, never exactly looping back onto 2/1. By tempering out this
-        comma, we create an even, closed system that loops back in on itself,
-        allowing for free key modulation. With this type of system, we don't
-        need to worry about different keys having different tonal
-        characteristics.{" "}
+        No matter how many iterations of the process are added, stacking 3/2
+        will always repeat infinitely, never exactly looping back onto 2/1.{" "}
+        <i>
+          By tempering out this comma, we create an even, closed system that
+          loops back in on itself, allowing for free key modulation.
+        </i>{" "}
+        With this type of system, we don't need to worry about different keys
+        having different tonal characteristics. All keys are identical.
       </p>
       <p>
-        When compared directly against the simple JI ratios that each 12TET
-        interval approximates, it is easy to hear that the intervals are
-        somewhat out of tune. But our collective consciousness seems to have
-        determined that the positives of this system are worth it. Within 12TET,
-        we have relatively few notes that allow us to create fairly complex
-        harmonies with good-enough pitch accuracy.
+        When compared directly against the simple JI ratios that each 12 Tone
+        Equal Temperament interval approximates, it is easy to hear that the
+        intervals are not quite in tune. But our collective consciousness seems
+        to have determined that the positives of this system are worth it.
+        Within 12TET, we have relatively few notes to deal with, and they allow
+        us to create fairly complex harmonies with an acceptable level of pitch
+        accuracy.
       </p>
 
       <table>
@@ -364,6 +372,22 @@ const Tempering = () => {
           </tr>
         </tbody>
       </table>
+      <br />
+      <p>
+        I used to sometimes try tuning my 12 Tone Equal Temperament guitar by
+        making one chord sound perfectly in tune. But then I would find that
+        when I played another chord, it would sound severely out of tune! I
+        would then retune the guitar so that the out-of-tune chord sounded nice,
+        but then the original chord would be severely out of tune! I didn't
+        understand why and it drove me a little crazy. Now I understand that
+        this is because 12TET compromises by making all chords somewhat out of
+        tune for the sake of easy modulation. When compared to the JI intervals
+        they approximate, the thirds and sixths are noticeably off. We have
+        become conditioned to those mistunings of 13 and 15 cents as being "in
+        tune".
+      </p>
+      <br />
+      <div className="center">—</div>
       <br />
       <p>
         12TET is an excellent system overall for many reasons. But there are

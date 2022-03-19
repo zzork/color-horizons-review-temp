@@ -4,10 +4,14 @@ const MomentsOfSymmetry = () => {
       {" "}
       <h2 className="center">Moments of Symmetry</h2>
       <p>
-        Linear tunings have an interesting property. They will <b>always</b>,
-        without exception, create scales of 2 or 3 step sizes. For example,
-        using 3/2 as a generating interval as we did in the previous section, we
-        find that the scales created take on these step sizes:
+        Linear tunings have an interesting property.{" "}
+        <i>
+          They will <b>always</b>, without exception, create scales of 2 or 3
+          step sizes.
+        </i>{" "}
+        For example, using 3/2 as a generating interval as we did in the
+        previous section, we find that the scales created take on these step
+        sizes:
       </p>
       <table>
         <tbody>
@@ -98,25 +102,31 @@ const MomentsOfSymmetry = () => {
         </tbody>
       </table>
       <p>
-        Every scale that arises from this process with only 2 step sizes is
-        known as a Moment of Symmetry (MOS) scale.
+        <i>
+          Every scale that arises from this process with only 2 step sizes is
+          known as a <b>Moment of Symmetry (MOS)</b> scale.
+        </i>
       </p>
       <br />
       <div className="center">—</div>
       <br />
       <p>
-        The MOS scales are delineation points. Anything with a medium step size
-        is a subset of the next MOS larger than it. The 4 note scale that arises
-        from 3/2 is really just the 5 note MOS scale with one of the tones
-        removed. The 6 note scale is really just the 7 note MOS with one of the
-        tones removed. The 8, 9, 10, and 11 note scales created by stacking 3/2
-        are the 12 note MOS with 4, 3, 2, and 1 tone removed.
+        The MOS scales are delineation points.{" "}
+        <i>
+          Anything with a medium step size is a subset of the next MOS larger
+          than it.
+        </i>{" "}
+        The 4 note scale that arises from 3/2 is really just the 5 note MOS
+        scale with one of the tones removed. The 6 note scale is really just the
+        7 note MOS with one of the tones removed. The 8, 9, 10, and 11 note
+        scales created by stacking 3/2 are the 12 note MOS with 4, 3, 2, and 1
+        tone removed.
       </p>
       <p>
         This is why we went straight from 5 notes, to 7 notes, to 12 notes in
-        the section above. The MOS scales of 2 and 3 notes were skipped because
+        the section above. (The MOS scales of 2 and 3 notes were skipped because
         with as few tones as those offer, they sound more like chords than
-        scales. 5 notes in a scale tends to be the amount at which the scale
+        scales.) 5 notes in a scale tends to be the amount at which the scale
         starts to allow for some actual harmonic motion.
       </p>
       <br />
@@ -126,8 +136,11 @@ const MomentsOfSymmetry = () => {
       <p>
         A simple mistake to make is to assume that any scale with two step sizes
         is a MOS scale. Many scales with two step sizes are not MOS scales. The
-        exact definition for Moments of Symmetry are scales that have "exactly
-        two specific intervals for every generic interval except the octave."
+        exact definition for Moments of Symmetry are{" "}
+        <i>
+          scales that have "exactly two specific intervals for every generic
+          interval except the octave."
+        </i>
       </p>
       <p>
         What does that mean? Take a 7 note scale with the step layout{" "}
@@ -170,9 +183,12 @@ const MomentsOfSymmetry = () => {
         possible sizes for that interval.
       </p>
       <p>
-        This scale is an example of what is known as a MODMOS. It is a
-        modification (MOD) of a Moment of Symmetry (MOS) scale. Not all scales
-        with 2 step sizes are necessarily MODMOS scales.
+        This scale is an example of what is known as a <b>MODMOS</b>.{" "}
+        <i>
+          It is a modification <b>(MOD)</b> of a Moment of Symmetry <b>(MOS)</b>{" "}
+          scale.
+        </i>{" "}
+        Not all scales with 2 step sizes are necessarily MODMOS scales.
       </p>
       <br />
       <div className="center">—</div>
@@ -183,7 +199,7 @@ const MomentsOfSymmetry = () => {
       <p>
         One way to determine what note totals will create MOS scales from a
         given generator is to simply brute force it by plugging in numbers one
-        by one until you find each scale with two step sizes. There is a more
+        by one until finding each scale with two step sizes. There is a more
         elegant solution.
       </p>
       <p className="center">
@@ -192,14 +208,14 @@ const MomentsOfSymmetry = () => {
       <div className="tableClone">
         <ol>
           <li>
-            First, you will need the log(2) value of your generator. If your
-            generator is in cents, divide by 1200. If your generator is a ratio,
-            apply log(x/y)/log(2).
+            First, get the log(2) value of the generator. If the generator is in
+            cents, divide by 1200. If the generator is a ratio, apply
+            log(x/y)/log(2).
           </li>
           <li>Divide 1 by the log2 value.</li>
           <li>
             Record the whole number value before the decimal point, then remove
-            it from the value. For example, if your log(2) value was 3.5647,
+            it from the value. For example, if the log(2) value was 3.5647,
             write down the number 3, then use 0.5647 for the next step in the
             process.
           </li>
@@ -211,9 +227,11 @@ const MomentsOfSymmetry = () => {
         </ol>
       </div>
       <p>
-        The list of whole numbers that were removed from each value, which we
-        will call the 1/x List, will the be amount of iterations of each step of
-        the process.
+        <i>
+          The list of whole numbers that were removed from each value, which we
+          will call the <b>1/x List</b>, will the be amount of iterations of
+          each step of the process.
+        </i>
       </p>
       <p className="center">
         <i>Part 2</i>
@@ -221,25 +239,26 @@ const MomentsOfSymmetry = () => {
       <div className="tableClone">
         <ol>
           <li>
-            In every case, start with 1, and start with an "add value" of 1.
+            In every case, start with 1, and start with an <b>add value</b> of
+            1.
           </li>
           <li>
-            On your first iteration, take your first value from the 1/x List and
-            add your add value that many times. Each result will be a note total
+            On the first iteration, take the first value from the 1/x List and
+            add the add value that many times. Each result will be a note total
             that will make up a MOS scale.
           </li>
           <li>
-            Take the penultimate value of your current list of MOS-generating
-            note totals, and use it as your new add value.
+            Take the penultimate value of the current list of MOS-generating
+            note totals, and use it as the new add value.
           </li>
           <li>
-            On the second iteration, take your new add value and add it the
-            amount of times of the second value in your 1/x List. Each result
+            On the second iteration, take the new add value and add it the
+            amount of times of the second value in the 1/x List. Each result
             will be a note total that will make up a MOS scale.
           </li>
           <li>
             Take the penultimate value of your current list of MOS-generating
-            note totals, and use it as your new add value.
+            note totals, and use it as the new add value.
           </li>
           <li>
             <p>Repeat this process as desired.</p>
@@ -251,7 +270,9 @@ const MomentsOfSymmetry = () => {
       <div className="center">—</div>
       <br />
       <h4 className="center">Example: 316 Cents</h4>
-      <p className="center">316 / 1200 = 0.2633333333333333*</p>
+      <p className="center">
+        316 / 1200 = <i>0.2633333333333333*</i>
+      </p>
       <table>
         <tbody>
           <tr>
@@ -269,7 +290,9 @@ const MomentsOfSymmetry = () => {
           <tr>
             <td>1</td>
             <td>1 ÷ </td>
-            <td>0.2633333333333333*</td>
+            <td>
+              <i>0.2633333333333333*</i>
+            </td>
             <td>=</td>
             <td>3.79746835443038</td>
             <td>3</td>
@@ -304,12 +327,14 @@ const MomentsOfSymmetry = () => {
             <td>0.0666666666666587</td>
             <td>=</td>
             <td>15.000000000001801</td>
-            <td>3, 1, 3, 1, 15</td>
+            <td>
+              <b>3, 1, 3, 1, 15</b>
+            </td>
           </tr>
         </tbody>
       </table>
       <p className="center">
-        Our 1/x List is <b>3, 1, 3, 1, 15</b>.
+        The 1/x List is <b>3, 1, 3, 1, 15</b>.
       </p>
       <br />
       <p>Start with 1 as the base. Start with the add value as 1 by default.</p>
@@ -320,7 +345,7 @@ const MomentsOfSymmetry = () => {
       <div className="tableClone">
         <ul>
           <li>
-            Add the add value 3 times, since 3 is the first value in our 1/x
+            Add the add value 3 times, since 3 is the first value in the 1/x
             List.
             <p className="center">
               1 + 1 = 2<br />
@@ -345,7 +370,7 @@ const MomentsOfSymmetry = () => {
       <div className="tableClone">
         <ul>
           <li>
-            Add the add value 1 time, since 1 is the second value in our 1/x
+            Add the add value 1 time, since 1 is the second value in the 1/x
             List.
             <p className="center">4 + 3 = 7</p>
           </li>
@@ -367,7 +392,7 @@ const MomentsOfSymmetry = () => {
       <div className="tableClone">
         <ul>
           <li>
-            Add the add value 3 times, since 3 is the third value in our 1/x
+            Add the add value 3 times, since 3 is the third value in the 1/x
             List.
             <p className="center">
               7 + 4 = 11
@@ -396,7 +421,9 @@ const MomentsOfSymmetry = () => {
       <div className="center">—</div>
       <br />
       <h4 className="center">Example: 3/2</h4>
-      <p className="center">log(3/2)/log(2) = 0.5849625007211562*</p>
+      <p className="center">
+        log(3/2)/log(2) = <i>0.5849625007211562*</i>
+      </p>
       <table>
         <tbody>
           <tr>
@@ -414,7 +441,9 @@ const MomentsOfSymmetry = () => {
           <tr>
             <td>1</td>
             <td>1 ÷ </td>
-            <td>0.5849625007211562*</td>
+            <td>
+              <i>0.5849625007211562*</i>
+            </td>
             <td>=</td>
             <td>1.7095112913514547</td>
             <td>1</td>
@@ -449,12 +478,14 @@ const MomentsOfSymmetry = () => {
             <td>0.2600167526708272</td>
             <td>=</td>
             <td>3.8459060415463595</td>
-            <td>1, 1, 2, 2, 3</td>
+            <td>
+              <b>1, 1, 2, 2, 3</b>
+            </td>
           </tr>
         </tbody>
       </table>
       <p className="center">
-        Our 1/x List is <b>1, 1, 2, 2, 3</b>.
+        The 1/x List is <b>1, 1, 2, 2, 3</b>.
       </p>
       <br />
       <p>Start with 1 as the base. Start with the add value as 1 by default.</p>
@@ -465,7 +496,7 @@ const MomentsOfSymmetry = () => {
       <div className="tableClone">
         <ul>
           <li>
-            Add the add value 1 time, since 1 is the first value in our 1/x
+            Add the add value 1 time, since 1 is the first value in the 1/x
             List.
             <p className="center">1 + 1 = 2</p>
           </li>
@@ -486,7 +517,7 @@ const MomentsOfSymmetry = () => {
       <div className="tableClone">
         <ul>
           <li>
-            Add the add value 1 time, since 1 is the second value in our 1/x
+            Add the add value 1 time, since 1 is the second value in the 1/x
             List.
             <p className="center">2 + 1 = 3</p>
           </li>
@@ -507,7 +538,7 @@ const MomentsOfSymmetry = () => {
       <div className="tableClone">
         <ul>
           <li>
-            Add the add value 2 time, since 2 is the third value in our 1/x
+            Add the add value 2 time, since 2 is the third value in the 1/x
             List.
             <p className="center">
               3 + 2 = 5<br />5 + 2 = 7
@@ -530,7 +561,7 @@ const MomentsOfSymmetry = () => {
       <div className="tableClone">
         <ul>
           <li>
-            Add the add value 2 times, since 2 is the fourth value in our 1/x
+            Add the add value 2 times, since 2 is the fourth value in the 1/x
             List.
             <p className="center">
               7 + 5 = 12

@@ -14,18 +14,21 @@ const Addition = () => {
         when you stack ratios on top of one another.
       </p>
       <p>
-        Let's say you want the note that is 3/2 above your root, and then the
-        note that is 7/4 above that second note.{" "}
+        Let's build a chord using the note 3/2 above the root, and then the note
+        that is 7/4 above that second note.
       </p>
       <p>
-        In normal fraction math, you find the common denominator, then add the
-        numerators together. This yields 13/4, which becomes 13/8 if we follow
-        the octave reducing procedure. In a JI context, this method does not
-        work. Don't do this.
+        In normal fraction math, one would find the common denominator, then add
+        the numerators together. This yields 13/4, which becomes 13/8 after
+        following the octave reducing procedure. This does not work in JI. Don't
+        do that.
       </p>
       <p>
-        Instead, in a JI context, to add two ratios together, we must{" "}
-        <b>multiply</b> the two fractions.
+        Instead, in a JI context,{" "}
+        <i>
+          to add two ratios together, <b>multiply</b> the two fractions
+        </i>
+        .
       </p>
       <table>
         <tbody>
@@ -46,9 +49,9 @@ const Addition = () => {
         </tbody>
       </table>
       <p>
-        21/8 reduces to 21/16. In its octave reduced notation, the chord that
-        contains 3/2 and the note 7/4 above 3/2 will be built of the notes: 1/1,
-        3/2, and 21/16.
+        21/8 octave reduces to 21/16. In its octave reduced notation, the chord
+        that contains 3/2 and the note 7/4 above 3/2 will be built of the notes:
+        1/1, 3/2, and 21/16.
       </p>
       <div className="center">
         <button className="mb" onPointerDown={() => basicPlay([220, 330])}>
@@ -65,7 +68,7 @@ const Addition = () => {
           className="mb"
           onPointerDown={() => basicPlay([220, 577.5, 330])}
         >
-          1/1, 3/2, 21/8
+          Raw - 1/1, 3/2, 21/8
         </button>
         <button
           className="mb"

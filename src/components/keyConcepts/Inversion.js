@@ -5,9 +5,12 @@ const Inversion = () => {
     <div>
       <h2 className="center">Inverted Ratios</h2>
       <p>
-        Intriguingly, ratios can be flipped around to represent the same pitch
-        distance from 1/1, except going backward around the circle rather than
-        forward. 3/2 and 4/3 are the first example of this.
+        Intriguingly,{" "}
+        <i>
+          ratios can be flipped around to represent the same pitch distance from
+          1/1, except going backward around the circle rather than forward
+        </i>
+        . 3/2 and 4/3 are the first example of this.
       </p>
       <br />
       <h4 className="center">Example: 1/1 - 4/3 = 3/2</h4>
@@ -30,8 +33,12 @@ const Inversion = () => {
         </tbody>
       </table>
       <p>
-        6/4 reduces to 3/2. Meaning that going down 4/3 from your root note
-        equates to going up 3/2 from your root note.
+        6/4 reduces to 3/2. Meaning that{" "}
+        <i>
+          going down 4/3 from the root note ends up being the same pitch class
+          as going up 3/2 from the root note
+        </i>
+        .
       </p>
       <div className="center">
         <button className="mb" onPointerDown={() => basicPlay([220, 330])}>
@@ -93,9 +100,7 @@ const Inversion = () => {
           </tr>
         </tbody>
       </table>
-      <p>
-        In this case, we don't even need to octave reduce, the answer is 4/3.
-      </p>
+      <p>In this case, no octave reduction is necessary. The answer is 4/3.</p>
       <div className="center">
         <button className="mb" onPointerDown={() => basicPlay([220, 293.333])}>
           1/1, 4/3
@@ -167,10 +172,10 @@ const Inversion = () => {
       <p className="center">The inverted ratio of 15/8 is 16/15. </p>
       <br />
       <p>
-        We can actually verify the subtraction properties in the two tables
-        above by instead adding 15/8 and 16/15 together. If they equal 2/1 when
+        The subtraction properties in the two examples above can more simply be
+        verified by adding two inverted ratios together. If they equal 2/1 when
         added, then either one subtracted from 2/1 will equal the other. Recall
-        that when we add ratios in JI, we actually multiply their values.
+        that when adding ratios in JI, you multiply their values.
       </p>
       <table>
         <tbody>

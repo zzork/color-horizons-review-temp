@@ -6,15 +6,18 @@ const EquivalentRatios = () => {
         In the previous section, you may have noticed we started with 1/1 as the
         root note, then said 2/1 was the simplest harmony available to it. After
         that came 3/2, and then we went straight to 4/3, without examining 3/1.
-        This is because of the 1/1 = 2/1 octave phenomenon discussed above. The
-        ratios of 3/2 and 3/1 represent the same harmony, just with an octave
-        separating the notes.
+        This is because of the 2/1 = 1/1 octave phenomenon discussed above.{" "}
+        <i>
+          The ratios of 3/2 and 3/1 represent the same harmony, just with an
+          octave separating the notes.
+        </i>{" "}
+        They are of the same <b>pitch class</b>.
       </p>
       <p>
         This is an element of JI ratios that can be confusing at first. Because
-        multiplying or dividing an element of a ratio creates the same pitch,
-        but just in a different octave, JI fractions have different equalities
-        than fractions used in regular, basic math.
+        multiplying or dividing an element of a ratio creates the same note, but
+        in a different octave, JI fractions have different equalities than
+        fractions used in regular, basic math.
       </p>
       <p className="center">
         <i>In JI:</i>
@@ -24,8 +27,8 @@ const EquivalentRatios = () => {
         The imprecise way to explain how to get the most reduced version of a JI
         fraction is to say that you need to multiply or divide the numerator
         and/or the denominator by 2 until you end up with the octave reduced
-        version. (See the next section (<b>Cents</b>) for the formula that
-        exposes if your fraction is within the first octave.)
+        version. (See the next section <b>Cents</b> for the formula that exposes
+        if your fraction is within the first octave.)
       </p>
       <br />
       <div className="center">—</div>

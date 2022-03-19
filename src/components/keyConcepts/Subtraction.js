@@ -10,14 +10,17 @@ const Subtraction = () => {
         doing modal transformations of ratio based scales.
       </p>
       <p>
-        Let's take 3/2 and 7/4 again. In normal math, you would find the common
-        denominator, then subtract the numerators from one another. This would
-        yield 1/4, which is equivalent to 2/1, the octave. Again, in this
-        context this is wrong. Don't do this.
+        Let's take 3/2 and 7/4 again. In normal fraction math, one would find
+        the common denominator, then subtract the numerators from one another.
+        This would yield 1/4, which is equivalent to 2/1, the octave. Again, in
+        a JI context this does not work. Don't do that.
       </p>
       <p>
-        Instead, in a JI context, to subtract one ratio from another, we must{" "}
-        <b>divide</b> the two fractions.
+        Instead, in a JI context,{" "}
+        <i>
+          to subtract one ratio from another, <b>divide</b> the two fractions
+        </i>
+        .
       </p>
       <p>
         This is accomplished by cross multiplication, or in different terms, by

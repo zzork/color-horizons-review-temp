@@ -8,23 +8,32 @@ const LinearTuningsPythagorean = () => {
         So how can we achieve tuning systems that allow freer modulation,
         introducing fewer wolf intervals when the scale is transformed?
       </p>
-      <p>One possibility is Pythagorean Tuning.</p>
       <p>
-        Pythagorean tuning is a Linear Temperament, which means that it is a
-        type of octave-based scale created by stacking a "generating interval"
-        on top of itself. In the case of Pythagorean tuning, we use the simplest
-        ratio possible, 3/2. You start with 1/1, then add the note 3/2 above to
-        it, then add the note 3/2 above that, then add the note 3/2 to that,
-        until you have the amount of notes you desire. Whenever the note you are
-        adding goes into the second octave, it gets octave reduced.
+        One possibility is <b>Pythagorean Tuning</b>. (
+        <i>
+          Side note - Pythagorean Tuning is centuries older than Ptolemy's
+          Intense Diatonic Scale.
+        </i>
+        )
+      </p>
+      <p>
+        Pythagorean tuning is a <b>Linear Tuning</b>, which means that{" "}
+        <i>
+          it is a type of octave-based scale created by stacking a "generating
+          interval" on top of itself
+        </i>
+        . In the case of Pythagorean tuning, we use the simplest ratio possible,
+        3/2. Start with 1/1, then add the note 3/2 above it, then add the note
+        3/2 above that, then add the note 3/2 to that, until the amount of notes
+        desired is reached. Then octave reduce all of the notes.
       </p>
       <br />
       <div className="center">—</div>
       <br />
       <h4 className="center">5 Notes - Major Pentatonic</h4>
       <p>
-        Let's start by looking at what happens when we go through five
-        iterations of this process:
+        Let's start by looking at what happens after five iterations of this
+        process:
       </p>
       <table>
         <tbody>
@@ -153,11 +162,14 @@ const LinearTuningsPythagorean = () => {
         </button>
       </div>
       <p>
-        We end up with the Pythagorean version of the Major Pentatonic scale,
-        which is a very strong scale with little dissonance that has been
-        utilized by many cultures worldwide. The Major Pentatonic scale is
-        derived from stacking five 3/2s on top of each other. Its modal
-        transformations are consistent, all the 3/2s present in its
+        This generates the Pythagorean version of the <b>Major Pentatonic</b>{" "}
+        scale. The Major Pentatonic is a very strong scale that has been
+        utilized by many cultures throughout history.{" "}
+        <i>
+          The Major Pentatonic scale is derived from stacking five 3/2s on top
+          of each other
+        </i>
+        . Its modal transformations are consistent, all the 3/2s present in its
         transformations are perfect, and the rest of the intervals of all of its
         modes either precisely line up with Ptolemy's Intense Diatonic, or are
         ~21 cents off.
@@ -325,27 +337,34 @@ const LinearTuningsPythagorean = () => {
         </button>
       </div>
       <p>
-        Adding two more notes gives us the Pythagorean Diatonic scale! Stacking
-        seven 3/2s results in the Pythagorean Lydian scale, specifically. The
-        scale is most often modally transformed into its fifth mode, Ionian (aka
-        the familiar 7 note Major Scale), because it replaces the instability of
-        the Augmented 4th with the stability of the Perfect 4th while leaving
-        every other interval the same. People tend to view the Ionian Mode as
-        the basis of the Diatonic Scale, but truly Lydian is its first mode.
+        Adding two more notes gives us the Pythagorean version of the{" "}
+        <b>Diatonic</b> scale!{" "}
+        <i>
+          Stacking seven 3/2s results in the Pythagorean <b>Lydian</b> scale
+        </i>
+        , specifically. The scale is most often modally transformed into its
+        fifth mode, <b>Ionian</b> (aka the familiar Major Scale), because it
+        replaces the instability of the Augmented 4th with the stability of the
+        Perfect 4th while leaving every other interval the same. People tend to
+        view the Ionian Mode as the basis of the Diatonic Scale, but truly
+        Lydian is its first mode.
       </p>
       <p>
         The Pythagorean Diatonic again provides perfect 3/2s in all of its modal
         transformations. Again, all of the other intervals in the
         transformations either precisely line up with the simple ratios of
-        Ptolemy's Intense Diatonic, or are ~21 cents off. While not perfectly in
-        tune, all of the intervals are consistent.
+        Ptolemy's Intense Diatonic, or are ~21 cents off.
       </p>
       <p>
-        One thing worth noting at this point is that even this simple scale made
-        of 3/2s starts to create large ratios fairly quickly. 729/512 is made up
-        of much larger numbers than something like 5/3. The important thing to
-        note here is that in the context, it still sounds harmonious because
-        every interval is made up entirely of 3s and 2s.
+        One thing worth noting at this point is that{" "}
+        <i>
+          even this simple scale made of stacked 3/2s starts to create large
+          ratios fairly quickly
+        </i>
+        . 729/512 is made up of much larger numbers than something like 5/3. The
+        important thing to note here is that the overall system still sounds
+        harmonious because every interval is made up entirely of multiples of 3s
+        and 2s.
       </p>
       <br />
       <div className="center">—</div>
@@ -617,16 +636,19 @@ const LinearTuningsPythagorean = () => {
         Ptolemy's Intense Diatonic.
       </p>
       <p>
-        Pythagorean Tuning allows significant modulation, but if you tune an
-        instrument in this way, each key has its own harmony characteristics. In
-        each key some scales will sound in tune while others will sound out of
-        tune.
+        12 Note Pythagorean Tuning allows significant modulation, but if you
+        tune an instrument in this way, each key has its own harmony
+        characteristics. In each key some scales will sound in tune while others
+        will sound out of tune.
       </p>
       <p>
-        As an example, we will compare the 1st and 10th modes of Pythagorean 12
-        tone to simple JI. Other transformations can be seen by entering
-        Numerator: 3, Denominator: 2, Note Total: 12 into the Linear Scale by
-        Ratio tool on the main page.
+        As an example, let's compare the 1st and 10th modes of Pythagorean 12
+        tone to simple JI.{" "}
+        <i>
+          Other transformations can be seen by entering Numerator: 3,
+          Denominator: 2, Note Total: 12 into the Linear Scale by Ratio tool on
+          the main page.
+        </i>
       </p>
       <table>
         <tbody>
@@ -809,21 +831,36 @@ const LinearTuningsPythagorean = () => {
         </tbody>
       </table>
       <br />
+      <p>
+        The way to resolve this problem within Pythagorean Tuning is to add more
+        notes to the original stacking process. The problem that then arises is
+        that these new notes lack their proper harmonies, so the stacking
+        process must be extended further to accommodate for them. Then those new
+        notes will lack their proper harmonies, so more notes must be added...
+        and so on, infinitely.
+      </p>
       <br />
       <div className="center">—</div>
       <br />
       <p>
-        It is important to note that any ratio, not just 3/2, can be used as a
-        generating interval in a linear scale. Not only that, any cents value
-        can be used as the generating interval. It's fun to explore what types
-        of scales come about as a result of trying other options.
+        <i>
+          Any ratio, not just 3/2, can be used as a generating interval in a
+          linear scale
+        </i>
+        . Not only that,{" "}
+        <i>any cents value can also be used as the generating interval</i>. It's
+        fun to explore what types of scales come about as a result of trying
+        other options.
       </p>
       <p>
-        It is worth noting here that if you use a ratio as a generating
-        interval, the system will never close in on itself. No matter how many
-        times you stack any ratio, it will never equal 2/1. As you approach
-        infinite repetitions, it will get infinitely closer and closer to 2/1,
-        but it will not ever actually equal the pure octave.
+        <i>
+          If generating interval is a ratio, no matter which ratio you choose,
+          the system will never close in on itself.
+        </i>{" "}
+        No matter how many times you stack any ratio, it will never equal 2/1.
+        As the process approachs infinite repetitions, it will get infinitely
+        closer and closer to 2/1, but it will not ever actually equal the pure
+        octave.
       </p>
       <p>
         You can, however, divide the octave evenly in cents and use multiples of

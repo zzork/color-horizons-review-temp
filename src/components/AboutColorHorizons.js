@@ -35,29 +35,29 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
           </p>
           <p>
             I sincerely believe that microtonality is not just a musical niche
-            that attracts iconoclasts, but that in time it will someday become
-            the next frontier of popular music.
+            for iconoclasts, but that in time it will someday become the next
+            frontier of popular music.
           </p>
           <p>
             There is an incredible wealth of musical expression that is
-            inaccessible through 12 Tone Equal Temperament (12TET). Technology
-            has reached a point where any musical tuning system imaginable can
-            be tested instantly. The problem now is not the construction of
-            microtonal capable instruments, but merely the lack of proliferation
-            of this knowledge. Whatever the reasons may be, at the moment this
-            field remains esoteric, and many newcomers find it difficult to know
-            where to begin.
+            inaccessible utilizing only 12 Tone Equal Temperament (12TET).
+            Technology has reached a point where any musical tuning system
+            imaginable can be tested instantly. The problem now is not the
+            construction of microtonal-capable instruments, but merely the lack
+            of proliferation of this knowledge. Whatever the reasons may be, at
+            the moment this field remains esoteric. Many newcomers find it
+            difficult to know where to begin.
           </p>
           <p>
             My goal with this application is to actively participate in bringing
-            understandings of these amazing tonal possibilities to other
+            understandings of these fruitful tonal possibilities to other
             musicians. Color Horizons is a tool for helping explore musical
             realms near and far from 12TET. What tonal colors are available off
             in the distance? Let's find out.
           </p>
           <p>
-            It is my deep wish that this tool can help inspire musical
-            creations!
+            It is my deep wish that this tool can help inspire and facilitate
+            musical creation!
           </p>
           <br />
           <h2 className="center">Acknowledgements</h2>
@@ -82,7 +82,7 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
               >
                 Microtonal Music and Tuning Theory
               </a>
-            </b>
+            </b>{" "}
             Facebook groups. The majority of my exposure to these concepts comes
             from discussions I have read in those communities. I've also met a
             lot of very interesting people through them and hope to continue to
@@ -107,8 +107,8 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
               <b>Scala</b>
             </a>
             . Without an existing tool that could quickly generate and play
-            scales outside of 12 tone equal temperament I never would have found
-            a persistent interest in microtonality.
+            scales outside of 12 tone equal temperament, I never would have
+            found a persistent interest in microtonality.
           </p>
           <p>
             Thank you to <b>Brock Benzel</b> for my initial exposure to

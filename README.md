@@ -1,4 +1,4 @@
-# About
+### About
 
 Color Horizons is a microtonal-capable scale generator and synthesizer.
 

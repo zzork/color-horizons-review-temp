@@ -13,7 +13,7 @@ const ModalTransformation = () => {
       <table>
         <tbody>
           <tr>
-            <td className="lighterTable">Degree</td>
+            <td className="tableTopRow">Degree</td>
             <td>1</td>
             <td>2</td>
             <td>3</td>
@@ -24,7 +24,7 @@ const ModalTransformation = () => {
             <td>1</td>
           </tr>
           <tr>
-            <td className="lighterTable">Ratio</td>
+            <td className="tableTopRow">Ratio</td>
             <td>1/1</td>
             <td>9/8</td>
             <td>5/4</td>
@@ -35,7 +35,7 @@ const ModalTransformation = () => {
             <td>2/1</td>
           </tr>
           <tr>
-            <td className="lighterTable">Cents</td>
+            <td className="tableTopRow">Cents</td>
             <td>0</td>
             <td>203.910</td>
             <td>386.314</td>
@@ -176,7 +176,7 @@ const ModalTransformation = () => {
       <table>
         <tbody>
           <tr>
-            <td className="lighterTable">Degree</td>
+            <td className="tableTopRow">Degree</td>
             <td>1</td>
             <td>2</td>
             <td>3</td>
@@ -187,7 +187,7 @@ const ModalTransformation = () => {
             <td>1</td>
           </tr>
           <tr>
-            <td className="lighterTable">Ratio</td>
+            <td className="tableTopRow">Ratio</td>
             <td>1/1</td>
             <td>10/9</td>
             <td>32/27</td>
@@ -198,7 +198,7 @@ const ModalTransformation = () => {
             <td>2/1</td>
           </tr>
           <tr>
-            <td className="lighterTable">Cents</td>
+            <td className="tableTopRow">Cents</td>
             <td>0</td>
             <td>182.403</td>
             <td>294.135</td>

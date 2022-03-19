@@ -489,7 +489,7 @@ const LinearTuningsPythagorean = () => {
       <table>
         <tbody>
           <tr>
-            <td className="lighterTable">Scale degree</td>
+            <td className="lighterTable">Scale Degree</td>
             <td className="lighterTable">Raw Ratio</td>
             <td className="lighterTable">Reduced Ratio</td>
             <td className="lighterTable">Raw Cents</td>
@@ -650,7 +650,7 @@ const LinearTuningsPythagorean = () => {
           the main page.
         </i>
       </p>
-      <table>
+      <table style={{ tableLayout: "auto" }}>
         <tbody>
           <tr>
             <td className="lighterTable">Interval</td>
@@ -682,6 +682,8 @@ const LinearTuningsPythagorean = () => {
                 onPointerDown={() => basicPlay([220, 264.298])}
               >
                 19683/16384
+                <br />
+                (+17.595)
               </button>
             </td>
             <td>
@@ -690,6 +692,8 @@ const LinearTuningsPythagorean = () => {
                 onPointerDown={() => basicPlay([220, 260.741])}
               >
                 32/27
+                <br />
+                (-5.865)
               </button>
             </td>
           </tr>
@@ -709,6 +713,8 @@ const LinearTuningsPythagorean = () => {
                 onPointerDown={() => basicPlay([220, 278.438])}
               >
                 81/64
+                <br />
+                (+7.820)
               </button>
             </td>
             <td>
@@ -717,6 +723,8 @@ const LinearTuningsPythagorean = () => {
                 onPointerDown={() => basicPlay([220, 278.438])}
               >
                 81/64
+                <br />
+                (+7.820)
               </button>
             </td>
           </tr>
@@ -736,6 +744,8 @@ const LinearTuningsPythagorean = () => {
                 onPointerDown={() => basicPlay([220, 297.335])}
               >
                 177147/131072
+                <br />
+                (+21.505)
               </button>
             </td>
             <td>
@@ -744,6 +754,8 @@ const LinearTuningsPythagorean = () => {
                 onPointerDown={() => basicPlay([220, 293.333])}
               >
                 4/3
+                <br />
+                (0.000)
               </button>
             </td>
           </tr>
@@ -763,6 +775,8 @@ const LinearTuningsPythagorean = () => {
                 onPointerDown={() => basicPlay([220, 330])}
               >
                 3/2
+                <br />
+                (0.000)
               </button>
             </td>
             <td>
@@ -771,6 +785,8 @@ const LinearTuningsPythagorean = () => {
                 onPointerDown={() => basicPlay([220, 330])}
               >
                 3/2
+                <br />
+                (0.000)
               </button>
             </td>
           </tr>
@@ -790,6 +806,8 @@ const LinearTuningsPythagorean = () => {
                 onPointerDown={() => basicPlay([220, 352.397])}
               >
                 6561/4096
+                <br />
+                (+5.865)
               </button>
             </td>
             <td>
@@ -798,6 +816,8 @@ const LinearTuningsPythagorean = () => {
                 onPointerDown={() => basicPlay([220, 352.397])}
               >
                 6561/4096
+                <br />
+                (+5.865)
               </button>
             </td>
           </tr>
@@ -817,6 +837,8 @@ const LinearTuningsPythagorean = () => {
                 onPointerDown={() => basicPlay([220, 371.25])}
               >
                 27/16
+                <br />
+                (+5.865)
               </button>
             </td>
             <td>
@@ -825,6 +847,8 @@ const LinearTuningsPythagorean = () => {
                 onPointerDown={() => basicPlay([220, 371.25])}
               >
                 27/16
+                <br />
+                (+5.865)
               </button>
             </td>
           </tr>

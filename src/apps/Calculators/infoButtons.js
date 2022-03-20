@@ -23,19 +23,20 @@ export const EdoInfo = ({ stateData, setStateData }) => {
           </p>
           <p>
             In order to do so, take the octave in cents (1200) and divide by the
-            amount you wish. Then add that value onto itself until you reach
-            1200 cents.
+            amount of notes desired. Then add that value onto itself until 1200
+            cents is reached.
           </p>
           <p>
-            Some options will provide you with more possibilities of harmonious
-            results than others. Higher values will provide more options for
+            Some options will provide more possibilities for harmonious results
+            than others. Higher note counts will provide more options for
             consonant intervals, but the tradeoff is that having too many notes
-            available can become unwieldy.
+            available can become unwieldy to actually compose and play with.
           </p>
           <p>
-            As an example, we will split the octave into 5 equal divisions. 5edo
+            As an example, let's split the octave into 5 equal divisions. 5edo
             is the lowest option that provides harmonies unavailable within
-            12edo, as 2, 3, and 4 are all factors of 12.
+            12edo. (Since 2, 3, and 4 are all factors of 12, they only provide
+            notes already available within 12edo.)
           </p>
           <table>
             <tbody>
@@ -93,14 +94,13 @@ export const EdoInfo = ({ stateData, setStateData }) => {
           </table>
 
           <p>
-            5edo provides us with a loose approximation of the perfect fifth
-            (3/2) and perfect fourth (4/3), which are accessible within 12edo,
-            but no other intervals that are contained within 12edo (no minor or
-            major seconds, thirds, sixths, sevenths). Instead we get
-            approximations of the 8th harmonic (8/7) and its inverted interval,
-            the harmonic minor 7th (7/4). These are consonant sounds that are
-            not accessible within 12edo. Every step of 5edo approximates
-            intervals early in the harmonic series.
+            5edo provides a loose approximation of the perfect fifth (3/2) and
+            perfect fourth (4/3), which are approximated within 12edo, but it
+            has no other intervals that are contained within 12edo (i.e. no
+            minor or major seconds, thirds, sixths, sevenths). Instead it
+            provides approximations of the 8th harmonic (8/7) and its inverted
+            interval, the harmonic minor 7th (7/4). These are low-complexity
+            harmonies that are not accessible within 12edo.
           </p>
           <br />
         </div>
@@ -128,18 +128,19 @@ export const EdoMosInfo = ({ stateData, setStateData }) => {
           <p>
             A linear scale is an octave-based scale that is created by choosing
             a generating interval and then continually stacking it on top of
-            itself. If any resulting value is above 1200, we continually
-            subtract 1200 until the value is between 0 and 1200.
+            itself. When resulting values of this process are above 1200 cents,
+            the value is reduced by 1200 continually until the result is between
+            0 and 1200.
           </p>
           <p>
-            In this case, our generating interval will be a certain amount of
-            steps of an Equal Division of the Octave (EDO) scale. This is often
+            In this case, the generating interval is a certain amount of steps
+            of an Equal Division of the Octave (EDO) scale. This is often
             notated "steps\edo".
           </p>
           <p>
-            For example, we can create a 5 note scale using 11 steps of 19edo
-            (11\19). We find the generator by dividing 1200 by 19, then
-            multiplying that number by 11.
+            For example, let's create a 5 note scale using 11 steps of 19edo
+            (11\19). Find the generator by dividing 1200 by 19, then multiplying
+            that number by 11.
           </p>
           <table>
             <tbody>
@@ -192,7 +193,7 @@ export const EdoMosInfo = ({ stateData, setStateData }) => {
             </tbody>
           </table>
           <p>
-            Once you have reached your chosen amount of iterations, arrange the
+            Once the chosen amount of iterations has been reached, arrange the
             pitches in order.
           </p>
           <table>
@@ -211,9 +212,9 @@ export const EdoMosInfo = ({ stateData, setStateData }) => {
 
           <p>
             The inverted generator can be found by taking the EDO and
-            subtracting your chosen amount of steps from it. Your inverted
-            generator will create the same modes, but the order of the modes
-            will be reversed.
+            subtracting the original step count from it. The inverted generator
+            will create the same modes, but the order of the modes will be
+            reversed.
           </p>
           <p>For example, 9\15 inverts to 6\15. (15 - 9 = 6)</p>
 
@@ -268,17 +269,16 @@ export const EdoMosInfo = ({ stateData, setStateData }) => {
           </table>
           <br />
           <p>
-            If your chosen EDO divided by your step amount (or its inversion)
-            does not result in a whole number, you will be able to keep adding
-            notes until you reach every single note in the EDO. For example, 12
-            / 5 = 2.4, so 5\12 will iterate through every note available within
-            12edo.
+            If the chosen EDO divided by the step amount (or its inversion) does
+            not result in a whole number, it is possible to keep adding notes
+            until reaching every single note in the EDO. For example, 12 / 5 =
+            2.4, so 5\12 will iterate through every note available within 12edo.
           </p>
           <p>
-            If your chosen EDO is prime, every step choice possible will iterate
+            If the chosen EDO is prime, every step choice possible will iterate
             through the every note available in the EDO. For example, with
-            11edo, for any chosen step value you will be able to run 11
-            iterations before the system closes on itself.
+            11edo, 11 iterations of every step value possible can be run before
+            the system closes on itself.
           </p>
           <p>
             Linear scales have an interesting property where they always create
@@ -326,8 +326,8 @@ export const IpInfo = ({ stateData, setStateData }) => {
             </tbody>
           </table>
           <p>
-            Then we divide the octave by the EDO to determine the cents value of
-            a single step in the EDO.
+            This pattern adds to 17edo. Divide the octave by the EDO to
+            determine the cents value of a single step in the EDO.
           </p>
           <table>
             <tbody>
@@ -337,8 +337,8 @@ export const IpInfo = ({ stateData, setStateData }) => {
             </tbody>
           </table>
           <p>
-            Then, we multiply each value in the input by the EDO's single step
-            step value to get the step values of our scale.
+            Then, multiply each value in the input field by the EDO's single
+            step value to get the step values between each degree of the scale.
           </p>
           <table>
             <tbody>
@@ -359,8 +359,8 @@ export const IpInfo = ({ stateData, setStateData }) => {
             </tbody>
           </table>
           <p>
-            Now we add each value to the sum of the values that come before it
-            until we have the cents values of each note in the scale.
+            Now add each value to the sum of the values that come before it to
+            get the cents values of each note in the scale.
           </p>
           <table>
             <tbody>
@@ -442,12 +442,13 @@ export const LtbrInfo = ({ stateData, setStateData }) => {
           <p>
             A linear scale is an octave-based scale that is created by choosing
             a generating interval and then continually stacking it on top of
-            itself. If any resulting value is above 1200, we continually
-            subtract 1200 until the value is between 0 and 1200.
+            itself. When resulting values of this process are above 1200 cents,
+            the value is reduced by 1200 continually until the result is between
+            0 and 1200.
           </p>
           <p>
-            In this case, our generating interval is a ratio. In order to
-            convert a ratio to cents, we must apply the following formula.
+            In this case, the generating interval is a ratio. In order to
+            convert a ratio to cents, apply the following formula.
           </p>
           <table>
             <tbody>
@@ -457,8 +458,8 @@ export const LtbrInfo = ({ stateData, setStateData }) => {
             </tbody>
           </table>
           <p>
-            In this case, we will choose 7/4 as our generating interval, and we
-            will iterate over this process until we have 5 notes in our scale.
+            In this case, let's choose 7/4 as the generating interval. We will
+            iterate over this process until we have 5 notes in the scale.
           </p>
           <table>
             <tbody>
@@ -503,7 +504,7 @@ export const LtbrInfo = ({ stateData, setStateData }) => {
             </tbody>
           </table>
           <p>
-            Once you have reached your chosen amount of iterations, arrange the
+            Once the chosen amount of iterationss has been reached, arrange the
             pitches in order.
           </p>
           <table>
@@ -520,18 +521,18 @@ export const LtbrInfo = ({ stateData, setStateData }) => {
           <br />
           <p>
             The inverted generator can be found by taking the ratio, reversing
-            the numerator and denominator, and multiplying the new numerator by
-            2, and then octave reducing the ratio if necessary. Your inverted
-            generator will create the same modes, but the order of the modes
-            will be reversed.
+            the numerator and denominator, multiplying the new numerator by 2,
+            and then reducing the ratio into its simplest form if necessary. The
+            inverted generator will create the same modes, but the order of the
+            modes will be reversed.
           </p>
           <p>For example, 8/7 inverts to 7/4. (8/7 → 7/8 → 14/8 → 7/4)</p>
           <p>
             Something to note is that every single linear temperament generated
             by a ratio will continue on infinitely. No ratio will ever line up
-            perfectly with 2/1 (1200 cents) when repeating this process. You can
-            always add more notes to a scale created in this manner, the circle
-            will never close.
+            perfectly with 2/1 (1200 cents) when repeating this process. It is
+            always possible to add more notes to a scale created in this manner,
+            the circle will never close.
           </p>
           <p>
             Linear scales have an interesting property where they always create
@@ -565,18 +566,20 @@ export const LtbcInfo = ({ stateData, setStateData }) => {
           <p>
             A linear scale is an octave-based scale that is created by choosing
             a generating interval and then continually stacking it on top of
-            itself. If any resulting value is above 1200, we continually
-            subtract 1200 until the value is between 0 and 1200.
+            itself. When resulting values of this process are above 1200 cents,
+            the value is reduced by 1200 continually until the result is between
+            0 and 1200.
           </p>
           <p>
             The linear scale by cents option can create any scale that the EDO,
-            EDO Steps, or Linear Temperament by Ratio tools can create. At their
-            core, each of those are just subsets of what is available utilizing
-            this tool.
+            EDO Steps, or Linear Scale by Ratio tools can create. At their core,
+            each of those are just subsets of what is available utilizing this
+            tool.
           </p>
           <p>
-            For example, a 5 note scale using a generator of 671.288. (Extending
-            this generator to 7 notes generates an anti-Lydian Mavila scale.)
+            For example, let's look at a 5 note scale using a generator of
+            671.288. (Side note: extending this generator to 7 notes generates
+            an anti-Lydian Mavila scale.)
           </p>
           <table>
             <tbody>
@@ -628,7 +631,7 @@ export const LtbcInfo = ({ stateData, setStateData }) => {
           <br />
           <p>
             The inverted generator can be found by taking 1200 and subtracting
-            your generator from it. Your inverted generator will create the same
+            your generator from it. The inverted generator will create the same
             modes, but the order of the modes will be reversed.
           </p>
           <p>
@@ -665,25 +668,24 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
         <div className="writtenAreas">
           <p>
             The ax + by = p method is a non-standard scale generation method,
-            and will often lead to more dissonant results than the other methods
-            available here, but with experimentation can sometimes yield
-            interesting results.
+            and will often lead to dissonant results. With experimentation, it
+            can sometimes yield interesting scales.
           </p>
           <h4 className="center">Process</h4>
           <p>
-            It uses basic algebraic principles. We manually create variable A,
+            It uses basic algebraic principles. To use it, define variable A,
             the size of the first interval, and variable X, how many instances
             of the first variable size are present in the scale.
           </p>
           <p>
-            LThen, we manually choose variable Y, which represents how many
-            instances of the second interval we would like to have.
+            Then, manually choose variable Y, which represents how many
+            instances of the second interval will be present in the scale.
           </p>
           <p>
             The variable P on the other side of the equation represents the
-            "period", which is at what value the scale repeats itself. In this
+            period, which is at what value the scale repeats itself. In this
             case, the P will be the octave (2/1 or 1200 cents), though this
-            method could be applied to non-octave scales.
+            method could also be applied to non-octave scales.
           </p>
           <p>The formula:</p>
 
@@ -691,11 +693,11 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
             <tbody>
               <tr>
                 <td>
-                  ( <b>a</b>: size of first interval
+                  ( <b>A</b>: size of first interval
                 </td>
                 <td></td>
                 <td>
-                  ( <b>b</b>: size of second interval
+                  ( <b>B</b>: size of second interval
                 </td>
                 <td></td>
                 <td></td>
@@ -706,16 +708,16 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
                 <td>—</td>
                 <td>=</td>
                 <td>
-                  <b>p</b>: period (1200)
+                  <b>P</b>: period (1200)
                 </td>
               </tr>
               <tr>
                 <td>
-                  <b>x</b>: instances of first interval )
+                  <b>X</b>: instances of first interval )
                 </td>
                 <td></td>
                 <td>
-                  <b>y</b>: instances of second interval )
+                  <b>Y</b>: instances of second interval )
                 </td>
                 <td></td>
                 <td></td>
@@ -724,14 +726,14 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
           </table>
           <p>
             After all of the input fields have been filled, the tool solves the
-            only variable left in the equation, which is b, the size of the
+            only variable left in the equation, which is B, the size of the
             second interval.
           </p>
           <p>
-            Once b is solved for, the tool will spread the two intervals out
-            amongst each other as evenly as possible. It does this by taking the
-            larger step count of the two provided and dividing it by the smaller
-            step count. If this results in a decimal value, the result is always
+            Once B is solved, the tool will spread the two intervals out amongst
+            each other as evenly as possible. It does this by taking the larger
+            step count of the two provided and dividing it by the smaller step
+            count. If this results in a decimal value, the result is always
             rounded up to the whole number above it. Then the smaller step
             quantity is dispersed evenly throughout the larger step quantity
             using the resulting value.
@@ -743,10 +745,10 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
             try using 25/24: 70.672 cents.
           </p>
           <p>
-            If we wanted a 5 note scale with this as a the small step, we could
+            To create a 5 note scale with this as the small step, one could
             enter 2 in the First Interval Steps box, then 3 in the Second
-            Interval Steps box. This gives us a complete equation to solve:
-            (70.672 * 2) + (b * 3) = 1200.
+            Interval Steps box. This gives a complete equation to solve: (70.672
+            * 2) + (b * 3) = 1200.
           </p>
           <table>
             <tbody>
@@ -782,14 +784,16 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
               </tr>
             </tbody>
           </table>
-          <p>Solving for b yields a neutral third of 352.885.</p>
+          <p>Solving for B yields a neutral third of 352.885.</p>
           <p>
-            Now we take the larger step amount of the two provided, in this case
-            3, and divide it by the lower amount, in this case 2. This provides
+            Now take the larger step amount of the two provided (in this case 3)
+            and divide it by the lower amount, in this case 2. This provides
             1.5, and this tool will always round any decimal value up, so it
-            becomes 2. Now we iterate over the larger step count, in this case
-            LLL, and place the smaller step size at least every 2 iterations, in
-            this case yielding LLsLs.
+            becomes 2. Now iterate over the larger step count, in this case LLL,
+            and place the smaller step size into the pattern every 2 iterations.
+            In this case, the second iteration does not have 2 large steps to
+            skip over, so instead it just jumps over the 1 that is actually
+            there. The final outcome is LLsLs.
           </p>
           <table>
             <tbody>
@@ -888,25 +892,25 @@ export const TdInfo = ({ stateData, setStateData }) => {
         <div className="writtenAreas">
           <h4 className="center">Process</h4>
           <p>
-            With the Tonality Diamond function, a set of factors are chosen and
-            are combined with one another to create a set of ratios. Each factor
-            chosen is combined with each other factor chosen to create two
+            With the Tonality Diamond function, a set of integers are chosen and
+            combined with one another to create a set of ratios. Each integer
+            chosen is combined with each other integer chosen to create two
             ratios, one with the larger number on top (the overtone version),
             and one with the smaller number on top (the undertone version).
           </p>
           <p>
-            Depending on the factors chosen, sometimes multiple ratios within
+            Depending on the integers chosen, sometimes multiple ratios within
             the diamond will reduce down to the same cents value. If this is the
             case, the duplicate values are removed. As more factors are
             included, more duplicates tend to arise, unless all factors chosen
-            are prime numbers, since they can't reduce.
+            are prime numbers, since those cannot reduce.
           </p>
           <p>
-            We have the choice of including all values in the diamond, only the
-            overtones, or only the undertones. Interestingly, the overtones-only
-            and undertones-only options end up creating the same final set of
-            modal transformations, just starting on opposite ends of the set of
-            modes generated.
+            After choosing the integers, there is a choice to include in the
+            scale all values in the diamond, only the overtones, or only the
+            undertones. Interestingly, the overtones-only and undertones-only
+            options end up creating the same final set of modal transformations,
+            just starting on opposite ends of the set of modes generated.
           </p>
           <p>
             The "all" option will include both the overtones and undertones, and
@@ -916,8 +920,8 @@ export const TdInfo = ({ stateData, setStateData }) => {
           <br />
           <h4 className="center">Example: 1-3-5, All</h4>
           <p>
-            First we will look at all values created by factors 1, 3, and 5.
-            This is the resulting table with totally raw values.
+            First let's look at all values created by 1, 3, and 5. This is the
+            resulting table with totally raw values.
           </p>
           <table>
             <tbody>
@@ -960,8 +964,8 @@ export const TdInfo = ({ stateData, setStateData }) => {
             </tbody>
           </table>
           <p>
-            Then we octave reduce each ratio on the table. Notice that with this
-            combination of factors all values on the table are unique.
+            Then octave reduce each ratio on the table. Notice that with this
+            combination of integers all values on the table are unique.
           </p>
           <table>
             <tbody>
@@ -1046,11 +1050,10 @@ export const TdInfo = ({ stateData, setStateData }) => {
           <br />
           <h4 className="center">Example: 1-3-9, Overtones Only</h4>
           <p>
-            With some combinations of factors, the table will end up with
+            With some combinations of integers, the table will end up with
             duplicate values. For example, this happens with the factor
-            combination 1-3-9. In this example we will also choose just the
-            overtone setting instead of using all the resulting values in our
-            scale.
+            combination 1-3-9. This example will use the overtone setting
+            instead of using all the resulting values in the scale.
           </p>
           <table>
             <tbody>
@@ -1184,7 +1187,7 @@ export const OtInfo = ({ stateData, setStateData }) => {
           <h4 className="center">Process</h4>
           <p>
             The Otonal and Utonal scale generation methods provide scales that
-            are built off of a chosen factor, resulting in scale values that
+            are built off of a chosen integer, resulting in scale values that
             have low-complexity ratio relationships between one another. In the
             case of an Otonal scale, the user chooses the denominator, then
             chooses what values will appear in the numerators of each value in
@@ -1210,10 +1213,10 @@ export const OtInfo = ({ stateData, setStateData }) => {
           <br />
           <h4 className="center">Example - 5 to 10 over 5 - Progression 1</h4>
           <p>
-            As an example, we will examine an overtone series with the
-            denominator of 5, starting on 5, ending on 10, and with a
-            progression of 1, meaning that every value in the series between 5
-            and 10 will be inserted into the final scale.
+            As an example, let's examine an overtone series with the denominator
+            of 5, starting on 5, ending on 10, and with a progression of 1,
+            meaning that every value in the series between 5 and 10 will be
+            inserted into the final scale.
           </p>
           <p>The raw result:</p>
           <table>
@@ -1281,7 +1284,7 @@ export const OtInfo = ({ stateData, setStateData }) => {
           <h4 className="center">Example - 2 to 14 over 2 - Progression 2</h4>
           <p>
             As an additional example, to demonstrate how the Progression setting
-            works and how duplicate values are eliminated, we will show
+            works and how duplicate values are eliminated, let's examine
             denominator 2, start value 2, end value 14, and progression 2.
           </p>
           <p>The raw result:</p>
@@ -1317,7 +1320,7 @@ export const OtInfo = ({ stateData, setStateData }) => {
             6/2 and 12/2 both reduce to 3/2. 4/2 and 8/2 both reduce to 2/1,
             which is always implied in an octave based scale regardless.
             Therefore, despite the fact that the method generates 7 raw values,
-            we only end up with 4 unique pitches.
+            the outcome has only 4 unique pitches.
           </p>
           <table>
             <tbody>
@@ -1370,7 +1373,7 @@ export const UtInfo = ({ stateData, setStateData }) => {
           <h4 className="center">Process</h4>
           <p>
             The Otonal and Utonal scale generation methods provide scales that
-            are built off of a chosen factor, resulting in scale values that
+            are built off of a chosen integer, resulting in scale values that
             have low-complexity ratio relationships between one another. In the
             case of an Otonal scale, the user chooses the numerator, then
             chooses what values will appear in the denominators of each value in
@@ -1396,7 +1399,7 @@ export const UtInfo = ({ stateData, setStateData }) => {
           <br />
           <h4 className="center">Example - 5 to 10 over 5 - Progression 1</h4>
           <p>
-            As an example, we will examine an undertone series with the
+            As an example, let's examine an undertone series with the
             denominator of 5, starting on 5, ending on 10, and with a
             progression of 1, meaning that every value in the series between 5
             and 10 will be inserted into the final scale.
@@ -1415,7 +1418,7 @@ export const UtInfo = ({ stateData, setStateData }) => {
             </tbody>
           </table>
 
-          <p>Then we transform each value to its positive form.</p>
+          <p>Then transform each value to its positive form.</p>
           <table>
             <tbody>
               <tr>
@@ -1464,7 +1467,7 @@ export const UtInfo = ({ stateData, setStateData }) => {
           <h4 className="center">Example - 2 to 14 over 2 - Progression 2</h4>
           <p>
             As an additional example, to demonstrate how the Progression setting
-            works and how duplicate values are eliminated, we will show
+            works and how duplicate values are eliminated, let's examine
             denominator 2, start value 2, end value 14, and progression 2.
           </p>
           <p>The raw result:</p>

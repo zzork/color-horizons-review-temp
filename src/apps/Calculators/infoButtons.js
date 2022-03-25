@@ -668,7 +668,7 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
         <div className="writtenAreas">
           <p>
             The ax + by = p method is a non-standard scale generation method,
-            and will often lead to dissonant results. With experimentation, it
+            and can often lead to dissonant results. With experimentation, it
             can sometimes yield interesting scales.
           </p>
           <h4 className="center">Process</h4>
@@ -688,42 +688,42 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
             method could also be applied to non-octave scales.
           </p>
           <p>The formula:</p>
-
           <table>
             <tbody>
               <tr>
                 <td>
-                  ( <b>A</b>: size of first interval
+                  <b>A</b>
+                  <br />
+                  size of first interval
                 </td>
-                <td></td>
+                <td>*</td>
                 <td>
-                  ( <b>B</b>: size of second interval
+                  <b>X</b>
+                  <br />
+                  instances of first interval
                 </td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>—</td>
                 <td>+</td>
-                <td>—</td>
+                <td>
+                  <b>B</b>
+                  <br />
+                  size of second interval
+                </td>
+                <td>*</td>
+                <td>
+                  <b>Y</b>
+                  <br />
+                  instances of second interval
+                </td>
                 <td>=</td>
                 <td>
-                  <b>P</b>: period (1200)
+                  <b>P</b>
+                  <br />
+                  period (1200)
                 </td>
-              </tr>
-              <tr>
-                <td>
-                  <b>X</b>: instances of first interval )
-                </td>
-                <td></td>
-                <td>
-                  <b>Y</b>: instances of second interval )
-                </td>
-                <td></td>
-                <td></td>
               </tr>
             </tbody>
           </table>
+
           <p>
             After all of the input fields have been filled, the tool solves the
             only variable left in the equation, which is B, the size of the

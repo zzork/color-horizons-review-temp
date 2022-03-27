@@ -127,7 +127,7 @@ const MomentsOfSymmetry = () => {
         the section above. (The MOS scales of 2 and 3 notes were skipped because
         with as few tones as those offer, they sound more like chords than
         scales.) 5 notes in a scale tends to be the amount at which the scale
-        starts to allow for some actual harmonic motion.
+        starts to allow for some actual musical storytelling.
       </p>
       <br />
       <div className="center">—</div>
@@ -156,8 +156,9 @@ const MomentsOfSymmetry = () => {
         <li>Going up 7 notes will result in the octave. ✔️</li>
       </ul>
       <p>
-        In simple terms, if you add a certain amount of steps in the scale, you
-        can only ever end up with two possible sizes.
+        In simple terms, if you add a certain amount of steps in the scale to a
+        chosen starting point, you can only ever end up with two possible cents
+        values.
       </p>
       <br />
       <div className="center">—</div>

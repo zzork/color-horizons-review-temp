@@ -12,8 +12,8 @@ const RatiosHarmony = () => {
       <h4 className="center">2/1</h4>
       <p>
         Let's say we play one consistent vibration at 220Hz. At the same time,
-        we play another consistent vibration at 440Hz, or exactly 2 times the
-        first vibration. This is known as a 2/1 ratio, meaning that{" "}
+        we play another consistent vibration at exactly 2 times the speed of the
+        first vibration, 440Hz. This is known as a 2/1 ratio, meaning that{" "}
         <i>
           for every 1 time the base tone vibrates, the second tone will vibrate
           exactly 2 times.
@@ -21,8 +21,8 @@ const RatiosHarmony = () => {
       </p>
       <p>
         Harmonies that are exact frequency ratios like this are referred to as{" "}
-        <b>Just</b> or <b>Justly Tuned</b>. Making music with these ratios is
-        known as using <b>Just Intonation (JI)</b>.
+        <b>Just</b> or <b>Justly Tuned</b>. Making music with notes built from
+        these ratios is known as using <b>Just Intonation (JI)</b>.
       </p>
       <p>
         2/1 is a special case that is also known as the second tone being one{" "}

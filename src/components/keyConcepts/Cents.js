@@ -108,8 +108,8 @@ const Cents = () => {
         Cents measurement is an imperfect system when working outside of 12 Tone
         Equal Temperament, as it is inherently tied to that system. Like the
         interval names discussed in the ratios section, microtonal music will
-        need to become much more popular before a better standard becomes the
-        norm.
+        need to become much more popular before a more universal standard
+        becomes the norm.
       </p>
       <br />
       <div className="center">—</div>

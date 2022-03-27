@@ -89,7 +89,7 @@ const ModalTransformation = () => {
           to interpret one of the non-root intervals in the scale as the new
           root
         </i>
-        . Then, we can{" "}
+        . Then, if desired, we can{" "}
         <i>
           take the intervals that would be built from that note and build a new
           set of pitches from our base Hz value.
@@ -97,10 +97,11 @@ const ModalTransformation = () => {
       </p>
       <p>
         In order to do this, take the scale degree that you would like to start
-        on and subtract it from every other interval in the scale. As above, do
-        this by dividing the two intervals, which is the same as cross
-        multiplication, meaning to multiply one ratio by the reciprocal of the
-        other. Here's the process using 9/8 as the new starting note:
+        on and subtract it from every other interval in the scale. As in the
+        Subtraction section above, do this by dividing the two intervals, which
+        is the same as cross multiplication, meaning to multiply one ratio by
+        the reciprocal of the other. Here's the process using 9/8 as the new
+        starting note:
       </p>
       <table>
         <tbody>
@@ -245,8 +246,9 @@ const ModalTransformation = () => {
         This particular transformation results in what many consider to be a
         problem. This example was picked specifically because{" "}
         <i>
-          its 5th interval, 40/27, is close enough to 3/2 (about 22 cents off)
-          that the ear tends to interpret it as an out of tune 3/2
+          its 5th interval, 40/27, is just the right distance from 3/2 (about 22
+          cents off) that the ear tends to interpret it as a particularly out of
+          tune 3/2
         </i>
         . The ear tends to interpret more complex ratios as mistunings of
         simpler ones. When a tone and the tone 40/27 away from it play together,
@@ -262,15 +264,16 @@ const ModalTransformation = () => {
         </button>
       </div>
       <p>
-        These wolf fifths are why our modern musical system was created. It gets
-        a boring to only have music that is made entirely from the basic just
-        ratios of Ptolemy's Intense Diatonic Scale. It's a pretty sound, but it
-        doesn't leave us with a huge amount of variety, which we crave for the
-        sonic storytelling of a well-crafted piece of music. But{" "}
+        Having inconsistent wolf intervals throughout the modal transformations
+        is why our modern musical system was created. One can avoid these
+        dissonances by only playing the notes of Ptolemy's Intense Diatonic in
+        its root key, but that gets boring fairly quickly. It's a pretty sound,
+        but it doesn't leave us with a huge amount of variety, which we crave
+        for the sonic storytelling of a well-crafted piece of music. But{" "}
         <i>
           when we modulate to different keys within a simple JI system like
-          this, we end up with dissonant intervals that many people consider
-          unacceptably "bad" sounding.
+          this, we end up with these dissonant intervals that many people
+          consider unacceptably "bad" sounding.
         </i>
       </p>
     </div>

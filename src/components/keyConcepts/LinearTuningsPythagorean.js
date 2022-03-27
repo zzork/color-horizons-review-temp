@@ -11,15 +11,15 @@ const LinearTuningsPythagorean = () => {
       <p>
         One possibility is <b>Pythagorean Tuning</b>. (
         <i>
-          Side note - Pythagorean Tuning is centuries older than Ptolemy's
-          Intense Diatonic Scale.
+          Side note - Pythagorean Tuning is actually centuries older than
+          Ptolemy's Intense Diatonic Scale.
         </i>
         )
       </p>
       <p>
         Pythagorean tuning is a <b>Linear Tuning</b>, which means that{" "}
         <i>
-          it is a type of octave-based scale created by stacking a "generating
+          it is a type of octave-based system created by stacking a "generating
           interval" on top of itself
         </i>
         . In the case of Pythagorean tuning, we use the simplest ratio possible,
@@ -338,12 +338,12 @@ const LinearTuningsPythagorean = () => {
       </div>
       <p>
         Adding two more notes gives us the Pythagorean version of the{" "}
-        <b>Diatonic</b> scale!{" "}
+        <b>Diatonic</b> scale.{" "}
         <i>
           Stacking seven 3/2s results in the Pythagorean <b>Lydian</b> scale
         </i>
         , specifically. The scale is most often modally transformed into its
-        fifth mode, <b>Ionian</b> (aka the familiar Major Scale), because it
+        fifth mode, <b>Ionian</b> (a.k.a. the familiar Major Scale), because it
         replaces the instability of the Augmented 4th with the stability of the
         Perfect 4th while leaving every other interval the same. People tend to
         view the Ionian Mode as the basis of the Diatonic Scale, but truly
@@ -483,8 +483,9 @@ const LinearTuningsPythagorean = () => {
         </button>
       </div>
       <p>
-        Then, when we arrange the pitches in order, we end up with something
-        kind of like 12 tone equal temperament.
+        Then when we octave reduce, arrange the pitches in order, and add the
+        octave, we end up with something somewhat like 12 Tone Equal
+        Temperament.
       </p>
       <table>
         <tbody>
@@ -637,7 +638,7 @@ const LinearTuningsPythagorean = () => {
       </p>
       <p>
         12 Note Pythagorean Tuning allows significant modulation, but if you
-        tune an instrument in this way, each key has its own harmony
+        tune an instrument in this way, each key will again have its own harmony
         characteristics. In each key some scales will sound in tune while others
         will sound out of tune.
       </p>

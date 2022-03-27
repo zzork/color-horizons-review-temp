@@ -10,6 +10,8 @@ It is designed specifically to enable the user to instantly calculate how the no
 
 The user can then immediately play these scales in the browser using the QWERTY keyboard or their device's touchscreen and then can export those scales as .scl files that can be used to retune other synthesizers.
 
+Color Horizons is built with React and the Web Audio API.
+
 ### Run Program - `npm start`
 
 Once running, view at http://localhost:3000

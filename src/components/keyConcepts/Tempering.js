@@ -10,12 +10,14 @@ const Tempering = () => {
         <i>
           intentionally modifying the generating interval so that it is slightly
           impure in order to make other intervals in the scales that arise from
-          that generator more in tune
+          that generator closer to just ratios
         </i>
         . It can also be used for the purpose of generating temperaments, which
-        are systems which equate different ratios to one another. A full
-        discussion of temperaments is currently beyond the scope of my personal
-        knowledge, but we will touch on the basics of the most important one.
+        are systems which equate different ratios to one another. I plan to
+        eventually include a full discussion of temperaments here, but at the
+        moment the topic is something I am still working on getting a thorough
+        comprehension of. For now we will touch on the basics of the most
+        important one.
       </p>
       <br />
       <div className="center">—</div>
@@ -29,8 +31,8 @@ const Tempering = () => {
       </p>
       <p>
         <i>
-          12 Tone Equal Temperament equates 12 stacks of the 3/2 ratio (701.955
-          cents) with 2/1 (1200 cents).
+          12 Tone Equal Temperament equates a stack of 12 instances of the 3/2
+          ratio (701.955 cents) with 2/1 (1200 cents).
         </i>
       </p>
       <p>
@@ -124,9 +126,9 @@ const Tempering = () => {
       </table>
       <p>
         To eliminate this difference, it is possible to deliberately mistune the
-        3/2 generating ratio. This process is known as <b>tempering out</b> the
-        comma. In this case, take the Pythagorean Comma and divide it by 12,
-        since this comma arises from stacking twelve 3/2s on one another.
+        3/2 generating ratio. This process is known as <b>tempering</b> the
+        comma. In this case, let's take the Pythagorean Comma and divide it by
+        12, since this comma arises from stacking twelve 3/2s on one another.
       </p>
       <table>
         <tbody>
@@ -218,11 +220,12 @@ const Tempering = () => {
         </tbody>
       </table>
       <p>
-        No matter how many iterations of the process are added, stacking 3/2
-        will always repeat infinitely, never exactly looping back onto 2/1.{" "}
+        No matter how many iterations of the process are added, stacking pure
+        3/2s will always repeat infinitely, never exactly looping back onto 2/1.{" "}
         <i>
-          By tempering out this comma, we create an even, closed system that
-          loops back in on itself, allowing for free key modulation.
+          By mistuning the generator, we temper out this comma, creating an
+          even, closed system that loops back in on itself, allowing for free
+          key modulation.
         </i>{" "}
         With this type of system, we don't need to worry about different keys
         having different tonal characteristics. All keys are identical.
@@ -374,27 +377,27 @@ const Tempering = () => {
       </table>
       <br />
       <p>
-        I used to sometimes try tuning my 12 Tone Equal Temperament guitar by
-        making one chord sound perfectly in tune. But then I would find that
-        when I played another chord, it would sound severely out of tune! I
-        would then retune the guitar so that the out-of-tune chord sounded nice,
-        but then the original chord would be severely out of tune! I didn't
-        understand why and it drove me a little crazy. Now I understand that
-        this is because 12TET compromises by making all chords somewhat out of
-        tune for the sake of easy modulation. When compared to the JI intervals
-        they approximate, the thirds and sixths are noticeably off. We have
-        become conditioned to those mistunings of 13 and 15 cents as being "in
-        tune".
+        I used to sometimes try tuning my 12TET guitar by making one chord sound
+        perfectly in tune. But then I would find that when I played another
+        chord, it would sound severely out of tune! I would then retune the
+        guitar so that the out-of-tune chord sounded nice, but then the original
+        chord would be severely out of tune! I didn't understand why and it
+        drove me a little batty. Now I understand that this is because 12TET
+        compromises by making all chords somewhat out of tune for the sake of
+        easy modulation. When compared to the JI intervals they approximate, the
+        thirds and sixths are noticeably off. We have become conditioned to
+        those mistunings of 13 and 15 cents as being "in tune."
       </p>
       <br />
       <div className="center">—</div>
       <br />
       <p>
-        12TET is an excellent system overall for many reasons. But there are
-        multitudes of other options that allow for aural world building that
-        12TET simply does not have available. This brings us to the point of
-        this entire project: help facilitate exploration of the universe of
-        harmony and encourage people to make music in alternative systems.
+        12 Tone Equal Temperament is an excellent system overall for many
+        reasons. But there are multitudes of other options that allow for aural
+        world building that 12TET simply does not have available. This brings us
+        to the point of this entire project: help facilitate exploration of the
+        universe of harmony and encourage people to make music in alternative
+        systems.
       </p>
       {/* <br />
       <div className="center">—</div>

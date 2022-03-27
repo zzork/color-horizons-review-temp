@@ -7,7 +7,7 @@ const Subtraction = () => {
       <p>
         Say that you wanted to determine what ratio would represent the distance
         between two intervals. This concept becomes particularly important when
-        doing modal transformations of ratio based scales.
+        doing modal transformations of ratio-based scales.
       </p>
       <p>
         Let's take 3/2 and 7/4 again. In normal fraction math, one would find

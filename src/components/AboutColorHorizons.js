@@ -42,15 +42,15 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
             There is an incredible wealth of musical expression that is
             inaccessible utilizing only 12 Tone Equal Temperament (12TET).
             Technology has reached a point where any musical tuning system
-            imaginable can be tested instantly. The problem now is not the
-            construction of microtonal-capable instruments, but merely the lack
-            of proliferation of this knowledge. Whatever the reasons may be, at
-            the moment this field remains esoteric. Many newcomers find it
-            difficult to know where to begin.
+            imaginable can be tested instantly. The problem now is not
+            necessarily the construction of microtonal-capable instruments, but
+            the lack of proliferation of this knowledge. Whatever the reasons
+            may be, at the moment this field remains esoteric. Many newcomers
+            find it difficult to even know where to begin.
           </p>
           <p>
-            My goal with this application is to actively participate in bringing
-            understandings of these fruitful tonal possibilities to other
+            My goal with this application is to become an active participant in
+            spreading knowledge of these fruitful tonal possibilities to other
             musicians. Color Horizons is a tool for helping explore musical
             realms near and far from 12TET. What tonal colors are available off
             in the distance? Let's find out.
@@ -108,7 +108,19 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
             </a>
             . Without an existing tool that could quickly generate and play
             scales outside of 12 tone equal temperament, I never would have
-            found a persistent interest in microtonality.
+            found a persistent interest in microtonality. (Another great
+            alternative is{" "}
+            <a href="https://sevish.com" target="_blank" rel="noreferrer">
+              <b>Sevish's</b>
+            </a>{" "}
+            <a
+              href="https://sevish.com/scaleworkshop/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <b>Scale Workshop</b>
+            </a>
+            .)
           </p>
           <p>
             Thank you to <b>Brock Benzel</b> for my initial exposure to

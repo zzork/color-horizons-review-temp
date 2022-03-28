@@ -213,8 +213,8 @@ export const EdoMosInfo = ({ stateData, setStateData }) => {
           <p>
             The inverted generator can be found by taking the EDO and
             subtracting the original step count from it. The inverted generator
-            will create the same modes, but the order of the modes will be
-            reversed.
+            will create the same final set of modes, but the modes will be
+            generated in a different order.
           </p>
           <p>For example, 9\15 inverts to 6\15. (15 - 9 = 6)</p>
 
@@ -523,8 +523,8 @@ export const LtbrInfo = ({ stateData, setStateData }) => {
             The inverted generator can be found by taking the ratio, reversing
             the numerator and denominator, multiplying the new numerator by 2,
             and then reducing the ratio into its simplest form if necessary. The
-            inverted generator will create the same modes, but the order of the
-            modes will be reversed.
+            inverted generator will create the same final set of modes, but the
+            modes will be generated in a different order.
           </p>
           <p>For example, 8/7 inverts to 7/4. (8/7 → 7/8 → 14/8 → 7/4)</p>
           <p>
@@ -632,7 +632,8 @@ export const LtbcInfo = ({ stateData, setStateData }) => {
           <p>
             The inverted generator can be found by taking 1200 and subtracting
             your generator from it. The inverted generator will create the same
-            modes, but the order of the modes will be reversed.
+            final set of modes, but the modes will be generated in a different
+            order.
           </p>
           <p>
             For example, 671.288 inverts to 528.712. (1200 - 671.288 = 528.712)
@@ -667,9 +668,9 @@ export const AxbyInfo = ({ stateData, setStateData }) => {
         <br />
         <div className="writtenAreas">
           <p>
-            The ax + by = p method is a non-standard scale generation method,
-            and can often lead to dissonant results. With experimentation, it
-            can sometimes yield interesting scales.
+            The ax + by = p method is a non-standard scale generation method and
+            can often lead to dissonant results. With experimentation, it can
+            sometimes yield interesting scales.
           </p>
           <h4 className="center">Process</h4>
           <p>
@@ -910,7 +911,7 @@ export const TdInfo = ({ stateData, setStateData }) => {
             scale all values in the diamond, only the overtones, or only the
             undertones. Interestingly, the overtones-only and undertones-only
             options end up creating the same final set of modal transformations,
-            just starting on opposite ends of the set of modes generated.
+            but generated in a different order.
           </p>
           <p>
             The "all" option will include both the overtones and undertones, and

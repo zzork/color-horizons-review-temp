@@ -24,7 +24,7 @@ const SettingsTable = ({ playerState, setPlayerState }) => {
             <h4>Oscillator Type</h4>
           </td>
           <td colSpan="2">
-            <h4>Single Notes / Chords</h4>
+            <h4>Single Notes / Auto-Chord</h4>
           </td>
         </tr>
         <tr>

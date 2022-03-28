@@ -41,6 +41,7 @@ const NotesChordsSelector = ({ playerState, setPlayerState }) => {
       >
         Single Notes
       </button>
+      <br />
       <button
         className="mb"
         name="chords"
@@ -48,7 +49,7 @@ const NotesChordsSelector = ({ playerState, setPlayerState }) => {
           handleChordsSinglesClick(event, playerState, setPlayerState)
         }
       >
-        Chords
+        Auto-Chord
       </button>
     </div>
   );

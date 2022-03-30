@@ -35,7 +35,7 @@ export const Selector = ({ stateData, setStateData }) => {
           handleScaleGenerationMethodClick("ltbr", stateData, setStateData)
         }
       >
-        Linear Scale by Ratio
+        Generated Scale by Ratio
       </button>
       <button
         className="mb"
@@ -43,7 +43,7 @@ export const Selector = ({ stateData, setStateData }) => {
           handleScaleGenerationMethodClick("ltbc", stateData, setStateData)
         }
       >
-        Linear Scale by Cents
+        Generated Scale by Cents
       </button>
       <br />
       <button

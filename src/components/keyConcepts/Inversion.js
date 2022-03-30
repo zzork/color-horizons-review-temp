@@ -227,8 +227,8 @@ const Inversion = () => {
       <br />
       <br />
       <p>
-        This concept will be of interest in the section below on linear scales,
-        as inverted ratio pairs create the same scales as each other.
+        This concept will be of interest in the section below on generated
+        scales, as inverted ratio pairs create the same scales as each other.
       </p>
     </div>
   );

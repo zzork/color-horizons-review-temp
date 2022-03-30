@@ -5,8 +5,8 @@ const Tempering = () => {
     <div>
       <h2 className="center">Tempering</h2>
       <p>
-        The Linear Scale by Cents tool can be used to <b>temper</b> intervals,
-        which means{" "}
+        The Generated Scale by Cents tool can be used to <b>temper</b>{" "}
+        intervals, which means{" "}
         <i>
           intentionally modifying the generating interval so that it is slightly
           impure in order to make other intervals in the scales that arise from
@@ -223,9 +223,9 @@ const Tempering = () => {
         No matter how many iterations of the process are added, stacking pure
         3/2s will always repeat infinitely, never exactly looping back onto 2/1.{" "}
         <i>
-          By mistuning the generator, we temper out this comma, creating an
-          even, closed system that loops back in on itself, allowing for free
-          key modulation.
+          But by mistuning the 3/2 generator only slightly, the Pythagorean
+          Comma is eliminated, creating an even, closed system that loops back
+          in on itself, allowing for free key modulation.
         </i>{" "}
         With this type of system, we don't need to worry about different keys
         having different tonal characteristics. All keys are identical.

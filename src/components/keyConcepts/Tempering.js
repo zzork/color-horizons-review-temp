@@ -5,8 +5,8 @@ const Tempering = () => {
     <div>
       <h2 className="center">Tempering</h2>
       <p>
-        The Rank-2 Scale by Cents (Octave) tool can be used to <b>temper</b>{" "}
-        intervals, which means{" "}
+        The Rank-2 Scale by Cents (Octave Period) tool can be used to{" "}
+        <b>temper</b> intervals, which means{" "}
         <i>
           intentionally modifying the generating interval so that it is slightly
           impure in order to make other intervals in the scales that arise from

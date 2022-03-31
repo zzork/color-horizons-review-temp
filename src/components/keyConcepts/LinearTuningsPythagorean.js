@@ -647,8 +647,8 @@ const LinearTuningsPythagorean = () => {
         tone to simple JI.{" "}
         <i>
           Other transformations can be seen by entering Numerator: 3,
-          Denominator: 2, Note Total: 12 into the Rank-2 Scale by Ratio (Octave)
-          tool on the main page.
+          Denominator: 2, Note Total: 12 into the Rank-2 Scale by Ratio (Octave
+          Period) tool on the main page.
         </i>
       </p>
       <table style={{ tableLayout: "auto" }}>

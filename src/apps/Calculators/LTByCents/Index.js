@@ -13,7 +13,7 @@ export const LTByCents = ({ stateData, setStateData }) => {
   return (
     <div>
       <h2>
-        Rank-2 Scale by Cents (Octave){" "}
+        Rank-2 Scale by Cents (Octave Period){" "}
         <button
           className="infoButton"
           onClick={() => setShowLtbcInfo(stateData, setStateData)}

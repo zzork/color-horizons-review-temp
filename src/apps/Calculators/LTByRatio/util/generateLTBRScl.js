@@ -11,7 +11,7 @@ const generateLTBRScl = (scale, sclData, mode) => {
 
   let outputString = `! R2SBRO-${numerator}over${denominator}-${noteTotal}notes-Mode${mode}
 !
-colorhorizons.com - Rank-2 Scale By Ratio (Octave) - Numerator ${numerator} - Denominator ${denominator} - Note Total ${noteTotal} - Mode ${mode}
+colorhorizons.com - Rank-2 Scale By Ratio (Octave Period) - Numerator ${numerator} - Denominator ${denominator} - Note Total ${noteTotal} - Mode ${mode}
  ${noteTotal}
 !`;
   for (let i = 0; i < modifiedScale.length; i++) {

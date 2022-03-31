@@ -10,7 +10,7 @@ const generateLTBCScl = (scale, sclData, mode) => {
 
   let outputString = `! R2SBCO-${generator}-${noteTotal}notes-Mode${mode}
 !
-colorhorizons.com - Rank-2 Scale By Cents (Octave) - Generator ${generator} - ${noteTotal} Notes - Mode ${mode}
+colorhorizons.com - Rank-2 Scale By Cents (Octave Period) - Generator ${generator} - ${noteTotal} Notes - Mode ${mode}
  ${noteTotal}
 !`;
   for (let i = 0; i < modifiedScale.length; i++) {

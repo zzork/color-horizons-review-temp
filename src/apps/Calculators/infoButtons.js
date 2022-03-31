@@ -574,10 +574,10 @@ export const LtbcInfo = ({ stateData, setStateData }) => {
             reduced by 1200 continually until the result is between 0 and 1200.
           </p>
           <p>
-            The Rank-2 Scale by Cents (Octave) option can create any scale that
-            the EDO, EDO Steps, or Rank-2 Scale by Ratio (Octave) tools can
-            create. At their core, each of those are just subsets of what is
-            available utilizing this tool.
+            The Rank-2 Scale by Cents (Octave Period) option can create any
+            scale that the EDO, EDO Steps, or Rank-2 Scale by Ratio (Octave
+            Period) tools can create. At their core, each of those are just
+            subsets of what is available utilizing this tool.
           </p>
           <p>
             For example, let's look at a 5 note scale using a generator of

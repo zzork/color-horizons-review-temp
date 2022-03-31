@@ -45,13 +45,7 @@ const getGranularitySettings = (granularity) => {
       break;
   }
 
-  //   return [2, 0.01];
   return [toFixed, step];
 };
 
 export default getGranularitySettings;
-
-// need to set "toFixed(x)" and "step" in the button object
-
-// 1, 10, 100 = toFixed(0)
-// 0.1 = toFixed

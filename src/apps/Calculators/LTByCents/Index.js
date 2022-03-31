@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { LtbcInfo } from "../infoButtons";
 import { setShowLtbcInfo } from "../infoEventHandlers";
 import { handleLtbcChange } from "./ltbcEventHandlers";

@@ -1,16 +1,14 @@
-import { useState } from "react";
 import { IpInfo } from "../infoButtons";
 import { setShowIpInfo } from "../infoEventHandlers";
 import { handleIPChange } from "./ipEventHandlers";
 import { IPReadout } from "./IPReadout";
 
 export const IntervalPattern = ({ stateData, setStateData }) => {
-  // remove state
   return (
     <div>
       <div>
         <h2>
-          Interval Pattern {/* modify button */}
+          Interval Pattern
           <button
             className="infoButton"
             onClick={() => setShowIpInfo(stateData, setStateData)}
@@ -18,7 +16,6 @@ export const IntervalPattern = ({ stateData, setStateData }) => {
             info
           </button>
         </h2>
-        {/* change component below */}
         {stateData.intervalPattern.showInfo && (
           <IpInfo stateData={stateData} setStateData={setStateData} />
         )}

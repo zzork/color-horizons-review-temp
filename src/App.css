@@ -9,15 +9,6 @@ body {
     rgba(255, 211, 140, 1) 100%
   );
 }
-/* body {
-  text-align: center;
-  background: rgb(255, 254, 143);
-  background: linear-gradient(
-    330deg,
-    rgb(198, 180, 255) 0%,
-    rgba(255, 211, 140, 1) 100%
-  );
-} */
 
 /* keeps footer at bottom */
 .container {

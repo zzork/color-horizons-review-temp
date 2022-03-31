@@ -32,7 +32,6 @@ const getMos = (generator) => {
   const lessThan100 = freshmanSums.filter((value) => value < 101);
 
   return lessThan100;
-  // return "";
 };
 
 export default getMos;

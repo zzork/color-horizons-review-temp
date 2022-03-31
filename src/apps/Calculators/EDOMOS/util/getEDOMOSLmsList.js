@@ -19,12 +19,6 @@ const getEDOMOSLmsList = (scale, edo) => {
     returnList = [uniqueSteps[0], "m", "s"];
   }
 
-  // for (let i = 0; i < returnList.length; i++) {
-  //   if (returnList[i].length === 2) {
-  //     returnList[i] = `(${returnList[i]})`;
-  //   }
-  // }
-
   return returnList;
 };
 

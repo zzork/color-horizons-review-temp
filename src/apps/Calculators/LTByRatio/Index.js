@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { LtbrInfo } from "../infoButtons";
 import { setShowLtbrInfo } from "../infoEventHandlers";
 import { handleLtbrChange } from "./ltbrEventHandlers";

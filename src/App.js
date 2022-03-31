@@ -82,35 +82,12 @@ function App() {
 
 export default App;
 
-// TO ADD
-// ------
+// Future Updates:
 
-//////// NEED
+// - create permalink for sharing scale via url
 
-// final drafts of text
+// - custom harmonics based waveform
 
-// volume slider ALMOST works right, move fast and it won't zero out...
+// - data visualization per mode or all of scale
 
-//////// WANT
-
-// - create permalink for sharing scale via url!
-
-// - Custom Harmonics Based Waveform?
-
-// - Data visualization per mode or all of scale
-
-// - Sample based sound player
-
-/////////////
-
-//   //   const incomingScale = [
-//     0,
-//     138.57266,
-//     266.87091,
-//     386.31371,
-//     603.00041,
-//     701.955,
-//     884.35871,
-//     1049.36294,
-//     2 / 1,
-//   ];
+// - sample based sound player

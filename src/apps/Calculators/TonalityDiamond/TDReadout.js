@@ -91,7 +91,7 @@ const TDReadout = ({ stateData, setStateData }) => {
 export default TDReadout;
 
 const InvalidState = ({ checked }) => {
-  let checkedDisplay = [...checked]; // WHY DOES THIS NEED TO BE SPREAD?
+  let checkedDisplay = [...checked];
   if (checkedDisplay.length === 0) {
     checkedDisplay = "None";
   }

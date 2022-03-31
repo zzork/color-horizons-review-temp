@@ -1,4 +1,3 @@
-import addParenthesesToModeReadout from "../../../util/addParenthesesToModeReadout";
 import generateAxByScl from "../../Calculators/AxByEqualsP/util/generateAxByScl";
 import generateEDOScl from "../../Calculators/EDO/util/generateEDOScl";
 import generateEDOMOSScl from "../../Calculators/EDOMOS/util/generateEDOMOSScl";

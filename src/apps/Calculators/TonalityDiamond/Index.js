@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { TdInfo } from "../infoButtons";
 import { setShowTdInfo } from "../infoEventHandlers";
 import { handleTdRefreshClick } from "./tdEventHandlers";

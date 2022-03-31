@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { ComparisonWindow } from "../RatioComparer/ComparisonWindow";
 import ActualPlayer from "./ActualPlayer";
-import { playerStateData } from "./playerStateData";
 import getPlayerReadouts from "./util/getPlayerReadouts";
 
 const Player = ({ stateData, setStateData, playerState, setPlayerState }) => {

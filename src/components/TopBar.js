@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import {
   floatingReverseQwerty,
   handleShowAbout,
@@ -73,7 +72,3 @@ const TopBar = ({ stateData, setStateData }) => {
 };
 
 export default TopBar;
-
-{
-  /* <div className="vl"></div> */
-}

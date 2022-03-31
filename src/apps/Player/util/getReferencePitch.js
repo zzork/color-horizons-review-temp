@@ -1,5 +1,4 @@
 const getReferencePitch = (playerState) => {
-  //   playerState.referencePitch & playerState.octaveAdjust
   const referencePitch = playerState.referencePitch;
   const octaveAdjust = playerState.octaveAdjust;
 

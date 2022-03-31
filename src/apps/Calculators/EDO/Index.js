@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { EdoInfo } from "../infoButtons";
 import { setShowEdoInfo } from "../infoEventHandlers";
 import { handleEdoChange } from "./edoEventHandlers";

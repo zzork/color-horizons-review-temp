@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { AxbyInfo } from "../infoButtons";
 import { setShowAxbyInfo } from "../infoEventHandlers";
 import { handleAxByChange } from "./axByEventHandlers";

@@ -56,9 +56,6 @@ const TDTable = ({ checked, allOtUt, showEquivalent }) => {
         <b>{outerLoopNumber}</b>
       </td>
       {checked.map((innerLoopNumber, index) => (
-        // <td>
-        //   {getReducedRatiosTableDisplay(innerLoopNumber, outerLoopNumber)}
-        // </td>
         <td key={index}>{getCellDisplay(innerLoopNumber, outerLoopNumber)}</td>
       ))}
     </tr>

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { UtInfo } from "../infoButtons";
 import { setShowUtInfo } from "../infoEventHandlers";
 import { handleUtChange } from "./utEventHandlers";

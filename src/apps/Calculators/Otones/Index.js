@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { OtInfo } from "../infoButtons";
 import { setShowOtInfo } from "../infoEventHandlers";
 import { handleOtChange } from "./otEventHandlers";

@@ -128,7 +128,6 @@ export const LTBRReadout = ({ stateData, setStateData }) => {
             stateData={stateData}
             lmsIn={"Lms"}
             sclData={sclData}
-            stateData={stateData}
             setStateData={setStateData}
           />
         )}

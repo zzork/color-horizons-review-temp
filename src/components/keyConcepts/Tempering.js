@@ -5,7 +5,7 @@ const Tempering = () => {
     <div>
       <h2 className="center">Tempering</h2>
       <p>
-        The Generated Scale by Cents tool can be used to <b>temper</b>{" "}
+        The Rank-2 Scale by Cents (Octave) tool can be used to <b>temper</b>{" "}
         intervals, which means{" "}
         <i>
           intentionally modifying the generating interval so that it is slightly
@@ -28,6 +28,7 @@ const Tempering = () => {
         most commonly used musical system in the world. Whether they are aware
         of it or not, 12 Tone Equal Temperament is the way most people solve the
         problems with other pure-ratio-based tuning systems discussed above.
+        This system comes with its own trade-offs, however.
       </p>
       <p>
         <i>

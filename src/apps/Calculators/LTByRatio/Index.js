@@ -8,7 +8,7 @@ export const LTByRatio = ({ stateData, setStateData }) => {
   return (
     <div>
       <h2>
-        Generated Scale by Ratio{" "}
+        Rank-2 Scale by Ratio (Octave){" "}
         <button
           className="infoButton"
           onClick={() => setShowLtbrInfo(stateData, setStateData)}

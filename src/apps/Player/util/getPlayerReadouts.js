@@ -91,7 +91,7 @@ const getPlayerReadouts = (playerData) => {
         Export .scl
       </button>
     );
-    title = "Generated Scale By Cents";
+    title = "Rank-2 Scale By Cents (Octave)";
     readout = `${playerData.sclData[1]} Notes of ${playerData.sclData[0]}, Mode ${playerData.mode}`;
   }
 
@@ -106,7 +106,7 @@ const getPlayerReadouts = (playerData) => {
         Export .scl
       </button>
     );
-    title = "Generated Scale By Ratio";
+    title = "Rank-2 Scale By Ratio (Octave)";
     readout = `${playerData.sclData[2]} Notes of ${playerData.sclData[0]}/${playerData.sclData[1]}, Mode ${playerData.mode}`;
   }
 

@@ -8,9 +8,9 @@ const generateLTBCScl = (scale, sclData, mode) => {
   modifiedScale = modifiedScale.map((value) => value.toFixed(5));
   modifiedScale.push("2/1");
 
-  let outputString = `! GSBC-${generator}-${noteTotal}notes-Mode${mode}
+  let outputString = `! R2SBCO-${generator}-${noteTotal}notes-Mode${mode}
 !
-colorhorizons.com - Generated Scale By Cents - Generator ${generator} - ${noteTotal} Notes - Mode ${mode}
+colorhorizons.com - Rank-2 Scale By Cents (Octave) - Generator ${generator} - ${noteTotal} Notes - Mode ${mode}
  ${noteTotal}
 !`;
   for (let i = 0; i < modifiedScale.length; i++) {
@@ -22,7 +22,7 @@ ${modifiedScale[i]}`;
   let url = window.URL.createObjectURL(outputBlob);
   let anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = `GSBC-${generator}-${noteTotal}notes-Mode${mode}.scl`;
+  anchor.download = `R2SBCO-${generator}-${noteTotal}notes-Mode${mode}.scl`;
 
   anchor.click();
   window.URL.revokeObjectURL(url);

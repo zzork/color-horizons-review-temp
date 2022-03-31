@@ -647,8 +647,8 @@ const LinearTuningsPythagorean = () => {
         tone to simple JI.{" "}
         <i>
           Other transformations can be seen by entering Numerator: 3,
-          Denominator: 2, Note Total: 12 into the Generated Scale by Ratio tool
-          on the main page.
+          Denominator: 2, Note Total: 12 into the Rank-2 Scale by Ratio (Octave)
+          tool on the main page.
         </i>
       </p>
       <table style={{ tableLayout: "auto" }}>
@@ -870,7 +870,7 @@ const LinearTuningsPythagorean = () => {
       <p>
         <i>
           Any ratio, not just 3/2, can be used as a generating interval in a
-          generated scale
+          rank-2 scale
         </i>
         . Not only that,{" "}
         <i>any cents value can also be used as the generating interval</i>. It's

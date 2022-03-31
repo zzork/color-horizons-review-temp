@@ -126,11 +126,12 @@ export const EdoMosInfo = ({ stateData, setStateData }) => {
         <br />
         <div className="writtenAreas">
           <p>
-            A generated scale is created by choosing a generating interval and
-            then continually stacking it on top of itself. This tool
-            specifically creates octave-based scales. As such, when resulting
-            values of this process are above 1200 cents, the value is reduced by
-            1200 continually until the result is between 0 and 1200.
+            A rank-2 scale is created by choosing a generating interval and then
+            continually stacking it on top of itself within a chosen size window
+            called a period. This tool specifically creates octave-based scales,
+            or scales with a period of exactly one octave. As such, when
+            resulting values of this process are above 1200 cents, the value is
+            reduced by 1200 continually until the result is between 0 and 1200.
           </p>
           <p>
             In this case, the generating interval is a certain amount of steps
@@ -281,10 +282,10 @@ export const EdoMosInfo = ({ stateData, setStateData }) => {
             the system closes on itself.
           </p>
           <p>
-            Generated scales have an interesting property where they always
-            create scales of exactly 2 or 3 step sizes. Any scale created using
-            this method that results in 2 step sizes is known as a Moment of
-            Symmetry scale.
+            Rank-2 scales have an interesting property where they always create
+            scales of exactly 2 or 3 step sizes. Any scale created using this
+            method that results in 2 step sizes is known as a Moment of Symmetry
+            scale.
           </p>
         </div>
         <br />
@@ -440,11 +441,12 @@ export const LtbrInfo = ({ stateData, setStateData }) => {
         <div className="writtenAreas">
           {/* <div> */}
           <p>
-            A generated scale is created by choosing a generating interval and
-            then continually stacking it on top of itself. This tool
-            specifically creates octave-based scales. As such, when resulting
-            values of this process are above 1200 cents, the value is reduced by
-            1200 continually until the result is between 0 and 1200.
+            A rank-2 scale is created by choosing a generating interval and then
+            continually stacking it on top of itself within a chosen size window
+            called a period. This tool specifically creates octave-based scales,
+            or scales with a period of exactly one octave. As such, when
+            resulting values of this process are above 1200 cents, the value is
+            reduced by 1200 continually until the result is between 0 and 1200.
           </p>
           <p>
             In this case, the generating interval is a ratio. In order to
@@ -535,10 +537,10 @@ export const LtbrInfo = ({ stateData, setStateData }) => {
             the circle will never close.
           </p>
           <p>
-            Generated scales have an interesting property where they always
-            create scales of exactly 2 or 3 step sizes. Any scale created using
-            this method that results in 2 step sizes is known as a Moment of
-            Symmetry scale.
+            Rank-2 scales have an interesting property where they always create
+            scales of exactly 2 or 3 step sizes. Any scale created using this
+            method that results in 2 step sizes is known as a Moment of Symmetry
+            scale.
           </p>
         </div>
         <br />
@@ -564,17 +566,18 @@ export const LtbcInfo = ({ stateData, setStateData }) => {
         <br />
         <div className="writtenAreas">
           <p>
-            A generated scale is created by choosing a generating interval and
-            then continually stacking it on top of itself. This tool
-            specifically creates octave-based scales. As such, when resulting
-            values of this process are above 1200 cents, the value is reduced by
-            1200 continually until the result is between 0 and 1200.
+            A rank-2 scale is created by choosing a generating interval and then
+            continually stacking it on top of itself within a chosen size window
+            called a period. This tool specifically creates octave-based scales,
+            or scales with a period of exactly one octave. As such, when
+            resulting values of this process are above 1200 cents, the value is
+            reduced by 1200 continually until the result is between 0 and 1200.
           </p>
           <p>
-            The generated scale by cents option can create any scale that the
-            EDO, EDO Steps, or Generated Scale by Ratio tools can create. At
-            their core, each of those are just subsets of what is available
-            utilizing this tool.
+            The Rank-2 Scale by Cents (Octave) option can create any scale that
+            the EDO, EDO Steps, or Rank-2 Scale by Ratio (Octave) tools can
+            create. At their core, each of those are just subsets of what is
+            available utilizing this tool.
           </p>
           <p>
             For example, let's look at a 5 note scale using a generator of
@@ -639,10 +642,10 @@ export const LtbcInfo = ({ stateData, setStateData }) => {
             For example, 671.288 inverts to 528.712. (1200 - 671.288 = 528.712)
           </p>
           <p>
-            Generated scales have an interesting property where they always
-            create scales of exactly 2 or 3 step sizes. Any scale created using
-            this method that results in 2 step sizes is known as a Moment of
-            Symmetry scale.
+            Rank-2 scales have an interesting property where they always create
+            scales of exactly 2 or 3 step sizes. Any scale created using this
+            method that results in 2 step sizes is known as a Moment of Symmetry
+            scale.
           </p>
         </div>
         <br />

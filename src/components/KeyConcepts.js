@@ -137,7 +137,7 @@ const KeyConcepts = ({ stateData, setStateData }) => {
               }
             >
               {" "}
-              Linear Tunings and Pythagorean Tuning
+              Rank-2 Tunings and Pythagorean Tuning
             </button>
             <br />
             <button

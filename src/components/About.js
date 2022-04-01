@@ -2,7 +2,6 @@ import AboutColorHorizons from "./AboutColorHorizons";
 import KeyConcepts from "./KeyConcepts";
 
 const About = ({ stateData, setStateData }) => {
-  console.log(stateData.about.whichAbout);
   return (
     <div>
       {stateData.about.whichAbout === "keyConcepts" && (

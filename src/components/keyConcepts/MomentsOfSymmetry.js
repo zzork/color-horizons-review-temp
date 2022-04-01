@@ -4,7 +4,7 @@ const MomentsOfSymmetry = () => {
       {" "}
       <h2 className="center">Moments of Symmetry</h2>
       <p>
-        Linear tunings have an interesting property.{" "}
+        Rank-2 tunings have an interesting property.{" "}
         <i>
           They will <b>always</b>, without exception, create scales of 2 or 3
           step sizes.

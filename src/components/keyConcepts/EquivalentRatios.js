@@ -15,9 +15,9 @@ const EquivalentRatios = () => {
       </p>
       <p>
         This is an element of JI ratios that can be confusing at first. Because
-        multiplying or dividing an element of a ratio creates the same note, but
-        in a different octave, JI fractions have different equalities than
-        fractions used in regular, basic math.
+        multiplying or dividing an element of a ratio by a multiple of 2 creates
+        the same note, but in a different octave, JI fractions have different
+        equalities than fractions used in regular, basic math.
       </p>
       <p className="center">
         <i>In JI:</i>

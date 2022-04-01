@@ -109,10 +109,7 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
             . Without an existing tool that could quickly generate and play
             scales outside of 12 tone equal temperament, I never would have
             found a persistent interest in microtonality. (Another great
-            alternative is{" "}
-            <a href="https://sevish.com" target="_blank" rel="noreferrer">
-              <b>Sevish's</b>
-            </a>{" "}
+            alternative is <b>Sevish</b>'s{" "}
             <a
               href="https://sevish.com/scaleworkshop/"
               target="_blank"
@@ -133,6 +130,23 @@ const AboutColorHorizons = ({ stateData, setStateData }) => {
             React and for continuing to be an invaluable resource for my coding
             development.
           </p>
+          <br />
+          <h2 className="center">Browser Requirements</h2>
+          <p>
+            For best user experience, use the latest Google Chrome. At minimum,
+            to be able to generate audio, the browser must be this version or
+            newer:
+          </p>
+          <p>
+            Chrome 35 - Edge 12 - Firefox 25 - Opera 22 - Safari 14.1 - WebView{" "}
+            Android 37 - Chrome Android 35 - Firefox for Android 25 - Opera
+            Android 22 - Safari on iOS 14.5 - Samsung Internet 3.0
+          </p>
+          <p>
+            On iPhone ensure the mute switch is disengaged, as it currently
+            mutes Web Audio, and will therefore mute this app.
+          </p>
+          <br />
           <br />
           <p className="center">
             Made with{" "}

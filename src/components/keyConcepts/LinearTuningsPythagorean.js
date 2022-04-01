@@ -3,7 +3,7 @@ import { basicPlay } from "../../util/aboutNotePlayer";
 const LinearTuningsPythagorean = () => {
   return (
     <div>
-      <h2 className="center">Linear Tunings and Pythagorean Tuning</h2>
+      <h2 className="center">Rank-2 Tunings and Pythagorean Tuning</h2>
       <p>
         So how can we achieve tuning systems that allow freer modulation,
         introducing fewer wolf intervals when the scale is transformed?
@@ -17,15 +17,16 @@ const LinearTuningsPythagorean = () => {
         )
       </p>
       <p>
-        Pythagorean tuning is a <b>Linear Tuning</b>, which means that{" "}
+        Pythagorean tuning is a <b>rank-2 tuning</b>, which means that{" "}
         <i>
-          it is a type of octave-based system created by stacking a "generating
-          interval" on top of itself
+          it is a type of system created by stacking a "generating interval" on
+          top of itself within a chosen size window called a period
         </i>
-        . In the case of Pythagorean tuning, we use the simplest ratio possible,
-        3/2. Start with 1/1, then add the note 3/2 above it, then add the note
-        3/2 above that, then add the note 3/2 to that, until the amount of notes
-        desired is reached. Then octave reduce all of the notes.
+        . In the case of Pythagorean tuning, the period is the octave, and for
+        the generator we use the simplest ratio possible, 3/2. Start with 1/1,
+        then add the note 3/2 above it, then add the note 3/2 above that, then
+        add the note 3/2 to that, until the amount of notes desired is reached.
+        Then octave reduce all of the notes.
       </p>
       <br />
       <div className="center">—</div>
@@ -651,17 +652,17 @@ const LinearTuningsPythagorean = () => {
           Period) tool on the main page.
         </i>
       </p>
-      <table style={{ tableLayout: "auto" }}>
+      <table>
         <tbody>
           <tr>
-            <td className="lighterTable">Interval</td>
-            <td className="lighterTable">Simple JI</td>
-            <td className="lighterTable">
+            <td className="tableTopRow">Interval</td>
+            <td className="tableTopRow">Simple JI</td>
+            <td className="tableTopRow">
               Pythagorean
               <br />
               1st Mode
             </td>
-            <td className="lighterTable">
+            <td className="tableTopRow">
               Pythagorean
               <br />
               10th Mode

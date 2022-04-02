@@ -12,7 +12,7 @@ const TDReadout = ({ stateData, setStateData }) => {
   const checked = stateData.tonalityDiamond.numbers;
 
   const isValidState = () => {
-    return checked.length > 1;
+    return checked.length > 1 && checked.length < 6;
   };
   if (!isValidState()) {
     return <InvalidState checked={checked} />;
@@ -92,6 +92,7 @@ export default TDReadout;
 
 const InvalidState = ({ checked }) => {
   let checkedDisplay = [...checked];
+  checkedDisplay = checkedDisplay.join(", ");
   if (checkedDisplay.length === 0) {
     checkedDisplay = "None";
   }
@@ -99,7 +100,7 @@ const InvalidState = ({ checked }) => {
     <div>
       <br />
       <div className="tableClone">
-        <p>At Least Two Parameters Must Be Selected</p>
+        <p>Selection Must Be Between Two and Five Parameters</p>
         <p>Currently Selected: {checkedDisplay}</p>
       </div>
     </div>
